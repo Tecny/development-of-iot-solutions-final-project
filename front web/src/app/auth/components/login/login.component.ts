@@ -36,8 +36,8 @@ export class LoginComponent {
     const userData: LoginRequest = this.loginForm.value;
 
     this.authService.login(userData).subscribe({
-      next: () => this.router.navigate(['/dashboard']),
-      error: (err) => this.errorMessage.set('Credenciales incorrectas'),
+      next: () => this.router.navigate(['/profile']),
+      error: () => this.errorMessage.set('Invalid email or password.'),
     });
   }
 }
