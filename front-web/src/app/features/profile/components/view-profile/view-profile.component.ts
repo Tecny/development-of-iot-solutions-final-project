@@ -3,6 +3,7 @@ import {ProfileService} from '../../services/profile.service';
 import {UserProfile} from '../../models/profile.model';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {AuthService} from '../../../../auth/services/auth.service';
+import {customEmailValidator} from '../../../../shared/validators/custom-email.validator';
 
 @Component({
   selector: 'app-view-profile',
@@ -18,6 +19,7 @@ export class ViewProfileComponent implements OnInit {
   private profileService = inject(ProfileService);
   private authService = inject(AuthService);
   private fb = inject(FormBuilder);
+
   userInfo = signal<UserProfile | null>(null);
 
   profileForm!: FormGroup;
@@ -42,9 +44,13 @@ export class ViewProfileComponent implements OnInit {
 
   initForm(user: UserProfile) {
     this.profileForm = this.fb.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, customEmailValidator()]],
+      password: ['', [
+        Validators.required,
+        Validators.minLength(16),
+        Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{16,}$/)
+      ]]
     });
   }
 
@@ -106,9 +112,11 @@ export class ViewProfileComponent implements OnInit {
     const passwordControl = this.profileForm.get('password');
     const password = passwordControl?.value;
 
-    if (!passwordControl?.valid) {
+    const passwordPattern = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{16,}$/;
+
+    if (!passwordControl?.valid || !passwordPattern.test(password)) {
       passwordControl?.markAsTouched();
-      console.error('Invalid or too short password.');
+      console.error('Invalid or too short password. Must contain at least one uppercase letter, one number, and one special character.');
       return;
     }
 

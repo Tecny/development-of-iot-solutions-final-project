@@ -1,0 +1,73 @@
+@let user = userInfo();
+@if (user) {
+  <div [formGroup]="profileForm">
+
+    <h1>Perfil</h1>
+
+    <!-- Nombre -->
+    <div>
+      <p><strong>Nombre:</strong> {{ user.name }}</p>
+      <button type="button" (click)="editingName = !editingName">
+        {{ editingName ? 'Cancelar' : 'Editar nombre' }}
+      </button>
+      @if (editingName) {
+        <input type="text" formControlName="name" placeholder="Nuevo nombre" />
+        @if (profileForm.get('name')?.touched && profileForm.get('name')?.invalid) {
+          @if (profileForm.get('name')?.errors?.['required']) {
+            <small>El nombre es obligatorio</small>
+          }
+          @if (profileForm.get('name')?.errors?.['minlength']) {
+            <small>El nombre debe tener mínimo 3 letras</small>
+          }
+        }
+        <button type="button" (click)="updateName()" [disabled]="profileForm.get('name')?.invalid">Guardar</button>
+      }
+    </div>
+
+    <!-- Email -->
+    <div>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <button type="button" (click)="editingEmail = !editingEmail">
+        {{ editingEmail ? 'Cancelar' : 'Editar email' }}
+      </button>
+      @if (editingEmail) {
+        <input type="email" formControlName="email" placeholder="Nuevo email" />
+        @if (profileForm.get('email')?.touched && profileForm.get('email')?.invalid) {
+          @if (profileForm.get('email')?.errors?.['required']) {
+            <small>El correo electrónico es obligatorio</small>
+          }
+          @if (profileForm.get('email')?.errors?.['invalidEmail']) {
+            <small>Formato de correo electrónico no válido</small>
+          }
+        }
+        <button type="button" (click)="updateEmail()" [disabled]="profileForm.get('email')?.invalid">Guardar</button>
+      }
+    </div>
+
+    <!-- Contraseña -->
+    <div>
+      <p><strong>Contraseña:</strong> ********</p>
+      <button type="button" (click)="editingPassword = !editingPassword">
+        {{ editingPassword ? 'Cancelar' : 'Cambiar contraseña' }}
+      </button>
+      @if (editingPassword) {
+        <input type="password" formControlName="password" placeholder="Nueva contraseña" />
+        @if (profileForm.get('password')?.touched && profileForm.get('password')?.invalid) {
+          @if (profileForm.get('password')?.errors?.['required']) {
+            <small>La contraseña es obligatoria</small>
+          } @else {
+            @if (profileForm.get('password')?.errors?.['minlength']) {
+              <small>La contraseña debe tener al menos 16 caracteres</small>
+            }
+            @else  {
+              <small>La contraseña debe incluir una mayúscula, un número y un carácter especial</small>
+            }
+          }
+        }
+        <button type="button" (click)="updatePassword()" [disabled]="profileForm.get('password')?.invalid">Guardar</button>
+      }
+    </div>
+
+    <button (click)="logout()">Cerrar sesión</button>
+  </div>
+}

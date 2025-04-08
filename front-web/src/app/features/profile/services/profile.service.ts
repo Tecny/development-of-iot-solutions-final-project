@@ -1,7 +1,6 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../environment/environment';
-import {UserStoreService} from '../../../core/services/user-store.service';
 import {UserProfile} from '../models/profile.model';
 import {map, tap} from 'rxjs';
 import {AuthService} from '../../../auth/services/auth.service';
@@ -13,12 +12,9 @@ export class ProfileService {
   private http = inject(HttpClient);
   private authService = inject(AuthService);
   private baseUrl = environment.baseUrl;
-  private userStore = inject(UserStoreService);
-  private userId: number | null = this.userStore.getUserIdFromToken();
 
   getUserInfo() {
-    if (!this.userId) throw new Error("User ID not found.");
-    return this.http.get<any>(`${this.baseUrl}/users/${this.userId}`).pipe(
+    return this.http.get<any>(`${this.baseUrl}/users/me`).pipe(
       map((user: any) => {
         return {
           name: user.name,
@@ -30,13 +26,11 @@ export class ProfileService {
   }
 
   changeName(name: string) {
-    if (!this.userId) throw new Error("User ID not found.");
-    return this.http.put(`${this.baseUrl}/users/name/${this.userId}`, { name });
+    return this.http.put(`${this.baseUrl}/users/name`, { name });
   }
 
   changeEmail(newEmail: string) {
-    if (!this.userId) throw new Error("User ID not found.");
-    return this.http.put(`${this.baseUrl}/users/email/${this.userId}`, { newEmail }).pipe(
+    return this.http.put(`${this.baseUrl}/users/email`, { newEmail }).pipe(
       tap(() => {
         this.authService.logout();
       })
@@ -44,8 +38,7 @@ export class ProfileService {
   }
 
   changePassword(newPassword: string) {
-    if (!this.userId) throw new Error("User ID not found.");
-    return this.http.put(`${this.baseUrl}/users/password/${this.userId}`, { newPassword }).pipe(
+    return this.http.put(`${this.baseUrl}/users/password`, { newPassword }).pipe(
       tap(() => {
         this.authService.logout();
       })
