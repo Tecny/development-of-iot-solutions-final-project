@@ -1,29 +1,36 @@
-import {CanActivateFn, Router} from '@angular/router';
+import {ActivatedRouteSnapshot, CanActivateFn, Router} from '@angular/router';
 import {inject} from '@angular/core';
 import {AuthService} from '../../auth/services/auth.service';
-import {Observable} from 'rxjs';
+import {catchError, map, of, take} from 'rxjs';
+import {UserStoreService} from '../services/user-store.service';
+import {UserRole} from '../models/user.role.enum';
 
-export const authGuard: CanActivateFn = () => {
+export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
   const authService = inject(AuthService);
+  const userStore = inject(UserStoreService);
   const router = inject(Router);
 
-  return new Observable<boolean>((observer) => {
-    authService.isAuthenticated().subscribe({
-      next: (isAuthenticated) => {
-        if (!isAuthenticated) {
-          console.log('Not authenticated');
-          router.navigate(['/login']).then();
-          observer.next(false);
-        } else {
-          console.log('Authenticated');
-          observer.next(true);
-        }
-        observer.complete();
-      },
-      error: () => {
-        observer.next(false);
-        observer.complete();
+  return authService.isAuthenticated().pipe(
+    take(1),
+    map((isAuthenticated) => {
+      if (!isAuthenticated) {
+        router.navigate(['/login']).then();
+        return false;
       }
-    });
-  });
+
+      const requiredRoles: UserRole[] = route.data['roles'];
+      const userRole = userStore.getRoleFromToken();
+
+      if (requiredRoles && !requiredRoles.includes(<UserRole>userRole)) {
+        router.navigate(['/unauthorized']).then();
+        return false;
+      }
+
+      return true;
+    }),
+    catchError(() => {
+      router.navigate(['/login']).then();
+      return of(false);
+    })
+  );
 };

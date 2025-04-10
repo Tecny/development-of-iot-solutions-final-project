@@ -38,8 +38,9 @@ export class AuthService {
   checkAuth(): void {
     if (!this.isChecked) {
       this.isChecked = true;
-      const token = this.userStore.getUserIdFromToken();
-      this.isLoggedIn.next(!!token);
+      const token = this.userStore.getCookie('tokenCookie');
+      const expired = this.userStore.isTokenExpired();
+      this.isLoggedIn.next(!!token && !expired);
     }
   }
 
@@ -59,4 +60,5 @@ export class AuthService {
       }
     });
   }
+
 }
