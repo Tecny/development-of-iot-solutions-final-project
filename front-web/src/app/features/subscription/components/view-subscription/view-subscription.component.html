@@ -2,10 +2,25 @@
 @if (sub) {
   <div>
     <h2>Suscripción</h2>
-    <p>Tipo: {{ sub.planType | titlecase}}</p>
-    <p>Espacios deportivos permitidos: {{ sub.allowedSportSpaces}}</p>
+    <p>Tipo: {{ sub.planType | titlecase }}</p>
+    <p>Espacios deportivos permitidos: {{ sub.allowedSportSpaces }}</p>
+
+    <div>
+      <h3>Mejorar suscripción</h3>
+      @if (sub.planType === 'FREE') {
+        <button (click)="upgradeSubscription('BRONZE')">Mejorar a Bronce</button>
+        <button (click)="upgradeSubscription('SILVER')">Mejorar a Plata</button>
+        <button (click)="upgradeSubscription('GOLD')">Mejorar a Oro</button>
+      } @else if (sub.planType === 'BRONZE') {
+        <button (click)="upgradeSubscription('SILVER')">Mejorar a Plata</button>
+        <button (click)="upgradeSubscription('GOLD')">Mejorar a Oro</button>
+      } @else if (sub.planType === 'SILVER') {
+        <button (click)="upgradeSubscription('GOLD')">Mejorar a Oro</button>
+      } @else {
+        <p>Ya tienes la mejor suscripción disponible.</p>
+      }
+    </div>
   </div>
 } @else {
-  <p>Cargando suscripción</p>
+  <p>Cargando suscripción...</p>
 }
-
