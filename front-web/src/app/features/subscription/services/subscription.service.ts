@@ -12,4 +12,11 @@ export class SubscriptionService {
   getSubscriptionInfo() {
     return this.http.get<any>(`${this.baseUrl}/subscriptions`);
   }
+
+  upgradeSubscription(newPlanType: string) {
+    return this.http.put<{ approval_url: string }>(
+      `${this.baseUrl}/subscriptions/upgrade?newPlanType=${newPlanType}`,
+      {}
+    );
+  }
 }

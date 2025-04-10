@@ -47,7 +47,6 @@ export class ProfileService {
   }
 
   rechargeCredits(amount: number) {
-    console.log("rechargeCredits", amount);
     return this.http.post<{ approval_url: string }>(
       `${this.baseUrl}/deposit/create-deposit?amount=${amount}`,
       {}

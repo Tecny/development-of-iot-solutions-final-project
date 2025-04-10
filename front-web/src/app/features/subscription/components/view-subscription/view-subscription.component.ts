@@ -3,7 +3,6 @@ import {Subscription} from '../../models/subscription.model';
 import {SubscriptionService} from '../../services/subscription.service';
 import {TitleCasePipe} from '@angular/common';
 
-
 @Component({
   selector: 'app-view-subscription',
   imports: [
@@ -28,6 +27,26 @@ export class ViewSubscriptionComponent implements OnInit {
         this.subscriptionInfo.set(user);
       },
       error: () => this.subscriptionInfo.set(null),
+    });
+  }
+
+  upgradeSubscription(newPlanType: string) {
+    this.subscriptionService.upgradeSubscription(newPlanType).subscribe({
+      next: (response) => {
+        const approvalUrl = response.approval_url;
+        const paymentWindow = window.open(approvalUrl, 'PayPal Payment', 'width=800, height=600');
+        if (paymentWindow) {
+          const interval = setInterval(() => {
+            if (paymentWindow.closed) {
+              clearInterval(interval);
+              this.loadSubscriptionInfo();
+            }
+          }, 1000);
+        } else {
+          console.error('No se pudo abrir la ventana de pago.');
+        }
+      },
+      error: () => console.error('Error during recharge.')
     });
   }
 }
