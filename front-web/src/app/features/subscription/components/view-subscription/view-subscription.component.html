@@ -1,0 +1,11 @@
+@let sub = subscriptionInfo();
+@if (sub) {
+  <div>
+    <h2>Suscripción</h2>
+    <p>Tipo: {{ sub.planType | titlecase}}</p>
+    <p>Espacios deportivos permitidos: {{ sub.allowedSportSpaces}}</p>
+  </div>
+} @else {
+  <p>Cargando suscripción</p>
+}
+
