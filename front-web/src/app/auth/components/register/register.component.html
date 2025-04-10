@@ -1,0 +1,71 @@
+<div class="register-container">
+  <h2>Registro</h2>
+
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+
+    <div>
+      <label>Nombre:</label>
+      <input type="text" formControlName="name" required>
+      @if (registerForm.get('name')?.invalid && (registerForm.get('name')?.dirty ||registerForm.get('name')?.touched)) {
+        @if (registerForm.get('name')?.errors?.["required"]) {
+          <small>El nombre es obligatorio</small>
+        }
+        @if (registerForm.get('name')?.errors?.["minlength"]) {
+          <small>El nombre debe tener mínimo 3 letras</small>
+        }
+      }
+    </div>
+
+    <div>
+      <label>Email:</label>
+      <input type="email" formControlName="email" required>
+      @if (registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)) {
+        @if (registerForm.get('email')?.errors?.['required']) {
+          <small>El correo electrónico es obligatorio</small>
+        }
+        @if (registerForm.get('email')?.errors?.['invalidEmail']) {
+          <small>Formato de correo electrónico no válido</small>
+        }
+      }
+    </div>
+
+    <div>
+      <label>Contraseña:</label>
+      <input type="password" formControlName="password" required>
+      @if (registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)) {
+        @if (registerForm.get('password')?.errors?.['required']) {
+          <small>La contraseña es obligatoria</small>
+        } @else {
+          @if (registerForm.get('password')?.errors?.['minlength']) {
+            <small>La contraseña debe tener al menos 16 caracteres</small>
+          }
+          @else  {
+            <small>La contraseña debe incluir una mayúscula, un número y un carácter especial</small>
+          }
+        }
+      }
+    </div>
+
+    <div>
+      <label>Rol:</label>
+      <select formControlName="role" required>
+        <option value="">Selecciona un rol</option>
+        <option value="PLAYER">Jugador</option>
+        <option value="OWNER">Propietario</option>
+      </select>
+      @if (registerForm.get('role')?.invalid && (registerForm.get('role')?.dirty || registerForm.get('role')?.touched)) {
+        @if (registerForm.get('role')?.errors?.['required']) {
+          <small>El rol es obligatorio</small>
+        }
+      }
+    </div>
+
+    <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
+  </form>
+
+  <p>¿Ya tienes una cuenta? <a routerLink="/login">Iniciar Sesión</a></p>
+
+  @if (errorMessage()) {
+    <p>Error en el registro, intente nuevamente.</p>
+  }
+</div>
