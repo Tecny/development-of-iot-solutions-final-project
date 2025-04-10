@@ -1,14 +1,19 @@
 import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
 import {ProfileService} from '../../services/profile.service';
 import {UserProfile} from '../../models/profile.model';
-import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {AuthService} from '../../../../auth/services/auth.service';
 import {customEmailValidator} from '../../../../shared/validators/custom-email.validator';
+import {ModalComponent} from '../../../../shared/components/modal/modal.component';
+import {TitleCasePipe} from '@angular/common';
 
 @Component({
   selector: 'app-view-profile',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModalComponent,
+    FormsModule,
+    TitleCasePipe
   ],
   templateUrl: './view-profile.component.html',
   styleUrl: './view-profile.component.scss',
@@ -27,6 +32,8 @@ export class ViewProfileComponent implements OnInit {
   editingName = false;
   editingEmail = false;
   editingPassword = false;
+
+  showRechargeModal = false;
 
   ngOnInit(): void {
     this.loadUserInfo();
@@ -50,7 +57,8 @@ export class ViewProfileComponent implements OnInit {
         Validators.required,
         Validators.minLength(16),
         Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{16,}$/)
-      ]]
+      ]],
+      amount: ['', [Validators.required, Validators.min(1)]],
     });
   }
 
@@ -127,6 +135,39 @@ export class ViewProfileComponent implements OnInit {
         passwordControl.reset();
       },
       error: () => console.error('Error updating password.')
+    });
+  }
+
+  openRechargeModal() {
+    this.showRechargeModal = true;
+  }
+
+  closeRechargeModal() {
+    this.showRechargeModal = false;
+    this.profileForm.get('amount')?.reset();
+  }
+
+  recharge() {
+    const amountControl = this.profileForm.get('amount');
+    const amount = amountControl?.value;
+    this.closeRechargeModal();
+
+    this.profileService.rechargeCredits(amount).subscribe({
+      next: (response) => {
+        const approvalUrl = response.approval_url;
+        const paymentWindow = window.open(approvalUrl, 'PayPal Payment', 'width=800, height=600');
+        if (paymentWindow) {
+          const interval = setInterval(() => {
+            if (paymentWindow.closed) {
+              clearInterval(interval);
+              this.loadUserInfo();
+            }
+          }, 1000);
+        } else {
+          console.error('No se pudo abrir la ventana de pago.');
+        }
+      },
+      error: () => console.error('Error during recharge.')
     });
   }
 

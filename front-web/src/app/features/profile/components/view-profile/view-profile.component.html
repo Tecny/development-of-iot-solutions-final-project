@@ -68,6 +68,41 @@
       }
     </div>
 
-    <button (click)="logout()">Cerrar sesión</button>
+    <!-- Rol -->
+    <div>
+      <p><strong>Rol:</strong> {{ user.roleType | titlecase }}</p>
+    </div>
+
+    <!-- Creditos -->
+    <div>
+      <p><strong>Créditos:</strong> {{ user.credits }}</p>
+      @if (user.roleType === 'PLAYER') {
+        <button (click)="openRechargeModal()">Recargar Créditos</button>
+      }
+    </div>
+
+    <!-- Modal para recargar créditos -->
+    @if (showRechargeModal) {
+      <app-modal (closeModal)="closeRechargeModal()">
+        <ng-container modal-header>Recargar Créditos</ng-container>
+        <ng-container modal-body>
+          <input type="number" formControlName="amount" placeholder="Monto a recargar" />
+          @if (profileForm.get('amount')?.touched && profileForm.get('amount')?.invalid) {
+            @if (profileForm.get('amount')?.errors?.['required']) {
+              <small>El monto es obligatorio</small>
+            }
+            @if (profileForm.get('amount')?.errors?.['min']) {
+              <small>El monto debe ser al menos 1</small>
+            }
+          }
+        </ng-container>
+        <ng-container modal-footer>
+          <button (click)="recharge()">Aceptar</button>
+          <button (click)="closeRechargeModal()">Cancelar</button>
+        </ng-container>
+      </app-modal>
+    }
   </div>
+
+  <button (click)="logout()">Cerrar sesión</button>
 }

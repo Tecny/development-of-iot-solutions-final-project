@@ -20,6 +20,7 @@ export class ProfileService {
           name: user.name,
           email: user.email,
           roleType: user.roleType as 'PLAYER' | 'OWNER',
+          credits: user.credits,
         } as UserProfile;
       })
     );
@@ -44,4 +45,13 @@ export class ProfileService {
       })
     );
   }
+
+  rechargeCredits(amount: number) {
+    console.log("rechargeCredits", amount);
+    return this.http.post<{ approval_url: string }>(
+      `${this.baseUrl}/deposit/create-deposit?amount=${amount}`,
+      {}
+    );
+  }
+
 }
