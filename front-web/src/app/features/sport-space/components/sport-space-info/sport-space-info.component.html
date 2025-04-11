@@ -1,0 +1,14 @@
+<div class="info">
+  <img [src]="imageUrl" [alt]="'Imagen de ' + sportSpace.name" class="info__image" />
+
+  <div class="info__content">
+    <h1 class="info__title">{{ sportSpace.name }}</h1>
+    <p class="info__type">🏅 {{ sportSpace.sportType }} - {{ sportSpace.gamemode }}</p>
+    <p class="info__price">💵 S/ {{ sportSpace.price }}</p>
+    <p class="info__location">📍 {{ sportSpace.address }}, {{ sportSpace.district }}</p>
+    <p class="info__hours">🕒 Abierto de {{ sportSpace.openTime }} a {{ sportSpace.closeTime }}</p>
+
+    <h2 class="info__subtitle">Descripción</h2>
+    <p class="info__description">{{ sportSpace.description }}</p>
+  </div>
+</div>

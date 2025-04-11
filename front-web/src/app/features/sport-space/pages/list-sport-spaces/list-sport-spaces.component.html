@@ -1,0 +1,16 @@
+@if (showAddSportSpaceButton) {
+  <button>Añadir un espacio deportivo</button>
+}
+@defer (prefetch on viewport) {
+  @if (sportSpaces().length > 0) {
+    <div class="cards-grid">
+      @for (space of sportSpaces(); track space.id) {
+        <app-sport-space-card [sportSpace]="space" />
+      }
+    </div>
+  }
+} @placeholder {
+  <p>Preparando carga de espacios deportivos...</p>
+} @loading {
+  <p>Cargando espacios deportivos...</p>
+}
