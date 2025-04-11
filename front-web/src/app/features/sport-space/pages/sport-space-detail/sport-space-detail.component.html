@@ -1,0 +1,13 @@
+<div class="details-page">
+  @if (!isLoading() && sportSpace()) {
+    <app-sport-space-info [sportSpace]="sportSpace()!" />
+
+    @defer (when !isLoading()) {
+      <app-sport-space-availability/>
+    } @placeholder {
+      <p>Cargando disponibilidad...</p>
+    }
+  } @else {
+    <p>Cargando detalles del espacio deportivo...</p>
+  }
+</div>

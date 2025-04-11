@@ -4,11 +4,13 @@
     @if (isAuthenticated()) {
       @switch (role()) {
         @case (UserRole.PLAYER) {
+          <a routerLink="/rooms">Salas comunidad</a>
+          <a routerLink="/sport-spaces">Espacios deportivos</a>
           <a routerLink="/reservations">Mis Reservas</a>
           <a routerLink="/profile">Perfil</a>
         }
         @case (UserRole.OWNER) {
-          <a routerLink="/sport-spaces">Mis Espacios</a>
+          <a routerLink="/sport-spaces">Mis espacios deportivos</a>
           <a routerLink="/subscription">Subscripción</a>
           <a routerLink="/profile">Perfil</a>
         }
