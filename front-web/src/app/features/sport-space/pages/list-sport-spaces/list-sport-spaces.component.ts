@@ -4,11 +4,13 @@ import {SportSpaceService} from '../../services/sport-space.service';
 import {SportSpace} from '../../models/sport-space.model';
 import {UserStoreService} from '../../../../core/services/user-store.service';
 import {UserRole} from '../../../../core/models/user.role.enum';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-list-sport-spaces',
   imports: [
-    SportSpaceCardComponent
+    SportSpaceCardComponent,
+    RouterLink
   ],
   templateUrl: './list-sport-spaces.component.html',
   styleUrl: './list-sport-spaces.component.scss',
@@ -23,14 +25,12 @@ export class ListSportSpacesComponent implements OnInit {
   showAddSportSpaceButton = false;
 
   ngOnInit() {
+    this.canAddSportSpace();
     this.loadSportSpaces();
   }
 
   loadSportSpaces() {
     if (this.userRole === UserRole.OWNER) {
-      if(this.canAddSportSpace()){
-        this.showAddSportSpaceButton = true;
-      }
       this.sportSpaceService.getMySportSpaces().subscribe({
         next: (spaces) => {
           this.sportSpaces.set(spaces);
@@ -52,17 +52,15 @@ export class ListSportSpacesComponent implements OnInit {
     }
   }
 
-  canAddSportSpace(): boolean {
-    let canAdd = false;
+  canAddSportSpace(): void {
     this.sportSpaceService.canAddSportSpace().subscribe({
       next: (allow) => {
-        canAdd = allow.canAdd;
-        this.showAddSportSpaceButton = canAdd;
+        this.showAddSportSpaceButton = allow.canAdd;
       },
       error: () => {
         console.error('Error checking if user can add sport space');
+        this.showAddSportSpaceButton = false;
       }
     });
-    return canAdd;
   }
 }

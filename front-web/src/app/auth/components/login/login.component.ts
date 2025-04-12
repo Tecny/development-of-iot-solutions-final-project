@@ -3,7 +3,7 @@ import {NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/
 import {AuthService} from '../../services/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import {LoginRequest} from '../../models/login.model';
-import {customEmailValidator} from '../../../shared/validators/custom-email.validator';
+import {customEmailValidator} from '../../../shared/validators/forms.validator';
 import {UserStoreService} from '../../../core/services/user-store.service';
 import {UserRole} from '../../../core/models/user.role.enum';
 

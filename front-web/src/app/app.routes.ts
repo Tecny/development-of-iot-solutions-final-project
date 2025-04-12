@@ -45,6 +45,13 @@ export const routes: Routes = [
     data: { roles: [UserRole.PLAYER, UserRole.OWNER] },
   },
   {
+    path: 'sport-spaces/create',
+    loadComponent: () => import('./features/sport-space/pages/create-sport-space/create-sport-space.component')
+      .then(m => m.CreateSportSpaceComponent),
+    canActivate: [authGuard],
+    data: { roles: [UserRole.OWNER] },
+  },
+  {
     path: 'sport-spaces/:id',
     loadComponent: () => import('./features/sport-space/pages/sport-space-detail/sport-space-detail.component')
       .then(m => m.SportSpaceDetailComponent),
@@ -52,7 +59,8 @@ export const routes: Routes = [
   {
     path: 'notfound',
     component: NotFoundComponent,
-    canActivate: [authGuard] },
+    canActivate: [authGuard]
+  },
   { path: '**',
     redirectTo: 'notfound'
   }

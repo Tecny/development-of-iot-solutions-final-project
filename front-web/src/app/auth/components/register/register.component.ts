@@ -3,7 +3,7 @@ import {NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/
 import {AuthService} from '../../services/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import {RegisterRequest} from '../../models/register.model';
-import {customEmailValidator} from '../../../shared/validators/custom-email.validator';
+import {customEmailValidator} from '../../../shared/validators/forms.validator';
 
 @Component({
   selector: 'app-register',
