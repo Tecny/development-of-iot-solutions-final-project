@@ -25,4 +25,8 @@ export class SportSpaceService {
   canAddSportSpace() {
     return this.http.get<{ canAdd: boolean }>(`${this.baseUrl}/sport-spaces/can-add-sport-space`);
   }
+
+  createSportSpace(formData: FormData) {
+    return this.http.post<void>(`${this.baseUrl}/sport-spaces/create`, formData);
+  }
 }

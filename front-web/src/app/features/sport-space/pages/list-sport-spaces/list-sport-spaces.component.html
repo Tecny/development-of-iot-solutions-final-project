@@ -1,5 +1,5 @@
 @if (showAddSportSpaceButton) {
-  <button>Añadir un espacio deportivo</button>
+  <button routerLink="/sport-spaces/create">Añadir un espacio deportivo</button>
 }
 @defer (prefetch on viewport) {
   @if (sportSpaces().length > 0) {

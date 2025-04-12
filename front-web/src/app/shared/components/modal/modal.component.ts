@@ -4,7 +4,6 @@ import {Overlay, OverlayConfig} from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-modal',
-  standalone: true,
   imports: [PortalModule],
   template: `
     <ng-template cdkPortal>
