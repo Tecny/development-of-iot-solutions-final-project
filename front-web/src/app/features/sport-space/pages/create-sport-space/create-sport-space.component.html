@@ -50,7 +50,7 @@
       <label>Modo de juego:</label>
       <select formControlName="gamemode" required>
         @for (item of gamemodes(); track item) {
-          <option [value]="item">{{ item }}</option>
+          <option [value]="item">{{ item.replaceAll('_', ' ') | titlecase}}</option>
         }
       </select>
 

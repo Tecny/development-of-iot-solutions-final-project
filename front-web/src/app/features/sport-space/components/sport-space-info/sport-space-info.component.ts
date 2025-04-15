@@ -1,9 +1,12 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {SportSpace} from '../../models/sport-space.model';
+import {TitleCasePipe} from '@angular/common';
 
 @Component({
   selector: 'app-sport-space-info',
-  imports: [],
+  imports: [
+    TitleCasePipe
+  ],
   templateUrl: './sport-space-info.component.html',
   styleUrl: './sport-space-info.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

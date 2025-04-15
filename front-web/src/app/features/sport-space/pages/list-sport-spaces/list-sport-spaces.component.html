@@ -1,13 +1,25 @@
-@if (showAddSportSpaceButton) {
-  <button routerLink="/sport-spaces/create">Añadir un espacio deportivo</button>
+@let spaces = sportSpaces();
+
+@defer (on timer(500ms)) {
+  @if (showAddSportSpaceButton) {
+    <button routerLink="/sport-spaces/create">Añadir un espacio deportivo</button>
+  }
 }
+
+<h1>Espacios deportivos</h1>
 @defer (prefetch on viewport) {
-  @if (sportSpaces().length > 0) {
-    <div class="cards-grid">
-      @for (space of sportSpaces(); track space.id) {
-        <app-sport-space-card [sportSpace]="space" />
-      }
-    </div>
+  @if (spaces) {
+    @if (spaces.length > 0) {
+      <div class="cards-grid">
+        @for (space of spaces; track space.id) {
+          <app-sport-space-card [sportSpace]="space" />
+        }
+      </div>
+    } @else {
+      <p>No tienes espacios deportivos registrados</p>
+    }
+  } @else {
+    <p>Cargando espacios deportivos...</p>
   }
 } @placeholder {
   <p>Preparando carga de espacios deportivos...</p>

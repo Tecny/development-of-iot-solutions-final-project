@@ -1,1 +1,43 @@
-<p>sport-space-availability works!</p>
+<h3>Horario de disponibilidad</h3>
+<div class="availability-container">
+  @defer (on timer(500ms)) {
+    <table class="availability-table">
+      <thead>
+      <tr>
+        <th>Hora</th>
+        @for (day of weekDays; track day) {
+          <th>{{ formatDate(day) }}</th>
+        }
+      </tr>
+      </thead>
+      <tbody>
+        @for (time of timeSlots; track time) {
+          <tr>
+            <td class="time-label">{{ time }}</td>
+            @for (day of weekDays; track day) {
+              <td>
+                <div
+                  class="slot-box"
+                  [ngClass]="{
+                    'available': isAvailable(day, time),
+                    'unavailable': !isAvailable(day, time)
+                  }"
+                  [title]="day + ' - ' + time"
+                ></div>
+              </td>
+            }
+          </tr>
+        }
+      </tbody>
+    </table>
+  }
+
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-box available"></div> Disponible
+    </div>
+    <div class="legend-item">
+      <div class="legend-box unavailable"></div> Ocupado
+    </div>
+  </div>
+</div>

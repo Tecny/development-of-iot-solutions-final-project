@@ -1,10 +1,12 @@
 import {ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {SportSpace} from '../../models/sport-space.model';
 import {RouterLink} from '@angular/router';
+import {TitleCasePipe} from '@angular/common';
 @Component({
   selector: 'app-sport-space-card',
   imports: [
-    RouterLink
+    RouterLink,
+    TitleCasePipe
   ],
   template: `
     <div class="card">
@@ -18,8 +20,8 @@ import {RouterLink} from '@angular/router';
 
       <div class="card__content">
         <h2 class="card__title">{{ sportSpace.name }}</h2>
-        <p class="card__type">{{ sportSpace.sportType }}</p>
-        <p class="card__district">{{ sportSpace.district }}</p>
+        <p class="card__type">{{ sportSpace.sportType | titlecase}}</p>
+        <p class="card__district">{{ sportSpace.district.replaceAll('_',' ') }}</p>
         <p class="card__price">S/ {{ sportSpace.price }}</p>
       </div>
 

@@ -20,17 +20,17 @@ export class ListSportSpacesComponent implements OnInit {
   private userStoreService = inject(UserStoreService);
   private sportSpaceService = inject(SportSpaceService);
 
-  sportSpaces = signal<SportSpace[]>([]);
+  sportSpaces = signal<SportSpace[] | null>(null);
   userRole = this.userStoreService.getRoleFromToken();
   showAddSportSpaceButton = false;
 
   ngOnInit() {
-    this.canAddSportSpace();
     this.loadSportSpaces();
   }
 
   loadSportSpaces() {
     if (this.userRole === UserRole.OWNER) {
+      this.canAddSportSpace();
       this.sportSpaceService.getMySportSpaces().subscribe({
         next: (spaces) => {
           this.sportSpaces.set(spaces);
