@@ -10,12 +10,12 @@ export class SportSpaceService {
   private http = inject(HttpClient);
   private baseUrl = environment.baseUrl;
 
-  getSportSpaces() {
-    return this.http.get<SportSpace[]>(`${this.baseUrl}/sport-spaces/all`);
-  }
-
   getSportSpaceById(id: number) {
     return this.http.get<SportSpace>(`${this.baseUrl}/sport-spaces/${id}`);
+  }
+
+  getSportSpaces() {
+    return this.http.get<SportSpace[]>(`${this.baseUrl}/sport-spaces/all`);
   }
 
   getMySportSpaces() {
@@ -28,5 +28,9 @@ export class SportSpaceService {
 
   createSportSpace(formData: FormData) {
     return this.http.post<void>(`${this.baseUrl}/sport-spaces/create`, formData);
+  }
+
+  checkAvailability(id: number) {
+    return this.http.get(`${this.baseUrl}/sport-spaces/${id}/availability`);
   }
 }

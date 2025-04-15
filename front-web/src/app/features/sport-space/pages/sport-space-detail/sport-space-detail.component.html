@@ -3,7 +3,7 @@
     <app-sport-space-info [sportSpace]="sportSpace()!" />
 
     @defer (when !isLoading()) {
-      <app-sport-space-availability/>
+      <app-sport-space-availability [sportSpace]="sportSpace()!"/>
     } @placeholder {
       <p>Cargando disponibilidad...</p>
     }

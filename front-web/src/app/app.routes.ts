@@ -9,9 +9,6 @@ import {UserRole} from './core/models/user.role.enum';
 import {
   ViewSubscriptionComponent
 } from './features/subscription/components/view-subscription/view-subscription.component';
-import {
-  ListSportSpacesComponent
-} from './features/sport-space/pages/list-sport-spaces/list-sport-spaces.component';
 
 export const routes: Routes = [
   {
@@ -40,7 +37,8 @@ export const routes: Routes = [
   },
   {
     path: 'sport-spaces',
-    component: ListSportSpacesComponent,
+    loadComponent: () => import('./features/sport-space/pages/list-sport-spaces/list-sport-spaces.component')
+      .then(m => m.ListSportSpacesComponent),
     canActivate: [authGuard],
     data: { roles: [UserRole.PLAYER, UserRole.OWNER] },
   },

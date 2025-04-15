@@ -4,11 +4,13 @@ import {SportSpaceService} from '../../services/sport-space.service';
 import {timeRangeValidator} from '../../../../shared/validators/forms.validator';
 import {DISTRICTS, gamemodesMap} from '../../../../shared/models/sport-space.constants';
 import {Router} from '@angular/router';
+import {TitleCasePipe} from '@angular/common';
 
 @Component({
   selector: 'app-create-sport-space',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TitleCasePipe
   ],
   templateUrl: './create-sport-space.component.html',
   styleUrl: './create-sport-space.component.scss',
