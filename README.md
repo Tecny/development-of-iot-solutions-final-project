@@ -224,7 +224,7 @@ Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera d
 **Sebastian Mendez**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//sebas.png" alt="UPC"> | Mi nombre es Sebastian Mendez, tengo 19 años y actualmente estoy cursando el tercer ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Puedo decir que soy una persona muy perseverante, con metas claras y con objetivos propuestos a futuro. Además, soy una persona que considera que tiene mucha curiosidad con respecto al tema de la tecnología y sobre qué hay detrás de todo el tema de la programación. Mis pasatiempos son, jugar al básquet, los videojuegos, ir al gimnasio y programar ocasionalmente.|
+| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//main//informe//images//sebas.png" alt="UPC"> | Mi nombre es Sebastian Mendez, tengo 19 años y actualmente estoy cursando el tercer ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Puedo decir que soy una persona muy perseverante, con metas claras y con objetivos propuestos a futuro. Además, soy una persona que considera que tiene mucha curiosidad con respecto al tema de la tecnología y sobre qué hay detrás de todo el tema de la programación. Mis pasatiempos son, jugar al básquet, los videojuegos, ir al gimnasio y programar ocasionalmente.|
 
 <br>
 
