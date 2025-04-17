@@ -204,34 +204,41 @@ Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera d
 
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//henry1.png" alt="UPC"> | Mi nombre es Henry Centurión, tengo 21 años y soy estudiante de la carrera de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Soy alguien feliz, tranquilo y a quien le gusta trabajar en equipo para llegar a las metas acordadas. Siempre he estado interesado en la tecnología y cómo es que funcionan desde su código base. Además de ello, mis pasatiempos son hacer deporte en general y programar en C++, el cual es mi principal lenguaje de programación. Mi meta es convertirme en un gran profesional y aportar mi conocimiento a la sociedad.|
+| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//henry1.png" alt="UPC"> | Mi nombre es Henry Centurión, tengo 22 años y soy estudiante de la carrera de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Soy alguien feliz, tranquilo y a quien le gusta trabajar en equipo para llegar a las metas acordadas. Siempre he estado interesado en la tecnología y cómo es que funcionan desde su código base. Además de ello, mis pasatiempos son hacer deporte en general y programar en C++, el cual es mi principal lenguaje de programación. Mi meta es convertirme en un gran profesional y aportar mi conocimiento a la sociedad.|
 <br>
 
 **John Atencio**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//john2.jpg" alt="UPC"> | Mi nombre es John Atencio, actualmente tengo 21 años y estoy estudiando la carrera de Ingeniería de software en la Universidad Peruana de Ciencias Aplicadas (UPC). Dentro de mis aspectos personales, siempre me he considerado alguien bastante relajado y sobre todo curioso. Por ello, desde niño he tenido la curiosidad de conocer los procesos y funciones detrás de las computadoras para que estas operen como un minicerebro. Esto último, fue fundamental para la elección de mi carrera.|
+| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//john2.jpg" alt="UPC"> | Mi nombre es John Atencio, actualmente tengo 22 años y estoy estudiando la carrera de Ingeniería de software en la Universidad Peruana de Ciencias Aplicadas (UPC). Dentro de mis aspectos personales, siempre me he considerado alguien bastante relajado y sobre todo curioso. Por ello, desde niño he tenido la curiosidad de conocer los procesos y funciones detrás de las computadoras para que estas operen como un minicerebro. Esto último, fue fundamental para la elección de mi carrera.|
 
 <br>
 
 **Sebastian Frisancho**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//free1.jpg" alt="UPC"> | Mi nombre es Sebastian Frisancho, tengo 21 años y soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Me gustan los deportes como ir al gimnasio, practicar fútbol, básquet e incluso natación. Desde pequeño me encontré rodeado de tecnología por lo que me gustaría poder tener softwares propios que me generen ingresos sin tener que trabajar en una ciudad fija. Me gustaría estudiar de manera autodidacta HTML, CSS y SQL para poder tener más conocimientos que me sirvan en mi futuro.|
+| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//free1.jpg" alt="UPC"> | Mi nombre es Sebastian Frisancho, tengo 22 años y soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Me gustan los deportes como ir al gimnasio, practicar fútbol, básquet e incluso natación. Desde pequeño me encontré rodeado de tecnología por lo que me gustaría poder tener softwares propios que me generen ingresos sin tener que trabajar en una ciudad fija. Me gustaría estudiar de manera autodidacta HTML, CSS y SQL para poder tener más conocimientos que me sirvan en mi futuro.|
 
 <br>
 
 **Sebastian Mendez**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//sebas.png" alt="UPC"> | Mi nombre es Sebastian Mendez, tengo 19 años y actualmente estoy cursando el tercer ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Puedo decir que soy una persona muy perseverante, con metas claras y con objetivos propuestos a futuro. Además, soy una persona que considera que tiene mucha curiosidad con respecto al tema de la tecnología y sobre qué hay detrás de todo el tema de la programación. Mis pasatiempos son, jugar al básquet, los videojuegos, ir al gimnasio y programar ocasionalmente.|
+| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//sebas.png" alt="UPC"> | Mi nombre es Sebastian Mendez, tengo 20 años y actualmente estoy cursando el séptimo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Puedo decir que soy una persona muy perseverante, con metas claras y con objetivos propuestos a futuro. Además, soy una persona que considera que tiene mucha curiosidad con respecto al tema de la tecnología y sobre qué hay detrás de todo el tema de la programación. Mis pasatiempos son, jugar al básquet, los videojuegos, ir al gimnasio y programar ocasionalmente.|
 
 <br>
 
-**Francis Mamani**
+**Willy Valentin**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//francis1.jpg" alt="UPC"> | Mi nombre es Francis Daniel Mamani Silva, un estudiante de 19 años de origen peruano con una pasión desenfrenada por los videojuegos. Actualmente estoy inmerso en mi carrera de Ingeniería de Software, donde combino mi amor por la tecnología con mi fascinación por los juegos. Destacándome en mis estudios universitarios, aspiro a fusionar estos dos mundos para contribuir al desarrollo de experiencias interactivas innovadoras. Mi energía optimista, junto con mi creatividad y determinación, me posicionan como un futuro líder en la industria del desarrollo de software. |
+| <img src= alt="UPC"> | |
+
+
+**Angie Valverde**
+| Foto                                     | Descripción              |
+|--------------------------------------------|--------------------------|
+| <img src= alt="UPC"> | |
+
 
 <br>
 
