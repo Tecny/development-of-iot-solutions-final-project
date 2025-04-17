@@ -1080,7 +1080,7 @@ Zmijewski, B. (2024, enero 4). *Needfinding: Crafting products aligned with user
 # Anexos
 
 Enlace a los videos requeridos en carpeta distribuidas:
-https://drive.google.com/drive/folders/1iE1xiKvPzH0PWNAW2sPdyf1PzsnNDHEQ?usp=sharing
+
 
 As-is y to-be mapping Miro:
 https://miro.com/app/board/uXjVKUmcOCw=/?share_link_id=98435150377
@@ -1089,15 +1089,12 @@ Enlace a figma:
 https://www.figma.com/file/9b5VMPb1CCHGYuWQkP2554/UX-Design?type=design&node-id=0%3A1&mode=design&t=K3kzNMJ1UGVbxDsc-1
 
 Enlace al deploy del landing page:
-https://667f4b535561429bf769a2d4--dtaquito-new-landing-page.netlify.app/
 
 Enlace al deploy del web aplication:
-https://dtaquito-page.netlify.app/
 
 Enlace al deploy del web service:
-https://dtaquito-backend.azurewebsites.net/swagger-ui/index.html#/
 
 Enlace al repositorio en Github:
-https://github.com/HenryCenturion/open-source-final-project
+
 
 
