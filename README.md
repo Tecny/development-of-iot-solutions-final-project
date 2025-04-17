@@ -873,6 +873,10 @@ Las necesidades principales que hemos encontrado en nuestros segmentos objetivos
 
 <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//asowner.jpg" alt="UPC">
 
+</div>
+
+### 2.4. Ubiquitous Language
+
 <div style="text-align: justify;">
 
 - **Reservacion**:
@@ -906,8 +910,6 @@ Las necesidades principales que hemos encontrado en nuestros segmentos objetivos
     - Información personal y preferencias de un usuario dentro del sistema de reservas.
 
 </div>
-
-### 2.4. Ubiquitous Language
 
 # III. Requirements Specification
 
