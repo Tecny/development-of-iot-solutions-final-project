@@ -1,12 +1,19 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, inject, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, inject, Input, OnInit, signal} from '@angular/core';
 import {SportSpaceService} from '../../services/sport-space.service';
+import {ReservationService} from '../../../reservation/services/reservation.service';
 import {NgClass} from '@angular/common';
 import {SportSpace} from '../../models/sport-space.model';
+import {FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
+import {ModalComponent} from '../../../../shared/components/modal/modal.component';
+import {Router} from '@angular/router';
+import {gamemodeMaxPlayersMap} from '../../../../shared/models/sport-space.constants';
 
 @Component({
   selector: 'app-sport-space-availability',
   imports: [
-    NgClass
+    NgClass,
+    ModalComponent,
+    ReactiveFormsModule
   ],
   templateUrl: './sport-space-availability.component.html',
   styleUrl: './sport-space-availability.component.scss',
@@ -15,19 +22,62 @@ import {SportSpace} from '../../models/sport-space.model';
 export class SportSpaceAvailabilityComponent implements OnInit {
   @Input() sportSpace!: SportSpace;
 
-  // Para emitir selección al componente padre si se desea
-  @Output() slotSelected = new EventEmitter<{ gameDay: string, startTime: string, endTime: string }>();
-
-  sportSpaceService = inject(SportSpaceService);
+  private sportSpaceService = inject(SportSpaceService);
+  private reservationService = inject(ReservationService);
+  private router = inject(Router);
+  private fb = inject(NonNullableFormBuilder);
 
   availabilityMap: Record<string, string[]> = {};
   timeSlots: string[] = [];
   weekDays: string[] = [];
-  selectedSlots: { gameDay: string; startTime: string; endTime: string }[] = [];
+  gamemodeMaxPlayers = gamemodeMaxPlayersMap;
+  selectedGameDay: string = '';
+  selectedStartTime: string = '';
+  selectedEndTime: string = '';
+
+  reservationType = signal<string>('');
+  selectedSlots = signal<{ gameDay: string; startTime: string; endTime: string }[]>([]);
+
+  totalCost = computed(() => {
+    const slots = this.selectedSlots();
+    if (slots.length === 0) return 0;
+
+    const type = this.reservationType();
+    const gamemode = this.sportSpace.gamemode;
+    const maxPlayers = this.gamemodeMaxPlayers[gamemode] || 1;
+
+    switch (type) {
+      case 'PERSONAL':
+        return Math.trunc((this.sportSpace.price * slots.length) / 2);
+      case 'COMUNIDAD':
+        return Math.trunc(((this.sportSpace.price * slots.length) / 2) / maxPlayers);
+      default:
+        return 0;
+    }
+  });
+
+  reservationForm!: FormGroup;
+  showReservationModal = false;
 
   ngOnInit(): void {
     this.generateTimeSlots();
     this.fetchAvailability();
+    this.initForm();
+
+    this.reservationForm.get('type')?.valueChanges.subscribe((type) => {
+      this.reservationType.set(type);
+    });
+  }
+
+  initForm() {
+    this.reservationForm = this.fb.group({
+      gameDay: ['', Validators.required],
+      startTime: ['', Validators.required],
+      endTime: ['', Validators.required],
+      sportSpacesId: [this.sportSpace.id, Validators.required],
+      type: ['', Validators.required],
+      reservationName: ['', [Validators.required, Validators.minLength(5)]],
+    });
   }
 
   generateTimeSlots() {
@@ -74,51 +124,107 @@ export class SportSpaceAvailabilityComponent implements OnInit {
   onSlotClick(gameDay: string, time: string): void {
     if (!this.isAvailable(gameDay, time)) return;
 
-    // Verificar si el bloque ya está seleccionado
-    const selectedIndex = this.selectedSlots.findIndex(slot => slot.gameDay === gameDay && slot.startTime === time);
+    const currentSlots = this.selectedSlots();
+
+    if (currentSlots.length > 0 && currentSlots[0].gameDay !== gameDay) {
+      console.warn('Solo puedes seleccionar slots para el mismo día.');
+      return;
+    }
+
+    const selectedIndex = currentSlots.findIndex(slot => slot.gameDay === gameDay && slot.startTime === time);
+
+    let newSlots = [...currentSlots];
 
     if (selectedIndex === -1) {
-      // Si no está seleccionado, agregarlo
-      if (this.selectedSlots.length === 0) {
-        this.selectedSlots.push({ gameDay, startTime: time, endTime: time });
-      } else {
-        const lastSelected = this.selectedSlots[this.selectedSlots.length - 1];
-        const lastEndTime = lastSelected.endTime;
-        const selectedTimeIndex = this.timeSlots.indexOf(time);
-        const lastEndTimeIndex = this.timeSlots.indexOf(lastEndTime);
+      if (currentSlots.length >= 3) {
+        console.warn('Solo puedes seleccionar un máximo de 3 slots.');
+        return;
+      }
 
-        // Si el nuevo bloque está justo después del último bloque seleccionado, agregarlo
-        if (selectedTimeIndex === lastEndTimeIndex + 1) {
-          this.selectedSlots.push({ gameDay, startTime: lastEndTime, endTime: time });
+      if (currentSlots.length === 0) {
+        newSlots.push({ gameDay: gameDay, startTime: time, endTime: time });
+      } else {
+        const lastSelected = currentSlots[currentSlots.length - 1];
+        const firstSelected = currentSlots[0];
+        const selectedTimeIndex = this.timeSlots.indexOf(time);
+        const lastEndTimeIndex = this.timeSlots.indexOf(lastSelected.endTime);
+        const firstStartTimeIndex = this.timeSlots.indexOf(firstSelected.startTime);
+
+        if (selectedTimeIndex === lastEndTimeIndex + 1 || selectedTimeIndex === firstStartTimeIndex - 1) {
+          newSlots.push({ gameDay: gameDay, startTime: time, endTime: time });
+          newSlots.sort((a, b) => this.timeSlots.indexOf(a.startTime) - this.timeSlots.indexOf(b.startTime));
+        } else {
+          console.warn('Los bloques seleccionados deben ser consecutivos.');
+          return;
         }
       }
     } else {
-      // Si está seleccionado, deseleccionarlo
-      this.selectedSlots.splice(selectedIndex, 1);
+      newSlots.splice(selectedIndex, 1);
+
+      for (let i = 1; i < newSlots.length; i++) {
+        const prevIndex = this.timeSlots.indexOf(newSlots[i - 1].endTime);
+        const currentIndex = this.timeSlots.indexOf(newSlots[i].startTime);
+
+        if (currentIndex !== prevIndex + 1) {
+          console.warn('Los bloques restantes deben ser consecutivos. Deselección no permitida.');
+          return;
+        }
+      }
     }
 
-    console.log(`Selected Slots:`, this.selectedSlots);
-    this.emitReservationData();
-  }
-
-
-  emitReservationData(): void {
-    if (this.selectedSlots.length > 0) {
-      const { gameDay, startTime, endTime } = this.selectedSlots[0]; // Solo tomamos el primer intervalo
-      const reservationData = {
-        gameDay: gameDay,
-        startTime: startTime,
-        endTime: endTime,
-        //sportSpacesId: this.sportSpace.id,
-        //type: 'personal', // Por ahora, solo tipo personal
-        //reservationName: 'Reserva personal' // Puedes cambiar este campo si lo necesitas
-      };
-
-      this.slotSelected.emit(reservationData); // Emitir al componente padre
-    }
+    this.selectedSlots.set(newSlots);
+    console.log(`Selected Slots:`, newSlots);
   }
 
   isSelected(date: string, time: string): boolean {
-    return this.selectedSlots.some(slot => slot.gameDay === date && slot.startTime === time);
+    return this.selectedSlots().some(slot => slot.gameDay === date && slot.startTime === time);
+  }
+
+  confirmHours(): void {
+    const slots = this.selectedSlots();
+    if (slots.length > 0) {
+      const firstSlot = slots[0];
+      const lastSlot = slots[slots.length - 1];
+
+      this.selectedGameDay = firstSlot.gameDay;
+      this.selectedStartTime = firstSlot.startTime;
+      this.selectedEndTime = this.timeSlots[this.timeSlots.indexOf(lastSlot.endTime) + 1];
+
+      this.reservationForm.patchValue({
+        gameDay: this.selectedGameDay,
+        startTime: this.selectedStartTime,
+        endTime: this.selectedEndTime
+      });
+
+      this.showReservationModal = true;
+    } else {
+      console.warn('Debes seleccionar al menos un horario.');
+    }
+  }
+
+  closeReservationModal() {
+    this.showReservationModal = false;
+    this.reservationForm.reset();
+    this.selectedSlots.set([]);
+  }
+
+  submitReservation() {
+    if (this.reservationForm.valid) {
+      const reservationData = this.reservationForm.getRawValue();
+
+      this.reservationService.createReservation(reservationData).subscribe({
+        next: () => {
+          console.log('Reserva creada exitosamente:', reservationData);
+          this.selectedSlots.set([]);
+          this.closeReservationModal();
+          this.router.navigate(['/my-reservations']).then();
+        },
+        error: (err) => {
+          console.error('Error al crear la reserva:', err);
+        },
+      });
+    } else {
+      console.warn('Completa todos los campos del formulario.');
+    }
   }
 }

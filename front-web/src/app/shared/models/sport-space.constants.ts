@@ -30,3 +30,10 @@ export const gamemodesMap: Record<number, string[]> = GAMEMODE_OPTIONS.reduce((m
   return map;
 }, {} as Record<number, string[]>);
 
+export const gamemodeMaxPlayersMap: Record<string, number> = {
+  FUTBOL_5: 10,
+  FUTBOL_7: 14,
+  FUTBOL_8: 16,
+  FUTBOL_11: 22,
+  BILLAR_3: 3
+}
