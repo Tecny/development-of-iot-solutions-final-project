@@ -183,15 +183,15 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
   
   - 4.1. [Strategic-Level Domain-Driven Design](#41-strategic-level-domain-driven-design) <br>
     - 4.1.1. [Event Storming](#411-event-storming) <br>
-      - 4.1.1.1. [Candidate Context Discovery](#4111-candidate-context-discovery)<br>
-      - 4.1.1.2. [Domain Message Flows Modeling](#4112-domain-message-flows-modeling)<br>
-      - 4.1.1.3. [Bounded Context Canvases](#4113-bounded-context-canvases)<br>
-    - 4.1.2. [Context Mapping](#412-context-mapping) <br>
-    - 4.1.3. [Software Architecture](#413-software-architecture) <br>
-      - 4.1.3.1. [Software Architecture System Landscape Diagram](#4131-software-architecture-system-landscape-diagram)<br>
-      - 4.1.3.2. [Software Architecture Context Level Diagrams](#4132-software-architecture-context-level-diagrams)<br>
-      - 4.1.3.3. [Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)<br>
-      - 4.1.3.4. [Software Architecture Deployment Level Diagrams](#4134-software-architecture-deployment-level-diagrams)<br>
+    - 4.1.2. [Candidate Context Discovery](#412-candidate-context-discovery)<br>
+    - 4.1.3. [Domain Message Flows Modeling](#413-domain-message-flows-modeling)<br>
+    - 4.1.4. [Bounded Context Canvases](#414-bounded-context-canvases)<br>
+    - 4.1.5. [Context Mapping](#415-context-mapping) <br>
+    - 4.1.6. [Software Architecture](#416-software-architecture) <br>
+      - 4.1.6.1. [Software Architecture System Landscape Diagram](#4161-software-architecture-system-landscape-diagram)<br>
+      - 4.1.6.2. [Software Architecture Context Level Diagrams](#4162-software-architecture-context-level-diagrams)<br>
+      - 4.1.6.3. [Software Architecture Container Level Diagrams](#4163-software-architecture-container-level-diagrams)<br>
+      - 4.1.6.4. [Software Architecture Deployment Level Diagrams](#4164-software-architecture-deployment-level-diagrams)<br>
   - 4.2. [Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)<br>
     - 4.2.1. [Bounded Context: Users](#421-bounded-context-users) <br>
       - 4.2.1.1. [Domain Layer](#4211-domain-layer)<br>
