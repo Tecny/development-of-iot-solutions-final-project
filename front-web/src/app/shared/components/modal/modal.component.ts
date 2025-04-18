@@ -44,9 +44,9 @@ export class ModalComponent implements OnInit {
   overlayRef = this.overlay.create(this.overlayConfig);
 
   ngOnInit(): void {
-    this.overlayRef.backdropClick().subscribe(() => {
-      this.closeModal.emit();
-    });
+    // this.overlayRef.backdropClick().subscribe(() => {
+    //   this.closeModal.emit();
+    // });
   }
 
   ngAfterViewInit(): void {

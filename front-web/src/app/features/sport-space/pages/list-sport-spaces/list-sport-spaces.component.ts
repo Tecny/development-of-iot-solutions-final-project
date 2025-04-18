@@ -33,10 +33,15 @@ export class ListSportSpacesComponent implements OnInit {
       this.canAddSportSpace();
       this.sportSpaceService.getMySportSpaces().subscribe({
         next: (spaces) => {
+          console.log(spaces);
           this.sportSpaces.set(spaces);
         },
-        error: () => {
-          console.error('Error loading user\'s sport spaces');
+        error: (err) => {
+          if (err.status === 404) {
+            this.sportSpaces.set([]);
+          } else {
+            console.error('Error loading user\'s sport spaces');
+          }
         }
       });
     } else {
