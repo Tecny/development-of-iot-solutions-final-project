@@ -1,0 +1,19 @@
+<h1>Mis reservas</h1>
+
+@defer (prefetch on viewport) {
+  @if (reservations(); as reserv) {
+    <div class="cards-grid">
+      @for (res of reserv; track res.id) {
+        <app-reservation-card [reservation]="res" />
+      } @empty {
+        <p>No tienes reservas realizadas</p>
+      }
+    </div>
+  } @else {
+    <p>Cargando reservas...</p>
+  }
+} @placeholder {
+  <p>Preparando carga de reservas...</p>
+} @loading {
+  <p>Cargando reservas...</p>
+}

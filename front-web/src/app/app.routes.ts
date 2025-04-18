@@ -55,6 +55,13 @@ export const routes: Routes = [
       .then(m => m.SportSpaceDetailComponent),
   },
   {
+    path: 'reservations',
+    loadComponent: () => import('./features/reservation/pages/list-reservations/list-reservations.component')
+      .then(m => m.ListReservationsComponent),
+    canActivate: [authGuard],
+    data: { roles: [UserRole.PLAYER] },
+  },
+  {
     path: 'notfound',
     component: NotFoundComponent,
     canActivate: [authGuard]
