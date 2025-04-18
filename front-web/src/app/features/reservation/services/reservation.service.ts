@@ -1,7 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../environment/environment';
-import {ReservationRequest} from '../models/reservation.model';
+import {Reservation, ReservationRequest} from '../models/reservation.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,5 +12,9 @@ export class ReservationService {
 
   createReservation(reservation: ReservationRequest) {
     return this.http.post<void>(`${this.baseUrl}/reservations/create`, reservation);
+  }
+
+  myReservations() {
+    return this.http.get<Reservation[]>(`${this.baseUrl}/reservations/my-reservations`);
   }
 }
