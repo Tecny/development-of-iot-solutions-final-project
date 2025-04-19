@@ -1,85 +1,117 @@
-.availability-container {
-  .availability-table {
+.availability {
+  &__container {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  &__table {
     width: 100%;
     border-collapse: collapse;
 
-    th, td {
+    th,
+    td {
       padding: 10px;
       text-align: center;
       border: 1px solid #ddd;
     }
+  }
 
-    .time-label {
-      font-weight: bold;
-      background-color: #f4f4f4;
-    }
+  &__time-label {
+    font-weight: bold;
+    background-color: #f4f4f4;
+  }
 
-    .slot-box {
-      width: 40px;
-      height: 40px;
-      margin: 5px;
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+  &__slot-box {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 
-      &.available {
-        background-color: green;
-        &:hover {
-          background-color: darkgreen;
-        }
-      }
-
-      &.unavailable {
-        background-color: red;
-        cursor: not-allowed;
-        pointer-events: none;
-        &:hover {
-          background-color: darkred;
-        }
-      }
-
-      &.selected {
-        background-color: yellow;
-        transform: scale(1.1); /* Le da un pequeño aumento de tamaño al seleccionarlo */
-      }
+    &--available {
+      background-color: green;
 
       &:hover {
-        transform: scale(1.1); /* Agranda el cuadro al pasar el mouse */
+        background-color: darkgreen;
       }
+    }
+
+    &--unavailable {
+      background-color: red;
+      cursor: not-allowed;
+      pointer-events: none;
+
+      &:hover {
+        background-color: darkred;
+      }
+    }
+
+    &--selected {
+      background-color: yellow;
+      transform: scale(1.1);
+    }
+
+    &:hover {
+      transform: scale(1.1);
     }
   }
 
-  .legend {
+  &__legend {
     display: flex;
     justify-content: start;
     margin-top: 10px;
 
-    .legend-item {
+    &-item {
       display: flex;
       align-items: center;
       margin-right: 20px;
+    }
 
-      .legend-box {
-        width: 20px;
-        height: 20px;
-        margin-right: 5px;
-        border-radius: 5px;
-      }
+    &-box {
+      width: 20px;
+      height: 20px;
+      margin-right: 5px;
+      border-radius: 5px;
 
-      .available {
+      &--available {
         background-color: green;
       }
 
-      .unavailable {
+      &--unavailable {
         background-color: red;
       }
     }
+  }
+
+  &__footer {
+    margin-top: 20px;
+  }
+
+  &__confirm-button {
+    padding: 10px 20px;
+    font-weight: bold;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+  }
+
+  &__error-message {
+    color: black;
+    margin-top: 10px;
+    display: block;
   }
 
   @keyframes fadeIn {
     0% {
       opacity: 0;
     }
+
     100% {
       opacity: 1;
     }

@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
 import {RoomService} from '../../services/room.service';
 import {Room} from '../../models/room.interface';
 import {RoomCardComponent} from '../../components/room-card/room-card.component';
@@ -12,7 +12,7 @@ import {RoomCardComponent} from '../../components/room-card/room-card.component'
   styleUrl: './list-rooms.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListRoomsComponent {
+export class ListRoomsComponent implements OnInit {
   private roomService = inject(RoomService);
 
   rooms = signal<Room[] | null>(null);

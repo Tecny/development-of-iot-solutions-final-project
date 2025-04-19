@@ -1,9 +1,9 @@
-<section aria-labelledby="availability-heading">
-  <h3 id="availability-heading">Horario de disponibilidad</h3>
+<section class="availability" aria-labelledby="availability__heading">
+  <h3 id="availability__heading" class="availability__title">Horario de disponibilidad</h3>
 
-  <div class="availability-container">
+  <div class="availability__container">
     @defer (on timer(500ms)) {
-      <table class="availability-table">
+      <table class="availability__table">
         <thead>
         <tr>
           <th>Hora</th>
@@ -15,16 +15,16 @@
         <tbody>
           @for (time of timeSlots; track time) {
             <tr>
-              <td class="time-label">{{ time }}</td>
+              <td class="availability__time-label">{{ time }}</td>
               @for (day of weekDays; track day) {
                 <td>
                   <button
                     type="button"
-                    class="slot-box"
+                    class="availability__slot-box"
                     [ngClass]="{
-                      'available': isAvailable(day, time),
-                      'unavailable': !isAvailable(day, time),
-                      'selected': isSelected(day, time)
+                      'availability__slot-box--available': isAvailable(day, time),
+                      'availability__slot-box--unavailable': !isAvailable(day, time),
+                      'availability__slot-box--selected': isSelected(day, time)
                     }"
                     [title]="day + ' - ' + time"
                     (click)="onSlotClick(day, time)">
@@ -37,23 +37,23 @@
       </table>
     }
 
-    <aside class="legend" aria-label="Leyenda de disponibilidad">
-      <div class="legend-item">
-        <span class="legend-box available"></span> Disponible
+    <aside class="availability__legend" aria-label="Leyenda de disponibilidad">
+      <div class="availability__legend-item">
+        <span class="availability__legend-box availability__legend-box--available"></span> Disponible
       </div>
-      <div class="legend-item">
-        <span class="legend-box unavailable"></span> Ocupado
+      <div class="availability__legend-item">
+        <span class="availability__legend-box availability__legend-box--unavailable"></span> Ocupado
       </div>
     </aside>
   </div>
 
-  <footer>
+  <footer class="availability__footer">
     <button (click)="confirmHours()" [disabled]="selectedSlots().length === 0">
       Confirmar horas
     </button>
 
     @if (selectedSlots().length === 0) {
-      <small class="error-message">Debes seleccionar al menos un horario antes de confirmar.</small>
+      <small class="availability__error-message">Debes seleccionar al menos un horario antes de confirmar.</small>
     }
   </footer>
 </section>
@@ -64,17 +64,17 @@
     <ng-container modal-header>Confirmar Reserva</ng-container>
 
     <ng-container modal-body>
-      <form [formGroup]="reservationForm">
+      <form [formGroup]="reservationForm" class="reservation-form">
         <label>
           Nombre de la Reserva:
           <input formControlName="reservationName" type="text" />
         </label>
         @if (reservationForm.get('reservationName')?.touched && reservationForm.get('reservationName')?.invalid) {
           @if (reservationForm.get('reservationName')?.errors?.['required']) {
-            <small>El nombre de la reserva es obligatorio</small>
+            <small class="reservation-form__error">El nombre de la reserva es obligatorio</small>
           }
           @if (reservationForm.get('reservationName')?.errors?.['minlength']) {
-            <small>El nombre debe tener al menos 5 caracteres</small>
+            <small class="reservation-form__error">El nombre debe tener al menos 5 caracteres</small>
           }
         }
 
@@ -87,12 +87,12 @@
         </label>
         @if (reservationForm.get('type')?.touched && reservationForm.get('type')?.invalid) {
           @if (reservationForm.get('type')?.errors?.['required']) {
-            <small>El tipo de reserva es obligatorio</small>
+            <small class="reservation-form__error">El tipo de reserva es obligatorio</small>
           }
         }
       </form>
 
-      <section>
+      <section class="reservation-summary">
         <div>Día de juego: {{ TimeUtil.formatDate(selectedGameDay) }}</div>
         <div>
           Horario seleccionado:
