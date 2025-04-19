@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {SportSpace} from '../../models/sport-space.model';
+import {SportSpace} from '../../models/sport-space.interface';
 import {RouterLink} from '@angular/router';
 import {TitleCasePipe} from '@angular/common';
 @Component({
@@ -9,20 +9,20 @@ import {TitleCasePipe} from '@angular/common';
     TitleCasePipe
   ],
   template: `
-    <div class="card">
+    <div class="sportspace-card">
       <img
         [src]="imageUrl"
         alt="Imagen de {{ sportSpace.name }}"
-        class="card__image"
+        class="sportspace-card__image"
         width="300"
         height="180"
       />
 
-      <div class="card__content">
-        <h2 class="card__title">{{ sportSpace.name }}</h2>
-        <p class="card__type">{{ sportSpace.sportType | titlecase}}</p>
-        <p class="card__district">{{ sportSpace.district.replaceAll('_',' ') }}</p>
-        <p class="card__price">S/ {{ sportSpace.price }}</p>
+      <div class="sportspace-card__content">
+        <h2 class="sportspace-card__title">{{ sportSpace.name }}</h2>
+        <p class="sportspace-card__type">{{ sportSpace.sportType | titlecase}}</p>
+        <p class="sportspace-card__district">{{ sportSpace.district.replaceAll('_',' ') }}</p>
+        <p class="sportspace-card__price">S/ {{ sportSpace.price }}</p>
       </div>
 
       <div>

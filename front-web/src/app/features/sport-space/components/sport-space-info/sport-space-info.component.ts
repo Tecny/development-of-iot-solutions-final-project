@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
-import {SportSpace} from '../../models/sport-space.model';
+import {SportSpace} from '../../models/sport-space.interface';
 import {TitleCasePipe} from '@angular/common';
 
 @Component({

@@ -1,7 +1,8 @@
 import {ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges} from '@angular/core';
-import {Reservation} from '../../models/reservation.model';
+import {Reservation} from '../../models/reservation.interface';
 import {TitleCasePipe} from '@angular/common';
 import {RouterLink} from '@angular/router';
+import {TimeUtil} from '../../../../shared/utils/time.util';
 
 @Component({
   selector: 'app-reservation-card',
@@ -59,19 +60,13 @@ export class ReservationCardComponent implements OnChanges {
     return `data:image/jpeg;base64,${image}`;
   }
 
-  getHoursDifference(startTime: string, endTime: string): number {
-    const start = new Date(`1970-01-01T${startTime}:00`);
-    const end = new Date(`1970-01-01T${endTime}:00`);
-    const differenceInMilliseconds = end.getTime() - start.getTime();
-    return differenceInMilliseconds / (1000 * 60 * 60);
-  }
-
   getPrice(): number {
-    const hours = this.getHoursDifference(this.reservation.startTime, this.reservation.endTime);
-    if (this.reservation.type === 'PERSONAL') {
-      return (this.reservation.sportSpaces.price * hours) / 2;
-    } else {
-      return this.reservation.sportSpaces.amount * hours;
-    }
+    const hours = TimeUtil.getHoursDifference(this.reservation.startTime, this.reservation.endTime);
+    return TimeUtil.calculatePrice(
+      this.reservation.type,
+      this.reservation.sportSpaces.price,
+      this.reservation.sportSpaces.amount,
+      hours
+    );
   }
 }

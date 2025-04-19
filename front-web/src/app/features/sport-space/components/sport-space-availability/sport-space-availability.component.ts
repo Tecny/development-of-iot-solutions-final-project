@@ -2,11 +2,12 @@ import {ChangeDetectionStrategy, Component, computed, inject, Input, OnInit, sig
 import {SportSpaceService} from '../../services/sport-space.service';
 import {ReservationService} from '../../../reservation/services/reservation.service';
 import {NgClass} from '@angular/common';
-import {SportSpace} from '../../models/sport-space.model';
+import {SportSpace} from '../../models/sport-space.interface';
 import {FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 import {Router} from '@angular/router';
 import {gamemodeMaxPlayersMap} from '../../../../shared/models/sport-space.constants';
+import {TimeUtil} from '../../../../shared/utils/time.util';
 
 @Component({
   selector: 'app-sport-space-availability',
@@ -49,7 +50,7 @@ export class SportSpaceAvailabilityComponent implements OnInit {
     switch (type) {
       case 'PERSONAL':
         return Math.trunc((this.sportSpace.price * slots.length) / 2);
-      case 'COMUNIDAD':
+      case 'COMMUNITY':
         return Math.trunc(((this.sportSpace.price * slots.length) / 2) / maxPlayers);
       default:
         return 0;
@@ -98,27 +99,6 @@ export class SportSpaceAvailabilityComponent implements OnInit {
 
   isAvailable(date: string, hour: string): boolean {
     return this.availabilityMap[date]?.includes(hour) ?? false;
-  }
-
-  formatDate(dateStr: string): string {
-    const date = new Date(dateStr + 'T00:00:00');
-    const formatter = new Intl.DateTimeFormat('es-PE', {
-      weekday: 'long',
-      day: '2-digit',
-      month: '2-digit',
-      timeZone: 'America/Lima'
-    });
-
-    const parts = formatter.formatToParts(date);
-    const weekday = parts.find(p => p.type === 'weekday')?.value;
-    const day = parts.find(p => p.type === 'day')?.value;
-    const month = parts.find(p => p.type === 'month')?.value;
-
-    return `${this.capitalize(weekday!)} ${day}/${month}`;
-  }
-
-  capitalize(text: string): string {
-    return text.charAt(0).toUpperCase() + text.slice(1);
   }
 
   onSlotClick(gameDay: string, time: string): void {
@@ -188,7 +168,15 @@ export class SportSpaceAvailabilityComponent implements OnInit {
 
       this.selectedGameDay = firstSlot.gameDay;
       this.selectedStartTime = firstSlot.startTime;
-      this.selectedEndTime = this.timeSlots[this.timeSlots.indexOf(lastSlot.endTime) + 1];
+
+      const lastEndTimeIndex = this.timeSlots.indexOf(lastSlot.endTime);
+      if (lastEndTimeIndex === this.timeSlots.length - 1) {
+        const [hour, minute] = lastSlot.endTime.split(':').map(Number);
+        const nextHour = (hour + 1).toString().padStart(2, '0');
+        this.selectedEndTime = `${nextHour}:${minute.toString().padStart(2, '0')}`;
+      } else {
+        this.selectedEndTime = this.timeSlots[lastEndTimeIndex + 1];
+      }
 
       this.reservationForm.patchValue({
         gameDay: this.selectedGameDay,
@@ -197,6 +185,7 @@ export class SportSpaceAvailabilityComponent implements OnInit {
       });
 
       this.showReservationModal = true;
+      console.log(this.reservationForm.get('endTime')?.value);
     } else {
       console.warn('Debes seleccionar al menos un horario.');
     }
@@ -227,4 +216,6 @@ export class SportSpaceAvailabilityComponent implements OnInit {
       console.warn('Completa todos los campos del formulario.');
     }
   }
+
+  protected readonly TimeUtil = TimeUtil;
 }

@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
 import {SportSpaceCardComponent} from '../../components/sport-space-card/sport-space-card.component';
 import {SportSpaceService} from '../../services/sport-space.service';
-import {SportSpace} from '../../models/sport-space.model';
+import {SportSpace} from '../../models/sport-space.interface';
 import {UserStoreService} from '../../../../core/services/user-store.service';
 import {UserRole} from '../../../../core/models/user.role.enum';
 import {RouterLink} from '@angular/router';
@@ -9,8 +9,7 @@ import {RouterLink} from '@angular/router';
 @Component({
   selector: 'app-list-sport-spaces',
   imports: [
-    SportSpaceCardComponent,
-    RouterLink
+    SportSpaceCardComponent
   ],
   templateUrl: './list-sport-spaces.component.html',
   styleUrl: './list-sport-spaces.component.scss',

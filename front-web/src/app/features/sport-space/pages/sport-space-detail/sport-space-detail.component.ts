@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {SportSpaceService} from '../../services/sport-space.service';
-import {SportSpace} from '../../models/sport-space.model';
+import {SportSpace} from '../../models/sport-space.interface';
 import {SportSpaceInfoComponent} from '../../components/sport-space-info/sport-space-info.component';
 import {
   SportSpaceAvailabilityComponent

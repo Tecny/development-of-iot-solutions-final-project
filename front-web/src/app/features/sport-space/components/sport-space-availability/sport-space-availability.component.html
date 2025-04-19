@@ -8,7 +8,7 @@
         <tr>
           <th>Hora</th>
           @for (day of weekDays; track day) {
-            <th>{{ formatDate(day) }}</th>
+            <th>{{ TimeUtil.formatDate(day) }}</th>
           }
         </tr>
         </thead>
@@ -82,7 +82,7 @@
           Tipo de Reserva:
           <select formControlName="type">
             <option value="PERSONAL">Personal</option>
-            <option value="COMUNIDAD">Comunidad</option>
+            <option value="COMMUNITY">Comunidad</option>
           </select>
         </label>
         @if (reservationForm.get('type')?.touched && reservationForm.get('type')?.invalid) {
@@ -93,7 +93,7 @@
       </form>
 
       <section>
-        <div>Día de juego: {{ formatDate(selectedGameDay) }}</div>
+        <div>Día de juego: {{ TimeUtil.formatDate(selectedGameDay) }}</div>
         <div>
           Horario seleccionado:
           <ul>
@@ -106,7 +106,7 @@
             @case ('PERSONAL'){
               <small>(Adelanto del 50%)</small>
             }
-            @case ('COMUNIDAD') {
+            @case ('COMMUNITY') {
               <small>(Adelanto por persona)</small>
             }
           }

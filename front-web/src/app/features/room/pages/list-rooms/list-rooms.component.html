@@ -1,0 +1,19 @@
+<h1>Salas comunidad</h1>
+
+@defer (prefetch on viewport){
+  @if (rooms(); as room) {
+    <div class="cards-grid">
+      @for (r of room; track r.id) {
+        <app-room-card [room]="r" />
+      } @empty {
+        <p>No hay salas disponibles</p>
+      }
+    </div>
+  } @else {
+    <p>Cargando salas...</p>
+  }
+} @placeholder {
+  <p>Preparando carga de salas...</p>
+} @loading {
+  <p>Cargando salas...</p>
+}
