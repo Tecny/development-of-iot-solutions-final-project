@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
 import {ProfileService} from '../../services/profile.service';
-import {UserProfile} from '../../models/user-profile.model';
+import {UserProfile} from '../../models/user-profile.interface';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {AuthService} from '../../../../auth/services/auth.service';
 import {customEmailValidator} from '../../../../shared/validators/forms.validator';

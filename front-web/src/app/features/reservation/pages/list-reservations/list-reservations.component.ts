@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
 import {ReservationService} from '../../services/reservation.service';
-import {Reservation} from '../../models/reservation.model';
+import {Reservation} from '../../models/reservation.interface';
 import {ReservationCardComponent} from '../../components/reservation-card/reservation-card.component';
 
 @Component({

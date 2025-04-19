@@ -1,7 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../environment/environment';
-import {SportSpace} from '../models/sport-space.model';
+import {SportSpace} from '../models/sport-space.interface';
 
 @Injectable({
   providedIn: 'root'

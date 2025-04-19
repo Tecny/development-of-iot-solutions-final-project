@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
-import {Subscription} from '../../models/subscription.model';
+import {Subscription} from '../../models/subscription.interface';
 import {SubscriptionService} from '../../services/subscription.service';
 import {TitleCasePipe} from '@angular/common';
 
