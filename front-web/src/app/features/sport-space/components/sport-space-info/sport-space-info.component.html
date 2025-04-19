@@ -1,14 +1,14 @@
-<div class="info">
-  <img [src]="imageUrl" [alt]="'Imagen de ' + sportSpace.name" class="info__image" />
+<div class="space-info">
+  <img [src]="imageUrl" [alt]="'Imagen de ' + sportSpace.name" class="space-info__image" />
 
-  <div class="info__content">
-    <h1 class="info__title">{{ sportSpace.name }}</h1>
-    <p class="info__type">🏅 {{ sportSpace.sportType | titlecase}} - {{ sportSpace.gamemode.replaceAll('_', ' ') | titlecase}}</p>
-    <p class="info__price">💵 S/ {{ sportSpace.price }}</p>
-    <p class="info__location">📍 {{ sportSpace.address }}, {{ sportSpace.district.replaceAll('_', ' ') }}</p>
-    <p class="info__hours">🕒 Abierto de {{ sportSpace.openTime }} a {{ sportSpace.closeTime }}</p>
+  <div class="space--info__content">
+    <h1 class="space-info__title">{{ sportSpace.name }}</h1>
+    <p class="space-info__type">🏅 {{ sportSpace.sportType | titlecase}} - {{ sportSpace.gamemode.replaceAll('_', ' ') | titlecase}}</p>
+    <p class="space-info__price">💵 S/ {{ sportSpace.price }}</p>
+    <p class="space-info__location">📍 {{ sportSpace.address }}, {{ sportSpace.district.replaceAll('_', ' ') }}</p>
+    <p class="space-info__hours">🕒 Abierto de {{ sportSpace.openTime }} a {{ sportSpace.closeTime }}</p>
 
-    <h2 class="info__subtitle">Descripción</h2>
-    <p class="info__description">{{ sportSpace.description }}</p>
+    <h2 class="space-info__subtitle">Descripción</h2>
+    <p class="space-info__description">{{ sportSpace.description }}</p>
   </div>
 </div>

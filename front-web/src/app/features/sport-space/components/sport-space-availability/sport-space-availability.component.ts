@@ -23,6 +23,8 @@ import {TimeUtil} from '../../../../shared/utils/time.util';
 export class SportSpaceAvailabilityComponent implements OnInit {
   @Input() sportSpace!: SportSpace;
 
+  protected readonly TimeUtil = TimeUtil;
+
   private sportSpaceService = inject(SportSpaceService);
   private reservationService = inject(ReservationService);
   private router = inject(Router);
@@ -206,7 +208,7 @@ export class SportSpaceAvailabilityComponent implements OnInit {
           console.log('Reserva creada exitosamente:', reservationData);
           this.selectedSlots.set([]);
           this.closeReservationModal();
-          this.router.navigate(['/my-reservations']).then();
+          this.router.navigate(['/reservations']).then();
         },
         error: (err) => {
           console.error('Error al crear la reserva:', err);
@@ -216,6 +218,4 @@ export class SportSpaceAvailabilityComponent implements OnInit {
       console.warn('Completa todos los campos del formulario.');
     }
   }
-
-  protected readonly TimeUtil = TimeUtil;
 }

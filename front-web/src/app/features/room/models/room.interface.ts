@@ -1,6 +1,7 @@
 interface SportSpace {
   id: number;
   name: string;
+  image: string;
   sportType: string;
   gamemode: string;
   price: number;
@@ -17,7 +18,7 @@ interface Reservation {
   userName: string;
   reservationName: string;
   userId: number;
-  sportSpaces: SportSpace;
+  sportSpace: SportSpace;
 }
 
 export interface Room {
