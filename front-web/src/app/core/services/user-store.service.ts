@@ -1,11 +1,15 @@
-import {Injectable} from '@angular/core';
+import {Injectable, signal} from '@angular/core';
 import {jwtDecode} from 'jwt-decode';
 import {UserRole} from '../models/user.role.enum';
+import {UserProfile} from '../../features/profile/models/user-profile.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserStoreService {
+
+
+  private user = signal<UserProfile | null>(null);
 
   getCookie(name: string): string | null {
     const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
@@ -37,4 +41,6 @@ export class UserStoreService {
     const expiration = this.getTokenExpiration();
     return !expiration || Date.now() > expiration;
   }
+
+  currentUser = this.user.asReadonly()
 }

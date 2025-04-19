@@ -6,9 +6,6 @@ import {ViewProfileComponent} from './features/profile/pages/view-profile/view-p
 import {UnauthorizedComponent} from './shared/pages/unauthorized/unauthorized.component';
 import {NotFoundComponent} from './shared/pages/not-found/not-found.component';
 import {UserRole} from './core/models/user.role.enum';
-import {
-  ViewSubscriptionComponent
-} from './features/subscription/pages/view-subscription/view-subscription.component';
 
 export const routes: Routes = [
   {
@@ -31,7 +28,8 @@ export const routes: Routes = [
   },
   {
     path: 'subscription',
-    component: ViewSubscriptionComponent,
+    loadComponent: () => import('./features/subscription/pages/view-subscription/view-subscription.component')
+      .then(m => m.ViewSubscriptionComponent),
     canActivate: [authGuard],
     data: { roles: [UserRole.OWNER] },
   },
@@ -65,6 +63,13 @@ export const routes: Routes = [
     path: 'rooms',
     loadComponent: () => import('./features/room/pages/list-rooms/list-rooms.component')
       .then(m => m.ListRoomsComponent),
+    canActivate: [authGuard],
+    data: { roles: [UserRole.PLAYER] },
+  },
+  {
+    path: 'rooms/:id',
+    loadComponent: () => import('./features/room/pages/room-detail/room-detail.component')
+      .then(m => m.RoomDetailComponent),
     canActivate: [authGuard],
     data: { roles: [UserRole.PLAYER] },
   },
