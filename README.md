@@ -183,6 +183,16 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
   
   - 4.1. [Strategic-Level Domain-Driven Design](#41-strategic-level-domain-driven-design) <br>
     - 4.1.1. [Event Storming](#411-event-storming) <br>
+      - 4.1.1.1. [Unstructured Exploration](#4111-unstructured-exploration) <br>
+      - 4.1.1.2. [Timelines](#4112-timelines) <br>
+      - 4.1.1.3. [Pain Points](#4113-pain-points) <br>
+      - 4.1.1.4. [Pivotal Points](#4114-pivotal-points) <br>
+      - 4.1.1.5. [Commands](#4115-commands) <br>
+      - 4.1.1.6. [Policies](#4116-policies) <br>
+      - 4.1.1.7. [Read Models](#4117-read-models) <br>
+      - 4.1.1.8. [External Systems](#4118-external-systems) <br>
+      - 4.1.1.9. [Aggregates](#4119-aggregates) <br>
+      - 4.1.1.10. [Bounded Contexts](#41110-bounded-contexts) <br>
     - 4.1.2. [Candidate Context Discovery](#412-candidate-context-discovery)<br>
     - 4.1.3. [Domain Message Flows Modeling](#413-domain-message-flows-modeling)<br>
     - 4.1.4. [Bounded Context Canvases](#414-bounded-context-canvases)<br>
@@ -220,7 +230,7 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
       - 4.2.3.6. [Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)<br>
         - 4.2.3.6.1. [Bounded Context Domain Layer Class Diagrams](#42361-bounded-context-domain-layer-class-diagrams)<br>
         - 4.2.3.6.2. [Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)<br>
-    - 4.2.4. [Bounded Context: Sport Spaces](#424-bounded-context-sportspaces) <br>
+    - 4.2.4. [Bounded Context: Sport Spaces](#424-bounded-context-sport-spaces) <br>
       - 4.2.4.1. [Domain Layer](#4241-domain-layer)<br>
       - 4.2.4.2. [Interface Layer](#4242-interface-layer)<br>
       - 4.2.4.3. [Application Layer](#4243-application-layer)<br>
@@ -247,7 +257,7 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
       - 4.2.6.6. [Bounded Context Software Architecture Code Level Diagrams](#4266-bounded-context-software-architecture-code-level-diagrams)<br>
         - 4.2.6.6.1. [Bounded Context Domain Layer Class Diagrams](#42661-bounded-context-domain-layer-class-diagrams)<br>
         - 4.2.6.6.2. [Bounded Context Database Design Diagram](#42662-bounded-context-database-design-diagram)<br>
-    - 4.2.7. [Bounded Context: Player List](#427-bounded-context-playerlist) <br>
+    - 4.2.7. [Bounded Context: Player List](#427-bounded-context-player-list) <br>
       - 4.2.7.1. [Domain Layer](#4271-domain-layer)<br>
       - 4.2.7.2. [Interface Layer](#4272-interface-layer)<br>
       - 4.2.7.3. [Infrastructure Layer](#4273-infrastructure-layer)<br>
@@ -255,7 +265,7 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
       - 4.2.7.5. [Bounded Context Software Architecture Code Level Diagrams](#4275-bounded-context-software-architecture-code-level-diagrams)<br>
         - 4.2.7.5.1. [Bounded Context Domain Layer Class Diagrams](#42751-bounded-context-domain-layer-class-diagrams)<br>
         - 4.2.7.5.2. [Bounded Context Database Design Diagram](#42752-bounded-context-database-design-diagram)<br>
-    - 4.2.8. [Bounded Context: Chat Room](#428-bounded-context-chatroom) <br>
+    - 4.2.8. [Bounded Context: Chat Room](#428-bounded-context-chat-room) <br>
       - 4.2.8.1. [Domain Layer](#4281-domain-layer)<br>
       - 4.2.8.2. [Interface Layer](#4282-interface-layer)<br>
       - 4.2.8.3. [Application Layer](#4283-application-layer)<br>
@@ -273,7 +283,7 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
       - 4.2.9.6. [Bounded Context Software Architecture Code Level Diagrams](#4296-bounded-context-software-architecture-code-level-diagrams)<br>
         - 4.2.9.6.1. [Bounded Context Domain Layer Class Diagrams](#42961-bounded-context-domain-layer-class-diagrams)<br>
         - 4.2.9.6.2. [Bounded Context Database Design Diagram](#42962-bounded-context-database-design-diagram)<br>
-    - 4.2.10. [Bounded Context: Bank Transfer](#4210-bounded-context-banktransfer) <br>
+    - 4.2.10. [Bounded Context: Bank Transfer](#4210-bounded-context-bank-transfer) <br>
       - 4.2.10.1. [Domain Layer](#42101-domain-layer)<br>
       - 4.2.10.2. [Interface Layer](#42102-interface-layer)<br>
       - 4.2.10.3. [Application Layer](#42103-application-layer)<br>
@@ -1052,62 +1062,92 @@ Las necesidades principales que hemos encontrado en nuestros segmentos objetivos
 
 ## 3.2. User Stories
 
-| Epic ID | Título | Descripción | Relacionado con (Story ID) |
-|------|-------------|--------|-|
-| EP01 | Gestión de cuentas de usuario | Como usuario quiero gestionar la creación y uso de mi cuenta para acceder a mi información | US01, US02, US03, US04 |
-| EP02 | Gestión de métodos de pago | Como usuario quiero gestionar mis métodos de pago por tarjeta para conocer detalles sobre esta | US05, US06, US07, US08 |
-| EP03 | Gestión de reservas de espacios de juego | Como usuario rentor quiero gestionar los espacios de juego para realizar mi reserva de manera correcta | US09, US10, US11, US12, US13, US14, US15 |
-| EP04 | Gestión de suscripciones | Como usuario quiero gestionar mis suscripciones para conocer detalles de los planes y membresía | US16, US17, US18, US19|
-| EP05 | Gestión de salas comunitarias | Como usuario quiero gestionar el uso de las salas comunitarias para socializar con otros jugadores | US20, US21, US22|
-| EP06 | Elementos de landing page | Como visitante quiero visualizar el contenido resaltante de una landing page para conocer sobre la aplicación web | US23, US24, US25, US26, US27 |
-| EP07 | Gestion de espacios de juego | Como propietario de un espacio de juego quiero gestionar mis locales para saber sus datos | US29, US30, US31 |
-| EP08 | Implementación de las funcionalidades backend | Como desarrollador quiero implementar las funcionalidades esenciales para que la aplicación web funcione | TS01, TS02, TS03, TS04, TS05, TS06, TS07, TS08, TS09, TS10, TS11|
+| Categoría     | Epic ID | Título                                 | Descripción                                                                                                   | Relacionado con (Story ID)                     |
+|---------------|---------|-----------------------------------------|---------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| **Frontend**  | EP01    | Gestión de cuentas de usuario           | Como jugador o propietario quiero gestionar la creación y uso de mi cuenta para acceder a mi información     | US01, US02, US03, US04, US05                   |
+|   **Frontend**            | EP02    | Gestión de suscripciones                | Como propietario quiero gestionar mi suscripción para adecuarla sus beneficios según mis necesidades         | US06, US07                                     |
+| **Frontend**  | EP03    | Gestión de espacios deportivos          | Como jugador o propietario quiero gestionar los espacios deportivos para visualizarlos                       | US08, US09, US10, US11                         |
+| **Frontend**  | EP04    | Gestión de reservas                     | Como jugador quiero gestionar la creación de reservas para jugar en los espacios deportivos                   | US12, US13                                     |
+| **Frontend**  | EP05    | Gestión de salas comunidad              | Como jugador quiero gestionar la creación de salas comunidad para conocer nuevas personas con quienes jugar | US14, US15, US16, US17                         |
+| **Frontend**  | EP06    | Gestión de tickets para transferencia    | Como propietario quiero gestionar mis tickets de transferencia para obtener mis ganancias                     | US18, US19          |
+| **Landing Page** | EP07    | Elementos de landing page               | Como visitante quiero visualizar el contenido resaltante del landing page para conocer sobre la aplicación   | US20                                           |
+| **Backend**   | EP08    | Implementación del módulo users         | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo users funcione      | TS01, TS02, TS03, TS04, TS05, TS06, TS35, TS36 |
+| **Backend**   | EP09    | Implementación del módulo auth/iam      | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo iam funcione        | TS07, TS08, TS09                               |
+| **Backend**   | EP10    | Implementación del módulo subscriptions | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo subscriptions funcione | TS10, TS11                                  |
+| **Backend**   | EP11    | Implementación del módulo sportspaces   | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo sportspaces funcione | TS12, TS13, TS14, TS15                      |
+| **Backend**   | EP12    | Implementación del módulo reservations  | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo reservations funcione | TS16, TS17, TS18, TS19, TS20                |
+| **Backend**   | EP13    | Implementación del módulo playerlists   | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo playerlists funcione | TS21, TS22                                  |
+| **Backend**   | EP14    | Implementación del módulo chatroom      | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo chatroom funcione    | TS23                                           |
+| **Backend**   | EP15    | Implementación del módulo deposit       | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo deposit funcione     | TS24, TS25                                     |
+| **Backend**   | EP16    | Implementación del módulo banktransfer  | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo banktransfer funcione | TS26, TS27, TS28, TS29                      |
+| **Backend**   | EP17    | Implementación del módulo rooms         | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo rooms funcione       | TS30, TS31, TS32, TS33, TS34                   |
 
+<br>
+<br>
+<br>
 
 |User Story ID|Título|Descripción|Criterio de aceptación|<p>Relación (EPIC ID)</p><p></p>|
 | :-: | :-: | :-: | :-: | :-: |
-|US01|Registro de cuenta de usuario|Como usuario rentor o propietario deseo registrarme para tener una cuenta en la aplicación web D'Taquito|<p>***Escenario 1: Registro de cuenta exitoso***</p><p></p><p>Dado que el usuario rentor o propietario se encuentra en la pantalla de registro de cuenta</p><p>Cuando el usuario ingresa los datos de su registro de cuenta completos y correctos en los campos: nombre, correo electrónico, contraseña y rol</p><p>Y hace clic en el botón “Registrarse”</p><p>Entonces la aplicación crea la cuenta para el usuario</p><p>Y la aplicación web redirecciona al usuario al login</p><p></p><p>***Escenario 2: Registro de cuenta fallido por insertar datos incorrectos***</p><p></p><p>Dado que el usuario se encuentra en la pantalla de registro de cuenta</p><p>Cuando el usuario ingresa los datos de su registro de cuenta incompletos e incorrectos en los campos: nombre, teléfono, correo electrónico, contraseña y rol</p><p>Y hace clic en el botón “Registrarse”</p><p>Entonces la aplicación web solicita que se corrijan los campos con la información correcta</p><p></p><p>***Escenario 3: Registro de cuenta fallido por un correo ya registrado***</p><p></p><p>Dado que el usuario se encuentra en la pantalla de registro de cuenta</p><p>Cuando el usuario ingresa los datos de su registro de cuenta completos y correctos en los campos: nombre, correo electrónico, contraseña y rol</p><p>Y hace clic en el botón “Registrarse”</p><p>Entonces la aplicación web muestra un mensaje de error indicando que ya existe un correo en uso</p>|EP01|
-|US02|Inicio de sesión de cuenta|Como usuario rentor o propietario deseo poder ingresar a mi cuenta para usar de las funcionalidades de la aplicación web D'Taquito|<p>***Escenario 1: Éxito al iniciar sesión***</p><p></p><p>Dado que el usuario se encuentra registrado en la aplicación web </p><p>Y el usuario se encuentra en la pestaña de inicio de sesión</p><p>Cuando el usuario escriba correctamente su correo y su contraseña</p><p>Y haga clic en el botón "iniciar sesión"</p><p>Entonces la aplicación web llevará al usuario a la página principal</p><p></p><p>***Escenario 2: Error al iniciar sesión***</p><p></p><p>Dado que el usuario se encuentra registrado en la aplicación web </p><p>Y el usuario se encuentra en la pestaña de inicio de sesión</p><p>Cuando el usuario escriba incorrectamente su correo y/o su contraseña</p><p>Y haga clic en el botón "iniciar sesión"</p><p>Entonces la aplicación web notifica que ocurrió un error en los datos proporcionados</p><p>Y solicita al usuario ingresar sus datos correctos</p>|EP01|
-|US03|Ver perfil de usuario|Como usuario rentor o propietario quiero acceder a mi perfil para visualizar mis datos personales|<p>***Escenario 1: Acceso a perfil***</p><p></p><p>Dado que el usuario se encuentra logueado y en la página principal</p><p>Cuando el usuario da clic al botón "Mi cuenta" en la parte del encabezado</p><p>Y da clic en "Mi perfil"</p><p>Entonces, la aplicación muestra la información de perfil del usuario</p>|EP01|
-|US04|Editar perfil de usuario|Como usuario rentor o propietario deseo acceder a mi perfil para editar mis datos personales|<p>***Escenario 1: Edición de información correcta***</p><p></p><p>Dado que el usuario está dentro de la sección “Mi Perfil”</p><p>Y da clic en el botón "Editar perfil"</p><p>Cuando el usuario edita correctamente su información completa</p><p>Y da clic en el botón “Confirmar”</p><p>Entonces la aplicación web actualiza la información del usuario.</p><p></p><p>***Escenario 2: Edición de información incorrecta***</p><p></p><p>Dado que el usuario está dentro de la sección “Mi Perfil”</p><p>Y da clic en el boton "Editar perfil"</p><p>Cuando el usuario edita incorrectamente su información completa</p><p>Y da clic en el botón “Editar”</p><p>Entonces la aplicación muestra un error al editar.</p>|EP01|
-|US05|Visualizar tarjeta como método de pago|Como usuario rentor o propietario quiero visualizar mi tarjeta registrada para gestionarla|<p>***Escenario 1: Ver información de pago***</p><p></p><p>Dado que el usuario rentor o propietario está en la página principal</p><p>Cuando el usuario rentor da clic al botón "Mi cuenta"</p><p>Y selecciona la opción “Mi cuenta”<p>Y da clic en </p>Método de pago</p><p>Entonces la aplicación web muestra la información de pago del usuario rentor</p>|EP02|
-|US06|Agregar una tarjeta como método de pago|Como usuario quiero agregar mi tarjeta para pagar mis reservas|<p>***Escenario 1: Éxito al agregar tarjeta***</p><p></p><p>Dado que el usuario rentor está en la página de información de pago</p><p>Y da clic en “Agregar tarjeta”</p><p>Cuando el usuario rentor introduce correctamente sus credenciales (nombre del dueño, nombre del banco, número de tarjeta, fecha de expiración de la tarjeta y ccv)</p><p>Y da clic en “Guardar”</p><p>Entonces la aplicación web agrega la información de pago del usuario rentor.</p><p></p><p>***Escenario 2: Error al agregar tarjeta por datos incorrectos***</p><p></p><p>Dado que el usuario rentor está en la página de información de pago</p><p>Y da clic en “Agregar tarjeta”</p><p>Cuando el usuario rentor introduce incorrectamente sus credenciales (nombre del dueño, nombre del banco, número de tarjeta, expiración de la tarjeta y ccv)</p><p>Y da clic en “Guardar”</p><p>Entonces la aplicación web muestra un error en los datos ingresados</p><p>Y el usuario rentor debe corregir los campos necesarios</p><p></p><p>***Escenario 3: Error al agregar tarjeta por exceso de registros***</p><p></p><p>Dado que el usuario rentor está en la página de información de pago</p><p>Y da clic en “Agregar tarjeta</p><p>Cuando el usuario introduce correctamente sus credenciales (nombre del dueño, nombre del banco, número de tarjeta, expiración de la tarjeta y ccv)</p><p>Y da clic en “Guardar”</p><p>Entonces la aplicación web muestra un mensaje de error indicando que ya existe un método de pago, que solo puede tener registrado uno</p>|EP02|
-|US07|Editar tarjeta como método de pago|Como usuario rentor quiero editar la información de mi tarjeta para actualizar mis datos financieros|<p>***Escenario 1: Éxito al editar información de la tarjeta***</p><p></p><p>Dado que el usuario rentor está en la página de información de pago</p><p>Y selecciona una tarjeta existente</p><p>Y da clic en “Editar”</p><p>Cuando el usuario rentor introduce correctamente sus credenciales (nombre, número de tarjeta, expiración de la tarjeta y ccv)</p><p>Y da clic en “Guardar”</p><p>Entonces la aplicación web actualiza la información de pago del usuario rentor.</p><p></p><p>***Escenario 2: Error al editar información de la tarjeta***</p><p></p><p>Dado que el usuario rentor está en la página de información de pago</p><p>Y selecciona una tarjeta</p><p>Y da clic en “Editar”</p><p>Cuando el usuario rentor introduce incorrectamente sus credenciales (nombre, número de tarjeta, expiración de la tarjeta y ccv)</p><p>Y da clic en “Guardar”</p><p>Entonces la aplicación web muestra un error por ingresar datos incorrectos</p><p>Y el usuario rentor debe corregir los campos necesarios</p>|EP02|
-|US08|Borrar un método de pago|Como usuario rentor quiero borrar una tarjeta para que ya no esté disponible|<p>***Escenario 1: Borrar tarjeta***</p><p></p><p>Dado que el usuario rentor está en la página de información de pago</p><p>Cuando el usuario rentor selecciona una tarjeta existente</p><p>Y da clic en “Borrar”</p><p>Entonces la aplicación web elimina el método de pago de la información de pago del usuario rentor</p><p></p>|EP02|
-|US09|Visualizar espacios de juego|<p>Como usuario rentor quiero ver los espacios de juego que existen en la aplicacion para conocerlas</p>|<p>***Escenario 1: Visualizar espacios deportivos***</p><p></p><p>Dado que el usuario rentor se encuentra en la página principal</p><p>Cuando el usuario da clic en la vista "Espacios de juego"</p><p>Entonces la aplicación web despliega todos los esepacios deportivos</p>|EP03|
-|US10|Visualizar características de los espacios de juego|<p>Como usuario rentor quiero visualizar los espacios de juego para conocer cual me conviene más</p><p></p>|<p>***Escenario 1: Visualizar información de lo espacios deportivos***</p><p></p><p>Dado que el usuario rentor se encuentra en la vista de los espacios deportivos</p><p>Cuando el usuario rentor da clic en cualquier recuadro de los espacios de juego</p><p>Entonces la aplicación web muestra la información detalla del espacio deportivo seleccionado|EP03|
-|US11|Aplicar filtros de búsqueda|Como usuario rentor quiero aplicar filtros para encontrar espacios de juego según mi preferencia|<p>***Escenario 1: Filtrar espacios deportivos***</p><p></p><p>Dado que el usuario rentor se encuentra en la página de visualización de los espacios deportivos</p><p>Cuando el usuario rentor da clic en barra de filtro</p><p>Y el usuario rentor escribe un texto clave</p><p>Entonces la aplicación web muestra los espacios deportivos que coincidan con el texto clave/p><p>|EP03|
-|US12|Ver horarios de los espacios de juego|Como usuario rentor quiero ver la disponibilidad de los espacios de juego para elegir|<p>***Escenario 1: Ver horarios de los espacios de juego***</p><p></p><p>Dado que el usuario rentor se encuentra en la página de visualización de la informacion de los espacios de juego</p><p>Entonces la aplicación web muestra todo el horario de la cancha seleccionada</p><p></p>|EP03|
-|US13|Reservar un espacio de juego|Como usuario rentor quiero reservar un espacio de juego para divertirme jugando|<p>***Escenario 1: Reserva exitosa de un espacio deportivo***</p><p></p><p>Dado que el usuario rentor se encuentra visualizando los detalles del espacio de juego</p><p>Y el usuario rentor selecciona un horario</p><p>Y tiene una tarjeta como método de pago previamente guardada</p><p>Y da clic en “Reservar”</p><p>Entonces la reserva se realiza correctamente</p><p>***Escenario 1: Reserva fallida de un espacio deportivo***</p><p></p><p>Dado que el usuario rentor se encuentra visualizando los detalles del espacio de juego</p><p>Y el usuario rentor no selecciona un horario</p><p>Y no tiene una tarjeta como método de pago previamente guardada</p><p>Y da clic en “Reservar”</p><p>Entonces sale error por no elegir un método de pago y/o horario</p>|EP03|
-|US14|Ver reservas activas de un espacio de juego|Como usuario rentor quiero ver mis reservas activas para gestionarlas|<p>***Escenario 1: Ver reservas activas***</p><p></p><p>Dado que el usuario rentor se encuentra en la página principal</p><p>Cuando el usuario rentor da clic en el botón "Mi cuenta</p><p>Y da clic en "Ver mis reservas"</p><p>Entonces la aplicación web visualiza las reservas activas del usuario rentor</p>|EP03|
-|US15|Ver reservas antiguas de un espacio de juego|Como usuario rentor quiero ver mis reservas antiguas para ver su informacion|<p>***Escenario 1: Ver reservas antiguas***</p><p></p><p>Dado que el usuario rentor se encuentra en la página principal</p><p>Cuando el usuario rentor da clic en el botón "Micuenta"</p><p>Y da clic en el boton "Ver mis reservas" en la parte de la cabecera</p><p>Entonces la aplicación web visualiza las reservas antiguas del usuario rentor</p>|EP03|
-|US16|Cancelar una reserva de un espacio de juego|Como usuario rentor quiero cancelar una reserva para ya no tener que asistir|<p>***Escenario 1: Éxito al cancelar la reserva***</p><p></p><p>Dado que el usuario rentor se encuentra en la página de visualización de las reservas activas</p><p>Y de clic al botón “Cancelar”</p><p>Y el usuario rentor paga la comisión por cancelar la reserva</p><p>Entonces la aplicación web cancela la reserva</p><p>Y se le retorna su dinero al usuario rentor</p><p>Y habilita el horario para otros usuario rentores</p><p></p><p>***Escenario 2: Error al cancelar la reserva***</p><p></p><p>Dado que el usuario rentor se encuentra en la página de visualización de las reservas activas</p><p>Y de clic al botón “Cancelar”</p><p>Y el usuario rentor no paga la comisión por cancelar la reserva</p><p>Entonces la aplicación web no cancela la reserva</p><p>Y le pide al usuario rentor pagar la comisión</p>|EP03|
-|US17|Ver una suscripción|Como usuario rentor quiero ver el estado de mi suscripción para gestionarla|<p>***Escenario 1: Visualizar suscripción***</p><p></p><p>Dado que el usuario rentor se encuentra en la página principal</p><p>Cuando el usuario rentor da clic a su ícono en la esquina superior de la aplicación web y clic en el botón "Mi cuenta"<p></p><p>Y de clic a la sección “Suscripción”</p><p>Entonces la aplicación web visualiza la suscripción del usuario rentor</p>|EP04|
-|US18|Adquirir una subscripción|Como usuario rentor quiero adquirir una subscripción para usar los beneficios|<p>***Escenario 1: Éxito al adquirir la subscripción***</p><p></p><p>Dado que el usuario rentor se encuentra en la página de suscripción</p><p>Y tiene una suscripción gratuita</p><p>Cuando el usuario rentor da clic a “Actualizar a premium”</p><p>Y el usuario rentor tiene un metodo de pago con saldo suficiente</p><p>Entonces la aplicación web registra la suscripción del usuario rentor</p><p>Y el usuario rentor obtiene membresía premium</p><p></p><p>***Escenario 2: Error al adquirir la subscripción***</p><p></p><p>Dado que el usuario rentor se encuentra en la página de suscripción</p><p>Y tiene una suscripción gratuita</p><p>Cuando el usuario rentor da clic a “Actualizar a premium”</p><p>Y el usuario rentor no tiene un metodo de pago registrado o no tiene saldo suficiente</p><p>Entonces la aplicación web no registra la suscripción del usuario rentor</p><p>Y muestra un error en el pago</p>|EP04|
-|US19|Cancelar una subscripción|Como usuario rentor quiero cancelar una subscripción para dejar de usar los beneficios|<p>***Escenario 1: Éxito al cancelar la subscripción***</p><p></p><p>Dado que el usuario rentor se encuentra en la página de suscripción</p><p>Y tiene una suscripción premium</p><p>Cuando el usuario rentor da clic a “Cambiar suscripción”</p><p>Y selecciona el plan gratuito</p><p>Y da clic en el botón “Confirmar”</p><p>Entonces la aplicación web registra la suscripción del usuario rentor</p><p>Y el usuario rentor pierde la membresía premium</p>|EP04|
-|US20|Ver salas comunitarias|Como usuario rentor quiero ver las salas comunitarias para unirme a una de ellas|<p>***Escenario 1: Ver salas comunitarias***</p><p></p><p>Dado que el usuario rentor se encuentra en la página de principal</p><p>Cuando el usuario rentor da clic a “Salas comunitarias</p><p>Entonces la aplicación web visualiza todas las salas comunitarias</p>|EP05|
-|US21|Crear una sala comunitaria|Como usuario rentor quiero crear una sala para que otros jugadores puedan unirse a nuestra reserva|<p>***Escenario 1: Crear sala comunitaria***</p><p></p><p>Dado que el usuario rentor se encuentra en la página de salas comunitarias</p><p>Cuando el usuario rentor da clic a “Crear sala comunitaria”</p><p>Y escribe los requisitos necesarios para unirse</p><p>Y da clic en el botón “Publicar”</p><p>Entonces la aplicación web registra la sala creada</p>|EP05|
-|US22|Unirse a una sala comunitaria|Como usuario rentor quiero unirme a una sala comunitaria para jugar con otros jugadores|<p>***Escenario 1: Éxito al unirse a una sala comunitaria***</p><p></p><p>Dado que el usuario rentor se encuentra en la página de salas comunitarias</p><p>Cuando el usuario rentor da clic a una sala comunitaria creada por otro usuario rentor</p><p>Y escribe sus motivos de querer ingresar</p><p>Y presiona “Unirse”</p><p>Y el creador de la sala lo acepta</p><p>Entonces la aplicación web lo une a la sala comunitaria</p><p>Y el jugador externo ya puede ir a encontrarse con los demás jugadores</p><p></p><p>***Escenario 1: Fallo al unirse a una sala comunitaria***</p><p></p><p>Dado que el usuario rentor se encuentra en la página de salas comunitarias</p><p>Cuando el usuario rentor da clic a una sala comunitaria creada por otro usuario rentor</p><p>Y escribe sus motivos de querer ingresar</p><p>Y presiona “Unirse”</p><p>Y el creador de la sala lo deniega</p><p>Entonces la aplicación web le muestra al usuario rentor un mensaje de denegación por parte del creador de la sala</p>|EP05|
-| US23          | Conocer acerca de la aplicación web      | Como visitante de la landing page quiero saber acerca de la aplicación web para conocer sus detalles                      | ***Escenario 1: Leer acerca de la aplicación web mediante hipervínculo***<br/>  Dado que el visitante se encuentra en el landing page<br/>  Cuando el visitante da clic a “Acerca de”<br/>  Entonces la landing page lo dirige a la sección de conocimiento<br/><br/> ***Escenario 2: Leer acerca de la aplicación web haciendo scroll***<br/>  Dado que el visitante se encuentra en el landing page<br/>  Cuando el visitante se moviliza hasta la sección “Acerca de”<br/>  Entonces el visitante podrá leer sobre el conocimiento de la aplicación web | EP06               |
-| US24          | Conocer los planes de la aplicación web  | Como visitante de la landing page quiero los planes que ofrecen para conocer sus detalles                                   | ***Escenario 1: Leer planes de la aplicación web mediante hipervínculo***<br/>  Dado que el visitante se encuentra en el landing page<br/>  Cuando el visitante da clic a “Planes”<br/>  Entonces la landing page lo dirige a la sección de planes<br/><br/> ***Escenario 2: Leer planes de la aplicación web haciendo scroll***<br/>  Dado que el visitante se encuentra en el landing page<br/>  Cuando el visitante se moviliza hasta la sección “Planes”<br/>  Entonces el visitante podrá leer sobre los planes de la aplicación web | EP06               |
-| US25          | Ver información de los desarrolladores        | Como visitante de la landing page quiero ver la información de los desarrolladores para conocer sus perfiles                |  ***Escenario 1: Leer sobre los desarrolladores de la aplicación web mediante hipervínculo***<br/>  Dado que el visitante se encuentra en el landing page<br/>  Cuando el visitante da clic a “Nosotros”<br/>  Entonces la landing page lo dirige a la sección de la información de los desarrolladores<br/><br/> ***Escenario 2: Leer sobre los desarrolladores de la aplicación web haciendo scroll***<br/>  Dado que el visitante se encuentra en el landing page<br/>  Cuando el visitante se moviliza hasta la sección “Nosotros”<br/>  Entonces el visitante podrá leer la información sobre los desarrolladores | EP06               |
-| US26          | Leer preguntas frecuentes             | Como visitante de la landing page quiero leer preguntas frecuentes para conocer dudas comunes de la aplicación web           | ***Escenario 1: Leer preguntas frecuentes de la aplicación web mediante hipervínculo***<br/>  Dado que el visitante se encuentra en el landing page<br/>  Cuando el visitante da clic a “Preguntas”<br/>  Entonces la landing page lo dirige a la sección de preguntas frecuentes<br/><br/> ***Escenario 2: Leer preguntas frecuentes de la aplicación web haciendo scroll***<br/>  Dado que el visitante se encuentra en el landing page<br/>  Cuando el visitante se moviliza hasta la sección “Preguntas frecuentes”<br/>  Entonces el visitante podrá leer sobre las preguntas frecuentes de la aplicación web | EP06               |
-| US27          | Contactarse con el soporte           | Como visitante de la landing page quiero contactarme con el soporte para resolver dudas                                     | ***Escenario 1: Contactarse con el soporte de la aplicación web mediante hipervínculo***<br/>  Dado que el visitante se encuentra en el landing page<br/>  Cuando el visitante da clic a “Contactanos”<br/>  Entonces la landing page lo dirige a la sección de contactarse<br/>  Y el visitante debe colocar su e-mail<br/><br/> ***Escenario 2: Contactarse con el soporte de la aplicación web haciendo scroll***<br/>  Dado que el visitante se encuentra en el landing page<br/>  Cuando el visitante se moviliza hasta la sección “Contactanos”<br/>  Entonces el visitante podrá contactarse con el soporte dejando su email | EP06               |
-| US28          | Añadir un espacio de juego           | Como propietario de un espacio de juego quiero añadir mi local a la aplicación web para que los rentores puedan reservar mi local | ***Escenario 1: Éxito al añadir un espacio de juego***<br/>  Dado que el propietario de un espacio de juego se encuentra en la sección de visualización de sus espacios deportivos<br/>  Cuando el propietario da clic a “Añadir espacio deporito”<br/>  Y registra correctamente todos los datos solicitados<br/>  Y da clic en “Confirmar”<br/>  Entonces la aplicación web añade el espacio de juego en la plataforma<br/><br/> ***Escenario 2: Error al añadir un espacio de juego***<br/>  Dado que el propietario de un espacio de juego se encuentra en la sección de visualización de sus espacios deportivos<br/>  Cuando el propietario da clic a “Añadir espacio deporito”<br/>  Y registra incorrectamente todos los datos solicitados<br/>  Y da clic en “Confirmar”<br/>  Entonces la aplicación web mostrará un error en los datos ingresados<br/>  Y le pide al propietario corregir los errores necesarios | EP07               |
-| US29          | Editar un espacio de juego           | Como propietario de un espacio de juego quiero editar mi local a la aplicación web para modificar información del espacio de juego |  ***Escenario 1: Éxito al editar un espacio de juego***<br/>  Dado que el propietario de un espacio de juego se encuentra en la sección de visualización de sus espacios deportivos<br/>  Cuando el propietario da clic a “Editar espacio de juego” seleccionado<br/>  Y registra correctamente todos los datos solicitados<br/>  Y da clic en “Confirmar”<br/>  Entonces la aplicación web edita el espacio de juego en la plataforma<br/><br/> ***Escenario 2: Error al eliminar un espacio de juego***<br/>  Dado que el propietario de un espacio de juego se encuentra en la sección de visualización de sus espacios deportivos<br/>  Cuando el propietario da clic a “Editar espacio de juego”<br/>  Y registra incorrectamente todos los datos solicitados<br/>  Y da clic en “Confirmar”<br/>  Entonces la aplicación web mostrará un error en los datos ingresados<br/>  Y le pide al propietario corregir los errores necesarios | EP07               |
-| US30          | Eliminar un espacio de juego         | Como propietario de un espacio de juego quiero eliminar mi local a la aplicación web para que no se visualice más                 |  ***Escenario 1: Borrar un espacio de juego***<br/>  Dado que el propietario de un espacio de juego se encuentra en la sección de visualización de sus espacios deportivos<br/>  Cuando el propietario da clic a “Borrar espacio de juego”<br/>  Y da clic en “Confirmar”<br/>  Entonces la aplicación web borra el espacio de juego en la plataforma | EP07               |
-| US31          | Administrar horarios                | Como propietario de un espacio de juego quiero administrar los horarios de mis espacios de juego para conocer sus detalles     |  ***Escenario 1: Administrar horario de un espacio de juego***<br/>  Dado que el propietario de un espacio de juego se encuentra en la sección de locales<br/>  Cuando el propietario da clic a uno de sus espacios de juego<br/>  Entonces la aplicación web muestra su información<br/>  Y el cronograma de horarios registrados en el espacio de juego | EP07               |
-| TS01 | Gestionar información de los espacios de juego | Como desarrollador, necesito implementar endpoints en el API para obtener, agregar, actualizar y eliminar información sobre los espacios de juego disponibles, incluyendo la obtención por ID.| **Escenario 1:** Dado que tengo acceso al endpoint `/api/v1/sport-spaces`, cuando solicito la información de todos los espacios de juego, entonces recibo una lista de todos los espacios de juego en el formato esperado.<br> **Escenario 2:** Dado que tengo acceso al endpoint `/api/v1/sport-spaces/<id>`, cuando solicito la información de un espacio de juego por ID, entonces recibo la información del espacio de juego con el ID especificado.<br> **Escenario 3:** Dado que tengo acceso al endpoint `/api/v1/sport-spaces/<id>`, cuando realizo una solicitud PUT con los datos a actualizar, entonces el espacio de juego con el ID especificado se actualiza con los nuevos datos y recibo la información actualizada.<br> **Escenario 4:** Dado que tengo acceso al endpoint `/api/v1/sport-spaces/<id>`, cuando realizo una solicitud DELETE, entonces el espacio de juego con el ID especificado se elimina.<br> **Escenario 5:** Dado que tengo acceso al endpoint `/api/v1/sport-spaces`, cuando realizo una solicitud POST con los datos del nuevo espacio de juego, entonces se agrega un nuevo espacio de juego y recibo la información del espacio agregado, incluyendo su ID. | EP08 |
-| TS02 | Gestionar reservas de espacios de juego  | Como desarrollador, necesito implementar endpoints en el API para que los usuarios puedan realizar y gestionar reservas de espacios de juego de forma rápida y sencilla.| **Escenario 1:** Dado que tengo acceso al endpoint `/api/v1/reservations`, cuando realizo una solicitud GET para obtener todas las reservaciones, entonces el sistema me devuelve una lista de todas las reservaciones en el formato esperado.<br> **Escenario 2:** Dado que tengo acceso al endpoint `/api/v1/reservations/<id>`, cuando realizo una solicitud GET para obtener una reservación por ID, entonces el sistema me devuelve la información de la reservación con el ID especificado.<br> **Escenario 3:** Dado que tengo acceso al endpoint `/api/v1/reservations`, cuando realizo una solicitud POST para crear una nueva reservación, entonces el sistema crea una nueva reservación con la información proporcionada.<br> **Escenario 4:** Dado que tengo acceso al endpoint `/api/v1/reservations/<id>`, cuando realizo una solicitud DELETE para borrar una reservación, entonces el sistema elimina la reservación con el ID especificado. | EP08  |
-|TS03|Gestionar calificaciones y comentarios de usuarios sobre espacios de juego|Como desarrollador, necesito implementar endpoints en el API para que los usuarios puedan calificar y dejar comentarios sobre los espacios de juego ocupados. |**Escenario 1:** Dado que realizo una solicitud GET, entonces el sistema devuelve la calificación promedio del espacio de juego identificado por el Id. <br> **Escenario 2:** Dado que tengo acceso al endpoint, cuando realizo una solicitud POST para dejar un comentario sobre un espacio de juego, entonces el sistema registra el comentario proporcionado.|         EP08     |
-|TS04|Implementar endpoints para la gestión de roles y permisos de usuario|Como desarrollador, necesito implementar endpoints en el API para administrar roles y permisos de usuario, permitiendo controlar de manera eficiente los accesos y acciones permitidas dentro de la plataforma.|**Escenario 1:** Dado que soy un administrador del sistema, cuando realizo una solicitud POST, entonces el sistema crea un nuevo rol con los permisos especificados. <br> **Escenario 2:** Dado que soy un administrador del sistema, cuando realizo una solicitud DELETE, entonces el sistema elimina el rol identificado por identificador y revoca los permisos asociados.|  EP08            |
-| TS05 | Gestión de método de pago | Como desarrollador, necesito implementar endpoints en el API para gestionar métodos de pago de forma segura y confiable dentro de la plataforma.| **Escenario 1:** Dado que tengo acceso al endpoint `/api/v1/payments/<id>`, cuando realizo una solicitud GET para obtener un método de pago por ID, entonces el sistema me devuelve la información del método de pago con el ID especificado.<br> **Escenario 2:** Dado que tengo acceso al endpoint `/api/v1/payments/user/<userId>`, cuando realizo una solicitud GET para obtener un método de pago por ID de usuario (userId), entonces el sistema me devuelve la información del método de pago asociado a ese usuario.<br> **Escenario 3:** Dado que tengo acceso al endpoint `/api/v1/payments`, cuando realizo una solicitud POST para agregar un nuevo método de pago, entonces el sistema crea un nuevo método de pago con la información proporcionada.<br> **Escenario 4:** Dado que tengo acceso al endpoint `/api/v1/payments/<id>`, cuando realizo una solicitud PUT con los datos actualizados, entonces el sistema actualiza la información del método de pago con el ID especificado. | EP08  |
-|TS06|Validación de datos de entrada|Implementar validación de datos de entrada en los endpoints de la API para garantizar la integridad y consistencia de la información. |**Escenario 1:** Dado que se recibe una solicitud con datos de entrada, cuando se verifica el formato del correo electrónico, la contraseña y otros campos requeridos, entonces el sistema acepta la solicitud si los datos son válidos. <br> **Escenario 2:** Dado que se recibe una solicitud con datos de entrada no válidos, cuando se maneja adecuadamente el error y se proporciona una respuesta clara indicando el problema, entonces el usuario recibe retroalimentación sobre los errores en sus datos.|  EP08            |
-|TS07|Seguridad y protección de Datos|Como desarrollador, Quiero implementar medidas de seguridad y protección de datos Para garantizar la confidencialidad y la integridad de la información del usuario|**Escenario 1:** Dado que tengo acceso a la API de seguridad de datos Cuando un usuario proporciona información personal durante el proceso de registro o reserva Entonces la información se cifra de forma segura y se almacena en la base de datos de manera protegida contra accesos no autorizados. <br> **Escenario 2:** Dado que tengo acceso a la API de seguridad de datos Cuando un usuario realiza transacciones de pago en la aplicación Entonces se utilizan métodos de cifrado seguros para proteger la información financiera del usuario durante la transferencia de datos.|EP08  |
-| TS08 | Gestión de suscripciones    | Como desarrollador, quiero implementar un sistema de gestión de suscripciones para que los usuario pueden mejorar sus cuentas| **Escenario 1:** Dado que tengo acceso al endpoint `/api/v1/suscriptions/<id>`, cuando realizo una solicitud GET para obtener una suscripción por ID, entonces el sistema me devuelve la información de la suscripción con el ID especificado.<br> **Escenario 2:** Dado que tengo acceso al endpoint `/api/v1/suscriptions/user/<userId>`, cuando realizo una solicitud GET para obtener una suscripción por ID del usuario (userId), entonces el sistema me devuelve la información de la suscripción asociada a ese usuario.<br> **Escenario 3:** Dado que tengo acceso al endpoint `/api/v1/suscriptions/<id>`, cuando realizo una solicitud PUT con los datos actualizados, entonces el sistema actualiza la información de la suscripción con el ID especificado. | EP08  |
-|TS09|Implementar funcionalidad de inicio de sesión seguro|Como desarrollador, necesito implementar un endpoint en el API para permitir que los usuarios inicien sesión de forma segura en la plataforma.|**Escenario 1:** Dado que un usuario envía una solicitud POST al endpoint /api/login con credenciales válidas, entonces el sistema autentica al usuario y devuelve un token de acceso válido. <br> **Escenario 2:** Dado que un usuario intenta iniciar sesión con credenciales inválidas, entonces el sistema responde con un mensaje de error indicando que las credenciales son incorrectas. | EP08 |
-|TS10|Agregar funcionalidad de recuperación de contraseña|Como desarrollador, necesito implementar un endpoint en el API para permitir que los usuarios recuperen su contraseña en caso de olvido.|**Escenario 1:** Dado que un usuario solicita recuperar su contraseña mediante una solicitud POST al endpoint con el ingreso de sus datos brindados anteriormente, entonces el sistema muestra una ventana de recuperación válido. <br> **Escenario 2:** Dado que un usuario intenta recuperar su contraseña con datos incorrectos, entonces el sistema responde con un mensaje de error indicando que los datos no estan asociados a ninguna cuenta.|EP08  |
-| TS11 | Gestionar cuentas de usuario | Como desarrollador, necesito implementar endpoints en el API para permitir a los usuarios gestionar sus cuentas, incluyendo la actualización de información personal y la configuración de preferencias.| **Escenario 1:** Dado que tengo acceso al endpoint `/api/v1/users/<id>`, cuando realizo una solicitud GET para obtener un usuario por ID, entonces el sistema me devuelve la información del usuario con el ID especificado.<br> **Escenario 2:** Dado que tengo acceso al endpoint `/api/v1/users`, cuando realizo una solicitud GET con el correo y la contraseña, entonces el sistema me devuelve la información del usuario correspondiente.<br> **Escenario 3:** Dado que tengo acceso al endpoint `/api/v1/users/<id>`, cuando realizo una solicitud PUT con los datos actualizados, entonces el sistema actualiza la información del usuario con el ID especificado.<br> **Escenario 4:** Dado que tengo acceso al endpoint `/api/v1/users`, cuando realizo una solicitud POST para agregar un nuevo usuario, entonces el sistema crea un nuevo usuario con la información proporcionada. | EP08  |
+|US01|Registro de cuenta de usuario|Como jugador o propietario quiero registrarme para tener una cuenta en D'Taquito|<p>***Escenario 1: Registro de cuenta exitoso de usuario***</p><p></p><p>Dado que el usuario se encuentra en la pantalla de registro de cuenta</p><p>Cuando el usuario ingresa los datos de su registro de cuenta completos y correctos en los campos: nombre, correo electrónico, contraseña y rol</p><p>Y hace clic en el botón “Registrarse”</p><p>Entonces la aplicación crea la cuenta para el usuario</p><p></p><p>***Escenario 2: Registro de cuenta fallido de usuario***</p><p></p><p>Dado que el usuario se encuentra registrado en la aplicación</p><p>Cuando el usuario se encuentra en la pantalla de inicio de sesión</p><p>Y escribe correctamente su correo y su contraseña</p><p>Y haga clic en el botón "iniciar sesión"</p><p>Entonces la aplicación llevará al usuario a la página principal</p><p>***Escenario 3: Registro de cuenta fallido por un correo ya registrado***</p><p></p><p>Dado que el usuario se encuentra en la pantalla de registro de cuenta</p><p>Cuando el usuario ingresa los datos de su registro de cuenta completos y correctos en los campos: nombre, correo electrónico, contraseña y rol</p><p>Y hace clic en el botón “Registrarse”</p><p>Entonces la aplicación muestra un mensaje de error indicando que ya existe un correo en uso</p>|EP01|
+|US02|Inicio de sesión de cuenta|Como jugador o propietario quiero ingresar a mi cuenta para usar de las funcionalidades de la aplicación D’Taquito|<p>***Escenario 1: Inicio de sesión exitoso***</p><p></p><p>Dado que el usuario se encuentra registrado en la aplicación.</p><p>Cuando el usuario se encuentra en la pantalla de inicio de sesión</p><p>Y escribe correctamente su correo y su contraseña</p><p>Y haga clic en el botón "iniciar sesión"</p><p>Entonces la aplicación llevará al usuario a la página principal</p><p></p><p>***Escenario 2: Inicio de sesión fallido***</p><p></p><p>Dado que el usuario se encuentra registrado en la aplicación</p><p>Cuando el usuario se encuentra en la pantalla de inicio de sesión</p><p>Y escribe incorrectamente su correo y/o su contraseña</p><p>Y haga clic en el botón "iniciar sesión"</p><p>Entonces la aplicación notifica que se ingresaron incorrectamente los datos</p>|EP01|
+|US03|Ver perfil de usuario|Como jugador o propietario quiero acceder a mi perfil para visualizar mis datos personales|<p>***Escenario 1: Acceso a perfil***</p><p></p><p>Dado que el usuario se encuentra autenticado</p><p>Cuando da clic al icono de perfil en la parte del toolbar</p><p>Y selecciona el apartado perfil</p><p>Entonces, la aplicación muestra la información de perfil del usuario</p>|EP01|
+|US04|Editar perfil de usuario|Como usuario jugador o propietario quiero acceder a mi perfil para editar mis datos personales|<p>***Escenario 1: Edición de información correcta***</p><p></p><p>Dado que el usuario se encuentra autenticado</p><p>Cuando está en la pantalla de perfil</p><p>Y da clic en el botón "Editar información" en el campo deseado</p><p>Y edita su información</p><p>Y da clic en el botón “Guardar”</p><p>Entonces la aplicación actualiza la información del usuario</p><p></p><p>|EP01|
+|US05|Recargar crédito|Como jugador quiero recargar crédito para reservar un espacio deportivo|<p>***Escenario 1: Recarga de crédito exitosa***</p><p>Dado que el jugador se encuentra autenticado en la aplicación</p><p>Cuando está en la pantalla de perfil</p><p>Y da clic en el botón “Recargar créditos”</p><p>Y escribe la cantidad de crédito deseada</p><p>Y paga con una cuenta de PayPal válida con saldo suficiente</p><p>Entonces la recarga será exitosa y se visualizará la cantidad nueva de créditos</p><p></p><p>***Escenario 2: Recarga de crédito fallida***</p><p>Dado que el jugador se encuentra autenticado en la aplicación</p><p>Y está en la pantalla de perfil</p><p>Cuando da clic en el botón “Recargar créditos”</p><p>Y escribe la cantidad de crédito deseada</p><p>Y no paga con una cuenta de PayPal válida con saldo suficiente</p><p>Entonces la recarga fallará y mostrará un error</p>|EP01|
+|US06|Ver una suscripción|Como propietario quiero ver el estado de mi suscripción para gestionarla|<p>***Escenario 1: Visualizar suscripción***</p><p>Dado que el propietario se encuentra autenticado</p><p>Cuando da clic al botón “Suscripciones” ubicado en el toolbar</p><p>Entonces la aplicación visualiza la suscripción actual del propietario</p>|EP02|
+|US07|Actualizar una suscripción|Como usuario propietario quiero actualizar mi suscripción para usar los beneficios que me da|<p>***Escenario 1: Éxito al actualizar la suscripción***</p><p>Dado que el propietario se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de suscripciones</p><p>Y da clic al icono de comprar en la suscripción deseada</p><p>Y paga con una cuenta de PayPal válida con saldo suficiente</p><p>Entonces la aplicación actualiza la suscripción del propietario</p><p>***Escenario 2: Error al adquirir la suscripción***</p><p>Dado que el propietario se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de suscripciones</p><p>Y da clic al icono de comprar en la suscripción deseada</p><p>Y no paga con una cuenta de PayPal válida con saldo suficiente</p><p>Entonces la aplicación no actualiza la suscripción del propietario</p>|EP02|
+|US08|Visualizar espacios deportivos|Como jugador o propietario quiero ver los espacios deportivos que existen en la aplicación para conocer sus detalles|<p>***Escenario 1: Visualizar espacios deportivos siendo jugador***</p><p>Dado que el jugador se encuentra autenticado</p><p>Cuando da clic al botón "Espacios deportivos" ubicado en el toolbar</p><p>Entonces la aplicación muestra todos los espacios deportivos</p><p>***Escenario 2: Visualizar espacios deportivos siendo propietario***</p><p>Dado que el propietario se encuentra autenticado</p><p>Cuando da clic al botón "Espacios deportivos" ubicado en el toolbar</p><p>Entonces la aplicación muestra sus espacios deportivos registrados</p>|EP03|
+|US09|Añadir un espacio deportivo|Como propietario de un espacio deportivo quiero añadir mi espacio deportivo a la aplicación para que los jugadores puedan visualizarlo|<p>***Escenario 1: Éxito al añadir un espacio deportivo***</p><p>Dado que el propietario se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de espacios deportivos</p><p>Y da clic a “Añadir espacio deportivo”</p><p>Y es lunes entre las 00:00 y 06:00 horas</p><p>Y registra todos los datos solicitados en los campos: nombre, deporte, imagen, precio, distrito, dirección, descripción, hora de apertura, hora de cierre y modo de juego</p><p>Y da clic en “Confirmar”</p><p>Entonces la aplicación añade el espacio deportivo en la plataforma</p><p>***Escenario 2: Error al añadir un espacio deportivo***</p><p>Dado que el propietario se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de espacios deportivos</p><p>Y da clic a “Añadir espacio deportivo”</p><p>Y no es lunes entre las 00:00 y 06:00 horas</p><p>Entonces la aplicación muestra un mensaje de error, indicando la hora de disponibilidad para agregar espacio deportivo</p>|EP03|
+|US10|Eliminar un espacio deportivo|Como propietario de un espacio deportivo quiero eliminar mi espacio deportivo porque ya quiero que esté registrado|<p>***Escenario 1: Éxito al eliminar un espacio deportivo***</p><p>Dado que el propietario se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de espacios deportivos</p><p>Y selecciona uno de sus espacios deportivos</p><p>Y da clic en el ícono “Eliminar”</p><p>Y es lunes entre las 00:00 y 06:00 horas</p><p>Y da clic en “Confirmar”</p><p>Entonces la aplicación elimina el espacio deportivo de la plataforma</p><p>***Escenario 2: Error al eliminar un espacio deportivo***</p><p>Dado que el propietario se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de espacios deportivos</p><p>Y selecciona uno de sus espacios deportivos</p><p>Y da clic en el ícono “Eliminar”</p><p>Y no es lunes entre las 00:00 y 06:00 horas</p><p>Entonces la aplicación muestra un mensaje de error, indicando la hora de disponibilidad para editar un espacio deportivo</p>|EP03|
+|US11|Aplicar filtros para búsqueda de espacios deportivos|Como jugador quiero aplicar filtros para encontrar espacios deportivos según mis preferencias|<p>***Escenario 1: Filtrar espacios deportivos según deporte***</p><p>Dado que el jugador se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de espacios deportivos</p><p>Y selecciona el filtro por deporte</p><p>Y selecciona “Fútbol” o “Billar”</p><p>Entonces la aplicación muestra los espacios deportivos que coincidan con el deporte elegido</p><p>***Escenario 2: Filtrar espacios deportivos según distrito***</p><p>Dado que el jugador se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de espacios deportivos</p><p>Y selecciona el filtro por distrito</p><p>Y elige un distrito de Lima Metropolitana</p><p>Entonces la aplicación muestra los espacios deportivos ubicados en el distrito seleccionado</p><p>***Escenario 3: Filtrar espacios deportivos según precio***</p><p>Dado que el jugador se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de espacios deportivos</p><p>Y selecciona el filtro por precio</p><p>Y establece un valor mínimo y/o máximo</p><p>Entonces la aplicación muestra los espacios deportivos cuyo precio esté dentro del rango definido</p><p>***Escenario 4: Filtrar espacios deportivos según rango de horario***</p><p>Dado que el jugador se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de espacios deportivos</p><p>Y selecciona el filtro por horario</p><p>Y elige una hora de apertura y/o una hora de cierre</p><p>Entonces la aplicación muestra los espacios deportivos que tienen disponibilidad dentro del rango de horario seleccionado</p>|EP03|
+|US12|Visualizar horas disponibles de un espacio deportivo|Como jugador quiero visualizar las horas disponibles de un espacio deportivo para reservar|<p>***Escenario 1: Visualizar reservas de un espacio deportivo***</p><p>Dado que el jugador se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de espacios deportivos</p><p>Y da clic en el botón “Conocer más” de un espacio deportivo</p><p>Entonces la aplicación muestra más detalles del espacio deportivo</p><p>Y muestra las horas disponibles para reservar</p>|EP04|
+|US13|Crear una reserva en un espacio deportivo|Como jugador quiero reservar un espacio deportivo para jugar|<p>***Escenario 1: Creación exitosa de una reserva de tipo personal***</p><p>Dado que el jugador se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de reservas de un espacio deportivo</p><p>Y selecciona las horas de juego (recuadros verdes)</p><p>Y selecciona que la reserva sea de tipo “Personal”</p><p>Y da clic en el botón “Confirmar”</p><p>Y tiene suficientes créditos</p><p>Entonces la aplicación muestra un mensaje que la reserva se creó correctamente</p><p></p><p>***Escenario 2: Creación fallida de una reserva de tipo personal***</p><p>Dado que el jugador se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de reservas de un espacio deportivo</p><p>Y selecciona las horas de juego (recuadros verdes)</p><p>Y selecciona que la reserva sea de tipo “Personal”</p><p>Y da clic en el botón “Confirmar”</p><p>Y no tiene suficientes créditos</p><p>Entonces la aplicación muestra un mensaje al jugador indicando que tiene insuficientes créditos</p><p></p><p>***Escenario 3: Creación exitosa de una reserva de tipo comunidad***</p><p>Dado que el jugador se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de reservas de un espacio deportivo</p><p>Y selecciona las horas de juego (recuadros verdes)</p><p>Y selecciona que la reserva sea de tipo “Comunidad”</p><p>Y da clic en el botón “Confirmar”</p><p>Y tiene suficientes créditos para el adelanto</p><p>Entonces la aplicación muestra un mensaje que la reserva se creó correctamente</p><p>Y se crea una sala comunidad para la reserva</p><p></p><p>***Escenario 4: Creación fallida de una reserva de tipo comunidad***</p><p>Dado que el jugador se encuentra autenticado en la aplicación</p><p>Cuando se encuentra en la pantalla de reservas de un espacio deportivo</p><p>Y selecciona las horas de juego (recuadros verdes)</p><p>Y selecciona que la reserva sea de tipo “Comunidad”</p><p>Y da clic en el botón “Confirmar”</p><p>Y no tiene suficientes créditos para el adelanto</p><p>Entonces la aplicación muestra un mensaje al jugador indicando que tiene insuficientes créditos</p>|EP04|
+|US14|Ver reservas realizadas|Como jugador quiero ver mis reservas realizadas para conocer su información|<p>***Escenario 1: Visualizar reservas de tipo personal***</p><p>Dado que el jugador se encuentra autenticado</p><p>Cuando da clic al botón "Mis reservas" ubicado en el toolbar</p><p>Y selecciona el tipo personal</p><p>Entonces la aplicación muestra todas las reservas realizadas de tipo personal</p><p></p><p>***Escenario 2: Visualizar reservas de tipo comunidad***</p><p>Dado que el jugador se encuentra autenticado</p><p>Cuando da clic al botón "Mis reservas" ubicado en el toolbar</p><p>Y selecciona el tipo comunidad</p><p>Entonces la aplicación muestra todas las reservas realizadas de tipo comunidad (salas)</p>|EP04|
+|US15|Generar código QR de acceso al espacio deportivo|Como jugador quiero generar el código QR para acceder al espacio deportivo|<p>***Escenario 1: Generación de QR***</p><p>Dado que el jugador se encuentra autenticado</p><p>Cuando se encuentra en la pantalla de una reserva realizada</p><p>Y da clic en el botón “Generar QR de acceso”</p><p>Entonces visualizará el QR generado</p>|EP04|
+|US16|Visualizar salas comunidad|Como jugador quiero visualizar las salas comunidad disponibles para unirme|<p>***Escenario 1: Visualizar salas comunidad***</p><p>Dado que el jugador se encuentra autenticado</p><p>Cuando da clic al botón "Salas comunidad" ubicado en el toolbar</p><p>Entonces la aplicación muestra todas las salas comunidad</p>|EP05|
+|US17|Ingresar a una sala comunidad|Como jugador quiero ingresar a una sala comunidad para enlistarme|<p>***Escenario 1: Ingreso exitoso a la sala comunidad***</p><p>Dado que el jugador se encuentra autenticado</p><p>Cuando se encuentra en la pantalla de salas comunidad</p><p>Y da clic en el botón “Unirse” de una sala comunidad</p><p>Y tiene suficientes créditos para el adelanto</p><p>Entonces la aplicación muestra un mensaje al jugador indicando que se unió a la sala comunidad correctamente</p><p>***Escenario 2: Ingreso fallido a la sala comunidad***</p><p>Dado que el jugador se encuentra autenticado</p><p>Cuando se encuentra en la pantalla de salas comunidad</p><p>Y da clic en el botón “Unirse” de una sala comunidad</p><p>Y no tiene suficientes créditos para el adelanto</p><p>Entonces la aplicación muestra un mensaje al jugador indicando que tiene insuficientes créditos</p>|EP05|
+|US18|Eliminar una sala comunidad|Como jugador creador de la reserva quiero eliminar mi sala comunidad para cancelar la reserva|<p>***Escenario 1: Eliminación exitosa de la sala comunidad***</p><p>Dado que el jugador, creador de la reserva, se encuentra autenticado</p><p>Cuando se encuentra en la pantalla de su sala comunidad seleccionada</p><p>Y da clic en el ícono “Eliminar”</p><p>Y la diferencia entre la hora actual y la hora de inicio de la sala comunidad es mayor a 1 hora</p><p>Entonces la aplicación muestra un mensaje al jugador indicando que se eliminó correctamente la sala comunidad</p><p>Y se devuelve el adelanto a cada jugador</p><p>***Escenario 2: Eliminación fallida de la sala comunidad***</p><p>Dado que el jugador, creador de la reserva, se encuentra autenticado</p><p>Cuando se encuentra en la pantalla de su sala comunidad seleccionada</p><p>Y da clic en el ícono “Eliminar”</p><p>Y la diferencia entre la hora actual y la hora de inicio de la sala comunidad es menor a 1 hora</p><p>Entonces la aplicación muestra un mensaje al jugador indicando que no es posible eliminar la sala comunidad debido a que ya falta poco tiempo para su inicio</p>|EP05|
+|US19|Visualizar salas comunidad asociadas a espacios deportivos|Como propietario quiero visualizar las salas creadas a partir de mi espacio deportivo|<p>***Escenario 1: Visualizar espacios deportivos siendo propietario***</p><p>Dado que el propietario se encuentra autenticado</p><p>Cuando se encuentra en la pantalla de su espacio deportivo seleccionado</p><p>Y da clic en el botón “Ver salas creadas”</p><p>Entonces la aplicación muestra todas las salas comunidad creadas a partir de su espacio deportivo</p>|EP05|
+|US20|Aplicar filtros para búsqueda de salas comunidad|Como jugador quiero aplicar filtros para encontrar salas comunidad según mis preferencias|<p>***Escenario 1: Filtrar salas comunidad según deporte***</p><p>Dado que el jugador se encuentra en la pantalla de salas comunidad</p><p>Cuando selecciona el filtro por deporte</p><p>Y selecciona “Fútbol” o “Billar”</p><p>Entonces la aplicación muestra las salas comunidad que coincidan con el deporte elegido</p><p>***Escenario 2: Filtrar salas comunidad según fecha***</p><p>Dado que el jugador se encuentra en la pantalla de salas comunidad</p><p>Cuando selecciona el filtro por fecha</p><p>Y elige una fecha específica del calendario</p><p>Entonces la aplicación muestra las salas comunidad disponibles para la fecha seleccionada</p><p>***Escenario 3: Filtrar salas comunidad según rango de horario***</p><p>Dado que el jugador se encuentra en la pantalla de salas comunidad</p><p>Cuando selecciona el filtro por rango de horario</p><p>Y elige una hora de inicio y una hora de fin</p><p>Entonces la aplicación muestra las salas comunidad que estén disponibles dentro del rango de horario seleccionado</p><p>***Escenario 4: Filtrar salas comunidad según valor del adelanto***</p><p>Dado que el jugador se encuentra en la pantalla de salas comunidad</p><p>Cuando selecciona el filtro por valor del adelanto</p><p>Y establece un rango de valores o un monto específico</p><p>Entonces la aplicación muestra las salas comunidad que coincidan con el valor del adelanto indicado</p>|EP05|
+|US21|Visualizar ticket de transferencia|Como propietario quiero visualizar mis tickets de transferencia para conocer sus estados|<p>***Escenario 1: Visualizar tickets***</p><p>Dado que el propietario se encuentra autenticado</p><p>Cuando da clic al icono de perfil en la parte del toolbar</p><p>Y selecciona el apartado tickets</p><p>Entonces, la aplicación muestra la información de los tickets</p>|EP06|
+|US22|Crear ticket de transferencia|Como propietario quiero crear un ticket de transferencia para recibir mi dinero|<p>***Escenario 1: Creación exitosa de ticket***</p><p>Dado que el propietario se encuentra autenticado</p><p>Cuando se encuentra en la pantalla de tickets</p><p>Y selecciona el botón “Crear ticket”</p><p>Y es lunes entre 00:00 y 06:00 horas</p><p>Y no tiene otro ticket pendiente</p><p>Y registra todos los datos solicitados en los campos: nombre completo, nombre del banco, tipo de transferencia y número de cuenta</p><p>Entonces la aplicación muestra un mensaje al propietario indicando que se creó el ticket correctamente</p><p>***Escenario 2: Creación fallida de ticket por horario***</p><p>Dado que el propietario se encuentra autenticado</p><p>Cuando se encuentra en la pantalla de tickets</p><p>Y selecciona el botón “Crear ticket”</p><p>Y no es lunes entre 00:00 y 06:00 horas</p><p>Entonces la aplicación muestra un mensaje de error, indicando la hora de disponibilidad para crear un ticket</p><p>***Escenario 3: Creación fallida de ticket por vuelta de solicitud***</p><p>Dado que el propietario se encuentra autenticado</p><p>Cuando se encuentra en la pantalla de tickets</p><p>Y selecciona el botón “Crear ticket”</p><p>Y es lunes entre 00:00 y 06:00 horas</p><p>Y tiene otro ticket pendiente</p><p>Entonces la aplicación muestra un mensaje de error, indicando que ya existe otro ticket pendiente</p>|EP06|
+|US23|Conocer acerca de la aplicación|Como visitante del landing page quiero saber acerca de la aplicación para conocer sus detalles|<p>***Escenario 1: Leer acerca de la aplicación***</p><p>Dado que el visitante se encuentra en el landing page</p><p>Cuando el visitante da clic a los diferentes apartados</p><p>Entonces podrá visualizar la información deseada</p>|EP07|
+|TS01|Crear usuario|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "users/sign-up” para crear la información de los usuarios y registrarlos|<p>***Escenario 1: Creación de los usuarios en el API***</p><p>Dado que el desarrollador implementa un endpoint para la creación de los usuarios</p><p>Cuando solicita la creación de los usuarios con body: name, email, password y role</p><p>Entonces, es permitido de crear una cuenta a un usuario, a la par que su suscripción</p><p>***Escenario 2: Creación fallida de usuarios por existencia de email en la base de datos***</p><p>Dado que se envía una solicitud al momento de la creación del usuario</p><p>Cuando solicita la creación de los usuarios con body: name, email, password y role</p><p>Y el campo email ya existe en la base de datos</p><p>Entonces, la creación del usuario es denegada y devuelve un error 500.</p><p>***Escenario 3: Creación fallida de usuarios por no cumplir requisitos de números, uppercase y/o caracteres especiales en el campo contraseña***</p><p>Dado que se envía una solicitud al momento de la creación del usuario</p><p>Cuando solicita la creación de los usuarios con body: name, email, password y role</p><p>Y el campo contraseña no cumple los requisitos de número, uppercase y/o carácter especial</p><p>Entonces, la creación del usuario es denegada y devuelve un error 400.</p>|EP08|
+|TS02|Actualizar nombre|Como desarrollador, necesito implementar un endpoint PUT en el API nombrado "users/name” para actualizar el nombre de los usuarios|<p>***Escenario 1: Actualización del nombre de los usuarios en el API***</p><p>Dado que el desarrollador implementa un endpoint para la actualización del nombre de los usuarios</p><p>Cuando solicita la petición con body: name</p><p>Entonces, es permitido de actualizar el nombre a un usuario y devuelve un code 200.</p>|EP08|
+|TS03|Actualizar correo|Como desarrollador, necesito implementar un endpoint PUT en el API nombrado "users/email” para actualizar el correo de los usuarios|<p>***Escenario 1: Actualización del correo de los usuarios en el API***</p><p>Dado que el desarrollador implementa un endpoint para la actualización del correo de los usuarios</p><p>Cuando solicita la petición con body: email</p><p>Entonces, es permitido de actualizar el correo a un usuario y devuelve un code 200.</p>|EP08|
+|TS04|Actualizar contraseña|Como desarrollador, necesito implementar un endpoint PUT en el API nombrado "users/password” para actualizar la contraseña de los usuarios|<p>***Escenario 1: Actualización de la contraseña de los usuarios en el API***</p><p>Dado que el desarrollador implementa un endpoint para la actualización de la contraseña de los usuarios</p><p>Cuando solicita la petición con body: password</p><p>Entonces, es permitido de actualizar la contraseña a un usuario y devuelve un code 200.</p><p>***Escenario 2: Actualización fallida de contraseña de usuarios por no cumplir requisitos de números, uppercase y/o caracteres especiales en el campo contraseña***</p><p>Dado que se envía una solicitud al momento de la actualización del usuario</p><p>Cuando solicita la petición con body: password</p><p>Y el campo contraseña no cumple los requisitos de número, uppercase y/o carácter especial</p><p>Entonces, la actualización de la contraseña es denegada y devuelve un error 400.</p>|EP08|
+|TS05|Obtener todos los usuarios|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "users/all” para obtener todos los usuarios|<p>***Escenario 1: Obtención de todos los usuarios en el API***</p><p>Dado que el desarrollador implementa un endpoint para la obtención de todos los usuarios</p><p>Cuando solicita la petición sin body ni params</p><p>Y su rol es ADMIN</p><p>Entonces, es permitido de obtener todos los usuarios y devuelve un code 200.</p><p>***Escenario 2: Obtención fallida de todos los usuarios por tener rol PLAYER u OWNER***</p><p>Dado que se envía una solicitud al momento de la obtención de todos los usuarios</p><p>Cuando solicita la petición sin body ni params</p><p>Y el usuario tiene rol PLAYER u OWNER</p><p>Entonces, la obtención de todos los usuarios es denegada y devuelve un error 500.</p>|EP08|
+|TS06|Obtener información del usuario|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "users/me” para que, al consultar mediante un usuario específico, me obtenga su información|<p>***Escenario 1: Obtención de información de un usuario específico en el API***</p><p>Dado que el desarrollador implementa un endpoint para la obtención de información de un usuario específico</p><p>Cuando solicita la petición sin body ni params</p><p>Y está autenticado mediante la cookie</p><p>Entonces, es permitido de obtener la información del usuario y devuelve un code 200.</p><p>***Escenario 2: Obtención fallida de información de un usuario específico por no estar autenticado***</p><p>Dado que se envía una solicitud al momento de la obtención de información de un usuario específico</p><p>Cuando solicita la petición</p><p>Y no está autenticado</p><p>Entonces, la obtención de la información del usuario será denegada y devuelve un error 500.</p>|EP08|
+|TS07|Autenticar usuario|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "authentication/sign-in” para poder autenticarme y luego brindarme permisos|<p>***Escenario 1: Autenticación y autorización de un usuario***</p><p>Dado que el desarrollador implementa un endpoint para la autenticación y autorización un usuario</p><p>Cuando solicita la petición con body: email y password</p><p>Entonces, es permitido de autenticarse y autorizar al usuario y devuelve un code 200.</p><p>***Escenario 2: Autenticación y/o autorización fallida de un usuario por contraseña errónea***</p><p>Dado que se envía una solicitud al momento de la autenticación del usuario</p><p>Cuando solicita la petición con body: email y password</p><p>Y su contraseña está errónea</p><p>Entonces, es denegada el autenticar y autorizar al usuario</p><p>***Escenario 3: Autenticación y/o autorización fallida de un usuario por correo erróneo***</p><p>Dado que se envía una solicitud al momento de la autenticación del usuario</p><p>Cuando solicita la petición con body: email y password</p><p>Y su correo está erróneo</p><p>Entonces, es denegada, el autenticar y autorizar al usuario y devuelve un error 500.</p>|EP09|
+|TS08|Desautenticar usuario|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "authentication/log-out” para poder desautenticarme de la sesión|<p>***Escenario 1: Desautenticación y desautorización de un usuario***</p><p>Dado que el desarrollador implementa un endpoint para la desautenticación y desautorización un usuario</p><p>Cuando solicita la petición sin body ni params</p><p>Entonces, es permitido de desautenticarse y desautorizar al usuario en la sesión y devuelve un code 200.</p>|EP09|
+|TS09|Verificar autenticación|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "authentication/is-authenticated” para poder obtener si estoy autenticado o no|<p>***Escenario 1: Obtención de la autenticación del usuario en tiempo real***</p><p>Dado que el desarrollador implementa un endpoint para la obtención de la autenticación del usuario</p><p>Cuando solicita la petición sin body ni params</p><p>Entonces, es permitido de visualizar si está autenticado o no y devuelve un code 200.</p>|EP09|
+|TS10|Actualizar suscripción|Como desarrollador, necesito implementar un endpoint PUT en el API nombrado "subscriptions/upgrade” para poder actualizar mi suscripción|<p>***Escenario 1: Actualización de la suscripción de un usuario***</p><p>Dado que el desarrollador implementa un endpoint para la actualización de una suscripción de un usuario</p><p>Cuando solicita la petición con params: newPlanType</p><p>Y elige uno de los 3 planes posibles: bronce, plata u oro</p><p>Y lo redirige a una API externa, via Paypal</p><p>Y le pide sus datos para continuar con el pago</p><p>Y el usuario paga con su cuenta de PayPal</p><p>Entonces, es permitido la actualización de suscripción del usuario y devuelve un code 200.</p><p>***Escenario 2: Actualización fallida por insuficiente dinero en cuenta de PayPal***</p><p>Dado que se envía una solicitud de actualización de suscripción de usuario</p><p>Cuando solicita la petición con params: newPlanType</p><p>Y elige uno de los 3 planes posibles: bronce, plata u oro</p><p>Y lo redirige a una API externa, via Paypal</p><p>Y le pide sus datos para continuar con el pago</p><p>Y el usuario intenta pagar con su cuenta de PayPal</p><p>Y su cuenta de Paypal no tiene fondos suficientes</p><p>Entonces es denegada, la actualización de suscripción del usuario y devuelve un error 500.</p><p>***Escenario 3: Actualización fallida por intento de degradar la suscripción***</p><p>Dado que se envía una solicitud de intento de degradación de suscripción de un usuario</p><p>Cuando solicita la petición con params: newPlanType</p><p>Y elige uno de los 3 planes posibles: bronce, plata u oro</p><p>Y se verifica la solicitud de envío</p><p>Entonces, es denegada la degradación de la suscripción del usuario y devuelve un error 500.</p>|EP10|
+|TS11|Obtener suscripción de un usuario específico|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "api/v1/subscriptions” para que los usuarios obtengan los datos de su suscripción|<p>***Escenario 1: Obtención de la suscripción de un usuario específico***</p><p>Dado que el desarrollador implementa un endpoint para la obtención de la suscripción de un usuario específico</p><p>Cuando solicita la petición sin body ni params</p><p>Entonces es permitido, la visualización de la suscripción de un usuario específico y devuelve un code 200.</p>|EP10|
+|TS12|Crear espacio deportivo|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "sport-spaces/create” para que los usuarios con rol OWNER, puedan crear sus espacios deportivos|<p>***Escenario 1: Creación correcta del espacio deportivo***</p><p>Dado que se envía una solicitud de creación de espacio deportivo</p><p>Cuando solicita la petición con body multipart/form-data: name, sportId, image, Price, district, address, description, openTime, closeTime, gamemode</p><p>Y el usuario tiene rol OWNER</p><p>Y tiene una suscripción diferente a FREE</p><p>Y el horario corresponde a un intervalo entre las 00:00 y las 06:00 horas de los lunes</p><p>Entonces, se crea y devuelve un code 200.</p><p>***Escenario 2: Creación fallida por restricción horaria***</p><p>Dado que se envía una solicitud de creación de espacio deportivo</p><p>Cuando solicita la petición con body multipart/form-data: name, sportId, image, Price, district, address, description, openTime, closeTime, gamemode</p><p>Y el usuario tiene rol OWNER</p><p>Y tiene una suscripción diferente a FREE</p><p>Y el horario no corresponde a un intervalo entre las 00:00 y las 06:00 horas de los lunes</p><p>Entonces, es denegada la creación y te devuelve un error 500.</p>|EP11|
+|TS13|Obtener espacio deportivo por ID|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "sport-spaces/{id}” para que los usuarios PLAYER puedan obtener espacios deportivos por ID|<p>***Escenario 1: Obtención de un espacio deportivo por ID, según rol PLAYER***</p><p>Dado que el desarrollador implementa un endpoint para la obtención de espacios deportivos según ID</p><p>Cuando solicita la petición con params: id</p><p>Y el usuario tiene rol PLAYER</p><p>Y está autenticado y autorizado</p><p>Entonces, es permitido la obtención de los espacios deportivos por ID y devuelve un code 200.</p>|EP11|
+|TS14|Obtener espacio deportivo de un usuario específico|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "sport-spaces/my-space” para que los usuarios con rol OWNER puedan consultar sus espacios deportivos|<p>***Escenario 1: Obtención de un espacio deportivo según rol OWNER***</p><p>Dado que el desarrollador implementa un endpoint para la obtención de los espacios deportivos propios</p><p>Cuando solicita la petición sin body ni params</p><p>Y el usuario tiene rol OWNER</p><p>Y está autenticado y autorizado</p><p>Entonces, es permitido la obtención de los espacios deportivos correspondientes de ese usuario y devuelve un code 200.</p>|EP11|
+|TS15|Obtener todos los espacios deportivos|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "sport-spaces/all” para obtener todos los espacios deportivos existentes|<p>***Escenario 1: Obtención de todos los espacios deportivos según rol ADMIN o PLAYER***</p><p>Dado que el desarrollador implementa un endpoint para la obtención de todos los espacios deportivos</p><p>Cuando solicita la petición sin body ni params</p><p>Y el usuario tiene rol ADMIN o PLAYER</p><p>Entonces, es permitido la obtención de todos los espacios deportivos y devuelve un code 200.</p>|EP11|
+|TS16|Eliminar un espacio deportivo|Como desarrollador, necesito implementar un endpoint DELETE en el API nombrado "sport-spaces/{id}” para que un usuario OWNER pueda eliminar su espacio deportivo|<p>***Escenario 1: Eliminación de un espacio deportivo de un usuario OWNER***</p><p>Dado que el desarrollador implementa un endpoint para la eliminación de un espacio deportivo</p><p>Cuando solicita la petición con params: id</p><p>Y el usuario tiene rol OWNER</p><p>Entonces, es permitido la eliminación ese espacio deportivo y devuelve un code 200.</p><p>***Escenario 2: Eliminación fallida por restricción horaria y de día***</p><p>Dado que se envía una solicitud para la eliminación de un espacio deportivo</p><p>Cuando solicita la petición</p><p>Y el usuario tiene rol OWNER</p><p>Y el horario no corresponde a un intervalo entre las 00:00 y las 06:00 horas de los lunes</p><p>Entonces, es denegada la eliminación de ese espacio deportivo y devuelve un error 500.</p>|EP11|
+|TS17|Crear una reserva|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "reservations/create" para que un usuario PLAYER pueda realizar una reserva|<p>***Escenario 1: Creación de una reserva de un usuario PLAYER***</p><p>Dado que el desarrollador implementa un endpoint para la creación de una reserva</p><p>Cuando solicita la petición con body: gameDay, startTime, endTime, sportSpacesId, type, reservationName</p><p>Y el usuario tiene rol PLAYER</p><p>Entonces, es permitido la creación de esa reserva y devuelve un code 200.</p><p>***Escenario 2: Creación fallida por no cumplimiento de intervalo de horas de acuerdo con el espacio deportivo***</p><p>Dado que se envía una solicitud para la creación de un espacio deportivo</p><p>Cuando solicita la petición</p><p>Y el usuario tiene rol PLAYER</p><p>Y el horario, en el cual se reserva, está fuera del rango, en el cual, el espacio deportivo abre</p><p>Entonces, es denegada la creación de esa reserva y devuelve un error 500.</p><p>***Escenario 3: Creación fallida por no cumplimiento de intervalo de fechas en solo la semana actual***</p><p>Dado que se envía una solicitud para la creación de un espacio deportivo</p><p>Cuando solicita la petición</p><p>Y el usuario tiene rol PLAYER</p><p>Y la fecha, en la cual se reserva, está fuera del rango de la semana actual</p><p>Entonces, es denegada la creación de esa reserva y devuelve un error 500.</p><p>***Escenario 4: Creación fallida por cantidad de créditos insuficientes***</p><p>Dado que se envía una solicitud para la creación de un espacio deportivo</p><p>Cuando solicita la petición</p><p>Y el usuario tiene rol PLAYER</p><p>Y la cantidad de créditos del usuario no cubre el monto solicitado de la reserva</p><p>Entonces, es denegada la creación de esa reserva y devuelve un error 500.</p>|EP12|
+|TS18|Obtener una reserva|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "reservations/my-reservations" para que un usuario PLAYER pueda visualizar sus reservas|<p>***Escenario 1: Obtención de una reserva de un usuario PLAYER***</p><p>Dado que el desarrollador implementa un endpoint para la obtención de una reserva</p><p>Cuando solicita la petición sin body ni params</p><p>Y el usuario tiene rol PLAYER</p><p>Entonces, es permitido la obtención de sus reservas y devuelve un code 200.</p>|EP12|
+|TS19|Eliminar una reserva|Como desarrollador, necesito implementar un endpoint DELETE en el API nombrado "reservations/{id}" para que un usuario PLAYER pueda eliminar sus reservas|<p>***Escenario 1: Eliminación de una reserva de un usuario PLAYER***</p><p>Dado que el desarrollador implementa un endpoint para la eliminación de una de sus reservas</p><p>Cuando solicita la petición con params: id</p><p>Y el usuario tiene rol PLAYER</p><p>Y el tipo de la reserva es COMMUNITY</p><p>Y la sala no está llena</p><p>Entonces, es permitido la eliminación de la reserva específica y devuelve un code 200.</p><p>***Escenario 2: Eliminación fallida por restricción de horario y día de semana***</p><p>Dado que se envía una solicitud para la eliminación de una de sus reservas</p><p>Cuando solicita la petición con params: id</p><p>Y el usuario tiene rol PLAYER</p><p>Y el tipo de la reserva es COMMUNITY</p><p>Y la sala no está llena</p><p>Y el día de la eliminación no es lunes, ni está en el intervalo de 00:00 a 06:00</p><p>Entonces, es denegada la eliminación de la reserva específica y devuelve un error 500.</p>|EP12|
+|TS20|Obtener y verificar un Qr|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "reservations/verify-qr-image” para que un usuario PLAYER pueda obtener sus QR para ingresar al espacio deportivo|<p>***Escenario 1: Obtención de QR para acceder al espacio deportivo***</p><p>Dado que el desarrollador implementa un endpoint para la obtención del QR para acceder a los espacios deportivos reservados por un usuario</p><p>Cuando solicita la petición con params: token</p><p>Y el usuario tiene rol PLAYER</p><p>Entonces, es permitido la obtención del QR para acceder al espacio deportivo de acuerdo con la reserva del usuario y devuelve un code 200</p>|EP12|
+|TS21|Usar Qr|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "reservations/user-qr-token” para que un usuario PLAYER pueda usar sus QR para ingresar al espacio deportivo|<p>***Escenario 1: Usar el QR al acceder al espacio deportivo***</p><p>Dado que el desarrollador implementa un endpoint para el uso del QR al acceder a los espacios deportivos reservados por un usuario</p><p>Cuando solicita la petición con params: token</p><p>Y el usuario tiene rol PLAYER</p><p>Entonces, es permitido el uso del QR para acceder al espacio deportivo de acuerdo con la reserva del usuario y devuelve un code 200</p><br><p>***Escenario 2: Escaneo de Qr fallido por uso ya existente***</p><p>Dado que el desarrollador implementa un endpoint para el uso del QR al acceder a los espacios deportivos reservados por un usuario</p><p>Cuando solicita la petición con params: token</p><p>Y el usuario tiene rol PLAYER</p><p>Y el QR ya ha sido usado</p><p>Entonces, es denegado el uso del QR para acceder al espacio deportivo de acuerdo con la reserva del usuario y devuelve un error 500</p><br><p>***Escenario 3: Escaneo de Qr fallido por token expirado***</p><p>Dado que el desarrollador implementa un endpoint para el uso del QR al acceder a los espacios deportivos reservados por un usuario</p><p>Cuando solicita la petición con params: token</p><p>Y el usuario tiene rol PLAYER</p><p>Y ha expirado el token del QR para poder usarlo, de acuerdo con las fechas establecidas de uso en el intervalo del horario de la reserva</p><p>Entonces, es denegado el uso del QR para acceder al espacio deportivo de acuerdo con la reserva del usuario y devuelve un error 500</p>|EP12|
+|TS22|Unirse a una room|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "player-lists/join” para que un usuario PLAYER pueda unirse a una reserva de tipo COMMUNITY creada por otro usuario PLAYER|<p>***Escenario 1: Unirse a una reserva de tipo COMMUNITY***</p><p>Dado que el desarrollador implementa un endpoint para que un usuario se pueda unir a una reserva tipo COMMUNITY</p><p>Cuando solicita la petición con params: roomId</p><p>Y el usuario tiene rol PLAYER</p><p>Y el usuario tiene créditos suficientes para cubrir el monto del adelanto</p><p>Entonces, es permitido el poder unirse a una reserva de tipo COMMUNITY y devuelve un code 200</p><br><p>***Escenario 2: Integración a una sala fallida por cantidad de créditos insuficientes***</p><p>Dado que se envía una solicitud para la integración a una sala</p><p>Cuando solicita la petición con params: roomId</p><p>Y el usuario tiene rol PLAYER</p><p>Y la cantidad de créditos del usuario no cubre el monto solicitado de la reserva</p><p>Entonces, es denegada la integración a esa sala y devuelve un error 500</p>|EP13|
+|TS23|Obtener la lista de jugadores de una sala|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "player-lists/room/{roomId}” para que obtener a los usuarios que están en una sala|<p>***Escenario 1: Obtener la lista de jugadores de una sala***</p><p>Dado que el desarrollador implementa un endpoint para que obtener la lista de jugadores de una sala</p><p>Cuando solicita la petición con params: roomId</p><p>Entonces, es permitido el poder obtener la lista de jugadores y devuelve un code 200</p>|EP13|
+|TS24|Crear un chat en base a una sala|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "chat/rooms/{chatRoomId}/messages” para que crear un chat en base a una sala creada|<p>***Escenario 1: Creación de mensajes en un chat de sala***</p><p>Dado que el desarrollador implementa un endpoint para enviar mensajes en un chat de una sala</p><p>Cuando solicita la petición con params: chatRoomId</p><p>Entonces, es permitido el poder enviar un mensaje al chat y devuelve un code 200</p>|EP14|
+|TS25|Crear un depósito|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "deposit/create-deposit” para que se realice un depósito como usuario PLAYER|<p>***Escenario 1: Creación de un depósito***</p><p>Dado que el desarrollador implementa un endpoint para la creación de un depósito</p><p>Cuando solicita la petición con params: amount</p><p>Y lo redirige a una API externa, vía PayPal</p><p>Y le pide sus datos para continuar con el pago</p><p>Y el usuario paga con su cuenta de PayPal</p><p>Entonces, es permitida la creación del depósito y devuelve un code 200.</p><br><p>***Escenario 2: Creación fallida por insuficiente dinero en cuenta de PayPal***</p><p>Dado que se envía una solicitud de creación de depósito</p><p>Cuando solicita la petición con params: amount</p><p>Y lo redirige a una API externa, vía PayPal</p><p>Y le pide sus datos para continuar con el pago</p><p>Y el usuario intenta pagar con su cuenta de PayPal</p><p>Y su cuenta de PayPal no tiene fondos suficientes</p><p>Entonces, es denegada la creación de depósito y devuelve un error 500.</p>|EP15|
+|TS26|Crear una petición para retiro|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "bank-transfer/create” para que se realice una petición de retiro de créditos como usuario OWNER|<p>***Escenario 1: Creación de una petición de retiro***</p><p>Dado que el desarrollador implementa un endpoint para la creación de una petición de retiro de un usuario OWNER</p><p>Cuando solicita la petición con body: fullName, bankName, transferType y accountNumber</p><p>Y el usuario tiene créditos por cobrar</p><p>Entonces, es permitida la creación de la petición para retiro y devuelve un code 200.</p><br><p>***Escenario 2: Creación fallida por tener una petición activa***</p><p>Dado que el desarrollador implementa un endpoint para la creación de una petición de retiro de un usuario OWNER</p><p>Cuando solicita la petición con body: fullName, bankName, transferType y accountNumber</p><p>Y el usuario ya realizó una petición de retiro</p><p>Entonces, es denegada la creación de la petición para retiro y devuelve un error 500.</p>|EP16|
+|TS27|Atender la solicitud de retiro de un usuario OWNER|Como desarrollador, necesito implementar un endpoint PATCH en el API nombrado "bank-transfer/update-transfer/{id}” para que se atienda una petición de retiro de créditos como usuario ADMIN|<p>***Escenario 1: Atender la petición de retiro de un usuario OWNER***</p><p>Dado que el desarrollador implementa un endpoint para atender una petición de retiro de un usuario OWNER siendo usuario ADMIN</p><p>Cuando solicita la petición con params: id</p><p>Y la petición del usuario OWNER tiene créditos por cobrar</p><p>Entonces, es permitido la creación de la petición para atender el retiro y se le reduce la cantidad de créditos del usuario que solicitó la solicitud a 0 y devuelve un code 200.</p>|EP16|
+|TS28|Obtener la solicitud de retiro de un usuario OWNER|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "bank-transfer/user/{userId}” para que se obtenga la petición propia de retiro de créditos de un usuario específico como usuario OWNER y de todos, de acuerdo con el userId, según usuario ADMIN|<p>***Escenario 1: Obtener la petición de retiro de un usuario OWNER propia***</p><p>Dado que el desarrollador implementa un endpoint para obtener una petición de retiro de un usuario OWNER</p><p>Cuando solicita la petición con params: userId</p><p>Y el usuario tiene rol OWNER o ADMIN</p><p>Entonces, es permitido la obtención de la petición de retiro y devuelve un code 200.</p>|EP16|
+|TS29|Obtener la solicitud de todos los retiros de todos los usuarios OWNER|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "bank-transfer/all” para que se obtenga los retiros de créditos de todos los usuarios OWNER con usuario ADMIN|<p>***Escenario 1: Obtener todas las peticiones de retiro de todos los usuarios OWNER***</p><p>Dado que el desarrollador implementa un endpoint para obtener todas las peticiones de retiro de créditos de todos los usuarios OWNER</p><p>Cuando solicita la petición sin body ni params</p><p>Y el usuario tiene rol ADMIN</p><p>Entonces, es permitido la obtención de todas las peticiones de retiro y devuelve un code 200.</p>|EP16|
+|TS30|Obtener las salas por ID|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "rooms/{id}” para que se obtenga las salas en base a su id|<p>***Escenario 1: Obtener las salas en base a su id***</p><p>Dado que el desarrollador implementa un endpoint para obtener las salas en base a su id</p><p>Cuando solicita la petición con params: id</p><p>Entonces, es permitido la obtención de las salas en base a su id con un code 200.</p>|EP17|
+|TS31|Obtener las salas por usuario específico|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "rooms/my-rooms” para que se obtenga las salas reservadas del propio usuario|<p>***Escenario 1: Obtener las salas de un usuario específico***</p><p>Dado que el desarrollador implementa un endpoint para obtener las salas en base a un usuario específico</p><p>Cuando solicita la petición sin body ni params</p><p>Y el usuario tiene salas reservadas</p><p>Entonces, es permitido la obtención de las salas en base a su id con un code 200.</p>|EP17|
+|TS32|Obtener las salas en base a los espacios deportivos|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "rooms/my-rooms-by-spaces” para que se obtenga las salas reservadas de un espacio deportivo de acuerdo con un usuario OWNER|<p>***Escenario 1: Obtener las salas en base a un espacio deportivo de acuerdo con un usuario OWNER***</p><p>Dado que el desarrollador implementa un endpoint para obtener las salas en base a un espacio deportivo de acuerdo con un usuario OWNER</p><p>Cuando solicita la petición sin body ni params</p><p>Y el usuario tiene espacios deportivos con salas vinculadas por usuarios PLAYER</p><p>Entonces, es permitido la obtención de sus salas en base a sus espacios deportivos con un code 200.</p>|EP17|
+|TS33|Obtener salas en base a jugador específico unido|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "rooms/my-join-rooms” para que se obtenga las salas que un usuario específico se haya unido|<p>***Escenario 1: Obtener salas en base a un jugador específico que se haya unido***</p><p>Dado que el desarrollador implementa un endpoint para obtener las salas en donde un usuario específico se ha unido</p><p>Cuando solicita la petición sin body ni params</p><p>Y el usuario tiene salas a las cuales se ha unido</p><p>Entonces, es permitido la obtención de sus salas a las cuales se ha unido con un code 200.</p>|EP17|
+|TS34|Obtener todas las salas|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "rooms/all” para que se obtenga todas las salas siendo usuario ADMIN|<p>***Escenario 1: Obtener todas las salas siendo usuario ADMIN***</p><p>Dado que el desarrollador implementa un endpoint para obtener todas las salas</p><p>Cuando solicita la petición sin body ni params</p><p>Y el usuario tiene rol ADMIN</p><p>Entonces, es permitido la obtención de todas las salas con un code 200.</p>|EP17|
+|TS35|Solicitar olvido de contraseña|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "recover-password/forgot-password” para que se solicite un enlace para recuperar contraseña|<p>***Escenario 1: Solicitud de mandado de enlace a email ingresado exitoso***</p><p>Dado que el desarrollador implementa un endpoint para solicitar un enlace para recuperar contraseña</p><p>Cuando solicita la petición con params: email</p><p>Y el usuario tiene un email registrado en la base de datos</p><p>Entonces, es permitido el envío de su recuperación de contraseña a su correo con un code 200.</p>|EP08|
+|TS36|Reiniciar contraseña|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "recover-password/reset-password” para que se reinicie contraseña|<p>***Escenario 1: Reinicio exitoso de contraseña***</p><p>Dado que el desarrollador implementa un endpoint para reiniciar la contraseña</p><p>Cuando solicita la petición con body: token y newPassword</p><p>Y el campo newPassword cumple los requisitos de número, uppercase y/o carácter especial</p><p>Entonces, es permitido el reinicio de su contraseña con un code 200.</p>|EP08|
+
 
 ## 3.3. Impact Mapping
 
@@ -1116,51 +1156,616 @@ Las necesidades principales que hemos encontrado en nuestros segmentos objetivos
 
 ## 3.4. Product Backlog
 
-| #Orden | User Story ID | Título                                                 | Descripción                                                              | Story Points |
-|--------|---------------|--------------------------------------------------------|--------------------------------------------------------------------------|--------------|
-| 1      | TS02          | Gestionar reservas de espacios de juego               | Como desarrollador, necesito implementar endpoints en el API para que los usuarios puedan realizar y gestionar reservas de espacios de juego de forma rápida y sencilla.                                                                                    | 8            |
-| 2      | US13          | Reservar un espacio de juego                          | Como rentor quiero reservar un espacio de juego para divertirme jugando  | 8            |
-| 3      | US12          | Ver horarios de los espacios de juego                 | Como rentor quiero ver la disponibilidad de los espacios de juego para elegir | 5            |
-| 4      | TS01          | Gestionar información de espacios de juego| Como desarrollador, necesito implementar un endpoint en el API para obtener información sobre los espacios de juego                                                                                                  | 5            |
-| 5      | TS05          | Gestionar metodos de pago           | Como desarrollador, necesito implementar endpoints en el API para procesar pagos de forma segura y confiable dentro de la plataforma.                                                                                                                       | 5            |
-| 6      | TS08          | Gestión de suscripciones                  | Como desarrollador, quiero implementar un sistema de gestión de suscripciones para que los usuario pueden mejorar sus cuentas                                      | 5            |
-| 7      | US16          | Cancelar una reserva de un espacio de juego           | Como rentor quiero cancelar una reserva para ya no tener que asistir    | 5            |
-| 8      | US20          | Ver salas comunitarias                                | Como rentor quiero ver las salas comunitarias para unirme a una de ellas| 5            |
-| 9      | US21          | Crear una sala comunitaria                            | Como rentor quiero crear una sala para que otros jugadores puedan unirse a nuestra reserva | 5            |
-| 10     | TS07          | Seguridad y protección de Datos                       | Como desarrollador, quiero implementar medidas de seguridad y protección de datos para garantizar la confidencialidad y la integridad de la información del usuario.                                                                                        | 3            |
-| 11     | US09          | Visualizar espacios de juego   | Como rentor quiero ver los espacios de juego para conocerlos| 3            |
-| 12     | US10          | Visualizar características de los espacios de juego      | Como rentor quiero comparar los espacios de juego para conocer cuál me conviene más | 3            |
-| 13     | US11          | Aplicar filtros de búsqueda                           | Como rentor quiero aplicar filtros para encontrar espacios de juego según mi preferencia | 3            |
-| 14     | US14          | Ver reservas activas de un espacio de juego           | Como rentor quiero ver mis reservas activas para gestionarlas           | 3            |
-| 15     | US15          | Ver historial de reservas de espacios de juego        | Como rentor quiero ver mis reservas antiguas para visualizar su información | 3            |
-| 16     | US17          | Ver una suscripción                                   | Como rentor quiero ver el estado de mi suscripción para gestionarla     | 3            |
-| 17     | US18          | Adquirir una subscripción                             | Como rentor quiero adquirir una subscripción para usar los beneficios    | 3            |
-| 18     | US19          | Cancelar una subscripción                             | Como rentor quiero cancelar una subscripción para dejar de usar los beneficios | 3            |
-| 19     | US28          | Añadir un espacio de juego                            | Como propietario de un espacio de juego quiero añadir mi local a la aplicación web para que los rentores puedan reservar mi local | 3            |
-| 20     | TS11          | Gestionar cuentas de usuario                          | Como desarrollador, necesito implementar endpoints en el API para permitir a los usuarios gestionar sus cuentas, incluyendo la actualización de información personal y la configuración de preferencias.                                                   | 3            |
-| 21     | US22          | Unirse a una sala comunitaria                   | Como rentor quiero unirme a una sala comunitaria para jugar con otros jugadores |3|
-| 22     | US01          | Registro de cuenta de rentor                   | Como rentor deseo registrarme para tener una cuenta | 3   |
-| 23     | US02          | Inicio de sesión de cuenta                   | Como rentor deseo poder ingresar a mi cuenta para usarla |3  |
-| 24     | TS04          | implementar endpoints para la gestión de roles y permisos de usuario | Como desarrollador, necesito implementar endpoints en el API para administrar roles y permisos de usuario, permitiendo controlar de manera eficiente los accesos y acciones permitidas dentro de la plataforma| 3 |
-| 25     | TS03          | Gestionar calificaciones y comentarios de usuarios    | Como desarrollador, necesito implementar endpoints en el API para que los usuarios puedan calificar y dejar comentarios sobre los espacios de juego ocupados | 2            |
-| 26     | US31          | Administrar horarios                                  | Como propietario de un espacio de juego quiero administrar los horarios de mis espacios de juego para conocer sus detalles | 2            |
-| 27     | US29          | Editar un espacio de juego                            | Como propietario de un espacio de juego quiero editar mi local a la aplicación web para modificar información del espacio de juego | 2            |
-| 28     | TS06          | Validación de datos de entrada                        | Como desarrollador, necesito implementar validación de datos de entrada en los endpoints de la API para garantizar la integridad y consistencia de la información.      | 2            |
-| 29     | TS09          | Implementar funcionalidad de inicio de sesión seguro  | Como desarrollador, necesito implementar un endpoint en el API para permitir que los usuarios inicien sesión de forma segura en la plataforma. | 2            |
-| 30     | TS10          | Agregar funcionalidad de recuperación de contraseña   | Como desarrollador, necesito implementar un endpoint en el API para permitir que los usuarios recuperen su contraseña en caso de olvido. | 2            |
-| 31     | US03          | Ver perfil de rentor  | Como rentor quiero acceder a mi perfil para ver mis datos personales | 2            |
-| 32     | US04          | Editar perfil de rentor            |Como rentor deseo acceder a mi perfil para editar mis datos personales | 2            |
-| 33     | US06          | Visualizar tarjetas como método de pago                   | Como rentor quiero visualizar mis tarjetas registradas para gestionarlas| 2            |
-| 34     | US07          | Agregar una tarjeta como método de pago                  | Como rentor quiero agregar mi tarjeta para pagar mis reservas | 2            |
-| 35     | US30          | Eliminar un espacio de juego                          | Como propietario de un espacio de juego quiero eliminar mi local de la aplicación web para que no se visualice más | 1            |
-| 34     | US27          | Contactarse con el soporte                            | Como visitante de la landing page quiero contactarme con el soporte para resolver dudas | 1            |
-| 36     | US26          | Leer preguntas frecuentes                             | Como visitante de la landing page quiero leer preguntas frecuentes para conocer dudas comunes de la aplicación web | 1            |
-| 37     | US25          | Ver información de los desarrolladores                | Como visitante de la landing page quiero ver la información de los desarrolladores para conocer sus perfiles | 1            |
-| 38     | US24          | Conocer los planes de la aplicación web               | Como visitante de la landing page quiero conocer los planes que ofrecen para conocer sus detalles | 1            |
-| 39     | US23          | Conocer acerca de la aplicación web                   | Como visitante de la landing page quiero saber acerca de la aplicación web para conocer sus detalles | 1            |
-| 40     | US23          | Conocer acerca de la aplicación web                   | Como visitante de la landing page quiero saber acerca de la aplicación web para conocer sus detalles | 1            |
-| 41     | US05          | Editar tarjeta como método de pago                  | Como rentor quiero editar la información de mi tarjeta para gestionarla | 1            |
-| 42     | US08          | Borrar un método de pago                  | Como rentor quiero borrar una tarjeta para que ya no esté disponible | 1            |
+| #Orden | User Story ID | Título                                     | Descripción                                                                                         | Story Points |
+|--------|---------------|--------------------------------------------|-----------------------------------------------------------------------------------------------------|--------------|
+| 1      | TS17          | Crear una reserva                          | Como desarrollador deseo implementar el endpoint `POST reservations/create` para que un usuario PLAYER realice una reserva | 24 |
+| 2      | TS01          | Crear usuario                              | Como desarrollador deseo implementar el endpoint `POST users/sign-up` para registrar usuarios en la app | 5 |
+| 3      | TS10          | Actualizar suscripción                     | Como desarrollador deseo implementar el endpoint `PUT subscriptions/upgrade` para actualizar la suscripción de un usuario | 5 |
+| 4      | TS25          | Crear un depósito                          | Como desarrollador deseo implementar el endpoint `POST deposit/create-deposit` para que un jugador recargue créditos | 5 |
+| 5      | TS22          | Unirse a una room                          | Como desarrollador deseo implementar el endpoint `POST player-lists/join` para que un usuario se una a una sala COMMUNITY | 5 |
+| 6      | TS26          | Crear petición para retiro                 | Como desarrollador deseo implementar el endpoint `POST bank-transfer/create` para solicitar retiro de créditos como OWNER | 5 |
+| 7      | TS27          | Atender solicitud de retiro                | Como desarrollador deseo implementar el endpoint `PATCH bank-transfer/update-transfer/{id}` para que un ADMIN atienda la solicitud | 5 |
+| 8      | TS29          | Obtener todas solicitudes de retiro        | Como desarrollador deseo implementar el endpoint `GET bank-transfer/all` para obtener todas las solicitudes de retiro | 2 |
+| 9      | TS21          | Usar QR                                    | Como desarrollador deseo implementar el endpoint `POST reservations/user-qr-token` para que el jugador use su QR | 5 |
+| 10     | TS20          | Obtener y verificar un QR                  | Como desarrollador deseo implementar el endpoint `GET reservations/verify-qr-image` para obtener el QR de acceso | 5 |
+| 11     | TS07          | Autenticar usuario                         | Como desarrollador deseo implementar el endpoint `POST authentication/sign-in` para autenticar a un usuario | 5 |
+| 12     | TS04          | Actualizar contraseña                      | Como desarrollador deseo implementar el endpoint `PUT users/password` para actualizar la contraseña del usuario | 2 |
+| 13     | TS02          | Actualizar nombre                          | Como desarrollador deseo implementar el endpoint `PUT users/name` para actualizar el nombre del usuario | 2 |
+| 14     | TS03          | Actualizar correo                          | Como desarrollador deseo implementar el endpoint `PUT users/email` para actualizar el correo del usuario | 2 |
+| 15     | TS08          | Desautenticar usuario                      | Como desarrollador deseo implementar el endpoint `POST authentication/log-out` para cerrar sesión del usuario | 2 |
+| 16     | TS28          | Obtener solicitud de retiro de un usuario | Como desarrollador deseo implementar el endpoint `GET bank-transfer/user/{userId}` para obtener la solicitud de retiro de un usuario | 2 |
+| 17     | TS23          | Obtener lista de jugadores de una sala    | Como desarrollador deseo implementar el endpoint `GET player-lists/room/{roomId}` para ver jugadores de una sala | 3 |
+| 18     | TS24          | Crear un chat en base a una sala           | Como desarrollador deseo implementar el endpoint `POST chat/rooms/{chatRoomId}/messages` para crear un chat en una sala | 3 |
+| 19     | TS11          | Obtener suscripción de un usuario          | Como desarrollador deseo implementar el endpoint `GET api/v1/subscriptions` para ver la suscripción de un usuario | 2 |
+| 20     | TS13          | Obtener espacio deportivo por ID           | Como desarrollador deseo implementar el endpoint `GET sport-spaces/{id}` para obtener un espacio deportivo por ID | 2 |
+| 21     | TS14          | Obtener espacios propios                   | Como desarrollador deseo implementar el endpoint `GET sport-spaces/my-space` para que un OWNER vea sus espacios | 2 |
+| 22     | TS12          | Crear espacio deportivo                    | Como desarrollador deseo implementar el endpoint `POST sport-spaces/create` para que un OWNER cree un espacio deportivo | 5 |
+| 23     | TS15          | Obtener todos los espacios deportivos      | Como desarrollador deseo implementar el endpoint `GET sport-spaces/all` para obtener todos los espacios deportivos | 2 |
+| 24     | TS16          | Eliminar un espacio deportivo              | Como desarrollador deseo implementar el endpoint `DELETE sport-spaces/{id}` para eliminar un espacio como OWNER | 5 |
+| 25     | TS06          | Obtener información del usuario            | Como desarrollador deseo implementar el endpoint `GET users/me` para obtener la información del usuario autenticado | 2 |
+| 26     | TS05          | Obtener todos los usuarios                 | Como desarrollador deseo implementar el endpoint `GET users/all` para que un ADMIN obtenga todos los usuarios | 2 |
+| 27     | TS18          | Obtener reservas                           | Como desarrollador deseo implementar el endpoint `GET reservations/my-reservations` para ver reservas del usuario | 2 |
+| 28     | TS19          | Eliminar una reserva                       | Como desarrollador deseo implementar el endpoint `DELETE reservations/{id}` para eliminar una reserva como PLAYER | 5 |
+| 29     | TS30          | Obtener sala por ID                        | Como desarrollador deseo implementar el endpoint `GET rooms/{id}` para obtener una sala por su ID  | 2 |
+| 30     | TS31          | Obtener salas por usuario específico       | Como desarrollador deseo implementar el endpoint `GET rooms/my-rooms` para obtener salas propias   | 2 |
+| 31     | TS32          | Obtener salas por espacios deportivos      | Como desarrollador deseo implementar el endpoint `GET rooms/my-rooms-by-spaces` para ver salas por espacio | 2 |
+| 32     | TS33          | Obtener salas unidas por jugador           | Como desarrollador deseo implementar el endpoint `GET rooms/my-join-rooms` para ver salas unidas   | 2 |
+| 33     | TS34          | Obtener todas las salas (ADMIN)            | Como desarrollador deseo implementar el endpoint `GET rooms/all` para obtener todas las salas como ADMIN | 2 |
+| 34     | TS35          | Solicitar olvido de contraseña             | Como desarrollador deseo implementar el endpoint `POST recover-password/forgot-password` para solicitar recuperación | 3 |
+| 35     | TS36          | Reiniciar contraseña                       | Como desarrollador deseo implementar el endpoint `POST recover-password/reset-password` para reiniciar la contraseña | 3 |
+| 36     | TS09          | Verificar autenticación                    | Como desarrollador deseo implementar el endpoint `GET authentication/is-authenticated` para verificar si estoy autenticado | 2 |
+| 37      | US01          | Registro de cuenta de usuario              | Como jugador o propietario deseo registrarme para tener una cuenta en D’Taquito                    | 2            |
+| 38      | US02          | Inicio de sesión de cuenta                 | Como jugador o propietario deseo ingresar a mi cuenta para usar funcionalidades de la app          | 2            |
+| 39      | US03          | Ver perfil de usuario                      | Como jugador o propietario deseo acceder a mi perfil para visualizar mis datos personales          | 2            |
+| 40      | US04          | Editar perfil de usuario                   | Como usuario deseo editar mis datos personales para mantener mi perfil actualizado                 | 2            |
+| 41      | US05          | Recargar crédito                           | Como jugador deseo recargar crédito para reservar un espacio deportivo                             | 3            |
+| 42      | US06          | Ver una suscripción                        | Como propietario deseo ver el estado de mi suscripción para gestionarla                            | 3            |
+| 43      | US07          | Actualizar una suscripción                 | Como usuario propietario deseo actualizar mi suscripción para usar los beneficios que me da        | 3            |
+| 44      | US08          | Visualizar espacios deportivos             | Como jugador o propietario deseo ver los espacios deportivos para conocer sus detalles             | 2            |
+| 45      | US09          | Añadir un espacio deportivo                | Como propietario deseo añadir mi espacio deportivo para que los jugadores puedan visualizarlo      | 2            |
+| 46     | US12          | Visualizar horas disponibles               | Como jugador deseo visualizar las horas disponibles de un espacio deportivo para reservar          | 2            |
+| 47     | US13          | Crear una reserva en un espacio deportivo | Como jugador deseo reservar un espacio deportivo para jugar para asegurar mi tiempo de juego       | 5            |
+| 48     | US14          | Ver reservas realizadas                    | Como jugador deseo ver mis reservas realizadas para conocer su información                         | 2            |
+| 49     | US16          | Visualizar salas comunidad                 | Como jugador deseo visualizar las salas comunidad disponibles para unirme                          | 2            |
+| 50     | US17          | Ingresar a una sala comunidad              | Como jugador deseo ingresar a una sala comunidad para enlistarme                                   | 5            |
+| 51     | US18          | Eliminar una sala comunidad                | Como creador de la reserva deseo eliminar mi sala comunidad para cancelar la reserva               | 3            |
+| 52     | US10          | Eliminar un espacio deportivo              | Como propietario deseo eliminar mi espacio deportivo porque ya no quiero que esté registrado       | 2            |
+| 53     | US22          | Crear ticket de transferencia              | Como propietario deseo crear un ticket de transferencia para recibir mi dinero                     | 3            |
+| 54     | US21          | Visualizar ticket de transferencia         | Como propietario deseo visualizar mis tickets de transferencia para conocer sus estados            | 2            |
+| 55     | US15          | Generar código QR de acceso                | Como jugador deseo generar el código QR para acceder al espacio deportivo                          | 2            |
+| 56     | US19          | Visualizar salas asociadas a mis espacios | Como propietario deseo visualizar las salas creadas a partir de mi espacio deportivo               | 2            |
+| 57     | US20          | Aplicar filtros a salas comunidad          | Como jugador deseo aplicar filtros para encontrar salas comunidad según mis preferencias           | 2            |
+| 58     | US11          | Aplicar filtros a espacios deportivos      | Como jugador deseo aplicar filtros para encontrar espacios deportivos según mis preferencias       | 2            |
+| 59     | US23          | Conocer acerca de la aplicación            | Como visitante del landing page deseo saber acerca de la aplicación para conocer sus detalles      | 2            |
+
+
+<br>
+
+# IV. Solution Software Design
+
+## 4.1. Strategic-Level Domain-Driven-Design
+
+En esta sección se presentan diversos enfoques esenciales aplicados en el Diseño Dirigido por el Dominio a nivel estratégico (Strategic-Level Domain-Driven Design). Estas metodologías fueron clave para construir una base robusta en la definición y modelado de dominios complejos. Mediante técnicas como *Event Storming*, *Context Mapping* y la definición de la Arquitectura de Software, se logró una comprensión clara y profunda de los componentes fundamentales necesarios para diseñar sistemas efectivos y bien organizados. A continuación, se detallan los aspectos más relevantes abordados en esta etapa.
+
+### 4.1.1. Event Storming
+
+Se adoptó un enfoque visual y colaborativo que facilitó el modelado del contexto del dominio. Durante este proceso, se analizaron etapas como el descubrimiento de contextos candidatos (*Candidate Context Discovery*), el modelado de flujos de mensajes del dominio (*Domain Message Flows Modeling*) y la elaboración de lienzos de contextos delimitados (*Bounded Context Canvases*).
+
+#### 4.1.1.1. Unstructured Exploration
+
+Es una técnica visual que involucra a todas las partes interesadas con el fin de explorar el dominio del sistema. Se emplean notas adhesivas de varios colores para representar distintos componentes, lo que facilita el diálogo y el descubrimiento de requisitos.
+
+<img src="./Resources/images/EventStorming.png" >
+
+#### 4.1.1.2. Timelines
+
+Hace referencia al orden cronológico de los eventos que tienen lugar dentro del sistema. Representar esta secuencia en una línea de tiempo permite visualizar la interacción entre eventos y su impacto en el flujo de trabajo, además de ayudar a detectar momentos clave en el proceso.
+
+<img src="./Resources/images/TimeLines.png" >
+
+#### 4.1.1.3. Pain Points
+
+Se trata de los retos o inconvenientes que experimentan los usuarios y las partes interesadas dentro del contexto del sistema. Reconocer estos problemas permite enfocar esfuerzos en priorizar funcionalidades y soluciones que respondan de manera efectiva a las necesidades reales de los usuarios.
+
+<img src="./Resources/images/PainPoints.png" >
+
+#### 4.1.1.4. Pivotal Points
+
+Corresponden a instantes decisivos dentro del flujo de eventos que pueden alterar el estado del sistema o tener un impacto notable en la experiencia del usuario. Detectarlos permite enfocar los esfuerzos en las áreas de mayor relevancia.
+
+<img src="./Resources/images/PivotalPoints.png" >
+
+#### 4.1.1.5. Commands
+
+Representan las acciones o comandos que un usuario o el sistema pueden realizar para generar una modificación en el estado del sistema. Ejemplos de ello son "Crear Pedido" o "Actualizar Inventario".
+
+<img src="./Resources/images/Commands.png" >
+
+#### 4.1.1.6. Policies
+
+Son normas o lineamientos que establecen cómo deben tomarse las decisiones dentro del sistema. Estas reglas de negocio definen, por ejemplo, cuándo deben ejecutarse determinados comandos o cómo deben gestionarse ciertos eventos.
+<img src="./Resources/images/Policies.png" >
+
+#### 4.1.1.7. Read Models
+
+Son estructuras de datos utilizadas para atender consultas o solicitudes de información. Estos modelos de lectura están optimizados para facilitar el acceso a los datos y se mantienen separados de los modelos de escritura, lo que permite mejorar tanto el rendimiento como la escalabilidad del sistema.
+
+<img src="./Resources/images/ReadModels.png" >
+
+#### 4.1.1.8. External Systems
+
+Hace referencia a otros sistemas o servicios que se comunican con el sistema principal. Identificar estos sistemas es clave para comprender las dependencias e integraciones necesarias para el correcto funcionamiento del sistema.
+
+<img src="./Resources/images/ExternalSystems.png" >
+
+#### 4.1.1.9. Aggregates
+
+Son conjuntos de objetos que se manejan como una sola entidad para la gestión de datos y la lógica empresarial. Un agregado asegura la consistencia de sus elementos durante las operaciones y agrupa la lógica de negocio asociada.
+
+<img src="./Resources/images/Aggregates.png" >
+
+#### 4.1.1.10. Bounded Contexts
+
+Es una delimitación precisa dentro del dominio del sistema en la que se aplica un modelo específico. Establece una frontera donde un conjunto de conceptos y términos adquieren un significado particular, lo que ayuda a evitar confusiones y gestionar las complejidades en sistemas grandes y distribuidos.
+
+<img src="./Resources/images/BoundedContext.png" >
+
+
+### 4.1.2. Candidate Context Discovery
+
+Usando la metodología de Eventstorming con un enfoque "start-with-simple", empleamos la línea de tiempo para identificar posibles candidatos para nuestro contexto delimitado, los cuales son los siguientes:
+
+**Identificación de Valores del Negocio:** Hemos examinado los valores fundamentales del negocio, como la experiencia del usuario al reservar un espacio deportivo y seleccionar el tipo de reserva, ya sea para jugar con amigos o, si lo prefiere, utilizar nuestro sistema de salas comunitarias, donde los usuarios pueden reunirse con personas que comparten intereses similares en el juego.
+
+**Identificación de Funcionalidades Clave:** Se han destacado las funcionalidades esenciales que permiten una interacción fluida, como la capacidad de realizar reservas, gestionar espacios deportivos, acceder a salas comunitarias, y facilitar la interacción entre los usuarios mediante la creación y participación en eventos y actividades relacionadas con el deporte.
+
+A través de este enfoque, logramos establecer una comprensión clara de los aspectos clave que deben ser gestionados y optimizados para ofrecer una experiencia de usuario coherente y satisfactoria.
+
+
+**Users:**
+
+<img src="./Resources/images/Capitulo 4/Profile_Management.png" >
+
+**Identity and Access Management:**
+
+<img src="./Resources/images/Capitulo 4/Identity_Access_Management.png" >
+
+**Subscriptions:**
+
+<img src="./Resources/images/Capitulo 4/Bussiness_Management_System.png" >
+
+**Sport Spaces:**
+
+<img src="./Resources/images/Capitulo 4/IoT_Asset_Management.png" >
+
+**Reservations:**
+
+<img src="./Resources/images/Capitulo 4/Notification_management.png" >
+
+**Rooms:**
+
+<img src="./Resources/images/Capitulo 4/Data_Report_Analytics.png" >
+
+**Player List:**
+
+<img src="./Resources/images/Capitulo 4/Data_Report_Analytics.png" >
+
+**Chat Room:**
+
+<img src="./Resources/images/Capitulo 4/Data_Report_Analytics.png" >
+
+**Deposit:**
+
+<img src="./Resources/images/Capitulo 4/Data_Report_Analytics.png" >
+
+**Bank Transfer:**
+
+<img src="./Resources/images/Capitulo 4/Data_Report_Analytics.png" >
+
+**Payments:**
+
+<img src="./Resources/images/Capitulo 4/Data_Report_Analytics.png" >
+
+### 4.1.3. Domain Message Flows Modeling
+
+
+
+### 4.1.6. Software Architecture
+
+#### 4.1.6.1.	Software Architecture System Landscape Diagram
+
+
+
+<img src="./Resources/images/Capitulo 4/4131.png" >
+
+#### 4.1.6.2.	Software Architecture Context Level Diagrams
+
+
+
+<img src="./Resources/images/Capitulo 4/4132.png" >
+
+#### 4.1.6.3.	Software Architecture Container Level Diagrams
+
+
+
+<img src="./Resources/Evidences/structurizr-Contenedores.png" >
+
+#### 4.1.6.4. Software Architecture Deployment Level Diagrams
+
+
+<img src="./Resources/Evidences/paradigm.jpg" >
+
+## 4.2. Tactical-Level Domain-Driven-Design
+
+### 4.2.1. Bounded Context: Users
+
+#### 4.2.1.1. Domain Layer
+
+
+  
+#### 4.2.1.2. Interface Layer
+
+
+
+
+
+
+  
+#### 4.2.1.3. Application Layer
+
+
+
+#### 4.2.1.4. Infraestructure Layer
+
+
+
+#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+
+
+<img src="./Resources/images/Capitulo 4/4215.png" >
+
+#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.1.6.1 Bounded Context Domain Layer Class Diagrams
+
+
+
+
+<img src="./Resources/PART 6/1.jpg" >
+
+##### 4.2.1.6.2. Bounded Context Database Design Diagram 
+
+
+
+<img src="./Resources/PART 6/2.jpg" >
+
+### 4.2.2. Bounded Context: IAM
+
+#### 4.2.2.1. Domain Layer
+
+
+
+#### 4.2.2.2. Interface Layer
+
+
+
+#### 4.2.2.3. Application Layer
+
+
+
+#### 4.2.2.4. Infrastructure Layer
+
+
+
+#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams 
+
+
+
+<img src="./Resources/images/Capitulo 4/4225.png" >
+
+#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams 
+
+
+
+<img src="./Resources/images/Capitulo 4/42261.png" >
+
+##### 4.2.2.6.2. Bounded Context Database Design Diagram 
+
+
+
+<img src="./Resources/images/Capitulo 4/42262.png" >
+
+### 4.2.3. Bounded Context: Subscriptions
+
+#### 4.2.3.1. Domain Layer
+
+
+
+#### 4.2.3.2. Interface Layer
+
+
+#### 4.2.3.3. Application Layer
+
+
+#### 4.2.3.4. Infrastructure Layer
+
+
+
+#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams 
+
+
+
+<img src="./Resources/images/Capitulo 4/4235.png" >
+
+#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams 
+
+##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams 
+
+
+<img src="./Resources/PART 6/42361Image.png" >
+
+##### 4.2.3.6.2. Bounded Context Database Design Diagram 
+
+
+<img src="./Resources/PART 6/4.jpg" >
+
+### 4.2.4. Bounded Context: Sport Spaces
+
+#### 4.2.4.1. Domain Layer 
+
+
+#### 4.2.4.2. Interface Layer
+
+
+#### 4.2.4.3. Application Layer
+
+
+#### 4.2.4.4. Infrastructure Layer
+
+
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+
+
+<img src="./Resources/PART 6/5.jpg" >
+
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams 
+
+##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams 
+
+
+
+<img src="./Resources/PART 6/6.jpg" >
+
+##### 4.2.4.6.2. Bounded Context Database Design Diagram 
+
+
+<img src="./Resources/PART 6/7.jpg" >
+
+### 4.2.5. Bounded Context: Reservations
+
+#### 4.2.5.1. Domain Layer
+
+
+#### 4.2.5.2. Interface Layer 
+
+
+#### 4.2.5.3. Application Layer
+
+
+
+#### 4.2.5.4. Infrastructure Layer
+
+
+#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+
+
+<img src="./Resources/images/Capitulo 4/4255.png" >
+
+#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams 
+
+
+
+<img src="./Resources/images/Capitulo 4/42561.png" >
+
+##### 4.2.5.6.2. Bounded Context Database Design Diagram
+
+
+<img src="./Resources/images/Capitulo 4/42562.png" >
+
+### 4.2.6. Bounded Context: Rooms
+
+#### 4.2.6.1. Domain Layer
+
+
+
+#### 4.2.6.3. Application Layer 
+
+
+
+#### 4.2.6.4. Infrastructure Layer 
+
+
+
+#### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams 
+
+
+
+<img src="./Resources/images/Capitulo 4/4265.png" >
+
+#### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
+
+
+
+<img src="./Resources/images/Capitulo 4/42661.png" >
+
+##### 4.2.6.6.2. Bounded Context Database Design Diagram
+
+
+
+<img src="./Resources/images/Capitulo 4/42662.png" >
+
+### 4.2.7. Bounded Context: Player List
+
+#### 4.2.7.1. Domain Layer
+
+
+#### 4.2.7.2. Interface Layer
+
+
+
+#### 4.2.7.3. Infrastructure Layer
+
+#### 4.2.7.4. Bounded Context Software Architecture Component Level Diagrams
+
+
+
+<img src="./Resources/images/Capitulo 4/4275.png" >
+
+#### 4.2.7.5. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.7.5.1. Bounded Context Domain Layer Class Diagrams
+
+
+
+<img src="./Resources/images/Capitulo 4/42761.png" >
+
+##### 4.2.7.5.2. Bounded Context Database Design Diagram
+
+
+
+<img src="./Resources/images/Capitulo 4/42762.png" >
+
+### 4.2.8. Bounded Context: Chat Room
+
+#### 4.2.8.1. Domain Layer
+
+
+
+#### 4.2.8.2. Interface Layer 
+
+
+
+#### 4.2.8.3. Application Layer 
+
+
+
+#### 4.2.8.4. Infrastructure Layer 
+
+
+
+#### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams 
+
+
+<img src="./Resources/images/Capitulo 4/4265.png" >
+
+#### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
+
+
+
+<img src="./Resources/images/Capitulo 4/42661.png" >
+
+##### 4.2.8.6.2. Bounded Context Database Design Diagram
+
+
+
+<img src="./Resources/images/Capitulo 4/42662.png" >
+
+### 4.2.9. Bounded Context: Deposit
+
+#### 4.2.9.1. Domain Layer
+
+
+
+#### 4.2.9.2. Interface Layer 
+
+
+
+#### 4.2.9.3. Application Layer 
+
+
+
+#### 4.2.9.4. Infrastructure Layer 
+
+
+
+#### 4.2.9.5. Bounded Context Software Architecture Component Level Diagrams 
+
+
+
+<img src="./Resources/images/Capitulo 4/4265.png" >
+
+#### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.9.6.1. Bounded Context Domain Layer Class Diagrams
+
+
+
+<img src="./Resources/images/Capitulo 4/42661.png" >
+
+##### 4.2.9.6.2. Bounded Context Database Design Diagram
+
+
+
+<img src="./Resources/images/Capitulo 4/42662.png" >
+
+### 4.2.10. Bounded Context: Bank Transfer
+
+#### 4.2.10.1. Domain Layer
+
+ 
+
+#### 4.2.10.3. Application Layer 
+
+
+
+#### 4.2.10.4. Infrastructure Layer 
+
+
+
+#### 4.2.10.5. Bounded Context Software Architecture Component Level Diagrams 
+
+
+
+<img src="./Resources/images/Capitulo 4/4265.png" >
+
+#### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.10.6.1. Bounded Context Domain Layer Class Diagrams
+
+
+
+<img src="./Resources/images/Capitulo 4/42661.png" >
+
+##### 4.2.10.6.2. Bounded Context Database Design Diagram
+
+
+
+<img src="./Resources/images/Capitulo 4/42662.png" >
+
+### 4.2.11. Bounded Context: Payments
+
+#### 4.2.11.1. Domain Layer
+
+ 
+
+#### 4.2.11.2. Application Layer 
+
+
+
+#### 4.2.11.3. Infrastructure Layer 
+
+
+
+#### 4.2.11.4. Bounded Context Software Architecture Component Level Diagrams 
+
+
+
+<img src="./Resources/images/Capitulo 4/4265.png" >
+
+#### 4.2.11.5. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.11.5.1. Bounded Context Domain Layer Class Diagrams
+
+
+
+<img src="./Resources/images/Capitulo 4/42661.png" >
+
+##### 4.2.11.5.2. Bounded Context Database Design Diagram
+
+
+
+<img src="./Resources/images/Capitulo 4/42662.png" >
 
 # Conclusiones
 
@@ -1206,11 +1811,5 @@ https://miro.com/app/board/uXjVKUmcOCw=/?share_link_id=98435150377
 
 Enlace a figma:
 https://www.figma.com/file/9b5VMPb1CCHGYuWQkP2554/UX-Design?type=design&node-id=0%3A1&mode=design&t=K3kzNMJ1UGVbxDsc-1
-
-Enlace al deploy del landing page:
-
-Enlace al deploy del web aplication:
-
-Enlace al deploy del web service:
 
 Enlace al repositorio en Github:
