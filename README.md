@@ -1158,7 +1158,7 @@ Las necesidades principales que hemos encontrado en nuestros segmentos objetivos
 
 | #Orden | User Story ID | Título                                     | Descripción                                                                                         | Story Points |
 |--------|---------------|--------------------------------------------|-----------------------------------------------------------------------------------------------------|--------------|
-| 1      | TS17          | Crear una reserva                          | Como desarrollador deseo implementar el endpoint `POST reservations/create` para que un usuario PLAYER realice una reserva | 24 |
+| 1      | TS17          | Crear una reserva                          | Como desarrollador deseo implementar el endpoint `POST reservations/create` para que un usuario PLAYER realice una reserva | 8 |
 | 2      | TS01          | Crear usuario                              | Como desarrollador deseo implementar el endpoint `POST users/sign-up` para registrar usuarios en la app | 5 |
 | 3      | TS10          | Actualizar suscripción                     | Como desarrollador deseo implementar el endpoint `PUT subscriptions/upgrade` para actualizar la suscripción de un usuario | 5 |
 | 4      | TS25          | Crear un depósito                          | Como desarrollador deseo implementar el endpoint `POST deposit/create-deposit` para que un jugador recargue créditos | 5 |
