@@ -1348,6 +1348,9 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 ### 4.1.3. Domain Message Flows Modeling
 
+### 4.1.4. Bounded Context Canvases
+
+### 4.1.5. Context Mapping
 
 
 ### 4.1.6. Software Architecture
