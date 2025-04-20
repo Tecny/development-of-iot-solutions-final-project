@@ -1355,21 +1355,16 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 ### 4.1.6. Software Architecture
 
-#### 4.1.6.1.	Software Architecture System Landscape Diagram
-
+#### 4.1.6.1. Software Architecture System Landscape Diagram
 
 
 <img src="./Resources/images/Capitulo 4/4131.png" >
 
-#### 4.1.6.2.	Software Architecture Context Level Diagrams
-
-
+#### 4.1.6.2. Software Architecture Context Level Diagrams
 
 <img src="./Resources/images/Capitulo 4/4132.png" >
 
-#### 4.1.6.3.	Software Architecture Container Level Diagrams
-
-
+#### 4.1.6.3. Software Architecture Container Level Diagrams
 
 <img src="./Resources/Evidences/structurizr-Contenedores.png" >
 
@@ -1398,7 +1393,7 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 
 
-#### 4.2.1.4. Infraestructure Layer
+#### 4.2.1.4. Infrastructure Layer
 
 
 
@@ -1533,7 +1528,7 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 #### 4.2.5.1. Domain Layer
 
 
-#### 4.2.5.2. Interface Layer 
+#### 4.2.5.2. Interface Layer
 
 
 #### 4.2.5.3. Application Layer
@@ -1566,7 +1561,7 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 #### 4.2.6.1. Domain Layer
 
-
+#### 4.2.6.2. Interface Layer
 
 #### 4.2.6.3. Application Layer 
 
@@ -1706,10 +1701,9 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 #### 4.2.10.1. Domain Layer
 
- 
+#### 4.2.10.2. Interface Layer 
 
 #### 4.2.10.3. Application Layer 
-
 
 
 #### 4.2.10.4. Infrastructure Layer 
