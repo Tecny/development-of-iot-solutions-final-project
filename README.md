@@ -1514,7 +1514,7 @@ Este diagrama ilustra cómo los diferentes elementos del sistema están conectad
 
 ##### 4.2.1.1.1. Model
 
-###### 4.2.1.1.1.1. Agreggates
+###### 4.2.1.1.1.1. Aggregates
 
 - User: La clase User representa una entidad agregada (aggregate) del dominio de usuarios en el backend del sistema D'Taquito. Actúa como el punto central para gestionar toda la información relacionada a un usuario.
 
