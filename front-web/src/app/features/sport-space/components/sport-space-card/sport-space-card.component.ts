@@ -1,7 +1,17 @@
-import {ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  Input,
+  OnChanges,
+  SimpleChanges
+} from '@angular/core';
 import {SportSpace} from '../../models/sport-space.interface';
 import {RouterLink} from '@angular/router';
 import {TitleCasePipe} from '@angular/common';
+import {SportSpaceService} from '../../services/sport-space.service';
+import {UserStoreService} from '../../../../core/services/user-store.service';
 @Component({
   selector: 'app-sport-space-card',
   imports: [
@@ -26,7 +36,12 @@ import {TitleCasePipe} from '@angular/common';
       </div>
 
       <div>
-        <button [routerLink]="['/sport-spaces', sportSpace.id]">Conocer más</button>
+        <button [routerLink]="['/sport-spaces', sportSpace.id]">
+          {{ isOwner() ? 'Ver tu espacio deportivo' : 'Conocer más' }}
+        </button>
+        @if (isOwner()) {
+          <button (click)="deleteSportSpace()">Eliminar</button>
+        }
       </div>
     </div>
   `,
@@ -36,7 +51,18 @@ import {TitleCasePipe} from '@angular/common';
 export class SportSpaceCardComponent implements OnChanges {
   @Input() sportSpace!: SportSpace;
 
+  private sportSpaceService = inject(SportSpaceService);
+  private userStore = inject(UserStoreService);
+
   imageUrl: string = '';
+
+  currentUser = this.userStore.currentUser;
+  isOwner = computed(() => {
+    const currentUser = this.currentUser();
+    return currentUser && this.sportSpace
+      ? currentUser.id === this.sportSpace.user.id
+      : false;
+  });
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['sportSpace'] && this.sportSpace?.image) {
@@ -49,5 +75,21 @@ export class SportSpaceCardComponent implements OnChanges {
       return image;
     }
     return `data:image/jpeg;base64,${image}`;
+  }
+
+  deleteSportSpace() {
+    if (window.confirm('¿Estás seguro de que deseas eliminar este espacio deportivo?')) {
+      if (this.sportSpace) {
+        this.sportSpaceService.deleteSportSpace(this.sportSpace.id).subscribe({
+          next: () => {
+            console.log('Espacio deportivo eliminado');
+            window.location.reload();
+          },
+          error: (error) => {
+            console.error('Error al eliminar el espacio deportivo', error);
+          }
+        });
+      }
+    }
   }
 }

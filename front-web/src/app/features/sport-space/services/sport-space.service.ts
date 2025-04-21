@@ -33,4 +33,8 @@ export class SportSpaceService {
   checkAvailability(id: number) {
     return this.http.get(`${this.baseUrl}/sport-spaces/${id}/availability`);
   }
+
+  deleteSportSpace(id: number) {
+    return this.http.delete<void>(`${this.baseUrl}/sport-spaces/${id}`);
+  }
 }

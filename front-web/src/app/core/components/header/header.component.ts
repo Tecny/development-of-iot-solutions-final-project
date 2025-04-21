@@ -1,8 +1,7 @@
-import {ChangeDetectionStrategy, Component, inject, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, inject, signal} from '@angular/core';
 import {UserStoreService} from '../../services/user-store.service';
 import {AuthService} from '../../../auth/services/auth.service';
 import {RouterLink} from '@angular/router';
-import {UserRole} from '../../models/user.role.enum';
 
 @Component({
   selector: 'app-header',
@@ -14,22 +13,18 @@ import {UserRole} from '../../models/user.role.enum';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HeaderComponent {
-  protected readonly UserRole = UserRole;
+
   private userStore = inject(UserStoreService);
   private authService = inject(AuthService);
 
+  currentUser = this.userStore.currentUser;
+
   isAuthenticated = signal(false);
-  role = signal<UserRole | null>(null);
+  role = computed(() => this.currentUser()?.roleType ?? null);
 
   constructor() {
-    this.authService.isAuthenticated().subscribe((auth) => {
+    this.authService.isAuthenticated().subscribe(auth => {
       this.isAuthenticated.set(auth);
-
-      if (auth) {
-        this.role.set(this.userStore.getRoleFromToken());
-      } else {
-        this.role.set(null);
-      }
     });
   }
 }

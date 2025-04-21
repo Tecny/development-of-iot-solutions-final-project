@@ -6,7 +6,6 @@ import {SportSpace} from '../../models/sport-space.interface';
 import {FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 import {Router} from '@angular/router';
-import {gamemodeMaxPlayersMap} from '../../../../shared/models/sport-space.constants';
 import {TimeUtil} from '../../../../shared/utils/time.util';
 
 @Component({
@@ -33,7 +32,6 @@ export class SportSpaceAvailabilityComponent implements OnInit {
   availabilityMap: Record<string, string[]> = {};
   timeSlots: string[] = [];
   weekDays: string[] = [];
-  gamemodeMaxPlayers = gamemodeMaxPlayersMap;
   selectedGameDay: string = '';
   selectedStartTime: string = '';
   selectedEndTime: string = '';

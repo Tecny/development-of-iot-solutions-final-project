@@ -8,7 +8,6 @@ import {UserProfile} from '../../features/profile/models/user-profile.interface'
 })
 export class UserStoreService {
 
-
   private user = signal<UserProfile | null>(null);
 
   getCookie(name: string): string | null {
@@ -40,6 +39,14 @@ export class UserStoreService {
   isTokenExpired(): boolean {
     const expiration = this.getTokenExpiration();
     return !expiration || Date.now() > expiration;
+  }
+
+  setUser(user: UserProfile) {
+    this.user.set(user);
+  }
+
+  clearUser() {
+    this.user.set(null);
   }
 
   currentUser = this.user.asReadonly()
