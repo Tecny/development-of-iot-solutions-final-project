@@ -4,6 +4,7 @@ import {TitleCasePipe} from '@angular/common';
 import {TimeUtil} from '../../../../shared/utils/time.util';
 import {RoomService} from '../../services/room.service';
 import {Router, RouterLink} from '@angular/router';
+import {ReservationService} from '../../../reservation/services/reservation.service';
 
 @Component({
   selector: 'app-room-card',
@@ -35,6 +36,9 @@ import {Router, RouterLink} from '@angular/router';
           @defer (on timer(200ms)) {
             @if (isMember()) {
               <button class="room-card__view" [routerLink]="['/rooms', room.id]">Ver sala</button>
+              @if (isRoomCreator()) {
+                <button class="room-card__delete" (click)="deleteRoom()">Borrar sala</button>
+              }
             } @else {
               <button class="room-card__join" (click)="joinRoom()">Unirse</button>
               <div class="room-card__credits">({{ getAmount() }} créditos)</div>
@@ -54,16 +58,22 @@ export class RoomCardComponent implements OnInit {
 
   private router = inject(Router);
   private roomService = inject(RoomService);
+  private reservationService = inject(ReservationService);
 
   isMember = signal<boolean | null>(null);
+  isRoomCreator = signal<boolean | null>(null);
 
   ngOnInit(): void {
     if (this.room?.id) {
-      this.roomService.belongsToRoom(this.room.id).subscribe({
-        next: (res) => this.isMember.set(res.isMember),
+      this.roomService.userRoomStatus(this.room.id).subscribe({
+        next: (res) => {
+          this.isMember.set(res.isMember);
+          this.isRoomCreator.set(res.isRoomCreator);
+        },
         error: (err) => {
-          console.error('Error checking membership:', err);
+          console.error('Error checking user status in the room:', err);
           this.isMember.set(false);
+          this.isRoomCreator.set(false);
         }
       });
     }
@@ -80,13 +90,29 @@ export class RoomCardComponent implements OnInit {
   }
 
   joinRoom() {
-    this.roomService.joinRoom(this.room.id).subscribe({
-      next: () => {
-        this.router.navigate(['/rooms', this.room.id]).then();
+    if(window.confirm('¿Estás seguro de que deseas unirte a esta sala?')) {
+      this.roomService.joinRoom(this.room.id).subscribe({
+        next: () => {
+          this.router.navigate(['/rooms', this.room.id]).then();
         },
-      error: (error) => {
-         console.error('Error joining room:', error);
-       }
-    });
+        error: (error) => {
+          console.error('Error joining room:', error);
+        }
+      });
+    }
+  }
+
+  deleteRoom() {
+    if (window.confirm('¿Estás seguro de que deseas borrar esta sala?')) {
+      this.reservationService.deleteReservation(this.room.reservation.id).subscribe({
+        next: () => {
+          console.log('Room deleted successfully');
+          window.location.reload();
+        },
+        error: (error) => {
+          console.error('Error deleting room:', error);
+        }
+      });
+    }
   }
 }

@@ -46,14 +46,12 @@ export class SportSpaceAvailabilityComponent implements OnInit {
     if (slots.length === 0) return 0;
 
     const type = this.reservationType();
-    const gamemode = this.sportSpace.gamemode;
-    const maxPlayers = this.gamemodeMaxPlayers[gamemode] || 1;
 
     switch (type) {
       case 'PERSONAL':
         return Math.trunc((this.sportSpace.price * slots.length) / 2);
       case 'COMMUNITY':
-        return Math.trunc(((this.sportSpace.price * slots.length) / 2) / maxPlayers);
+        return Math.trunc(this.sportSpace.amount * slots.length);
       default:
         return 0;
     }

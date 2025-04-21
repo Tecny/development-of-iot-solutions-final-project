@@ -20,4 +20,8 @@ export class ReservationService {
       map(reservations => reservations.filter(reservation => reservation.type === 'PERSONAL'))
     );
   }
+
+  deleteReservation(id: number) {
+    return this.http.delete(`${this.baseUrl}/reservations/${id}`);
+  }
 }
