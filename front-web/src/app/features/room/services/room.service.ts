@@ -27,8 +27,8 @@ export class RoomService {
     return this.http.get<PlayerList[]>(`${this.baseUrl}/player-lists/room/${roomId}`);
   }
 
-  belongsToRoom(roomId: number) {
-    return this.http.get<{ isMember: boolean }>(`${this.baseUrl}/player-lists/belongs-to-room/${roomId}`);
+  userRoomStatus(roomId: number) {
+    return this.http.get<{ isMember: boolean, isRoomCreator: boolean }>(`${this.baseUrl}/player-lists/${roomId}/user-room-status`);
   }
 
   getMyRooms() {

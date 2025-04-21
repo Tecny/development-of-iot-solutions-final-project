@@ -25,7 +25,7 @@ import {TimeUtil} from '../../../../shared/utils/time.util';
         <p class="reservation-card__sport">{{ reservation.sportSpaces.sport| titlecase }}</p>
         <p class="reservation-card__gamemode">{{ reservation.sportSpaces.gamemode.replaceAll('_',' ') | titlecase }}</p>
         <p class="reservation-card__sportspace">Espacio deportivo: {{ reservation.sportSpaces.name}}</p>
-        <p class="reservation-card__price"> Precio: {{ getPrice() }} créditos</p>
+        <p class="reservation-card__price"> Precio de la reserva: {{ getPrice() }} créditos</p>
         <p class="reservation-card__type">Tipo: {{ reservation.type | titlecase }}</p>
         <p class="reservation-card__date">Fecha: {{ reservation.gameDay }}</p>
         <p class="reservation-card__time">Hora: {{ reservation.startTime }} - {{ reservation.endTime }}</p>
