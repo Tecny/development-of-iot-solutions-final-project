@@ -11,4 +11,10 @@ export interface SportSpace {
   "description": string;
   "openTime": string;
   "closeTime": string;
+  "user": User;
+}
+
+interface User {
+  "id": number;
+  "name": string;
 }

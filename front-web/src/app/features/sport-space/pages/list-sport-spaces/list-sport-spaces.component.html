@@ -1,5 +1,11 @@
 <h1>Espacios deportivos</h1>
 
+@defer (on timer(300ms)) {
+  @if (showAddSportSpaceButton) {
+    <button routerLink="/sport-spaces/create">Añadir un espacio deportivo</button>
+  }
+}
+
 @defer (prefetch on viewport) {
   @if (sportSpaces(); as spaces) {
     <div class="cards-grid">
