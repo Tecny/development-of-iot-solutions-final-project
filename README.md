@@ -86,9 +86,57 @@
     <th valign="top">Conclusiones</th>
   </tr>
   <tr>
-    <td rowspan="6" valign="top"> La capacidad de funcionar efectivamente en un 
-equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de 
-colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.</td>
+    <td rowspan="6" valign="top">Trabaja en equipo para proporcionar liderazgo en forma conjunta </td>
+    <td valign="top">
+      TB1: John Atencio: Realicé el proyecto en general junto con mis compañeros, aplicando comunicación. Desarrolle el modelo C4 junto con el diagrama de clases y base de datos
+      <br><br>
+    </td>
+    <td rowspan="6" valign="middle">
+      En nuestras conclusiones, hemos puesto énfasis en el valor y la importancia de la comunicación efectiva dentro de nuestro equipo. Este énfasis se ha centrado en la aplicación práctica de habilidades técnicas específicas que han demostrado ser fundamentales para mejorar nuestra interacción y colaboración.
+      <br><br>
+      En primer lugar, hemos reconocido la necesidad de adaptabilidad en nuestra comunicación, lo que implica la capacidad de ajustar nuestro estilo y enfoque según el contexto y las preferencias individuales de nuestros compañeros. Esta adaptabilidad se refleja en la elección adecuada de los medios de comunicación, así como en la flexibilidad para modificar nuestra estrategia de comunicación cuando surgen nuevas circunstancias o necesidades.
+      <br><br>
+      En segundo lugar, hemos enfatizado la importancia de la claridad en nuestros mensajes. Esto implica la habilidad de expresar nuestras ideas de manera concisa y comprensible, evitando ambigüedades y malentendidos. Para lograr esto, nos esforzamos por utilizar un lenguaje claro y directo, estructurando nuestra información de manera lógica y proporcionando ejemplos concretos cuando sea necesario para mejorar la comprensión.
+      <br><br>
+      Por último, pero no menos importante, hemos destacado el valor de la transparencia en nuestras interacciones. Reconocemos que compartir información de manera abierta y honesta es fundamental para construir relaciones de confianza y fomentar un ambiente de trabajo colaborativo. Al mantener un flujo constante de información y estar receptivos a las opiniones y preocupaciones de los demás miembros del equipo, fortalecemos nuestra capacidad para trabajar juntos de manera efectiva hacia nuestros objetivos comunes.
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      TB1: Henry Centurion: Con mis demás compañeros completamos el informe, en mi caso enfaticé con las user stories para tener de donde empezar y mis compañeros puedan guiarse.
+      <br><br>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      TB1: Sebastián Frisancho: Me encargué del figma para realizar el modelo visual de nuestra aplicación y como deseamos que luzca
+      <br><br>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      TB1: Sebastián Mendez: Me encargué de dirigir el trabajo juntando al equipo al igual que cuando desarrollamos el landing page
+      <br><br>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      TB1: Willy Valentin: Organicé y desarrollé las entrevistas para así obtener los datos que necesitamos
+      <br><br>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      TB1: Angie Valverde: Organicé y desarrollé las entrevistas para así obtener los datos que necesitamos
+      <br><br>
+    </td>
+  </tr>
+</table>
+<table>
+  <tr>
+  </tr>
+  <tr>
+    <td rowspan="6" valign="top"> Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.</td>
     <td valign="top">
       TB1: John Atencio: Realicé el proyecto en general junto con mis compañeros, aplicando comunicación. Desarrolle el modelo C4 junto con el diagrama de clases y base de datos
       <br><br>
@@ -205,8 +253,24 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
   - 4.2. [Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)<br>
     - 4.2.1. [Bounded Context: Users](#421-bounded-context-users) <br>
       - 4.2.1.1. [Domain Layer](#4211-domain-layer)<br>
+        - 4.2.1.1.1. [Model](#42111-model)<br>
+          - 4.2.1.1.1.1. [Aggregates](#421111-aggregates)<br>
+          - 4.2.1.1.1.2. [Commands](#421112-commands)<br>
+          - 4.2.1.1.1.3. [Entities](#421113-entities)<br>
+          - 4.2.1.1.1.4. [Events](#421114-events)<br>
+          - 4.2.1.1.1.5. [Queries](#421115-queries)<br>
+          - 4.2.1.1.1.6. [Value Objects](#421116-value-objects)<br>
+        - 4.2.1.1.2. [Services](#42112-services)<br>
+        - 4.2.1.1.3. [Exceptions](#42113-exceptions)<br>
+        - 4.2.1.1.4. [Config](#42114-config)<br>
       - 4.2.1.2. [Interface Layer](#4212-interface-layer)<br>
+        - 4.2.1.2.1. [Resources](#42121-resources)<br>
+        - 4.2.1.2.2. [Transform](#42122-transform)<br>
+        - 4.2.1.2.3. [Controllers](#42123-controllers)<br>
       - 4.2.1.3. [Application Layer](#4213-application-layer)<br>
+        - 4.2.1.3.1. [Command Services](#42131-command-services)<br>
+        - 4.2.1.3.2. [Query Services](#42132-query-services)<br>
+        - 4.2.1.3.3. [Event Handlers](#42133-event-handlers)<br>
       - 4.2.1.4. [Infrastructure Layer](#4214-infrastructure-layer)<br>
       - 4.2.1.5. [Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)<br>
       - 4.2.1.6. [Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)<br>
@@ -1235,61 +1299,82 @@ Se adoptó un enfoque visual y colaborativo que facilitó el modelado del contex
 
 Es una técnica visual que involucra a todas las partes interesadas con el fin de explorar el dominio del sistema. Se emplean notas adhesivas de varios colores para representar distintos componentes, lo que facilita el diálogo y el descubrimiento de requisitos.
 
-<img src="./Resources/images/EventStorming.png" >
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//1.png" alt="UPC">
+</p>
 
 #### 4.1.1.2. Timelines
 
 Hace referencia al orden cronológico de los eventos que tienen lugar dentro del sistema. Representar esta secuencia en una línea de tiempo permite visualizar la interacción entre eventos y su impacto en el flujo de trabajo, además de ayudar a detectar momentos clave en el proceso.
 
-<img src="./Resources/images/TimeLines.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//2.png" alt="UPC">
+</p>
 
 #### 4.1.1.3. Pain Points
 
 Se trata de los retos o inconvenientes que experimentan los usuarios y las partes interesadas dentro del contexto del sistema. Reconocer estos problemas permite enfocar esfuerzos en priorizar funcionalidades y soluciones que respondan de manera efectiva a las necesidades reales de los usuarios.
 
-<img src="./Resources/images/PainPoints.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//3.png" alt="UPC">
+</p>
 
 #### 4.1.1.4. Pivotal Points
 
 Corresponden a instantes decisivos dentro del flujo de eventos que pueden alterar el estado del sistema o tener un impacto notable en la experiencia del usuario. Detectarlos permite enfocar los esfuerzos en las áreas de mayor relevancia.
 
-<img src="./Resources/images/PivotalPoints.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//4.png" alt="UPC">
+</p>
 
 #### 4.1.1.5. Commands
 
 Representan las acciones o comandos que un usuario o el sistema pueden realizar para generar una modificación en el estado del sistema. Ejemplos de ello son "Crear Pedido" o "Actualizar Inventario".
 
-<img src="./Resources/images/Commands.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//5.png" alt="UPC">
+</p>
 
 #### 4.1.1.6. Policies
 
 Son normas o lineamientos que establecen cómo deben tomarse las decisiones dentro del sistema. Estas reglas de negocio definen, por ejemplo, cuándo deben ejecutarse determinados comandos o cómo deben gestionarse ciertos eventos.
-<img src="./Resources/images/Policies.png" >
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//6.png" alt="UPC">
+</p>
 
 #### 4.1.1.7. Read Models
 
 Son estructuras de datos utilizadas para atender consultas o solicitudes de información. Estos modelos de lectura están optimizados para facilitar el acceso a los datos y se mantienen separados de los modelos de escritura, lo que permite mejorar tanto el rendimiento como la escalabilidad del sistema.
 
-<img src="./Resources/images/ReadModels.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//7.png" alt="UPC">
+</p>
 
 #### 4.1.1.8. External Systems
 
 Hace referencia a otros sistemas o servicios que se comunican con el sistema principal. Identificar estos sistemas es clave para comprender las dependencias e integraciones necesarias para el correcto funcionamiento del sistema.
 
-<img src="./Resources/images/ExternalSystems.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//8.png" alt="UPC">
+</p>
 
 #### 4.1.1.9. Aggregates
 
 Son conjuntos de objetos que se manejan como una sola entidad para la gestión de datos y la lógica empresarial. Un agregado asegura la consistencia de sus elementos durante las operaciones y agrupa la lógica de negocio asociada.
 
-<img src="./Resources/images/Aggregates.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//9.png" alt="UPC">
+</p>
 
 #### 4.1.1.10. Bounded Contexts
 
 Es una delimitación precisa dentro del dominio del sistema en la que se aplica un modelo específico. Establece una frontera donde un conjunto de conceptos y términos adquieren un significado particular, lo que ayuda a evitar confusiones y gestionar las complejidades en sistemas grandes y distribuidos.
 
-<img src="./Resources/images/BoundedContext.png" >
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//10.png" alt="UPC">
+</p>
 
 ### 4.1.2. Candidate Context Discovery
 
@@ -1304,47 +1389,69 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 **Users:**
 
-<img src="./Resources/images/Capitulo 4/Profile_Management.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-user.png" alt="UPC">
+</p>
 
 **Identity and Access Management:**
 
-<img src="./Resources/images/Capitulo 4/Identity_Access_Management.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-iam.png" alt="UPC">
+</p>
 
 **Subscriptions:**
 
-<img src="./Resources/images/Capitulo 4/Bussiness_Management_System.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-subs.png" alt="UPC">
+</p>
 
 **Sport Spaces:**
 
-<img src="./Resources/images/Capitulo 4/IoT_Asset_Management.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-sport.png" alt="UPC">
+</p>
 
 **Reservations:**
 
-<img src="./Resources/images/Capitulo 4/Notification_management.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-reservations.png" alt="UPC">
+</p>
 
 **Rooms:**
 
-<img src="./Resources/images/Capitulo 4/Data_Report_Analytics.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-room.png" alt="UPC">
+</p>
 
 **Player List:**
 
-<img src="./Resources/images/Capitulo 4/Data_Report_Analytics.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-pl.png" alt="UPC">
+</p>
 
 **Chat Room:**
 
-<img src="./Resources/images/Capitulo 4/Data_Report_Analytics.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-chat.png" alt="UPC">
+</p>
 
 **Deposit:**
 
-<img src="./Resources/images/Capitulo 4/Data_Report_Analytics.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-deposit.png" alt="UPC">
+</p>
 
 **Bank Transfer:**
 
-<img src="./Resources/images/Capitulo 4/Data_Report_Analytics.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-bank.png" alt="UPC">
+</p>
 
 **Payments:**
 
-<img src="./Resources/images/Capitulo 4/Data_Report_Analytics.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-payment.png" alt="UPC">
+</p>
 
 ### 4.1.3. Domain Message Flows Modeling
 
@@ -1357,21 +1464,47 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 #### 4.1.6.1. Software Architecture System Landscape Diagram
 
+Este diagrama muestra el panorama general del sistema, destacando las principales entidades involucradas, como los Usuarios, Administrador, y las interacciones del sistema de gestión empresarial con componentes externos como la API de Pago (PayPal API), la API de correos Gmail API y la API de mapas (Google Maps API). Representa las conexiones entre estos actores y cómo interactúan con el sistema para proporcionar acceso a funciones clave como pagos, envío de correos y visualización de espacios deportivos en el mapa a tiempo real.
 
-<img src="./Resources/images/Capitulo 4/4131.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-diagram.png" alt="UPC">
+</p>
 
 #### 4.1.6.2. Software Architecture Context Level Diagrams
 
-<img src="./Resources/images/Capitulo 4/4132.png" >
+Este diagrama desglosa el contexto a un nivel más detallado, mostrando las interacciones entre los usuarios y el sistema en términos de roles y permisos. Aquí, tanto los Usuarios como los Administradores tienen acceso al Sistema de Gestión Empresarial, pero interactúan de manera diferente, con los usuarios accediendo a características específicas como pagos a través de la API de PayPal, recuperación de contraseña a tráves de la API de Gmail y visualización de espacios deportivos en el mapa a tiempo real a tráves de la API de Google Maps. 
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-diagram.png" alt="UPC">
+</p>
 
 #### 4.1.6.3. Software Architecture Container Level Diagrams
 
-<img src="./Resources/Evidences/structurizr-Contenedores.png" >
+Aqui especificamos los contenedores de software que soportan la arquitectura, como la Aplicación Web (Web App), la Aplicación Móvil (Mobile App), el lado del servidor (Backend) y los Dispositivos IoT Gestionados (Managed IoT Devices). Aquí también se destacan las conexiones los sistemas externos, con lo que proporciona un mapa claro de cómo los distintos módulos del sistema se comunican entre sí y con componentes externos.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//container-diagram.png" alt="UPC">
+</p>
 
 #### 4.1.6.4. Software Architecture Deployment Level Diagrams
 
+El diagrama de deployment representa la arquitectura física del sistema D'Taquito y muestra cómo se distribuyen sus componentes en distintos entornos. En el diagrama se observa:
 
-<img src="./Resources/Evidences/paradigm.jpg" >
+- Dispositivos de entrada como móviles y sensores, que interactúan con el sistema.
+
+- Una API REST que actúa como punto de entrada para las solicitudes.
+
+- Dentro del servicio desplegado (App Service), se encuentra un monolito modular que agrupa distintos Bounded Contexts (usuarios, pagos, reservas, etc.) dentro de un solo proyecto, organizados por módulos en el mismo código fuente
+
+- Una base de datos MySQL, también desplegada en la nube, que almacena la información del sistema.
+
+Este diagrama ilustra cómo los diferentes elementos del sistema están conectados y dónde se ejecutan, ayudando a comprender su estructura de despliegue.
+
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//deployment-diagram.png" alt="UPC">
+</p>
+
 
 ## 4.2. Tactical-Level Domain-Driven-Design
 
@@ -1379,42 +1512,340 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 #### 4.2.1.1. Domain Layer
 
+##### 4.2.1.1.1. Model
 
-  
+###### 4.2.1.1.1.1. Agreggates
+
+- User: La clase User representa una entidad agregada (aggregate) del dominio de usuarios en el backend del sistema D'Taquito. Actúa como el punto central para gestionar toda la información relacionada a un usuario.
+
+  Contiene los siguientes elementos principales:
+
+  - Atributos básicos como id, name, email, password, y credits.
+
+  - Una relación con la entidad Role para definir el rol del usuario (como estudiante, profesor, admin, etc.).
+
+  - Se construye a partir de un comando (CreateUserCommand) que encapsula los datos necesarios para crear un nuevo usuario.
+
+  - Hereda de AuditableAbstractAggregateRoot, lo que sugiere que registra información de auditoría (como fechas de creación/modificación).
+
+###### 4.2.1.1.1.2. Commands
+
+- CreateUserCommand: Es un comando del dominio que encapsula los datos necesarios para crear un nuevo usuario. Utiliza un Java record para simplificar la estructura y es inmutable por defecto.
+Contiene:
+
+  - name: nombre del usuario.
+
+  - email: correo electrónico.
+
+  - password: contraseña.
+
+  - roleId: identificador del rol que se le asignará.
+
+- SeedRoleTypeCommand: Es un comando vacío que se utiliza para inicializar o poblar los tipos de roles en el sistema.
+
+###### 4.2.1.1.1.3. Entities
+
+- ResetPassword: Es una clase de entidad que representa la información necesaria para restablecer la contraseña de un usuario.
+Contiene:
+
+  - token: código único para validar la operación de restablecimiento.
+
+  - newPassword: nueva contraseña que se desea establecer.
+
+- Role: Es una entidad persistente que representa los roles de la aplicación. Está mapeada a la tabla role_types en la base de datos.
+
+  Contiene:
+
+  - id: identificador único del rol.
+
+  - roleType: tipo de rol, representado por el enum RoleTypes.
+
+  Incluye un constructor estático fromNameToRole para crear un objeto Role a partir del nombre del rol como cadena.
+
+###### 4.2.1.1.1.4. Events
+
+- UserCreatedEvent: Es un evento de dominio que se lanza cuando se crea un nuevo usuario en el sistema.
+Extiende de ApplicationEvent de Spring, lo que permite que otros componentes del sistema reaccionen a este evento de forma desacoplada.
+
+  Contiene:
+
+  - userId: identificador del usuario recién creado.
+
+  - source: objeto que generó el evento (pasado al constructor base).
+
+###### 4.2.1.1.1.5. Queries
+
+- GetUserByIdQuery: Es una consulta del dominio utilizada para obtener los datos de un usuario a partir de su identificador (id).
+Utiliza un Java record con validación en su constructor compacto para asegurar que el id no sea nulo.
+Si el id es null, lanza una excepción indicando que el identificador es obligatorio.
+
+###### 4.2.1.1.1.6. Value Objects
+
+- RoleTypes: Es un Value Object en forma de enum que define los tipos de roles disponibles en el sistema.
+
+  Representa valores constantes e inmutables que categorizan a los usuarios según su función:
+
+  - PLAYER: usuario jugador.
+
+  - OWNER: usuario propietario.
+
+  - ADMIN: usuario administrador.
+
+##### 4.2.1.1.2. Services
+
+- UserCommandService: Es una interfaz de servicio de dominio que define las operaciones de comando (modificación) relacionadas con la entidad User.
+Se encarga de gestionar acciones que cambian el estado del usuario, tales como registro, inicio de sesión y actualizaciones de datos.
+
+  Contiene los siguientes métodos:
+
+  - handle(SignUpCommand command): registra un nuevo usuario.
+
+  - handle(SignInCommand command): autentica al usuario y retorna el usuario junto con un token.
+
+  - updatePassword(Long userId, String newPassword): actualiza la contraseña.
+
+  - updateName(Long userId, String newName): actualiza el nombre.
+
+  - updateEmail(Long userId, String newEmail): actualiza el correo electrónico.
+
+  - handleUserCreatedEvent(UserCreatedEvent event): maneja acciones posteriores a la creación de un usuario.
+
+- UserQueryService: Es una interfaz de servicio de dominio que define las operaciones de consulta (lectura) relacionadas con la entidad User.
+Se enfoca en obtener información sin modificar el estado del sistema.
+
+  Contiene los siguientes métodos:
+
+  - handle(GetUserByIdQuery query): obtiene un usuario por su ID.
+
+  - getAllUsers(): retorna una lista de todos los usuarios registrados.
+
+  - getUserRoleByUserId(Long userId): obtiene el rol asignado a un usuario a partir de su ID.
+
+- RoleCommandService: Es una interfaz de servicio de dominio que define la operación de comando relacionada con la entidad Role.
+Su objetivo es ejecutar la inicialización de los tipos de roles en el sistema.
+
+  Contiene el método:
+
+  - handle(SeedRoleTypeCommand command): se encarga de poblar los tipos de roles definidos (como PLAYER, OWNER, ADMIN) cuando el sistema lo requiere.
+
+##### 4.2.1.1.3. Exceptions
+
+- InvalidRoleTypeException: Es una excepción personalizada que extiende de RuntimeException.
+Se lanza cuando se intenta usar un tipo de rol no válido en el sistema.
+
+Su constructor recibe un mensaje que describe el error, permitiendo identificar fácilmente la causa del problema relacionado con los roles.
+
+##### 4.2.1.1.4. Config
+
+- MailConfig: Es una clase de configuración que define cómo se debe configurar y exponer un JavaMailSender como bean de Spring para el envío de correos electrónicos.
+
+  Características clave:
+
+  - Utiliza la librería Dotenv para cargar variables de entorno desde un archivo .env.
+
+  - Configura los parámetros necesarios como host, puerto, usuario, contraseña y propiedades SMTP adicionales.
+
+  - Crea una instancia de JavaMailSenderImpl con esas configuraciones y la expone como un bean reutilizable en todo el proyecto.
+
+  - Este componente es esencial para funcionalidades como envío de correos de verificación, recuperación de contraseña, etc.
+
 #### 4.2.1.2. Interface Layer
 
+##### 4.2.1.2.1. Resources
+
+- CreateUserResource: Es un record que representa la estructura del cuerpo de la solicitud (request) para crear un nuevo usuario desde la capa REST.
+  Contiene: name, email, password y roleId.
+
+- UserResource: Es un record que representa la respuesta (response) enviada al cliente con los datos del usuario.
+  Contiene: id, name, email, roleType (como texto) y credits.
+
+- UpdateEmailUserResource: Clase que representa la solicitud para actualizar el correo electrónico de un usuario.
+  Contiene: newEmail.
+
+- UpdateNameUserResource: Clase que representa la solicitud para actualizar el nombre de un usuario.
+  Contiene: name.
+
+- UpdatePasswordUserResource: Clase que representa la solicitud para actualizar la contraseña de un usuario.
+  Contiene: newPassword.
+
+##### 4.2.1.2.2. Transform
+
+- CreateUserCommandFromResourceAssembler: Es una clase transformadora que convierte un CreateUserResource (representación del cuerpo de la solicitud REST) en un CreateUserCommand (comando del dominio).
+El método toCommandFromResource toma un CreateUserResource y extrae sus atributos (name, email, password, roleId) para crear un nuevo CreateUserCommand.
+
+- UserResourceFromEntityAssembler: Es una clase transformadora que convierte una entidad User (modelo de dominio) en un UserResource (representación para la respuesta REST).
+El método toResourceFromEntity extrae los datos relevantes de la entidad User (como id, name, email, roleType, credits) y los organiza en un UserResource. Además, convierte el roleType a mayúsculas para enviarlo en la respuesta.
+
+##### 4.2.1.2.3. Controllers
+
+- UserController: Es un controlador REST para manejar las operaciones relacionadas con usuarios. Está diseñada para ser parte de un sistema de gestión de usuarios, donde se realizan acciones como el registro de usuarios, actualización de datos, y la obtención de información sobre el usuario autenticado. A continuación, se describe cada método y su funcionalidad:
+
+  - Métodos:
+    - createUser (POST /sign-up):
+
+      - Funcionalidad: Registra un nuevo usuario.
+
+      - Validaciones: Verifica que el rol no sea nulo, que el rol sea válido y que el rol no sea "ADMIN". También valida que la contraseña tenga al menos 16 caracteres, contenga mayúsculas, minúsculas, números y caracteres especiales.
+
+      - Proceso: Si todo es válido, crea un nuevo usuario y asigna un plan gratuito al usuario.
+
+      - Respuestas: Si el registro es exitoso, devuelve un mensaje de éxito; si no, devuelve el error correspondiente.
+
+    - getAllUsers (GET /all):
+
+      - Funcionalidad: Obtiene todos los usuarios registrados en el sistema.
+
+      - Validaciones: Solo los usuarios con rol "ADMIN" pueden acceder a esta información.
+
+      - Respuestas: Devuelve la lista de usuarios en formato UserResource si la autenticación es exitosa; si no, devuelve un error de "FORBIDDEN".
+
+    - updateName (PUT /name):
+
+      - Funcionalidad: Actualiza el nombre del usuario autenticado.
+
+      - Validaciones: Requiere que el usuario esté autenticado.
+
+      - Respuestas: Si el usuario es encontrado y el nombre se actualiza, devuelve un mensaje de éxito; de lo contrario, devuelve un error de "NOT FOUND".
+
+    - updateEmail (PUT /email):
+
+      - Funcionalidad: Actualiza el correo electrónico del usuario autenticado.
+
+      - Validaciones: Requiere que el usuario esté autenticado.
+
+      - Respuestas: Si el correo electrónico se actualiza correctamente, invalida la sesión actual y devuelve un mensaje de éxito; si no, devuelve un error de "NOT FOUND".
+
+    - updatePassword (PUT /password):
+
+      - Funcionalidad: Actualiza la contraseña del usuario autenticado.
+
+      - Validaciones: La nueva contraseña debe cumplir con un formato específico.
+
+      - Respuestas: Si la contraseña se actualiza correctamente, invalida la sesión y devuelve un mensaje de éxito; si no, devuelve un error de "NOT FOUND".
+
+    - getAuthenticatedUser (GET /me):
+
+      - Funcionalidad: Obtiene la información del usuario autenticado.
+
+      - Validaciones: Requiere que el usuario esté autenticado.
+
+      - Respuestas: Devuelve la información del usuario en formato UserResource si está autenticado; si no, devuelve un error de "UNAUTHORIZED".
+
+- EmailController: Es un controlador REST que maneja las operaciones de recuperación de contraseñas para los usuarios. Proporciona dos endpoints principales: uno para solicitar un correo de restablecimiento de contraseña y otro para restablecer la contraseña utilizando un token de restablecimiento.
+
+  - Métodos:
+    - forgotPassword (POST /forgot-password):
+
+      - Funcionalidad: Este endpoint permite que el usuario solicite un correo para restablecer su contraseña.
+
+      - Proceso: Llama al servicio PasswordResetTokenService para generar un token de restablecimiento de contraseña para el correo proporcionado.
+
+      - Respuestas: Si el token se genera correctamente, responde con un mensaje indicando que se ha enviado un correo para restablecer la contraseña.
+
+    - resetPassword (POST /reset-password):
+
+      - Funcionalidad: Este endpoint permite que el usuario restablezca su contraseña utilizando un token recibido previamente.
+
+      - Validaciones: Verifica que la nueva contraseña no esté vacía. La nueva contraseña debe cumplir con un formato específico (mínimo 16 caracteres, al menos una letra mayúscula, una minúscula, un número y un carácter especial).
+
+      - Proceso: Se valida el token recibido. Si es válido, se obtiene el correo del usuario asociado con el token. Luego, se busca al usuario en la base de datos utilizando su correo electrónico. Si el usuario existe, se encripta la nueva contraseña y se guarda en la base de datos.
+
+      - Respuestas: Si el proceso es exitoso, responde con un mensaje de éxito. Si algo falla (token inválido, usuario no encontrado, etc.), devuelve un mensaje de error.
 
 
-
-
-
-  
 #### 4.2.1.3. Application Layer
 
+##### 4.2.1.3.1. Command Services
 
+- UserCommandServiceImpl: Gestiona la creación y actualización de usuarios, y el inicio de sesión.
+
+  - Métodos clave:
+
+    - updatePassword, updateName, updateEmail: Actualizan la contraseña, el nombre o el correo de un usuario, respectivamente.
+
+    - handleUserCreatedEvent: Recibe eventos de creación de usuario (por ejemplo, al crear un usuario, publicando un evento UserCreatedEvent).
+
+    - handle(SignUpCommand command): Registra un nuevo usuario. Valida que los parámetros estén completos (rol, correo, contraseña), crea un nuevo usuario, y luego emite un evento de creación.
+
+- RoleCommandServiceImpl: Gestiona los roles de usuario en el sistema.
+
+  - Método clave:
+
+    - handle(SeedRoleTypeCommand command): Este método inicializa los roles en la base de datos usando los valores predefinidos de RoleTypes. Se ejecuta automáticamente durante la inicialización de la aplicación con la anotación @PostConstruct.
+
+- PasswordResetTokenService: Gestiona la creación y envío de tokens para restablecer la contraseña de un usuario.
+
+  - Método clave:
+
+    - createPasswordResetTokenForUser: Busca un usuario por correo electrónico, genera un token de restablecimiento de contraseña usando el EmailService y lo envía al correo del usuario.
+
+- EmailService: Se encarga del envío de correos electrónicos para el restablecimiento de contraseñas y la generación de tokens JWT.
+
+  - Métodos clave:
+
+    - sendPasswordResetEmail: Envía un correo con un enlace que contiene el token de restablecimiento de contraseña.
+
+    - generatePasswordResetToken: Genera un token JWT para restablecimiento de contraseña, que tiene una fecha de expiración configurada desde un archivo .env.
+
+    - getEmailFromToken: Extrae el correo electrónico del usuario a partir de un token JWT.
+
+##### 4.2.1.3.2. Query Services
+
+- UserQueryServicesImpl: Implementa el servicio para consultar información sobre usuarios, basándose en el repositorio UserRepository para acceder a la base de datos. Aquí están los detalles clave de cada uno de los métodos que ofrece:
+
+  - Métodos:
+
+    - getAllUsers(): Recupera todos los usuarios de la base de datos.
+
+      - Implementación: Utiliza el método findAll() del UserRepository para obtener una lista completa de usuarios.
+
+      - Retorno: Devuelve una lista de objetos User.
+
+    - getUserRoleByUserId(Long userId): Obtiene el rol de un usuario dado su userId.
+
+      - Implementación: Busca el usuario por ID y, si se encuentra, devuelve el tipo de rol (RoleType) del usuario. Si no se encuentra el usuario, devuelve null.
+
+      - Retorno: El nombre del rol del usuario como una cadena, o null si el usuario no se encuentra.
+
+    - handle(GetUserByIdQuery query): Recupera un usuario dado un ID proporcionado en el GetUserByIdQuery.
+
+      - Implementación: Valida que el userId no sea null. Busca el usuario en la base de datos utilizando el userRepository. Si no se encuentra el usuario, lanza una excepción NoSuchElementException. Si el usuario se encuentra, se devuelve el objeto User encapsulado en un Optional.
+
+      - Retorno: Un Optional<User> que contiene el usuario si se encuentra, o una excepción si no.
+
+##### 4.2.1.3.3. Event Handlers
+
+- UserCreatedEventHandler: Está diseñada para manejar el evento UserCreatedEvent, el cual es disparado cuando un nuevo usuario es creado en el sistema. La clase se encarga de escuchar este evento y ejecutar un flujo de acciones en respuesta a su ocurrencia.
+
+  - Métodos:
+    - on(UserCreatedEvent event): Este método está anotado con @EventListener, lo que indica que debe ser ejecutado cuando se reciba un UserCreatedEvent.
+      - Acción: Este método maneja el evento a nivel de comandos, permitiendo realizar alguna acción relacionada con la creación del usuario, como por ejemplo actualizar un registro o notificar otros componentes del sistema.
 
 #### 4.2.1.4. Infrastructure Layer
 
+- UserRepository: es un repositorio de acceso a datos de tipo JPA (Java Persistence API) que extiende de JpaRepository, lo que permite realizar operaciones CRUD sobre la entidad User. Está anotada con @Repository, lo que la marca como un componente de la capa de persistencia en Spring, permitiendo que se maneje automáticamente las excepciones relacionadas con la base de datos (a través de DataAccessException).
+
+  - Métodos:
+    - Optional<User> findByEmailAndPassword(String email, String password): Este método busca un usuario en la base de datos utilizando su correo electrónico (email) y su contraseña (password). Devuelve un Optional<User>, lo que permite manejar correctamente la posibilidad de que no se encuentre ningún usuario con esas credenciales.
+
+    - Optional<User> findByEmail(String email): Este método busca un usuario por su correo electrónico (email). También devuelve un Optional<User>, lo que asegura que si no se encuentra el usuario con el correo proporcionado, se puede manejar adecuadamente la situación.
 
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
+Este diagrama ilustra la arquitectura del sistema a nivel de componentes dentro de un contexto delimitado. Se basa en los principios de DDD para reflejar cómo ha sido estructurado el sistema. Muestra los distintos componentes, cada uno responsable de una funcionalidad específica, y cómo interactúan entre sí mediante el intercambio de mensajes para satisfacer los requerimientos del negocio. La base de datos se representa como el repositorio central de información, accesible por los distintos servicios. Este diagrama es fundamental para comprender la organización modular del sistema y la manera en que se gestiona el flujo de información entre los componentes.
 
-
-<img src="./Resources/images/Capitulo 4/4215.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//user-component.png" alt="UPC">
+</p>
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.1.6.1 Bounded Context Domain Layer Class Diagrams
 
-
-
-
 <img src="./Resources/PART 6/1.jpg" >
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram 
-
-
 
 <img src="./Resources/PART 6/2.jpg" >
 
@@ -1438,9 +1869,9 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams 
 
-
-
-<img src="./Resources/images/Capitulo 4/4225.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//iam-component.png" alt="UPC">
+</p>
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1475,8 +1906,9 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams 
 
 
-
-<img src="./Resources/images/Capitulo 4/4235.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//subscription-component.png" alt="UPC">
+</p>
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams 
 
@@ -1506,9 +1938,9 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
-
-
-<img src="./Resources/PART 6/5.jpg" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//sportspace-component.png" alt="UPC">
+</p>
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams 
 
@@ -1540,9 +1972,9 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 #### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
 
-
-
-<img src="./Resources/images/Capitulo 4/4255.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//reservation-component.png" alt="UPC">
+</p>
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1573,9 +2005,9 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 #### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams 
 
-
-
-<img src="./Resources/images/Capitulo 4/4265.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//room-component.png" alt="UPC">
+</p>
 
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1604,9 +2036,9 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 #### 4.2.7.4. Bounded Context Software Architecture Component Level Diagrams
 
-
-
-<img src="./Resources/images/Capitulo 4/4275.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//playerlist-component.png" alt="UPC">
+</p>
 
 #### 4.2.7.5. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1643,7 +2075,9 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 #### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams 
 
 
-<img src="./Resources/images/Capitulo 4/4265.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//chat-component.png" alt="UPC">
+</p>
 
 #### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1654,7 +2088,6 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 <img src="./Resources/images/Capitulo 4/42661.png" >
 
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram
-
 
 
 <img src="./Resources/images/Capitulo 4/42662.png" >
@@ -1679,14 +2112,13 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 #### 4.2.9.5. Bounded Context Software Architecture Component Level Diagrams 
 
-
-
-<img src="./Resources/images/Capitulo 4/4265.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//deposit-component.png" alt="UPC">
+</p>
 
 #### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.9.6.1. Bounded Context Domain Layer Class Diagrams
-
 
 
 <img src="./Resources/images/Capitulo 4/42661.png" >
@@ -1712,9 +2144,9 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 #### 4.2.10.5. Bounded Context Software Architecture Component Level Diagrams 
 
-
-
-<img src="./Resources/images/Capitulo 4/4265.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//banktransfer-component.png" alt="UPC">
+</p>
 
 #### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -1746,9 +2178,9 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 #### 4.2.11.4. Bounded Context Software Architecture Component Level Diagrams 
 
-
-
-<img src="./Resources/images/Capitulo 4/4265.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//payment-component.png" alt="UPC">
+</p>
 
 #### 4.2.11.5. Bounded Context Software Architecture Code Level Diagrams
 
