@@ -411,7 +411,8 @@ Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera d
 **Angie Valverde**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src= alt="UPC"> | |
+| <img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/clara.png" alt="UPC"> | Mi nombre es Clara Valverde y actualmente formo parte del equipo Atlassian en la empresa Software Enterprise Services, donde brindamos soluciones especializadas en SAP. Me encuentro cursando el noveno ciclo de la carrera de Ingeniería de Software, y tengo un fuerte interés en la eficiencia y la mejora continua dentro del desarrollo de proyectos. Me considero una persona organizada, comprometida con mis objetivos y en constante búsqueda de crecimiento tanto profesional como personal. Tengo una gran afinidad por el mundo tecnológico, especialmente en lo relacionado con la gestión de proyectos y el uso de herramientas colaborativas que optimicen los procesos. En mi tiempo libre, disfruto entrenar en el gimnasio, ya que es parte de mis metas personales de bienestar, y también dedico atención al cuidado de la piel, un tema que me interesa mucho a nivel personal.
+ |
 
 
 <br>
@@ -673,184 +674,72 @@ Link de las entrevistas en anexos
 
 Entrevista N°1:
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado1.png" alt="UPC">
+<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado1.png" alt="UPC">
 
-- **Entrevistador:** Sebastian Mendez
-- **Entrevistado:** Patrizio Mere
+- **Entrevistador:** Clara Valverde Salazar
+- **Entrevistado:** Rafael Arturo Luyo Ramor
 - **Sexo:** Masculino
-- **Edad:** 19 años
-- **Distrito:** San Miguel
-- **Duracion de la entrevista:** 5:59 minutos
-- **Resumen:** Patrizio es un estudiante universitario de la Universidad Peruana de Ciencias Aplicadas que le gusta estudiar, es por ello que su día a día es agitado. Él comenta que es complicado poder reservar las canchas debido a que primero tiene que ponerse de acuerdo con sus compañeros y luego tener que escribir por WhatsApp al dueño de la cancha, pero al querer seleccionar un horario este se encuentra ocupado o el horario no concuerda con la disponibilidad de todos los participantes. Siente que se puede mejorar la organización para reservar debido a que la forma actual es muy informal.Finalmente, nos comentó que el proceso de reserva genera molestia tanto para los jugadores como al dueño de la cancha por si surge una posible cancelación por motivos externos.
+- **Edad:** 23 años
+- **Distrito:** Santiago de Surco
+- **Duracion de la entrevista:** 6:00 minutos
+- **Link:** https://www.youtube.com/watch?v=kszWqAHkT_g 
+- **Resumen:** Rafael es un estudiante universitario de Ingeniería de Software. Actualmente trabaja de lunes a viernes, y durante los fines de semana suele dedicar tiempo a jugar billar, una de sus actividades recreativas favoritas.
+	Comenta que organizar partidas le resulta complicado, ya que utiliza WhatsApp para coordinar con otras personas, pero no siempre encuentra jugadores disponibles. Rafael reserva mesas de billar aproximadamente cinco veces al mes, y valora especialmente la calidad y la disponibilidad del espacio, aspectos que considera fundamentales para garantizar la comodidad tanto para él como para sus amigos.	Durante la entrevista, manifestó interés en contar con una aplicación que le facilite la búsqueda de personas disponibles para jugar. Le gustaría que esta app permitiera realizar reservas de manera sencilla y que incluyera funciones como chat en tiempo real y notificaciones automáticas, que le recuerden sus partidas programadas. Por motivos de conveniencia, Rafael prefiere una versión móvil de la aplicación, ya que le resulta más accesible y práctica para su estilo de vida.
 
 Entrevista N°2:
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado2.png" alt="UPC">
+<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado2.png" alt="UPC">
 
-- **Entrevistador:** Sebastian Mendez
-- **Entrevistado:** Sebastian Tenorio
+- **Entrevistador:** Clara Valverde Salazar
+- **Entrevistado:** Daniel Rodrigo Chillos Arevalos
 - **Sexo:** Masculino
-- **Edad:** 19 años
-- **Distrito:** Lima
-- **Duracion de la entrevista:** 4:19 minutos
-- **Resumen:** Sebastián es un estudiante universitario, tiene un horario apretado debido a la cantidad de clases que tiene. Suele buscar canchas de futbol cada 1 o 2 veces a la semana para jugar con sus amigos. El método por el cual reserva es contactos, o sea otro de sus amigos se contacta con el dueño para poder realizar la reserva. Él comenta que la dificultad en reservar radica en los pocos horarios que existen y conocer otra canchas, debido a que esto, las pocas veces que ha ido a reservar presencialmente se ha encontrado que estan ocupadas. Sebastián explica que el precio es fundamental al momento de alquilar una cancha, ya que actualmente hay precios exorbitantes. Finalmente, él considera que una aplicación movil que agilice las reservas ayudaría mucho la satisfacción del usuario.
+- **Edad:** 30 años
+- **Distrito:** Comas
+- **Duracion de la entrevista:** 7:17 minutos
+- **Link:** https://youtu.be/J84R3rz9o1I
+- **Resumen:** Daniel es un estudiante universitario que administra un local con cinco mesas de billar, actividad que combina con sus estudios y su afición al juego. Actualmente gestiona las reservas mediante WhatsApp y llamadas telefónicas, pero enfrenta dificultades para atraer nuevos clientes y realizar promociones efectivas, a pesar de utilizar Instagram y WhatsApp como canales de difusión. Menciona que los días con menor afluencia son lunes y martes, por lo que le interesaría contar con una aplicación que le permita gestionar reservas en línea, enviar recordatorios automáticos, integrar un calendario, y ofrecer herramientas para promociones y descuentos. También desea que la app proporcione reportes sobre la ocupación de los espacios, clientes frecuentes, y efectividad de las promociones. Sin embargo, le preocupa que la aplicación no sea lo suficientemente intuitiva para él o sus clientes, y considera importante contar con soporte técnico vía telefónica.
 
 Entrevista N°3:
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado3.png" alt="UPC">
+<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado3.png" alt="UPC">
 
-- **Entrevistador:** Henry Centurion
-- **Entrevistado:** Adriano Berrospi
+- **Entrevistador:** Clara Valverde Salazar
+- **Entrevistado:** Danny Cao Cao
 - **Sexo:** Masculino
-- **Edad:** 19 años
-- **Distrito:** Chaclacayo
-- **Duracion de la entrevista:** 8:23 minutos
-- **Resumen:** Adriano es un estudiante universitario en la carrera de Odontología en la universidad San Martin de Porres. Suele tener un horario lleno debido al estudio concurrente que tiene, pero cuando se desocupa en las noches suele escuchar música y realizar otras actividades recreativas. Es alguien que ama el fútbol y si bien no tiene una frecuencia con la que juega, cada vez que hay oportunidad lo realiza. El realiza reservas por medio de WhatsApp preguntadole al dueño, por lo que corre el riesgo de no saber si el horario deseado está ocupado. Le molesta tener que esperar que haya horario para jugar con sus amigos debido a que todo lo hacen con anticipación. Le gustaría encontrar canchas económicas, en buen estado y sobre todo una buena ubicación. Él comenta que sería interesante que existe una pagina web o una aplicación que permita la visualización de los horarios al momento de reservar para así poder elegir uno. 
+- **Edad:** 22 años
+- **Distrito:** Jesus Maria
+- **Duracion de la entrevista:** 5:15 minutos
+- **Link:** https://youtu.be/OK2F5G7bt28
+- **Resumen:** Danny es un estudiante universitario de Ingeniería de Minas que practica fútbol entre dos y tres veces por semana. Aunque utiliza la plataforma web “Deport Plaza” para reservar espacios deportivos, enfrenta dificultades para coordinar horarios con sus compañeros, lo que limita la frecuencia de sus partidos. Valora especialmente la ubicación y la calidad del campo al momento de hacer una reserva, y muestra interés en conocer nuevas personas a través del deporte.
+Le atrae la idea de una aplicación móvil que le permita realizar reservas con facilidad, que le notifique sobre la disponibilidad de canchas con detalles específicos, y que utilice notificaciones como medio de comunicación principal. Para él, una versión móvil resulta ideal por la practicidad de llevarla en su celular.
 
 Entrevista N°4:
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado4.png" alt="UPC">
+<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado4.png" alt="UPC">
 
-- **Entrevistador:** Henry Centurion
-- **Entrevistado:** GianPaul Quintana
+- **Entrevistador:** Clara Valverde Salazar
+- **Entrevistado:** Jose Luis Figeroa
 - **Sexo:** Masculino
-- **Edad:** 20 años
-- **Distrito:** Lurigancho-Chosica
-- **Duracion de la entrevista:** 9:21 minutos
-- **Resumen:** GianPaul es un estudiante de la carrera de Ingeniería de Software en la Universidad Tecnologica del Perú. Su día suele combinado debido al estudio y las actividades que realiza, el cual son el deporte, gimnasio y videojuegos. Empezó jugando billar hace 2 años debido a que comparte la emocion y adicción como lo es el casino, actualmente lo juega seguido con sus amigos. Él encuentra salones de billar cerca de la plaza central y realiza una reserva mediante WhatsApp con el dueño. Le molesta el proceso de reserva debido que al realizarlo se encuentra que el horario que desea está ocupado o que el dueño no haya abierto su local. Comenta que una aplicación web sería ideal para agilizar el proceso de reservas de mesas en los salones de billar, además que sugiere que existan filtros para para encontrar un salón de billar adecuado para el juego, con buen material, tienda de golosinas y buena infraestructura. Finalmente, la parece interesante el gesto de que otras personas puedan unirse a una mesa por si falta alguien más y así crear una buena comunidad en el billar.
+- **Edad:** 36 años
+- **Distrito:** Rimac
+- **Duracion de la entrevista:** 5:22 minutos
+- **Link:** https://youtu.be/krUlDn7nS3U
+- **Resumen:** José Luis es estudiante de Ingeniería de Sistemas y disfruta jugar billar con sus amigos los fines de semana. Sin embargo, le resulta difícil coordinar horarios, ya que organiza sus partidas a través de WhatsApp y enfrenta problemas con la disponibilidad de todos. Valora mucho la calidad del espacio y la disponibilidad para hacer reservas, aunque se siente incómodo realizando reservas por teléfono. Está interesado en conocer nuevas personas a través del billar y le atrae la idea de una aplicación que le facilite hacer reservas. Le gustaría que la app incluyera funciones como tiempo de juego y notificaciones, y prefiere que la comunicación dentro de la aplicación sea mediante chat en tiempo real. Además, le resultaría conveniente que la aplicación estuviera disponible en versión móvil para mayor accesibilidad.
 
 Entrevista N°5:
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado5.png" alt="UPC">
+<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado4.png" alt="UPC">
 
-- **Entrevistador:** Henry Centurion
-- **Entrevistado:** Luis Carreño
-- **Sexo:** Masculino
-- **Edad:** 18 años
-- **Distrito:** Lurigancho-Chosica
-- **Duracion de la entrevista:** 7:46 minutos
-- **Resumen:** Luis es un estudiante de la Universidad San Ignacio de Loyola. Su día a su día suelen ser de puras tareas aunque tambien sus ratos para el billar, el cual suele jugarlo 3 veces a la semana, por lo que se considera un jugador regular. El suele reservar una mesa por las redes sociales del dueño. Entre los problemas que tiene es la poca disponibilidad de salones de billar cerca de su zona y horarios congestionados, generandole un sentimiento de molestia. Le importa demasiado los detalles de los salones, que tengam buen equipamiento y buena infraestructura, considera que impacta en la estadía del jugador. Finalmente, una aplicación web sería lo indicado para gestionar las reservas de todos los jugadores de billar que desean asistir.
-
-Entrevista N°6:
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado6.png" alt="UPC">
-
-- **Entrevistador:** Sebastian Frisancho
-- **Entrevistado:** Luis Diego Eyzaguirre
+- **Entrevistador:** Clara Valverde Salazar
+- **Entrevistado:** Julio Cesar Matos
 - **Sexo:** Masculino
 - **Edad:** 21 años
-- **Distrito:** Pueblo Libre
-- **Duracion de la entrevista:** 6:31 minutos
-- **Resumen:** Luis Diego es un estudiante de la UPC. En su dia a dia durante la semana inicia con clases de la universidad, los fines de semana sale y en las tardes-noches juega videojuegos on sus amigos. Con respeto al billar, él suele jugar con una frecuencia de 3-4 días en la ciudad de Tacna, por lo que se le considera jugador regular. Sin embargo, en Lima el desconoce locales de billar por la poca publicidad y visibilidad que estas tienen. Él nos comenta que en tacna no tiene ningun problema de reserva ya que casi siempre que va tiene mesas vacias para él y sus amigos. Tambien le gustaria que se implemente una página web donde se amplie la visibiladad de mesas de billar en Lima para asi poder jugando en sus ratos libres con sus amigos, a su vez nos comenta que las pocas veces que se acerco a un local de billar en Lima suele tener problemas de disponibilidad de mesas por lo que sería bueno una página web donde se visualice los horarios disponibles, como también imagenes referenciales de los locales para asi captar más su atención. 
+- **Distrito:** Callao
+- **Duracion de la entrevista:** 9:54 minutos
+- **Link:** https://youtu.be/P41ssO3nYIk 
+- **Resumen:** Julio es estudiante de Ingeniería de Sistemas y administra tres losas deportivas para fútbol. Actualmente gestiona las reservas de forma presencial, ya que los clientes suelen acudir a su casa, o lo contactan por WhatsApp para consultar la disponibilidad. Enfrenta dificultades para completar reservas entre semana (de lunes a viernes) y ha tenido problemas por la duplicación de horarios, lo que genera conflictos entre grupos. Además, no realiza publicidad, lo que limita su alcance a nuevos clientes. Está interesado en una aplicación intuitiva que le permita gestionar reservas de manera más eficiente. Valora especialmente que se integren métodos de pago modernos como Yape y tarjetas de crédito. También le gustaría contar con reportes sobre afluencia semanal, reservas sin confirmar y el porcentaje de clientes que completan el proceso de reserva.
 
-Entrevista N°7:
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado7.png" alt="UPC">
-
-- **Entrevistador:** John Atencio
-- **Entrevistado:** Jorge Luis Sifuentes
-- **Sexo:** Masculino
-- **Edad:** 22 años
-- **Distrito:** Magdalena del mar
-- **Duracion de la entrevista:** 4:36 minutos
-- **Resumen:** Jorge Luis Sifuentes es un publicista con cursos de diseño gráfico y propietario de un salón de billar. Jorge nos comenta que empezó este negocio como una afición que con el tiempo fue creciendo. Sin embargo, últimamente ha presentado dificultades para organizar el local y gestionar los horarios de atención cuando los clientes quieren reservar un espacio de juego. Debido a ello, ha empezado a buscar opciones en línea como Facebook para poder gestionar mejor las reservas. Desde su punto de vista una buena plataforma de reserva necesitaría mostrar sus horarios de atención, sus precios por hora, los tipos de juego que ofrece, los servicios extra como comidas y bebidas, y la disponibilidad de cada espacio de juego. Finalmente, concluye que una plataforma así le sería  de mucha ayuda.
-
-Entrevista N°8:
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado8.png" alt="UPC">
-
-- **Entrevistador:** John Atencio
-- **Entrevistado:** Rodrigo Salas
-- **Sexo:** Masculino
-- **Edad:** 22 años
-- **Distrito:** San Juan de Lurigancho
-- **Duracion de la entrevista:** 8:12 minutos
-- **Resumen:** Rodrigo Salas, estudiante de administración, nos comenta que mantiene un negocio familiar de alquilar espacios de recreación en su mayoría canchas de futbol. En síntesis, Rodrigo explica que su mayor dificultad es administrar los horarios del espacio ya que en días de semana lo usa solo como cancha de futbol y en fines de semana o en la noche como lugar de fiestas infantiles o quinceañeros. Por esta razón, le sería útil una web con la que establezca sus horarios y sus precios.
-
-Entrevista N°9:
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado9.png" alt="UPC">
-
-- **Entrevistador:** Sebastian Frisancho
-- **Entrevistado:** Rodrigo Reyes
-- **Sexo:** Masculino
-- **Edad:** 22 años
-- **Distrito:** San Miguel
-- **Duracion de la entrevista:** 7:35 minutos
-- **Resumen:** Rodrigo Reyes es un estudiante de medicina. En su dia a dia durante la semana inicia levantandose temprano para ir al hospital, por la tarde tiene clases, y en noche va al gym o sigue estudiando, los fines de semana va al gym o si se coordina con sus amigos juega futbol. Con respeto al futbol,él suele jugar con una frecuencia de 1-2 días al mes, por lo que se le considera jugador regular. Sin embargo, en Lima el desconoce locales de futbol, nos comenta que conoce un par pero fuera de su zona, por la poca publicidad y visibilidad que estas tienen. Él nos comenta que el tiempo que se demora aproximadamente para hacer el proceso de busqueda y reserva se demora aproximadante 1 hora. Tambien le gustaria que se implemente una aplicacion donde se amplie la visibilidad 
-de canchas dentro de su zona, a su vez nos comenta que hay tenido que esperar aun habiendo hecho la reserva. Para una mejorar reserva el quisiera poder visualizar sus horarios disponibles.
-
-Entrevista N°10:
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado-101.png" alt="UPC">
-
-- **Entrevistador:** Francis Mamani
-- **Entrevistado:** Jose Saico
-- **Sexo:** Masculino
-- **Edad:** 19 años
-- **Distrito:** Independencia
-- **duración de la entrevista:** 5:09 minutos
-- **Resumen:**   José saico, es un estudiante de la carrera de ingeniería de sistemas y copropietario de un salón de billar, este nos expresa su motivación para abrir un local de billar basado en la pasión familiar por el deporte y el deseo de crear un espacio de socialización. Destaca los servicios ofrecidos, como mesas de billar, sala de juegos y bar, y señala desafíos en la gestión diaria, proponiendo implementar una plataforma de reserva en línea para mejorar la experiencia del cliente y facilitar la gestión interna. Destaca la importancia de la facilidad de uso, disponibilidad de horarios en tiempo real, opciones de pago seguras y acceso a datos para optimizar la operación. También menciona preferencias en el soporte técnico y preocupaciones sobre la seguridad de los datos de los clientes.
-
-Entrevista N°11:
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado-111.png" alt="UPC">
-
-- **Entrevistador:** Francis Mamani
-- **Entrevistado:** Piero Alessandro
-- **Sexo:** Masculino
-- **Edad:** 24 años
-- **Distrito:** Chorrillos
-- **duración de la entrevista:** 7:50 minutos
-- **Resumen:**   Piero Alessandro nos comenta que es dueño de un centro de futbol, este nos comenta que su sueño de apertura ese local se remonta desde pequeño debido a que desea compartir ese espacio con sus allegados. No obstante este mismo presenta problemas últimamente debido a la demanda en ciertas fechas respecto al alquiler de su local, esto se debe mas que todo por la poca organización que dispone actualmente, gracias a ello el esta interesado en ampliar sus opciones de administración para que así pueda tener una mejor organización y que también pueda generar mas ingresos, desde su punto de vista una buena plataforma es la que tiene una muy buena conexión con el usuario, además de implementar ciertas opciones de recopilación de datos de sus usuarios.
-
-Entrevista N°12:
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado12.png" alt="UPC">
-
-- **Entrevistador:** Sebastian Frisancho
-- **Entrevistado:** Sebastian Pinto
-- **Sexo:** Masculino
-- **Edad:** 21 años
-- **Distrito:** Lima
-- **duración de la entrevista:** 5:54 minutos
-- **Resumen:** Sebastian Pinto es un estudiante universitario. En su dia a dia durante la semana inicia levantandose temprano para ir al clases, por la tarde suele tenerlas libres pero ayuda en la casa, y en noche se queda estudiando o jugando videojuegos, los fines de semana si se coordina con sus amigos juega futbol. Con respeto al futbol, él suele jugar con una frecuencia de 3-4 veces al mes, por lo que se le considera jugador regular. Sin embargo, en Lima el desconoce locales de futbol por la poca publicidad y visibilidad que estas tienen. Él nos comenta que el tiempo que se demora aproximadamente para hacer el proceso de busqueda y reserva es significativo, ya que si alguien no tiene el contacto deben buscar por redes sociales y llamar para preguntar la disponibilidad. Al no estar satisfecho con la disponibilidad de sus canchas a experimentado tener que dejar de jugar por este problema. Le gustaria que se implemente una app donde se junten los anuncions de canchas en redes sociales para que se amplie la visibilidad de canchas dentro de su zona. Para una mejorar reserva el quisiera poder visualizar sus horarios disponibles. 
-
-Entrevista N°13:
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado-131.png" alt="UPC" width="400" height="300">
-
-- **Entrevistador:** Francis Mamani
-- **Entrevistado:** Franco de la Cruz
-- **Sexo:** Masculino
-- **Edad:** 21 años
-- **Distrito:** Callao
-- **duración de la entrevista:** 5:30 minutos
-- **Resumen:**   Franco de la cruz, es un estudiante de la carrera de ingeniería de sistemas y propietario de un salón de billar, este nos comenta que la apertura y gestión de un local de billar ha sido emocionante pero desafiante, motivados por la pasión por el juego y la creación de un espacio comunitario acogedor. Ofrecemos diversas mesas de billar, juegos adicionales y un bar para complementar la experiencia. La gestión manual de reservas es un desafío, especialmente en momentos de alta demanda. Buscamos implementar una plataforma de reserva en línea que sea fácil de usar, con horarios en tiempo real y opciones de pago seguras. Valoramos el acceso a datos para mejorar la toma de decisiones. La seguridad de la información del cliente es una preocupación importante, así como la necesidad de un soporte técnico eficiente y atención al cliente.
-
-Entrevista N°14:
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado14.png" alt="UPC" width="400" height="300">
-
-- **Entrevistador:** John Atencio
-- **Entrevistado:** Jefferson Alonso
-- **Sexo:** Masculino
-- **Edad:** 24 años
-- **Distrito:** San Juan de Lurigancho
-- **duración de la entrevista:**
-- **Resumen:** Jefferson Alonso, estudiante de gastronomia, nos comenta que mantiene un pequeño negocio de billar. Como parte de sus funciones, explica que organizar el negocio es difícil, especialmente en lo que respecta a las reservas, ya que todo se realiza vía WhatsApp y resulta muy engorroso. Debido a ello, considera que una plataforma que gestione el alquiler de su local sería de gran ayuda. Además, nos brinda algunos consejos al respecto, como por ejemplo: Mostrar todos los servicios adicionales que ofrece el local, así como los precios de las mesas, la capacidad, los horarios de funcionamiento, la dirección y los tiempos de espera.
-  
-Entrevista N°15:
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//entrevistado15.png" alt="UPC" width="400" height="300">
-
-- **Entrevistador:** John Atencio
-- **Entrevistado:** Kevin Moscol
-- **Sexo:** Masculino
-- **Edad:** 23 años
-- **Distrito:** Lima
-- **duración de la entrevista:** 6:53 minutos
-- **Resumen:**  Kevin Moscol compartió que su principal desafío radica en la gestión de los alquileres a través de WhatsApp, lo que resulta informal y poco eficiente. Expresó su interés en contar con una plataforma de reservas específica para salones de billar, lo que facilitaría enormemente la administración de su negocio. La implementación de esta plataforma no solo simplificaría la gestión de reservas, sino que también mejoraría la experiencia del cliente y aumentaría la eficiencia operativa del local de billar. Por último, él expresa su satisfacción con la idea, al recalcar que la información privada que manejaría la plataforma sería muy compensada con el servicio que estaría ofreciéndole tanto a él como propietario, como a sus clientes como consumidores.
 
 ### 2.2.3. Analisis de entrevistas
 
