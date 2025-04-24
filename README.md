@@ -88,46 +88,40 @@
   <tr>
     <td rowspan="6" valign="top">Trabaja en equipo para proporcionar liderazgo en forma conjunta </td>
     <td valign="top">
-      TB1: John Atencio: Realicé el proyecto en general junto con mis compañeros, aplicando comunicación. Desarrolle el modelo C4 junto con el diagrama de clases y base de datos
+      TB1: John Atencio: Coordiné una de las sesiones de presentación interna, organizando el contenido de manera colaborativa y distribuyendo los roles de exposición.
       <br><br>
     </td>
     <td rowspan="6" valign="middle">
-      En nuestras conclusiones, hemos puesto énfasis en el valor y la importancia de la comunicación efectiva dentro de nuestro equipo. Este énfasis se ha centrado en la aplicación práctica de habilidades técnicas específicas que han demostrado ser fundamentales para mejorar nuestra interacción y colaboración.
-      <br><br>
-      En primer lugar, hemos reconocido la necesidad de adaptabilidad en nuestra comunicación, lo que implica la capacidad de ajustar nuestro estilo y enfoque según el contexto y las preferencias individuales de nuestros compañeros. Esta adaptabilidad se refleja en la elección adecuada de los medios de comunicación, así como en la flexibilidad para modificar nuestra estrategia de comunicación cuando surgen nuevas circunstancias o necesidades.
-      <br><br>
-      En segundo lugar, hemos enfatizado la importancia de la claridad en nuestros mensajes. Esto implica la habilidad de expresar nuestras ideas de manera concisa y comprensible, evitando ambigüedades y malentendidos. Para lograr esto, nos esforzamos por utilizar un lenguaje claro y directo, estructurando nuestra información de manera lógica y proporcionando ejemplos concretos cuando sea necesario para mejorar la comprensión.
-      <br><br>
-      Por último, pero no menos importante, hemos destacado el valor de la transparencia en nuestras interacciones. Reconocemos que compartir información de manera abierta y honesta es fundamental para construir relaciones de confianza y fomentar un ambiente de trabajo colaborativo. Al mantener un flujo constante de información y estar receptivos a las opiniones y preocupaciones de los demás miembros del equipo, fortalecemos nuestra capacidad para trabajar juntos de manera efectiva hacia nuestros objetivos comunes.
+      Como equipo, compartimos el liderazgo en cada etapa del proyecto, adaptándonos según las fortalezas y experiencias de cada integrante. Este enfoque permitió una mejor toma de decisiones, mayor compromiso y una distribución equitativa de responsabilidades. La rotación de roles de liderazgo fortaleció la autonomía del grupo y fomentó un sentido colectivo de propiedad sobre el proyecto. (TB1)
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Henry Centurion: Con mis demás compañeros completamos el informe, en mi caso enfaticé con las user stories para tener de donde empezar y mis compañeros puedan guiarse.
+      TB1: Henry Centurion: Tomé la iniciativa en las decisiones clave del diseño estratégico del dominio, promoviendo la participación equitativa y justificando cada decisión técnica.
       <br><br>
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Sebastián Frisancho: Me encargué del figma para realizar el modelo visual de nuestra aplicación y como deseamos que luzca
+      TB1: Sebastián Frisancho: Lideré la definición inicial de hipótesis en el proceso Lean UX, coordinando al equipo para alinear ideas y enfocar los esfuerzos desde el inicio.
       <br><br>
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Sebastián Mendez: Me encargué de dirigir el trabajo juntando al equipo al igual que cuando desarrollamos el landing page
+      TB1: Sebastián Mendez: Lideré el diseño de uno de los contextos del Tactical-Level Domain-Driven Design, promoviendo reuniones de revisión con el equipo para asegurar la integración de los módulos.
       <br><br>
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Willy Valentin: Organicé y desarrollé las entrevistas para así obtener los datos que necesitamos
+      TB1: Willy Valentin: Dirigí la elaboración del modelo To-Be, integrando los aportes de mis compañeros para construir una propuesta coherente y consensuada.
       <br><br>
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Angie Valverde: Organicé y desarrollé las entrevistas para así obtener los datos que necesitamos
+      TB1: Angie Valverde: Asumí el rol de facilitador durante las entrevistas con usuarios, guiando al equipo para obtener información valiosa y respetar los tiempos y turnos de participación
       <br><br>
     </td>
   </tr>
@@ -138,46 +132,40 @@
   <tr>
     <td rowspan="6" valign="top"> Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.</td>
     <td valign="top">
-      TB1: John Atencio: Realicé el proyecto en general junto con mis compañeros, aplicando comunicación. Desarrolle el modelo C4 junto con el diagrama de clases y base de datos
+      TB1: John Atencio: Contribuí a establecer metas claras para la entrega, participando activamente en su cumplimiento y apoyando a mis compañeros cuando fue necesario. 
       <br><br>
     </td>
     <td rowspan="6" valign="middle">
-      En nuestras conclusiones, hemos puesto énfasis en el valor y la importancia de la comunicación efectiva dentro de nuestro equipo. Este énfasis se ha centrado en la aplicación práctica de habilidades técnicas específicas que han demostrado ser fundamentales para mejorar nuestra interacción y colaboración.
-      <br><br>
-      En primer lugar, hemos reconocido la necesidad de adaptabilidad en nuestra comunicación, lo que implica la capacidad de ajustar nuestro estilo y enfoque según el contexto y las preferencias individuales de nuestros compañeros. Esta adaptabilidad se refleja en la elección adecuada de los medios de comunicación, así como en la flexibilidad para modificar nuestra estrategia de comunicación cuando surgen nuevas circunstancias o necesidades.
-      <br><br>
-      En segundo lugar, hemos enfatizado la importancia de la claridad en nuestros mensajes. Esto implica la habilidad de expresar nuestras ideas de manera concisa y comprensible, evitando ambigüedades y malentendidos. Para lograr esto, nos esforzamos por utilizar un lenguaje claro y directo, estructurando nuestra información de manera lógica y proporcionando ejemplos concretos cuando sea necesario para mejorar la comprensión.
-      <br><br>
-      Por último, pero no menos importante, hemos destacado el valor de la transparencia en nuestras interacciones. Reconocemos que compartir información de manera abierta y honesta es fundamental para construir relaciones de confianza y fomentar un ambiente de trabajo colaborativo. Al mantener un flujo constante de información y estar receptivos a las opiniones y preocupaciones de los demás miembros del equipo, fortalecemos nuestra capacidad para trabajar juntos de manera efectiva hacia nuestros objetivos comunes.
+      Fomentamos un ambiente de trabajo inclusivo, donde todas las voces fueron valoradas y consideradas en la toma de decisiones. Establecimos metas claras, planificamos tareas de forma colaborativa y cumplimos los objetivos propuestos gracias a una comunicación constante, organización compartida y compromiso conjunto. Esta forma de trabajo potenció la productividad y cohesión del equipo. (TB1)
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Henry Centurion: Con mis demás compañeros completamos el informe, en mi caso enfaticé con las user stories
+      TB1: Henry Centurion: Me aseguré de incluir las ideas de todos en la definición de user stories, promoviendo un ambiente donde todos se sintieran escuchados y representados.
       <br><br>
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Sebastián Frisancho: Me encargué del figma para realizar el modelo visual de nuestra aplicación y como deseamos que luzca
+      TB1: Sebastián Frisancho: Organicé sesiones de trabajo en las que rotamos tareas como la toma de notas y el análisis de entrevistas, para fomentar el equilibrio y la equidad.
       <br><br>
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Sebastián Mendez: Me encargué de dirigir el trabajo juntando al equipo al igual que cuando desarrollamos el landing page
+      TB1: Sebastián Mendez: Me comprometí con los tiempos del proyecto, entregando mis partes del diseño táctico a tiempo y ayudando a resolver bloqueos que surgieron durante la implementación.
       <br><br>
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Willy Valentin: Organicé y desarrollé las entrevistas para así obtener los datos que necesitamos
+      TB1: Willy Valentin: Impulsé espacios de feedback constructivo durante el diseño de la arquitectura, valorando las ideas de todos y fomentando la mejora continua.
       <br><br>
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Angie Valverde: Organicé y desarrollé las entrevistas para así obtener los datos que necesitamos
+      TB1: Angie Valverde: Propuse la planificación inicial del proyecto utilizando tableros colaborativos, lo que permitió una mejor organización y transparencia en el trabajo en equipo.
       <br><br>
     </td>
   </tr>
