@@ -405,14 +405,13 @@ Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera d
 **Willy Valentin**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src= alt="UPC"> | |
+| <img width="459px" height="170px" src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/willy.png" alt="UPC"> | Soy Willy David Valentin Ricaldi, estudio la carrera de Ingeniería de Software. Actualmente, me encuentro trabajando en una empresa minera en el área de TI. Tengo experiencia en desarrollo, gestión y mantenimiento de Software utilizando metodologías ágiles y tecnologías modernas. Lidero la rama estudiantil ACM - UPC desde hace más de un año y esto representa el nivel de liderazgo que tengo en proyectos medianos y grandes. |
 
 
 **Angie Valverde**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/clara.png" alt="UPC"> | Mi nombre es Clara Valverde y actualmente formo parte del equipo Atlassian en la empresa Software Enterprise Services, donde brindamos soluciones especializadas en SAP. Me encuentro cursando el noveno ciclo de la carrera de Ingeniería de Software, y tengo un fuerte interés en la eficiencia y la mejora continua dentro del desarrollo de proyectos. Me considero una persona organizada, comprometida con mis objetivos y en constante búsqueda de crecimiento tanto profesional como personal. Tengo una gran afinidad por el mundo tecnológico, especialmente en lo relacionado con la gestión de proyectos y el uso de herramientas colaborativas que optimicen los procesos. En mi tiempo libre, disfruto entrenar en el gimnasio, ya que es parte de mis metas personales de bienestar, y también dedico atención al cuidado de la piel, un tema que me interesa mucho a nivel personal.
- |
+| <img width="906px" height="170px" src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/clara.png" alt="UPC"> | Mi nombre es Clara Valverde y actualmente formo parte del equipo Atlassian en la empresa Software Enterprise Services, donde brindamos soluciones especializadas en SAP. Me encuentro cursando el noveno ciclo de la carrera de Ingeniería de Software, y tengo un fuerte interés en la eficiencia y la mejora continua dentro del desarrollo de proyectos. Me considero una persona organizada, comprometida con mis objetivos y en constante búsqueda de crecimiento tanto profesional como personal. Tengo una gran afinidad por el mundo tecnológico, especialmente en lo relacionado con la gestión de proyectos y el uso de herramientas colaborativas que optimicen los procesos. En mi tiempo libre, disfruto entrenar en el gimnasio, ya que es parte de mis metas personales de bienestar, y también dedico atención al cuidado de la piel, un tema que me interesa mucho a nivel personal. |
 
 
 <br>
@@ -728,7 +727,7 @@ Entrevista N°4:
 
 Entrevista N°5:
 
-<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado4.png" alt="UPC">
+<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado5.png" alt="UPC">
 
 - **Entrevistador:** Clara Valverde Salazar
 - **Entrevistado:** Julio Cesar Matos
@@ -739,7 +738,70 @@ Entrevista N°5:
 - **Link:** https://youtu.be/P41ssO3nYIk 
 - **Resumen:** Julio es estudiante de Ingeniería de Sistemas y administra tres losas deportivas para fútbol. Actualmente gestiona las reservas de forma presencial, ya que los clientes suelen acudir a su casa, o lo contactan por WhatsApp para consultar la disponibilidad. Enfrenta dificultades para completar reservas entre semana (de lunes a viernes) y ha tenido problemas por la duplicación de horarios, lo que genera conflictos entre grupos. Además, no realiza publicidad, lo que limita su alcance a nuevos clientes. Está interesado en una aplicación intuitiva que le permita gestionar reservas de manera más eficiente. Valora especialmente que se integren métodos de pago modernos como Yape y tarjetas de crédito. También le gustaría contar con reportes sobre afluencia semanal, reservas sin confirmar y el porcentaje de clientes que completan el proceso de reserva.
 
+Entrevista N°6:
 
+<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado6.png" alt="UPC">
+
+- **Entrevistador:** Willy Valentin
+- **Entrevistado:** Diego Portales
+- **Sexo:** Masculino
+- **Edad:** 24 años
+- **Distrito:** Pueblo Libre
+- **Duracion de la entrevista:** 5:40 minutos
+- **Link:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201c037_upc_edu_pe/ERU-1RConSZPq2oXjv1ezzgBt-yZozxww0fFwOGDqho1sw?e=gB4hhP&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+- **Resumen:** Diego tiene 24 años y vive en Pueblo Libre. Actualmente, es estudiante y su día a día suele asistir a la universidad e ir a las prácticas en la mañana. Jugaba fútbol con sus amigos, juega con poca frecuencia. Generalmente, uno de sus amigos contactaba para separar la cancha, él valora principalmente la ubicación, la calidad y la reputación del lugar. La forma de reserva era por WhatsApp, y que no sería cómodo no encontrar. A él le ayudaría bastante un aplicativo que le ahorre tiempo reservar, y sí le gustaría participar con personas desconocidas como forma de ampliar su círculo social. Finalmente, él cree que sería útil la aplicación para reservar canchas deportivas y que cuente con funcionalidades como mapas, métodos de pago fáciles y tener un chat en vivo, asimismo, él se sentiría más cómodo usar la versión móvil porque es más fácil de llevar.
+
+Entrevista N°7:
+
+<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado7.png" alt="UPC">
+
+- **Entrevistador:** Willy Valentin
+- **Entrevistado:** Johan Moreno
+- **Sexo:** Masculino
+- **Edad:** 24 años
+- **Distrito:** Ate
+- **Duracion de la entrevista:** 6:50 minutos
+- **Link:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201c037_upc_edu_pe/EVUb74RsD2ZLvFcTN4UnNnkBxhPuRb6X4dAd6RYSG1O4Jw?e=aif5Md&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+- **Resumen:** Johan, tiene 24 años y vive en Ate. Actualmente, él es estudiante, en las noches terminando sus labores de la universidad entrena. Él juega usualmente los sábados, uno de los problemas es que no pueden coordinar bien con sus amigos, ellos utilizan WhatsApp para poder organizar. Las dificultades encontradas son la confirmación de sus amigos y la disponibilidad de las canchas. Él valora principalmente la calidad del espacio, que tenga camerinos, duchas e implementos de limpieza. Ellos hacen la reserva por WhatsApp donde también confirman el pago por ese medio, pero hay veces en las que el dueño no contesta rápido. A Johan le gustaría ver la disponibilidad en tiempo real para no esperar que el dueño responda, él prefiere jugar con amigos que con desconocidos y que le parece una buena forma de socializar. Finalmente, a Johan le parece que le ayudaría bastante una aplicación de reservas de campos deportivos porque le facilitarían bastante y le gustaría que haya un asesor si en caso haya algún problema en el uso del aplicativo, además, él se sentiría más cómodo utilizar la versión móvil porque siempre lo carga.
+
+Entrevista N°8:
+
+<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado8.png" alt="UPC">
+
+- **Entrevistador:** Willy Valentin
+- **Entrevistado:** Miguel Ybañez
+- **Sexo:** Masculino
+- **Edad:** 22 años
+- **Distrito:** Rimac
+- **Duracion de la entrevista:** 7:50 minutos
+- **Link:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201c037_upc_edu_pe/EYn0uP1NAthHnGIz6xMYk94BFrnF2-7Pmrev69Shoah8JQ?e=tkRb9k&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+- **Resumen:** Miguel tiene 22 años y vive en Rimac. Actualmente, él estudia en las mañanas, algunos días va a trabajar y suele jugar fútbol pocas veces pero sí suele encontrarse con sus amigos como 3 veces al mes. Ellos organizan por el medio de WhatsApp o Facebook, entre las dificultades que tuvo fue la disponibilidad de los campos deportivos. Miguel reserva 2 veces al mes y él valora más la ubicación para que esté más cercano para todos los asistentes, y realizan su reserva por medio de llamadas pero hay algunos casos que no le gusta reservar de forma presencial. A él le gustaría ver en tiempo real la disponibilidad de los campos para mejorar la coordinación con sus amigos, a él le gusta jugar más con sus amigos que con desconocidos. Miguel si le gusta la idea de crecer su círculo social mediante el deporte, y le parece que una aplicación que le ayude a reservar le sería de gran ayuda para ver los campos y se adecue a tu ubicación, asimismo, le gustaría que se comuniquen por medio de chat en tiempo real. Finalmente, a él le gustaría utilizar en la versión móvil porque siempre lo tiene a la mano.
+
+Entrevista N°9:
+
+<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado9.png" alt="UPC">
+
+- **Entrevistador:** Willy Valentin
+- **Entrevistado:** Alexis Patasca 
+- **Sexo:** Masculino
+- **Edad:** 26 años
+- **Distrito:** Los Olivos
+- **Duracion de la entrevista:** 5:00 minutos
+- **Link:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201c037_upc_edu_pe/EemPNqNHDUVEn8hmuBcpUEAB0OQ-8hqMND6x_j1LtLDluQ?e=XYyu2f&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D 
+- **Resumen:** Alexis tiene 26 años y vive en Los Olivos. Actualmente, es estudiante y suele ayudar a un familiar que alquila 4 campos deportivos que son 3 de fútbol y 1 de vóley, la reserva lo hacen por llamada y presencial. Los principales problemas que enfrentan es la equivocación con los horarios, pues esto afecta a las personas que habían reservado. Ellos utilizan las redes sociales para la publicidad de su servicio, asimismo, él se dio cuenta los martes y miércoles no hay tantas personas que reserven. Finalmente, a él le gustaría que una aplicación le muestre estadísticas como la cantidad de reservas diarias, además, cree que quizás algunos trabajadores no puedan adaptarse al aplicativo, y él espera la asistencia rápida con ellos para que los puedan apoyar en casos de que haya problemas.
+
+Entrevista N°10:
+
+<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado10.png" alt="UPC">
+
+- **Entrevistador:** Willy Valentin
+- **Entrevistado:** Oscar Soto 
+- **Sexo:** Masculino
+- **Edad:** 25 años
+- **Distrito:** Santiago de Surco
+- **Duracion de la entrevista:** 5:57 minutos
+- **Link:** https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201c037_upc_edu_pe/ER2BxBfK_zBHgx0Y0_DDm4oBVhDbgjAgiyN1WABJM9RnDg?e=faGlFb&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D
+- **Resumen:** Oscar tiene 25 años y vive en Santiago de Surco. Actualmente, él se encuentra administrando 2 espacios deportivos de fútbol y vóley. Oscar administra de manera manual usando un cuaderno para gestionar las reservas, el principal problema es que a veces hay errores de agrupación de reservas. Generalmente, la publicidad es por las recomendaciones de sus clientes, en las redes sociales fue muy baja la retención de clientes, además, Oscar vio que los primeros días de la semana no reservan tanto. A Oscar le gustaría que una aplicación le muestre en tiempo real la disponibilidad de las canchas para que los clientes puedan buscar horarios disponibles, asimismo, a él le gustaría recibir un reporte de cuantas personas asisten a sus campos deportivos y tendría la duda que no se actualice los espacios disponibles para no generar confusión en los clientes. Finalmente, a él le gustaría que la aplicación no se detuviera para que no se junten tantos clientes y no haya un mal momento.
 
 ### 2.2.3. Analisis de entrevistas
 
@@ -747,26 +809,21 @@ Entrevista N°5:
 
 **Segmento 1:**
 
-Las entrevistas realizadas a personas aficionadas al fútbol nos revelan una serie de desafíos comunes en la reserva de canchas. Nuestros entrevistados, Patrizio, Sebastián y Adriano, coinciden en la dificultad para coordinar horarios con amigos y la informalidad del proceso de reserva, a menudo realizado a través de WhatsApp. Todos expresan interés en soluciones tecnológicas que simplifiquen este proceso, como aplicaciones móviles o páginas web que permitan ver la disponibilidad de horarios y reservar de manera eficiente. La calidad y el precio de las canchas también son aspectos importantes para ellos. En resumen, hay una clara necesidad de mejorar la organización y accesibilidad en la reserva de canchas, lo que presenta una oportunidad para desarrollar una solución tecnológica que satisfaga estas demandas y mejore la experiencia de los jugadores.
+Las entrevistas realizadas a jugadores aficionados, tanto al fútbol como al billar, revelan una serie de frustraciones comunes relacionadas principalmente con la coordinación para reservar espacios deportivos. Muchos dependen de WhatsApp o llamadas telefónicas, lo cual genera desorganización y demoras al no saber si hay disponibilidad real hasta que el administrador responde. Además, organizarse con amigos suele ser complicado por la falta de coincidencia de horarios y respuestas tardías. A pesar de que algunos han utilizado plataformas como Deport Plaza, todavía encuentran limitaciones en cuanto a facilidad de uso, cobertura o funcionalidades.
+
+Los aspectos que más valoran al momento de reservar son la calidad del espacio, la ubicación, la disponibilidad clara y la comodidad del proceso. Existe un fuerte interés en una solución tecnológica, específicamente una aplicación móvil, que les permita ver disponibilidad en tiempo real, reservar en segundos, coordinar mediante chat interno, recibir notificaciones y organizar mejor su tiempo libre. Adicionalmente, algunos usuarios muestran apertura a socializar con nuevas personas a través del deporte, por lo que incluir funciones de “match deportivo” podría ser un valor agregado interesante en el mediano plazo.
 
 **Segmento 2:**
 
-Las entrevistas realizadas a personas aficionadas al billar nos revelan una serie de desafíos comunes en la reserva de mesas en los salones billar. Las entrevistas con GianPaul y Luis, quienes comparten un interés en el billar, suelen jugar seguido este deporte y nos comparten sus experiencias con las reservas. Todos coinciden en las dificultades para encontrar salones cercanos con horarios disponibles, lo que genera frustración. Nuestros entrevistas sugieren el uso de una aplicación web para simplificar el proceso de reserva y valoran la calidad del equipamiento y la infraestructura de los salones. Además, se resalta la importancia de fomentar una comunidad en el billar permitiendo que otros jugadores se unan a las mesas. Estos hallazgos subrayan la oportunidad de desarrollar una solución tecnológica que mejore la experiencia de reserva y promueva la interacción social en torno al billar.
+Por el lado de los administradores, los hallazgos apuntan a una gestión operativa manual y vulnerable. Actualmente utilizan cuadernos, llamadas o mensajes de WhatsApp para controlar reservas, lo cual ha derivado en errores como la duplicación de horarios o la pérdida de información importante. También enfrentan una baja afluencia durante ciertos días (como lunes y martes), y no tienen herramientas para evaluar por qué o cómo solucionarlo. Aunque algunos promueven sus servicios por redes sociales, no logran atraer nuevos clientes de forma sostenida, y carecen de indicadores que les ayuden a mejorar su gestión comercial.
 
-**Segmento 3:**
-
-Tanto Luis Diego, estudiante de la UPC, como Rodrigo Salas, estudiante de administración, enfrentan desafíos en la gestión de sus actividades. Luis Diego busca mejorar la accesibilidad a los locales de billar en Lima mediante una página web que muestre horarios y fotos de los locales, mientras que Rodrigo busca una solución similar para administrar los horarios y precios de su negocio de alquiler de espacios recreativos. Ambos reconocen la importancia de una plataforma digital para optimizar la gestión de sus actividades y mejorar la experiencia de sus clientes.
-
+Estos administradores valoran mucho la posibilidad de contar con una aplicación que les permita centralizar su operación, visualizar reservas en tiempo real, recibir pagos mediante plataformas como Yape o tarjetas, y generar reportes sobre afluencia, comportamiento de clientes y efectividad de promociones. Sin embargo, expresan una preocupación importante sobre la facilidad de uso de la herramienta, tanto para ellos como para el personal a su cargo, y consideran esencial contar con soporte técnico accesible y confiable que los ayude a adaptarse sin complicaciones.
 
 **Conclusiones:**
 
-Basándonos en las entrevistas realizadas a personas aficionadas tanto al fútbol como al billar, queda claro que existe una demanda significativa de mejorar el proceso de reserva mediante soluciones tecnológicas. Tanto los jugadores de fútbol como los aficionados al billar expresan frustración por la dificultad para encontrar disponibilidad de horarios y la informalidad en el proceso de reserva, que a menudo implica comunicación directa con los propietarios a través de aplicaciones de mensajería.
+Las entrevistas realizadas dejan clara una necesidad compartida de digitalizar y formalizar el proceso de reservas deportivas, tanto desde la perspectiva del usuario como del administrador. Existe una gran oportunidad para que D’Taquito se posicione como una plataforma tecnológica que mejore radicalmente la experiencia de ambos públicos, permitiéndoles organizarse con mayor eficiencia, tener acceso a datos relevantes en tiempo real y fomentar una comunidad en torno al deporte. El enfoque debe contemplar tanto una interfaz intuitiva para usuarios que buscan reservar, como un panel administrativo funcional y simple para los encargados de los espacios deportivos.
 
-La potencial solución a estos problemas es el desarrollo de una aplicación web, el cual es D'Taquito, que permita a los usuarios ver la disponibilidad de canchas de fútbol o mesas de billar en tiempo real y realizar reservas de manera rápida y eficiente. Además, se destaca la importancia de incluir filtros que ayuden a los usuarios a encontrar opciones adecuadas según sus preferencias, como la calidad del equipamiento, la ubicación y el precio.
-
-La creación de una comunidad en torno al deporte, tanto en el fútbol como en el billar, es otro aspecto importante a considerar. Permitir que otros jugadores se unan a las mesas o canchas reservadas puede fomentar la interacción social y mejorar la experiencia general de los usuarios.
-
-En resumen, las entrevistas sugieren que desarrollar una aplicación web de reservas para deportes como el fútbol y el billar sería una solución efectiva para abordar las necesidades y preocupaciones de los aficionados, mejorando así su experiencia y promoviendo una mayor participación.
+Además, la versión móvil es vista como el canal más conveniente por todos los actores, lo que implica que el desarrollo debe enfocarse en "mobile-first". A nivel funcional, la app no solo debe ofrecer reservas, sino convertirse en una herramienta de gestión, promoción, comunicación y análisis. Finalmente, para asegurar una correcta adopción, se debe considerar una estrategia de soporte técnico y educación digital para los administradores, especialmente aquellos menos familiarizados con la tecnología.
 
 **Analisis estadistico respecto a las respuestas de las entrevistas:**
 
