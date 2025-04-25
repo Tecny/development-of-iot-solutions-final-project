@@ -2055,20 +2055,357 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 
 #### 4.2.3.1. Domain Layer
 
+##### 4.2.3.1.1. Model
+
+###### 4.2.3.1.1.1. Aggregates
+
+- Subscription: La clase Subscription representa una entidad agregada (aggregate) del dominio de suscripcion en el backend del sistema D'Taquito. Actúa como el punto central para gestionar toda la información relacionada a una suscripcion.
+
+  Contiene los siguientes elementos principales:
+
+  - Atributos:
+
+    - Plan plan:
+
+      - Relación ManyToOne con Plan.
+
+      - Identifica a qué plan está suscrito el usuario.
+
+      - Obligatorio (nullable = false).
+
+    - User user:
+
+      - Relación ManyToOne con User.
+
+      - Identifica qué usuario tiene esta suscripción.
+
+      - Oculto en respuestas JSON (@JsonProperty.WRITE_ONLY).
+
+    - int allowedSportSpaces:
+
+      - Número de espacios deportivos permitidos por la suscripción.
+
+      - Por defecto en 0.
+
+  - Constructores:
+    
+    - Constructor vacío (para JPA)
+
+    - Constructor que recibe un Plan y un User
+
+  - Métodos:
+    
+    - update(Plan plan):
+
+      - Cambia el plan de la suscripción.
+
+    - updateAllowedSportSpaces(int allowedSportSpaces):
+
+      - Actualiza la cantidad de espacios deportivos permitidos.
+
+  - Hereda de AuditableAbstractAggregateRoot, lo que sugiere que registra información de auditoría (como fechas de creación/modificación).
+
+###### 4.2.3.1.1.2. Commands
+
+- CreateSubscriptionsCommand
+  
+  - Tipo: record.
+
+  - Propósito: Representa el comando para crear una suscripción.
+
+  - Atributos:
+
+  - Long planId: ID del plan al que se va a suscribir el usuario.
+
+  - Long userId: ID del usuario que realiza la suscripción.
+
+  - String token: Token asociado a la suscripción, para validación o autenticación.
+
+- SeedPlanTypesCommand
+  - Tipo: record.
+
+  - Propósito: Representa el comando para sembrar tipos de planes (inicializar datos de planes en la base de datos).
+
+  - Atributos: Ninguno, solo se utiliza como marcador para la acción de siembra de planes.
+
+###### 4.2.3.1.1.3. Entities
+
+- Plan
+  
+  - Propósito: Representa un tipo de plan en la base de datos. Se utiliza para definir las distintas opciones de planes disponibles para las suscripciones.
+
+  - Atributos:
+
+    - Long id: ID único del plan, generado automáticamente.
+
+    - PlanTypes planType: Tipo del plan (utiliza un enum que define los posibles tipos de planes, como bronce, plata, oro, etc.).
+
+  - Anotaciones:
+
+    - @Entity: Indica que es una entidad persistente de JPA.
+
+    - @Table(name = "plan_types"): Especifica el nombre de la tabla en la base de datos que almacena los tipos de planes.
+
+    - @Id y @GeneratedValue: Define el campo id como la clave primaria y establece la generación automática de su valor.
+
+    - @Column(nullable = false): Marca la columna planType como no nula.
+
+    - @Enumerated(EnumType.STRING): Especifica que el valor de planType será almacenado como una cadena de texto (nombre del enum).
+
+  - Constructores:
+
+    - Constructor vacío por defecto (Plan()).
+
+    - Constructor que recibe un PlanTypes planType para crear una nueva instancia del plan.
+
+###### 4.2.3.1.1.4. Events
+
+- SubscriptionCreatedEvent
+
+  - Propósito: Representa un evento que se dispara cuando se crea una nueva suscripción en el sistema. Este evento puede ser escuchado por otros componentes del sistema para realizar acciones posteriores a la creación de una suscripción.
+
+  - Atributos:
+
+    - Long subscriptionId: ID de la suscripción que fue creada. Es el identificador único de la suscripción que se acaba de crear.
+
+  - Herencia:
+
+    - Extiende de ApplicationEvent, que es una clase de Spring utilizada para definir eventos de aplicación. Esto permite que el evento sea publicado y escuchado dentro del contexto de la aplicación.
+
+  - Constructor:
+
+    - SubscriptionCreatedEvent(Object source, Long subscriptionId): Constructor que recibe dos parámetros:
+
+      - source: El objeto que origina el evento (usualmente la clase que publica el evento).
+
+      - subscriptionId: El ID de la suscripción recién creada.
+
+  - Métodos:
+
+    - getSubscriptionId(): Método getter que devuelve el ID de la suscripción asociada con el evento.
+
+###### 4.2.3.1.1.5. Queries
+
+- GetSubscriptionsByIdQuery
+
+  - Propósito: Este record es una consulta (query) que se utiliza para obtener una suscripción específica a partir de su ID. Es una estructura de datos inmutable que contiene los detalles necesarios para realizar una búsqueda en la base de datos.
+
+  - Atributos:
+
+    - Long id: El ID de la suscripción que se quiere obtener.
+
+  - Constructor: El constructor del record es implícito, pero incluye una validación:
+
+    - Si el id es null, se lanza una excepción IllegalArgumentException con el mensaje "Id is required". Esto garantiza que siempre se proporciona un ID válido para la consulta.
+
+  - Métodos:
+
+    - El record no necesita métodos adicionales para acceder al id, ya que el record de Java proporciona automáticamente un getter para los atributos.
+
+###### 4.2.3.1.1.6. Value Objects
+
+- PlanTypes 
+
+  - Propósito: El enum PlanTypes representa los diferentes tipos de planes disponibles en el sistema. Este tipo de datos enumera las posibles opciones de planes que un usuario puede tener.
+
+  - Valores:
+
+    - FREE: Plan gratuito.
+
+    - BRONZE: Plan básico.
+
+    - SILVER: Plan intermedio.
+
+    - GOLD: Plan premium.
+
+  - Uso:
+
+    - Este enum se utiliza principalmente en la clase Plan para asignar un tipo de plan a un objeto Plan. Cada tipo de plan tiene una representación única dentro de la aplicación, lo que facilita la gestión de diferentes niveles de acceso o características basadas en el tipo de plan asignado.
+
+##### 4.2.3.1.2. Services
+
+- SubscriptionsCommandService: Responsable de manejar comandos relacionados con suscripciones.
+
+  - Optional<Subscription> handle(CreateSubscriptionsCommand command): Procesa la creación de una nueva suscripción a partir de un comando.
+
+  - void handleSubscriptionCreatedEvent(SubscriptionCreatedEvent event): Maneja acciones posteriores a la creación de una suscripción, como eventos o registros.
+
+- SubscriptionsQueryService: Responsable de manejar consultas sobre suscripciones.
+
+  - Optional<Subscription> handle(GetSubscriptionsByIdQuery query): Devuelve una suscripción según su ID.
+
+  - Optional<Subscription> getSubscriptionByUserId(Long userId): Busca la suscripción correspondiente a un usuario por su ID.
+
+- PlanCommandService: Responsable de comandos relacionados con los tipos de planes.
+
+  - void handle(SeedPlanTypesCommand command): Permite registrar los tipos de planes en el sistema, útil para inicializar datos.
 
 
 #### 4.2.3.2. Interface Layer
 
+##### 4.2.3.2.1. Resources
+
+- CreateSubscriptionsResource: Representa los datos necesarios para crear una nueva suscripción desde una solicitud REST.
+
+  - Long planId: ID del plan al que se desea suscribir.
+
+  - Long userId: ID del usuario que se va a suscribir.
+
+  - String token: Token de autorización o pago.
+
+  - Long allowedSportSpaces: Cantidad de espacios deportivos permitidos en el plan.
+
+- SubscriptionsResource: Representa los datos que se devuelven al cliente al consultar una suscripción.
+
+  - Long id: ID de la suscripción.
+
+  - Long planId: ID del plan asociado.
+
+  - User user: Objeto usuario relacionado con la suscripción.
+
+  - String planType: Tipo de plan (FREE, BRONZE, SILVER, GOLD).
+
+  - Long allowedSportSpaces: Número de espacios deportivos permitidos.
+
+##### 4.2.3.2.2. Transform
+
+- CreateSubscriptionsCommandFromResourceAssembler: Convierte un recurso REST (CreateSubscriptionsResource) en un comando de dominio (CreateSubscriptionsCommand), que luego puede ser manejado por la capa de aplicación.
+
+  - Método:
+    - toCommandFromResource(CreateSubscriptionsResource resource): Extrae los valores del recurso y los pasa al constructor del comando. Devuelve una instancia de CreateSubscriptionsCommand.
+
+- SubscriptionsResourceFromEntityAssembler: Convierte una entidad de dominio (Subscription) en un recurso REST (SubscriptionsResource), usado para responder al cliente.
+
+  - Método:
+    - toResourceFromEntity(Subscription entity): Extrae los campos necesarios de la entidad, incluyendo el tipo de plan y usuario. Devuelve una instancia de SubscriptionsResource.
+
+##### 4.2.3.2.3. Controllers
+
+- SubscriptionsController: Este controlador maneja la gestión de suscripciones de los usuarios en la aplicación, incluyendo la visualización, actualización de plan mediante pagos con PayPal, y la gestión del resultado del pago (éxito o cancelación).
+
+  - Endpoints:
+
+      - PUT /api/v1/subscriptions/upgrade
+        
+        - Permite a los usuarios con rol OWNER actualizar su plan de suscripción, solo los lunes entre las 00:00 y 06:00 (hora Lima).
+        - Se inicia un pago con PayPal y se devuelve la approval_url.
+
+      - GET /api/v1/subscriptions/upgrade/success
+        
+        - Callback que PayPal llama cuando el usuario completa el pago.
+
+        - Verifica si el pago fue aprobado.
+
+        - Si es así, actualiza el plan de suscripción y los espacios deportivos permitidos.
+
+        - Redirige a una página de confirmación o error.
+
+      - GET /api/v1/subscriptions/upgrade/cancel
+        
+        - Callback que PayPal llama si el usuario cancela el pago.
+
+        - Marca la transacción como cancelada.
+
+      - GET /api/v1/subscriptions
+
+        - Devuelve los datos de suscripción del usuario autenticado.
 
 #### 4.2.3.3. Application Layer
+
+##### 4.2.3.3.1. Command Services
+
+- SubscriptionsCommandServiceImpl: Gestiona la creación o actualización de suscripciones para los usuarios.
+Además, publica un evento SubscriptionCreatedEvent cuando se crea una nueva suscripción.
+
+  - Métodos clave:
+
+    - handle(CreateSubscriptionsCommand command): 
+      
+      - Busca al usuario por su userId. 
+      
+      - Busca el plan con el planId proporcionado. 
+      
+      - Si no existe, utiliza el plan FREE por defecto.
+
+      - Si el usuario ya tiene suscripciones, las actualiza con el nuevo plan.
+
+      - Si el usuario no tiene suscripciones, crea una nueva.
+
+      - Publica un evento SubscriptionCreatedEvent.
+
+      - Devuelve la suscripción creada o actualizada.
+
+    - handleSubscriptionCreatedEvent(SubscriptionCreatedEvent event): Solo imprime un mensaje indicando que se recibió el evento. Este método puede ser ampliado más adelante para realizar acciones concretas al recibir dicho evento.
+
+- PlanCommandServiceImpl: Se encarga de registrar los tipos de planes (PlanTypes) en la base de datos cuando la aplicación se inicia.
+
+  - Método clave:
+
+    - init(): Este método se ejecuta automáticamente al iniciar la aplicación (por la anotación @PostConstruct). Invoca al método handle para registrar los planes.
+
+    - handle(SeedPlanTypesCommand command): Recorre todos los valores definidos en PlanTypes (por ejemplo: FREE, BRONZE, SILVER, GOLD). Si alguno no existe en la base de datos, lo guarda.
+
+##### 4.2.3.3.2. Query Services
+
+- SubscriptionsQueryServiceImpl: Proporciona servicios para consultar información sobre suscripciones. Es la implementación de la interfaz SubscriptionsQueryService.
+
+  - Métodos:
+
+    - handle(GetSubscriptionsByIdQuery query): Recupera todos los usuarios de la base de datos.
+
+      - Entrada: un objeto GetSubscriptionsByIdQuery que contiene el id de la suscripción.
+
+      - Salida: devuelve una Optional<Subscription> con la suscripción correspondiente, si existe.
+
+    - getSubscriptionByUserId(Long userId)(Long userId): Obtiene el rol de un usuario dado su userId.
+
+      - Entrada: el userId del usuario.
+
+      - Salida: devuelve una Optional<Subscription> con la primera suscripción del usuario, si tiene alguna.
+
+##### 4.2.3.3.3. Event Handlers
+
+- SubscriptionCreatedEventHandler: Maneja los eventos de tipo SubscriptionCreatedEvent. Es responsable de ejecutar acciones cuando una suscripción es creada, como registrar un evento y consultar los detalles de la suscripción recién creada.
+
+  - Métodos:
+    - on(SubscriptionCreatedEvent event):
+
+      - Entrada: un evento de tipo SubscriptionCreatedEvent que contiene el subscriptionId de la suscripción creada.
+
+      - Salida: No devuelve nada.
+
+      - Descripción: Este método se ejecuta automáticamente cuando se recibe un evento de tipO SubscriptionCreatedEvent. Realiza las siguientes acciones:
+
+        - Llama al método handleSubscriptionCreatedEvent del SubscriptionsCommandService para procesar cualquier lógica adicional relacionada con la creación de la suscripción.
+
+        - Usa el SubscriptionsQueryService para consultar los detalles de la suscripción recién creada mediante el GetSubscriptionsByIdQuery.
+
+        - Imprime un mensaje en consola indicando si la suscripción fue encontrada o no.
 
 
 #### 4.2.3.4. Infrastructure Layer
 
+- SubscriptionsRepository: Es una interfaz que extiende JpaRepository para interactuar con la base de datos en relación a las entidades de tipo Subscription. Permite realizar operaciones CRUD estándar sobre las suscripciones.
 
+  - Métodos:
+    
+    - findByUserId(Long userId): Este método encuentra todas las suscripciones asociadas a un usuario específico, identificado por userId.
+
+      - Retorna: Una lista de suscripciones asociadas al userId proporcionado.
+
+- PlanRepository: Es una interfaz que extiende JpaRepository para interactuar con la base de datos en relación a las entidades de tipo Plan. Permite realizar operaciones CRUD estándar sobre los planes.
+
+  - Métodos:
+    
+    - existsByPlanType(PlanTypes planType): Verifica si existe un plan con el tipo específico planType.
+
+      - Retorna: Un valor booleano (true si existe un plan de ese tipo, false en caso contrario).
+
+    - findByPlanType(PlanTypes planType): Busca un plan en la base de datos que coincida con el tipo de plan planType.
+
+      - Retorna: Un Optional<Plan>, que contiene el plan si lo encuentra, o Optional.empty() si no existe.
 
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams 
-
 
 <p align="center">
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//subscription-component.png" alt="UPC">
@@ -2078,13 +2415,19 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams 
 
+Aquí se detalla la arquitectura del software a nivel de código, presentando la clase subscription dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
-<img src="./Resources/PART 6/42361Image.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-sub.png" alt="UPC">
+</p>
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram 
 
+Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
-<img src="./Resources/PART 6/4.jpg" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-subs.png" alt="UPC">
+</p>
 
 ### 4.2.4. Bounded Context: Sport Spaces
 
