@@ -899,11 +899,11 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 
 **User persona 1: Andres Martinez**  
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//asis-player.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//asis-player.jpg" alt="UPC">
 
 **User persona 2: Juan Perez**
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//asis-owner.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//asis-owner.jpg" alt="UPC">
 
 </div>
 
