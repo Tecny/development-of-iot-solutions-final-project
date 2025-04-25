@@ -2776,16 +2776,228 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 #### 4.2.5.1. Domain Layer
 
+##### 4.2.5.1.1. Model
+
+##### 4.2.5.1.1.1. Aggregates
+
+- Reservations: es una entidad que representa una reserva de un espacio deportivo realizada por un usuario. Esta clase extiende de AuditableAbstractAggregateRoot, lo que le permite tener funcionalidades de auditoría como la creación y actualización de registros. Cada reserva está asociada a un usuario (user) y a un espacio deportivo (sportSpaces), con información sobre el día del juego (gameDay), hora de inicio (startTime), hora de finalización (endTime), estado de la reserva (status), tipo de reserva (type), y un nombre de la reserva (reservationName).
+
+  - Metodos:
+
+    - Constructor Reservations(CreateReservationsCommand command, User user, SportSpaces sportSpaces): Este constructor se utiliza para crear una nueva instancia de Reservations.
+
+    - Recibe un CreateReservationsCommand que contiene los detalles de la reserva (día del juego, horas de inicio y fin, tipo de reserva, etc.), un User (usuario que realiza la reserva) y un SportSpaces (espacio deportivo reservado).
+
+    - Inicializa las propiedades gameDay, startTime, endTime, user, sportSpaces, type y reservationName.
+
+##### 4.2.5.1.1.2. Commands
+
+- CreateReservationsCommand: es un record en Java, lo que significa que es una clase inmutable que contiene los parámetros necesarios para crear una nueva reserva. Este comando encapsula información sobre la reserva, incluyendo el día del juego (gameDay), la hora de inicio (startTime), la hora de finalización (endTime), el ID del espacio deportivo (sportSpacesId), el tipo de reserva (type) y el nombre de la reserva (reservationName).
+
+  - Metodo: 
+    
+    - CreateReservationsCommand: El constructor valida los parámetros recibidos para asegurar que ninguno de los campos necesarios sea nulo. Si algún campo obligatorio está nulo, se lanza una excepción IllegalArgumentException con un mensaje correspondiente.
+
+##### 4.2.5.1.1.3. Entities
+
+- QRCodeGenerator: Se encarga de generar y validar tokens JWT (JSON Web Tokens) que se utilizan para autenticar y validar las reservas de espacios deportivos a través de códigos QR. El token incluye información relevante sobre la reserva, como el reservationId, el userId, las horas de inicio y fin de la reserva, y el día del juego. Además, la clase permite verificar si un token ya ha sido utilizado.
+
+  - Metodos: 
+
+    - QRCodeGenerator(): Constructor de la clase que carga una clave secreta de un archivo .env (utilizando la librería Dotenv), que se usa para firmar los tokens JWT con el algoritmo HMAC SHA.
+
+    - generateQrToken(Long reservationId, Long userId, String startTimeStr, String endTimeStr, String gameDayStr): Este método genera un token JWT que contiene información sobre una reserva de espacio deportivo.
+
+    - validateQrToken(String token): Este método valida un token JWT. Utiliza la clave secreta para verificar la autenticidad del token.
+
+    - checkIfTokenUsed(String token): Este método verifica si un token JWT ya ha sido utilizado, revisando una caché local de tokens utilizados.
+
+    - markTokenAsUsed(String token): Este método marca un token como utilizado, agregándolo a la caché de tokens utilizados.
+
+##### 4.2.5.1.1.4. Events
+
+- ReservationCreatedEvent: es un evento de dominio que se utiliza para notificar cuando una nueva reserva ha sido creada en el sistema. Esta clase extiende ApplicationEvent, que es una clase de Spring Framework, y se utiliza para la implementación de eventos que pueden ser escuchados y procesados por otros componentes del sistema.
+
+  - Metodos: 
+
+    - ReservationCreatedEvent(Object source, Long reservationId): Constructor que inicializa el evento con el objeto que lo originó (source) y el ID de la reserva (reservationId).
+
+    - getReservationId(): Devuelve el ID de la reserva asociada con este evento.
+
+      - Retorno: Long - El ID de la reserva.
+
+##### 4.2.5.1.1.5. Queries
+
+- GetReservationsByUserIdQuery: es un objeto de consulta utilizado para obtener las reservas asociadas a un usuario específico. Esta clase implementa el patrón Query Object, que se usa para representar una solicitud de datos o información. El objeto es inmutable y contiene el userId como parámetro para realizar la consulta.
+
+  - Metodos:
+
+    - GetReservationsByUserIdQuery(Long userId)(Long userId): Constructor que inicializa el objeto con el ID del usuario.
+
+##### 4.2.5.1.1.6. Value Objects
+
+- Status: Es un enum que representa el estado de una reserva.
+
+  - PENDING: La reserva está pendiente de confirmación.
+
+  - CONFIRMED: La reserva ha sido confirmada.
+
+  - CONCLUDED: La reserva ha finalizado.
+
+  - CANCELLED: La reserva ha sido cancelada.
+
+- Type: Es un enum que representa el tipo de reserva.
+
+  - PERSONAL: La reserva es de carácter personal, probablemente para uso exclusivo del usuario.
+
+  - COMMUNITY: La reserva es de carácter comunitario, probablemente destinada para grupos o eventos.
+
+##### 4.2.5.1.2. Services
+
+- ReservationsCommandService: Esta interfaz define los servicios relacionados con la gestión de comandos de reservas, como la creación de nuevas reservas y la eliminación de reservas que cumplen ciertas condiciones.
+
+  - Metodos:
+
+    - handle(Long id, CreateReservationsCommand command): Maneja la creación de una reserva basada en el comando CreateReservationsCommand. Devuelve una Optional<Reservations> con la reserva creada si es exitosa.
+
+    - handleReservationsCreatedEvent(ReservationCreatedEvent event): Maneja el evento de creación de una reserva. Este evento probablemente se utiliza para realizar acciones adicionales o notificaciones tras la creación de la reserva.
+
+    - deleteReservationsByOneHourBefore(): Método programado para ejecutarse cada 60 segundos. Este método eliminaría reservas que están a punto de comenzar en una hora, probablemente para limpiar aquellas que ya no sean relevantes o que no hayan sido confirmadas.
+
+    - deletePersonalReservationByEndTimeConcluded(): Método programado que ejecuta cada 60 segundos, para eliminar las reservas personales que hayan terminado y cuya condición sea "concluida".
+
+- ReservationsQueryService: Esta interfaz define los servicios relacionados con las consultas de reservas. 
+
+  - Metodos: 
+
+    - handle(GetReservationsByUserIdQuery query): Maneja la consulta para obtener las reservas asociadas a un usuario específico mediante GetReservationsByUserIdQuery.
+
+    - getAllReservations(): Obtiene todas las reservas sin filtrar por usuario, proporcionando una lista de todas las reservas en el sistema.
 
 #### 4.2.5.2. Interface Layer
 
+##### 4.2.5.2.1. Resources
+
+- CreateReservationsResource: Esta clase es un record que representa la estructura de datos para la creación de una nueva reserva. Se utiliza generalmente para recibir los datos necesarios para crear una reserva.
+
+- ReservationsResource: Esta clase también es un record, pero representa una reserva existente, mostrando los detalles de una reserva, como la fecha, hora de inicio, hora de fin, el usuario que la hizo, el espacio deportivo, y el estado de la reserva.
+
+##### 4.2.5.2.2. Transform
+
+- CreateReservationsCommandFromResourceAssembler: Esta clase tiene como objetivo transformar un objeto CreateReservationsResource en un objeto CreateReservationsCommand. Se utiliza en el proceso de conversión de datos entre las capas de presentación (como las solicitudes HTTP) y las capas de lógica de negocio (como los comandos que manipulan la reserva).
+
+  - Método:
+    - toCommandFromResource(CreateReservationsResource resource): Toma un CreateReservationsResource y lo convierte en un CreateReservationsCommand.
+
+      - Asocia los valores del resource (como gameDay, startTime, endTime, etc.) con los parámetros del constructor de CreateReservationsCommand.
+
+- ReservationsResourceFromEntityAssembler: Esta clase convierte una entidad Reservations (que representa una reserva en la base de datos) en un recurso ReservationsResource (que se utiliza para responder a las solicitudes REST).
+
+  - Método:
+    - toResourceFromEntity(Reservations entity): Convierte una entidad Reservations a un ReservationsResource.
+
+      - Extrae los valores de la entidad Reservations, como id, gameDay, startTime, endTime, status, etc., y los asigna a un nuevo ReservationsResource.
+
+##### 4.2.5.2.3. Controllers
+
+- ReservationsController : Este controlador gestiona las reservas de espacios deportivos y las interacciones con los usuarios mediante varios endpoints.
+
+  - Endpoints:
+
+      - POST /api/v1/reservations:
+        
+        - Crea una nueva reserva para un espacio deportivo, validando los créditos, la disponibilidad y las restricciones de horario.
+
+      - DELETE /api/v1/reservations/{reservationId}:
+        
+        - Elimina una reserva existente, verificando si se cumplen las condiciones para realizar la eliminación (espacio lleno o tiempo cercano al inicio).
+
+      - GET /api/v1/reservations/my:
+        
+        - Obtiene las reservas activas del usuario autenticado.
+
+      - GET /api/v1/reservations/qr-session/{sessionId}:
+        
+        - Genera un código QR para una sesión de reserva específica.
+
+      - GET /api/v1/reservations/verify-qr:
+        
+        - Verifica la validez de un código QR basado en un token y devuelve la imagen del QR.
+
+      - POST /api/v1/reservations/use-qr:
+        
+        - Marca el token QR como utilizado y valida su autenticidad.
 
 #### 4.2.5.3. Application Layer
 
+##### 4.2.5.3.1. Command Services
 
+- ReservationsCommandServiceImpl: Gestiona la lógica de negocio relacionada con las reservas de espacios deportivos.
+
+  - Métodos clave:
+
+    - handle(Long id, CreateReservationsCommand command):
+      
+      - Crea una nueva reserva de un espacio deportivo, validando la existencia de un usuario y el espacio deportivo.
+
+    - handleReservationsCreatedEvent(ReservationCreatedEvent event):
+      
+      - Recibe un evento de creación de reserva y muestra el ID de la reserva creada.
+
+    - deleteReservationsByOneHourBefore():
+      
+      - Elimina las reservas comunitarias que tienen menos de una hora antes de su inicio, verificando si las salas están llenas y procesando la eliminación de las salas asociadas.
+
+    - deletePersonalReservationByEndTimeConcluded():
+    
+      - Elimina las reservas personales que ya han finalizado, basándose en la hora de finalización de la reserva.
+
+##### 4.2.5.3.2. Query Services
+
+- ReservationsQueryServiceImpl: Proporciona los servicios de consulta relacionados con las reservas.
+
+  - Métodos:
+
+    - handle(GetReservationsByUserIdQuery query):
+    
+      - Este método recibe una consulta con el ID de usuario y devuelve una lista de reservas asociadas a ese usuario. Utiliza el repositorio de reservas para obtener los datos.
+
+    - getAllReservations():
+      
+      - Este método devuelve todas las reservas disponibles en la base de datos, sin filtrar por usuario.
+
+##### 4.2.5.3.3. Event Handlers
+
+- ReservationsCreatedEventHandler: Maneja los eventos de creación de reservas y realiza las acciones correspondientes al recibir un ReservationCreatedEvent.
+
+  - Métodos:
+    - Constructor (ReservationsCreatedEventHandler):
+      
+      - El constructor recibe los servicios ReservationsCommandService y ReservationsQueryService para interactuar con los comandos y consultas relacionadas con las reservas.
+
+    - on(ReservationCreatedEvent event):
+      
+      - Este método es un listener de eventos que se activa cuando se recibe un evento de tipo ReservationCreatedEvent.
+
+      - Imprime un mensaje indicando que el evento ha sido recibido.
+
+      - Llama al método handleReservationsCreatedEvent del servicio ReservationsCommandService para procesar el evento de creación de la reserva.
+
+      - Realiza una consulta para obtener las reservas asociadas al ID del evento utilizando ReservationsQueryService.
+
+      - Imprime un mensaje indicando si la reserva fue creada correctamente o no se encontró.
 
 #### 4.2.5.4. Infrastructure Layer
 
+- ReservationsRepository: es una extensión de JpaRepository que proporciona acceso a la persistencia de datos de la entidad Reservations en la base de datos.
+
+  - findByUserId(Long userId):
+    
+    - Este método encuentra todas las reservas asociadas a un usuario específico, utilizando su userId. Retorna una lista de reservas.
+
+  - findBySportSpacesIdAndGameDay(Long sportSpacesId, String gameDay):
+    
+    - Este método encuentra todas las reservas de un espacio deportivo (sportSpacesId) en un día específico (gameDay). También retorna una lista de reservas.
 
 #### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -2797,14 +3009,19 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 ##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams 
 
+Aquí se detalla la arquitectura del software a nivel de código, presentando la clase reservations dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
-
-<img src="./Resources/images/Capitulo 4/42561.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-reservation.png" alt="UPC">
+</p>
 
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
 
+Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
-<img src="./Resources/images/Capitulo 4/42562.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-reservations.png" alt="UPC">
+</p>
 
 ### 4.2.6. Bounded Context: Rooms
 
