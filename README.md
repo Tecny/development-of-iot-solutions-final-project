@@ -3322,6 +3322,129 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-rooms.png" alt="UPC">
 </p>
 
+### 4.2.7. Bounded Context: Player List
+
+#### 4.2.7.1. Domain Layer
+
+##### 4.2.7.1.1. Model
+
+###### 4.2.7.1.1.1. Aggregates
+
+- PlayerList: es una entidad JPA que representa una relación entre los usuarios, las salas y los chatrooms dentro del sistema. Esta clase forma parte del dominio de la lista de jugadores (PlayerList), y se asocia a las entidades Rooms, User, y ChatRoom.
+
+#### 4.2.7.2. Interface Layer
+
+##### 4.2.7.2.1. Resources
+
+- PlayerListDTO: es un Data Transfer Object (DTO) que se utiliza para transferir información sobre un jugador, la sala (roomId), el chat asociado (chatRoomId), y el usuario (userId). Utiliza la anotación @JsonView para controlar qué atributos se exponen según el contexto, permitiendo una serialización más flexible de los datos.
+
+##### 4.2.7.2.2. Transform
+
+- PlayerListResourceFromEntityAssembler: es responsable de convertir una entidad PlayerList en un DTO (Data Transfer Object) PlayerListDTO. El método toResourceFromEntity toma un objeto PlayerList y mapea sus propiedades a un nuevo objeto PlayerListDTO. Esto facilita la transferencia de datos entre las capas de la aplicación, permitiendo que la capa de presentación reciba datos estructurados y sin lógica de negocio.
+
+##### 4.2.7.2.3. Controllers
+
+- PlayerListController : es un controlador de Spring que gestiona las solicitudes HTTP relacionadas con las listas de jugadores en una sala de juego. Aquí te explico brevemente sus partes principales:
+
+  - Endpoints:
+
+      - POST api/v1/player-lists/join
+
+        - Permite a un usuario unirse a una sala de juego y al chat asociado. El usuario debe estar autenticado. Si el usuario ya está en la sala o no tiene suficientes créditos, se produce un error. Si ocurre cualquier otro problema, los jugadores en la sala reciben un reembolso.
+
+        - Parámetros:
+
+          - roomId (requerido): El ID de la sala a la que el jugador desea unirse.
+
+        - Respuesta exitosa:
+
+          - Código de estado: 200 OK
+
+        - Respuestas de error:
+
+          - Código de estado: 401 Unauthorized si el usuario no está autenticado.
+
+          - Código de estado: 400 Bad Request si ocurre un error relacionado con el estado del jugador o la sala.
+
+          - Código de estado: 500 Internal Server Error si la consulta a la base de datos no devuelve un resultado único.
+
+      - GET api/v1/player-lists/room/{roomId}
+
+        - Obtiene la lista de jugadores que están en una sala específica.
+
+        - Parámetros:
+
+          - roomId (requerido): El ID de la sala.
+
+        - Respuesta exitosa:
+
+          - Código de estado: 200 OK
+
+#### 4.2.7.3. Infrastructure Layer
+
+- PlayerListRepository: Es una interfaz de repositorio de Spring Data JPA para gestionar las entidades PlayerList relacionadas con las salas y los usuarios en el sistema. Esta interfaz permite realizar operaciones CRUD en la base de datos de PlayerList, así como consultas personalizadas para obtener información de los jugadores en salas específicas.
+
+  - Metodos:
+
+    - deleteByRoomId(Long roomId)
+
+      - Elimina todos los registros de PlayerList asociados a una sala especificada por roomId.
+
+      - Anotaciones:
+
+        - @Transactional: Garantiza que la operación se realice dentro de una transacción.
+
+        - @Modifying: Indica que se trata de una operación de modificación (en este caso, una eliminación).
+
+      - Parámetros:
+
+        - roomId: El ID de la sala.
+
+    - existsByRoomAndUser(Rooms room, User user)
+
+      - Verifica si un jugador (usuario) ya está en una sala específica.
+
+      - Parámetros:
+
+        - room: La sala en cuestión.
+
+        - user: El jugador que se desea verificar.
+
+    - findByRoomId(Long roomId)
+
+      - Obtiene la lista de jugadores (PlayerList) asociados a una sala específica.
+
+      - Parámetros:
+
+        - roomId: El ID de la sala.
+
+        - Devuelve: Una lista de objetos PlayerList correspondientes a los jugadores en esa sala.
+
+#### 4.2.7.4. Bounded Context Software Architecture Component Level Diagrams
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//playerlist-component.png" alt="UPC">
+</p>
+
+#### 4.2.7.5. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.7.5.1. Bounded Context Domain Layer Class Diagrams
+
+Aquí se detalla la arquitectura del software a nivel de código, presentando la clase playerlist dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-pl.png" alt="UPC">
+</p>
+
+##### 4.2.7.5.2. Bounded Context Database Design Diagram
+
+Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-pl.png" alt="UPC">
+</p>
+
+
 ### 4.2.8. Bounded Context: Chat Room
 
 #### 4.2.8.1. Domain Layer
