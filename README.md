@@ -1746,19 +1746,293 @@ Este diagrama ilustra la arquitectura del sistema a nivel de componentes dentro 
 
 #### 4.2.2.1. Domain Layer
 
+##### 4.2.2.1.1. Model
 
+###### 4.2.2.1.1.1. Commands
+
+- SignInCommand: Comando para iniciar sesión; contiene el email y la contraseña del usuario.
+
+- SignUpCommand: Comando para registrar un nuevo usuario; incluye el nombre, email, contraseña y el rol (objeto Role).
+- 
+###### 4.2.2.1.1.2. Queries
+
+- GetAllRolesQuery: Consulta que se usa para obtener todos los roles existentes en el sistema.
+
+- GetRoleByNameQuery: Consulta que permite buscar un rol específico usando su nombre (RoleTypes).
+
+##### 4.2.2.1.2. Services
+
+- RoleQueryService: Interfaz de servicio que define operaciones para consultar roles.
+
+    - handle(GetAllRolesQuery query): Devuelve una lista con todos los roles.
+
+    - handle(GetRoleByNameQuery query): Devuelve un rol específico según su nombre (RoleTypes), si existe.
 
 #### 4.2.2.2. Interface Layer
+##### 4.2.2.2.1. Resources
 
+- SignUpResource: Datos necesarios para registrarse (nombre, correo, contraseña, rol).
+
+- SignInResource: Datos para iniciar sesión (correo y contraseña).
+
+- RoleResource: Representación de un rol (ID y nombre).
+
+- AuthenticatedUserResource: Respuesta al iniciar sesión exitosamente (ID, nombre de usuario y token).
+
+##### 4.2.2.2.2. Transform
+
+- SignUpCommandFromResourceAssembler: Transforma un SignUpResource recibido del cliente en un SignUpCommand para la capa de dominio. Convierte el nombre del rol (String) en un objeto Role.
+
+- SignInCommandFromResourceAssembler: Convierte un SignInResource en un SignInCommand, permitiendo que los datos de inicio de sesión pasen a la capa de aplicación.
+
+- AuthenticatedUserResourceFromEntityAssembler: Transforma un objeto de dominio User y un token JWT en un AuthenticatedUserResource, que será enviado como respuesta al cliente luego de autenticarse.
+
+##### 4.2.2.2.3. Controllers
+
+- AuthenticationController: Gestiona las operaciones de autenticación en la API.
+
+  - Endpoints:
+      - POST /api/v1/authentication/sign-in
+
+        - Recibe un SignInResource con correo y contraseña.
+        
+        - Usa UserCommandService para autenticar.
+
+          Si es exitoso:
+          - Genera un token JWT.
+          - Retorna un AuthenticatedUserResource.
+          - Guarda el token en una cookie HTTP-only llamada JWT_TOKEN.
+
+      - GET /api/v1/authentication/is-authenticated
+
+        - Verifica si el usuario actual está autenticado.
+
+        - Retorna { "authenticated": true/false }.
+
+      - POST /api/v1/authentication/log-out
+
+        - Invalida la cookie JWT_TOKEN estableciendo su duración en 0.
+
+        - No requiere cuerpo.
 
 
 #### 4.2.2.3. Application Layer
 
+##### 4.2.2.3.1. OutBound Services
+
+###### 4.2.2.3.1.1. Hashing
+
+- HashingService: Interfaz que define métodos para codificar contraseñas y verificar coincidencias.
+
+  - Métodos:
+    - String encode(CharSequence rawPassword)
+      - Codifica la contraseña en texto plano.
+
+    - boolean matches(CharSequence rawPassword, String encodedPassword)
+      - Compara una contraseña sin codificar con una codificada.
+
+###### 4.2.2.3.1.2. Tokens
+
+- TokenService: Interfaz encargada de la generación, extracción de datos y validación de tokens JWT.
+
+  - Métodos:
+    - String generateToken(String email, String userId, String role)
+      - Genera un JWT con información del usuario.
+
+    - String getEmailFromToken(String token)
+      - Extrae el correo electrónico desde un token.
+
+    - String getUserIdFromToken(String token)
+      - Extrae el ID del usuario desde un token.
+
+    - boolean validateToken(String token)
+      - Verifica si un token es válido y no ha expirado.
+
+##### 4.2.2.3.2. Query Services
+
+- RoleQueryServiceImpl: Implementación de la interfaz RoleQueryService, encargada de manejar las consultas relacionadas con los roles de usuario.
+
+  - Métodos:
+    - List<Role> handle(GetAllRolesQuery query)
+      - Retorna todos los roles disponibles desde el repositorio.
+
+    - Optional<Role> handle(GetRoleByNameQuery query)
+      - Busca un rol específico por su tipo (RoleTypes), por ejemplo: ADMIN, USER, etc.
+
+  - Dependencia:
+    - RoleRepository
+      - Repositorio JPA para acceder a la entidad Role.
+
+##### 4.2.2.3.3. Event Handlers
+
+- ApplicationReadyEventHandler: Esta clase maneja el evento ApplicationReadyEvent que se dispara cuando la aplicación de Spring Boot está completamente cargada y lista para ejecutarse. Su propósito principal es verificar si es necesario sembrar los roles en la base de datos al arrancar la aplicación.
+
+  - Funcionalidad: Escucha el evento ApplicationReadyEvent. Cuando la aplicación está lista (ApplicationReadyEvent), se invoca el método on() para ejecutar la verificación y, si es necesario, se realiza la siembra de roles utilizando el servicio RoleCommandService.
+
+  - Dependencias
+    - RoleCommandService: Servicio que maneja los comandos relacionados con los roles de usuario, específicamente el comando SeedRoleTypeCommand.
+
+  - Metodología
+    - on(ApplicationReadyEvent event): Registra un mensaje en los logs indicando que se va a verificar la necesidad de sembrar los roles. Ejecuta el comando SeedRoleTypeCommand para sembrar los roles predeterminados si corresponde.
+
+    - currentTimestamp(): Método auxiliar que obtiene la fecha y hora actual para loguear la información.
+
+  - Logs: Utiliza SLF4J para registrar el estado del proceso de siembra de roles, incluyendo el nombre del contexto de la aplicación y la hora exacta en la que se realiza cada paso.
 
 
 #### 4.2.2.4. Infrastructure Layer
 
+##### 4.2.2.4.1. Authorization
 
+###### 4.2.2.4.1.1. Configuration
+
+- WebSecurityConfiguration: Anotada con @Configuration y @EnableMethodSecurity, habilita seguridad a nivel de método y define los beans relacionados con la autenticación, autorización y filtros.
+
+- Dependencias Inyectadas:
+
+  - UserDetailsService (calificado como "defaultUserDetailsService")
+
+  - BearerTokenService: para la gestión de tokens JWT.
+
+  - BCryptHashingService: usado como codificador de contraseñas.
+
+  - AuthenticationEntryPoint: maneja accesos no autorizados (401).
+
+- Beans Principales:
+  
+  - BearerAuthorizationRequestFilter: filtro que intercepta las peticiones para validar el token Bearer.
+
+  - AuthenticationManager: gestor principal de autenticación.
+
+  - DaoAuthenticationProvider: configura cómo se autentican los usuarios (con UserDetailsService y PasswordEncoder).
+
+  - PasswordEncoder: implementado por BCryptHashingService.
+
+- Método filterChain() – Configuración Principal: Este método define cómo se asegura cada solicitud HTTP.
+
+  - CORS: Permite solicitudes desde orígenes específicos
+
+  - CSRF: CSRF activado con tokens almacenados en cookies (no HTTP only).
+
+  - Autorización: 
+
+    - Se permite acceso sin autenticación a:
+
+      - Endpoints de autenticación (/api/v1/authentication/**)
+
+      - Swagger (/swagger-ui/**, /v3/api-docs/**)
+
+      - Registro de usuario (POST /api/v1/users/sign-up)
+
+      - Validación de QR (POST /api/v1/reservations/use-qr-token/validate)
+
+      - Info del usuario (GET /api/v1/users/me)
+
+      - Recuperación de contraseña
+
+    - Todo lo demás requiere estar autenticado.
+
+- Manejo de Sesiones:
+
+  - Política STATELESS: no se guarda estado de sesión entre solicitudes.
+
+- Filtros:
+
+  - Se agrega el filtro BearerAuthorizationRequestFilter antes del filtro de autenticación estándar (UsernamePasswordAuthenticationFilter).
+
+###### 4.2.2.4.1.2. Model
+
+- UserDetailsImpl: Implementa la interfaz UserDetails de Spring Security, que representa al usuario autenticado.
+
+  - Metodos:
+
+    - public static UserDetailsImpl build(User user):
+
+      - Propósito: Crea una instancia de UserDetailsImpl a partir de un objeto User de nuestra base de datos.
+
+      - Qué hace:
+
+        - Toma el id, email, password y el role del usuario.
+
+        - Crea una autoridad (SimpleGrantedAuthority) a partir del nombre del rol (user.getRole().getRoleType().name()).
+
+        - Retorna un nuevo UserDetailsImpl.
+
+    - @Override public String getUsername():
+
+      - Propósito: Devuelve el identificador único del usuario, que en este caso es el email.
+
+      - Spring Security usa esto para hacer login.
+
+- UsernamePasswordAuthenticationTokenBuilder: 
+
+  - Metodos:
+
+    - public static UsernamePasswordAuthenticationToken build(UserDetails principal, HttpServletRequest request):
+
+      - Propósito: Construye el token de autenticación que representa al usuario.
+
+      - Qué hace: 
+
+        - Crea un UsernamePasswordAuthenticationToken usando: 
+        
+          - UserDetails (principal) como identidad.
+
+          - null como credenciales (ya autenticado).
+
+          - Sus authorities (permisos/roles).
+
+          - Asigna los detalles de la request (IP, User-Agent, etc.) usando WebAuthenticationDetailsSource.
+
+          - Devuelve el token listo para ser colocado en el contexto de seguridad (SecurityContextHolder).
+
+###### 4.2.2.4.1.3. Pipelines
+
+- UnauthorizedRequestHandlerEntryPoint:
+
+  - Propósito: Maneja accesos no autorizados.
+  
+  - Método: 
+  
+    - commence(): Envía un HTTP 401 cuando un usuario no autenticado accede a una ruta protegida.
+
+- BearerAuthorizationRequestFilter:
+
+  - Propósito: Filtra cada request para verificar si tiene un token Bearer válido.
+
+  - Método:
+
+    - doFilterInternal(): 
+      
+      - Extrae el token del header Authorization.
+
+      - Valida el token.
+
+      - Si es válido:
+
+      - Obtiene el email del token.
+
+      - Carga el usuario.
+
+      - Configura la autenticación en el contexto de seguridad.
+
+      - Si algo falla, continúa el flujo y lo registra.
+
+###### 4.2.2.4.1.4. Services
+
+- UserDetailsServiceImpl:
+
+  - Propósito: Provee los detalles del usuario a Spring Security.
+
+  - Metodo:
+
+    - loadUserByUsername(String email):
+
+      - Busca al usuario por correo en la base de datos.
+
+      - Si lo encuentra, lo transforma en un UserDetailsImpl (adaptador para Spring Security).
+
+      - Si no lo encuentra, lanza UsernameNotFoundException.
 
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams 
 
@@ -1771,14 +2045,11 @@ Este diagrama ilustra la arquitectura del sistema a nivel de componentes dentro 
 ##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams 
 
 
+Aquí se detalla la arquitectura del software a nivel de código, presentando la clase IAM dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
-<img src="./Resources/images/Capitulo 4/42261.png" >
-
-##### 4.2.2.6.2. Bounded Context Database Design Diagram 
-
-
-
-<img src="./Resources/images/Capitulo 4/42262.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-iam.png" alt="UPC">
+</p>
 
 ### 4.2.3. Bounded Context: Subscriptions
 
