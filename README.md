@@ -3027,15 +3027,275 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 #### 4.2.6.1. Domain Layer
 
+##### 4.2.6.1.1. Model
+
+##### 4.2.6.1.1.1. Aggregates
+
+- Rooms: Representa una entidad de sala, probablemente en el contexto de un sistema de reservas de espacios deportivos, y está mapeada a una tabla en la base de datos utilizando JPA.
+
+  - Metodos:
+
+    - @OneToMany(mappedBy = "room"):
+      
+      - Indica que la relación con PlayerList es de uno a muchos y que el campo "room" en PlayerList es el responsable de la relación. La carga se realiza de manera perezosa (FetchType.LAZY), lo que significa que los playerLists solo se cargan cuando se accede a ellos.
+
+    - @ManyToOne y @JoinColumn:
+      
+      - Establece la relación muchos a uno con la entidad Reservations. La columna reservations_id en la base de datos es la que maneja esta relación.
+
+- Views: define una vista pública (Public), probablemente utilizada para controlar la visibilidad de los atributos cuando se serializa la entidad a JSON o cuando se define el acceso a los datos según el contexto.
+
+##### 4.2.6.1.1.2. Commands
+
+- CreateRoomCommand: es un record de Java que se utiliza para encapsular los datos necesarios para crear una nueva sala. Un record es una clase inmutable que simplifica la creación de clases que solo contienen datos.
+
+##### 4.2.6.1.1.3. Queries
+
+- GetRoomByUserIdQuery: es un record en Java que representa una consulta para obtener información sobre una sala basada en el userId.
+
+  - Metodos:
+
+    - GetRoomByUserIdQuery: El constructor incluye una validación para asegurarse de que el userId no sea null. Si el userId es null, se lanza una excepción IllegalArgumentException con el mensaje "UserId is required". Esta validación garantiza que siempre se proporcione un userId válido al crear una instancia de este record.
+
+##### 4.2.6.1.2. Services
+
+- RoomsCommandService: Define las operaciones que alteran el estado de las salas.
+
+  - Metodos:
+
+    - deleteRoomByEndTimeConcluded:
+      
+      - Este método es ejecutado periódicamente cada 60 segundos (gracias a la anotación @Scheduled). Su propósito es eliminar salas cuya actividad ha concluido, según alguna lógica asociada a su tiempo de finalización.
+
+    - transferToCreator:
+
+      - Este método transfiere la propiedad o control de una sala al creador de la misma. Toma un objeto Rooms como parámetro.
+
+    - refundToUsers:
+
+      - Este método se encarga de realizar un reembolso a los usuarios. Recibe el playerListsId (id de la lista de jugadores) como parámetro para identificar a los usuarios que deben ser reembolsados.
+
+    - addPlayerToRoomAndChat:
+
+      - Permite añadir un jugador a una sala y también al chat asociado a la sala, usando el roomId (id de la sala) y userId (id del usuario) como parámetros.
+
+    - isRoomCreator:
+
+      - Verifica si un usuario dado es el creador de una sala específica. Recibe como parámetros el roomId y userId y devuelve un valor booleano.
+
+- RoomsQueryService: Define los métodos para consultar la información de las salas sin modificar su estado.
+
+  - Metodos:
+
+    - getAllRooms:
+      
+      - Recupera una lista de todas las habitaciones disponibles.
+
+    - handle(GetRoomByUserIdQuery query):
+      
+      - Maneja la consulta para obtener las habitaciones asociadas a un usuario específico, utilizando un GetRoomByUserIdQuery como parámetro.
+
+    - handleFindRoomsUserJoined:
+      
+      - Recupera las habitaciones en las que un usuario específico se ha unido, utilizando el userId.
+
+    - handleFindRoomsBySportSpacesOwner:
+      
+      - Recupera las habitaciones asociadas a un propietario de espacios deportivos, utilizando el userId del propietario.
+
 #### 4.2.6.2. Interface Layer
+
+##### 4.2.6.2.1. Resources
+
+- CreateRoomsResource: Contiene la información necesaria para crear una nueva sala (reserva y lista de jugadores).
+
+- ReservationDTO: Representa los detalles de una reserva (nombre, hora, usuario, espacio deportivo).
+
+- RoomResource: Información sobre una sala, incluyendo la reserva y el número de jugadores.
+
+- SportSpaceDTO: Datos de un espacio deportivo (nombre, dirección, tipo de deporte, precio, etc.).
+
+##### 4.2.6.2.2. Transform
+
+- CreateRoomsCommandFromResourceAssembler: Convierte un objeto CreateRoomsResource en un CreateRoomCommand para crear una nueva sala.
+
+  - Método:
+    - toCommandFromResource(CreateRoomsResource resource): Convierte el recurso CreateRoomsResource en un comando CreateRoomCommand, que es usado para crear una nueva sala.
+
+- RoomsResourceFromEntityAssembler: Convierte un objeto Rooms en un RoomResource que contiene la información de la reserva, el espacio deportivo y el número de jugadores.
+
+  - Método:
+    - toResourceFromEntity(Rooms room): Convierte una entidad Rooms en un RoomResource, que incluye detalles de la reserva, espacio deportivo y el conteo de jugadores (actual/máximo).
+
+##### 4.2.6.2.3. Controllers
+
+- RoomsController: Este controlador proporciona varios endpoints relacionados con la gestión de salas. Aquí hay un resumen breve de sus métodos:
+
+  - Endpoints:
+
+      - GET /api/v1/rooms/{id}
+        
+        - Recupera una sala específica por su id.
+
+        - Autenticación: Requiere autenticación.
+
+        - Rol necesario: Creador de la sala o jugador de la sala.
+
+        - Respuesta: 200 OK con la información de la sala, 401 si no está autenticado, 403 si el usuario no pertenece a la sala.
+
+      - GET /api/v1/rooms/my-rooms
+
+        - Recupera todas las salas asociadas al usuario autenticado.
+
+        - Autenticación: Requiere autenticación.
+
+        - Rol necesario: Cualquier rol.
+
+        - Respuesta: 200 OK con la lista de salas, 400 si la autenticación no es válida.
+
+      - GET /api/v1/rooms/my-join-rooms
+
+        - Recupera las salas en las que el usuario autenticado ha sido invitado (no creadas por él).
+
+        - Autenticación: Requiere autenticación.
+
+        - Rol necesario: Cualquier rol.
+
+        - Respuesta: 200 OK con la lista de salas filtradas, 400 si la autenticación no es válida.
+
+      - GET /api/v1/rooms/my-rooms-by-spaces
+        
+        - Recupera todas las salas asociadas a los espacios deportivos que el usuario autenticado posee (solo para usuarios con rol de propietario).
+
+        - Autenticación: Requiere autenticación.
+
+        - Rol necesario: OWNER (propietario de espacio deportivo).
+
+        - Respuesta: 200 OK con la lista de salas, 403 si el rol del usuario no es adecuado.
+
+      - GET /api/v1/rooms/all
+
+        - Recupera todas las salas disponibles (solo para usuarios con rol de jugador).
+
+        - Autenticación: Requiere autenticación.
+
+        - Rol necesario: PLAYER (jugador).
+
+        - Respuesta: 200 OK con la lista de salas, 403 si el rol del usuario no es adecuado, 400 si la autenticación no es válida.
+
+      - POST /api/v1/rooms
+      
+        - Crea una nueva sala asociada a una reserva y una lista de jugadores.
+
+        - Autenticación: Requiere autenticación.
+
+        - Rol necesario: PLAYER o OWNER (según la lógica del sistema).
+
+        - Respuesta: 201 Created con la información de la sala creada, 400 si los datos son incorrectos, 401 si el usuario no está autenticado.
+
+      - PUT /api/v1/rooms/{id}
+        
+        - Actualiza una sala específica por su id.
+
+        - Autenticación: Requiere autenticación.
+
+        - Rol necesario: Creador de la sala.
+
+        - Cuerpo de la solicitud: Datos de la sala a actualizar.
+
+        - Respuesta: 200 OK con la sala actualizada, 404 si la sala no se encuentra, 403 si el usuario no tiene permisos.
 
 #### 4.2.6.3. Application Layer 
 
+##### 4.2.6.3.1. Command Services
 
+- ReservationsCommandServiceImpl: es una implementación de la interfaz RoomsCommandService, y se encarga de manejar la lógica de negocio relacionada con las operaciones de las salas (rooms) en el sistema. Su objetivo principal es gestionar la interacción de los usuarios con las salas de juego, asegurando que se cumplan ciertas reglas de negocio, como los pagos, el manejo de los jugadores, la gestión de los chats y la eliminación de salas que ya han concluido.
+
+  - Métodos clave:
+
+    - deleteRoomByEndTimeConcluded()
+      
+      - Este método se ejecuta cada 60 segundos (gracias a @Scheduled), y elimina las salas cuyo tiempo de finalización ha pasado y están completas. También transfiere el monto acumulado a la cuenta del creador de la sala si la sala está llena.
+
+      - Operaciones:
+
+        - Revisa todas las salas.
+
+        - Verifica si la reserva de la sala ha terminado y si la sala está llena.
+
+        - Si la sala está llena y ha terminado, cambia su estado a "CONCLUDED", borra el chat asociado, elimina los jugadores y finalmente elimina la sala.
+
+    - transferToCreator(Rooms room)
+
+      - Transfiere el monto acumulado en una sala al creador de la sala.
+
+      - Operaciones:
+
+        - Obtiene el monto acumulado de la sala.
+
+        - Agrega ese monto a los créditos del creador de la sala.
+
+        - Guarda la actualización del creador en el repositorio de usuarios.
+
+    - refundToUsers(Long roomId)
+      
+      - Reembolsa el monto acumulado de una sala a los jugadores.
+
+      - Operaciones:
+
+        - Calcula el monto a devolver a cada jugador en función del número de jugadores en la sala.
+
+        - Se asegura de que la sala tenga jugadores y reembolsa el monto acumulado a cada uno.
+
+    - addPlayerToRoomAndChat(Long roomId, Long userId)
+
+      - Añade un jugador a una sala y a su chat asociado.
+
+      - Operaciones:
+
+        - Verifica que la sala no esté llena y que el jugador no esté ya en la sala.
+
+        - Comprueba si el jugador tiene suficientes créditos para unirse.
+
+        - Descuenta los créditos del jugador, acumula el monto en la sala y guarda ambos.
+
+        - Añade al jugador a la lista de jugadores de la sala y lo vincula con el chat asociado.
+
+    - isRoomCreator(Long roomId, Long userId)
+        
+      - Verifica si un usuario es el creador de una sala.
+
+      - Operaciones:
+
+        - Verifica si el usuario especificado es el creador de la sala comparando el ID del usuario con el ID del creador de la reserva de la sala.
+
+##### 4.2.6.3.2. Query Services
+
+- RoomsQueryServiceImpl: es una implementación de la interfaz RoomsQueryService y se encarga de manejar las consultas relacionadas con las salas (rooms) en el sistema. Esta clase permite recuperar información de las salas en función de distintos criterios, como el usuario que realiza la consulta, el propietario del espacio deportivo o las salas en las que un usuario está involucrado.
+
+  - Métodos:
+
+    - getAllRooms(): Recupera todas las salas almacenadas en el repositorio de datos. Este método se utiliza para obtener una lista completa de las salas sin ningún filtro.
+
+    - handle(GetRoomByUserIdQuery query): Recibe una consulta (GetRoomByUserIdQuery) que contiene un ID de usuario, y retorna todas las salas que están reservadas por ese usuario. Es útil cuando se quiere obtener las salas asociadas a un usuario específico.
+
+    - handleFindRoomsUserJoined(Long userId): Este método recupera las salas en las que un usuario está participando. Esto puede incluir tanto salas que el usuario haya creado como salas en las que se ha unido.
+
+    - handleFindRoomsBySportSpacesOwner(Long userId): Recupera las salas que están asociadas a un propietario de espacio deportivo. Este método es útil para obtener las salas relacionadas con los espacios deportivos que un usuario posee.
 
 #### 4.2.6.4. Infrastructure Layer 
 
+- RoomsRepository: es un repositorio de acceso a datos en Spring Data JPA, diseñada para manejar operaciones de persistencia relacionadas con la entidad Rooms
 
+  - Metodos:
+
+    - findByReservationsId(Long reservationId): Este método usa una consulta personalizada (@Query) para recuperar todas las salas (Rooms) cuyo reservation.id coincida con el ID proporcionado. Se utiliza para obtener las salas basadas en una reserva específica.
+
+    - findRoomsByReservationUserId(Long userId): Recupera todas las salas cuyas reservas estén asociadas a un usuario específico. Utiliza el parámetro userId para hacer la consulta sobre la relación entre el usuario y las reservas de las salas.
+
+    - findRoomsByUserId(Long userId): Este método obtiene todas las salas en las que un usuario específico está involucrado. La consulta se basa en la relación entre la entidad PlayerList (que relaciona a los jugadores con las salas) y el ID del usuario. Retorna las salas en las que un usuario es parte de la lista de jugadores.
+
+    - findRoomsBySportSpaceOwnerId(Long userId): Recupera todas las salas cuyo espacio deportivo esté asociado a un propietario específico. Utiliza el userId del propietario del espacio deportivo para realizar la consulta.
 
 #### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams 
 
@@ -3048,45 +3308,19 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 ##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
 
 
+Aquí se detalla la arquitectura del software a nivel de código, presentando la clase room dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
-<img src="./Resources/images/Capitulo 4/42661.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-room.png" alt="UPC">
+</p>
 
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram
 
-
-
-<img src="./Resources/images/Capitulo 4/42662.png" >
-
-### 4.2.7. Bounded Context: Player List
-
-#### 4.2.7.1. Domain Layer
-
-
-#### 4.2.7.2. Interface Layer
-
-
-
-#### 4.2.7.3. Infrastructure Layer
-
-#### 4.2.7.4. Bounded Context Software Architecture Component Level Diagrams
+Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//playerlist-component.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-rooms.png" alt="UPC">
 </p>
-
-#### 4.2.7.5. Bounded Context Software Architecture Code Level Diagrams
-
-##### 4.2.7.5.1. Bounded Context Domain Layer Class Diagrams
-
-
-
-<img src="./Resources/images/Capitulo 4/42761.png" >
-
-##### 4.2.7.5.2. Bounded Context Database Design Diagram
-
-
-
-<img src="./Resources/images/Capitulo 4/42762.png" >
 
 ### 4.2.8. Bounded Context: Chat Room
 
