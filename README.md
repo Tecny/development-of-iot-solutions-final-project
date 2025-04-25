@@ -3742,14 +3742,151 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 #### 4.2.10.1. Domain Layer
 
+##### 4.2.10.1.1. Model
+
+###### 4.2.10.1.1.1. Aggregates
+
+- BankTransfer: representa una solicitud de transferencia bancaria realizada por un usuario propietario. Está mapeada a una tabla de base de datos mediante JPA.
+
+###### 4.2.10.1.1.2. Commands
+
+- CreateBankTransferCommand: es un record en Java, utilizado para definir un objeto inmutable que contiene los datos necesarios para crear una transferencia bancaria. Este record se valida en su constructor para asegurarse de que todos los campos requeridos estén presentes y no sean vacíos o nulos.
+
+###### 4.2.10.1.1.3. Queries
+
+- GetBankTransferByUserIdQuery: es un record en Java que encapsula la consulta para obtener las transferencias bancarias asociadas a un usuario específico, identificado por su userId.
+
+##### 4.2.10.1.2. Services
+
+- BankTransferCommandServices: define un servicio relacionado con la creación de transferencias bancarias. Específicamente, el método handle maneja la lógica para crear una transferencia bancaria a partir de un CreateBankTransferCommand.
+
+  - Metodos:
+
+    - handle(Long id, CreateBankTransferCommand command):
+
 #### 4.2.10.2. Interface Layer 
+
+##### 4.2.10.2.1. Resources
+
+- CreateBankTransferResource: Este recurso es utilizado para recibir los datos necesarios para crear una nueva transferencia bancaria.
+
+- BankTransferResource: Este recurso se utiliza para representar una transferencia bancaria que ya ha sido creada o está en proceso, y se envía como respuesta en la API.
+
+##### 4.2.10.2.2. Transform
+
+- CreateBankTransferCommandFromResourceAssembler: Este ensamblador convierte el recurso de entrada (CreateBankTransferResource) en un comando (CreateBankTransferCommand) que se puede usar en la lógica de negocio, generalmente en el servicio de comandos.
+
+  - Metodo:
+      
+    - toCommandFromResource:
+
+      - Toma un objeto CreateBankTransferResource como entrada.
+
+        - Extrae los valores de las propiedades del recurso y los pasa al constructor de CreateBankTransferCommand.
+
+        - Devuelve un objeto de tipo CreateBankTransferCommand.
+
+- BankTransferResourceFromEntityAssembler: Este ensamblador convierte una entidad de dominio (BankTransfer) en un recurso (BankTransferResource) que será devuelto al cliente en la respuesta de la API.
+
+  - Metodo:
+
+    - toResourceFromEntity:
+
+      - Toma una entidad BankTransfer como entrada.
+
+      - Extrae las propiedades necesarias de la entidad y las usa para crear un nuevo BankTransferResource.
+
+      - Devuelve el objeto BankTransferResource, que contiene los detalles de la transferencia bancaria.
+
+##### 4.2.10.2.3. Controllers
+
+- BankTransferController: es un controlador en Spring Boot que maneja las solicitudes HTTP relacionadas con las transferencias bancarias. 
+
+  - Endpoints:
+  
+    - POST /api/v1/bank-transfer/create:
+
+      - Función: Permite a los usuarios con rol OWNER crear una transferencia bancaria.
+
+      - Validaciones:
+
+        - Solo los lunes entre las 00:00 y las 06:00.
+
+        - Tipo de transferencia debe ser CC o CCI.
+
+        - Solo si no existe una transferencia pendiente.
+
+      - Acción: Crea una transferencia y asigna el monto correspondiente de los créditos del usuario.
+
+    - GET /api/v1/bank-transfer/all:
+
+      - Función: Permite a los administradores ver todas las transferencias bancarias.
+
+      - Validaciones: Solo los usuarios con rol ADMIN pueden ver todas las transferencias.
+
+      - Acción: Devuelve todas las transferencias en el sistema.
+
+    - GET /api/v1/bank-transfer/user/{userId}:
+
+      - Función: Permite a un administrador o al mismo usuario ver sus propias transferencias bancarias.
+
+      - Validaciones:
+
+        - El administrador puede ver todas las transferencias.
+
+        - Los usuarios solo pueden ver sus propias transferencias.
+
+      - Acción: Devuelve las transferencias de un usuario específico.
+
+    - PATCH /api/v1/bank-transfer/update-transfer/{id}:
+
+      - Función: Permite a los administradores actualizar el estado de una transferencia bancaria a CONFIRMED.
+
+      - Validaciones:
+
+        - Solo los usuarios con rol ADMIN pueden actualizar el estado.
+
+        - Solo se puede actualizar si el estado actual es PENDING.
+
+      - Acción: Confirma la transferencia y actualiza los créditos del usuario y del administrador
 
 #### 4.2.10.3. Application Layer 
 
+##### 4.2.10.3.1. Command Services
+
+-  BankTransferCommandServicesImpl: es una implementación del servicio que maneja las operaciones relacionadas con las transferencias bancarias.
+
+  - Metodos:
+
+    - handle():
+
+      - Función: Procesa la solicitud para crear una nueva transferencia bancaria.
+
+      - Acción:
+
+        - Busca el usuario correspondiente a través de su id usando el repositorio de usuarios.
+
+        - Crea un objeto BankTransfer utilizando el comando CreateBankTransferCommand y el usuario encontrado.
+
+        - Retorna una Optional<BankTransfer> con la transferencia bancaria creada.
 
 #### 4.2.10.4. Infrastructure Layer 
 
+- BankTransferRepository: es un repositorio que maneja las operaciones de acceso a la base de datos para la entidad BankTransfer.
 
+  - Metodos:
+
+    - findByUserId(Long userId):
+
+      - Función: Obtiene una lista de transferencias bancarias asociadas a un usuario específico.
+
+      - Retorna: Una lista de objetos BankTransfer para el userId proporcionado.
+
+    - findByUserIdAndStatus(Long userId, Status status):
+
+      - Función: Obtiene una transferencia bancaria asociada a un usuario y con un estado específico.
+
+      - Retorna: Un Optional<BankTransfer> si se encuentra la transferencia con el userId y el status indicados.
 
 #### 4.2.10.5. Bounded Context Software Architecture Component Level Diagrams 
 
@@ -3761,15 +3898,19 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 ##### 4.2.10.6.1. Bounded Context Domain Layer Class Diagrams
 
+Aquí se detalla la arquitectura del software a nivel de código, presentando la clase User dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
-
-<img src="./Resources/images/Capitulo 4/42661.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//code-banktransfer.png" alt="UPC">
+</p>
 
 ##### 4.2.10.6.2. Bounded Context Database Design Diagram
 
+Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
-
-<img src="./Resources/images/Capitulo 4/42662.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-bank.png" alt="UPC">
+</p>
 
 ### 4.2.11. Bounded Context: Payments
 
