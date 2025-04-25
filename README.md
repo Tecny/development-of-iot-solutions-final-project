@@ -405,26 +405,27 @@ Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera d
 **Willy Valentin**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img width="459px" height="170px" src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/willy.png" alt="UPC"> | Soy Willy David Valentin Ricaldi, estudio la carrera de Ingeniería de Software. Actualmente, me encuentro trabajando en una empresa minera en el área de TI. Tengo experiencia en desarrollo, gestión y mantenimiento de Software utilizando metodologías ágiles y tecnologías modernas. Lidero la rama estudiantil ACM - UPC desde hace más de un año y esto representa el nivel de liderazgo que tengo en proyectos medianos y grandes. |
+| <img width="459px" height="170px" src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//willy.png" alt="UPC"> | Soy Willy David Valentin Ricaldi, estudio la carrera de Ingeniería de Software. Actualmente, me encuentro trabajando en una empresa minera en el área de TI. Tengo experiencia en desarrollo, gestión y mantenimiento de Software utilizando metodologías ágiles y tecnologías modernas. Lidero la rama estudiantil ACM - UPC desde hace más de un año y esto representa el nivel de liderazgo que tengo en proyectos medianos y grandes. |
 
 
 **Angie Valverde**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img width="906px" height="170px" src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/clara.png" alt="UPC"> | Mi nombre es Clara Valverde y actualmente formo parte del equipo Atlassian en la empresa Software Enterprise Services, donde brindamos soluciones especializadas en SAP. Me encuentro cursando el noveno ciclo de la carrera de Ingeniería de Software, y tengo un fuerte interés en la eficiencia y la mejora continua dentro del desarrollo de proyectos. Me considero una persona organizada, comprometida con mis objetivos y en constante búsqueda de crecimiento tanto profesional como personal. Tengo una gran afinidad por el mundo tecnológico, especialmente en lo relacionado con la gestión de proyectos y el uso de herramientas colaborativas que optimicen los procesos. En mi tiempo libre, disfruto entrenar en el gimnasio, ya que es parte de mis metas personales de bienestar, y también dedico atención al cuidado de la piel, un tema que me interesa mucho a nivel personal. |
+| <img width="906px" height="170px" src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//clara.png" alt="UPC"> | Mi nombre es Clara Valverde y actualmente formo parte del equipo Atlassian en la empresa Software Enterprise Services, donde brindamos soluciones especializadas en SAP. Me encuentro cursando el noveno ciclo de la carrera de Ingeniería de Software, y tengo un fuerte interés en la eficiencia y la mejora continua dentro del desarrollo de proyectos. Me considero una persona organizada, comprometida con mis objetivos y en constante búsqueda de crecimiento tanto profesional como personal. Tengo una gran afinidad por el mundo tecnológico, especialmente en lo relacionado con la gestión de proyectos y el uso de herramientas colaborativas que optimicen los procesos. En mi tiempo libre, disfruto entrenar en el gimnasio, ya que es parte de mis metas personales de bienestar, y también dedico atención al cuidado de la piel, un tema que me interesa mucho a nivel personal. |
 
 
 <br>
 
 ## 1.2. Solution Profile
 
-D'Taquito es un servicio web diseñado para simplificar el proceso de reserva de canchas de fútbol y mesas de billar en Lima Metropolitana. Con ello, los amantes del fútbol y billar pueden encontrar y reservar canchas de forma conveniente y segura, todo desde la comodidad de su navegador web.
+D’Taquito es una plataforma diseñada para conectar a personas que desean organizar y participar en actividades deportivas, como fútbol y billar, en Lima Metropolitana. El enfoque de D'Taquito está en facilitar la creación de comunidades y fomentar la interacción entre usuarios con intereses similares, permitiendo la organización eficiente de eventos deportivos.
 
-La aplicación ofrece una serie de características principales para mejorar la experiencia del usuario. Por ejemplo, los usuarios pueden explorar una amplia selección de canchas disponibles en diferentes ubicaciones. Además, realizar una reserva es rápido y sencillo, ya que pueden hacerlo directamente desde el navegador con solo unos pocos clics.
+Los usuarios pueden realizar reservas de espacios deportivos eligiendo entre dos modalidades: reservas personales, que permiten al usuario asegurar directamente un horario para uso privado del espacio, o reservas comunitarias, que crean automáticamente una sala abierta para que otros jugadores interesados se unan al evento. Esta flexibilidad promueve tanto la organización individual como la colaboración entre miembros de la comunidad.
 
-D'Taquito también proporciona información detallada sobre cada cancha y salón, incluyendo fotos e instalaciones. Esto permite a los usuarios tomar decisiones informadas al elegir. Además, la página garantiza transacciones seguras y confiables mediante opciones de pago seguro integradas.
+Las salas comunitarias permiten a los usuarios conectarse con otros jugadores, coordinar detalles del evento y fomentar una experiencia más social y participativa. Dentro de estas salas se puede chatear, compartir información y gestionar la asistencia de manera sencilla.
 
-Una de las ventajas principales de usar D'Taquito es la facilidad de uso que ofrece. Elimina la necesidad de hacer llamadas telefónicas o visitas en persona para reservar, lo que ahorra tiempo y esfuerzo a los usuarios. Además, con una amplia variedad de canchas y salones disponibles, los usuarios pueden encontrar la que mejor se ajuste a sus preferencias en términos de ubicación, precio y calidad.
+Además, D'Taquito ofrece a los propietarios de espacios deportivos la posibilidad de promocionar y administrar sus instalaciones dentro de la plataforma. Los espacios cuentan con información detallada que facilita la elección por parte de los usuarios, quienes pueden explorar, filtrar y reservar en tiempo real según sus necesidades.
+Con su interfaz intuitiva, D'Taquito simplifica la organización de actividades deportivas, eliminando la necesidad de múltiples coordinaciones externas. Esto ahorra tiempo y mejora la experiencia del usuario, permitiéndole enfocarse en disfrutar del deporte y la comunidad que lo rodea.
 
 ### 1.2.1. Antecedentes y problematica
 
@@ -465,82 +466,59 @@ Además del fútbol, el billar está ganando popularidad entre los limeños, con
 #### 1.2.2.1. Lean UX Problem Statements
 
 **Problem Statement 1** <br>
-Nuestra startup se enfrenta al desafío de crear una plataforma integral que simplifique y mejore el proceso de reserva de canchas de fútbol y mesas de billar en Lima Metropolitana. Nos encontramos ante la necesidad de desarrollar un sistema que permita a los usuarios encontrar fácilmente instalaciones disponibles, verificar su ubicación, conocer las características de los locales y realizar reservas de manera rápida y sencilla.
-¿Cómo podemos diseñar una plataforma digital que satisfaga las necesidades de los aficionados al fútbol en Lima Metropolitana, ofreciendo una experiencia de reserva mejorada?
+Nuestra startup enfrenta el desafío de desarrollar una plataforma digital que simplifique la reserva de espacios deportivos y a la vez fomente la formación de comunidades activas en Lima Metropolitana. La plataforma debe permitir a los usuarios realizar reservas personales o crear reservas comunitarias, estas últimas generando automáticamente salas abiertas para que otros jugadores se unan. Este sistema debe facilitar la conexión entre personas con intereses comunes, la elección eficiente de espacios deportivos disponibles, y una coordinación fluida para la realización de partidos de fútbol o sesiones de billar.
+¿Cómo podemos diseñar una plataforma que combine reservas flexibles con herramientas de comunidad, para que los usuarios no solo organicen actividades fácilmente, sino también fortalezcan vínculos sociales a través del deporte?
+
 
 **Problem Statement 2** <br>
-Nuestra startup se encuentra ante el desafío crucial de garantizar la seguridad y la integridad del proceso de reserva de canchas de fútbol y mesas de billar en Lima Metropolitana, así como de asegurar los pagos realizados a través de nuestra plataforma. Esto debido a que estamos en un entorno donde el temor a ser estafado durante transacciones en línea es una preocupación creciente entre los usuarios
-¿Cómo podemos diseñar una plataforma digital que no solo simplifique el proceso de reserva, sino que también brinde confianza y seguridad a los usuarios en cada paso del camino?
+A medida que los usuarios interactúan en un entorno que mezcla lo social con la organización de eventos presenciales, surge el reto de garantizar un espacio seguro, confiable y transparente. Es crucial proteger tanto a jugadores como a propietarios de espacios deportivos, generando confianza en cada paso del proceso: desde la creación de una reserva, hasta la participación en una sala comunitaria o el uso de las instalaciones.
+¿Cómo podemos asegurar que la plataforma ofrezca una experiencia segura y confiable para todos los usuarios, promoviendo interacciones genuinas, coordinación efectiva y un entorno donde se valore el respeto y la integridad dentro de las actividades deportivas?
+
 
 #### 1.2.2.2. Lean UX Assumptions
 
 **Business Outcomes**
 
-1. Reducir el tiempo de proceso de reserva en un 22%
-2. Aumentar las reservas de los espacios deportivos en un 13% en los próximos 6 meses
-3. Incrementar la satisfacción del cliente en un 15% en el próximo año, el cual se conocerá mediante encuestas
-4. Aumento significativo en el número de reservas mensuales, reflejando una mayor participación de los usuarios en actividades deportivas.
-5. Mejora en la satisfacción del cliente, medida a través de encuestas de retroalimentación y reseñas positivas en la plataforma.
-6. Incremento en la tasa de retención de usuarios, demostrando la fidelización de los clientes a largo plazo.
-7. Mayor visibilidad y reconocimiento de marca en la comunidad de aficionados del fútbol y billar de Lima Metropolitana.
-8. Reducción de la tasa de cancelación de reservas gracias a procesos de reserva más transparentes y flexibles.
-9. Incremento en la utilización de las instalaciones deportivas asociadas, lo que resulta en una mejor eficiencia y rentabilidad para los proveedores de canchas.
-10. Expansión de la base de usuarios a través de campañas de marketing efectivas y estrategias de adquisición de clientes.
-11. Establecimiento de asociaciones estratégicas con proveedores de servicios deportivos y organizaciones locales para aumentar la disponibilidad de opciones de reserva.
-12. Implementación de medidas de seguridad y protección de datos efectivas para garantizar la confianza de los usuarios en la plataforma.
-13. Generación de ingresos consistentes a través de comisiones por reservas y opciones de monetización adicionales, como publicidad y patrocinios.
-14. Contribución positiva al bienestar general de la comunidad al fomentar un estilo de vida activo y saludable entre los residentes de Lima Metropolitana.
+1.	Reducir el tiempo de organización de actividades deportivas desde la reserva hasta la coordinación.
+2.	Aumentar la participación en reservas comunitarias y salas asociadas.
+3.	Mejorar la satisfacción del usuario, medida por encuestas de feedback.
+4.	Incrementar usuarios registrados y activos, fomentando comunidad.
+5.	Aumentar reservas mediante mejor visibilidad de espacios deportivos.
+6.	Elevar la retención de usuarios con una experiencia fluida y conectada.
+7.	Disminuir cancelaciones gracias a salas y comunicación eficiente.
+8.	Incrementar el uso de instalaciones deportivas afiliadas.
+9.	Expandir la base de usuarios con marketing enfocado en comunidad y deporte.
+10.	Conseguir alianzas con espacios deportivos y organizaciones locales.
+11.	Mejorar la confianza del usuario con medidas de seguridad y protección de datos.
 
 **User Outcomes**
-1. Los rentores ahorran su tiempo en el proceso de reserva debido a que no deben esperar la respuesta del propietario
-   
-3. Los propietarios obtienen más visibilidad de sus espacios de juego
-   
-4. ¿Quién será nuestro usuario principal al reservar canchas de fútbol o mesas de billar en Lima Metropolitana? 
-   - Nuestro usuario principal puede ser un rupos de amigos o jugadores individuales que buscan reservar para partidos recreativos
-     
-5. ¿Dónde encajará nuestro producto en la vida diaria de nuestros usuarios?
-   - Nuestro producto encajará en la vida diaria de nuestros usuarios durante sus momentos de ocio, la planificación de eventos deportivos o de manera espontánea cuando deseen jugar.
-
-6. ¿Cuáles son los principales problemas que enfrentan nuestros usuarios al utilizar nuestro producto para reservar? ¿Cómo podemos abordar estos problemas para mejorar la experiencia del usuario?
-   - Los problemas pueden incluir falta de disponibilidad de canchas o salones, dificultad para encontrar instalaciones adecuadas y procesos de reserva complicados. Podemos mejorar la experiencia del usuario asegurando la disponibilidad en tiempo real, simplificando el proceso de reserva y proporcionando información detallada sobre las instalaciones.
-
-7. ¿Cómo y con qué frecuencia nuestros usuarios usarán nuestro producto para reservar?
-   - Nuestros usuarios pueden utilizar el producto principalmente durante los fines de semana o de manera ocasional para organizar partidos con amigos o equipos.
-
-8. ¿Qué características son consideradas imprescindibles por nuestros usuarios al reservar?
-   - Características como la disponibilidad en tiempo real, facilidad de reserva, opciones de pago seguras y una variedad de instalaciones son aspectos prioritarios para nuestros usuarios.
-
-9. ¿Cómo debería visualmente nuestro producto para que sea atractivo y fácil de usar para nuestros usuarios?
-   - Nuestro producto debe tener un diseño intuitivo, limpio y atractivo visualmente, con una interfaz fácil de navegar y características claramente identificables.
+1.	Los usuarios organizan actividades deportivas más rápido, gracias a un sistema de reservas ágil y opciones de comunidad sin necesidad de coordinaciones externas.
+2.	Los usuarios amplían su red social, al unirse a salas comunitarias con personas que comparten intereses deportivos.
+3.	Los usuarios se sienten parte de una comunidad activa, lo que mejora su experiencia y compromiso con la plataforma.
+4.	Los propietarios obtienen mayor visibilidad, ya que sus espacios se promocionan dentro de reservas y salas creadas por los usuarios.
+5.	Los usuarios encuentran y reservan espacios fácilmente, coordinando sus actividades sin complicaciones.
+6.	Los propietarios mejoran la eficiencia y uso de sus espacios, gracias a una mayor exposición y mejor gestión desde la plataforma.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
-1. Creemos que reducir los tiempos de proceso de reserva en un 22% se logrará si las personas que juegan fútbol obtienen el beneficio de ahorrar su tiempo en el proceso de reserva al no tener que esperar la respuesta del propietario mediante una interfaz intuitiva y rápida que simplifique el proceso de reserva
-2. Creemos que aumentar las reservas de los espacios deportivos en un 13% en los próximos 6 meses se logrará si los propietarios de un espacio de juego obtienen el beneficio de mayor visibilidad de sus espacios de juego mediante la capacidad de agregar sus espacios de juego en la aplicación web para ser alquilados
-3. Si simplificamos el proceso de reserva a través de una interfaz de usuario intuitiva y fácil de usar, entonces aumentaremos la tasa de conversión de visitantes a reservas.
-4. Si proporcionamos información detallada y actualizada sobre la disponibilidad, entonces reduciremos la frustración del usuario y aumentaremos la satisfacción.
-5. Si implementamos un sistema de notificaciones automáticas sobre la disponibilidad de canchas, entonces aumentaremos la probabilidad de que los usuarios completen una reserva.
-6. Si ofrecemos opciones de reserva flexibles, como horarios personalizados y servicios adicionales, entonces aumentaremos la retención de usuarios y fomentaremos la fidelidad.
-7. Si establecemos asociaciones con proveedores de servicios deportivos de alta calidad, entonces mejoraremos la reputación y confianza de nuestra plataforma entre los usuarios.
-8. Si optimizamos la experiencia de reserva para dispositivos móviles, entonces aumentaremos la conveniencia y accesibilidad para los usuarios que buscan reservar canchas mientras están en movimiento.
-9. Si permitimos que los usuarios califiquen y comenten sobre las instalaciones deportivas, entonces proporcionaremos información valiosa para otros usuarios y mejoraremos la transparencia en la plataforma.
-10. Si implementamos un sistema de recompensas o descuentos por reservas frecuentes, entonces incentivaremos la repetición de uso y la participación activa de los usuarios.
-11. Si realizamos pruebas en diferentes aspectos de la plataforma, como la disposición de la información o el diseño de los botones de reserva, entonces identificaremos las mejores prácticas para mejorar la experiencia del usuario.
-12. Si integramos un sistema de pago seguro y confiable, entonces aumentaremos la confianza de los usuarios y reduciremos la tasa de abandono durante el proceso de reserva.
-13. Si proporcionamos opciones de filtrado avanzadas, como búsqueda por ubicación, tipo de superficie de juego y servicios adicionales, entonces mejoraremos la relevancia de los resultados para los usuarios.
-14. Si optimizamos el proceso de reserva para que sea lo más rápido posible, con un mínimo de pasos necesarios, entonces reduciremos la fricción y aumentaremos la tasa de conversión de visitantes a reservas completadas.
+1.	Creemos que reducir los tiempos de organización se logrará si los usuarios pueden crear reservas (personales o comunitarias) de forma rápida mediante una interfaz intuitiva. Lo sabremos cuando disminuya el tiempo promedio que tardan en organizar actividades.
+2.	Creemos que aumentará la participación en reservas comunitarias si los usuarios pueden conectarse fácilmente con otros y organizar eventos compartidos desde la reserva. Lo sabremos cuando suba el número de usuarios que crean o se unen a estas salas.
+3.	Creemos que la satisfacción del usuario crecerá si la experiencia de organización y comunidad es fluida y conectada. Lo sabremos cuando aumente el índice de satisfacción en encuestas y comentarios positivos.
+4.	Creemos que mejorar la visibilidad y reservas de espacios deportivos se logrará si estos pueden promocionarse dentro del flujo de reservas comunitarias. Lo sabremos cuando veamos más reservas asociadas a espacios destacados y mayor tráfico en sus perfiles.
+5.	Creemos que la retención de usuarios mejorará si ofrecemos flexibilidad en la organización y una experiencia consistente. Lo sabremos cuando aumente la tasa de usuarios recurrentes.
+6.	Creemos que la utilización de espacios deportivos crecerá si facilitamos la conexión entre usuarios y espacios mediante reservas comunitarias bien estructuradas. Lo sabremos cuando aumente el uso constante de instalaciones por usuarios activos.
+
 
 #### 1.2.2.4. Lean UX Canvas
 <div style="text-align: justify;">
-  <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//canvas.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ux-canvas.png" alt="UPC">
 </div>
 
 ### 1.3. Segmentos objetivo
 
 **Segmento objetivo 1: Personas que juegan futbol**
   - Aspectos demográficos:
-    - Sexo: Hombres.
+    - Sexo: Hombres y mujeres.
     - Edades: De 15 a 45 años.
     - Nivel Socioeconómico: Medio y medio-alto.
 
@@ -632,35 +610,44 @@ Estrategias:
 - ¿Qué edad tienes?
 - ¿Cuál es tu género?
 - ¿De qué distrito de Lima Metropolitana eres?
-- ¿Cuál es tu estado civil?
 - ¿Tienes profesión o estudias?
 - ¿Cómo suele ser tu día a día?
+- ¿Juegas fútbol o billar? (solo si es jugador)
+- ¿Eres administrador de algún espacio deportivo? Si es así, ¿de cuáles deportes? (solo si es propietario)
 
-**Para segmento 1 y 2:**
+**Para segmento 1:**
 
-- ¿Con qué frecuencia juegas al fútbol(o billar) y cuánto tiempo dedicas a buscar una cancha disponible?
-- ¿Qué métodos utilizas generalmente para encontrar una cancha de fútbol(o billar)? (por ejemplo, aplicaciones móviles, redes sociales, páginas web, contactos personales, etc.)
-- ¿Cuáles son los principales desafíos que enfrentas al intentar reservar una cancha de fútbol(o mesa de billar)?
-- ¿Has experimentado problemas de disponibilidad o congestión en las canchas de fútbol en tu área(o salon de billar)? ¿Podrías describirlos?
-- ¿Cuál es tu opinión sobre la accesibilidad de las canchas de fútbol(o salon de billar) en términos de ubicación, disponibilidad de horarios y costos?
-- ¿Qué tan satisfecho estás con las opciones de canchas de fútbol(o salones de billar) disponibles en tu comunidad?
-- ¿Cómo crees que se podría mejorar el proceso de reserva de canchas de fútbol(o mesas de billar) para hacerlo más conveniente y accesible?
-- ¿Has considerado alguna vez abandonar la búsqueda de una cancha de fútbol(o mesa de billar) debido a la dificultad para encontrar una disponible? Si es así, ¿qué te llevó a tomar esa decisión?
-- ¿Existen barreras específicas que te impidan disfrutar plenamente del fútbol(o billar) debido a la falta de canchas(o mesas de billar) disponibles?
-- ¿Qué sugerencias tienes para mejorar la infraestructura de las canchas de fútbol(o salones de billar) o la gestión de su reserva para hacerlas más accesibles para todos los jugadores?
+- ¿Con qué frecuencia juegas fútbol o billar?
+- ¿Tienes amigos con quienes sueles jugar con frecuencia o a veces te cuesta coincidir por temas de disponibilidad u horarios?
+- ¿Cómo sueles organizar tus partidas actualmente? ¿Utilizas alguna red social para organizarlas? Si es así, ¿cuál y por qué?
+- ¿Qué dificultades enfrentas al intentar organizar un partido de fútbol o billar?
+- ¿Con qué frecuencia reservas canchas o mesas de billar?
+- ¿Qué aspectos valoras más al momento de reservar un espacio deportivo (precio, disponibilidad, ubicación, calidad del espacio, etc.)?
+- ¿Qué método usas actualmente para hacer reservas (presencial, llamada, mensaje, app, etc.)? ¿Qué tan cómodo o incómodo te parece ese método?
+- ¿Te gustaría poder ver la disponibilidad de espacios en tiempo real antes de reservar?
+- ¿Te interesaría participar en partidas con personas que no conoces previamente? ¿Por qué?
+- ¿Te interesaría usar el deporte como una forma de conocer nuevas personas y ampliar tu círculo social?
+- ¿Qué opinas sobre una aplicación que te permita reservar espacios para fútbol o billar de forma rápida y sencilla?
+- ¿Qué funciones te gustaría ver en una aplicación que te ayude a gestionar tus reservas deportivas?
+- ¿Cómo te gustaría que se maneje la comunicación dentro de la aplicación (chat en tiempo real, notificaciones, etc.)?
+- Sabiendo que la aplicación estará disponible tanto en versión web como móvil, ¿en cuál te sentirías más cómodo haciendo tus reservas y por qué?
 
-**Para segmento 3:**
 
-- ¿Qué los motivó a abrir o administrar un espacio de juego como una cancha de fútbol o un salón de billar?
-- ¿Cuáles son los servicios y facilidades que ofrecen en su local? (número de canchas, tipos de mesas de billar, otros juegos disponibles, etc.)
-- ¿Cómo gestionan actualmente las reservas y la programación de sus espacios de juego?
-- ¿Cuáles son los principales desafíos que enfrentan al gestionar las reservas y la operación diaria de su local?
-- ¿Qué características consideran más importantes en una plataforma de reserva en línea para su negocio? (por ejemplo, facilidad de uso, disponibilidad de horarios en tiempo real, opciones de pago, etc.)
-- ¿Han utilizado alguna plataforma de reserva en línea antes? ¿Qué les gustó y qué les gustaría mejorar de esas experiencias?
-- ¿Qué tipo de información les gustaría tener acceso en una plataforma de reserva? (por ejemplo, datos de clientes, estadísticas de uso, etc.)
-- ¿Tienen algún requisito específico en cuanto a la gestión de pagos y facturación dentro de la plataforma?
-- ¿Cómo prefieren recibir soporte técnico y atención al cliente? (por ejemplo, correo electrónico, chat en vivo, teléfono, etc.)
-- ¿Tienen alguna preocupación en cuanto a la seguridad y privacidad de la información de sus clientes al utilizar una plataforma en línea?
+**Para segmento 2:**
+
+- ¿Cuántos espacios deportivos tienes disponibles?
+- ¿Cómo manejas actualmente las reservas para tus espacios deportivos?
+- ¿Qué problemas enfrentas en la promoción y llenado de tus espacios deportivos?
+- ¿Cómo promocionas actualmente tus espacios deportivos para atraer jugadores?
+- ¿Qué medios utilizas para llegar a nuevos clientes (redes sociales, publicidad, etc.)?
+- ¿Cómo ha sido tu experiencia promocionando tus espacios deportivos?
+- ¿Qué día de la semana experimentas la menor afluencia de reservas para tus espacios deportivos?
+- ¿Qué te motivaría a usar una aplicación para promocionar y gestionar las reservas de tus espacios deportivos?
+- ¿Qué características te gustaría que la aplicación ofreciera para facilitar la gestión de tus reservas y la promoción de tus espacios?
+- ¿Qué tecnología consideras beneficiosa para controlar el acceso a tus espacios deportivos?
+- ¿Qué tipo de reportes o estadísticas te gustaría recibir sobre el uso de tus espacios deportivos a través de la aplicación?
+- ¿Qué dudas o preocupaciones tendrías al usar una nueva plataforma para la promoción y gestión de las reservas de tus espacios deportivos?
+- ¿Qué tipo de soporte o asistencia esperas recibir de la plataforma en caso de problemas o inconvenientes?
 
 
 </div>
@@ -673,7 +660,7 @@ Link de las entrevistas en anexos
 
 Entrevista N°1:
 
-<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado1.png" alt="UPC">
 
 - **Entrevistador:** Clara Valverde Salazar
 - **Entrevistado:** Rafael Arturo Luyo Ramor
@@ -687,7 +674,7 @@ Entrevista N°1:
 
 Entrevista N°2:
 
-<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado2.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado2.png" alt="UPC">
 
 - **Entrevistador:** Clara Valverde Salazar
 - **Entrevistado:** Daniel Rodrigo Chillos Arevalos
@@ -700,7 +687,7 @@ Entrevista N°2:
 
 Entrevista N°3:
 
-<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado3.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado3.png" alt="UPC">
 
 - **Entrevistador:** Clara Valverde Salazar
 - **Entrevistado:** Danny Cao Cao
@@ -714,7 +701,7 @@ Le atrae la idea de una aplicación móvil que le permita realizar reservas con 
 
 Entrevista N°4:
 
-<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado4.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado4.png" alt="UPC">
 
 - **Entrevistador:** Clara Valverde Salazar
 - **Entrevistado:** Jose Luis Figeroa
@@ -727,7 +714,7 @@ Entrevista N°4:
 
 Entrevista N°5:
 
-<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado5.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado5.png" alt="UPC">
 
 - **Entrevistador:** Clara Valverde Salazar
 - **Entrevistado:** Julio Cesar Matos
@@ -740,7 +727,7 @@ Entrevista N°5:
 
 Entrevista N°6:
 
-<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado6.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado6.png" alt="UPC">
 
 - **Entrevistador:** Willy Valentin
 - **Entrevistado:** Diego Portales
@@ -753,7 +740,7 @@ Entrevista N°6:
 
 Entrevista N°7:
 
-<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado7.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado7.png" alt="UPC">
 
 - **Entrevistador:** Willy Valentin
 - **Entrevistado:** Johan Moreno
@@ -766,7 +753,7 @@ Entrevista N°7:
 
 Entrevista N°8:
 
-<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado8.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado8.png" alt="UPC">
 
 - **Entrevistador:** Willy Valentin
 - **Entrevistado:** Miguel Ybañez
@@ -779,7 +766,7 @@ Entrevista N°8:
 
 Entrevista N°9:
 
-<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado9.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado9.png" alt="UPC">
 
 - **Entrevistador:** Willy Valentin
 - **Entrevistado:** Alexis Patasca 
@@ -792,7 +779,7 @@ Entrevista N°9:
 
 Entrevista N°10:
 
-<img src="https://github.com/Tecny/development-of-iot-solutions-final-project/blob/develop/images/entrevistado10.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado10.png" alt="UPC">
 
 - **Entrevistador:** Willy Valentin
 - **Entrevistado:** Oscar Soto 
@@ -825,63 +812,9 @@ Las entrevistas realizadas dejan clara una necesidad compartida de digitalizar y
 
 Además, la versión móvil es vista como el canal más conveniente por todos los actores, lo que implica que el desarrollo debe enfocarse en "mobile-first". A nivel funcional, la app no solo debe ofrecer reservas, sino convertirse en una herramienta de gestión, promoción, comunicación y análisis. Finalmente, para asegurar una correcta adopción, se debe considerar una estrategia de soporte técnico y educación digital para los administradores, especialmente aquellos menos familiarizados con la tecnología.
 
-**Analisis estadistico respecto a las respuestas de las entrevistas:**
-
-1. **Métodos de reserva**:
-
-En esta sección, exploraremos las preferencias de los entrevistados en cuanto a los métodos utilizados para realizar reservas en establecimientos de entretenimiento y deportivos. Analizaremos el grado de adopción de métodos digitales como WhatsApp, redes sociales del establecimiento y plataformas de reserva en línea, así como la prevalencia de métodos tradicionales como la gestión manual.
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//grafico-estadistico.png" alt="UPC" width="400" height="300">
-
-2. **Problemas comunes con las reservas**:
-
-Esta sección aborda los desafíos recurrentes identificados por los entrevistados al intentar reservar espacios en establecimientos de entretenimiento y deportivos. Se explorarán los obstáculos más comunes, como la dificultad para encontrar horarios disponibles, las cancelaciones de reservas por parte del establecimiento y otros problemas relacionados con la disponibilidad y organización.
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//grafico-estadistico2.png" alt="UPC" width="400" height="300">
-
-3. **Necesidades de mejora en el proceso de reserva**:
-
-En esta parte, examinaremos las áreas específicas en las que los entrevistados creen que se pueden realizar mejoras en el proceso de reserva. Se destacarán las necesidades y expectativas de los usuarios, como la visualización de horarios en tiempo real, una experiencia de reserva rápida y sencilla, así como la transparencia en cuanto a precios, servicios ofrecidos y el estado de las instalaciones.
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//grafico-estadistico3.png" alt="UPC" width="400" height="300">
-
-4. **Preferencias sobre la plataforma de reserva**:
-
-Aquí se presentarán las preferencias expresadas por los entrevistados en cuanto a las características deseadas en una plataforma de reserva ideal. Se explorarán aspectos como la seguridad de los datos del cliente, la eficiencia del soporte técnico, las opciones de pago seguras y la utilidad de la recopilación de datos de usuarios para mejorar la experiencia y la gestión interna.
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//grafico-estadistico4.png" alt="UPC" width="400" height="300">
-
-5. **Necesidades específicas según el tipo de establecimiento**:
-
-Esta sección se centrará en las necesidades y preocupaciones específicas identificadas por los entrevistados según el tipo de establecimiento en el que trabajan o tienen experiencia. Se examinarán las diferencias en las expectativas y desafíos entre propietarios o administradores de salones de billar, centros de fútbol, alquiler de canchas de fútbol y locales de recreación con varias opciones de entretenimiento.
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//grafico-estadistico5.png" alt="UPC" width="400" height="300">
-
-**Resumen respecto a los datos**
-
-|**Cuadro estadístico**||
-| :-: | :- |
-|**Métodos de reserva:**|El 81% de los entrevistados prefieren utilizar WhatsApp como método para realizar reservas, mientras que el 14% opta por las redes sociales del establecimiento y otro 5% considera útil una plataforma de reserva en línea. Esto significa que los métodos digitales abarcan el 100% de las preferencias.|
-|**Problemas comunes con las reservas:**|El 50% de los entrevistados reportan dificultades para encontrar horarios disponibles al momento de reservar. Por otro lado, el 33% ha experimentado cancelaciones de reservas por parte del establecimiento. Pero sobre todo, el 80% señala la falta de organización en el proceso de reserva como problemas comunes.|
-|Necesidades de mejora en el proceso de reserva:|El 81% de los entrevistados expresan la necesidad de una plataforma que les permita ver los horarios disponibles en tiempo real. Además, el 65% destaca la importancia de una reserva rápida y sencilla. Por otro lado, un 23% de los encuestados menciona la importancia de conocer los precios y servicios ofrecidos, mientras que un tercio sugiere incluir detalles sobre el estado de las instalaciones en la plataforma de reserva.|
-|**Preferencias sobre la plataforma de reserva:**|El 40% de los entrevistados valora la seguridad de los datos del cliente, mientras que otro 25% destaca la importancia de un soporte técnico eficiente. Además, otro 25% menciona la necesidad de opciones de pago seguras, y un 10% expresa interés en la recopilación de datos de usuarios para mejorar la experiencia y la gestión interna|
-|**Necesidades específicas según el tipo de establecimiento:**|El 59% de los usuarios propietarios tienen canchas de futbol mientras que el otro 41 tienen salones de billar|
-
-
 </div>
 
 ## 2.3. Needfinding
-
-<div style="text-align: justify;">
-
-Las necesidades principales que hemos encontrado en nuestros segmentos objetivos son las siguientes:
-
-- Diseñar un sistema óptimo de reservas que permita ver la disponibilidades de horarios en tiempo real a los usuarios.
-- Mostrar información acerca de los establecimientos, esto permite dar a conocer los detalles de donde jugarán a los usuarios.
-- Solo afiliarnos a establecimientos que tengan buena calidad para garantizar el bienestar de los usuarios.
-- Agregar filtros para la rápida busca de locales según preferencias del usuario.
-- Desarrollar la posibilidad de crear una comunidad para que otras personas puedan ingresar a jugar si se presentan inconvenientes.
-- Los propietarios de un espacio de juego podrán añadir sus locales a la aplicación web para así gestionarlos
 
 </div>
 
@@ -889,17 +822,13 @@ Las necesidades principales que hemos encontrado en nuestros segmentos objetivos
 
 <div style="text-align: justify;">
 
-**Segmento 1: Personas que le gusta el futbol**
+**Segmento 1: Personas que practica futbol y/o billar**
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//userpersona1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userpersona-player.png" alt="UPC">
 
-**Segmento 2: Personas que le gusta el billar** 
+**Segmento 2: Personas dueñas de un espacio deportivo** 
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//userpersona2.png" alt="UPC">
-
-**Segmento 3: Personas dueñas de un espacio de juego** 
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//userpersona3.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userpersona-owner.png" alt="UPC">
 
 </div>
 
@@ -907,44 +836,32 @@ Las necesidades principales que hemos encontrado en nuestros segmentos objetivos
 
 <div style="text-align: justify;">
 
-**Segmento 1: Personas que le gusta el futbol**
+**Segmento 1: Personas que practica futbol y/o billar**
 
-| Actividades | Frecuencia | Importancia |
-|-----------|-----------|-----------|
-| Jugar futbol con sus amigos    | Con frecuencia    | Alta    |
-| Reservar canchas de futbol mediante whatsapp    | Con frecuencia    | Alta    |
-| Seguir equipos de futbol | A veces    | Media    |
-| Entrenar tácticas de juego   | A veces    | Media    |
-| Discutir partidos y sus resultados    | A veces    | Baja    |
-| Jugar en canchas de buena calidad   | Rara vez    | Alta    |
-| Esperar para reservar una cancha | Con frecuencia    | Media    |
-| Ponerse de acuerdo con sus amigos para reservar    | Con frecuencia    | Alta    |
+| Actividades                                       | Frecuencia | Importancia |
+| :------------------------------------------------ | :--------: | :----------: |
+| Buscar espacios deportivos disponibles en la ciudad |   Alta   |     Alta     |
+| Consultar con amigos sobre su disponibilidad de juego |   Alta   |     Alta     |
+| Revisar horarios de los espacios deportivos       |   Media  |     Alta     |
+| Coordinar con amigos para formar un grupo de juego |   Alta   |     Alta     |
+| Ver los horarios disponibles de los espacios deportivos |   Media  |     Alta     |
+| Visitar físicamente los espacios deportivos para conocerlos |   Baja   |    Media     |
+| Decidir entre varias opciones de espacios deportivos |   Media  |     Alta     |
+| Realizar pagos restantes de reserva en persona     |   Media  |    Media     |
 
 
-**Segmento 2: Personas que le gusta el billar**
+**Segmento 2: Personas dueñas de un espacio deportivo** 
 
-| Actividades | Frecuencia | Importancia |
-|-------------|------------|-------------|
-| Jugar billar con sus amigos | Con frecuencia | Alta |
-| Reservar mesas de billar mediante whatsapp | Con frecuencia | Alta |
-| Seguir competiciones de billar | A veces | Media |
-| Mejorar técnicas de juego | A veces | Media |
-| Discutir estrategias y resultados | A veces | Baja |
-| Jugar en mesas de alta calidad | Rara vez | Alta |
-| Esperar para reservar una mesa | Con frecuencia | Media |
-| Coordinarse con amigos para reservar | Con frecuencia | Alta |
-
-**Segmento 3: Personas dueñas de un espacio de juego**
-
-| Actividades        | Frecuencia     | Importancia  |
-|--------------------------|----------------|--------------|
-| Registrar el local       | Baja           | Alta         |
-| Gestionar horarios       | Alta           | Alta         |
-| Administrar reservas     | Alta           | Muy alta     |
-| Acceder a informes       | Media          | Media        |
-| Configurar opciones de pago | Baja         | Alta         |
-| Ofrecer promociones      | Media          | Media        |
-| Recibir y responder a comentarios | Media | Alta     |
+| Actividades                                          | Frecuencia | Importancia |
+| :--------------------------------------------------- | :--------: | :----------: |
+| Promocionar los espacios deportivos en redes sociales |   Media  |     Alta     |
+| Coordinar reservas por teléfono o redes sociales     |   Alta   |     Alta     |
+| Gestionar la disponibilidad de las instalaciones    |   Media  |     Alta     |
+| Manejar cancelaciones y reprogramaciones             |   Media  |    Media     |
+| Realizar campañas de publicidad local para atraer clientes |   Baja   |    Media     |
+| Recolectar pagos de clientes en persona o por transferencia |   Media  |    Media     |
+| Hacer seguimiento a la satisfacción de los clientes |   Baja   |     Baja     |
+| Mantener las instalaciones en condiciones óptimas     |   Baja   |    Media     |
 
 </div>
 
@@ -952,15 +869,11 @@ Las necesidades principales que hemos encontrado en nuestros segmentos objetivos
 
 <div style="text-align: justify;">
 
-**User persona 1: Julian Ramos**
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//journey1.png" alt="UPC">
-
-**User persona 2: Andres Martinez**
+**User persona 1: Andres Martinez**
 
 <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//journey2.png" alt="UPC">
 
-**User persona 3: Juan Perez**
+**User persona 2: Juan Perez**
 
 <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//journey3.png" alt="UPC">
 
@@ -970,35 +883,27 @@ Las necesidades principales que hemos encontrado en nuestros segmentos objetivos
 
 <div style="text-align: justify;">
 
-**User persona 1: Julian Ramos**
+**User persona 1: Andres Martinez**
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//empathymap1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//empathy-player.png" alt="UPC">
 
-**User persona 2: Andres Martinez**
+**User persona 2: Juan Perez**
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//empathymap2.png" alt="UPC">
-
-**User persona 3: Juan Perez**
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//empathymap3.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//empathy-owner.png" alt="UPC">
 
 </div>
 
 ### 2.3.5. As Is Scenario Mapping
 
 <div style="text-align: justify;">
-  
-**User persona 1: Julian Ramos**
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//asfut.jpg" alt="UPC">
+**User persona 1: Andres Martinez**  
 
-**User persona 2: Andres Martinez**  
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//asis-player.png" alt="UPC">
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//asbil.jpg" alt="UPC">
+**User persona 2: Juan Perez**
 
-**User persona 3: Juan Perez**
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//asowner.jpg" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//asis-owner.png" alt="UPC">
 
 </div>
 
@@ -1006,35 +911,28 @@ Las necesidades principales que hemos encontrado en nuestros segmentos objetivos
 
 <div style="text-align: justify;">
 
-- **Reservacion**:
-   - Acto de reservar una instalación deportiva, como una cancha de fútbol o una mesa de billar, para una fecha y hora específicas.
-
-- **Rentor**:
+- **Jugador**:
    - Persona que interactúa con el sistema de reservas para reservar un espacio deportivo.
-
 - **Propietario**:
-   - Persona que es dueña de un espacio deportivo y pone a disposición su local para su alquiler.
-
-- **Confirmacion**:
-   - Reconocimiento o verificación de que se ha realizado una reserva con éxito.
-
-- **Espacio deporivo**:
-   - Área deportiva para recreación de los rentores, pueden ser de fútbol o de billar.
-
-- **Cancelacion**:
-   - Acto de anular o revocar una reserva previamente realizada.
-     
-- **Cuenta de usuario**:
-    - Cuenta personal creada por un usuario (rentor o propietario) para gestionar sus reservas o espacios deportivos y preferencias dentro del sistema.
-
-- **Subscripción**:
-    - Agregación de privilegio a los usuarios, que les permite acceder a funciones adicionales o beneficios dentro del sistema de reservas.
-
-- **Metodo de pago**:
-    - Funcionalidad que permite a los usuarios agregar y gestionar su métodos de pago y realizar transacciones dentro del sistema.
-
-- **Perfil**:
-    - Información personal y preferencias de un usuario dentro del sistema de reservas.
+   - Persona que es dueña de un espacio deportivo y pone a disposición su local para su alquiler. 
+- **Administrador**:
+    - Usuario encargado de gestionar los tickets de retiro y mantener el sistema funcionando correctamente.
+- **Reserva**:
+    - Acción realizada por un jugador para ocupar un espacio deportivo en un horario específico.
+- **Créditos**:
+    - Moneda virtual del sistema que los jugadores usan para reservar espacios y que los propietarios reciben como ganancia.
+- **Recarga de créditos**:
+    - Proceso mediante el cual un jugador añade créditos a su cuenta mediante una pasarela de pago (por ejemplo, PayPal Sandbox).
+- **Suscripción**:
+    - Acción del propietario para habilitar su cuenta y poder ofrecer espacios deportivos. Se realiza mediante un pago.
+- **Ticket de retiro**:
+    - Solicitud creada por el propietario para que el administrador procese el retiro de sus créditos.
+- **Chat de sala**:
+    - Sistema de mensajería donde los jugadores pueden comunicarse mientras participan en una sala de juego.
+- **Sala de juego**:
+    - Espacio virtual donde varios jugadores pueden compartir el uso de un espacio deportivo, como un partido comunitario.
+- **Interfaz responsiva**:
+    - Diseño adaptable a distintos dispositivos (desktop, móvil), especialmente útil para el chat y sidebar.
 
 </div>
 
@@ -1043,19 +941,14 @@ Las necesidades principales que hemos encontrado en nuestros segmentos objetivos
 ## 3.1. To-Be Scenario Mapping
 
 <div style="text-align: justify;">
-  
-**User persona 1: Julian Ramos**
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//tofut.jpg" alt="UPC">
+**User persona 1: Andres Martinez**  
 
-**User persona 2: Andres Martinez**  
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//tobe-player.png" alt="UPC">
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//tobil.jpg" alt="UPC">
+**User persona 2: Juan Perez**
 
-**User persona 3: Juan Perez**
-
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//toowner.jpg" alt="UPC">
-
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//tobe-owner.png" alt="UPC">
 </div>
 
 ## 3.2. User Stories
