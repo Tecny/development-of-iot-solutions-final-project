@@ -1043,8 +1043,7 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 
 ## 3.3. Impact Mapping
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//impactmaping1.png" alt="UPC">
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//impactmaping2.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//impact-mapping.png" alt="UPC">
 
 ## 3.4. Product Backlog
 
@@ -1130,7 +1129,7 @@ Es una técnica visual que involucra a todas las partes interesadas con el fin d
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//1.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs1.png" alt="UPC">
 </p>
 
 #### 4.1.1.2. Timelines
@@ -1138,7 +1137,7 @@ Es una técnica visual que involucra a todas las partes interesadas con el fin d
 Hace referencia al orden cronológico de los eventos que tienen lugar dentro del sistema. Representar esta secuencia en una línea de tiempo permite visualizar la interacción entre eventos y su impacto en el flujo de trabajo, además de ayudar a detectar momentos clave en el proceso.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//2.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs2.png" alt="UPC">
 </p>
 
 #### 4.1.1.3. Pain Points
@@ -1146,7 +1145,7 @@ Hace referencia al orden cronológico de los eventos que tienen lugar dentro del
 Se trata de los retos o inconvenientes que experimentan los usuarios y las partes interesadas dentro del contexto del sistema. Reconocer estos problemas permite enfocar esfuerzos en priorizar funcionalidades y soluciones que respondan de manera efectiva a las necesidades reales de los usuarios.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//3.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs3.png" alt="UPC">
 </p>
 
 #### 4.1.1.4. Pivotal Points
@@ -1154,7 +1153,7 @@ Se trata de los retos o inconvenientes que experimentan los usuarios y las parte
 Corresponden a instantes decisivos dentro del flujo de eventos que pueden alterar el estado del sistema o tener un impacto notable en la experiencia del usuario. Detectarlos permite enfocar los esfuerzos en las áreas de mayor relevancia.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//4.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs4.png" alt="UPC">
 </p>
 
 #### 4.1.1.5. Commands
@@ -1162,7 +1161,7 @@ Corresponden a instantes decisivos dentro del flujo de eventos que pueden altera
 Representan las acciones o comandos que un usuario o el sistema pueden realizar para generar una modificación en el estado del sistema. Ejemplos de ello son "Crear Pedido" o "Actualizar Inventario".
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//5.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs5.png" alt="UPC">
 </p>
 
 #### 4.1.1.6. Policies
@@ -1170,7 +1169,7 @@ Representan las acciones o comandos que un usuario o el sistema pueden realizar 
 Son normas o lineamientos que establecen cómo deben tomarse las decisiones dentro del sistema. Estas reglas de negocio definen, por ejemplo, cuándo deben ejecutarse determinados comandos o cómo deben gestionarse ciertos eventos.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//6.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs6.png" alt="UPC">
 </p>
 
 #### 4.1.1.7. Read Models
@@ -1178,7 +1177,7 @@ Son normas o lineamientos que establecen cómo deben tomarse las decisiones dent
 Son estructuras de datos utilizadas para atender consultas o solicitudes de información. Estos modelos de lectura están optimizados para facilitar el acceso a los datos y se mantienen separados de los modelos de escritura, lo que permite mejorar tanto el rendimiento como la escalabilidad del sistema.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//7.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs7.png" alt="UPC">
 </p>
 
 #### 4.1.1.8. External Systems
@@ -1186,7 +1185,7 @@ Son estructuras de datos utilizadas para atender consultas o solicitudes de info
 Hace referencia a otros sistemas o servicios que se comunican con el sistema principal. Identificar estos sistemas es clave para comprender las dependencias e integraciones necesarias para el correcto funcionamiento del sistema.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//8.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs8.png" alt="UPC">
 </p>
 
 #### 4.1.1.9. Aggregates
@@ -1194,7 +1193,7 @@ Hace referencia a otros sistemas o servicios que se comunican con el sistema pri
 Son conjuntos de objetos que se manejan como una sola entidad para la gestión de datos y la lógica empresarial. Un agregado asegura la consistencia de sus elementos durante las operaciones y agrupa la lógica de negocio asociada.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//9.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs9.png" alt="UPC">
 </p>
 
 #### 4.1.1.10. Bounded Contexts
@@ -1202,7 +1201,7 @@ Son conjuntos de objetos que se manejan como una sola entidad para la gestión d
 Es una delimitación precisa dentro del dominio del sistema en la que se aplica un modelo específico. Establece una frontera donde un conjunto de conceptos y términos adquieren un significado particular, lo que ayuda a evitar confusiones y gestionar las complejidades en sistemas grandes y distribuidos.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//10.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs10.png" alt="UPC">
 </p>
 
 ### 4.1.2. Candidate Context Discovery
@@ -1219,75 +1218,140 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 **Users:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-user.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-user.png" alt="UPC">
 </p>
 
 **Identity and Access Management:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-iam.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-iam.png" alt="UPC">
 </p>
 
 **Subscriptions:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-subs.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-sub.png" alt="UPC">
 </p>
 
 **Sport Spaces:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-sport.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-sportspace.png" alt="UPC">
 </p>
 
 **Reservations:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-reservations.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-reservation.png" alt="UPC">
 </p>
 
 **Rooms:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-room.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-room.png" alt="UPC">
 </p>
 
 **Player List:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-pl.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-pl.png" alt="UPC">
 </p>
 
 **Chat Room:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-chat.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-chatroom.png" alt="UPC">
 </p>
 
 **Deposit:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-deposit.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-deposit.png" alt="UPC">
 </p>
 
 **Bank Transfer:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-bank.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-banktransfer.png" alt="UPC">
 </p>
 
 **Payments:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bc-payment.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-payment.png" alt="UPC">
 </p>
 
 ### 4.1.3. Domain Message Flows Modeling
+
+**1. User signing**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm1.PNG" alt="UPC">
+</p>
+
+**2. Player recharging credits**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm2.PNG" alt="UPC">
+</p>
+
+**3. Player recharging credits**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm3.PNG" alt="UPC">
+</p>
+
+**4. Player creating a community reservation**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm4.PNG" alt="UPC">
+</p>
+
+**5. Player deleting a community reservation**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm5.PNG" alt="UPC">
+</p>
+
+**6. Owner upgrading subscription**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm6.PNG" alt="UPC">
+</p>
+
+**7. Owner creating sportspace**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm7.PNG" alt="UPC">
+</p>
+
+**8. Owner deleting sportspace**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm8.PNG" alt="UPC">
+</p>
+
+**9. Owner creating bank transfer**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm9.PNG" alt="UPC">
+</p>
+
+**10. Admin attending bank transfer**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm10.PNG" alt="UPC">
+</p>
 
 ### 4.1.4. Bounded Context Canvases
 
 ### 4.1.5. Context Mapping
 
+El "Context Mapping" representa cómo los diferentes módulos interactúan entre sí distintos Bounded Contexts dentro de un sistema complejo. Ayuda a entender las relaciones, dependencias y límites entre las diferentes partes de un sistema que tienen sus propios modelos de dominio.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-mapping.png" alt="UPC">
+</p>
 
 ### 4.1.6. Software Architecture
 
