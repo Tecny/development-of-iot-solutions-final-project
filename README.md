@@ -3606,19 +3606,113 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 #### 4.2.9.1. Domain Layer
 
+##### 4.2.9.1.1. Model
 
+###### 4.2.9.1.1.1. Aggregates
 
-#### 4.2.9.2. Interface Layer 
+- Deposit: representa un depósito realizado por un usuario en el sistema. Está mapeada a la tabla deposits en la base de datos y hereda de AuditableAbstractAggregateRoot para manejar auditoría (creación, modificación, etc.).
 
+###### 4.2.9.1.1.2. Commands
 
+- CreateDepositCommand: es un record en Java, que es una clase inmutable diseñada para almacenar datos. En este caso, se utiliza para representar un comando para crear un depósito.
+
+###### 4.2.9.1.1.3. Queries
+
+- GetDepositByIdQuery: es un record en Java que representa una consulta para obtener un depósito por su ID.
+
+##### 4.2.9.1.2. Services
+
+- DepositCommandService: Esta interfaz define los métodos relacionados con las acciones que modifican el estado del sistema, como crear un depósito o guardar un depósito.
+
+  - Metodos:
+
+    - Optional<Deposit> handle(CreateDepositCommand command): Este método recibe un comando (CreateDepositCommand) para manejar la creación de un depósito. Retorna un Optional<Deposit>, lo que significa que podría no encontrar un depósito si algo falla.
+
+    - void save(Deposit deposit): Este método guarda un depósito en el sistema. No retorna nada, solo realiza la acción de persistencia.
+
+- DepositQueryService: Esta interfaz maneja las consultas que no modifican el estado del sistema, como obtener información sobre un depósito.
+
+  - Métodos:
+    
+    - Optional<Deposit> handle(GetDepositByIdQuery query): Este método recibe una consulta (GetDepositByIdQuery) para obtener un depósito específico por su id. Retorna un Optional<Deposit> para indicar si el depósito fue encontrado o no.
+
+#### 4.2.9.2. Interface Layer
+
+##### 4.2.9.2.1. Controllers
+
+- DepositController: es responsable de manejar las solicitudes relacionadas con la creación y gestión de depósitos en el sistema. La clase interactúa con varias dependencias como PayPal, el servicio de tokens, y los repositorios de usuarios y pagos. Proporciona endpoints para crear depósitos y procesar pagos mediante PayPal.
+
+  - Endpoints:
+
+    - POST /api/v1/deposit/create-deposit
+
+      - Crea un depósito utilizando PayPal y devuelve la URL de aprobación de PayPal.
+
+      - Entrada: Monto del depósito (como parámetro amount).
+
+      - Salida: URL de aprobación de PayPal si el pago se crea con éxito, mensaje de error en caso contrario.
+
+    - POST /api/v1/deposit/payment-deposits/success
+
+      - Procesa el pago aprobado por PayPal, guarda el depósito y actualiza el saldo del usuario.
+
+      - Entrada: paymentId, PayerID, y jwtToken (como parámetros de consulta).
+
+      - Salida: Redirección a la página de éxito si el pago es aprobado, mensaje de error en caso de fallo.
 
 #### 4.2.9.3. Application Layer 
 
+##### 4.2.9.3.1. Command Services
 
+- DepositCommandServiceImpl: maneja la lógica de negocio relacionada con la creación y almacenamiento de depósitos. Utiliza los repositorios DepositRepository y UserRepository para interactuar con la base de datos.
+
+  - Metodos:
+    
+      - Optional<Deposit> handle(CreateDepositCommand command):
+
+        - Recibe un comando de creación de depósito (CreateDepositCommand), que contiene un userId y una cantidad (amount).
+
+        - Busca al usuario en la base de datos usando userRepository y lanza una excepción si el usuario no se encuentra.
+
+        - Crea un nuevo objeto Deposit usando el user y amount obtenidos.
+
+        - Guarda el nuevo depósito en la base de datos a través del depositRepository.
+
+        - Retorna el depósito creado envuelto en un Optional (si todo es exitoso).
+
+      - void save(Deposit deposit):
+
+        - Recibe un objeto Deposit y lo guarda en la base de datos utilizando el depositRepository.
+
+        - No retorna nada, simplemente persiste el objeto.
+
+##### 4.2.9.3.2. Query Services
+
+- DepositQueryServiceImpl: se encarga de manejar la consulta de depósitos. Utiliza el DepositRepository para interactuar con la base de datos y recuperar la información de los depósitos.
+
+  - Metodos:
+
+    - Optional<Deposit> handle(GetDepositByIdQuery query):
+
+      - Recibe una consulta de tipo GetDepositByIdQuery, que contiene un id de depósito.
+
+      - Utiliza el DepositRepository para buscar un depósito en la base de datos con el id proporcionado en la consulta.
+
+      - Retorna el depósito encontrado como un Optional<Deposit>, lo que permite manejar la posibilidad de que no se encuentre el depósito.
 
 #### 4.2.9.4. Infrastructure Layer 
 
+- DepositRepository: proporciona la funcionalidad básica de CRUD para la entidad Deposit sin necesidad de implementar métodos adicionales. Aquí se define una interfaz sencilla para acceder a los datos de la tabla deposits en la base de datos.
 
+  - Metodos: 
+  
+    - save(Deposit deposit): Guarda un depósito en la base de datos.
+
+    - findById(Long id): Busca un depósito por su ID.
+
+    - findAll(): Obtiene todos los depósitos.
+
+    - deleteById(Long id): Elimina un depósito por su ID.
 
 #### 4.2.9.5. Bounded Context Software Architecture Component Level Diagrams 
 
@@ -3630,14 +3724,19 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 ##### 4.2.9.6.1. Bounded Context Domain Layer Class Diagrams
 
+Aquí se detalla la arquitectura del software a nivel de código, presentando la clase deposit dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
-<img src="./Resources/images/Capitulo 4/42661.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-deposit.png" alt="UPC">
+</p>
 
 ##### 4.2.9.6.2. Bounded Context Database Design Diagram
 
+Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
-
-<img src="./Resources/images/Capitulo 4/42662.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-deposit.png" alt="UPC">
+</p>
 
 ### 4.2.10. Bounded Context: Bank Transfer
 
