@@ -1736,11 +1736,19 @@ Este diagrama ilustra la arquitectura del sistema a nivel de componentes dentro 
 
 ##### 4.2.1.6.1 Bounded Context Domain Layer Class Diagrams
 
-<img src="./Resources/PART 6/1.jpg" >
+Aquí se detalla la arquitectura del software a nivel de código, presentando la clase User dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-user.png" alt="UPC">
+</p>
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram 
 
-<img src="./Resources/PART 6/2.jpg" >
+Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//db-user.png" alt="UPC">
+</p>
 
 ### 4.2.2. Bounded Context: IAM
 
