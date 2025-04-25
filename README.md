@@ -3916,15 +3916,72 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 #### 4.2.11.1. Domain Layer
 
- 
+##### 4.2.11.1.1. Model
+
+###### 4.2.11.1.1.1. Aggregates
+
+- Payments: es una entidad JPA que representa los pagos realizados por los usuarios. Extiende de AuditableAbstractAggregateRoot, lo que implica que tiene un registro de auditoría, como por ejemplo fechas de creación y modificación.
+
+###### 4.2.11.1.1.2. Queries
+
+- GetPaymentsByIdQuery: es un record que representa una consulta para obtener un pago por su identificador (id). Un record es una forma inmutable de representar datos en Java, similar a una clase con solo atributos y sin necesidad de escribir los métodos getter, equals(), hashCode(), etc.
+
+##### 4.2.11.1.2. Services
+
+- PaymentsQueryService: define un servicio para consultar los pagos almacenados. Su propósito es manejar consultas relacionadas con los pagos, particularmente para obtener un pago específico a partir de un identificador (id).
+
+  - Métodos:
+    - handle(GetPaymentsByIdQuery query):
+
+      - Parámetro: GetPaymentsByIdQuery query - Es un objeto que contiene el id del pago que se desea consultar.
+
+      - Retorno: Optional<Payments> - Devuelve un Optional que contiene el objeto Payments si se encuentra el pago con el id proporcionado, o está vacío si no existe.
 
 #### 4.2.11.2. Application Layer 
 
+##### 4.2.11.2.1. Command Services
 
+- PayPalPaymentServiceImpl: Esta clase maneja las interacciones con la API de PayPal para crear, ejecutar y reembolsar pagos.
+
+  - Métodos:
+
+    - createPayment: Crea un pago en PayPal utilizando los detalles de la transacción (monto, moneda, método de pago, etc.). Configura los detalles del pago como descripción, URL de éxito y cancelación, y devuelve el objeto Payment de PayPal.
+
+    - executePayment: Ejecuta un pago previamente creado en PayPal usando el paymentId y el payerId del usuario. Este método realiza el pago en PayPal después de que el usuario autorice la transacción.
+
+    - refundPayment: Realiza un reembolso de un pago específico usando su paymentId. El método obtiene la transacción y la relacionada con el pago, luego intenta reembolsar el pago a través de la API de PayPal.
+
+- PaypalConfig: Esta clase es responsable de configurar y crear una instancia de APIContext que es necesaria para interactuar con la API de PayPal.
+
+  - Métodos:
+
+    - apiContext: Configura el contexto de la API de PayPal utilizando las credenciales almacenadas en un archivo .env (por ejemplo, PAYPAL_CLIENT_ID, PAYPAL_CLIENT_SECRET, PAYPAL_MODE). Esto permite interactuar con la API de PayPal.
+
+##### 4.2.11.2.2. Query Services
+
+- PaymentsQueryServiceImpl: Esta clase es una implementación del servicio de consulta relacionado con los pagos. Su objetivo es manejar las solicitudes de consultas de pagos por ID.
+
+  - Método:
+
+    - handle(GetPaymentsByIdQuery query):
+
+      - Este método recibe un objeto GetPaymentsByIdQuery, que contiene el id del pago que se desea consultar.
+
+      - Luego, utiliza el PaymentsRepository para buscar un pago con el ID proporcionado en la base de datos.
+
+      - Retorna un Optional<Payments>, lo que indica que puede o no existir un pago con ese ID.
 
 #### 4.2.11.3. Infrastructure Layer 
 
+- PaymentsRepository: Esta interfaz extiende de JpaRepository, lo que le permite acceder a las operaciones CRUD básicas (Crear, Leer, Actualizar, Eliminar) para la entidad Payments. Además, define un método personalizado para realizar consultas específicas.
 
+  - Métodos:
+
+    - findByTransactionId(String transactionId):
+
+      - Este método permite buscar un pago específico por su transactionId.
+
+      - Devuelve un Optional<Payments>, lo que indica que el pago puede o no existir en la base de datos con ese transactionId.
 
 #### 4.2.11.4. Bounded Context Software Architecture Component Level Diagrams 
 
@@ -3936,15 +3993,20 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 ##### 4.2.11.5.1. Bounded Context Domain Layer Class Diagrams
 
+Aquí se detalla la arquitectura del software a nivel de código, presentando la clase payments dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-payment.png" alt="UPC">
+</p>
 
-<img src="./Resources/images/Capitulo 4/42661.png" >
 
 ##### 4.2.11.5.2. Bounded Context Database Design Diagram
 
+Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
-
-<img src="./Resources/images/Capitulo 4/42662.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-payments.png" alt="UPC">
+</p>
 
 # Conclusiones
 
