@@ -2433,15 +2433,320 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 #### 4.2.4.1. Domain Layer 
 
+##### 4.2.4.1.1. Model
+
+##### 4.2.4.1.1.1. Aggregates
+
+- SportSpace: Representa un espacio deportivo, gestionando información como el nombre, deporte, imagen, precio, dirección, horarios, y el número de jugadores permitidos según el modo de juego. Además, valida que los datos de precios y jugadores sean correctos conforme al deporte y modo de juego seleccionados
+
+  - Metodos:
+
+    - SportSpaces(CreateSportSpacesCommand command, User user, Sport sport): Constructor que inicializa un nuevo espacio deportivo con los datos del comando, el usuario propietario y el deporte asociado.
+
+    - update(CreateSportSpacesCommand command, Sport sport): Actualiza los detalles de un espacio deportivo existente con los datos proporcionados en el comando y el deporte asociado.
+
+    - validateGameMode(): Valida que el número de jugadores y el precio sean coherentes con el modo de juego y el deporte, y que las restricciones de deporte y modo de juego sean correctas.
+
+##### 4.2.4.1.1.2. Commands
+
+- CreateSportSpacesCommand: Esta clase representa un comando para crear un nuevo espacio deportivo. Se asegura de que todos los campos necesarios (nombre, deporte, imagen, precio, distrito, dirección, descripción, horarios, y modo de juego) estén presentes y correctamente definidos. Si algún campo requerido está vacío o nulo, lanza una excepción IllegalArgumentException.
+
+  - Metodo: 
+    
+    - CreateSportSpacesCommand: Inicializa el comando con los parámetros necesarios para crear un nuevo espacio deportivo. Verifica que todos los campos obligatorios (nombre, deporte, imagen, etc.) no estén vacíos ni nulos. Si alguna propiedad está incorrecta, lanza una excepción de tipo IllegalArgumentException.
+
+- SeedSportTypeCommand: Clase vacía que se usa para la inicialización o "semilla" de los tipos de deporte en el sistema. Es un comando sin lógica propia, usado para agregar datos iniciales de tipos de deporte.
+
+  - Metodo: 
+    
+    - SeedSportTypeCommand: Es un comando sin campos ni lógica, utilizado para algún proceso de inicialización o carga de datos para tipos de deportes en el sistema.
+
+##### 4.2.4.1.1.3. Entities
+
+- Sport: Representa un deporte específico dentro del sistema. Está asociada con el tipo de deporte (por ejemplo, fútbol, billar) a través de un valor enumerado SportTypes. Esta clase está diseñada para ser persistida en la base de datos y usa JPA para la gestión de su estado.
+
+  - Metodos: 
+
+    - Sport(): Constructor vacio utilizado por JPA para la creacion de instancias de la entidad.
+
+    - Sport(SportTypes sportType): Inicializa un nuevo objeto Sport con un tipo de deporte específico, que se pasa como parámetro en el constructor.
+
+##### 4.2.4.1.1.4. Events
+
+- SportSpacesCreatedEvent: Representa un evento que ocurre cuando se crea un nuevo espacio deportivo (SportSpace). Este evento es utilizado en el sistema para notificar a otros componentes o servicios sobre la creación de un nuevo espacio deportivo, y contiene el identificador del espacio creado.
+
+  - Metodos: 
+
+    - SportSpacesCreatedEvent(Object source, Long id): Inicializa un evento SportSpacesCreatedEvent con el origen del evento (por ejemplo, el objeto que originó el evento) y el identificador (id) del espacio deportivo recién creado.
+
+##### 4.2.4.1.1.5. Queries
+
+- GetSportSpacesByUserIdQuery: es una consulta utilizada para obtener los espacios deportivos asociados a un usuario, identificados por su userId. Esta consulta lanza una excepción si el userId no se proporciona.
+
+  - Metodos:
+
+    - GetSportSpacesByUserIdQuery(Long userId): Inicializa la consulta con el userId y valida que no sea nulo. Si userId es nulo, lanza una excepción de tipo IllegalArgumentException.
+
+- GetSportSpacesByIdQuery: es una consulta utilizada para obtener un espacio deportivo específico, identificado por su id. Si el id no se proporciona, se lanza una excepción.
+
+  - Métodos:
+
+    - GetSportSpacesByIdQuery(Long id): Inicializa la consulta con el id y valida que no sea nulo. Si id es nulo, lanza una excepción de tipo IllegalArgumentException.
+
+##### 4.2.4.1.1.6. Value Objects
+
+- SportTypes: es un enum que define los tipos de deportes disponibles. Actualmente, contiene dos valores: FUTBOL y BILLAR.
+
+- GameMode: es un enum que define los modos de juego posibles para los deportes, especificando el número máximo de jugadores para cada modalidad. Incluye los siguientes modos:
+
+  - Métodos:
+
+    - getMaxPlayers(): Devuelve el número máximo de jugadores para el modo de juego.
+
+- District: es un enum que define los distritos de la ciudad de Lima donde se pueden ubicar los espacios deportivos. Algunos de los distritos definidos son San_Miguel, San_Borja, Miraflores, entre otros.
+
+##### 4.2.4.1.2. Services
+
+- SportSpacesCommandService: Define operaciones de comando relacionadas con la creación, actualización y gestión de espacios deportivos.
+
+  - Metodos:
+
+    - Optional<SportSpaces> handle(Long id, CreateSportSpacesCommand command): Crea un nuevo espacio deportivo.
+
+    - Optional<SportSpaces> handleUpdate(Long id, CreateSportSpacesCommand command): Actualiza un espacio deportivo existente.
+
+    - void handleSportSpacesCreatedEvent(SportSpacesCreatedEvent event): Maneja el evento posterior a la creación de un espacio deportivo.
+
+    - byte[] getImageById(Long id): Devuelve la imagen asociada a un espacio deportivo.
+
+- SportSpacesQueryService: Define operaciones de consulta relacionadas con los espacios deportivos.
+
+  - Metodos: 
+
+    - Optional<SportSpaces> handle(GetSportSpacesByIdQuery query): Obtiene un espacio deportivo por su ID.
+    
+    - List<SportSpaces> getAllSportSpaces(): Obtiene todos los espacios deportivos registrados.
+
+    - List<SportSpaces> handle(GetSportSpacesByUserIdQuery query): Obtiene los espacios deportivos publicados por un usuario específico.
+
+    - boolean isSportSpaceAvailable(Long sportSpaceId, String date, String openTime, String closeTime): Verifica si un espacio deportivo está disponible en una fecha y horario específicos.
+  
+- SportCommandService: Define comandos relacionados con la inicialización de tipos de deporte.
+
+  - Metodos: void handle(SeedSportTypeCommand command): Registra los tipos de deportes iniciales en el sistema (como Fútbol o Billar).
 
 #### 4.2.4.2. Interface Layer
 
+##### 4.2.4.2.1. Resources
+
+- CreateSportSpacesResource: Recurso utilizado para recibir datos desde el cliente al crear un nuevo espacio deportivo.
+
+- SubscriptionsResource: Recurso usado para devolver información de un espacio deportivo al cliente.
+
+##### 4.2.4.2.2. Transform
+
+- CreateSportSpacesCommandFromResourceAssembler: Convierte un CreateSportSpacesResource (entrada del cliente) en un CreateSportSpacesCommand (comando para lógica de dominio).
+
+  - Método:
+    - toCommandFromResource(CreateSportSpacesResource resource): Crea y retorna un CreateSportSpacesCommand usando los datos del recurso.
+
+- SportSpacesResourceFromEntityAssembler: Convierte una entidad de dominio SportSpaces en un SportSpacesResource (salida hacia el cliente).
+
+  - Método:
+    - toResourceFromEntity(SportSpaces entity): Mapea todos los campos de la entidad a un recurso legible para el cliente, incluyendo imagen, tipo de deporte, distrito, modo de juego, etc.
+
+##### 4.2.4.2.3. Controllers
+
+- SportSpacesController: Este controlador maneja operaciones relacionadas con espacios deportivos (como canchas, salones, etc.). Solo los usuarios con rol OWNER pueden crear o eliminar espacios deportivos, y el acceso a otras funciones depende del tipo de usuario y su plan de suscripción (BRONZE, SILVER, GOLD, etc.).
+
+  - Endpoints:
+
+      - POST /api/v1/sport-spaces
+      
+          - Permite a un usuario con rol OWNER y un plan válido crear un nuevo espacio deportivo.
+
+        - Validaciones:
+
+          - El usuario debe tener el rol OWNER.
+
+          - El usuario debe tener un plan distinto de FREE.
+
+          - La hora de apertura y cierre debe estar entre las 6:00 y las 22:00.
+
+        - Respuestas:
+
+          - 201 Created: Espacio creado exitosamente.
+
+          - 400 Bad Request: Datos inválidos (horarios fuera de rango).
+
+          - 403 Forbidden: Usuario no tiene permiso para crear espacios.
+
+      - DELETE /api/v1/sport-spaces/{sportSpaceId}
+          
+          - Permite al OWNER eliminar un espacio deportivo propio.
+
+        - Validaciones:
+
+          - El usuario debe ser el creador del espacio (verificado por ID).
+
+          - El espacio no debe tener reservas futuras.
+
+        - Respuestas:
+
+          - 200 OK: Espacio eliminado correctamente.
+
+          - 403 Forbidden: Usuario no autorizado.
+
+          - 409 Conflict: Existen reservas futuras, no se puede eliminar.
+
+      - GET /api/v1/sport-spaces
+         
+          - Retorna todos los espacios deportivos disponibles en el sistema.
+
+        - Restricción:
+
+          - No accesible por usuarios con rol OWNER.
+
+        - Respuestas:
+
+          - 200 OK: Lista de espacios disponibles.
+
+          - 403 Forbidden: Acceso denegado a usuarios OWNER.
+
+      - GET /api/v1/sport-spaces/user
+          
+          - Devuelve todos los espacios deportivos creados por el usuario autenticado (solo OWNER).
+
+        - Respuestas:
+
+          - 200 OK: Lista de espacios del usuario.
+
+          - 403 Forbidden: Usuario no es OWNER.
+
+      - GET /api/v1/sport-spaces/{sportSpaceId}
+          
+          - Devuelve los detalles de un espacio deportivo específico según su ID.
+
+        - Respuestas:
+
+          - 200 OK: Detalles del espacio deportivo.
+
+          - 404 Not Found: No existe un espacio con el ID indicado.
+
+      - GET /api/v1/sport-spaces/{sportSpaceId}/availability
+
+          - Devuelve la disponibilidad horaria del espacio deportivo para la semana actual.
+          
+        - Respuestas:
+
+          - 200 OK: (cuando esté implementado) Mapa de horarios disponibles por día.
+
+          - 404 Not Found: Si el espacio no existe.
 
 #### 4.2.4.3. Application Layer
 
+##### 4.2.4.3.1. Command Services
+
+- SportSpacesCommandServiceImpl: Gestiona la creación de espacios deportivos para los usuarios.
+
+  - Métodos clave:
+
+    - handle(Long userId, CreateSportSpacesCommand command):
+
+      - Crea un nuevo espacio deportivo.
+
+      - Verifica que el usuario y el deporte existan.
+
+      - Lanza excepción si el deporte no existe.
+
+      - Guarda el espacio en el repositorio y lo retorna.
+
+    - handleUpdate(Long id, CreateSportSpacesCommand command):
+
+      - Actualiza un espacio deportivo existente.
+
+      - Busca el espacio por ID, lanza excepción si no lo encuentra.
+
+      - Busca el nuevo deporte asociado y actualiza el espacio.
+
+      - Guarda los cambios en el repositorio.
+
+    - handleSportSpacesCreatedEvent(SportSpacesCreatedEvent event):
+
+      - Maneja eventos de creación de espacios deportivos.
+
+      - Imprime en consola un mensaje con el ID del espacio.
+
+    - getImageById(Long id):
+
+      - Retorna la imagen asociada a un espacio deportivo.
+
+      - Lanza excepción si no encuentra el espacio con el ID.
+
+- SportCommandServiceImpl: Se encarga de registrar los tipos de deportes (SportTypes) en la base de datos cuando la aplicación se inicia.
+
+  - Método clave:
+
+    - init(): Este método se ejecuta automáticamente al iniciar la aplicación (por la anotación @PostConstruct). Invoca al método handle para registrar los deportes.
+
+    - handle(SeedSportTypeCommand  command): Recorre todos los valores definidos en SportTypes. Si alguno no existe en la base de datos, lo guarda.
+
+##### 4.2.4.3.2. Query Services
+
+- SportSpacesQueryServiceImpl: Proporciona servicios para consultar información sobre sport spaces. Es la implementación de la interfaz SportSpacesQueryService.
+
+  - Métodos:
+
+    - handle(GetSportSpacesByIdQuery query): Retorna un espacio deportivo basado en el ID proporcionado en la consulta.
+
+      - Utiliza el repositorio SportSpacesRepository para buscar el espacio.
+
+    - getAllSportSpaces(): Retorna una lista de todos los espacios deportivos almacenados en la base de datos.
+
+      - Utiliza el repositorio SportSpacesRepository para obtener la información.
+
+    - handle(GetSportSpacesByUserIdQuery query): Retorna una lista de espacios deportivos asociados a un usuario, según el ID de usuario proporcionado en la consulta
+
+      - Utiliza el repositorio SportSpacesRepository para realizar la búsqueda.
+
+    - isSportSpaceAvailable(Long sportSpaceId, String date, String openTime, String closeTime): Verifica si un espacio deportivo está disponible en una fecha y horario específicos.
+
+      - Utiliza un método personalizado del repositorio SportSpacesRepository para verificar la disponibilidad.
+
+##### 4.2.4.3.3. Event Handlers
+
+- SportSpacesCreatedEventHandler: Maneja los eventos de tipo SportSpacesCreatedEvent. Es responsable de ejecutar acciones cuando un sport space es creada, como registrar un evento y consultar los detalles de la sport space recién creada.
+
+  - Métodos:
+    - on(SportSpacesCreatedEvent event):
+
+      - Este método escucha el evento SportSpacesCreatedEvent y ejecuta una serie de acciones cuando el evento es recibido.
 
 #### 4.2.4.4. Infrastructure Layer
 
+- SportSpacesRepository: Capa de conexion con la base de datos.
+
+  - findByUserId(Long userId):
+
+    - Busca todos los espacios deportivos asociados a un usuario específico, dado su userId.
+
+    - Devuelve una lista de SportSpaces.
+
+  - isSportSpaceAvailable(Long sportSpaceId, String gameDay, String startTime, String endTime):
+
+    - Verifica si un espacio deportivo está disponible para una reserva en un día y hora específicos.
+
+    - Utiliza una consulta personalizada (@Query) para comprobar si existe alguna reserva que se superponga con los tiempos proporcionados (startTime y endTime).
+
+    - La consulta también verifica que la reserva esté dentro del horario de apertura y cierre del espacio deportivo.
+
+- SportRepository: Capa de conexion a la base de datos.
+
+  - existsBySportType(SportTypes sportType):
+
+    - Verifica si existe un deporte con el tipo de deporte especificado (sportType).
+
+    - Devuelve un valor booleano: true si el tipo de deporte ya está presente en la base de datos, false si no lo está.
 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -2453,14 +2758,19 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 ##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams 
 
+Aquí se detalla la arquitectura del software a nivel de código, presentando la clase sportspace dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
-
-<img src="./Resources/PART 6/6.jpg" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-sportspace.png" alt="UPC">
+</p>
 
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram 
 
+Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
-<img src="./Resources/PART 6/7.jpg" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-sport.png" alt="UPC">
+</p>
 
 ### 4.2.5. Bounded Context: Reservations
 
