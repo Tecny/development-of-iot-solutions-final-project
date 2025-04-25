@@ -3449,19 +3449,133 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 #### 4.2.8.1. Domain Layer
 
+##### 4.2.8.1.1. Model
 
+###### 4.2.8.1.1.1. Aggregates
 
-#### 4.2.8.2. Interface Layer 
+- ChatRoom: Representa una sala de chat vinculada a una sala física (deporte o reunión). Permite gestionar los jugadores (usuarios) en la sala de chat y los mensajes que se envían en esa sala.
 
+###### 4.2.8.1.1.2. Entities
 
+- Message: representa un mensaje enviado en una sala de chat.
+
+- MessageContentDTO: es un objeto de transferencia de datos (DTO) que solo contiene el contenido del mensaje.
+
+- MessageDTO: es un DTO que representa un mensaje con más información que el MessageContentDTO.
+
+##### 4.2.8.1.2. Services
+
+- ChatRoomCommandService: define los métodos relacionados con la gestión de salas de chat y mensajes dentro de esas salas.
+
+  Contiene los siguientes métodos:
+
+  - createChatRoom(Rooms room): Crea una nueva sala de chat asociada a una sala (Rooms).
+
+  - sendMessage(Long chatRoomId, String content, Long userId): Envía un mensaje a una sala de chat específica.
+
+  - getMessages(Long chatRoomId): Recupera todos los mensajes de una sala de chat específica.
+
+##### 4.2.8.1.3. Config
+
+- ChatWebSocketHandler:
+
+  - Metodos:
+
+    - afterConnectionEstablished(WebSocketSession session): Añade una nueva sesión de WebSocket a la lista de sesiones activas cuando se establece la conexión.
+
+    - handleTextMessage(WebSocketSession session, TextMessage message): Recibe mensajes de texto, extrae el roomId y userId, y verifica si el usuario pertenece a la sala. Si no es así, cierra la sesión.
+
+    - extractRoomId(JsonNode jsonNode): Extrae el roomId del mensaje recibido en formato JSON.
+
+    - extractUserId(JsonNode jsonNode): Extrae el userId del mensaje recibido en formato JSON.
+
+    - isUserInRoom(String userId, String roomId): Verifica si un usuario está en una sala específica al consultar la lista de jugadores de la sala.
+
+    - afterConnectionClosed(WebSocketSession session, CloseStatus status): Elimina la sesión WebSocket de la lista de sesiones activas cuando la conexión se cierra.
+
+    - broadcastMessage(TextMessage message): Envía un mensaje de texto a todas las sesiones activas de WebSocket.
+
+- WebSocketConfig
+
+  - Metodos:
+    
+    - registerWebSocketHandlers(WebSocketHandlerRegistry registry): Registra el ChatWebSocketHandler para manejar conexiones WebSocket en la ruta /ws/chat.
+
+    - chatWebSocketHandler(): Define el bean ChatWebSocketHandler para ser usado en la configuración de WebSocket.
+
+#### 4.2.8.2. Interface Layer
+
+##### 4.2.8.2.1. Controllers
+
+- ChatRoomController: maneja las operaciones relacionadas con las salas de chat, como crear salas de chat, enviar mensajes y obtener los mensajes de una sala.
+
+  - Métodos:
+
+    - POST /api/v1/chat/rooms
+
+      - Crea una nueva sala de chat.
+
+      - Función: Recibe un objeto Rooms en el cuerpo de la solicitud y devuelve la sala de chat creada.
+
+    - POST /api/v1/chat/rooms/{chatRoomId}/messages
+
+      - Envía un mensaje a una sala de chat.
+
+      - Función: Recibe el contenido del mensaje en el cuerpo, valida que el usuario esté autenticado y sea parte de la sala, y luego transmite el mensaje a través de WebSocket a todos los usuarios de la sala.
+
+    - GET /api/v1/chat/rooms/{chatRoomId}/messages
+
+      - Obtiene los mensajes de una sala de chat.
+
+      - Función: Devuelve una lista de mensajes existentes en la sala de chat especificada.
 
 #### 4.2.8.3. Application Layer 
 
+#### 4.2.8.3.1. Command Services
 
+- ChatRoomCommandServiceImpl implementa la lógica de negocio para las operaciones relacionadas con las salas de chat. Estas operaciones incluyen la creación de salas de chat, el envío de mensajes y la obtención de mensajes.
+
+  - Metodos:
+
+    - createChatRoom(Rooms room)
+
+      - Crea una nueva sala de chat a partir de la sala de reservas (Rooms).
+
+      - Función: Crea un objeto ChatRoom, asigna un nombre basado en la reserva y agrega a los jugadores (incluyendo al creador de la sala).
+
+    - isUserInRoom(Long chatRoomId, Long userId)
+
+      - Verifica si un usuario está en una sala de chat.
+
+      - Función: Busca la sala de chat por ID y verifica si el usuario con el ID proporcionado está en la lista de jugadores de esa sala.
+
+    - sendMessage(Long chatRoomId, String content, Long userId)
+
+      - Envía un mensaje a una sala de chat.
+
+      - Función: Crea un nuevo mensaje, lo asocia a la sala de chat y al usuario, y luego guarda el mensaje en la base de datos.
+
+    - getMessages(Long chatRoomId)
+
+      - Obtiene todos los mensajes de una sala de chat.
+
+      - Función: Recupera los mensajes de la sala de chat especificada.
 
 #### 4.2.8.4. Infrastructure Layer 
 
+- ChatRoomRepository: Esta interfaz extiende JpaRepository y proporciona métodos para acceder a las salas de chat (ChatRoom).
 
+  - Metodos:
+
+    - findByRoomId(Long roomId): Busca una sala de chat usando el ID de la sala (de la entidad Rooms). Devuelve un Optional<ChatRoom>.
+
+    - deleteByRoomId(Long roomId): Elimina una sala de chat basada en el ID de la sala de la entidad Rooms.
+
+- MessageRepository: Esta interfaz extiende JpaRepository y proporciona métodos para acceder a los mensajes de las salas de chat (Message).
+
+  - Metodos:
+
+    - findByChatRoom(ChatRoom chatRoom): Obtiene todos los mensajes asociados a una sala de chat específica (ChatRoom). Devuelve una lista de mensajes.
 
 #### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams 
 
@@ -3474,14 +3588,19 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 ##### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
 
+Aquí se detalla la arquitectura del software a nivel de código, presentando la clase chatroom dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
-
-<img src="./Resources/images/Capitulo 4/42661.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-chatroom.png" alt="UPC">
+</p>
 
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram
 
+Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
-<img src="./Resources/images/Capitulo 4/42662.png" >
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-chat.png" alt="UPC">
+</p>
 
 ### 4.2.9. Bounded Context: Deposit
 
