@@ -35,7 +35,7 @@ import {ReservationService} from '../../../reservation/services/reservation.serv
         <div>
           @defer (on timer(200ms)) {
             @if (isMember()) {
-              <button class="room-card__view" [routerLink]="['/rooms', room.id]">Ver sala</button>
+              <button class="room-card__view" (click)="viewRoom()">Ver sala</button>
               @if (isRoomCreator()) {
                 <button class="room-card__delete" (click)="deleteRoom()">Borrar sala</button>
               }
@@ -89,10 +89,16 @@ export class RoomCardComponent implements OnInit {
     );
   }
 
+  viewRoom() {
+    this.roomService.allowAccess(this.room.id);
+    this.router.navigate(['/rooms', this.room.id]).then();
+  }
+
   joinRoom() {
     if(window.confirm('¿Estás seguro de que deseas unirte a esta sala?')) {
       this.roomService.joinRoom(this.room.id).subscribe({
         next: () => {
+          this.roomService.allowAccess(this.room.id);
           this.router.navigate(['/rooms', this.room.id]).then();
         },
         error: (error) => {

@@ -6,6 +6,7 @@ import {ViewProfileComponent} from './features/profile/pages/view-profile/view-p
 import {UnauthorizedComponent} from './shared/pages/unauthorized/unauthorized.component';
 import {NotFoundComponent} from './shared/pages/not-found/not-found.component';
 import {UserRole} from './core/models/user.role.enum';
+import {roomGuard} from './core/guards/room.guard';
 
 export const routes: Routes = [
   {
@@ -70,7 +71,7 @@ export const routes: Routes = [
     path: 'rooms/:id',
     loadComponent: () => import('./features/room/pages/room-detail/room-detail.component')
       .then(m => m.RoomDetailComponent),
-    canActivate: [authGuard],
+    canActivate: [authGuard, roomGuard],
     data: { roles: [UserRole.PLAYER] },
   },
   {

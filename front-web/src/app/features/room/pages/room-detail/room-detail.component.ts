@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit, signal} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {RoomService} from '../../services/room.service';
 import {Room} from '../../models/room.interface';
@@ -17,7 +17,7 @@ import {RoomPlayerListComponent} from '../../components/room-player-list/room-pl
   styleUrl: './room-detail.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RoomDetailComponent implements OnInit {
+export class RoomDetailComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
   private roomService = inject(RoomService);
 
@@ -33,5 +33,11 @@ export class RoomDetailComponent implements OnInit {
         console.error('Error loading sport space');
       }
     });
+  }
+
+  ngOnDestroy() {
+    if (this.room()) {
+      this.roomService.clearAccess(this.room()!.id);
+    }
   }
 }
