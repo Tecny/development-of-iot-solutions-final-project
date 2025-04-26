@@ -1453,7 +1453,7 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 **1. IAM Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-iam.PNG" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-iam.png" alt="UPC">
 </p>
 
 **2. User Context**
@@ -1510,10 +1510,10 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-pl.png" alt="UPC">
 </p>
 
-**1. Chat Room Context**
+**11. Chat Room Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-chatroom.PNG" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-chatroom.png" alt="UPC">
 </p>
 
 ### 4.1.5. Context Mapping
