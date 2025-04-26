@@ -1450,6 +1450,72 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 
 ### 4.1.4. Bounded Context Canvases
 
+**1. IAM Context**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-iam.PNG" alt="UPC">
+</p>
+
+**2. User Context**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-user.png" alt="UPC">
+</p>
+
+**3. Subscription Context**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-sub.png" alt="UPC">
+</p>
+
+**4. Deposit Context**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-deposit.png" alt="UPC">
+</p>
+
+**5. Payment Context**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-payment.png" alt="UPC">
+</p>
+
+**6. Bank Transfer Context**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-banktransfer.png" alt="UPC">
+</p>
+
+**7. Sportspace Context**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-sportspace.png" alt="UPC">
+</p>
+
+**8. Reservation Context**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-reservation.png" alt="UPC">
+</p>
+
+**9. Room Context**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-room.png" alt="UPC">
+</p>
+
+**10. Player List Context**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-pl.png" alt="UPC">
+</p>
+
+**1. Chat Room Context**
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-chatroom.PNG" alt="UPC">
+</p>
+
 ### 4.1.5. Context Mapping
 
 El "Context Mapping" representa cómo los diferentes módulos interactúan entre sí distintos Bounded Contexts dentro de un sistema complejo. Ayuda a entender las relaciones, dependencias y límites entre las diferentes partes de un sistema que tienen sus propios modelos de dominio.
