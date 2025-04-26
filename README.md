@@ -418,14 +418,18 @@ Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera d
 
 ## 1.2. Solution Profile
 
-D’Taquito es una plataforma diseñada para conectar a personas que desean organizar y participar en actividades deportivas, como fútbol y billar, en Lima Metropolitana. El enfoque de D'Taquito está en facilitar la creación de comunidades y fomentar la interacción entre usuarios con intereses similares, permitiendo la organización eficiente de eventos deportivos.
+D’Taquito es una plataforma innovadora diseñada para revolucionar la forma en que se organizan y disfrutan las actividades deportivas en Lima Metropolitana, conectando a personas con intereses comunes en fútbol, billar y más. Vamos más allá de la simple reserva, ofreciendo una experiencia comunitaria enriquecedora y, gracias a una solución IoT de vanguardia, garantizando la seguridad y eficiencia en el acceso a los espacios deportivos.
 
-Los usuarios pueden realizar reservas de espacios deportivos eligiendo entre dos modalidades: reservas personales, que permiten al usuario asegurar directamente un horario para uso privado del espacio, o reservas comunitarias, que crean automáticamente una sala abierta para que otros jugadores interesados se unan al evento. Esta flexibilidad promueve tanto la organización individual como la colaboración entre miembros de la comunidad.
+Nuestra plataforma facilita la creación de comunidades vibrantes y la interacción entre usuarios, permitiendo la organización eficiente de eventos deportivos a través de dos modalidades de reserva:
 
-Las salas comunitarias permiten a los usuarios conectarse con otros jugadores, coordinar detalles del evento y fomentar una experiencia más social y participativa. Dentro de estas salas se puede chatear, compartir información y gestionar la asistencia de manera sencilla.
+- Reservas Personales: Asegura directamente un horario para tu uso privado del espacio deportivo de manera rápida y sencilla.
+- Reservas Comunitarias: Crea automáticamente una sala abierta donde otros jugadores interesados pueden unirse a tu evento, fomentando la colaboración y nuevas conexiones dentro de la comunidad deportiva.
 
-Además, D'Taquito ofrece a los propietarios de espacios deportivos la posibilidad de promocionar y administrar sus instalaciones dentro de la plataforma. Los espacios cuentan con información detallada que facilita la elección por parte de los usuarios, quienes pueden explorar, filtrar y reservar en tiempo real según sus necesidades.
-Con su interfaz intuitiva, D'Taquito simplifica la organización de actividades deportivas, eliminando la necesidad de múltiples coordinaciones externas. Esto ahorra tiempo y mejora la experiencia del usuario, permitiéndole enfocarse en disfrutar del deporte y la comunidad que lo rodea.
+La experiencia comunitaria se enriquece con salas dedicadas donde los usuarios pueden chatear, compartir información crucial del evento y gestionar la asistencia sin complicaciones.
+
+Para los propietarios de espacios deportivos, D'Taquito se convierte en una poderosa herramienta de promoción y administración. Sus instalaciones se presentan con información detallada, permitiendo a los usuarios explorar, filtrar y reservar en tiempo real según sus preferencias. Además integra una solución IoT de seguridad que optimiza el acceso a los espacios deportivos. Cada reserva genera un código QR único. Al llegar al espacio deportivo, los usuarios simplemente escanean este código a través de un lector QR instalado, activando automáticamente su reserva y permitiendo el acceso seguro. Este sistema no solo agiliza el proceso de entrada, sino que también proporciona un registro digital de los accesos, mejorando la seguridad y el control del espacio deportivo.
+
+Con su interfaz intuitiva y la incorporación de esta innovadora solución IoT, D'Taquito simplifica la organización de actividades deportivas, elimina las tediosas coordinaciones externas, ahorra tiempo valioso y, lo más importante, ofrece una experiencia segura y fluida para todos los usuarios, permitiéndoles enfocarse en la pasión por el deporte y la comunidad que lo comparte.
 
 ### 1.2.1. Antecedentes y problematica
 
@@ -802,15 +806,15 @@ Los aspectos que más valoran al momento de reservar son la calidad del espacio,
 
 **Segmento 2:**
 
-Por el lado de los administradores, los hallazgos apuntan a una gestión operativa manual y vulnerable. Actualmente utilizan cuadernos, llamadas o mensajes de WhatsApp para controlar reservas, lo cual ha derivado en errores como la duplicación de horarios o la pérdida de información importante. También enfrentan una baja afluencia durante ciertos días (como lunes y martes), y no tienen herramientas para evaluar por qué o cómo solucionarlo. Aunque algunos promueven sus servicios por redes sociales, no logran atraer nuevos clientes de forma sostenida, y carecen de indicadores que les ayuden a mejorar su gestión comercial.
+Por el lado de los propietarios, los hallazgos apuntan a una gestión operativa manual y vulnerable. Actualmente utilizan cuadernos, llamadas o mensajes de WhatsApp para controlar reservas, lo cual ha derivado en errores como la duplicación de horarios o la pérdida de información importante. También enfrentan una baja afluencia durante ciertos días (como lunes y martes), y no tienen herramientas para evaluar por qué o cómo solucionarlo. Aunque algunos promueven sus servicios por redes sociales, no logran atraer nuevos clientes de forma sostenida, y carecen de indicadores que les ayuden a mejorar su gestión comercial.
 
-Estos administradores valoran mucho la posibilidad de contar con una aplicación que les permita centralizar su operación, visualizar reservas en tiempo real, recibir pagos mediante plataformas como Yape o tarjetas, y generar reportes sobre afluencia, comportamiento de clientes y efectividad de promociones. Sin embargo, expresan una preocupación importante sobre la facilidad de uso de la herramienta, tanto para ellos como para el personal a su cargo, y consideran esencial contar con soporte técnico accesible y confiable que los ayude a adaptarse sin complicaciones.
+Estos propietarios valoran mucho la posibilidad de contar con una aplicación que les permita centralizar su operación, visualizar reservas en tiempo real, recibir pagos mediante plataformas como Yape o tarjetas, y generar reportes sobre afluencia, comportamiento de clientes y efectividad de promociones. Sin embargo, expresan una preocupación importante sobre la facilidad de uso de la herramienta, tanto para ellos como para el personal a su cargo, y consideran esencial contar con soporte técnico accesible y confiable que los ayude a adaptarse sin complicaciones.
 
 **Conclusiones:**
 
 Las entrevistas realizadas dejan clara una necesidad compartida de digitalizar y formalizar el proceso de reservas deportivas, tanto desde la perspectiva del usuario como del administrador. Existe una gran oportunidad para que D’Taquito se posicione como una plataforma tecnológica que mejore radicalmente la experiencia de ambos públicos, permitiéndoles organizarse con mayor eficiencia, tener acceso a datos relevantes en tiempo real y fomentar una comunidad en torno al deporte. El enfoque debe contemplar tanto una interfaz intuitiva para usuarios que buscan reservar, como un panel administrativo funcional y simple para los encargados de los espacios deportivos.
 
-Además, la versión móvil es vista como el canal más conveniente por todos los actores, lo que implica que el desarrollo debe enfocarse en "mobile-first". A nivel funcional, la app no solo debe ofrecer reservas, sino convertirse en una herramienta de gestión, promoción, comunicación y análisis. Finalmente, para asegurar una correcta adopción, se debe considerar una estrategia de soporte técnico y educación digital para los administradores, especialmente aquellos menos familiarizados con la tecnología.
+Además, la versión móvil es vista como el canal más conveniente por todos los actores, lo que implica que el desarrollo debe enfocarse en "mobile-first". A nivel funcional, la app no solo debe ofrecer reservas, sino convertirse en una herramienta de gestión, promoción, comunicación y análisis. Finalmente, para asegurar una correcta adopción, se debe considerar una estrategia de soporte técnico y educación digital para los propietarios, especialmente aquellos menos familiarizados con la tecnología.
 
 </div>
 
