@@ -4165,7 +4165,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 #### 4.2.11.4. Bounded Context Software Architecture Component Level Diagrams 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//payment-component.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//payment-component.jpg" alt="UPC">
 </p>
 
 #### 4.2.11.5. Bounded Context Software Architecture Code Level Diagrams
