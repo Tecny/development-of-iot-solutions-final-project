@@ -125,10 +125,6 @@
       <br><br>
     </td>
   </tr>
-</table>
-<table>
-  <tr>
-  </tr>
   <tr>
     <td rowspan="6" valign="top"> Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.</td>
     <td valign="top">
