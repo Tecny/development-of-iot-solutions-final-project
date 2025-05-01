@@ -75,6 +75,13 @@ export const routes: Routes = [
     data: { roles: [UserRole.PLAYER] },
   },
   {
+    path: 'bank-transfer',
+    loadComponent: () => import('./features/bank-transfer/pages/list-bank-transfer-requests/list-bank-transfer-requests.component')
+      .then(m => m.ListBankTransferRequestsComponent),
+    canActivate: [authGuard],
+    data: { roles: [UserRole.OWNER] },
+  },
+  {
     path: 'notfound',
     component: NotFoundComponent,
     canActivate: [authGuard]

@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, inject, signal} from '@angular/core'
 import {NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
 import {Router, RouterLink} from '@angular/router';
-import {LoginRequest} from '../../models/login.model';
+import {LoginRequest} from '../../models/login.interface';
 import {customEmailValidator} from '../../../shared/validators/forms.validator';
 import {UserStoreService} from '../../../core/services/user-store.service';
 import {UserRole} from '../../../core/models/user.role.enum';

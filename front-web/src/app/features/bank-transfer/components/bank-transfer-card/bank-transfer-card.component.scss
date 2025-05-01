@@ -1,0 +1,37 @@
+.bank-transfer-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 16px auto;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #333;
+  }
+
+  &__bank,
+  &__type,
+  &__account,
+  &__amount,
+  &__status,
+  &__ticket {
+    font-size: 1rem;
+    color: #555;
+  }
+
+  &__status {
+    font-weight: bold;
+    color: #007bff;
+  }
+}
