@@ -1,11 +1,12 @@
 import { Routes } from '@angular/router';
-import {LoginComponent} from './auth/components/login/login.component';
-import {RegisterComponent} from './auth/components/register/register.component';
+import {LoginComponent} from './auth/pages/login/login.component';
+import {RegisterComponent} from './auth/pages/register/register.component';
 import {authGuard} from './core/guards/auth.guard';
 import {UnauthorizedComponent} from './shared/pages/unauthorized/unauthorized.component';
 import {NotFoundComponent} from './shared/pages/not-found/not-found.component';
 import {UserRole} from './core/models/user.role.enum';
 import {roomGuard} from './core/guards/room.guard';
+import {ResetPasswordComponent} from './auth/pages/reset-password/reset-password.component';
 
 export const routes: Routes = [
   {
@@ -15,6 +16,10 @@ export const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'reset-password',
+    component: ResetPasswordComponent
   },
   {
     path: 'profile',
