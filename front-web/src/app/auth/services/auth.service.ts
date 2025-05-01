@@ -1,8 +1,8 @@
 import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environment/environment';
-import {RegisterRequest} from '../models/register.model';
-import {LoginRequest} from '../models/login.model';
+import {RegisterRequest} from '../models/register.interface';
+import {LoginRequest} from '../models/login.interface';
 import {BehaviorSubject, Observable, tap} from 'rxjs';
 import {Router} from '@angular/router';
 import {UserStoreService} from '../../core/services/user-store.service';

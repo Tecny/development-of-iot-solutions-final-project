@@ -1,0 +1,99 @@
+<button (click)="openBankTransferModal()">Solicitar retiro de créditos</button>
+
+<!-- Modal -->
+@if (showBankTransferModal) {
+  <app-modal (closeModal)="closeBankTransferModal()">
+    <ng-container modal-header>Solicitud de retiro de créditos</ng-container>
+
+    <ng-container modal-body>
+      <div class="bank-type-toggle">
+        <label>
+          <input
+            type="radio"
+            name="bankType"
+            value="asociado"
+            [(ngModel)]="bankType"
+            (change)="onBankTypeChange()"
+          />
+          Bancos Asociados
+        </label>
+
+        <label>
+          <input
+            type="radio"
+            name="bankType"
+            value="otro"
+            [(ngModel)]="bankType"
+            (change)="onBankTypeChange()"
+          />
+          Otros Bancos
+        </label>
+      </div>
+
+
+      <form [formGroup]="bankTransferForm" class="bank-transfer-form">
+        <label>
+          Nombre completo:
+          <input formControlName="fullName" type="text" />
+        </label>
+        @if (bankTransferForm.get('fullName')?.touched && bankTransferForm.get('fullName')?.invalid) {
+          @if (bankTransferForm.get('fullName')?.errors?.['required']) {
+            <small class="bank-transfer-form__error">Es necesario el nombre completo</small>
+          }
+          @if (bankTransferForm.get('fullName')?.errors?.['minlength']) {
+            <small class="bank-transfer-form__error">El nombre completo debe tener al menos 5 caracteres</small>
+          }
+        }
+
+        @if (bankType === 'asociado') {
+          <label>
+            Banco:
+            <select formControlName="bankName">
+              <option value="BCP">BCP</option>
+              <option value="BBVA">BBVA</option>
+              <option value="Interbank">Interbank</option>
+            </select>
+          </label>
+        } @else {
+          <label>
+            Banco (escribe el nombre):
+            <input formControlName="bankName" type="text" />
+          </label>
+        }
+        @if (bankTransferForm.get('bankName')?.touched && bankTransferForm.get('bankName')?.invalid) {
+          @if (bankTransferForm.get('bankName')?.errors?.['required']) {
+            <small class="bank-transfer-form__error">El banco es obligatorio</small>
+          }
+          @if (!associatedBanks.includes(bankTransferForm.get('bankName')?.value)) {
+            <label>
+              Especificar banco:
+              <input type="text" formControlName="bankName" />
+            </label>
+          }
+        }
+
+        <label>
+          {{ bankType === 'asociado' ? 'Número de cuenta:' : 'Número de cuenta interbancario:' }}
+          <input formControlName="accountNumber" type="text" />
+        </label>
+        @if (bankTransferForm.get('accountNumber')?.touched && bankTransferForm.get('accountNumber')?.invalid) {
+          @if (bankTransferForm.get('accountNumber')?.errors?.['required']) {
+            <small class="bank-transfer-form__error">El número de cuenta es obligatorio</small>
+          } @else if (bankTransferForm.get('accountNumber')?.errors?.['pattern']) {
+            <small class="bank-transfer-form__error">El número de cuenta solo debe contener números</small>
+          } @else if (bankTransferForm.get('accountNumber')?.errors?.['invalidAccountNumberLength']) {
+            <small class="bank-transfer-form__error">
+              La longitud del número de cuenta debe ser de
+              {{ bankTransferForm.get('accountNumber')?.errors?.['invalidAccountNumberLength'].expectedLength }} dígitos
+            </small>
+          }
+        }
+      </form>
+    </ng-container>
+
+    <ng-container modal-footer>
+      <button (click)="submitBankTransferRequest()" [disabled]="bankTransferForm.invalid">Solicitar</button>
+      <button (click)="closeBankTransferModal()">Cancelar</button>
+    </ng-container>
+  </app-modal>
+}

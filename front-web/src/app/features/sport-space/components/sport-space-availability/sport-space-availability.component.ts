@@ -7,6 +7,7 @@ import {FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators} from
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 import {Router} from '@angular/router';
 import {TimeUtil} from '../../../../shared/utils/time.util';
+import {ReservationRequest} from '../../../reservation/models/reservation.interface';
 
 @Component({
   selector: 'app-sport-space-availability',
@@ -197,7 +198,7 @@ export class SportSpaceAvailabilityComponent implements OnInit {
 
   submitReservation() {
     if (this.reservationForm.valid) {
-      const reservationData = this.reservationForm.getRawValue();
+      const reservationData: ReservationRequest = this.reservationForm.getRawValue();
 
       this.reservationService.createReservation(reservationData).subscribe({
         next: () => {

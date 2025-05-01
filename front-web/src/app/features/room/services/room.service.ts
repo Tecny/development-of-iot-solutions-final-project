@@ -11,6 +11,20 @@ export class RoomService {
   private http = inject(HttpClient);
   private baseUrl = environment.baseUrl;
 
+  private allowedRoomAccess = new Set<number>();
+
+  allowAccess(roomId: number) {
+    this.allowedRoomAccess.add(roomId);
+  }
+
+  hasAccess(roomId: number): boolean {
+    return this.allowedRoomAccess.has(roomId);
+  }
+
+  clearAccess(roomId: number) {
+    this.allowedRoomAccess.delete(roomId);
+  }
+
   getAllRooms() {
     return this.http.get<Room[]>(`${this.baseUrl}/rooms/all`);
   }

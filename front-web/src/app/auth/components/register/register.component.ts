@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, inject, signal} from '@angular/core'
 import {NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {AuthService} from '../../services/auth.service';
 import {Router, RouterLink} from '@angular/router';
-import {RegisterRequest} from '../../models/register.model';
+import {RegisterRequest} from '../../models/register.interface';
 import {customEmailValidator} from '../../../shared/validators/forms.validator';
 
 @Component({
