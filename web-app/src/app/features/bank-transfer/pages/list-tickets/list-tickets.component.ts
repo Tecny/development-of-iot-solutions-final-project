@@ -1,33 +1,46 @@
-import {ChangeDetectionStrategy, Component, inject, OnInit} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
 import {BankTransferService} from '../../services/bank-transfer.service';
 import {FormGroup, FormsModule, NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
-import {BankTransferRequest} from '../../models/bank-transfer.interface';
+import {Ticket, TicketRequest} from '../../models/ticket.interface';
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 import {customAccountNumberLengthByBank} from '../../../../shared/validators/banks.validator';
+import {UserStoreService} from '../../../../core/services/user-store.service';
+import {UserRole} from '../../../../core/models/user.role.enum';
+import {TicketCardComponent} from '../../components/ticket-card/ticket-card.component';
 
 @Component({
-  selector: 'app-list-bank-transfer-requests',
+  selector: 'app-list-tickets',
   imports: [
     FormsModule,
     ModalComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TicketCardComponent
   ],
-  templateUrl: './list-bank-transfer-requests.component.html',
-  styleUrl: './list-bank-transfer-requests.component.scss',
+  templateUrl: './list-tickets.component.html',
+  styleUrl: './list-tickets.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListBankTransferRequestsComponent implements OnInit {
+export class ListTicketsComponent implements OnInit {
   private bankTransferService = inject(BankTransferService);
+  private userStoreService = inject(UserStoreService);
   private fb = inject(NonNullableFormBuilder);
+
+  tickets = signal<Ticket[] | null>(null);
+  userRole = this.userStoreService.getRoleFromToken();
 
   bankType: 'asociado' | 'otro' = 'asociado';
   associatedBanks = ['BCP', 'BBVA', 'Interbank'];
 
-  bankTransferForm!: FormGroup;
+  ticketForm!: FormGroup;
   showBankTransferModal = false;
 
+  ngOnInit() {
+    this.initForm();
+    this.loadTickets();
+  }
+
   initForm() {
-    this.bankTransferForm = this.fb.group({
+    this.ticketForm = this.fb.group({
       fullName: ['', [Validators.required, Validators.minLength(5)]],
       bankName: ['', Validators.required],
       accountNumber: ['', [Validators.required, Validators.pattern(/^\d+$/)]],
@@ -36,10 +49,10 @@ export class ListBankTransferRequestsComponent implements OnInit {
 
     this.updateValidatorsByBankType();
 
-    this.bankTransferForm.get('bankName')?.valueChanges.subscribe((bank: string) => {
-      const accountControl = this.bankTransferForm.get('accountNumber');
+    this.ticketForm.get('bankName')?.valueChanges.subscribe((bank: string) => {
+      const accountControl = this.ticketForm.get('accountNumber');
       const transferType = this.isAssociatedBank(bank) ? 'CC' : 'CCI';
-      this.bankTransferForm.get('transferType')?.setValue(transferType);
+      this.ticketForm.get('transferType')?.setValue(transferType);
 
       const validators = [Validators.required, Validators.pattern(/^\d+$/)];
 
@@ -54,29 +67,54 @@ export class ListBankTransferRequestsComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
-    this.initForm();
+  loadTickets() {
+    if (this.userRole === UserRole.OWNER) {
+      this.bankTransferService.getTicketsByOwner().subscribe({
+        next: (tickets) => {
+          console.log(tickets);
+          this.tickets.set(tickets);
+        },
+        error: (err) => {
+          if (err.status === 404) {
+            this.tickets.set([]);
+          } else {
+            console.error('Error loading user\'s bank transfer requests');
+          }
+        }
+      });
+    } else {
+      this.bankTransferService.getAllTickets().subscribe({
+        next: (tickets) => {
+          console.log(tickets);
+          this.tickets.set(tickets);
+        },
+        error: () => {
+          console.error('Error loading all bank transfer requests');
+        }
+      });
+    }
   }
 
-  openBankTransferModal() {
+  openTicketModal() {
     this.showBankTransferModal = true;
   }
 
-  closeBankTransferModal() {
+  closeTicketModal() {
     this.showBankTransferModal = false;
-    this.bankTransferForm.reset();
+    this.ticketForm.reset();
   }
 
-  submitBankTransferRequest() {
-    if (this.bankTransferForm.valid) {
-      const bankTransferData: BankTransferRequest = this.bankTransferForm.getRawValue();
+  submitTicketRequest() {
+    if (this.ticketForm.valid) {
+      const bankTransferData: TicketRequest = this.ticketForm.getRawValue();
 
       console.log(bankTransferData);
 
-      this.bankTransferService.createBankTransfer(bankTransferData).subscribe({
+      this.bankTransferService.createTicket(bankTransferData).subscribe({
         next: () => {
           console.log('Bank transfer request created successfully');
-          this.closeBankTransferModal();
+          this.closeTicketModal();
+          this.loadTickets();
         },
         error: (error) => {
           console.error('Error creating bank transfer request:', error);
@@ -86,7 +124,7 @@ export class ListBankTransferRequestsComponent implements OnInit {
   }
 
   onBankTypeChange() {
-    this.bankTransferForm.reset();
+    this.ticketForm.reset();
     this.updateValidatorsByBankType();
   }
 
@@ -95,9 +133,9 @@ export class ListBankTransferRequestsComponent implements OnInit {
   }
 
   private updateValidatorsByBankType() {
-    const bankNameControl = this.bankTransferForm.get('bankName');
-    const accountControl = this.bankTransferForm.get('accountNumber');
-    const transferTypeControl = this.bankTransferForm.get('transferType');
+    const bankNameControl = this.ticketForm.get('bankName');
+    const accountControl = this.ticketForm.get('accountNumber');
+    const transferTypeControl = this.ticketForm.get('transferType');
 
     if (this.bankType === 'asociado') {
       transferTypeControl?.setValue('CC');
@@ -118,4 +156,6 @@ export class ListBankTransferRequestsComponent implements OnInit {
       accountControl?.updateValueAndValidity();
     }
   }
+
+  protected readonly UserRole = UserRole;
 }

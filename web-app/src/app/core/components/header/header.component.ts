@@ -27,4 +27,9 @@ export class HeaderComponent {
       this.isAuthenticated.set(auth);
     });
   }
+
+  logout() {
+    this.userStore.clearUser();
+    this.authService.logout();
+  }
 }

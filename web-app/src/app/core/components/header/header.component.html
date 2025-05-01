@@ -16,7 +16,8 @@
           <a routerLink="/profile">Perfil</a>
         }
         @case ('ADMIN') {
-          <a routerLink="/dashboard">Admin Panel</a>
+          <a routerLink="/bank-transfer">Admin Panel</a>
+          <button (click)="logout()">Cerrar sesión</button>
         }
         @default {
           <span>Rol no reconocido</span>

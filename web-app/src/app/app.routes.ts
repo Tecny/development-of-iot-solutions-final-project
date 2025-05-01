@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import {LoginComponent} from './auth/components/login/login.component';
 import {RegisterComponent} from './auth/components/register/register.component';
 import {authGuard} from './core/guards/auth.guard';
-import {ViewProfileComponent} from './features/profile/pages/view-profile/view-profile.component';
 import {UnauthorizedComponent} from './shared/pages/unauthorized/unauthorized.component';
 import {NotFoundComponent} from './shared/pages/not-found/not-found.component';
 import {UserRole} from './core/models/user.role.enum';
@@ -18,12 +17,9 @@ export const routes: Routes = [
     component: RegisterComponent
   },
   {
-    path: 'unauthorized',
-    component: UnauthorizedComponent
-  },
-  {
     path: 'profile',
-    component: ViewProfileComponent,
+    loadComponent: () => import('./features/profile/pages/view-profile/view-profile.component')
+      .then(m => m.ViewProfileComponent),
     canActivate: [authGuard],
     data: { roles: [UserRole.PLAYER, UserRole.OWNER] },
   },
@@ -76,15 +72,19 @@ export const routes: Routes = [
   },
   {
     path: 'bank-transfer',
-    loadComponent: () => import('./features/bank-transfer/pages/list-bank-transfer-requests/list-bank-transfer-requests.component')
-      .then(m => m.ListBankTransferRequestsComponent),
+    loadComponent: () => import('./features/bank-transfer/pages/list-tickets/list-tickets.component')
+      .then(m => m.ListTicketsComponent),
     canActivate: [authGuard],
-    data: { roles: [UserRole.OWNER] },
+    data: { roles: [UserRole.OWNER, UserRole.ADMIN] },
   },
   {
     path: 'notfound',
     component: NotFoundComponent,
     canActivate: [authGuard]
+  },
+  {
+    path: 'unauthorized',
+    component: UnauthorizedComponent
   },
   { path: '**',
     redirectTo: 'notfound'

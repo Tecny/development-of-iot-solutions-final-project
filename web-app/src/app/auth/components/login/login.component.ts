@@ -46,7 +46,7 @@ export class LoginComponent {
             this.router.navigate(['/sport-spaces']).then();
             break;
           case UserRole.ADMIN:
-            this.router.navigate(['/dashboard']).then();
+            this.router.navigate(['/bank-transfer']).then();
             break;
           default:
             this.router.navigate(['/unauthorized']).then();
