@@ -61,7 +61,7 @@ export const routes: Routes = [
     loadComponent: () => import('./features/room/pages/list-rooms/list-rooms.component')
       .then(m => m.ListRoomsComponent),
     canActivate: [authGuard],
-    data: { roles: [UserRole.PLAYER] },
+    data: { roles: [UserRole.PLAYER, UserRole.OWNER] },
   },
   {
     path: 'rooms/:id',

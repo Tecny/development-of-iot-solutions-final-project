@@ -52,4 +52,8 @@ export class RoomService {
   getRoomsJoined() {
     return this.http.get<Room[]>(`${this.baseUrl}/rooms/my-join-rooms`);
   }
+
+  getRoomsBySportspaces(){
+    return this.http.get<Room[]>(`${this.baseUrl}/rooms/my-rooms-by-spaces`);
+  }
 }

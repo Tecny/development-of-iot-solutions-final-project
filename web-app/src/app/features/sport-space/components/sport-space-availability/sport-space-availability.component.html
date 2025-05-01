@@ -24,10 +24,11 @@
                     [ngClass]="{
                       'availability__slot-box--available': isAvailable(day, time),
                       'availability__slot-box--unavailable': !isAvailable(day, time),
-                      'availability__slot-box--selected': isSelected(day, time)
+                      'availability__slot-box--selected': isSelected(day, time) && currentUser()?.roleType !== 'OWNER'
                     }"
                     [title]="day + ' - ' + time"
-                    (click)="onSlotClick(day, time)">
+                    (click)="onSlotClick(day, time)"
+                    [disabled]="currentUser()?.roleType === 'OWNER'">
                   </button>
                 </td>
               }
@@ -47,15 +48,18 @@
     </aside>
   </div>
 
-  <footer class="availability__footer">
-    <button (click)="confirmHours()" [disabled]="selectedSlots().length === 0">
-      Confirmar horas
-    </button>
 
-    @if (selectedSlots().length === 0) {
-      <small class="availability__error-message">Debes seleccionar al menos un horario antes de confirmar.</small>
-    }
-  </footer>
+  @if (currentUser()?.roleType === 'PLAYER') {
+    <footer class="availability__footer">
+      <button (click)="confirmHours()" [disabled]="selectedSlots().length === 0">
+        Confirmar horas
+      </button>
+
+      @if (selectedSlots().length === 0) {
+        <small class="availability__error-message">Debes seleccionar al menos un horario antes de confirmar.</small>
+      }
+    </footer>
+  }
 </section>
 
 <!-- Modal -->
