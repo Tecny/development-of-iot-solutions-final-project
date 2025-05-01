@@ -8,6 +8,7 @@ import {ModalComponent} from '../../../../shared/components/modal/modal.componen
 import {Router} from '@angular/router';
 import {TimeUtil} from '../../../../shared/utils/time.util';
 import {ReservationRequest} from '../../../reservation/models/reservation.interface';
+import {UserStoreService} from '../../../../core/services/user-store.service';
 
 @Component({
   selector: 'app-sport-space-availability',
@@ -25,6 +26,7 @@ export class SportSpaceAvailabilityComponent implements OnInit {
 
   protected readonly TimeUtil = TimeUtil;
 
+  private userStore = inject(UserStoreService);
   private sportSpaceService = inject(SportSpaceService);
   private reservationService = inject(ReservationService);
   private router = inject(Router);
@@ -37,6 +39,7 @@ export class SportSpaceAvailabilityComponent implements OnInit {
   selectedStartTime: string = '';
   selectedEndTime: string = '';
 
+  currentUser = this.userStore.currentUser;
   reservationType = signal<string>('');
   selectedSlots = signal<{ gameDay: string; startTime: string; endTime: string }[]>([]);
 
@@ -101,6 +104,12 @@ export class SportSpaceAvailabilityComponent implements OnInit {
   }
 
   onSlotClick(gameDay: string, time: string): void {
+
+    if(this.currentUser()?.roleType === 'OWNER') {
+      console.warn('No puedes seleccionar horarios.');
+      return;
+    }
+
     if (!this.isAvailable(gameDay, time)) return;
 
     const currentSlots = this.selectedSlots();

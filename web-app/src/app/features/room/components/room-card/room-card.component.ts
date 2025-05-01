@@ -6,6 +6,7 @@ import {RoomService} from '../../services/room.service';
 import {Router, RouterLink} from '@angular/router';
 import {ReservationService} from '../../../reservation/services/reservation.service';
 import {QrViewerComponent} from '../../../../shared/components/qr-viewer/qr-viewer.component';
+import {UserStoreService} from '../../../../core/services/user-store.service';
 
 @Component({
   selector: 'app-room-card',
@@ -36,15 +37,17 @@ import {QrViewerComponent} from '../../../../shared/components/qr-viewer/qr-view
       <div class="room-card__actions">
         <div>
           @defer (on timer(200ms)) {
-            @if (isMember()) {
-              <button class="room-card__view" (click)="viewRoom()">Ir a la sala</button>
-              @if (isRoomCreator()) {
-                <button class="room-card__delete" (click)="deleteRoom()">Borrar sala</button>
-                <button (click)="showQr = true">Ver QR</button>
+            @if (currentUser()?.roleType === 'PLAYER') {
+              @if (isMember()) {
+                <button class="room-card__view" (click)="viewRoom()">Ir a la sala</button>
+                @if (isRoomCreator()) {
+                  <button class="room-card__delete" (click)="deleteRoom()">Borrar sala</button>
+                  <button (click)="showQr = true">Ver QR</button>
+                }
+              } @else {
+                <button class="room-card__join" (click)="joinRoom()">Unirse</button>
+                <div class="room-card__credits">({{ getAmount() }} créditos)</div>
               }
-            } @else {
-              <button class="room-card__join" (click)="joinRoom()">Unirse</button>
-              <div class="room-card__credits">({{ getAmount() }} créditos)</div>
             }
           }
         </div>
@@ -52,7 +55,7 @@ import {QrViewerComponent} from '../../../../shared/components/qr-viewer/qr-view
     </div>
 
     @if (showQr) {
-      <app-qr-viewer [reservationId]="room.reservation.id" (close)="showQr = false" />
+      <app-qr-viewer [reservationId]="room.reservation.id" (close)="showQr = false"/>
     }
   `,
   styleUrl: './room-card.component.scss',
@@ -63,10 +66,12 @@ export class RoomCardComponent implements OnInit {
 
   protected readonly TimeUtil = TimeUtil;
 
+  private userStore = inject(UserStoreService);
   private router = inject(Router);
   private roomService = inject(RoomService);
   private reservationService = inject(ReservationService);
 
+  currentUser = this.userStore.currentUser;
   isMember = signal<boolean | null>(null);
   isRoomCreator = signal<boolean | null>(null);
 
