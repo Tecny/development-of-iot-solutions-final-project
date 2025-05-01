@@ -22,8 +22,7 @@
       @if (registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)) {
         @if (registerForm.get('email')?.errors?.['required']) {
           <small>El correo electrónico es obligatorio</small>
-        }
-        @if (registerForm.get('email')?.errors?.['invalidEmail']) {
+        } @else if (registerForm.get('email')?.errors?.['invalidEmail']) {
           <small>Formato de correo electrónico no válido</small>
         }
       }

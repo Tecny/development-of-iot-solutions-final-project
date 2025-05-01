@@ -24,11 +24,17 @@ export class LoginComponent {
   private userStore = inject(UserStoreService);
   private fb = inject(NonNullableFormBuilder);
 
+  showEmailInputForgotPassword = false;
+
   errorMessage = signal<boolean | null>(null);
 
   loginForm = this.fb.group({
-    email: ['', [Validators.required, customEmailValidator]],
+    email: ['', [Validators.required, customEmailValidator()]],
     password: ['', [Validators.required, Validators.minLength(16)]],
+  });
+
+  recoverPasswordForm = this.fb.group({
+    email: ['', [Validators.required, customEmailValidator()]],
   });
 
   login() {
@@ -54,5 +60,25 @@ export class LoginComponent {
       },
       error: () => this.errorMessage.set(true)
     });
+  }
+
+  toggleForgotPassword() {
+    this.showEmailInputForgotPassword = !this.showEmailInputForgotPassword;
+  }
+
+  forgotPassword(email: string) {
+    if (this.recoverPasswordForm.invalid) {
+      return;
+    }
+    this.authService.forgotPassword(email).subscribe({
+      next: () => {
+        this.showEmailInputForgotPassword = false;
+        this.recoverPasswordForm.reset();
+        console.log('Password reset email sent');
+      },
+      error: (error) => {
+        console.error('Error sending password reset email', error);
+      }
+    })
   }
 }

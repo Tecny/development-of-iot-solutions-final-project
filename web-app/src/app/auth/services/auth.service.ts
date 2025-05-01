@@ -80,4 +80,11 @@ export class AuthService {
     });
   }
 
+  forgotPassword(email: string): Observable<any> {
+    return this.http.post(`${this.baseUrl}/recover-password/forgot-password`, { email });
+  }
+
+  resetPassword(token: string, newPassword: string): Observable<any> {
+    return this.http.post(`${this.baseUrl}/recover-password/reset-password`, { token, newPassword });
+  }
 }
