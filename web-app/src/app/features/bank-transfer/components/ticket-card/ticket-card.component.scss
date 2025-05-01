@@ -1,4 +1,4 @@
-.bank-transfer-card {
+.ticket-card {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 16px;
@@ -20,6 +20,7 @@
     color: #333;
   }
 
+  &__name,
   &__bank,
   &__type,
   &__account,

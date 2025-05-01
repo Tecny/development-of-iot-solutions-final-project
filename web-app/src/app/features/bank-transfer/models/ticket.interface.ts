@@ -1,11 +1,11 @@
-export interface BankTransferRequest {
+export interface TicketRequest {
   fullName: string;
   bankName: string;
   transferType: string;
   accountNumber: string;
 }
 
-export interface BankTransfer {
+export interface Ticket {
   id: string;
   userId: string;
   fullName: string;
