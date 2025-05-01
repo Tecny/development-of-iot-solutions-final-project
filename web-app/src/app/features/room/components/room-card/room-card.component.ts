@@ -5,12 +5,14 @@ import {TimeUtil} from '../../../../shared/utils/time.util';
 import {RoomService} from '../../services/room.service';
 import {Router, RouterLink} from '@angular/router';
 import {ReservationService} from '../../../reservation/services/reservation.service';
+import {QrViewerComponent} from '../../../../shared/components/qr-viewer/qr-viewer.component';
 
 @Component({
   selector: 'app-room-card',
   imports: [
     TitleCasePipe,
-    RouterLink
+    RouterLink,
+    QrViewerComponent
   ],
   template: `
     <div class="room-card">
@@ -35,9 +37,10 @@ import {ReservationService} from '../../../reservation/services/reservation.serv
         <div>
           @defer (on timer(200ms)) {
             @if (isMember()) {
-              <button class="room-card__view" (click)="viewRoom()">Ver sala</button>
+              <button class="room-card__view" (click)="viewRoom()">Ir a la sala</button>
               @if (isRoomCreator()) {
                 <button class="room-card__delete" (click)="deleteRoom()">Borrar sala</button>
+                <button (click)="showQr = true">Ver QR</button>
               }
             } @else {
               <button class="room-card__join" (click)="joinRoom()">Unirse</button>
@@ -47,6 +50,10 @@ import {ReservationService} from '../../../reservation/services/reservation.serv
         </div>
       </div>
     </div>
+
+    @if (showQr) {
+      <app-qr-viewer [reservationId]="room.reservation.id" (close)="showQr = false" />
+    }
   `,
   styleUrl: './room-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -62,6 +69,8 @@ export class RoomCardComponent implements OnInit {
 
   isMember = signal<boolean | null>(null);
   isRoomCreator = signal<boolean | null>(null);
+
+  showQr = false;
 
   ngOnInit(): void {
     if (this.room?.id) {

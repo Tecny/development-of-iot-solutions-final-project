@@ -3,12 +3,14 @@ import {Reservation} from '../../models/reservation.interface';
 import {TitleCasePipe} from '@angular/common';
 import {RouterLink} from '@angular/router';
 import {TimeUtil} from '../../../../shared/utils/time.util';
+import {QrViewerComponent} from "../../../../shared/components/qr-viewer/qr-viewer.component";
 
 @Component({
   selector: 'app-reservation-card',
   imports: [
     TitleCasePipe,
-    RouterLink
+    RouterLink,
+    QrViewerComponent
   ],
   template: `
     <div class="reservation-card">
@@ -37,7 +39,12 @@ import {TimeUtil} from '../../../../shared/utils/time.util';
           <button [routerLink]="['/rooms']">Ir a la sala</button>
         </div>
       }
+      <button (click)="showQr = true">Ver QR</button>
     </div>
+
+    @if (showQr) {
+      <app-qr-viewer [reservationId]="reservation.id" (close)="showQr = false" />
+    }
   `,
   styleUrl: './reservation-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -46,6 +53,7 @@ export class ReservationCardComponent implements OnChanges {
   @Input() reservation!: Reservation;
 
   imageUrl: string = '';
+  showQr = false;
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['reservation'] && this.reservation.sportSpaces?.image) {
