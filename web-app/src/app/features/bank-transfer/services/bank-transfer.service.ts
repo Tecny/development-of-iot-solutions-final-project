@@ -19,6 +19,14 @@ export class BankTransferService {
   }
 
   getTicketsByOwner() {
-    return this.http.get<Ticket[]>(`${this.baseUrl}/bank-transfer/user`);
+    return this.http.get<Ticket[]>(`${this.baseUrl}/bank-transfer/owner`);
+  }
+
+  confirmTicket(id: number) {
+    return this.http.patch<void>(`${this.baseUrl}/bank-transfer/confirm/${id}`, {});
+  }
+
+  deferTicket(id: number) {
+    return this.http.patch<void>(`${this.baseUrl}/bank-transfer/defer/${id}`, {});
   }
 }

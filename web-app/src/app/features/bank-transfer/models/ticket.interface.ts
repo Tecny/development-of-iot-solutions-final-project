@@ -6,8 +6,8 @@ export interface TicketRequest {
 }
 
 export interface Ticket {
-  id: string;
-  userId: string;
+  id: number;
+  userId: number;
   fullName: string;
   bankName: string;
   transferType: string;

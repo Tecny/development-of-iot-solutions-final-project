@@ -2,7 +2,10 @@
 
 @defer (on timer(200ms)) {
   @if (userRole === UserRole.OWNER) {
-    <button (click)="openTicketModal()">Crear ticket</button>
+      <button (click)="openTicketModal()" [disabled]="!haveCredits()">Crear ticket</button>
+      @if (!haveCredits()) {
+          <small class="no-credits-message">No tienes créditos disponibles para realizar un retiro.</small>
+      }
   }
 }
 
@@ -10,7 +13,9 @@
   @if (tickets(); as tcks) {
     <div class="cards-grid">
       @for (ticket of tcks; track ticket.id) {
-        <app-ticket-card [ticket]="ticket" />
+        <app-ticket-card [ticket]="ticket"
+                         (ticketConfirmed)="loadTickets()"
+                         (ticketDeferred)="loadTickets()"/>
       } @empty {
         <p>No tienes tickets de retiro solicitados</p>
       }
@@ -25,7 +30,7 @@
 }
 
 <!-- Modal -->
-@if (showBankTransferModal) {
+@if (showTicketModal) {
   <app-modal (closeModal)="closeTicketModal()">
     <ng-container modal-header>Ticket de retiro de crédito</ng-container>
 

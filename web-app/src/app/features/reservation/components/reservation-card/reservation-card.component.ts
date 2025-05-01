@@ -31,13 +31,13 @@ import {TimeUtil} from '../../../../shared/utils/time.util';
         <p class="reservation-card__time">Hora: {{ reservation.startTime }} - {{ reservation.endTime }}</p>
         <p class="reservation-card__status">Estado: {{ reservation.status | titlecase }}</p>
       </div>
-    </div>
 
-    @if (reservation.type === 'COMUNIDAD') {
-      <div>
-        <button [routerLink]="['/rooms']">Ir a la sala</button>
-      </div>
-    }
+      @if (reservation.type === 'COMUNIDAD') {
+        <div>
+          <button [routerLink]="['/rooms']">Ir a la sala</button>
+        </div>
+      }
+    </div>
   `,
   styleUrl: './reservation-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -22,17 +22,18 @@ import {TicketCardComponent} from '../../components/ticket-card/ticket-card.comp
 })
 export class ListTicketsComponent implements OnInit {
   private bankTransferService = inject(BankTransferService);
-  private userStoreService = inject(UserStoreService);
+  private userStore = inject(UserStoreService);
   private fb = inject(NonNullableFormBuilder);
 
+  currentUser = this.userStore.currentUser;
   tickets = signal<Ticket[] | null>(null);
-  userRole = this.userStoreService.getRoleFromToken();
+  userRole = this.userStore.getRoleFromToken();
 
   bankType: 'asociado' | 'otro' = 'asociado';
   associatedBanks = ['BCP', 'BBVA', 'Interbank'];
 
   ticketForm!: FormGroup;
-  showBankTransferModal = false;
+  showTicketModal = false;
 
   ngOnInit() {
     this.initForm();
@@ -95,12 +96,16 @@ export class ListTicketsComponent implements OnInit {
     }
   }
 
+  haveCredits() {
+    return this.currentUser()?.credits !== 0;
+  }
+
   openTicketModal() {
-    this.showBankTransferModal = true;
+    this.showTicketModal = true;
   }
 
   closeTicketModal() {
-    this.showBankTransferModal = false;
+    this.showTicketModal = false;
     this.ticketForm.reset();
   }
 
