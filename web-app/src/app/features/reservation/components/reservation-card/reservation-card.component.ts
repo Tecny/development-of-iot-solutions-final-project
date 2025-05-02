@@ -2,7 +2,7 @@ import {ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges} fro
 import {Reservation} from '../../models/reservation.interface';
 import {TitleCasePipe} from '@angular/common';
 import {RouterLink} from '@angular/router';
-import {TimeUtil} from '../../../../shared/utils/time.util';
+import {PriceUtil, TimeUtil} from '../../../../shared/utils/time.util';
 import {QrViewerComponent} from "../../../../shared/components/qr-viewer/qr-viewer.component";
 
 @Component({
@@ -70,7 +70,7 @@ export class ReservationCardComponent implements OnChanges {
 
   getPrice(): number {
     const hours = TimeUtil.getHoursDifference(this.reservation.startTime, this.reservation.endTime);
-    return TimeUtil.calculatePrice(
+    return PriceUtil.calculatePrice(
       this.reservation.type,
       this.reservation.sportSpaces.price,
       this.reservation.sportSpaces.amount,

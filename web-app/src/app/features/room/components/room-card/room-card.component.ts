@@ -1,7 +1,7 @@
 import {ChangeDetectionStrategy, Component, inject, Input, OnInit, signal} from '@angular/core';
 import {Room} from '../../models/room.interface';
 import {TitleCasePipe} from '@angular/common';
-import {TimeUtil} from '../../../../shared/utils/time.util';
+import {PriceUtil, TimeUtil} from '../../../../shared/utils/time.util';
 import {RoomService} from '../../services/room.service';
 import {Router, RouterLink} from '@angular/router';
 import {ReservationService} from '../../../reservation/services/reservation.service';
@@ -95,7 +95,7 @@ export class RoomCardComponent implements OnInit {
 
   getAmount(): number {
     const hours = TimeUtil.getHoursDifference(this.room.reservation.startTime, this.room.reservation.endTime);
-    return TimeUtil.calculatePrice(
+    return PriceUtil.calculatePrice(
       'COMMUNITY',
       this.room.reservation.sportSpace.price,
       this.room.reservation.sportSpace.amount,

@@ -6,14 +6,6 @@ export class TimeUtil {
     return differenceInMilliseconds / (1000 * 60 * 60);
   }
 
-  static calculatePrice(type: string, price: number, amount: number, hours: number): number {
-    if (type === 'PERSONAL') {
-      return (price * hours) / 2;
-    } else {
-      return amount * hours;
-    }
-  }
-
   static formatDate(dateStr: string): string {
     const date = new Date(dateStr + 'T00:00:00');
     const formatter = new Intl.DateTimeFormat('es-PE', {
@@ -33,5 +25,15 @@ export class TimeUtil {
 
   static capitalize(text: string): string {
     return text.charAt(0).toUpperCase() + text.slice(1);
+  }
+}
+
+export class PriceUtil {
+  static calculatePrice(type: string, price: number, amount: number, hours: number): number {
+    if (type === 'PERSONAL') {
+      return (price * hours) / 2;
+    } else {
+      return amount * hours;
+    }
   }
 }

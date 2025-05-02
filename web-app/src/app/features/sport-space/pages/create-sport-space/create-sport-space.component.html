@@ -79,7 +79,7 @@
       <select formControlName="district" required>
         <option value="" disabled selected>Selecciona un distrito</option>
         @for (district of districts; track district) {
-          <option [value]="district">{{ district.replaceAll('_', ' ') }}</option>
+          <option [value]="district.value">{{ district.label }}</option>
         }
       </select>
 
