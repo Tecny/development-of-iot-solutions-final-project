@@ -1,3 +1,14 @@
+export const SPORTS = [
+  'FUTBOL',
+  'BILLAR'
+].map(sport => ({
+  label: sport
+    .replace(/_/g, ' ')
+    .toLowerCase()
+    .replace(/^\w/, c => c.toUpperCase()),
+  value: sport
+}));
+
 export const DISTRICTS = [
   'San_Miguel',
   'San_Borja',
@@ -12,7 +23,10 @@ export const DISTRICTS = [
   'Lince',
   'Cercado_de_Lima',
   'Chorrillos'
-];
+].map(district => ({
+  label: district.replace(/_/g, ' '),
+  value: district
+}));
 
 export const GAMEMODE_OPTIONS = [
   { label: 'Fútbol 5', value: 'FUTBOL_5', sportId: 1 },
@@ -29,11 +43,3 @@ export const gamemodesMap: Record<number, string[]> = GAMEMODE_OPTIONS.reduce((m
   map[option.sportId].push(option.value);
   return map;
 }, {} as Record<number, string[]>);
-
-export const gamemodeMaxPlayersMap: Record<string, number> = {
-  FUTBOL_5: 10,
-  FUTBOL_7: 14,
-  FUTBOL_8: 16,
-  FUTBOL_11: 22,
-  BILLAR_3: 3
-}

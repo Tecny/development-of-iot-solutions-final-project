@@ -1,0 +1,34 @@
+<div class="filters-container">@for (filter of config; track filter.field) {
+  <div class="filter-item">
+    <label [for]="filter.field">{{ filter.label }}</label>
+
+    @if (filter.type === 'select') {
+      <select [id]="filter.field" [(ngModel)]="filters[filter.field]" (change)="emitChanges()">
+        @for (option of filter.options; track option.value) {
+          <option [value]="option.value">{{ option.label }}</option>
+        }
+      </select>
+    }
+
+    @if (filter.type === 'date') {
+      <input type="date" [id]="filter.field" [(ngModel)]="filters[filter.field]" (change)="emitChanges()">
+    }
+
+    @if (filter.type === 'time') {
+      <select [id]="filter.field" [(ngModel)]="filters[filter.field]" (change)="onTimeChange(filter.field)">
+        @for (hour of timeOptions; track hour) {
+          <option [value]="hour">{{ hour }}</option>
+        }
+      </select>
+    }
+
+    @if (filter.type === 'number') {
+      <input type="number" [id]="filter.field" [(ngModel)]="filters[filter.field]" (change)="emitChanges()" placeholder="0" min="1">
+    }
+  </div>
+}
+
+  @if (Object.keys(filters).length > 0) {
+    <button (click)="clearFilters()">Limpiar filtros</button>
+  }
+</div>

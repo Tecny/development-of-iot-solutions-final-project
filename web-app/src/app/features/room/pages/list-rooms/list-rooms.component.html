@@ -6,6 +6,18 @@
   }
 </h1>
 
+<app-filter
+  [config]="[
+    { field: 'sport', type: 'select', label: 'Deporte', options: SPORTS },
+    { field: 'district', type: 'select', label: 'Distrito', options: DISTRICTS },
+    { field: 'gameday', type: 'date', label: 'Fecha de juego' },
+    { field: 'startTime', type: 'time', label: 'Hora inicio' },
+    { field: 'endTime', type: 'time', label: 'Hora fin' },
+    { field: 'maxAmount', type: 'number', label: 'Adelanto máximo' }
+  ]"
+  (filtersChanged)="onFiltersChanged($event)"
+/>
+
 @defer (prefetch on viewport){
   @if (rooms(); as room) {
     <div class="cards-grid">
