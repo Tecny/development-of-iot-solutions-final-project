@@ -5,12 +5,15 @@ import {SportSpace} from '../../models/sport-space.interface';
 import {UserStoreService} from '../../../../core/services/user-store.service';
 import {UserRole} from '../../../../core/models/user.role.enum';
 import {RouterLink} from '@angular/router';
+import {FiltersComponent} from '../../../../shared/components/filter/filter.component';
+import {DISTRICTS, SPORTS} from '../../../../shared/models/sport-space.constants';
 
 @Component({
   selector: 'app-list-sport-spaces',
   imports: [
     SportSpaceCardComponent,
-    RouterLink
+    RouterLink,
+    FiltersComponent
   ],
   templateUrl: './list-sport-spaces.component.html',
   styleUrl: './list-sport-spaces.component.scss',
@@ -20,41 +23,55 @@ export class ListSportSpacesComponent implements OnInit {
   private userStoreService = inject(UserStoreService);
   private sportSpaceService = inject(SportSpaceService);
 
-  sportSpaces = signal<SportSpace[] | null>(null);
   userRole = this.userStoreService.getRoleFromToken();
+
+  allSpaces: SportSpace[] = [];
+  sportSpaces = signal<SportSpace[] | null>(null);
   showAddSportSpaceButton = false;
+
+  filters = {
+    sport: null,
+    district: null,
+    price: null,
+    openTime: null,
+    closeTime: null,
+  };
 
   ngOnInit() {
     this.loadSportSpaces();
   }
 
   loadSportSpaces() {
-    if (this.userRole === UserRole.OWNER) {
-      this.canAddSportSpace();
-      this.sportSpaceService.getMySportSpaces().subscribe({
-        next: (spaces) => {
-          console.log(spaces);
-          this.sportSpaces.set(spaces);
-        },
-        error: (err) => {
-          if (err.status === 404) {
-            this.sportSpaces.set([]);
-          } else {
-            console.error('Error loading user\'s sport spaces');
-          }
+    const request$ = this.userRole === UserRole.OWNER
+      ? this.sportSpaceService.getMySportSpaces()
+      : this.sportSpaceService.getSportSpaces();
+
+    request$.subscribe({
+      next: (spaces) => {
+        this.allSpaces = spaces;
+        this.applyFilters();
+
+        if (this.userRole === UserRole.OWNER) {
+          this.canAddSportSpace();
+        } else {
+          this.showAddSportSpaceButton = false;
         }
-      });
-    } else {
-      this.showAddSportSpaceButton = false;
-      this.sportSpaceService.getSportSpaces().subscribe({
-        next: (spaces) => {
-          this.sportSpaces.set(spaces);
-        },
-        error: () => {
-          console.error('Error loading all sport spaces');
+      },
+      error: (err) => {
+        if (err.status === 404) {
+          this.allSpaces = [];
+          this.sportSpaces.set([]);
+        } else {
+          console.error('Error loading sport spaces');
         }
-      });
-    }
+
+        if (this.userRole === UserRole.OWNER) {
+          this.canAddSportSpace();
+        } else {
+          this.showAddSportSpaceButton = false;
+        }
+      }
+    });
   }
 
   canAddSportSpace(): void {
@@ -68,4 +85,28 @@ export class ListSportSpacesComponent implements OnInit {
       }
     });
   }
+
+  onFiltersChanged(filters: any) {
+    this.filters = filters;
+    this.applyFilters();
+  }
+
+  applyFilters() {
+    const filtered = this.allSpaces.filter(space => {
+      const { sport, district, price, openTime, closeTime } = this.filters;
+
+      return (
+        (!sport || space.sportType === sport) &&
+        (!district || space.district === district) &&
+        (!price || space.price <= price) &&
+        (!openTime || String(space.openTime) <= String(openTime)) &&
+        (!closeTime || String(space.closeTime) <= String(closeTime))
+      );
+    });
+
+    this.sportSpaces.set(filtered);
+  }
+
+  protected readonly SPORTS = SPORTS;
+  protected readonly DISTRICTS = DISTRICTS;
 }
