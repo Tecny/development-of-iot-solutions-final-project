@@ -1524,7 +1524,7 @@ El "Context Mapping" representa cómo los diferentes módulos interactúan entre
 
 #### 4.1.6.1. Software Architecture System Landscape Diagram
 
-Este diagrama muestra el panorama general del sistema, destacando las principales entidades involucradas, como los Usuarios, Administrador, y las interacciones del sistema de gestión empresarial con componentes externos como la API de Pago (PayPal API), la API de correos Gmail API y la API de mapas (Google Maps API). Representa las conexiones entre estos actores y cómo interactúan con el sistema para proporcionar acceso a funciones clave como pagos, envío de correos y visualización de espacios deportivos en el mapa a tiempo real.
+Este diagrama muestra el panorama general del sistema, destacando las principales entidades involucradas, como los Usuarios, Administrador, y las interacciones del sistema de gestión empresarial con componentes externos como la API de Pago (PayPal API) y la API de correos Gmail API. Representa las conexiones entre estos actores y cómo interactúan con el sistema para proporcionar acceso a funciones clave como pagos, envío de correos y visualización de espacios deportivos en el mapa a tiempo real.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-diagram.png" alt="UPC">
@@ -1532,7 +1532,7 @@ Este diagrama muestra el panorama general del sistema, destacando las principale
 
 #### 4.1.6.2. Software Architecture Context Level Diagrams
 
-Este diagrama desglosa el contexto a un nivel más detallado, mostrando las interacciones entre los usuarios y el sistema en términos de roles y permisos. Aquí, tanto los Usuarios como los Administradores tienen acceso al Sistema de Gestión Empresarial, pero interactúan de manera diferente, con los usuarios accediendo a características específicas como pagos a través de la API de PayPal, recuperación de contraseña a tráves de la API de Gmail y visualización de espacios deportivos en el mapa a tiempo real a tráves de la API de Google Maps. 
+Este diagrama desglosa el contexto a un nivel más detallado, mostrando las interacciones entre los usuarios y el sistema en términos de roles y permisos. Aquí, tanto los Usuarios como los Administradores tienen acceso al Sistema de Gestión Empresarial, pero interactúan de manera diferente, con los usuarios accediendo a características específicas como pagos a través de la API de PayPal y recuperación de contraseña a tráves de la API de Gmail. 
 
 <p align="center">
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-diagram.png" alt="UPC">
