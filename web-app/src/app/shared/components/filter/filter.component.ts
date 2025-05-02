@@ -26,31 +26,10 @@ export class FiltersComponent {
     this.emitChanges();
   }
 
-  onTimeChange(field: string) {
-    const startTime = this.filters['startTime'];
-    const endTime = this.filters['endTime'];
-
-    if (field === 'startTime' && endTime && startTime >= endTime) {
-      const [hour] = startTime.split(':').map(Number);
-      const nextHour = Math.min(hour + 1, 23);
-      this.filters['endTime'] = `${nextHour.toString().padStart(2, '0')}:00`;
-    }
-
-    if (field === 'endTime' && startTime && endTime <= startTime) {
-      const [hour] = startTime.split(':').map(Number);
-      const nextHour = Math.min(hour + 1, 23);
-      this.filters['endTime'] = `${nextHour.toString().padStart(2, '0')}:00`;
-    }
-
-    this.emitChanges();
-  }
-
-
   timeOptions: string[] = Array.from({ length: 16 }, (_, i) => {
     const hour = (i + 8).toString().padStart(2, '0');
     return `${hour}:00`;
   });
-
 
   protected readonly Object = Object;
 }

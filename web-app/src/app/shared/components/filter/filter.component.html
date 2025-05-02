@@ -15,7 +15,7 @@
     }
 
     @if (filter.type === 'time') {
-      <select [id]="filter.field" [(ngModel)]="filters[filter.field]" (change)="onTimeChange(filter.field)">
+      <select [id]="filter.field" [(ngModel)]="filters[filter.field]" (change)="emitChanges()">
         @for (hour of timeOptions; track hour) {
           <option [value]="hour">{{ hour }}</option>
         }
