@@ -85,7 +85,7 @@ export class ListRoomsComponent implements OnInit {
 
       return (
         (!sport || room.reservation.sportSpace.sportType === sport) &&
-        (!district || room.reservation.sportSpace.district === district) &&
+        (!district || room.reservation.sportSpace.districtTypes === district) &&
         (!gameday || room.reservation.gameDay === gameday) &&
         (!startTime || String(room.reservation.startTime) >= String(startTime)) &&
         (!endTime || String(room.reservation.endTime) <= String(endTime)) &&

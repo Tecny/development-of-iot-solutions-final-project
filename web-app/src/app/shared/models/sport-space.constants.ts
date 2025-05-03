@@ -47,3 +47,9 @@ export const gamemodeIdToLabelMap = Object.fromEntries(
   GAMEMODE_OPTIONS.map(g => [g.id, g.label])
 );
 
+export const getSportIdByValue = (value: string): number | undefined =>
+  SPORTS.find(s => s.value === value)?.id;
+
+export const getDistrictIdByValue = (value: string): number | undefined =>
+  DISTRICTS.find(d => d.value === value)?.id;
+

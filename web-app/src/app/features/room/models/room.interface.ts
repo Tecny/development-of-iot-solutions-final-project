@@ -6,7 +6,7 @@ interface SportSpace {
   gamemode: string;
   price: number;
   amount: number;
-  district: string;
+  districtTypes: string;
   address: string;
 }
 

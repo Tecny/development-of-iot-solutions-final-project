@@ -3,7 +3,7 @@ import {inject} from '@angular/core';
 import {RoomService} from '../../features/room/services/room.service';
 
 export const roomGuard: CanActivateFn = (route) => {
-  const roomId = route.params['id'];
+  const roomId = Number(route.params['id']);
   const roomService = inject(RoomService);
   const router = inject(Router);
 

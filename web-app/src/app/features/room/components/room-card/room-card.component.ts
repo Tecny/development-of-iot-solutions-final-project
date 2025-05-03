@@ -29,7 +29,7 @@ import {UserStoreService} from '../../../../core/services/user-store.service';
         <p>Fecha: {{ TimeUtil.formatDate(room.reservation.gameDay) }}, {{ room.reservation.startTime }}
           -{{ room.reservation.endTime }}</p>
         <p>Lugar: {{ room.reservation.sportSpace.address }}
-          , {{ room.reservation.sportSpace.district.replaceAll('_', ' ') }}</p>
+          , {{ room.reservation.sportSpace.districtTypes.replaceAll('_', ' ') }}</p>
         Espacio deportivo: <a
         [routerLink]="['/sport-spaces', room.reservation.sportSpace.id]"> {{ room.reservation.sportSpace.name }}</a>
       </div>

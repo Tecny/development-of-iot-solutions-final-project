@@ -68,25 +68,6 @@ export class RoomChatComponent implements OnInit, OnDestroy {
 
     this.chatService.sendMessage(this.room.id, content).subscribe({
       next: () => {
-        const currentUser = this.currentUser();
-        if (currentUser) {
-          const newMessage: Message = {
-            content,
-            user: currentUser,
-            createdAt: new Date().toISOString(),
-            roomId: this.room.id
-          };
-
-          this.messages.update(current => {
-            const updated = [...current, newMessage];
-            return updated.sort((a, b) =>
-              new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime()
-            );
-          });
-
-          this.scrollToBottom();
-        }
-
         this.newMessageContent.set('');
       },
       error: err => {
