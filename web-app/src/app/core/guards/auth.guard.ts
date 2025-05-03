@@ -10,26 +10,29 @@ export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
   const userStore = inject(UserStoreService);
   const router = inject(Router);
 
+  authService.checkAuth();
+
   return authService.isAuthenticated().pipe(
     take(1),
     map((isAuthenticated) => {
       if (!isAuthenticated) {
-        router.navigate(['/login']).then();
+        router.navigateByUrl('/login').then();
         return false;
       }
 
       const requiredRoles: UserRole[] = route.data['roles'];
       const userRole = userStore.getRoleFromToken();
 
-      if (requiredRoles && !requiredRoles.includes(<UserRole>userRole)) {
-        router.navigate(['/unauthorized']).then();
+      if (requiredRoles && !requiredRoles.includes(userRole!)) {
+        router.navigateByUrl('/unauthorized').then();
         return false;
       }
 
       return true;
     }),
-    catchError(() => {
-      router.navigate(['/login']).then();
+    catchError((err) => {
+      console.error('AuthGuard Error:', err);
+      router.navigateByUrl('/login').then();
       return of(false);
     })
   );

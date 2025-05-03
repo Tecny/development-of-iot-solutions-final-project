@@ -15,8 +15,7 @@ export class AuthService {
   private http = inject(HttpClient);
   private router = inject(Router);
   private userStore = inject(UserStoreService);
-  private isLoggedIn = new BehaviorSubject<boolean>(false);
-  private isChecked = false;
+  private isLoggedIn = new BehaviorSubject<boolean>(false)
   private baseUrl = environment.baseUrl;
 
   constructor() {
@@ -43,24 +42,26 @@ export class AuthService {
   }
 
   checkAuth(): void {
-    if (!this.isChecked) {
-      this.isChecked = true;
-      const token = this.userStore.getCookie('tokenCookie');
-      const expired = this.userStore.isTokenExpired();
+    const token = this.userStore.getCookie('tokenCookie');
+    const expired = this.userStore.isTokenExpired();
 
-      const isValid = !!token && !expired;
-      this.isLoggedIn.next(isValid);
+    const isValid = !!token && !expired;
+    this.isLoggedIn.next(isValid);
 
-      if (isValid) {
-        this.http.get<UserProfile>(`${this.baseUrl}/users/me`).subscribe({
-          next: (user) => this.userStore.setUser(user),
-          error: (err) => {
-            console.error('Error al cargar usuario en checkAuth()', err);
-          }
-        });
-      }
+    if (isValid) {
+      this.http.get<UserProfile>(`${this.baseUrl}/users/me`).subscribe({
+        next: (user) => this.userStore.setUser(user),
+        error: (err) => {
+          console.error('Error al cargar usuario en checkAuth()', err);
+          this.isLoggedIn.next(false); // fallback
+        }
+      });
+    } else {
+      this.isLoggedIn.next(false);
+      this.userStore.clearUser();
     }
   }
+
 
   isAuthenticated(): Observable<boolean> {
     return this.isLoggedIn.asObservable();
