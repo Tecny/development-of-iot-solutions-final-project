@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, computed, inject, signal} from '@angular/core';
+import {Component, computed, inject, signal} from '@angular/core';
 import {UserStoreService} from '../../services/user-store.service';
 import {AuthService} from '../../../auth/services/auth.service';
 import {RouterLink} from '@angular/router';
@@ -9,8 +9,7 @@ import {RouterLink} from '@angular/router';
     RouterLink
   ],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
 

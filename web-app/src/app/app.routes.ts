@@ -7,6 +7,7 @@ import {NotFoundComponent} from './shared/pages/not-found/not-found.component';
 import {UserRole} from './core/models/user.role.enum';
 import {roomGuard} from './core/guards/room.guard';
 import {ResetPasswordComponent} from './auth/pages/reset-password/reset-password.component';
+import {RedirectComponent} from './core/components/redirect/redirect.component';
 
 export const routes: Routes = [
   {
@@ -90,6 +91,10 @@ export const routes: Routes = [
   {
     path: 'unauthorized',
     component: UnauthorizedComponent
+  },
+  {
+    path: '',
+    component: RedirectComponent
   },
   { path: '**',
     redirectTo: 'notfound'

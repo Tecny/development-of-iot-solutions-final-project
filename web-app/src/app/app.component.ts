@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, inject} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {HeaderComponent} from './core/components/header/header.component';
+import {AuthService} from './auth/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,11 @@ import {HeaderComponent} from './core/components/header/header.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'dtaquito-2025';
+  title = 'dtaquito';
+
+  private authService = inject(AuthService);
+
+  constructor() {
+    this.authService.checkAuth();
+  }
 }
