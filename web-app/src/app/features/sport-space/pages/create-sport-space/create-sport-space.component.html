@@ -29,10 +29,11 @@
 
 
     <div>
-      <label for="sport">Deporte:</label>
-      <select id="sport" formControlName="sportId" required>
-        <option [value]="1">Fútbol</option>
-        <option [value]="2">Billar</option>
+      <label>Deporte:</label>
+      <select formControlName="sportId" required>
+        @for (sport of SPORTS; track sport.id) {
+          <option [value]="sport.id">{{ sport.label }}</option>
+        }
       </select>
 
       @if (createSportSpaceForm.get('sportId')?.invalid && (createSportSpaceForm.get('sportId')?.dirty || createSportSpaceForm.get('sportId')?.touched)) {
@@ -48,14 +49,14 @@
 
     <div>
       <label>Modo de juego:</label>
-      <select formControlName="gamemode" required>
-        @for (item of gamemodes(); track item) {
-          <option [value]="item">{{ item.replaceAll('_', ' ') | titlecase}}</option>
+      <select formControlName="gamemodeId" required>
+        @for (item of gamemodes(); track item.id) {
+          <option [value]="item.id">{{ item.label }}</option>
         }
       </select>
 
-      @if (createSportSpaceForm.get('gamemode')?.invalid && (createSportSpaceForm.get('gamemode')?.dirty || createSportSpaceForm.get('gamemode')?.touched)) {
-        @if (createSportSpaceForm.get('gamemode')?.errors?.['required']) {
+      @if (createSportSpaceForm.get('gamemodeId')?.invalid && (createSportSpaceForm.get('gamemodeId')?.dirty || createSportSpaceForm.get('gamemodeId')?.touched)) {
+        @if (createSportSpaceForm.get('gamemodeId')?.errors?.['required']) {
           <small>El modo de juego es obligatorio</small>
         }
       }
@@ -76,10 +77,10 @@
 
     <div>
       <label>Distrito:</label>
-      <select formControlName="district" required>
+      <select formControlName="districtId" required>
         <option value="" disabled selected>Selecciona un distrito</option>
-        @for (district of districts; track district) {
-          <option [value]="district.value">{{ district.label }}</option>
+        @for (district of districts; track district.id) {
+          <option [value]="district.id">{{ district.label }}</option>
         }
       </select>
 

@@ -1,12 +1,14 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {SportSpace} from '../../models/sport-space.interface';
-import {TitleCasePipe} from '@angular/common';
+import {
+  districtIdToLabelMap,
+  gamemodeIdToLabelMap,
+  sportIdToLabelMap
+} from '../../../../shared/models/sport-space.constants';
 
 @Component({
   selector: 'app-sport-space-info',
-  imports: [
-    TitleCasePipe
-  ],
+  imports: [],
   templateUrl: './sport-space-info.component.html',
   styleUrl: './sport-space-info.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -20,4 +22,8 @@ export class SportSpaceInfoComponent {
     }
     return `data:image/jpeg;base64,${this.sportSpace.image}`;
   }
+
+  protected readonly sportIdToLabelMap = sportIdToLabelMap;
+  protected readonly gamemodeIdToLabelMap = gamemodeIdToLabelMap;
+  protected readonly districtIdToLabelMap = districtIdToLabelMap;
 }

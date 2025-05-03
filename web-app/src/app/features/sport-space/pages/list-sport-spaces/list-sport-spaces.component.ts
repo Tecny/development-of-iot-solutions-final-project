@@ -6,7 +6,12 @@ import {UserStoreService} from '../../../../core/services/user-store.service';
 import {UserRole} from '../../../../core/models/user.role.enum';
 import {RouterLink} from '@angular/router';
 import {FiltersComponent} from '../../../../shared/components/filter/filter.component';
-import {DISTRICTS, SPORTS} from '../../../../shared/models/sport-space.constants';
+import {
+  districtIdToLabelMap,
+  DISTRICTS,
+  sportIdToLabelMap,
+  SPORTS
+} from '../../../../shared/models/sport-space.constants';
 
 @Component({
   selector: 'app-list-sport-spaces',
@@ -96,8 +101,8 @@ export class ListSportSpacesComponent implements OnInit {
       const { sport, district, price, openTime, closeTime } = this.filters;
 
       return (
-        (!sport || space.sportType === sport) &&
-        (!district || space.district === district) &&
+        (!sport || sportIdToLabelMap[space.sportId] === sport) &&
+        (!district || districtIdToLabelMap[space.districtId] === district) &&
         (!price || space.price <= price) &&
         (!openTime || String(space.openTime) <= String(openTime)) &&
         (!closeTime || String(space.closeTime) <= String(closeTime))

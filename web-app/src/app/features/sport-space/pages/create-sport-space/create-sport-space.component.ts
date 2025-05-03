@@ -2,15 +2,13 @@ import {ChangeDetectionStrategy, Component, computed, inject, signal} from '@ang
 import {FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {SportSpaceService} from '../../services/sport-space.service';
 import {timeRangeValidator} from '../../../../shared/validators/forms.validator';
-import {DISTRICTS, gamemodesMap} from '../../../../shared/models/sport-space.constants';
+import {DISTRICTS, GAMEMODE_OPTIONS, gamemodesMap, SPORTS} from '../../../../shared/models/sport-space.constants';
 import {Router} from '@angular/router';
-import {TitleCasePipe} from '@angular/common';
 
 @Component({
   selector: 'app-create-sport-space',
   imports: [
-    ReactiveFormsModule,
-    TitleCasePipe
+    ReactiveFormsModule
   ],
   templateUrl: './create-sport-space.component.html',
   styleUrl: './create-sport-space.component.scss',
@@ -22,7 +20,7 @@ export class CreateSportSpaceComponent{
   private router = inject(Router);
 
   private _sportId = signal<number>(1);
-  gamemodes = computed(() => gamemodesMap[this._sportId()]);
+  gamemodes = computed(() => this.getGamemodesBySport(this._sportId()));
 
   createSportSpaceForm: FormGroup;
   districts = DISTRICTS;
@@ -34,9 +32,9 @@ export class CreateSportSpaceComponent{
       {
         name: ['', [Validators.required, Validators.minLength(7)]],
         sportId: [1, [Validators.required, Validators.min(1), Validators.max(2)]],
-        gamemode: ['', [Validators.required]],
+        gamemodeId: [null, [Validators.required]],
         price: [0, [Validators.required, Validators.min(40)]],
-        district: ['', [Validators.required]],
+        districtId: [null, [Validators.required]],
         address: ['', [Validators.required, Validators.minLength(8)]],
         description: ['', [Validators.required, Validators.minLength(10)]],
         openTime: ['', [Validators.required]],
@@ -47,7 +45,7 @@ export class CreateSportSpaceComponent{
 
     this.createSportSpaceForm.get('sportId')?.valueChanges.subscribe(value => {
       this._sportId.set(value);
-      this.createSportSpaceForm.get('gamemode')?.reset();
+      this.createSportSpaceForm.get('gamemodeId')?.reset();
     });
   }
 
@@ -60,9 +58,9 @@ export class CreateSportSpaceComponent{
     formData.append('name', formValues.name);
     formData.append('image', this.selectedImageFile);
     formData.append('sportId', formValues.sportId.toString());
-    formData.append('gamemode', formValues.gamemode);
+    formData.append('gamemodeId', formValues.gamemodeId.toString());
     formData.append('price', formValues.price.toString());
-    formData.append('district', formValues.district);
+    formData.append('districtId', formValues.districtId.toString());
     formData.append('address', formValues.address);
     formData.append('description', formValues.description);
     formData.append('openTime', formValues.openTime);
@@ -96,4 +94,11 @@ export class CreateSportSpaceComponent{
       reader.readAsDataURL(this.selectedImageFile);
     }
   }
+
+  private getGamemodesBySport(sportId: number): { id: number, label: string, value: string, sportId: number }[] {
+    const values = gamemodesMap[sportId] ?? [];  // Obtenemos los valores asociados al sportId
+    return GAMEMODE_OPTIONS.filter(g => values.includes(g.value));  // Filtramos por los valores
+  }
+
+  protected readonly SPORTS = SPORTS;
 }
