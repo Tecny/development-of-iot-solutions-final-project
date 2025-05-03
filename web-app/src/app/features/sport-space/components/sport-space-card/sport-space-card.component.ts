@@ -9,14 +9,13 @@ import {
 } from '@angular/core';
 import {SportSpace} from '../../models/sport-space.interface';
 import {RouterLink} from '@angular/router';
-import {TitleCasePipe} from '@angular/common';
 import {SportSpaceService} from '../../services/sport-space.service';
 import {UserStoreService} from '../../../../core/services/user-store.service';
+import {districtIdToLabelMap, sportIdToLabelMap} from '../../../../shared/models/sport-space.constants';
 @Component({
   selector: 'app-sport-space-card',
   imports: [
-    RouterLink,
-    TitleCasePipe
+    RouterLink
   ],
   template: `
     <div class="sportspace-card">
@@ -30,8 +29,8 @@ import {UserStoreService} from '../../../../core/services/user-store.service';
 
       <div class="sportspace-card__content">
         <h2 class="sportspace-card__title">{{ sportSpace.name }}</h2>
-        <p class="sportspace-card__type">{{ sportSpace.sportType | titlecase}}</p>
-        <p class="sportspace-card__district">{{ sportSpace.district.replaceAll('_',' ') }}</p>
+        <p class="sportspace-card__type">{{ sportIdToLabelMap[sportSpace.sportId] }}</p>
+        <p class="sportspace-card__district">{{ districtIdToLabelMap[sportSpace.districtId] }}</p>
         <p class="sportspace-card__price">S/ {{ sportSpace.price }}</p>
       </div>
 
@@ -92,4 +91,7 @@ export class SportSpaceCardComponent implements OnChanges {
       }
     }
   }
+
+  protected readonly sportIdToLabelMap = sportIdToLabelMap;
+  protected readonly districtIdToLabelMap = districtIdToLabelMap;
 }
