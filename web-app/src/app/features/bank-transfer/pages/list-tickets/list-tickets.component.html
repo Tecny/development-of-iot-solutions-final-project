@@ -17,7 +17,9 @@
                          (ticketConfirmed)="loadTickets()"
                          (ticketDeferred)="loadTickets()"/>
       } @empty {
-        <p>No tienes tickets de retiro solicitados</p>
+        @if (userRole === UserRole.ADMIN) {
+          <p>No tienes tickets de retiro solicitados</p>
+        }
       }
     </div>
   } @else {

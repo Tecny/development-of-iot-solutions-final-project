@@ -16,13 +16,9 @@ export class RedirectComponent {
 
     switch (role) {
       case UserRole.PLAYER:
-        this.router.navigateByUrl('/rooms').then();
-        break;
       case UserRole.OWNER:
-        this.router.navigateByUrl('/sport-spaces').then();
-        break;
       case UserRole.ADMIN:
-        this.router.navigateByUrl('/bank-transfer').then();
+        this.router.navigateByUrl('/home').then();
         break;
       default:
         this.router.navigateByUrl('/login').then();
