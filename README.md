@@ -435,7 +435,7 @@
       - 4.2.10.6. [Bounded Context Software Architecture Code Level Diagrams](#42106-bounded-context-software-architecture-code-level-diagrams)<br>  
         - 4.2.10.6.1. [Bounded Context Domain Layer Class Diagrams](#421061-bounded-context-domain-layer-class-diagrams)<br>  
         - 4.2.10.6.2. [Bounded Context Database Design Diagram](#421062-bounded-context-database-design-diagram)<br>
-    - 4.2.11. [Bounded Context: Payments](#4211-bounded-context-payments)<br>
+    - 4.2.11. [Bounded Context: External Systems](#4211-bounded-context-external-systems)<br>
       - 4.2.11.1. [Domain Layer](#42111-domain-layer)<br>  
         - 4.2.11.1.1. [Model](#421111-model)<br>  
           - 4.2.11.1.1.1. [Aggregates](#4211111-aggregates)<br>  
@@ -4135,7 +4135,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-bank.png" alt="UPC">
 </p>
 
-### 4.2.11. Bounded Context: Payments
+### 4.2.11. Bounded Context: External Systems
 
 #### 4.2.11.1. Domain Layer
 
