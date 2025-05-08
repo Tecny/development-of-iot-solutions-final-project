@@ -67,13 +67,10 @@ public class ReservationsController {
     private final PlayerListRepository playerListRepository;
     private final ChatRoomRepository chatRoomRepository;
     private final QRCodeGenerator qrCodeGenerator = new QRCodeGenerator();
-    private final BlockchainService blockchainService;
-
     public ReservationsController(ReservationsCommandService reservationsCommandService,
                                   UserRepository userRepository,
                                   SportSpacesQueryService sportSpacesQueryService, ReservationsRepository reservationsRepository,
-                                  RoomsCommandService roomsCommandService, RoomsRepository roomsRepository, ChatRoomCommandService chatRoomCommandServiceImpl, PlayerListRepository playerListRepository, ChatRoomRepository chatRoomRepository,
-                                  BlockchainService blockchainService) {
+                                  RoomsCommandService roomsCommandService, RoomsRepository roomsRepository, ChatRoomCommandService chatRoomCommandServiceImpl, PlayerListRepository playerListRepository, ChatRoomRepository chatRoomRepository) {
         this.reservationsCommandService = reservationsCommandService;
         this.userRepository = userRepository;
         this.sportSpacesQueryService = sportSpacesQueryService;
@@ -83,7 +80,6 @@ public class ReservationsController {
         this.chatRoomCommandService = chatRoomCommandServiceImpl;
         this.playerListRepository = playerListRepository;
         this.chatRoomRepository = chatRoomRepository;
-        this.blockchainService = blockchainService;
     }
 
     @PostMapping("/create")
@@ -200,7 +196,6 @@ public class ReservationsController {
                         Reservations createdReservation = reservation.get();
                         createdReservation.setStatus(Status.CONFIRMED);
                         reservationsRepository.save(createdReservation);
-                        blockchainService.createReservation(spaceId, gameDay, startTime, userIdBigInt);
                         createdReservation.getSportSpaces().getUser().setCredits(createdReservation.getSportSpaces().getUser().getCredits().add(credits));
                         userRepository.save(createdReservation.getSportSpaces().getUser());
                         return reservation.map(s -> ResponseEntity.ok(ReservationsResourceFromEntityAssembler.toResourceFromEntity(s)))
