@@ -4287,44 +4287,50 @@ Lo que sigue es una recopilación de principios visuales que marcarán la identi
 ### 5.2.1. Organization Systems
 
 Los sistemas de organización se refieren a cómo se presentan los productos, imágenes, y demás elementos, con el objetivo de no saturar al usuario con exceso de información en la pantalla. La estructura ideal para organizar los diferentes tipos de datos comienza por mostrar quiénes somos como empresa, seguido de nuestra misión, visión y valores. Por último, se incluye al equipo de desarrolladores en la página de aterrizaje. En nuestra aplicación web, buscamos que las imágenes estén siempre acompañadas de texto para asegurar que el contexto no se pierda y ofrecer información relevante a los usuarios, organizando todo en vistas responsive y tarjetas tipo "cards".
-
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//orS-1.png" alt="UPC">
 
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//orS-2.png" alt="UPC">
-
+</p>
 
 ### 5.2.2. Labeling Systems
 
 Los sistemas de etiquetado se emplean para transmitir información al usuario, permitiendo que tenga una experiencia eficiente sin tener que invertir demasiado tiempo buscando o usando la aplicación. El aplicativo presenta encabezados con un tamaño de letra más grande, para recordar al usuario en qué sección o función se encuentra, y proporciona instrucciones detalladas sobre los pasos a seguir para continuar navegando por el sistema. Usamos terminología simple para que cualquier persona pueda entender y utilizar la aplicación de manera fácil.
-
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//labeling-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//labeling-2.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//labeling-3.png" alt="UPC">
-
+</p>
 ### 5.2.3. Searching Systems
 
 Los sistemas de búsqueda de información son cruciales para que el usuario pueda localizar lo que necesita de manera rápida y efectiva. Para facilitar la búsqueda de distintos tipos de datos, contamos con una barra de búsqueda situada en la parte superior, que incluye sugerencias sobre qué se puede buscar y encontrar.
-
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//searchingS-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//searchingS-2.png" alt="UPC">
-
+</p>
 ### 5.2.4. SEO Tags and Meta Tags
 ### 5.2.5. Navigation Systems
 
 Los sistemas de navegación incluyen botones e interfaces que permiten moverse de una sección a otra dentro de la aplicación, como los botones en la parte superior de la página web que llevan a diferentes funciones. Estos botones tienen texto que indica la acción que se realizará al presionarlos, además de ofrecer opciones de navegación rápida a través de atajos. 
 
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//navigationS-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//navigationS-2.png" alt="UPC">
+ </p>
 
 ## 5.3. Landing Page UI Design
 
 ### 5.3.1. Landing Page Wireframe
 
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//landingW.png" alt="UPC">
+</p>
 
 ### 5.3.2. Landing Page Mock-up
 
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//landingM.png" alt="UPC">
+</p>
 
 ## 5.4. Applications UX/UI Design
 
@@ -4332,23 +4338,29 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
 
 #### 5.4.1.1. Web
 
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-2.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-3.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-4.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-5.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-6.png" alt="UPC">
+</p>
 
 #### 5.4.1.2. Mobile
 
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-2.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-3.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-4.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-5.png" alt="UPC">
+</p>
 
 ### 5.4.2. Applications Wireflow Diagrams
 #### 5.4.2.1. Web
+
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-2.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-3.png" alt="UPC">
@@ -4356,9 +4368,11 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-5.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-6.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-7.png" alt="UPC">
+</p>
 
 #### 5.4.2.2. Mobile
 
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-2.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-3.png" alt="UPC">
@@ -4366,11 +4380,13 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-5.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-6.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-7.png" alt="UPC">
+</p>
 
 ### 5.4.3. Applications Mock-ups
 
 #### 5.4.3.1. Web
 
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-2.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-3.png" alt="UPC">
@@ -4379,26 +4395,32 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-6.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-7.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-8.png" alt="UPC">
+</p>
 
 #### 5.4.3.2. Mobile
 
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockMobile-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockMobile-2.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockMobile-3.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockMobile-4.png" alt="UPC">
+</p>
 
 ### 5.4.4. Applications User Flow Diagrams
 #### 5.4.4.1. Web
 
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-2.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-3.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-4.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-5.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-6.png" alt="UPC">
+</p>
 
 #### 5.4.4.2. Mobile
 
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-2.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-3.png" alt="UPC">
@@ -4406,10 +4428,13 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-5.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-6.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-7.png" alt="UPC">
+</p>
 
 ## 5.5. Applications Prototyping
 
+<p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//prototyping.png" alt="UPC">
+</p>
 
 Prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design?node-id=362-3396&t=NmIZ0SfpdrQ0yHLa-1&scaling=scale-down&content-scaling=fixed 
 
@@ -4439,7 +4464,7 @@ Prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design?nod
 - En la parte del GitFlow, estamos utilizando las ramas "main" y el "develop".
 - Las ramas externas creadas son hijas de la rama "develop", por lo que, al culminar con el trabajo en la etapa de desarrollo, estas se unirán mediante el Pull Request para así tener todo el informe en un solo documento.
 
-Link del github:
+Link del github: https://github.com/Tecny/development-of-iot-solutions-final-project/tree/develop 
 
 ### 6.1.3. Source Code Style Guide & Conventions
 
