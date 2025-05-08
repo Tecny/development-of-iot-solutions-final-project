@@ -965,7 +965,9 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 
 **Segmento 2: Personas dueñas de un espacio deportivo** 
 
+<p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userpersona-owner.png" alt="UPC">
+</p>
 
 </div>
 
@@ -1026,7 +1028,9 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 
 **User persona 2: Juan Perez**
 
+<p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//empathy-owner.png" alt="UPC">
+</p>
 
 </div>
 
@@ -1036,11 +1040,15 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 
 **User persona 1: Andres Martinez**  
 
+<p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//asis-player.jpg" alt="UPC">
+</p>
 
 **User persona 2: Juan Perez**
 
+<p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//asis-owner.jpg" alt="UPC">
+</p>
 
 </div>
 
@@ -1080,12 +1088,16 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 <div style="text-align: justify;">
 
 **User persona 1: Andres Martinez**  
-
+<p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//tobe-player.png" alt="UPC">
+</p>
 
 **User persona 2: Juan Perez**
 
+<p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//tobe-owner.png" alt="UPC">
+</p>
+
 </div>
 
 ## 3.2. User Stories
