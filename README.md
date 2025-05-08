@@ -449,6 +449,42 @@
       - 4.2.11.5. [Bounded Context Software Architecture Code Level Diagrams](#42115-bounded-context-software-architecture-code-level-diagrams)<br>  
         - 4.2.11.5.1. [Bounded Context Domain Layer Class Diagrams](#421151-bounded-context-domain-layer-class-diagrams)<br>  
         - 4.2.11.5.2. [Bounded Context Database Design Diagram](#421152-bounded-context-database-design-diagram)<br>
+	
+  [Capitulo V - Solution UI/UX Design](#v-solution-uiux-design)<br>  
+   - 5.1. [Style Guidelines](#51-style-guidelines)     
+     - 5.1.2. [General Style Guidelines](#512-general-style-guidelines)    
+       - 5.1.2.1. [Web](#5121-web)    
+       - 5.1.2.2. [Mobile](#5122-mobile)   
+   - 5.2. [Information Architecture](#52-information-architecture)    
+     - 5.2.1. [Organization Systems](#521-organization-systems)   
+     - 5.2.2. [Labeling Systems](#522-labeling-systems)    
+     - 5.2.3. [Searching Systems](#523-searching-systems)    
+     - 5.2.4. [SEO Tags and Meta Tags](#524-seo-tags-and-meta-tags)    
+     - 5.2.5. [Navigation Systems](#525-navigation-systems)    
+   - 5.3. [Landing Page UI Design](#53-landing-page-ui-design)    
+     - 5.3.1. [Landing Page Wireframe](#531-landing-page-wireframe)   
+     - 5.3.2. [Landing Page Mock-up](#532-landing-page-mock-up)   
+   - 5.4. [Applications UX/UI Design](#54-applications-uxui-design)   
+     - 5.4.1. [Applications Wireframes](#541-applications-wireframes)   
+       - 5.4.1.1. [Web](#5411-web)  
+       - 5.4.1.2. [Mobile](#5412-mobile) 
+     - 5.4.2. [Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)    
+       - 5.4.2.1. [Web](#5421-web)  
+       - 5.4.2.2. [Mobile](#5422-mobile)    
+     - 5.4.3. [Applications Mock-ups](#543-applications-mock-ups)    
+       - 5.4.3.1. [Web](#5431-web)    
+       - 5.4.3.2. [Mobile](#5432-mobile)   
+     - 5.4.4. [Applications User Flow Diagrams](#544-applications-user-flow-diagrams)    
+       - 5.4.4.1. [Web](#5441-web)    
+       - 5.4.4.2. [Mobile](#5442-mobile)  
+   - 5.5. [Applications Prototyping](#55-applications-prototyping)   
+  
+  [Capítulo VI - Product Implementation, Validation & Deployment](#vi-product-implementation-validation--deployment)<br>
+   - 6.1. [Software Configuration Management](#61-software-configuration-management)
+     - 6.1.1 [Software Development Environment Configuration](#611-software-development-environment-configuration)    
+     - 6.1.2. [Source Code Management](#612-source-code-management)    
+     - 6.1.3. [Source Code Style Guide & Conventions](#613-source-code-style-guide--conventions)    
+     - 6.1.4. [Software Deployment Configuration](#614-software-deployment-configuration)    
   
   [Conclusiones](#conclusiones)<br>
   [Bibliografía](#bibliografia)<br>
@@ -4182,6 +4218,301 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 <p align="center">
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-payments.png" alt="UPC">
 </p>
+
+# V. Solution UI/UX Design
+
+## 5.1. Style Guidelines
+Lo que sigue es una recopilación de principios visuales que marcarán la identidad estética de D'taquito, con el objetivo de fortalecer la relación entre los jugadores y la plataforma. Estas pautas permitirán que todos los elementos gráficos mantengan armonía entre sí, facilitando una navegación intuitiva y una apariencia moderna y atractiva en todos los entornos de uso.
+
+### 5.1.1. General Style Guidelines
+#### Paleta de colores
++ **Color primario:** #4CAC2A
++ **Color secundario:** #FFFFFF
++ **Colores terciarios** #000000 y #020047
+
+#### Colores generales de texto
++ **Color primario:** #000000
++ **Color secundario:** #FFFFFF
+
+
+#### Colores generales de botones
++ **Color primario:** #4CAC2A
++ **Color secundario:** #FFFFFF
+
+#### Tipografías generales de botones 
+
+|                | BOTONES       | BOTONES       | BOTONES       |
+|----------------|---------------|---------------|---------------|
+| **Font**       | Font: **Righteous**<br>Size: **50px**<br>Espacio de palabra: **24px** | Font: **Righteous**<br>Size: **20/24px**<br>Espacio de palabra: **20px** | Font: **Righteous**<br>Size: **16px**<br>Espacio de palabra: **16px** |
+| **Tamaño**     | **Large**<br>Regular, 400 | **Normal**<br>Regular, 400 | **Small**<br>Regular, 400 |
+
+
+### 5.1.2. General Style Guidelines
+
+#### 5.1.2.1. Web
+
+##### Color de iconos en la web
++ **Color primario:** #000000
++ **Color secundario:** #020047
+
+##### Tipografías generales
+
+| Plataforma | Tipo    | Font | Posición|
+|------------|---------|----------------------------------------|---------------------------------|
+| Desktop    | Título  | Font: **Righteous**<br>Size: **100px**  | **Headline 1**<br>Regular, 400 |
+| Desktop    | Título  | Font: **Righteous**<br>Size: **80px**  | **Headline 2**<br>Regular, 400 |
+| Desktop    | Título  | Font: **Righteous**<br>Size: **60px**  | **Headline 3**<br>Regular, 400 |
+| Desktop    | Título  | Font: **Righteous**<br>Size: **40px**  | **Headline 4**<br>Regular, 400 |
+| Desktop    | Párrafo | Font: **Righteous**<br>Size: **16px**  | **Body-1**<br>Regular, 400     |
+
+#### 5.1.2.2. Mobile
+
+##### Color de iconos en móvil
++ **Color primario:** #000000
++ **Color secundario:** #020047
+
+
+##### Tipografías generales
+
+| Plataforma | Tipo    | Font | Posición|
+|------------|---------|----------------------------------------|---------------------------------|
+| Mobile    | Título  | Font: **Righteous**<br>Size: **100px**  | **Headline 1**<br>Regular, 400 |
+| Mobile    | Título  | Font: **Righteous**<br>Size: **80px**  | **Headline 2**<br>Regular, 400 |
+| Mobile    | Título  | Font: **Righteous**<br>Size: **60px**  | **Headline 3**<br>Regular, 400 |
+| Mobile    | Título  | Font: **Righteous**<br>Size: **40px**  | **Headline 4**<br>Regular, 400 |
+| Mobile    | Párrafo | Font: **Righteous**<br>Size: **16px**  | **Body-1**<br>Regular, 400     |
+
+## 5.2. Information Architecture
+
+### 5.2.1. Organization Systems
+
+Los sistemas de organización se refieren a cómo se presentan los productos, imágenes, y demás elementos, con el objetivo de no saturar al usuario con exceso de información en la pantalla. La estructura ideal para organizar los diferentes tipos de datos comienza por mostrar quiénes somos como empresa, seguido de nuestra misión, visión y valores. Por último, se incluye al equipo de desarrolladores en la página de aterrizaje. En nuestra aplicación web, buscamos que las imágenes estén siempre acompañadas de texto para asegurar que el contexto no se pierda y ofrecer información relevante a los usuarios, organizando todo en vistas responsive y tarjetas tipo "cards".
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//orS-1.png" alt="UPC">
+
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//orS-2.png" alt="UPC">
+
+
+### 5.2.2. Labeling Systems
+
+Los sistemas de etiquetado se emplean para transmitir información al usuario, permitiendo que tenga una experiencia eficiente sin tener que invertir demasiado tiempo buscando o usando la aplicación. El aplicativo presenta encabezados con un tamaño de letra más grande, para recordar al usuario en qué sección o función se encuentra, y proporciona instrucciones detalladas sobre los pasos a seguir para continuar navegando por el sistema. Usamos terminología simple para que cualquier persona pueda entender y utilizar la aplicación de manera fácil.
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//labeling-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//labeling-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//labeling-3.png" alt="UPC">
+
+### 5.2.3. Searching Systems
+
+Los sistemas de búsqueda de información son cruciales para que el usuario pueda localizar lo que necesita de manera rápida y efectiva. Para facilitar la búsqueda de distintos tipos de datos, contamos con una barra de búsqueda situada en la parte superior, que incluye sugerencias sobre qué se puede buscar y encontrar.
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//searchingS-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//searchingS-2.png" alt="UPC">
+
+### 5.2.4. SEO Tags and Meta Tags
+### 5.2.5. Navigation Systems
+
+Los sistemas de navegación incluyen botones e interfaces que permiten moverse de una sección a otra dentro de la aplicación, como los botones en la parte superior de la página web que llevan a diferentes funciones. Estos botones tienen texto que indica la acción que se realizará al presionarlos, además de ofrecer opciones de navegación rápida a través de atajos. 
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//navigationS-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//navigationS-2.png" alt="UPC">
+
+## 5.3. Landing Page UI Design
+
+### 5.3.1. Landing Page Wireframe
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//landingW.png" alt="UPC">
+
+### 5.3.2. Landing Page Mock-up
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//landingM.png" alt="UPC">
+
+## 5.4. Applications UX/UI Design
+
+### 5.4.1. Applications Wireframes
+
+#### 5.4.1.1. Web
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-6.png" alt="UPC">
+
+#### 5.4.1.2. Mobile
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-5.png" alt="UPC">
+
+### 5.4.2. Applications Wireflow Diagrams
+#### 5.4.2.1. Web
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-6.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-7.png" alt="UPC">
+
+#### 5.4.2.2. Mobile
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-6.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-7.png" alt="UPC">
+
+### 5.4.3. Applications Mock-ups
+
+#### 5.4.3.1. Web
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-6.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-7.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-8.png" alt="UPC">
+
+#### 5.4.3.2. Mobile
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockMobile-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockMobile-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockMobile-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockMobile-4.png" alt="UPC">
+
+### 5.4.4. Applications User Flow Diagrams
+#### 5.4.4.1. Web
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-6.png" alt="UPC">
+
+#### 5.4.4.2. Mobile
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-6.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-7.png" alt="UPC">
+
+## 5.5. Applications Prototyping
+
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//prototyping.png" alt="UPC">
+
+Prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design?node-id=362-3396&t=NmIZ0SfpdrQ0yHLa-1&scaling=scale-down&content-scaling=fixed 
+
+
+
+# VI. Product Implementation, Validation & Deployment  
+
+## 6.1. Software Configuration Management
+
+## 6.1.1. Software Development Environment Configuration
+
+- **Product UX/UI Design**:
+  - Figma será la plataforma que emplearemos para llevar a cabo la creación de wireframes y la página de aterrizaje de nuestro proyecto, de manera fácil, eficaz y con gran eficiencia. Esto nos permitirá trabajar de manera más fluida y efectiva en el diseño y desarrollo del proyecto.
+
+- **Software Development**:
+  - **IDE**: JetBrain (Webstorm, IntelliJ y Android Studio)
+  - **HTML**: es la sigla que representa HyperText Markup Language, el cual es el lenguaje de marcado empleado en la construcción de páginas web.
+  - **CSS**: En castellano, "Cascading Style Sheets", o CSS, es un lenguaje de diseño gráfico que se utiliza para dar formato y diseñar presentaciones de documentos estructurados que están escritos en HTML.
+  - **Kotlin**: Es el lenguaje de programación principal utilizado para el desarrollo de aplicaciones móviles en Android, junto con XML para la definición de interfaces de usuario.
+  - **XML**: Lenguaje de marcado utilizado para definir el diseño de la interfaz de usuario en aplicaciones Android, estructurando los componentes visuales que se muestran en pantalla.
+  - **TypeScript**: Es un superconjunto de JavaScript que añade tipado estático opcional. Esto permite a los desarrolladores detectar errores durante la fase de desarrollo y facilita la creación de código más robusto y mantenible, especialmente en proyectos grandes.
+  - **Java**: Es un lenguaje de programación de propósito general, concurrente, basado en clases y orientado a objetos. Es conocido por su portabilidad ("escribe una vez, ejecuta en cualquier lugar") gracias a la Máquina Virtual de Java (JVM) y se utiliza ampliamente en el desarrollo de aplicaciones empresariales.
+
+### 6.1.2. Source Code Management
+
+- Utilizamos GitHub como plataforma y sistema de control de versiones.
+- En la parte del GitFlow, estamos utilizando las ramas "main" y el "develop".
+- Las ramas externas creadas son hijas de la rama "develop", por lo que, al culminar con el trabajo en la etapa de desarrollo, estas se unirán mediante el Pull Request para así tener todo el informe en un solo documento.
+
+Link del github:
+
+### 6.1.3. Source Code Style Guide & Conventions
+
+Para asegurar un desarrollo homogéneo y comprensible a nivel internacional, hemos adoptado una serie de convenciones y estilos de código en distintas tecnologías utilizadas en el proyecto. Estas prácticas garantizan que el código sea fácil de mantener y que el equipo siga un enfoque estándar durante todo el proceso de desarrollo.
+
+- **Web app**: Angular (Webstorm)
+- **Mobile app**: Kotlin y XML (Android Studio)
+- **Back-end**: Java Spring Boot (IntelliJ)
+- **Landing Page**: HTML, CSS & JavaScript
+- **Herramientas adicionales**: LucidChart, Figma, GitHub, Miro, Canva y Visual Paradigm
+
+### Convenciones de idioma:
+
+- El código desarrollado, tanto para la Landing Page como para el Front-end y Back-end, se escribirá íntegramente en inglés. Esto incluye los comentarios dentro del código, los mensajes de los commits y cualquier otra interacción en el repositorio de control de versiones.
+
+- La documentación formal y los artefactos del proyecto que forman parte de este reporte serán redactados en español, garantizando claridad en la presentación final.
+
+
+### Convenciones tecnológicas generales:
+
+- Los nombres de las tablas en la base de datos estarán en minúsculas y, en caso de tener más de una palabra, estas se separarán con un guion bajo ("_").
+- El flujo de trabajo en GitHub seguirá la metodología de GitFlow para el control de versiones, asegurando un ciclo de desarrollo estructurado y eficiente.
+- Los commits se estructurarán bajo el formato de Conventional Commits, cuyas reglas pueden consultarse en: https://www.conventionalcommits.org/en/v1.0.0/
+
+### Convenciones específicas por tecnología:
+
+1. **Landing Page (HTML, CSS & JavaScript):**
+   - Se seguirán las convenciones de Google para HTML/CSS, disponibles en: https://google.github.io/styleguide/htmlcssguide.html.
+   - **Nomenclatura CSS**: Se adoptará el sistema BEM (Bloque, Elemento, Modificador) junto con módulos y utilidades para mayor claridad y modularidad del código.
+   - **JavaScript**: Se recomienda seguir un estilo de código coherente, como el propuesto por Airbnb (https://github.com/airbnb/javascript - aunque puede adaptarse a las necesidades del equipo). Se prestará especial atención a la legibilidad, el uso de `const` y `let` en lugar de `var`, y la correcta gestión de asincronía con `async/await` o Promises.
+
+2. **Web App (Angular):**
+   - Se seguirán las guías de estilo oficiales de Angular: https://angular.io/guide/styleguide. 
+
+   - **Nomenclatura**: Se aplicarán las convenciones de nombrado para componentes, directivas, servicios, módulos, etc., según la guía de estilo de Angular.
+   - **Estructura de Carpetas**: Se adoptará una estructura de carpetas modular y lógica para facilitar la escalabilidad y el mantenimiento del proyecto.
+   - **Manejo de Estado**: Se definirá una estrategia clara para la gestión del estado de la aplicación (por ejemplo, NgRx, Akita o el uso de servicios con BehaviorSubject).
+
+3.	**Mobile App (Kotlin y XML):**
+
+    -  **Kotlin:**
+        - **Nomenclatura:** camelCase para variables y métodos, PascalCase para clases y archivos.
+        - **Tipado:** Declarar tipos explícitos cuando no es evidente.
+        - **Funciones:** Preferir lambdas y funciones inline para eficiencia y claridad.
+        - **Estilo:** Seguir las guías de estilo oficiales de Kotlin.
+        - **Seguridad:** Utilizar null safety para evitar errores.
+        - **Asincronía:** Emplear Kotlin Coroutines.
+
+    -	**XML:**
+        -	**Elemento Raíz:** Cada layout debe tener un único elemento raíz.
+        -	**Indentación:** Mantener el código XML correctamente indentado.
+        -	**IDs:** Usar prefijos descriptivos en los IDs de las vistas (ej: btn_, tv_).
+        -	**Atributos Esenciales:** Definir layout_width, layout_height e id en cada vista.
+        -	**Accesibilidad:** Incluir contentDescription cuando sea necesario.
+        -	**Estilos y Recursos:** Utilizar archivos styles.xml, colors.xml, dimens.xml y strings.xml.
+        -	**Diseño Adaptable:** Asegurar la compatibilidad con diferentes pantallas.
+        -	**Data/View Binding:** Considerar su uso para simplificar la interacción con el layout.
+
+4.	**Back-end (Java Spring Boot):**
+
+    -	Se seguirán las guías de estilo de código de Java (por ejemplo, las de Google o las convenciones de Oracle).
+    -	Nomenclatura: Se aplicarán las convenciones de nombrado para clases (PascalCase), métodos y variables (camelCase), constantes (UPPER_SNAKE_CASE), paquetes (minúsculas).
+    -	Estructura de Paquetes: Se adoptará una estructura de paquetes clara y basada en la funcionalidad o capas de la aplicación (por ejemplo, controller, service, repository, model).
+    -	Manejo de Excepciones: Se definirá una estrategia coherente para el manejo de excepciones, utilizando excepciones específicas y proporcionando mensajes de error claros.
+    -	Logging: Se implementará un sistema de logging adecuado para rastrear el comportamiento de la aplicación y facilitar la depuración.
+    -	Seguridad: Se seguirán las mejores prácticas de seguridad para proteger la aplicación contra vulnerabilidades comunes (por ejemplo, validación de entrada, protección contra ataques CSRF y XSS, manejo seguro de contraseñas).
+    -	Documentación de la API: Se utilizará una herramienta como Swagger (OpenAPI) para documentar la API de manera clara y accesible.
+
+### 6.1.4. Software Deployment Configuration
+
+La implementación de un software abarca los pasos, procesos y actividades necesarios para poner a disposición de los usuarios que visiten nuestra aplicación móvil una actualización o un sistema. La configuración para desplegar la solución de manera satisfactoria para cada uno de nuestros productos digitales se llevará a cabo a través de un servidor (Git), junto con el uso de GitHub. Esto implica que cada archivo será subido a un repositorio, permitiendo la configuración de cualquier parte del código de nuestra aplicación móvil. Posteriormente, se ejecutará en un servidor de prueba para verificar el correcto funcionamiento y detectar posibles errores en el código. El proceso de implementación de un software consta de tres fases principales: preparación, pruebas y despliegue.
+
+
 
 # Conclusiones
 
