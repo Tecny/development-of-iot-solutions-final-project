@@ -1114,12 +1114,12 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 | **Backend**   | EP08    | Implementación del módulo users         | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo users funcione      | TS01, TS02, TS03, TS04, TS05, TS06 |
 | **Backend**   | EP09    | Implementación del módulo auth/iam      | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo iam funcione        | TS07, TS08, TS09                               |
 | **Backend**   | EP10    | Implementación del módulo subscriptions | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo subscriptions funcione | TS10, TS11                                  |
-| **Backend**   | EP11    | Implementación del módulo sportspaces   | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo sportspaces funcione | TS12, TS13, TS14, TS15                      |
+| **Backend**   | EP11    | Implementación del módulo sportspaces   | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo sportspaces funcione | TS12, TS13, TS14, TS15, TS37, TS38                      |
 | **Backend**   | EP12    | Implementación del módulo reservations  | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo reservations funcione | TS16, TS17, TS18, TS19, TS20                |
-| **Backend**   | EP13    | Implementación del módulo playerlists   | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo playerlists funcione | TS21, TS22                                  |
+| **Backend**   | EP13    | Implementación del módulo playerlists   | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo playerlists funcione | TS21, TS22, TS39                                  |
 | **Backend**   | EP14    | Implementación del módulo chatroom      | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo chatroom funcione    | TS23                                           |
 | **Backend**   | EP15    | Implementación del módulo deposit       | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo deposit funcione     | TS24, TS25                                     |
-| **Backend**   | EP16    | Implementación del módulo banktransfer  | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo banktransfer funcione | TS26, TS27, TS28, TS29                      |
+| **Backend**   | EP16    | Implementación del módulo banktransfer  | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo banktransfer funcione | TS26, TS27, TS28, TS29, TS40                      |
 | **Backend**   | EP17    | Implementación del módulo rooms         | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo rooms funcione       | TS30, TS31, TS32, TS33, TS34                   |
 | **Backend**   | EP18    | Implementación del módulo external Systems         | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo external systems funcione       | TS35, TS36                  |
 
@@ -1203,68 +1203,74 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 
 ## 3.4. Product Backlog
 
-| #Orden | User Story ID | Título                                     | Descripción                                                                                         | Story Points |
-|--------|---------------|--------------------------------------------|-----------------------------------------------------------------------------------------------------|--------------|
-| 1      | TS17          | Crear una reserva                          | Como desarrollador deseo implementar el endpoint `POST reservations/create` para que un usuario PLAYER realice una reserva | 8 |
-| 2      | TS01          | Crear usuario                              | Como desarrollador deseo implementar el endpoint `POST users/sign-up` para registrar usuarios en la app | 5 |
-| 3      | TS10          | Actualizar suscripción                     | Como desarrollador deseo implementar el endpoint `PUT subscriptions/upgrade` para actualizar la suscripción de un usuario | 5 |
-| 4      | TS25          | Crear un depósito                          | Como desarrollador deseo implementar el endpoint `POST deposit/create-deposit` para que un jugador recargue créditos | 5 |
-| 5      | TS22          | Unirse a una room                          | Como desarrollador deseo implementar el endpoint `POST player-lists/join` para que un usuario se una a una sala COMMUNITY | 5 |
-| 6      | TS26          | Crear petición para retiro                 | Como desarrollador deseo implementar el endpoint `POST bank-transfer/create` para solicitar retiro de créditos como OWNER | 5 |
-| 7      | TS27          | Atender solicitud de retiro                | Como desarrollador deseo implementar el endpoint `PATCH bank-transfer/update-transfer/{id}` para que un ADMIN atienda la solicitud | 5 |
-| 8      | TS29          | Obtener todas solicitudes de retiro        | Como desarrollador deseo implementar el endpoint `GET bank-transfer/all` para obtener todas las solicitudes de retiro | 2 |
-| 9      | TS21          | Usar QR                                    | Como desarrollador deseo implementar el endpoint `POST reservations/user-qr-token` para que el jugador use su QR | 5 |
-| 10     | TS20          | Obtener y verificar un QR                  | Como desarrollador deseo implementar el endpoint `GET reservations/verify-qr-image` para obtener el QR de acceso | 5 |
-| 11     | TS07          | Autenticar usuario                         | Como desarrollador deseo implementar el endpoint `POST authentication/sign-in` para autenticar a un usuario | 5 |
-| 12     | TS04          | Actualizar contraseña                      | Como desarrollador deseo implementar el endpoint `PUT users/password` para actualizar la contraseña del usuario | 2 |
-| 13     | TS02          | Actualizar nombre                          | Como desarrollador deseo implementar el endpoint `PUT users/name` para actualizar el nombre del usuario | 2 |
-| 14     | TS03          | Actualizar correo                          | Como desarrollador deseo implementar el endpoint `PUT users/email` para actualizar el correo del usuario | 2 |
-| 15     | TS08          | Desautenticar usuario                      | Como desarrollador deseo implementar el endpoint `POST authentication/log-out` para cerrar sesión del usuario | 2 |
-| 16     | TS28          | Obtener solicitud de retiro de un usuario | Como desarrollador deseo implementar el endpoint `GET bank-transfer/user/{userId}` para obtener la solicitud de retiro de un usuario | 2 |
-| 17     | TS23          | Obtener lista de jugadores de una sala    | Como desarrollador deseo implementar el endpoint `GET player-lists/room/{roomId}` para ver jugadores de una sala | 3 |
-| 18     | TS24          | Crear un chat en base a una sala           | Como desarrollador deseo implementar el endpoint `POST chat/rooms/{chatRoomId}/messages` para crear un chat en una sala | 3 |
-| 19     | TS11          | Obtener suscripción de un usuario          | Como desarrollador deseo implementar el endpoint `GET api/v1/subscriptions` para ver la suscripción de un usuario | 2 |
-| 20     | TS13          | Obtener espacio deportivo por ID           | Como desarrollador deseo implementar el endpoint `GET sport-spaces/{id}` para obtener un espacio deportivo por ID | 2 |
-| 21     | TS14          | Obtener espacios propios                   | Como desarrollador deseo implementar el endpoint `GET sport-spaces/my-space` para que un OWNER vea sus espacios | 2 |
-| 22     | TS12          | Crear espacio deportivo                    | Como desarrollador deseo implementar el endpoint `POST sport-spaces/create` para que un OWNER cree un espacio deportivo | 5 |
-| 23     | TS15          | Obtener todos los espacios deportivos      | Como desarrollador deseo implementar el endpoint `GET sport-spaces/all` para obtener todos los espacios deportivos | 2 |
-| 24     | TS16          | Eliminar un espacio deportivo              | Como desarrollador deseo implementar el endpoint `DELETE sport-spaces/{id}` para eliminar un espacio como OWNER | 5 |
-| 25     | TS06          | Obtener información del usuario            | Como desarrollador deseo implementar el endpoint `GET users/me` para obtener la información del usuario autenticado | 2 |
-| 26     | TS05          | Obtener todos los usuarios                 | Como desarrollador deseo implementar el endpoint `GET users/all` para que un ADMIN obtenga todos los usuarios | 2 |
-| 27     | TS18          | Obtener reservas                           | Como desarrollador deseo implementar el endpoint `GET reservations/my-reservations` para ver reservas del usuario | 2 |
-| 28     | TS19          | Eliminar una reserva                       | Como desarrollador deseo implementar el endpoint `DELETE reservations/{id}` para eliminar una reserva como PLAYER | 5 |
-| 29     | TS30          | Obtener sala por ID                        | Como desarrollador deseo implementar el endpoint `GET rooms/{id}` para obtener una sala por su ID  | 2 |
-| 30     | TS31          | Obtener salas por usuario específico       | Como desarrollador deseo implementar el endpoint `GET rooms/my-rooms` para obtener salas propias   | 2 |
-| 31     | TS32          | Obtener salas por espacios deportivos      | Como desarrollador deseo implementar el endpoint `GET rooms/my-rooms-by-spaces` para ver salas por espacio | 2 |
-| 32     | TS33          | Obtener salas unidas por jugador           | Como desarrollador deseo implementar el endpoint `GET rooms/my-join-rooms` para ver salas unidas   | 2 |
-| 33     | TS34          | Obtener todas las salas (ADMIN)            | Como desarrollador deseo implementar el endpoint `GET rooms/all` para obtener todas las salas como ADMIN | 2 |
-| 34     | TS35          | Solicitar olvido de contraseña             | Como desarrollador deseo implementar el endpoint `POST recover-password/forgot-password` para solicitar recuperación | 3 |
-| 35     | TS36          | Reiniciar contraseña                       | Como desarrollador deseo implementar el endpoint `POST recover-password/reset-password` para reiniciar la contraseña | 3 |
-| 36     | TS09          | Verificar autenticación                    | Como desarrollador deseo implementar el endpoint `GET authentication/is-authenticated` para verificar si estoy autenticado | 2 |
-| 37      | US01          | Registro de cuenta de usuario              | Como jugador o propietario deseo registrarme para tener una cuenta en D’Taquito                    | 2            |
-| 38      | US02          | Inicio de sesión de cuenta                 | Como jugador o propietario deseo ingresar a mi cuenta para usar funcionalidades de la app          | 2            |
-| 39      | US03          | Ver perfil de usuario                      | Como jugador o propietario deseo acceder a mi perfil para visualizar mis datos personales          | 2            |
-| 40      | US04          | Editar perfil de usuario                   | Como usuario deseo editar mis datos personales para mantener mi perfil actualizado                 | 2            |
-| 41      | US05          | Recargar crédito                           | Como jugador deseo recargar crédito para reservar un espacio deportivo                             | 3            |
-| 42      | US06          | Ver una suscripción                        | Como propietario deseo ver el estado de mi suscripción para gestionarla                            | 3            |
-| 43      | US07          | Actualizar una suscripción                 | Como usuario propietario deseo actualizar mi suscripción para usar los beneficios que me da        | 3            |
-| 44      | US08          | Visualizar espacios deportivos             | Como jugador o propietario deseo ver los espacios deportivos para conocer sus detalles             | 2            |
-| 45      | US09          | Añadir un espacio deportivo                | Como propietario deseo añadir mi espacio deportivo para que los jugadores puedan visualizarlo      | 2            |
-| 46     | US12          | Visualizar horas disponibles               | Como jugador deseo visualizar las horas disponibles de un espacio deportivo para reservar          | 2            |
-| 47     | US13          | Crear una reserva en un espacio deportivo | Como jugador deseo reservar un espacio deportivo para jugar para asegurar mi tiempo de juego       | 5            |
-| 48     | US14          | Ver reservas realizadas                    | Como jugador deseo ver mis reservas realizadas para conocer su información                         | 2            |
-| 49     | US16          | Visualizar salas comunidad                 | Como jugador deseo visualizar las salas comunidad disponibles para unirme                          | 2            |
-| 50     | US17          | Ingresar a una sala comunidad              | Como jugador deseo ingresar a una sala comunidad para enlistarme                                   | 5            |
-| 51     | US18          | Eliminar una sala comunidad                | Como creador de la reserva deseo eliminar mi sala comunidad para cancelar la reserva               | 3            |
-| 52     | US10          | Eliminar un espacio deportivo              | Como propietario deseo eliminar mi espacio deportivo porque ya no quiero que esté registrado       | 2            |
-| 53     | US22          | Crear ticket de transferencia              | Como propietario deseo crear un ticket de transferencia para recibir mi dinero                     | 3            |
-| 54     | US21          | Visualizar ticket de transferencia         | Como propietario deseo visualizar mis tickets de transferencia para conocer sus estados            | 2            |
-| 55     | US15          | Generar código QR de acceso                | Como jugador deseo generar el código QR para acceder al espacio deportivo                          | 2            |
-| 56     | US19          | Visualizar salas asociadas a mis espacios | Como propietario deseo visualizar las salas creadas a partir de mi espacio deportivo               | 2            |
-| 57     | US20          | Aplicar filtros a salas comunidad          | Como jugador deseo aplicar filtros para encontrar salas comunidad según mis preferencias           | 2            |
-| 58     | US11          | Aplicar filtros a espacios deportivos      | Como jugador deseo aplicar filtros para encontrar espacios deportivos según mis preferencias       | 2            |
-| 59     | US23          | Recuperar contraseña     | Como usuario quiero recuperar mi contraseña seguir usando mi cuenta       | 2            |
-| 60     | US24          | Conocer acerca de la aplicación            | Como visitante del landing page deseo saber acerca de la aplicación para conocer sus detalles      | 2            |
+| #Orden | User Story ID | Título                                             | Descripción                                                                                                                                                                                                                      | Story Points |
+| -----: | ------------- | -------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -----------: |
+|      1 | TS01          | Crear usuario                                      | Como desarrollador deseo implementar el endpoint `POST users/sign-up` para registrar usuarios en la app                                                                                                                          |            5 |
+|      2 | TS07          | Autenticar usuario                                 | Como desarrollador deseo implementar el endpoint `POST authentication/sign-in` para autenticar a un usuario                                                                                                                      |            5 |
+|      3 | TS09          | Verificar autenticación                            | Como desarrollador deseo implementar el endpoint `GET authentication/is-authenticated` para verificar si estoy autenticado                                                                                                       |            2 |
+|      4 | TS06          | Obtener información del usuario                    | Como desarrollador deseo implementar el endpoint `GET users/me` para obtener la información del usuario autenticado                                                                                                              |            2 |
+|      5 | TS02          | Actualizar nombre                                  | Como desarrollador deseo implementar el endpoint `PUT users/name` para actualizar el nombre del usuario                                                                                                                          |            2 |
+|      6 | TS03          | Actualizar correo                                  | Como desarrollador deseo implementar el endpoint `PUT users/email` para actualizar el correo del usuario                                                                                                                         |            2 |
+|      7 | TS04          | Actualizar contraseña                              | Como desarrollador deseo implementar el endpoint `PUT users/password` para actualizar la contraseña del usuario                                                                                                                  |            2 |
+|      8 | TS08          | Desautenticar usuario                              | Como desarrollador deseo implementar el endpoint `POST authentication/log-out` para cerrar sesión del usuario                                                                                                                    |            2 |
+|      9 | TS35          | Solicitar olvido de contraseña                     | Como desarrollador deseo implementar el endpoint `POST recover-password/forgot-password` para solicitar recuperación                                                                                                             |            3 |
+|     10 | TS36          | Reiniciar contraseña                               | Como desarrollador deseo implementar el endpoint `POST recover-password/reset-password` para reiniciar la contraseña                                                                                                             |            3 |
+|     11 | TS11          | Obtener suscripción de un usuario                  | Como desarrollador deseo implementar el endpoint `GET api/v1/subscriptions` para ver la suscripción de un usuario                                                                                                                |            2 |
+|     12 | TS10          | Actualizar suscripción                             | Como desarrollador deseo implementar el endpoint `PUT subscriptions/upgrade` para actualizar la suscripción de un usuario                                                                                                        |            5 |
+|     13 | TS15          | Obtener todos los espacios deportivos              | Como desarrollador deseo implementar el endpoint `GET sport-spaces/all` para obtener todos los espacios deportivos                                                                                                               |            2 |
+|     14 | TS13          | Obtener espacio deportivo por ID                   | Como desarrollador deseo implementar el endpoint `GET sport-spaces/{id}` para obtener un espacio deportivo por ID                                                                                                                |            2 |
+|     15 | TS12          | Crear espacio deportivo                            | Como desarrollador deseo implementar el endpoint `POST sport-spaces/create` para que un OWNER cree un espacio deportivo                                                                                                          |            5 |
+|     16 | TS14          | Obtener espacios propios                           | Como desarrollador deseo implementar el endpoint `GET sport-spaces/my-space` para que un OWNER vea sus espacios                                                                                                                  |            2 |
+|     17 | TS16          | Eliminar un espacio deportivo                      | Como desarrollador deseo implementar el endpoint `DELETE sport-spaces/{id}` para eliminar un espacio como OWNER                                                                                                                  |            5 |
+|     18 | TS37          | Recuperar datos del dispositivo IoT al servidor    | Como desarrollador, necesito implementar un endpoint `PATCH sport-spaces/create-number/{sportSpaceId}/update-amount-people` para que pueda mandar la cantidad de personas ingresadas a un espacio deportivo en un rango de horas |         5 |
+|     19 | TS38          | Visualizar datos del dispositivo IoT al servidor   | Como desarrollador, necesito implementar un endpoint `GET sport-spaces/get-number/{sportSpaceId}/amount-people` para que pueda obtener la cantidad de personas ingresadas a un espacio deportivo en un rango de horas            |         2 |
+|     20 | TS25          | Crear un depósito                                  | Como desarrollador deseo implementar el endpoint `POST deposit/create-deposit` para que un jugador recargue créditos                                                                                                             |            5 |
+|     21 | TS17          | Crear una reserva                                  | Como desarrollador deseo implementar el endpoint `POST reservations/create` para que un usuario PLAYER realice una reserva                                                                                                       |            8 |
+|     22 | TS18          | Obtener reservas                                   | Como desarrollador deseo implementar el endpoint `GET reservations/my-reservations` para ver reservas del usuario                                                                                                                |            2 |
+|     23 | TS19          | Eliminar una reserva                               | Como desarrollador deseo implementar el endpoint `DELETE reservations/{id}` para eliminar una reserva como PLAYER                                                                                                                |            5 |
+|     24 | TS21          | Usar QR                                            | Como desarrollador deseo implementar el endpoint `POST reservations/user-qr-token` para que el jugador use su QR                                                                                                                 |            5 |
+|     25 | TS20          | Obtener y verificar un QR                          | Como desarrollador deseo implementar el endpoint `GET reservations/verify-qr-image` para obtener el QR de acceso                                                                                                                 |            5 |
+|     26 | TS31          | Obtener salas por usuario específico               | Como desarrollador deseo implementar el endpoint `GET rooms/my-rooms` para obtener salas propias                                                                                                                                 |            2 |
+|     27 | TS32          | Obtener salas por espacios deportivos              | Como desarrollador deseo implementar el endpoint `GET rooms/my-rooms-by-spaces` para ver salas por espacio                                                                                                                       |            2 |
+|     28 | TS33          | Obtener salas unidas por jugador                   | Como desarrollador deseo implementar el endpoint `GET rooms/my-join-rooms` para ver salas unidas                                                                                                                                 |            2 |
+|     29 | TS30          | Obtener sala por ID                                | Como desarrollador deseo implementar el endpoint `GET rooms/{id}` para obtener una sala por su ID                                                                                                                                |            2 |
+|     30 | TS22          | Unirse a una room                                  | Como desarrollador deseo implementar el endpoint `POST player-lists/join` para que un usuario se una a una sala COMMUNITY                                                                                                        |            5 |
+|     31 | TS23          | Obtener lista de jugadores de una sala             | Como desarrollador deseo implementar el endpoint `GET player-lists/room/{roomId}` para ver jugadores de una sala                                                                                                                 |            3 |
+|     32 | TS24          | Crear un chat en base a una sala                   | Como desarrollador deseo implementar el endpoint `POST chat/rooms/{chatRoomId}/messages` para crear un chat en una sala                                                                                                          |            3 |
+|     33 | TS39          | Salir de una sala comunidad                        | Como desarrollador necesito implementar un endpoint `DELETE player-lists/leave/{roomId}` para que pueda solicitar el salirse de una sala comunidad                                                                               |         5 |
+|     34 | TS34          | Obtener todas las salas (ADMIN)                    | Como desarrollador deseo implementar el endpoint `GET rooms/all` para obtener todas las salas como ADMIN                                                                                                                         |            2 |
+|     35 | TS26          | Crear petición para retiro                         | Como desarrollador deseo implementar el endpoint `POST bank-transfer/create` para solicitar retiro de créditos como OWNER                                                                                                        |            5 |
+|     36 | TS28          | Obtener solicitud de retiro de un usuario          | Como desarrollador deseo implementar el endpoint `GET bank-transfer/user/{userId}` para obtener la solicitud de retiro de un usuario                                                                                             |            2 |
+|     37 | TS29          | Obtener todas solicitudes de retiro                | Como desarrollador deseo implementar el endpoint `GET bank-transfer/all` para obtener todas las solicitudes de retiro                                                                                                            |            2 |
+|     38 | TS27          | Atender solicitud de retiro                        | Como desarrollador deseo implementar el endpoint `PATCH bank-transfer/update-transfer/{id}` para que un ADMIN atienda la solicitud                                                                                               |            5 |
+|     39 | TS40          | Diferir la solicitud de retiro de un usuario OWNER | Como desarrollador necesito implementar un endpoint `PATCH bank-transfer/defer/{id}` para que se difiera una petición de retiro de créditos como usuario ADMIN                                                                   |         2 |
+|     40 | TS05          | Obtener todos los usuarios                         | Como desarrollador deseo implementar el endpoint `GET users/all` para que un ADMIN obtenga todos los usuarios                                                                                                                    |            2 |
+| 41      | US01          | Registro de cuenta de usuario              | Como jugador o propietario deseo registrarme para tener una cuenta en D’Taquito                    | 2            |
+| 42      | US02          | Inicio de sesión de cuenta                 | Como jugador o propietario deseo ingresar a mi cuenta para usar funcionalidades de la app          | 2            |
+| 43      | US03          | Ver perfil de usuario                      | Como jugador o propietario deseo acceder a mi perfil para visualizar mis datos personales          | 2            |
+| 44      | US04          | Editar perfil de usuario                   | Como usuario deseo editar mis datos personales para mantener mi perfil actualizado                 | 2            |
+| 45      | US05          | Recargar crédito                           | Como jugador deseo recargar crédito para reservar un espacio deportivo                             | 3            |
+| 46      | US06          | Ver una suscripción                        | Como propietario deseo ver el estado de mi suscripción para gestionarla                            | 3            |
+| 47      | US07          | Actualizar una suscripción                 | Como usuario propietario deseo actualizar mi suscripción para usar los beneficios que me da        | 3            |
+| 48      | US08          | Visualizar espacios deportivos             | Como jugador o propietario deseo ver los espacios deportivos para conocer sus detalles             | 2            |
+| 49      | US09          | Añadir un espacio deportivo                | Como propietario deseo añadir mi espacio deportivo para que los jugadores puedan visualizarlo      | 2            |
+| 50     | US12          | Visualizar horas disponibles               | Como jugador deseo visualizar las horas disponibles de un espacio deportivo para reservar          | 2            |
+| 51     | US13          | Crear una reserva en un espacio deportivo | Como jugador deseo reservar un espacio deportivo para jugar para asegurar mi tiempo de juego       | 5            |
+| 52     | US14          | Ver reservas realizadas                    | Como jugador deseo ver mis reservas realizadas para conocer su información                         | 2            |
+| 53     | US16          | Visualizar salas comunidad                 | Como jugador deseo visualizar las salas comunidad disponibles para unirme                          | 2            |
+| 54     | US17          | Ingresar a una sala comunidad              | Como jugador deseo ingresar a una sala comunidad para enlistarme                                   | 5            |
+| 55     | US18          | Eliminar una sala comunidad                | Como creador de la reserva deseo eliminar mi sala comunidad para cancelar la reserva               | 3            |
+| 56     | US10          | Eliminar un espacio deportivo              | Como propietario deseo eliminar mi espacio deportivo porque ya no quiero que esté registrado       | 2            |
+| 57     | US22          | Crear ticket de transferencia              | Como propietario deseo crear un ticket de transferencia para recibir mi dinero                     | 3            |
+| 58     | US24          | Atender ticket de transferencia         | Como administrador quiero atender los tickets de transferencia para pagar a los propietarios            | 5            |
+| 59     | US21          | Visualizar ticket de transferencia         | Como propietario deseo visualizar mis tickets de transferencia para conocer sus estados            | 2            |
+| 60     | US15          | Generar código QR de acceso                | Como jugador deseo generar el código QR para acceder al espacio deportivo                          | 2            |
+| 61     | US19          | Visualizar salas asociadas a mis espacios | Como propietario deseo visualizar las salas creadas a partir de mi espacio deportivo               | 2            |
+| 62     | US20          | Aplicar filtros a salas comunidad          | Como jugador deseo aplicar filtros para encontrar salas comunidad según mis preferencias           | 2            |
+| 63     | US11          | Aplicar filtros a espacios deportivos      | Como jugador deseo aplicar filtros para encontrar espacios deportivos según mis preferencias       | 2            |
+| 64     | US23          | Recuperar contraseña     | Como usuario quiero recuperar mi contraseña seguir usando mi cuenta       | 2            |
+| 65     | US25          | Salir de una sala            | Como jugador quiero salirme de una sala comunida      | 2            |
+| 66     | US26          | Conocer acerca de la aplicación            | Como visitante del landing page deseo saber acerca de la aplicación para conocer sus detalles      | 2            |
 
 
 <br>
@@ -1582,7 +1588,7 @@ El "Context Mapping" representa cómo los diferentes módulos interactúan entre
 Este diagrama muestra el panorama general del sistema, destacando las principales entidades involucradas, como los Usuarios, Administrador, y las interacciones del sistema de gestión empresarial con componentes externos como la API de Pago (PayPal API) y la API de correos Gmail API. Representa las conexiones entre estos actores y cómo interactúan con el sistema para proporcionar acceso a funciones clave como pagos, envío de correos y visualización de espacios deportivos en el mapa a tiempo real.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-diagram.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-diagram.jpg" alt="UPC">
 </p>
 
 #### 4.1.6.2. Software Architecture Context Level Diagrams
@@ -1590,7 +1596,7 @@ Este diagrama muestra el panorama general del sistema, destacando las principale
 Este diagrama desglosa el contexto a un nivel más detallado, mostrando las interacciones entre los usuarios y el sistema en términos de roles y permisos. Aquí, tanto los Usuarios como los Administradores tienen acceso al Sistema de Gestión Empresarial, pero interactúan de manera diferente, con los usuarios accediendo a características específicas como pagos a través de la API de PayPal y recuperación de contraseña a tráves de la API de Gmail. 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-diagram.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-diagram.jpg" alt="UPC">
 </p>
 
 #### 4.1.6.3. Software Architecture Container Level Diagrams
@@ -2981,7 +2987,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//sportspace-component.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//sport-spaces-component.jpg" alt="UPC">
 </p>
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams 
@@ -4216,7 +4222,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 #### 4.2.11.4. Bounded Context Software Architecture Component Level Diagrams 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//payment-component.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//external-systems-component.jpg" alt="UPC">
 </p>
 
 #### 4.2.11.5. Bounded Context Software Architecture Code Level Diagrams
@@ -4307,8 +4313,7 @@ Lo que sigue es una recopilación de principios visuales que marcarán la identi
 
 Los sistemas de organización se refieren a cómo se presentan los productos, imágenes, y demás elementos, con el objetivo de no saturar al usuario con exceso de información en la pantalla. La estructura ideal para organizar los diferentes tipos de datos comienza por mostrar quiénes somos como empresa, seguido de nuestra misión, visión y valores. Por último, se incluye al equipo de desarrolladores en la página de aterrizaje. En nuestra aplicación web, buscamos que las imágenes estén siempre acompañadas de texto para asegurar que el contexto no se pierda y ofrecer información relevante a los usuarios, organizando todo en vistas responsive y tarjetas tipo "cards".
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//orS-1.png" alt="UPC">
-
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//orS-1.png" alt="UPC">
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//orS-2.png" alt="UPC">
 </p>
 
