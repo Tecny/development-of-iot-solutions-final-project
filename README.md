@@ -1269,7 +1269,7 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 | 62     | US20          | Aplicar filtros a salas comunidad          | Como jugador deseo aplicar filtros para encontrar salas comunidad según mis preferencias           | 2            |
 | 63     | US11          | Aplicar filtros a espacios deportivos      | Como jugador deseo aplicar filtros para encontrar espacios deportivos según mis preferencias       | 2            |
 | 64     | US23          | Recuperar contraseña     | Como usuario quiero recuperar mi contraseña seguir usando mi cuenta       | 2            |
-| 65     | US25          | Salir de una sala            | Como jugador quiero salirme de una sala comunida      | 2            |
+| 65     | US25          | Salir de una sala            | Como jugador quiero salirme de una sala comunidad      | 2            |
 | 66     | US26          | Conocer acerca de la aplicación            | Como visitante del landing page deseo saber acerca de la aplicación para conocer sus detalles      | 2            |
 
 
