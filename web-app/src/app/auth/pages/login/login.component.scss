@@ -1,0 +1,173 @@
+@use 'abstracts/variables' as vars;
+
+.login-container {
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  margin: 20px auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: vars.$green-medium;
+  border: 1px solid vars.$green-medium;
+
+  .login-title {
+    color: vars.$green-black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 15px;
+
+      .form-label {
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: vars.$green-deep;
+      }
+
+      .form-input {
+        padding: 10px;
+        border: 1px solid vars.$green-dark;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: #fff;
+        color: vars.$neutral-dark;
+
+        &:focus {
+          outline: none;
+          border-color: vars.$green-medium;
+          box-shadow: 0 0 0 2px rgba(44, 151, 56, 0.2);
+        }
+      }
+
+      .error-message {
+        color: vars.$error;
+        margin-top: 5px;
+        font-size: 12px;
+      }
+    }
+
+    .forgot-password-button {
+      background: none;
+      color: vars.$blue-link;
+      border: none;
+      padding: 0;
+      margin-bottom: 10px;
+      cursor: pointer;
+      font-size: 14px;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .submit-button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      background-color: vars.$green-medium;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+
+      &:hover {
+        background-color: vars.$green-dark;
+      }
+
+      &:disabled {
+        background-color: vars.$neutral;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .register-link {
+    margin-top: 15px;
+    color: vars.$neutral-dark;
+    font-size: 14px;
+
+    a {
+      color: vars.$blue-link;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .forgot-password-form {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+
+    .form-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: vars.$green-deep;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid vars.$green-dark;
+      border-radius: 4px;
+      font-size: 16px;
+
+      &:focus {
+        border-color: vars.$green-medium;
+      }
+    }
+
+    .submit-button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      background-color: vars.$green-medium;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: vars.$green-dark;
+      }
+
+      &:disabled {
+        background-color: vars.$neutral;
+        cursor: not-allowed;
+      }
+    }
+
+    .error-message {
+      color: vars.$error;
+      margin-top: 5px;
+      font-size: 12px;
+    }
+  }
+
+  .error-login {
+    color: vars.$error;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+}
