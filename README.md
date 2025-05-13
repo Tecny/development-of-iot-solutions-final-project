@@ -1116,7 +1116,7 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 | **Backend**   | EP10    | Implementación del módulo subscriptions | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo subscriptions funcione | TS10, TS11                                  |
 | **Backend**   | EP11    | Implementación del módulo sportspaces   | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo sportspaces funcione | TS12, TS13, TS14, TS15, TS16 TS37, TS38                      |
 | **Backend**   | EP12    | Implementación del módulo reservations  | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo reservations funcione | TS17, TS18, TS19, TS20, TS21                |
-| **Backend**   | EP13    | Implementación del módulo playerlists   | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo playerlists funcione |  TS22, TS2, TS39                                  |
+| **Backend**   | EP13    | Implementación del módulo playerlists   | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo playerlists funcione |  TS22, TS23, TS39                                  |
 | **Backend**   | EP14    | Implementación del módulo chatroom      | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo chatroom funcione    | TS24                                         |
 | **Backend**   | EP15    | Implementación del módulo deposit       | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo deposit funcione     | TS25                                     |
 | **Backend**   | EP16    | Implementación del módulo banktransfer  | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo banktransfer funcione | TS26, TS27, TS28, TS29, TS40                      |
@@ -1262,8 +1262,8 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 | 55     | US18          | Eliminar una sala comunidad                | Como creador de la reserva deseo eliminar mi sala comunidad para cancelar la reserva               | 3            |
 | 56     | US10          | Eliminar un espacio deportivo              | Como propietario deseo eliminar mi espacio deportivo porque ya no quiero que esté registrado       | 2            |
 | 57     | US22          | Crear ticket de transferencia              | Como propietario deseo crear un ticket de transferencia para recibir mi dinero                     | 3            |
-| 58     | US24          | Atender ticket de transferencia         | Como administrador quiero atender los tickets de transferencia para pagar a los propietarios            | 5            |
-| 59     | US21          | Visualizar ticket de transferencia         | Como propietario deseo visualizar mis tickets de transferencia para conocer sus estados            | 2            |
+| 58     | US21          | Visualizar ticket de transferencia         | Como propietario deseo visualizar mis tickets de transferencia para conocer sus estados            | 2            |
+| 59     | US24          | Atender ticket de transferencia         | Como administrador quiero atender los tickets de transferencia para pagar a los propietarios            | 5            |
 | 60     | US15          | Generar código QR de acceso                | Como jugador deseo generar el código QR para acceder al espacio deportivo                          | 2            |
 | 61     | US19          | Visualizar salas asociadas a mis espacios | Como propietario deseo visualizar las salas creadas a partir de mi espacio deportivo               | 2            |
 | 62     | US20          | Aplicar filtros a salas comunidad          | Como jugador deseo aplicar filtros para encontrar salas comunidad según mis preferencias           | 2            |
