@@ -1245,32 +1245,32 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 |     38 | TS27          | Atender solicitud de retiro                        | Como desarrollador deseo implementar el endpoint `PATCH bank-transfer/update-transfer/{id}` para que un ADMIN atienda la solicitud                                                                                               |            5 |
 |     39 | TS40          | Diferir la solicitud de retiro de un usuario OWNER | Como desarrollador necesito implementar un endpoint `PATCH bank-transfer/defer/{id}` para que se difiera una petición de retiro de créditos como usuario ADMIN                                                                   |         2 |
 |     40 | TS05          | Obtener todos los usuarios                         | Como desarrollador deseo implementar el endpoint `GET users/all` para que un ADMIN obtenga todos los usuarios                                                                                                                    |            2 |
-| 41      | US01          | Registro de cuenta de usuario              | Como jugador o propietario deseo registrarme para tener una cuenta en D’Taquito                    | 2            |
-| 42      | US02          | Inicio de sesión de cuenta                 | Como jugador o propietario deseo ingresar a mi cuenta para usar funcionalidades de la app          | 2            |
-| 43      | US03          | Ver perfil de usuario                      | Como jugador o propietario deseo acceder a mi perfil para visualizar mis datos personales          | 2            |
-| 44      | US04          | Editar perfil de usuario                   | Como usuario deseo editar mis datos personales para mantener mi perfil actualizado                 | 2            |
-| 45      | US05          | Recargar crédito                           | Como jugador deseo recargar crédito para reservar un espacio deportivo                             | 3            |
-| 46      | US06          | Ver una suscripción                        | Como propietario deseo ver el estado de mi suscripción para gestionarla                            | 3            |
-| 47      | US07          | Actualizar una suscripción                 | Como usuario propietario deseo actualizar mi suscripción para usar los beneficios que me da        | 3            |
-| 48      | US08          | Visualizar espacios deportivos             | Como jugador o propietario deseo ver los espacios deportivos para conocer sus detalles             | 2            |
-| 49      | US09          | Añadir un espacio deportivo                | Como propietario deseo añadir mi espacio deportivo para que los jugadores puedan visualizarlo      | 2            |
-| 50     | US12          | Visualizar horas disponibles               | Como jugador deseo visualizar las horas disponibles de un espacio deportivo para reservar          | 2            |
-| 51     | US13          | Crear una reserva en un espacio deportivo | Como jugador deseo reservar un espacio deportivo para jugar para asegurar mi tiempo de juego       | 5            |
-| 52     | US14          | Ver reservas realizadas                    | Como jugador deseo ver mis reservas realizadas para conocer su información                         | 2            |
-| 53     | US16          | Visualizar salas comunidad                 | Como jugador deseo visualizar las salas comunidad disponibles para unirme                          | 2            |
-| 54     | US17          | Ingresar a una sala comunidad              | Como jugador deseo ingresar a una sala comunidad para enlistarme                                   | 5            |
-| 55     | US18          | Eliminar una sala comunidad                | Como creador de la reserva deseo eliminar mi sala comunidad para cancelar la reserva               | 3            |
-| 56     | US10          | Eliminar un espacio deportivo              | Como propietario deseo eliminar mi espacio deportivo porque ya no quiero que esté registrado       | 2            |
-| 57     | US22          | Crear ticket de transferencia              | Como propietario deseo crear un ticket de transferencia para recibir mi dinero                     | 3            |
-| 58     | US21          | Visualizar ticket de transferencia         | Como propietario deseo visualizar mis tickets de transferencia para conocer sus estados            | 2            |
+| 41      | US01          | Registro de cuenta de usuario              | Como jugador o propietario quiero registrarme para tener una cuenta en D’Taquito                    | 2            |
+| 42      | US02          | Inicio de sesión de cuenta                 | Como jugador o propietario quiero ingresar a mi cuenta para usar funcionalidades de la app          | 2            |
+| 43      | US03          | Ver perfil de usuario                      | Como jugador o propietario quiero acceder a mi perfil para visualizar mis datos personales          | 2            |
+| 44      | US04          | Editar perfil de usuario                   | Como usuario quiero editar mis datos personales para mantener mi perfil actualizado                 | 2            |
+| 45      | US05          | Recargar crédito                           | Como jugador quiero recargar crédito para reservar un espacio deportivo                             | 3            |
+| 46      | US06          | Ver una suscripción                        | Como propietario quiero ver el estado de mi suscripción para gestionarla                            | 3            |
+| 47      | US07          | Actualizar una suscripción                 | Como usuario propietario quiero actualizar mi suscripción para usar los beneficios que me da        | 3            |
+| 48      | US08          | Visualizar espacios deportivos             | Como jugador o propietario quiero ver los espacios deportivos para conocer sus detalles             | 2            |
+| 49      | US09          | Añadir un espacio deportivo                | Como propietario quiero añadir mi espacio deportivo para que los jugadores puedan visualizarlo      | 2            |
+| 50     | US12          | Visualizar horas disponibles               | Como jugador quiero visualizar las horas disponibles de un espacio deportivo para reservar          | 2            |
+| 51     | US13          | Crear una reserva en un espacio deportivo | Como jugador quiero reservar un espacio deportivo para jugar para asegurar mi tiempo de juego       | 5            |
+| 52     | US14          | Ver reservas realizadas                    | Como jugador quiero ver mis reservas realizadas para conocer su información                         | 2            |
+| 53     | US16          | Visualizar salas comunidad                 | Como jugador quiero visualizar las salas comunidad disponibles para unirme                          | 2            |
+| 54     | US17          | Ingresar a una sala comunidad              | Como jugador quiero ingresar a una sala comunidad para enlistarme                                   | 5            |
+| 55     | US18          | Eliminar una sala comunidad                | Como creador de la reserva quiero eliminar mi sala comunidad para cancelar la reserva               | 3            |
+| 56     | US10          | Eliminar un espacio deportivo              | Como propietario quiero eliminar mi espacio deportivo porque ya no quiero que esté registrado       | 2            |
+| 57     | US22          | Crear ticket de transferencia              | Como propietario quiero crear un ticket de transferencia para recibir mi dinero                     | 3            |
+| 58     | US21          | Visualizar ticket de transferencia         | Como propietario quiero visualizar mis tickets de transferencia para conocer sus estados            | 2            |
 | 59     | US24          | Atender ticket de transferencia         | Como administrador quiero atender los tickets de transferencia para pagar a los propietarios            | 5            |
-| 60     | US15          | Generar código QR de acceso                | Como jugador deseo generar el código QR para acceder al espacio deportivo                          | 2            |
-| 61     | US19          | Visualizar salas asociadas a mis espacios | Como propietario deseo visualizar las salas creadas a partir de mi espacio deportivo               | 2            |
-| 62     | US20          | Aplicar filtros a salas comunidad          | Como jugador deseo aplicar filtros para encontrar salas comunidad según mis preferencias           | 2            |
-| 63     | US11          | Aplicar filtros a espacios deportivos      | Como jugador deseo aplicar filtros para encontrar espacios deportivos según mis preferencias       | 2            |
+| 60     | US15          | Generar código QR de acceso                | Como jugador quiero generar el código QR para acceder al espacio deportivo                          | 2            |
+| 61     | US19          | Visualizar salas asociadas a mis espacios | Como propietario quiero visualizar las salas creadas a partir de mi espacio deportivo               | 2            |
+| 62     | US20          | Aplicar filtros a salas comunidad          | Como jugador quiero aplicar filtros para encontrar salas comunidad según mis preferencias           | 2            |
+| 63     | US11          | Aplicar filtros a espacios deportivos      | Como jugador quiero aplicar filtros para encontrar espacios deportivos según mis preferencias       | 2            |
 | 64     | US23          | Recuperar contraseña     | Como usuario quiero recuperar mi contraseña seguir usando mi cuenta       | 2            |
 | 65     | US25          | Salir de una sala            | Como jugador quiero salirme de una sala comunidad      | 2            |
-| 66     | US26          | Conocer acerca de la aplicación            | Como visitante del landing page deseo saber acerca de la aplicación para conocer sus detalles      | 2            |
+| 66     | US26          | Conocer acerca de la aplicación            | Como visitante del landing page quiero saber acerca de la aplicación para conocer sus detalles      | 2            |
 
 
 <br>
