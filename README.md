@@ -485,7 +485,40 @@
      - 6.1.2. [Source Code Management](#612-source-code-management)    
      - 6.1.3. [Source Code Style Guide & Conventions](#613-source-code-style-guide--conventions)    
      - 6.1.4. [Software Deployment Configuration](#614-software-deployment-configuration)    
-  
+  - 6.2. [Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
+     - 6.2.1 [Sprint 1](#621-sprint-1)
+       - 6.2.1.1 [Sprint Planning](#6211-sprint-planning)
+       - 6.2.1.2 [Sprint Backlog](#6212-sprint-backlog)
+       - 6.2.1.3 [Development Evidence for Sprint Review](#6213-development-evidence-for-sprint-review)
+       - 6.2.1.4 [Testing Suite Evidence for Sprint Review](#6214-testing-suite-evidence-for-sprint-review)
+       - 6.2.1.5 [Execution Evidence for Sprint Review](#6215-execution-evidence-for-sprint-review)
+       - 6.2.1.6 [Services Documentation Evidence for Sprint Review](#6216-services-documentation-evidence-for-sprint-review)
+       - 6.2.1.7 [Software Deployment Evidence for Sprint Review](#6217-software-deployment-evidence-for-sprint-review)
+       - 6.2.1.8 [Team Collaboration Insights during Sprint](#6218-team-collaboration-insights-during-sprint)
+     - 6.2.2 [Sprint 2](#622-sprint-2)
+       - 6.2.2.1 [Sprint Planning](#6221-sprint-planning)
+       - 6.2.2.2 [Sprint Backlog](#6222-sprint-backlog)
+       - 6.2.2.3 [Development Evidence for Sprint Review](#6223-development-evidence-for-sprint-review)
+       - 6.2.2.4 [Testing Suite Evidence for Sprint Review](#6224-testing-suite-evidence-for-sprint-review)
+       - 6.2.2.5 [Execution Evidence for Sprint Review](#6225-execution-evidence-for-sprint-review)
+       - 6.2.2.6 [Services Documentation Evidence for Sprint Review](#6226-services-documentation-evidence-for-sprint-review)
+       - 6.2.2.7 [Software Deployment Evidence for Sprint Review](#6227-software-deployment-evidence-for-sprint-review)
+       - 6.2.2.8 [Team Collaboration Insights during Sprint](#6228-team-collaboration-insights-during-sprint)
+     - 6.2.3 [Sprint 3](#623-sprint-3)
+       - 6.2.3.1 [Sprint Planning](#6231-sprint-planning)
+       - 6.2.3.2 [Sprint Backlog](#6232-sprint-backlog)
+       - 6.2.3.3 [Development Evidence for Sprint Review](#6233-development-evidence-for-sprint-review)
+       - 6.2.3.4 [Execution Evidence for Sprint Review](#6234-execution-evidence-for-sprint-review)
+       - 6.2.3.5 [Software Deployment Evidence for Sprint Review](#6235-software-deployment-evidence-for-sprint-review)
+       - 6.2.3.6 [Team Collaboration Insights during Sprint](#6236-team-collaboration-insights-during-sprint)
+     - 6.2.4 [Sprint 4](#624-sprint-4)
+       - 6.2.4.1 [Sprint Planning](#6241-sprint-planning)
+       - 6.2.4.2 [Sprint Backlog](#6242-sprint-backlog)
+       - 6.2.4.3 [Development Evidence for Sprint Review](#6243-development-evidence-for-sprint-review)
+       - 6.2.4.4 [Execution Evidence for Sprint Review](#6244-execution-evidence-for-sprint-review)
+       - 6.2.4.5 [Software Deployment Evidence for Sprint Review](#6245-software-deployment-evidence-for-sprint-review)
+       - 6.2.4.6 [Team Collaboration Insights during Sprint](#6246-team-collaboration-insights-during-sprint) 
+
   [Conclusiones](#conclusiones)<br>
   [Bibliografía](#bibliografia)<br>
   [Anexos](#anexos)<br>
@@ -4560,7 +4593,1683 @@ Para asegurar un desarrollo homogéneo y comprensible a nivel internacional, hem
 
 La implementación de un software abarca los pasos, procesos y actividades necesarios para poner a disposición de los usuarios que visiten nuestra aplicación móvil una actualización o un sistema. La configuración para desplegar la solución de manera satisfactoria para cada uno de nuestros productos digitales se llevará a cabo a través de un servidor (Git), junto con el uso de GitHub. Esto implica que cada archivo será subido a un repositorio, permitiendo la configuración de cualquier parte del código de nuestra aplicación móvil. Posteriormente, se ejecutará en un servidor de prueba para verificar el correcto funcionamiento y detectar posibles errores en el código. El proceso de implementación de un software consta de tres fases principales: preparación, pruebas y despliegue.
 
+## 6.2 Landing Page, Services & Applications Implementation
+### 6.2.1 Sprint 1
+#### 6.2.1.1 Sprint Planning 
 
+| Sprint                        | Sprint 1            |
+|-------------------------------|---------------------|
+|Date  | 01 de abril del 2025 |
+|Time  | 07:00 horas (GMT-5) |
+|Location  |Modalidad remota por Discord  |
+|Prepared by  |Sebastian Mendez Lopez  |
+|Attendees  |Todos los integrantes del equipo |
+|Sprint 0 – Review Summary  |Sin reseña debido al ser primer sprint |
+|Sprint 0 – Retrospective Summary |Sin retrospectiva debido al ser primer sprint |
+|Sprint Goal | Nuestro enfoque es construir los módulos de gestión de usuarios, autenticación, suscripciones, espacios deportivos, recuperación de contraseña e integración con IoT. Creemos que esto aporta control de acceso seguro, robustez funcional y una base sólida de servicios. Esto se confirmará cuando los usuarios puedan registrarse, iniciar sesión, gestionar sus credenciales, consultar y actualizar su suscripción, así como integrar y visualizar datos desde dispositivos IoT.|
+|Sprint 1 Velocity | 60 |
+|Sum of Story Points| 60 |
+
+#### 6.2.1.2 Sprint Backlog
+
+<table>
+  <tr>
+    <th colspan="8">Sprint 1</th>
+  </tr>
+  <tr>
+    <th colspan="2">User Story</th>
+    <th colspan="6">Work-Item / Task</th>
+  </tr>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Estimation (Hours)</th>
+    <th>Assigned to</th>
+    <th>Status</th>
+  </tr>
+
+  <!-- TS01 -->
+  <tr>
+    <td rowspan="3">TS01</td>
+    <td rowspan="3">Crear usuario</td>
+    <td>TK01</td>
+    <td>Crear endpoint POST /users/sign-up</td>
+    <td>Definir ruta y controlador base para registrar nuevos usuarios</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar datos de entrada</td>
+    <td>Agregar validaciones para nombre, email y contraseña</td>
+    <td>3</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Guardar usuario en base de datos</td>
+    <td>Insertar usuario con contraseña encriptada</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS02 -->
+  <tr>
+    <td rowspan="2">TS02</td>
+    <td rowspan="2">Actualizar nombre</td>
+    <td>TK01</td>
+    <td>Crear endpoint PUT /users/name</td>
+    <td>Definir ruta y lógica para actualizar el nombre del usuario</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar nuevo nombre</td>
+    <td>Agregar reglas de validación para nombre válido</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS03 -->
+  <tr>
+    <td rowspan="2">TS03</td>
+    <td rowspan="2">Actualizar correo</td>
+    <td>TK01</td>
+    <td>Crear endpoint PUT /users/email</td>
+    <td>Definir ruta y controlador para actualizar el email del usuario</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Verificar formato y duplicados</td>
+    <td>Validar email nuevo y asegurar que no esté registrado</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS04 -->
+  <tr>
+    <td rowspan="2">TS04</td>
+    <td rowspan="2">Actualizar contraseña</td>
+    <td>TK01</td>
+    <td>Crear endpoint PUT /users/password</td>
+    <td>Definir lógica para actualizar la contraseña del usuario autenticado</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Encriptar y guardar nueva contraseña</td>
+    <td>Verificar y encriptar nueva contraseña antes de actualizar</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS05 -->
+  <tr>
+    <td rowspan="2">TS05</td>
+    <td rowspan="2">Obtener todos los usuarios</td>
+    <td>TK01</td>
+    <td>Crear endpoint GET /users/all</td>
+    <td>Configurar ruta para obtener la lista de usuarios</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Restringir acceso solo a ADMIN</td>
+    <td>Validar rol del usuario antes de devolver los datos</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS06 -->
+  <tr>
+    <td rowspan="2">TS06</td>
+    <td rowspan="2">Obtener información del usuario</td>
+    <td>TK01</td>
+    <td>Crear endpoint GET /users/me</td>
+    <td>Definir la ruta y lógica para retornar los datos del usuario autenticado</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Extraer ID del token</td>
+    <td>Obtener el ID del usuario desde el token JWT para usar en la consulta</td>
+    <td>1</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS07 -->
+  <tr>
+    <td rowspan="3">TS07</td>
+    <td rowspan="3">Autenticar usuario</td>
+    <td>TK01</td>
+    <td>Crear endpoint POST /authentication/sign-in</td>
+    <td>Definir ruta y lógica para recibir credenciales y autenticar al usuario</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Verificar credenciales y generar token</td>
+    <td>Comparar credenciales del usuario y generar token JWT si son válidas</td>
+    <td>3</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Enviar token en cookie HttpOnly</td>
+    <td>Retornar token JWT en una cookie segura HttpOnly para mantener la sesión</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS08 -->
+  <tr>
+    <td rowspan="2">TS08</td>
+    <td rowspan="2">Desautenticar usuario</td>
+    <td>TK01</td>
+    <td>Crear endpoint POST /authentication/log-out</td>
+    <td>Definir la ruta y lógica para cerrar sesión del usuario autenticado</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Eliminar cookie HttpOnly del token</td>
+    <td>Configurar la respuesta para eliminar la cookie que contiene el JWT</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS09 -->
+  <tr>
+    <td rowspan="3">TS09</td>
+    <td rowspan="3">Verificar autenticación</td>
+    <td>TK01</td>
+    <td>Crear endpoint GET /authentication/is-authenticated</td>
+    <td>Definir ruta para verificar si el usuario tiene una sesión activa</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Leer y validar token desde cookie</td>
+    <td>Extraer el token JWT desde la cookie HttpOnly y verificar su validez</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Responder estado de autenticación</td>
+    <td>Retornar true o false según si el token es válido o ha expirado</td>
+    <td>1</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS10 -->
+  <tr>
+    <td rowspan="3">TS10</td>
+    <td rowspan="3">Actualizar suscripción</td>
+    <td>TK01</td>
+    <td>Diseñar modelo de actualización</td>
+    <td>Crear estructura de datos para el cambio de suscripción</td>
+    <td>3</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Implementar lógica de upgrade</td>
+    <td>Programar lógica para actualizar suscripción del usuario</td>
+    <td>3</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Validar tipos de suscripción</td>
+    <td>Agregar verificación del tipo de suscripción y restricciones</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS11 -->
+  <tr>
+    <td rowspan="2">TS11</td>
+    <td rowspan="2">Obtener suscripción de un usuario</td>
+    <td>TK01</td>
+    <td>Crear endpoint de consulta</td>
+    <td>Desarrollar endpoint para consultar la suscripción del usuario</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Agregar validación de token</td>
+    <td>Validar usuario autenticado antes de retornar suscripción</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS12 -->
+  <tr>
+    <td rowspan="3">TS12</td>
+    <td rowspan="3">Crear espacio deportivo</td>
+    <td>TK01</td>
+    <td>Diseñar esquema del espacio</td>
+    <td>Modelar los datos del nuevo espacio deportivo</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Crear endpoint de creación</td>
+    <td>Desarrollar lógica para que OWNER cree espacio</td>
+    <td>3</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Validar permisos de OWNER</td>
+    <td>Verificar que el usuario tenga rol OWNER antes de crear</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS13 -->
+  <tr>
+    <td rowspan="2">TS13</td>
+    <td rowspan="2">Obtener espacio deportivo por ID</td>
+    <td>TK01</td>
+    <td>Crear consulta por ID</td>
+    <td>Programar lógica para obtener un espacio por su ID</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Manejar errores por ID inexistente</td>
+    <td>Agregar validación si el espacio no existe</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS14 -->
+  <tr>
+    <td rowspan="2">TS14</td>
+    <td rowspan="2">Obtener espacios propios</td>
+    <td>TK01</td>
+    <td>Crear filtro por propietario</td>
+    <td>Filtrar espacios por el OWNER autenticado</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar token del OWNER</td>
+    <td>Verificar autenticación antes de retornar datos</td>
+    <td>1</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS15 -->
+  <tr>
+    <td rowspan="2">TS15</td>
+    <td rowspan="2">Obtener todos los espacios deportivos</td>
+    <td>TK01</td>
+    <td>Crear endpoint público</td>
+    <td>Permitir consulta sin autenticación</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Ordenar resultados</td>
+    <td>Agregar ordenamiento por fecha o nombre</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS16 -->
+  <tr>
+    <td rowspan="3">TS16</td>
+    <td rowspan="3">Eliminar un espacio deportivo</td>
+    <td>TK01</td>
+    <td>Agregar validación de propiedad</td>
+    <td>Verificar si el usuario es OWNER del espacio</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Implementar endpoint DELETE</td>
+    <td>Programar lógica para eliminar espacio deportivo</td>
+    <td>3</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Manejo de errores</td>
+    <td>Validar existencia del espacio antes de eliminar</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS35 -->
+  <tr>
+    <td rowspan="2">TS35</td>
+    <td rowspan="2">Solicitar olvido de contraseña</td>
+    <td>TK01</td>
+    <td>Diseñar flujo de recuperación</td>
+    <td>Definir pasos y estructura para recuperación de contraseña</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Enviar correo de recuperación</td>
+    <td>Configurar envío de correo con enlace único</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS36 -->
+  <tr>
+    <td rowspan="2">TS36</td>
+    <td rowspan="2">Reiniciar contraseña</td>
+    <td>TK01</td>
+    <td>Validar token de recuperación</td>
+    <td>Verificar que el token sea válido y no haya expirado</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Actualizar contraseña</td>
+    <td>Reemplazar la contraseña antigua por la nueva</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS37 -->
+  <tr>
+    <td rowspan="3">TS37</td>
+    <td rowspan="3">Recuperar datos del dispositivo IoT al servidor</td>
+    <td>TK01</td>
+    <td>Definir estructura de datos IoT</td>
+    <td>Modelar los datos recibidos por el dispositivo</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Crear endpoint PATCH</td>
+    <td>Recibir y almacenar cantidad de personas</td>
+    <td>3</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Guardar datos por rango horario</td>
+    <td>Asociar número de personas a una franja horaria</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS38 -->
+  <tr>
+    <td rowspan="2">TS38</td>
+    <td rowspan="2">Visualizar datos del dispositivo IoT al servidor</td>
+    <td>TK01</td>
+    <td>Crear endpoint de consulta</td>
+    <td>Permitir obtener número de personas en cierto horario</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Filtrar por espacio y rango horario</td>
+    <td>Agregar filtros en la consulta del dispositivo</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+</table>
+
+#### 6.2.1.3 Development Evidence for Sprint Review
+
+Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date)
+--- | --- | --- | --- | --- | ---
+development-of-iot-solutions-final-project | feature/service-EP08-user-bc | 71eaef7 | feat(web-services): add user bc | - | 08/05/2025
+development-of-iot-solutions-final-project| feature/service-EP09-iam-bc | a398190 | feat(web-services): add iam bc | - | 08/05/2025
+development-of-iot-solutions-final-project | feature/service-EP10-subscription-bc | 5ce0e8d | feat(web-services): add subscriptions bc | - | 08/05/2025
+development-of-iot-solutions-final-project| feature/service-EP11-sportspace-bc | 066c76c | feat(web-services): add sportspace bc | - | 08/05/2025
+development-of-iot-solutions-final-project| feature/service-EP18-externalsystems-bc | eebd3b2 | feat(web-services): add externalsystems bc | - | 08/05/2025
+
+#### 6.2.1.4 Testing Suite Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//test-s1.png" alt="UPC">
+
+#### 6.2.1.5 Execution Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//exec-s1.png" alt="UPC">
+
+#### 6.2.1.6 Services Documentation Evidence for Sprint Review
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//sdoc-s1-1.png" alt="UPC">
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//sdoc-s1-2.png" alt="UPC">
+
+#### 6.2.1.7 Software Deployment Evidence for Sprint Review 
+
+No se realizó despliegue.
+
+#### 6.2.1.8 Team Collaboration Insights during Sprint 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s1.png" alt="UPC">
+
+
+
+### 6.2.2 Sprint 2
+#### 6.2.2.1 Sprint Planning 
+
+| Sprint                        | Sprint 2            |
+|-------------------------------|---------------------|
+|Date  | 14 de abril del 2025 |
+|Time  | 08:30 horas (GMT-5) |
+|Location  |Modalidad remota por Discord  |
+|Prepared by  |Sebastian Mendez Lopez  |
+|Attendees  |Todos los integrantes del equipo |
+|Sprint 1 – Review Summary  | Durante el sprint 1 se entregaron funcionalidades clave de backend, incluyendo autenticación, recuperación y gestión de suscripciones e integración IoT. El sistema se mostró estable y funcional. |
+|Sprint 1 – Retrospective Summary | Se logró una mejora en la organización del equipo, manteniendo una comunicación constante y buena asignación de tareas. Se propuso seguir fortaleciendo la validación de reglas de negocio y roles.|
+|Sprint Goal | Nuestro enfoque es completar funcionalidades de reservas, salas, depósitos, interacción entre jugadores y administración de retiros. Creemos que esto entrega una experiencia completa al usuario, desde la reserva hasta la gestión de fondos. Esto se confirmará cuando se puedan realizar reservas, gestionar salas comunidad, comunicarse mediante chat, y gestionar solicitudes de retiro. |
+|Sprint 2 Velocity | 72 |
+|Sum of Story Points| 72 |
+
+#### 6.2.2.2 Sprint Backlog
+
+<table>
+  <tr>
+    <th colspan="8">Sprint 2</th>
+  </tr>
+  <tr>
+    <th colspan="2">User Story</th>
+    <th colspan="6">Work-Item / Task</th>
+  </tr>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Estimation (Hours)</th>
+    <th>Assigned to</th>
+    <th>Status</th>
+  </tr>
+
+  <!-- TS17 -->
+  <tr>
+    <td rowspan="3">TS17</td>
+    <td rowspan="3">Crear una reserva</td>
+    <td>TK01</td>
+    <td>Crear lógica de reservas</td>
+    <td>Programar la lógica para crear una reserva válida</td>
+    <td>6</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar disponibilidad</td>
+    <td>Agregar validación para evitar reservas dobles</td>
+    <td>4</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Persistir reserva</td>
+    <td>Guardar la reserva en la base de datos</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS18 -->
+  <tr>
+    <td rowspan="2">TS18</td>
+    <td rowspan="2">Obtener reservas</td>
+    <td>TK01</td>
+    <td>Obtener reservas por usuario</td>
+    <td>Crear endpoint para obtener reservas del usuario actual</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Formatear respuesta</td>
+    <td>Devolver reservas con formato legible para frontend</td>
+    <td>1</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS19 -->
+  <tr>
+    <td rowspan="2">TS19</td>
+    <td rowspan="2">Eliminar una reserva</td>
+    <td>TK01</td>
+    <td>Eliminar reserva por ID</td>
+    <td>Implementar lógica para eliminar una reserva existente</td>
+    <td>3</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Verificar permisos del jugador</td>
+    <td>Asegurarse que el jugador solo elimine sus reservas</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS20 -->
+  <tr>
+    <td rowspan="2">TS20</td>
+    <td rowspan="2">Obtener y verificar un QR</td>
+    <td>TK01</td>
+    <td>Generar imagen QR</td>
+    <td>Programar generación de imagen QR con información de acceso</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar datos del QR</td>
+    <td>Verificar que el QR represente una reserva válida</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS21 -->
+  <tr>
+    <td rowspan="2">TS21</td>
+    <td rowspan="2">Usar QR</td>
+    <td>TK01</td>
+    <td>Escanear y validar QR</td>
+    <td>Leer el QR y validar su autenticidad y vigencia</td>
+    <td>3</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Registrar acceso</td>
+    <td>Actualizar la base de datos para registrar la entrada</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS25 -->
+  <tr>
+    <td rowspan="2">TS25</td>
+    <td rowspan="2">Crear un depósito</td>
+    <td>TK01</td>
+    <td>Crear endpoint de depósitos</td>
+    <td>Programar endpoint para que el jugador recargue saldo</td>
+    <td>3</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar datos del depósito</td>
+    <td>Revisar que los montos y datos sean correctos</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS30 -->
+  <tr>
+    <td>TS30</td>
+    <td>Obtener sala por ID</td>
+    <td>TK01</td>
+    <td>Buscar sala por ID</td>
+    <td>Permitir obtener una sala específica mediante su ID</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS31 -->
+  <tr>
+    <td>TS31</td>
+    <td>Obtener salas por usuario específico</td>
+    <td>TK01</td>
+    <td>Obtener salas propias</td>
+    <td>Crear endpoint para retornar salas del usuario autenticado</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS32 -->
+  <tr>
+    <td>TS32</td>
+    <td>Obtener salas por espacios deportivos</td>
+    <td>TK01</td>
+    <td>Obtener salas de espacios</td>
+    <td>Permitir al usuario obtener salas asociadas a sus espacios</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS33 -->
+  <tr>
+    <td>TS33</td>
+    <td>Obtener salas unidas por jugador</td>
+    <td>TK01</td>
+    <td>Salas unidas por jugador</td>
+    <td>Listar salas en las que el jugador está participando</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS34 -->
+  <tr>
+    <td>TS34</td>
+    <td>Obtener todas las salas (ADMIN)</td>
+    <td>TK01</td>
+    <td>Listar todas las salas</td>
+    <td>Crear endpoint que muestre todas las salas disponibles para el ADMIN</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS22 -->
+  <tr>
+    <td rowspan="3">TS22</td>
+    <td rowspan="3">Unirse a una sala comunidad</td>
+    <td>TK01</td>
+    <td>Crear lógica de unión a sala</td>
+    <td>Desarrollar endpoint para permitir que un jugador se una a una sala comunidad</td>
+    <td>3</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar acceso según tipo de sala</td>
+    <td>Agregar lógica para verificar si la sala es del tipo COMMUNITY antes de permitir el ingreso</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Test de integración</td>
+    <td>Crear pruebas para verificar el proceso completo de unión a una sala</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS23 -->
+  <tr>
+    <td rowspan="2">TS23</td>
+    <td rowspan="2">Obtener lista de jugadores de una sala</td>
+    <td>TK01</td>
+    <td>Implementar endpoint de listado</td>
+    <td>Desarrollar la lógica para obtener los jugadores de una sala específica</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar ID de sala</td>
+    <td>Verificar que la sala exista antes de retornar los jugadores</td>
+    <td>1</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS39 -->
+  <tr>
+    <td rowspan="2">TS39</td>
+    <td rowspan="2">Salir de una sala comunidad</td>
+    <td>TK01</td>
+    <td>Crear endpoint de salida</td>
+    <td>Desarrollar lógica para que un jugador pueda salirse de una sala comunidad</td>
+    <td>3</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Actualizar lista de jugadores</td>
+    <td>Remover jugador de la lista de miembros activos de la sala</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS24 -->
+  <tr>
+    <td rowspan="2">TS24</td>
+    <td rowspan="2">Enviar mensaje al chat de una sala</td>
+    <td>TK01</td>
+    <td>Diseñar estructura del chat</td>
+    <td>Definir el modelo de datos para mensajes vinculados a salas</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Implementar endpoint de mensajes</td>
+    <td>Crear endpoint para enviar mensajes desde una sala activa</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS26 -->
+  <tr>
+    <td rowspan="3">TS26</td>
+    <td rowspan="3">Crear petición para retiro</td>
+    <td>TK01</td>
+    <td>Diseñar endpoint de retiro</td>
+    <td>Desarrollar funcionalidad para que OWNER solicite retiro de créditos</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar monto disponible</td>
+    <td>Verificar que el usuario tenga suficientes créditos para retirar</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Guardar solicitud</td>
+    <td>Almacenar la petición de retiro con estado pendiente</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS27 -->
+  <tr>
+    <td rowspan="2">TS27</td>
+    <td rowspan="2">Atender solicitud de retiro</td>
+    <td>TK01</td>
+    <td>Actualizar estado de retiro</td>
+    <td>Permitir que un ADMIN apruebe o rechace la solicitud de retiro</td>
+    <td>3</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Registrar auditoría</td>
+    <td>Guardar el historial de cambios de estado para seguimiento</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS28 -->
+  <tr>
+    <td rowspan="2">TS28</td>
+    <td rowspan="2">Obtener solicitud de retiro de un usuario</td>
+    <td>TK01</td>
+    <td>Crear lógica de consulta individual</td>
+    <td>Desarrollar endpoint para obtener solicitudes de retiro por usuario</td>
+    <td>1</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar existencia de usuario</td>
+    <td>Agregar validación del ID del usuario antes de retornar los datos</td>
+    <td>1</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS29 -->
+  <tr>
+    <td>TS29</td>
+    <td>Obtener todas solicitudes de retiro</td>
+    <td>TK01</td>
+    <td>Listar solicitudes globales</td>
+    <td>Implementar endpoint para retornar todas las solicitudes como ADMIN</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- TS40 -->
+  <tr>
+    <td>TS40</td>
+    <td>Diferir solicitud de retiro</td>
+    <td>TK01</td>
+    <td>Actualizar solicitud como diferida</td>
+    <td>Permitir que un ADMIN difiera una solicitud de retiro y actualice su estado</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+</table>
+
+
+#### 6.2.2.3 Development Evidence for Sprint Review
+
+Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date)
+--- | --- | --- | --- | --- | ---
+development-of-iot-solutions-final-project | feature/service-EP12-reservations-bc | d0bb6a8 | feat(web-services): add reservations bc | - | 08/05/2025
+development-of-iot-solutions-final-project| feature/service-EP15-deposit-bc | bb41f84 | feat(web-services): add deposit bc | - | 08/05/2025
+development-of-iot-solutions-final-project| feature/service-EP17-rooms-bc | c6e1c42 | feat(web-services): add rooms bc | - | 08/05/2025
+development-of-iot-solutions-final-project | feature/service-EP13-playerlists-bc | ea4cdf5 | feat(web-services): add playerlists bc | - | 08/05/2025
+development-of-iot-solutions-final-project| feature/service-EP14-chatroom-bc | 9329adc | feat(web-services): add chatroom bc | - | 08/05/2025
+development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc | ac53788 | feat(web-services): add banktransfer bc | - | 08/05/2025
+
+
+#### 6.2.2.4 Testing Suite Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//test-s1.png" alt="UPC">
+
+#### 6.2.2.5 Execution Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//exec-s2.png" alt="UPC">
+
+#### 6.2.2.6 Services Documentation Evidence for Sprint Review
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//sdoc-s2-1.png" alt="UPC">
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//sdoc-s2-2.png" alt="UPC">
+
+#### 6.2.2.7 Software Deployment Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dep-s2.png" alt="UPC">
+
+#### 6.2.2.8 Team Collaboration Insights during Sprint 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s1.png" alt="UPC">
+
+### 6.2.3 Sprint 3
+
+#### 6.2.3.1 Sprint Planning 
+
+| Sprint                        | Sprint 3            |
+|-------------------------------|---------------------|
+|Date  | 28 de abril del 2025 |
+|Time  | 09:00 horas (GMT-5) |
+|Location  |Modalidad remota por Discord  |
+|Prepared by  |Sebastian Mendez Lopez  |
+|Attendees  |Todos los integrantes del equipo |
+|Sprint 2 – Review Summary  | Durante el sprint 2 se completaron funcionalidades esenciales relacionadas con reservas, salas y solicitudes de retiro. Se logró una integración estable de todos los módulos. |
+|Sprint 2 – Retrospective Summary | El equipo mantuvo buena comunicación y ritmo de entrega. Se propuso mejorar la documentación técnica y validar más rigurosamente los flujos completos. |
+|Sprint Goal | Nuestro enfoque es implementar funcionalidades fundamentales en la aplicación web para registro, autenticación, visualización de perfil, crédito, suscripción, visualización de espacios y reservas. Creemos que esto asegura accesibilidad y una experiencia funcional inicial. Esto se confirmará cuando los usuarios puedan acceder, navegar y utilizar la mayoría de funcionalidades básicas de la interfaz web. |
+|Sprint 3 Velocity | 30 |
+|Sum of Story Points| 30 |
+
+#### 6.2.3.2 Sprint Backlog
+
+<table>
+  <tr>
+    <th colspan="8">Sprint 3</th>
+  </tr>
+  <tr>
+    <th colspan="2">User Story</th>
+    <th colspan="6">Work-Item / Task</th>
+  </tr>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Estimation (Hours)</th>
+    <th>Assigned to</th>
+    <th>Status</th>
+  </tr>
+
+  <!-- US01 -->
+  <tr>
+    <td rowspan="2">US01</td>
+    <td rowspan="2">Registro de cuenta de usuario</td>
+    <td>TK01</td>
+    <td>Diseñar formulario de registro</td>
+    <td>Crear el formulario en la web app para capturar datos del nuevo usuario.</td>
+    <td>3</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Conectar frontend con endpoint de registro</td>
+    <td>Integrar el formulario con el backend para enviar los datos correctamente.</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US02 -->
+  <tr>
+    <td rowspan="2">US02</td>
+    <td rowspan="2">Inicio de sesión de cuenta</td>
+    <td>TK01</td>
+    <td>Implementar vista de login</td>
+    <td>Diseñar la pantalla de login y validaciones de formulario.</td>
+    <td>2</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Integrar autenticación con backend</td>
+    <td>Conectar los datos del formulario con el endpoint de inicio de sesión.</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US03 -->
+  <tr>
+    <td rowspan="2">US03</td>
+    <td rowspan="2">Ver perfil de usuario</td>
+    <td>TK01</td>
+    <td>Diseñar componente de perfil</td>
+    <td>Crear la interfaz para mostrar los datos del perfil del usuario.</td>
+    <td>3</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Obtener datos del perfil desde API</td>
+    <td>Hacer la llamada al endpoint para cargar la información del perfil.</td>
+    <td>2</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US04 -->
+  <tr>
+    <td rowspan="3">US04</td>
+    <td rowspan="3">Editar perfil de usuario</td>
+    <td>TK01</td>
+    <td>Agregar botones de edición en el perfil</td>
+    <td>Permitir al usuario cambiar datos como nombre o correo.</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar cambios antes de enviar</td>
+    <td>Validar que los datos ingresados sean correctos antes de actualizarlos.</td>
+    <td>1</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Conectar cambios con backend</td>
+    <td>Enviar los datos modificados al backend para actualizarlos.</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US05 -->
+  <tr>
+    <td rowspan="3">US05</td>
+    <td rowspan="3">Recargar crédito</td>
+    <td>TK01</td>
+    <td>Diseñar interfaz de recarga</td>
+    <td>Crear vista donde el usuario ingresa el monto a recargar.</td>
+    <td>2</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Implementar integración con backend</td>
+    <td>Enviar la solicitud de recarga al backend y mostrar la respuesta.</td>
+    <td>3</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Actualizar saldo en el perfil</td>
+    <td>Reflejar el nuevo saldo del usuario después de recargar.</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US06 -->
+  <tr>
+    <td rowspan="2">US06</td>
+    <td rowspan="2">Ver una suscripción</td>
+    <td>TK01</td>
+    <td>Crear sección de estado de suscripción</td>
+    <td>Diseñar un área en el perfil donde se muestre la suscripción activa.</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Conectar con backend para obtener suscripción</td>
+    <td>Obtener la suscripción actual del usuario desde el API.</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US07 -->
+  <tr>
+    <td rowspan="2">US07</td>
+    <td rowspan="2">Actualizar una suscripción</td>
+    <td>TK01</td>
+    <td>Implementar lógica de actualización</td>
+    <td>Crear la lógica para actualizar una suscripción existente del usuario</td>
+    <td>3</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar nivel de suscripción</td>
+    <td>Verificar que la nueva suscripción cumpla con los requisitos y reglas del sistema</td>
+    <td>2</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US08 -->
+  <tr>
+    <td rowspan="2">US08</td>
+    <td rowspan="2">Visualizar espacios deportivos</td>
+    <td>TK01</td>
+    <td>Obtener lista de espacios deportivos</td>
+    <td>Consumir el endpoint que devuelve los espacios deportivos disponibles</td>
+    <td>2</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Filtrar espacios por ubicación</td>
+    <td>Aplicar lógica para filtrar espacios deportivos según la ubicación del usuario</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US09 -->
+  <tr>
+    <td rowspan="3">US09</td>
+    <td rowspan="3">Añadir un espacio deportivo</td>
+    <td>TK01</td>
+    <td>Crear formulario para espacio deportivo</td>
+    <td>Diseñar y desarrollar un formulario de registro de nuevo espacio</td>
+    <td>3</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Enviar datos al backend</td>
+    <td>Conectar el formulario con el backend mediante el endpoint correspondiente</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Validar campos requeridos</td>
+    <td>Aplicar validaciones para asegurar el envío de información correcta</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US12 -->
+  <tr>
+    <td rowspan="2">US12</td>
+    <td rowspan="2">Visualizar horas disponibles</td>
+    <td>TK01</td>
+    <td>Diseñar vista de disponibilidad</td>
+    <td>Mostrar visualmente las horas disponibles por cada espacio deportivo</td>
+    <td>2</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Conectar con disponibilidad del backend</td>
+    <td>Utilizar el endpoint para consultar las horas libres por espacio deportivo</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US13 -->
+  <tr>
+    <td rowspan="3">US13</td>
+    <td rowspan="3">Crear una reserva en un espacio deportivo</td>
+    <td>TK01</td>
+    <td>Diseñar formulario de reserva</td>
+    <td>Crear formulario para seleccionar espacio, hora y tipo de juego</td>
+    <td>3</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Conectar formulario con backend</td>
+    <td>Enviar datos del formulario al servidor usando el endpoint de reservas</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Validar crédito disponible</td>
+    <td>Verificar que el jugador tenga crédito suficiente antes de permitir la reserva</td>
+    <td>2</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US14 -->
+  <tr>
+    <td rowspan="2">US14</td>
+    <td rowspan="2">Ver reservas realizadas</td>
+    <td>TK01</td>
+    <td>Diseñar vista de reservas</td>
+    <td>Mostrar al usuario sus reservas anteriores en una lista ordenada</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Conectar con backend de reservas</td>
+    <td>Consultar las reservas del jugador y mostrarlas con detalles</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+</table>
+
+#### 6.2.3.3 Development Evidence for Sprint Review
+
+| Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| development-of-iot-solutions-final-project | feature/web-US00-initial-configuration | 37a5952 | feat(web-US00): add initial configuration | - | 28/03/2025 |
+| development-of-iot-solutions-final-project | feature/web-US01-user-register | afadf52 | feat(web-US01): add register functionality | - | 28/03/2025 |
+| development-of-iot-solutions-final-project | feature/web-US02-user-login | 60cc2da | feat(web-US02): add login functionality | - | 28/03/2025 |
+| development-of-iot-solutions-final-project | feature/web-US03-view-user-profile | ee5e91f | feat(web-auth): enhance authentication flow with observables and add logout functionality | - | 06/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US03-view-user-profile | ce4360e | feat(web-auth): update login redirection | - | 06/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US03-view-user-profile | 2f4db89 | fix(web-auth): correct error handling in login method | - | 06/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US03-view-user-profile | 5737d68 | feat(web-US03): add user profile interface and update routing for profile view | - | 06/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US04-edit-user-profile | c96bd00 | feat(web-US04): implement user profile editing functionality with reactive forms | - | 06/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US04-edit-user-profile | c2eefc1 | chore(web): remove dashboard test and guest guard | - | 06/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US05-recharge-credits | 7445792 | refactor(web): rename folder, add custom email validator, and improve form error handling | - | 08/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US05-recharge-credits | 17298b6 | feat(web): add Angular CDK dependency | - | 09/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US05-recharge-credits | 13bdc28 | feat(web): enhance routing and authentication with role-based access control | - | 09/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US05-recharge-credits | 2d62282 | feat(web): add header component | - | 09/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US05-recharge-credits | c50ee05 | feat(web-US05): add credits management and recharge functionality | - | 09/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US06-view-subscriptions | 9af7cc0 | feat(web-US06): add view subscription feature with routing and model | - | 09/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US07-upgrade-subscription | d227937 | feat(web-US07): add subscription upgrade functionality | - | 09/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US08-view-sportspaces | aee7976 | feat(web-US08): add view sport spaces feature with routing and model integration | - | 10/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US09-create-sportspace | 4bffac9 | feat(web-US09): add create sport space feature with routing and validation | - | 12/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US12-view-sportspace-availability | 76128fe | feat(web-US12): add sport space availability checks | - | 15/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US13-create-reservation | d203be3 | chore: remove .idea folder from repository | - | 17/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US13-create-reservation | d155aeb | feat(web-US13): add sport space reservation functionality | - | 17/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US14-view-reservations | 5bfb257 | feat(web-US14): add reservations list for player | - | 18/04/2025 |
+
+#### 6.2.3.4 Execution Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//exec-s3.png" alt="UPC">
+
+#### 6.2.3.5 Software Deployment Evidence for Sprint Review 
+
+No se realizó despliegue.
+
+#### 6.2.3.6 Team Collaboration Insights during Sprint 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s3.png" alt="UPC">
+
+### 6.2.4 Sprint 4
+#### 6.2.4.1 Sprint Planning 
+
+| Sprint                        | Sprint 4            |
+|-------------------------------|---------------------|
+|Date  | 12 de mayo del 2025 |
+|Time  | 09:00 horas (GMT-5) |
+|Location  |Modalidad remota por Discord  |
+|Prepared by  |Sebastian Mendez Lopez  |
+|Attendees  |Todos los integrantes del equipo |
+|Sprint 3 – Review Summary  |Durante el Sprint 3 se desarrollaron correctamente las funcionalidades esenciales del frontend. Los usuarios pueden gestionar su perfil, suscripciones y reservas desde la aplicación web. |
+|Sprint 3 – Retrospective Summary | Se destacó la eficiencia en desarrollo de interfaz. Se detectó la necesidad de refinar componentes y validar reglas visuales. |
+|Sprint Goal | Nuestro enfoque es completar la experiencia de usuario con funcionalidades sociales y administrativas como salas comunidad, gestión de tickets y filtros informativos. Esto se confirmará cuando los usuarios interactúen con salas, filtros y funcionalidades de transferencia y recuperación desde la web. |
+|Sprint 4 Velocity | 36 |
+|Sum of Story Points| 36 |
+
+#### 6.2.4.2 Sprint Backlog
+<table>
+  <tr>
+    <th colspan="8">Sprint 4</th>
+  </tr>
+  <tr>
+    <th colspan="2">User Story</th>
+    <th colspan="6">Work-Item / Task</th>
+  </tr>
+  <tr>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Id</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Estimation (Hours)</th>
+    <th>Assigned to</th>
+    <th>Status</th>
+  </tr>
+
+  <!-- US16 -->
+  <tr>
+    <td rowspan="2">US16</td>
+    <td rowspan="2">Visualizar salas comunidad</td>
+    <td>TK01</td>
+    <td>Mostrar listado de salas</td>
+    <td>Crear vista para mostrar las salas comunidad disponibles</td>
+    <td>2</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Diseñar tarjetas de sala</td>
+    <td>Diseñar visualmente cada sala con nombre, número de jugadores y botón de unirse</td>
+    <td>2</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US17 -->
+  <tr>
+    <td rowspan="3">US17</td>
+    <td rowspan="3">Ingresar a una sala comunidad</td>
+    <td>TK01</td>
+    <td>Botón de unirse</td>
+    <td>Agregar botón funcional en la tarjeta de sala para ingresar</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar capacidad de la sala</td>
+    <td>Evitar que el usuario se una si la sala está llena</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Notificar ingreso exitoso</td>
+    <td>Mostrar notificación cuando el usuario se una correctamente</td>
+    <td>1</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US18 -->
+  <tr>
+    <td rowspan="2">US18</td>
+    <td rowspan="2">Eliminar una sala comunidad</td>
+    <td>TK01</td>
+    <td>Agregar botón de eliminar</td>
+    <td>Diseñar e implementar el botón para que el creador elimine su sala</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Confirmación de eliminación</td>
+    <td>Mostrar modal de confirmación antes de eliminar la sala</td>
+    <td>1</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US10 -->
+  <tr>
+    <td rowspan="2">US10</td>
+    <td rowspan="2">Eliminar un espacio deportivo</td>
+    <td>TK01</td>
+    <td>Diseñar vista de gestión de espacios</td>
+    <td>Mostrar lista de espacios con botón para eliminar</td>
+    <td>2</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Eliminar espacio con confirmación</td>
+    <td>Confirmar y ejecutar la acción de eliminación en la interfaz</td>
+    <td>1</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US22 -->
+  <tr>
+    <td rowspan="2">US22</td>
+    <td rowspan="2">Crear ticket de transferencia</td>
+    <td>TK01</td>
+    <td>Diseñar formulario de ticket</td>
+    <td>Permitir a propietarios ingresar monto y datos para el ticket</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar campos del ticket</td>
+    <td>Revisar que todos los campos estén correctos antes de enviar</td>
+    <td>1</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US21 -->
+  <tr>
+    <td rowspan="2">US21</td>
+    <td rowspan="2">Visualizar ticket de transferencia</td>
+    <td>TK01</td>
+    <td>Diseñar vista de tickets</td>
+    <td>Diseñar una pantalla donde se visualicen los tickets generados por el usuario</td>
+    <td>2</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Mostrar estado de cada ticket</td>
+    <td>Mostrar en la interfaz si el ticket ya fue atendido o está pendiente</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US24 -->
+  <tr>
+    <td rowspan="2">US24</td>
+    <td rowspan="2">Atender ticket de transferencia</td>
+    <td>TK01</td>
+    <td>Diseñar lista de tickets</td>
+    <td>Crear vista donde el admin vea todos los tickets con su estado</td>
+    <td>3</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Botón para marcar como atendido</td>
+    <td>Implementar botón para actualizar el estado de un ticket como pagado</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US15 -->
+  <tr>
+    <td rowspan="2">US15</td>
+    <td rowspan="2">Generar código QR de acceso</td>
+    <td>TK01</td>
+    <td>Diseñar botón para generar QR</td>
+    <td>Crear un botón que permita generar el código QR para el acceso</td>
+    <td>2</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Mostrar QR generado</td>
+    <td>Diseñar modal o componente que muestre el QR generado</td>
+    <td>2</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US19 -->
+  <tr>
+    <td rowspan="2">US19</td>
+    <td rowspan="2">Visualizar salas asociadas a mis espacios</td>
+    <td>TK01</td>
+    <td>Obtener salas del backend</td>
+    <td>Consumir el servicio que devuelve las salas relacionadas al espacio del propietario</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Mostrar salas asociadas</td>
+    <td>Diseñar listado para visualizar las salas en la web</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US20 -->
+  <tr>
+    <td rowspan="2">US20</td>
+    <td rowspan="2">Aplicar filtros a salas comunidad</td>
+    <td>TK01</td>
+    <td>Agregar filtros visuales</td>
+    <td>Diseñar opciones de filtro por nivel, tipo de juego y ubicación</td>
+    <td>2</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Aplicar filtros a resultados</td>
+    <td>Implementar la lógica para que los filtros afecten el listado de salas</td>
+    <td>2</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US11 -->
+  <tr>
+    <td rowspan="2">US11</td>
+    <td rowspan="2">Aplicar filtros a espacios deportivos</td>
+    <td>TK01</td>
+    <td>Diseñar filtros en la interfaz</td>
+    <td>Agregar controles visuales para filtrar espacios por ubicación y tipo</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Aplicar filtros dinámicos</td>
+    <td>Filtrar la lista de espacios deportivos según las opciones seleccionadas</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US23 -->
+  <tr>
+    <td rowspan="2">US23</td>
+    <td rowspan="2">Recuperar contraseña</td>
+    <td>TK01</td>
+    <td>Diseñar formulario de recuperación</td>
+    <td>Crear pantalla para ingresar email y solicitar recuperación</td>
+    <td>2</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Mostrar confirmación</td>
+    <td>Notificar al usuario que se ha enviado el correo de recuperación</td>
+    <td>1</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US25 -->
+  <tr>
+    <td rowspan="2">US25</td>
+    <td rowspan="2">Salir de una sala</td>
+    <td>TK01</td>
+    <td>Botón para salir</td>
+    <td>Agregar opción en la sala para que el jugador pueda salir</td>
+    <td>2</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Actualizar estado del jugador</td>
+    <td>Actualizar en la interfaz y backend que el jugador ya no pertenece a la sala</td>
+    <td>2</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+
+  <!-- US26 -->
+  <tr>
+    <td rowspan="2">US26</td>
+    <td rowspan="2">Conocer acerca de la aplicación</td>
+    <td>TK01</td>
+    <td>Diseñar sección "Acerca de"</td>
+    <td>Crear sección en el landing page con información general de la app</td>
+    <td>2</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Agregar enlaces útiles</td>
+    <td>Incluir enlaces a términos de uso, contacto y preguntas frecuentes</td>
+    <td>2</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+</table>
+
+#### 6.2.7.3 Development Evidence for Sprint Review
+
+| Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| development-of-iot-solutions-final-project | feature/web-US16-view-rooms | 8c65266 | feat(web-US16): add functionality to view rooms | - | 18/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US17-join-room | 8e17bac | refactor(web): enhance reservations view with community options and improved loading states | - | 19/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US17-join-room | d946fdf | feat(web-US17): add room detail view and with join functionality and chat | - | 19/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US18-delete-room | fde7b90 | feat(web-US18): add delete room functionality and improve user room status checks | - | 20/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US10-delete-sportspace | ea03943 | feat(web-US10): add sport space deletion functionality | - | 20/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US22-create-transfer-ticket | a08c792 | feat(web-US22): add bank transfer feature and validation | - | 30/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US21-view-transfer-tickets | 01474f9 | chore(web): rename folder and project to web-app | - | 30/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US21-view-transfer-tickets | 7b48f8a | feat(web-US21): add tickets visualization feature for owners and admin | - | 30/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US24-handle-tickets | ea3c8b3 | feat(web-US24): add ticket management with confirmation and deferral options functionality | - | 30/04/2025 |
+| development-of-iot-solutions-final-project | feature/web-US15-generate-qr | da316f2 | feat(web-US15): add QR code viewer functionality to reservation and room cards | - | 01/05/2025 |
+| development-of-iot-solutions-final-project | feature/web-US19-view-rooms-associated-to-sportspaces | ec51a1a | feat(web-US19): add view rooms associated to sportspaces functionality | - | 01/05/2025 |
+| development-of-iot-solutions-final-project | feature/web-US23-restore-password | a7a5f2f | feat(web-US23): implement password recovery functionality with email input | - | 01/05/2025 |
+| development-of-iot-solutions-final-project | feature/web-US20-apply-room-filters | ef4671d | feat(web-US20): add filtering functionality for room listings with dynamic filter options | - | 01/05/2025 |
+| development-of-iot-solutions-final-project | feature/web-US11-apply-sportspace-filters | 7be2653 | feat(web-US11): add filtering functionality for sport spaces with dynamic options | - | 01/05/2025 |
+
+#### 6.2.4.4 Execution Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//exec-s4.png" alt="UPC">
+
+#### 6.2.4.5 Software Deployment Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dep-s4-1.png" alt="UPC">
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dep-s4-2.png" alt="UPC">
+
+#### 6.2.4.6 Team Collaboration Insights during Sprint 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s3.png" alt="UPC">
 
 # Conclusiones
 
