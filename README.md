@@ -1,83 +1,63 @@
-<br>
-<br>
-<br>
-
 <p align="center">
   <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//upc.png" alt="UPC">
 </p>
 
-<br>
 
 <p align="center"><strong>UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS</strong></p>
 
-<br>
+
 
 <p align="center"><strong>TRABAJO FINAL</strong></p>
 
-<br>
+
 
 <p align="center"><strong>Curso: Desarrollo de Soluciones IoT</strong></p>
 
-<br>
+
 
 <p align="center"><strong>NRC: 15260</strong></p>
 
-<br>
+
 
 <p align="center"><strong>Grupo: 1</strong></p>
 
-<br>
+
 
 <p align="center"><strong>Docente: David Vera Olivera</strong></p>
 
-<br>
+
 
 <p align="center"><strong>Integrantes:</strong></p>
 
-<br>
+
 
 <p align="center"><strong>Méndez López, Sebastián Alonso – U202211561</strong></p>
 
-<br>
+
 
 <p align="center"><strong>Centurión Quintana, Henry Manuel – U20221A339</strong></p>
 
-<br>
+
 
 <p align="center"><strong>Atencio Castillo, John Alexis - U202218229</strong></p>
 
-<br>
+
 
 <p align="center"><strong>Frisancho Levano, Sebastian Mathias Salomon - U202224392</strong></p>
 
-<br>
+
 
 <p align="center"><strong>Valentin Ricaldi, Willy David - U20201C037</strong></p>
 
-<br>
+
 
 <p align="center"><strong>Valverde Salazar, Clara Angie - U20201B940</strong></p>
 
-<br>
-
-<br>
-<br>
-
-<div style="text-align: center;">
-<br>
-<br>
-<br>
 
 ## Tabla de Contenido
-</div>
-<br>
-<br>
-
-</div>
-
 <div style="margin-left: 30px;">
 
-### Student Outcome <br>
+### Student Outcome
 
 <table>
   <tr>
@@ -182,292 +162,293 @@
 </table>
 
 
-### Registro de versiones <br>
+### Registro de versiones 
 
   | Versión | Fecha | Autor | Descripción de Modificación |
   |-|-|-|-|
   | 1.0 | 27-04-25 | Grupo Tecny | Se desarrolló hasta el capítulo 4 |
   | 1.1 | 16-05-25 | Grupo Tecny | Se desarrolló parcialmente hasta el capítulo 6 |
 
-### Capitulos <br>
-  [Capitulo I - Introduction](#i-introduccion) <br>
-  - 1.1. [Startup Profile](#11-startup-profile) <br>
-    - 1.1.1. [Descripcion de la Startup](#111-descripcion-de-la-startup) <br>
-    - 1.1.2. [Perfiles de integrantes del grupo](#112-perfiles-de-integrantes-del-grupo)<br>
-  - 1.2. [Solution Profile](#12-solution-profile)<br>
-    - 1.2.1. [Antecedentes y problematica](#121-antecedentes-y-problematica)<br>
-    - 1.2.2. [Lean UX process](#122-lean-ux-process)<br>
-        - 1.2.2.1. [Lean UX Problem Statements](#1221-lean-ux-problem-statements)<br>
-        - 1.2.2.2. [Lean UX Assumptions](#1222-lean-ux-assumptions)<br>
-        - 1.2.2.3. [Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)<br>
-        - 1.2.2.4. [Lean UX Canvas](#1224-lean-ux-canvas)<br>
-  - 1.3. [Segmentos objetivo](#13-segmentos-objetivo) <br>
-  
-  [Capitulo II - Requirements Elicitation & Analysis](#ii-requirements-analysis)<br>
+### Capitulos 
+  [Capitulo I - Introduction](#i-introduccion) 
+  - 1.1. [Startup Profile](#11-startup-profile) 
+    - 1.1.1. [Descripcion de la Startup](#111-descripcion-de-la-startup) 
+    - 1.1.2. [Perfiles de integrantes del grupo](#112-perfiles-de-integrantes-del-grupo)
+  - 1.2. [Solution Profile](#12-solution-profile)
+    - 1.2.1. [Antecedentes y problematica](#121-antecedentes-y-problematica)
+    - 1.2.2. [Lean UX process](#122-lean-ux-process)
+        - 1.2.2.1. [Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+        - 1.2.2.2. [Lean UX Assumptions](#1222-lean-ux-assumptions)
+        - 1.2.2.3. [Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
+        - 1.2.2.4. [Lean UX Canvas](#1224-lean-ux-canvas)
+  - 1.3. [Segmentos objetivo](#13-segmentos-objetivo) 
 
-  - 2.1. [Competidores](#21-competidores) <br>
-    - 2.1.1. [Análisis competitivo](#211-analisis-competitivo) <br>
-    - 2.1.2. [Estrategias y tacticas frente a competidores](#212-estrategias-y-tacticas-frente-a-competidores)<br>
-  - 2.2. [Entrevistas](#22-entrevistas)<br>
-    - 2.2.1. [Diseño de entrevistas](#221-diseño-de-entrevistas)<br>
-    - 2.2.2. [Registro de entrevistas](#222-registro-de-entrevistas)<br>
-    - 2.2.3. [Análisis de entrevistas](#223-analisis-de-entrevistas)<br>
-  - 2.3. [Needfinding](#23-needfinding)<br>
-    - 2.3.1. [User Personas](#231-user-personas)<br>
-    - 2.3.2. [User Task Matrix](#232-user-task-matrix)<br>
-    - 2.3.3. [User Journey Mapping](#233-user-journey-mapping)<br>
-    - 2.3.4. [Empathy Mapping](#234-empathy-mapping)<br>
-    - 2.3.5. [As-is Scenario Mapping](#235-as-is-scenario-mapping)<br>
-  - 2.4. [Ubiquitous Language](#24-ubiquitous-language)<br>
-  
-  [Capitulo III - Requirements Specification](#iii-requirements-specification)<br>
-  
-  - 3.1. [To-Be Scenario Mapping](#31-to-be-scenario-mapping) <br>
-  - 3.2. [Functional and Non-Functional Requirements](#32-functional-and-non-functional-requirements)<br>
-  - 3.3. [User Stories](#33-user-stories)<br>
-  - 3.3. [Impact Mapping](#34-impact-mapping) <br>
-  - 3.4. [Product Backlog](#35-product-backlog) <br>
+  [Capitulo II - Requirements Elicitation & Analysis](#ii-requirements-analysis)
 
-  [Capitulo IV - Solution Software Design](#iv-solution-software-design)<br>
-  
-  - 4.1. [Strategic-Level Domain-Driven Design](#41-strategic-level-domain-driven-design) <br>
-    - 4.1.1. [Event Storming](#411-event-storming) <br>
-      - 4.1.1.1. [Unstructured Exploration](#4111-unstructured-exploration) <br>
-      - 4.1.1.2. [Timelines](#4112-timelines) <br>
-      - 4.1.1.3. [Pain Points](#4113-pain-points) <br>
-      - 4.1.1.4. [Pivotal Points](#4114-pivotal-points) <br>
-      - 4.1.1.5. [Commands](#4115-commands) <br>
-      - 4.1.1.6. [Policies](#4116-policies) <br>
-      - 4.1.1.7. [Read Models](#4117-read-models) <br>
-      - 4.1.1.8. [External Systems](#4118-external-systems) <br>
-      - 4.1.1.9. [Aggregates](#4119-aggregates) <br>
-      - 4.1.1.10. [Bounded Contexts](#41110-bounded-contexts) <br>
-    - 4.1.2. [Candidate Context Discovery](#412-candidate-context-discovery)<br>
-    - 4.1.3. [Domain Message Flows Modeling](#413-domain-message-flows-modeling)<br>
-    - 4.1.4. [Bounded Context Canvases](#414-bounded-context-canvases)<br>
-    - 4.1.5. [Context Mapping](#415-context-mapping) <br>
-    - 4.1.6. [Software Architecture](#416-software-architecture) <br>
-      - 4.1.6.1. [Software Architecture System Landscape Diagram](#4161-software-architecture-system-landscape-diagram)<br>
-      - 4.1.6.2. [Software Architecture Context Level Diagrams](#4162-software-architecture-context-level-diagrams)<br>
-      - 4.1.6.3. [Software Architecture Container Level Diagrams](#4163-software-architecture-container-level-diagrams)<br>
-      - 4.1.6.4. [Software Architecture Deployment Level Diagrams](#4164-software-architecture-deployment-level-diagrams)<br>
-  - 4.2. [Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)<br>
-    - 4.2.1. [Bounded Context: Users](#421-bounded-context-users) <br>
-      - 4.2.1.1. [Domain Layer](#4211-domain-layer)<br>
-        - 4.2.1.1.1. [Model](#42111-model)<br>
-          - 4.2.1.1.1.1. [Aggregates](#421111-aggregates)<br>
-          - 4.2.1.1.1.2. [Commands](#421112-commands)<br>
-          - 4.2.1.1.1.3. [Entities](#421113-entities)<br>
-          - 4.2.1.1.1.4. [Events](#421114-events)<br>
-          - 4.2.1.1.1.5. [Queries](#421115-queries)<br>
-          - 4.2.1.1.1.6. [Value Objects](#421116-value-objects)<br>
-        - 4.2.1.1.2. [Services](#42112-services)<br>
-        - 4.2.1.1.3. [Exceptions](#42113-exceptions)<br>
-        - 4.2.1.1.4. [Config](#42114-config)<br>
-      - 4.2.1.2. [Interface Layer](#4212-interface-layer)<br>
-        - 4.2.1.2.1. [Resources](#42121-resources)<br>
-        - 4.2.1.2.2. [Transform](#42122-transform)<br>
-        - 4.2.1.2.3. [Controllers](#42123-controllers)<br>
-      - 4.2.1.3. [Application Layer](#4213-application-layer)<br>
-        - 4.2.1.3.1. [Command Services](#42131-command-services)<br>
-        - 4.2.1.3.2. [Query Services](#42132-query-services)<br>
-        - 4.2.1.3.3. [Event Handlers](#42133-event-handlers)<br>
-      - 4.2.1.4. [Infrastructure Layer](#4214-infrastructure-layer)<br>
-      - 4.2.1.5. [Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)<br>
-      - 4.2.1.6. [Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)<br>
-        - 4.2.1.6.1. [Bounded Context Domain Layer Class Diagrams](#42161-bounded-context-domain-layer-class-diagrams)<br>
-        - 4.2.1.6.2. [Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)<br>
-    - 4.2.2. [Bounded Context: Iam](#422-bounded-context-iam) <br>
-      - 4.2.2.1. [Domain Layer](#4221-domain-layer)<br>
-        - 4.2.2.1.1. [Model](#42211-model)<br>
-          - 4.2.2.1.1.1. [Commands](#422111-commands)<br>
-          - 4.2.2.1.1.2. [Queries](#422112-queries)<br>
-        - 4.2.2.1.2. [Services](#42212-services)<br>
-      - 4.2.2.2. [Interface Layer](#4222-interface-layer)<br>
-        - 4.2.2.2.1. [Resources](#42221-resources)<br>
-        - 4.2.2.2.2. [Transform](#42222-transform)<br>
-        - 4.2.2.2.3. [Controllers](#42223-controllers)<br>
-      - 4.2.2.3. [Application Layer](#4223-application-layer)<br>
-        - 4.2.2.3.1. [OutBound Services](#42231-outbound-services)<br>
-        - 4.2.2.3.2. [Query Services](#42232-query-services)<br>
-        - 4.2.2.3.3. [Event Handlers](#42233-event-handlers)<br>
-      - 4.2.2.4. [Infrastructure Layer](#4224-infrastructure-layer)<br>
-        - 4.2.2.4.1. [Authorization](#42241-authorization)<br>
-          - 4.2.2.4.1.1. [Configuration](#422411-configuration)<br>
-          - 4.2.2.4.1.2. [Model](#422412-model)<br>
-          - 4.2.2.4.1.3. [Pipelines](#422413-pipelines)<br>
-          - 4.2.2.4.1.4. [Services](#422414-services)<br>
-      - 4.2.2.5. [Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)<br>
-      - 4.2.2.6. [Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)<br>
-        - 4.2.2.6.1. [Bounded Context Domain Layer Class Diagrams](#42261-bounded-context-domain-layer-class-diagrams)<br>
-    - 4.2.3. [Bounded Context: Subscriptions](#423-bounded-context-subscriptions) <br>
-      - 4.2.3.1. [Domain Layer](#4231-domain-layer)<br>
-        - 4.2.3.1.1. [Model](#42311-model)<br>
-          - 4.2.3.1.1.1. [Aggregates](#423111-aggregates)<br>
-          - 4.2.3.1.1.2. [Commands](#423112-commands)<br>
-          - 4.2.3.1.1.3. [Entities](#423113-entities)<br>
-          - 4.2.3.1.1.4. [Events](#423114-events)<br>
-          - 4.2.3.1.1.5. [Queries](#423115-queries)<br>
-          - 4.2.3.1.1.6. [Value Objects](#423116-value-objects)<br>
-        - 4.2.3.1.2. [Services](#42312-services)<br>
-      - 4.2.3.2. [Interface Layer](#4232-interface-layer)<br>
-        - 4.2.3.2.1. [Resources](#42321-resources)<br>
-        - 4.2.3.2.2. [Transform](#42322-transform)<br>
-        - 4.2.3.2.3. [Controllers](#42323-controllers)<br>
-      - 4.2.3.3. [Application Layer](#4233-application-layer)<br>
-        - 4.2.3.3.1. [Command Services](#42331-command-services)<br>
-        - 4.2.3.3.2. [Query Services](#42332-query-services)<br>
-        - 4.2.3.3.3. [Event Handlers](#42333-event-handlers)<br>
-      - 4.2.3.4. [Infrastructure Layer](#4234-infrastructure-layer)<br>
-      - 4.2.3.5. [Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)<br>
-      - 4.2.3.6. [Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)<br>
-        - 4.2.3.6.1. [Bounded Context Domain Layer Class Diagrams](#42361-bounded-context-domain-layer-class-diagrams)<br>
-        - 4.2.3.6.2. [Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)<br>
-    - 4.2.4. [Bounded Context: Sport Spaces](#424-bounded-context-sport-spaces) <br>
-      - 4.2.4.1. [Domain Layer](#4241-domain-layer)<br>
-        - 4.2.4.1.1. [Model](#42411-model)<br>
-          - 4.2.4.1.1.1. [Aggregates](#424111-aggregates)<br>
-          - 4.2.4.1.1.2. [Commands](#424112-commands)<br>
-          - 4.2.4.1.1.3. [Entities](#424113-entities)<br>
-          - 4.2.4.1.1.4. [Events](#424114-events)<br>
-          - 4.2.4.1.1.5. [Queries](#424115-queries)<br>
-          - 4.2.4.1.1.6. [Value Objects](#424116-value-objects)<br>
-        - 4.2.4.1.2. [Services](#42412-services)<br>
-      - 4.2.4.2. [Interface Layer](#4242-interface-layer)<br>
-        - 4.2.4.2.1. [Resources](#42421-resources)<br>
-        - 4.2.4.2.2. [Transform](#42422-transform)<br>
-        - 4.2.4.2.3. [Controllers](#42423-controllers)<br>
-      - 4.2.4.3. [Application Layer](#4243-application-layer)<br>
-        - 4.2.4.3.1. [Command Services](#42431-command-services)<br>
-        - 4.2.4.3.2. [Query Services](#42432-query-services)<br>
-        - 4.2.4.3.3. [Event Handlers](#42433-event-handlers)<br>
-      - 4.2.4.4. [Infrastructure Layer](#4244-infrastructure-layer)<br>
-      - 4.2.4.5. [Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)<br>
-      - 4.2.4.6. [Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)<br>
-        - 4.2.4.6.1. [Bounded Context Domain Layer Class Diagrams](#42461-bounded-context-domain-layer-class-diagrams)<br>
-        - 4.2.4.6.2. [Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)<br>
-    - 4.2.5. [Bounded Context: Reservations](#425-bounded-context-reservations) <br>
-      - 4.2.5.1. [Domain Layer](#4251-domain-layer)<br>
-        - 4.2.5.1.1. [Model](#42511-model)<br>
-          - 4.2.5.1.1.1. [Aggregates](#425111-aggregates)<br>
-          - 4.2.5.1.1.2. [Commands](#425112-commands)<br>
-          - 4.2.5.1.1.3. [Entities](#425113-entities)<br>
-          - 4.2.5.1.1.4. [Events](#425114-events)<br>
-          - 4.2.5.1.1.5. [Queries](#425115-queries)<br>
-          - 4.2.5.1.1.6. [Value Objects](#425116-value-objects)<br>
-        - 4.2.5.1.2. [Services](#42512-services)<br>
-      - 4.2.5.2. [Interface Layer](#4252-interface-layer)<br>
-        - 4.2.5.2.1. [Resources](#42521-resources)<br>
-        - 4.2.5.2.2. [Transform](#42522-transform)<br>
-        - 4.2.5.2.3. [Controllers](#42523-controllers)<br>
-      - 4.2.5.3. [Application Layer](#4253-application-layer)<br>
-        - 4.2.5.3.1. [Command Services](#42531-command-services)<br>
-        - 4.2.5.3.2. [Query Services](#42532-query-services)<br>
-        - 4.2.5.3.3. [Event Handlers](#42533-event-handlers)<br>
-      - 4.2.5.4. [Infrastructure Layer](#4254-infrastructure-layer)<br>
-      - 4.2.5.5. [Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)<br>
-      - 4.2.5.6. [Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)<br>
-        - 4.2.5.6.1. [Bounded Context Domain Layer Class Diagrams](#42561-bounded-context-domain-layer-class-diagrams)<br>
-        - 4.2.5.6.2. [Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)<br>
-    - 4.2.6. [Bounded Context: Rooms](#426-bounded-context-rooms) <br>
-      - 4.2.6.1. [Domain Layer](#4261-domain-layer)<br>
-        - 4.2.6.1.1. [Model](#42611-model)<br>
-          - 4.2.6.1.1.1. [Aggregates](#426111-aggregates)<br>
-          - 4.2.6.1.1.2. [Commands](#426112-commands)<br>
-          - 4.2.6.1.1.3. [Queries](#426113-queries)<br>
-        - 4.2.6.1.2. [Services](#42612-services)<br>
-      - 4.2.6.2. [Interface Layer](#4262-interface-layer)<br>
-        - 4.2.6.2.1. [Resources](#42621-resources)<br>
-        - 4.2.6.2.2. [Transform](#42622-transform)<br>
-        - 4.2.6.2.3. [Controllers](#42623-controllers)<br>
-      - 4.2.6.3. [Application Layer](#4263-application-layer)<br>
-        - 4.2.6.3.1. [Command Services](#42631-command-services)<br>
-        - 4.2.6.3.2. [Query Services](#42632-query-services)<br>
-      - 4.2.6.4. [Infrastructure Layer](#4264-infrastructure-layer)<br>
-      - 4.2.6.5. [Bounded Context Software Architecture Component Level Diagrams](#4265-bounded-context-software-architecture-component-level-diagrams)<br>
-      - 4.2.6.6. [Bounded Context Software Architecture Code Level Diagrams](#4266-bounded-context-software-architecture-code-level-diagrams)<br>
-        - 4.2.6.6.1. [Bounded Context Domain Layer Class Diagrams](#42661-bounded-context-domain-layer-class-diagrams)<br>
-        - 4.2.6.6.2. [Bounded Context Database Design Diagram](#42662-bounded-context-database-design-diagram)<br>
-    - 4.2.7. [Bounded Context: Player List](#427-bounded-context-player-list) <br>
-      - 4.2.7.1. [Domain Layer](#4271-domain-layer)<br>
-        - 4.2.7.1.1. [Model](#42711-model)<br>
-          - 4.2.7.1.1.1. [Aggregates](#427111-aggregates)<br>
-      - 4.2.7.2. [Interface Layer](#4272-interface-layer)<br>
-        - 4.2.7.2.1. [Resources](#42721-resources)<br>
-        - 4.2.7.2.2. [Transform](#42722-transform)<br>
-        - 4.2.7.2.3. [Controllers](#42723-controllers)<br>
-      - 4.2.7.3. [Infrastructure Layer](#4273-infrastructure-layer)<br>
-      - 4.2.7.4. [Bounded Context Software Architecture Component Level Diagrams](#4274-bounded-context-software-architecture-component-level-diagrams)<br>
-      - 4.2.7.5. [Bounded Context Software Architecture Code Level Diagrams](#4275-bounded-context-software-architecture-code-level-diagrams)<br>
-        - 4.2.7.5.1. [Bounded Context Domain Layer Class Diagrams](#42751-bounded-context-domain-layer-class-diagrams)<br>
-        - 4.2.7.5.2. [Bounded Context Database Design Diagram](#42752-bounded-context-database-design-diagram)<br>
-    - 4.2.8. [Bounded Context: Chat Room](#428-bounded-context-chat-room)<br>
-      - 4.2.8.1. [Domain Layer](#4281-domain-layer)<br>  
-        - 4.2.8.1.1. [Model](#42811-model)<br>  
-          - 4.2.8.1.1.1. [Aggregates](#428111-aggregates)<br>  
-          - 4.2.8.1.1.2. [Entities](#428112-entities)<br>  
-        - 4.2.8.1.2. [Services](#42812-services)<br>  
-        - 4.2.8.1.3. [Config](#42813-config)<br>  
-      - 4.2.8.2. [Interface Layer](#4282-interface-layer)<br>  
-        - 4.2.8.2.1. [Controllers](#42821-controllers)<br>  
-      - 4.2.8.3. [Application Layer](#4283-application-layer)<br>  
-        - 4.2.8.3.1. [Command Services](#42831-command-services)<br>
-      - 4.2.8.4. [Infrastructure Layer](#4284-infrastructure-layer)<br>  
-      - 4.2.8.5. [Bounded Context Software Architecture Component Level Diagrams](#4285-bounded-context-software-architecture-component-level-diagrams)<br>  
-      - 4.2.8.6. [Bounded Context Software Architecture Code Level Diagrams](#4286-bounded-context-software-architecture-code-level-diagrams)<br>  
-        - 4.2.8.6.1. [Bounded Context Domain Layer Class Diagrams](#42861-bounded-context-domain-layer-class-diagrams)<br>  
-        - 4.2.8.6.2. [Bounded Context Database Design Diagram](#42862-bounded-context-database-design-diagram)<br>
-    - 4.2.9. [Bounded Context: Deposit](#429-bounded-context-deposit)<br>
-      - 4.2.9.1. [Domain Layer](#4291-domain-layer)<br>  
-        - 4.2.9.1.1. [Model](#42911-model)<br>  
-          - 4.2.9.1.1.1. [Aggregates](#429111-aggregates)<br>  
-          - 4.2.9.1.1.2. [Commands](#429112-commands)<br>  
-          - 4.2.9.1.1.3. [Queries](#429113-queries)<br>  
-        - 4.2.9.1.2. [Services](#42912-services)<br>  
-      - 4.2.9.2. [Interface Layer](#4292-interface-layer)<br>  
-        - 4.2.9.2.1. [Controllers](#42921-controllers)<br>  
-      - 4.2.9.3. [Application Layer](#4293-application-layer)<br>  
-        - 4.2.9.3.1. [Command Services](#42931-command-services)<br>  
-        - 4.2.9.3.2. [Query Services](#42932-query-services)<br>  
-      - 4.2.9.4. [Infrastructure Layer](#4294-infrastructure-layer)<br>  
-      - 4.2.9.5. [Bounded Context Software Architecture Component Level Diagrams](#4295-bounded-context-software-architecture-component-level-diagrams)<br>  
-      - 4.2.9.6. [Bounded Context Software Architecture Code Level Diagrams](#4296-bounded-context-software-architecture-code-level-diagrams)<br>  
-        - 4.2.9.6.1. [Bounded Context Domain Layer Class Diagrams](#42961-bounded-context-domain-layer-class-diagrams)<br>  
-        - 4.2.9.6.2. [Bounded Context Database Design Diagram](#42962-bounded-context-database-design-diagram)<br>  
-    - 4.2.10. [Bounded Context: Bank Transfer](#4210-bounded-context-bank-transfer)<br>
-      - 4.2.10.1. [Domain Layer](#42101-domain-layer)<br>  
-        - 4.2.10.1.1. [Model](#421011-model)<br>  
-          - 4.2.10.1.1.1. [Aggregates](#4210111-aggregates)<br>  
-          - 4.2.10.1.1.2. [Commands](#4210112-commands)<br>  
-          - 4.2.10.1.1.3. [Queries](#4210113-queries)<br>  
-        - 4.2.10.1.2. [Services](#421012-services)<br>  
-      - 4.2.10.2. [Interface Layer](#42102-interface-layer)<br>  
-        - 4.2.10.2.1. [Resources](#421021-resources)<br>  
-        - 4.2.10.2.2. [Transform](#421022-transform)<br>  
-        - 4.2.10.2.3. [Controllers](#421023-controllers)<br>  
-      - 4.2.10.3. [Application Layer](#42103-application-layer)<br>  
-        - 4.2.10.3.1. [Command Services](#421031-command-services)<br>  
-      - 4.2.10.4. [Infrastructure Layer](#42104-infrastructure-layer)<br>  
-      - 4.2.10.5. [Bounded Context Software Architecture Component Level Diagrams](#42105-bounded-context-software-architecture-component-level-diagrams)<br>  
-      - 4.2.10.6. [Bounded Context Software Architecture Code Level Diagrams](#42106-bounded-context-software-architecture-code-level-diagrams)<br>  
-        - 4.2.10.6.1. [Bounded Context Domain Layer Class Diagrams](#421061-bounded-context-domain-layer-class-diagrams)<br>  
-        - 4.2.10.6.2. [Bounded Context Database Design Diagram](#421062-bounded-context-database-design-diagram)<br>
-    - 4.2.11. [Bounded Context: External Systems](#4211-bounded-context-external-systems)<br>
-      - 4.2.11.1. [Domain Layer](#42111-domain-layer)<br>  
-        - 4.2.11.1.1. [Model](#421111-model)<br>  
-          - 4.2.11.1.1.1. [Aggregates](#4211111-aggregates)<br>  
-          - 4.2.11.1.1.2. [Queries](#4211112-queries)<br>   
-        - 4.2.11.1.2. [Services](#421112-services)<br>   
-      - 4.2.11.2. [Application Layer](#42112-application-layer)<br>  
-        - 4.2.11.2.1. [Command Services](#421121-command-services)<br>  
-        - 4.2.11.2.2. [Query Services](#421122-query-services)<br>  
-      - 4.2.11.3. [Infrastructure Layer](#42113-infrastructure-layer)<br>  
-      - 4.2.11.4. [Bounded Context Software Architecture Component Level Diagrams](#42114-bounded-context-software-architecture-component-level-diagrams)<br>  
-      - 4.2.11.5. [Bounded Context Software Architecture Code Level Diagrams](#42115-bounded-context-software-architecture-code-level-diagrams)<br>  
-        - 4.2.11.5.1. [Bounded Context Domain Layer Class Diagrams](#421151-bounded-context-domain-layer-class-diagrams)<br>  
-        - 4.2.11.5.2. [Bounded Context Database Design Diagram](#421152-bounded-context-database-design-diagram)<br>
+  - 2.1. [Competidores](#21-competidores) 
+    - 2.1.1. [Análisis competitivo](#211-analisis-competitivo) 
+    - 2.1.2. [Estrategias y tacticas frente a competidores](#212-estrategias-y-tacticas-frente-a-competidores)
+  - 2.2. [Entrevistas](#22-entrevistas)
+    - 2.2.1. [Diseño de entrevistas](#221-diseño-de-entrevistas)
+    - 2.2.2. [Registro de entrevistas](#222-registro-de-entrevistas)
+    - 2.2.3. [Análisis de entrevistas](#223-analisis-de-entrevistas)
+  - 2.3. [Needfinding](#23-needfinding)
+    - 2.3.1. [User Personas](#231-user-personas)
+    - 2.3.2. [User Task Matrix](#232-user-task-matrix)
+    - 2.3.3. [User Journey Mapping](#233-user-journey-mapping)
+    - 2.3.4. [Empathy Mapping](#234-empathy-mapping)
+    - 2.3.5. [As-is Scenario Mapping](#235-as-is-scenario-mapping)
+  - 2.4. [Ubiquitous Language](#24-ubiquitous-language)
+
+  [Capitulo III - Requirements Specification](#iii-requirements-specification)
+
+  - 3.1. [To-Be Scenario Mapping](#31-to-be-scenario-mapping) 
+  - 3.2. [Functional and Non-Functional Requirements](#32-functional-and-non-functional-requirements)
+  - 3.3. [User Stories](#33-user-stories)
+  - 3.3. [Impact Mapping](#34-impact-mapping) 
+  - 3.4. [Product Backlog](#35-product-backlog) 
+
+  [Capitulo IV - Solution Software Design](#iv-solution-software-design)
+
+  - 4.1. [Strategic-Level Domain-Driven Design](#41-strategic-level-domain-driven-design)
+    - 4.1.1. [Event Storming](#411-event-storming)
+      - 4.1.1.1. [Unstructured Exploration](#4111-unstructured-exploration)
+      - 4.1.1.2. [Timelines](#4112-timelines)
+      - 4.1.1.3. [Pain Points](#4113-pain-points)
+      - 4.1.1.4. [Pivotal Points](#4114-pivotal-points)
+      - 4.1.1.5. [Commands](#4115-commands)
+      - 4.1.1.6. [Policies](#4116-policies)
+      - 4.1.1.7. [Read Models](#4117-read-models)
+      - 4.1.1.8. [External Systems](#4118-external-systems)
+      - 4.1.1.9. [Aggregates](#4119-aggregates)
+      - 4.1.1.10. [Bounded Contexts](#41110-bounded-contexts)
+    - 4.1.2. [Candidate Context Discovery](#412-candidate-context-discovery)
+    - 4.1.3. [Domain Message Flows Modeling](#413-domain-message-flows-modeling)
+    - 4.1.4. [Bounded Context Canvases](#414-bounded-context-canvases)
+    - 4.1.5. [Context Mapping](#415-context-mapping)
+    - 4.1.6. [Software Architecture](#416-software-architecture)
+      - 4.1.6.1. [Software Architecture System Landscape Diagram](#4161-software-architecture-system-landscape-diagram)
+      - 4.1.6.2. [Software Architecture Context Level Diagrams](#4162-software-architecture-context-level-diagrams)
+      - 4.1.6.3. [Software Architecture Container Level Diagrams](#4163-software-architecture-container-level-diagrams)
+      - 4.1.6.4. [Software Architecture Deployment Level Diagrams](#4164-software-architecture-deployment-level-diagrams)
+  - 4.2. [Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
+    - 4.2.1. [Bounded Context: Users](#421-bounded-context-users)
+      - 4.2.1.1. [Domain Layer](#4211-domain-layer)
+        - 4.2.1.1.1. [Model](#42111-model)
+          - 4.2.1.1.1.1. [Aggregates](#421111-aggregates)
+          - 4.2.1.1.1.2. [Commands](#421112-commands)
+          - 4.2.1.1.1.3. [Entities](#421113-entities)
+          - 4.2.1.1.1.4. [Events](#421114-events)
+          - 4.2.1.1.1.5. [Queries](#421115-queries)
+          - 4.2.1.1.1.6. [Value Objects](#421116-value-objects)
+        - 4.2.1.1.2. [Services](#42112-services)
+        - 4.2.1.1.3. [Exceptions](#42113-exceptions)
+        - 4.2.1.1.4. [Config](#42114-config)
+      - 4.2.1.2. [Interface Layer](#4212-interface-layer)
+        - 4.2.1.2.1. [Resources](#42121-resources)
+        - 4.2.1.2.2. [Transform](#42122-transform)
+        - 4.2.1.2.3. [Controllers](#42123-controllers)
+      - 4.2.1.3. [Application Layer](#4213-application-layer)
+        - 4.2.1.3.1. [Command Services](#42131-command-services)
+        - 4.2.1.3.2. [Query Services](#42132-query-services)
+        - 4.2.1.3.3. [Event Handlers](#42133-event-handlers)
+      - 4.2.1.4. [Infrastructure Layer](#4214-infrastructure-layer)
+      - 4.2.1.5. [Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)
+      - 4.2.1.6. [Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
+        - 4.2.1.6.1. [Bounded Context Domain Layer Class Diagrams](#42161-bounded-context-domain-layer-class-diagrams)
+        - 4.2.1.6.2. [Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
+    - 4.2.2. [Bounded Context: Iam](#422-bounded-context-iam) 
+      - 4.2.2.1. [Domain Layer](#4221-domain-layer)
+        - 4.2.2.1.1. [Model](#42211-model)
+          - 4.2.2.1.1.1. [Commands](#422111-commands)
+          - 4.2.2.1.1.2. [Queries](#422112-queries)
+        - 4.2.2.1.2. [Services](#42212-services)
+      - 4.2.2.2. [Interface Layer](#4222-interface-layer)
+        - 4.2.2.2.1. [Resources](#42221-resources)
+        - 4.2.2.2.2. [Transform](#42222-transform)
+        - 4.2.2.2.3. [Controllers](#42223-controllers)
+      - 4.2.2.3. [Application Layer](#4223-application-layer)
+        - 4.2.2.3.1. [OutBound Services](#42231-outbound-services)
+        - 4.2.2.3.2. [Query Services](#42232-query-services)
+        - 4.2.2.3.3. [Event Handlers](#42233-event-handlers)
+      - 4.2.2.4. [Infrastructure Layer](#4224-infrastructure-layer)
+        - 4.2.2.4.1. [Authorization](#42241-authorization)
+          - 4.2.2.4.1.1. [Configuration](#422411-configuration)
+          - 4.2.2.4.1.2. [Model](#422412-model)
+          - 4.2.2.4.1.3. [Pipelines](#422413-pipelines)
+          - 4.2.2.4.1.4. [Services](#422414-services)
+      - 4.2.2.5. [Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
+      - 4.2.2.6. [Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
+        - 4.2.2.6.1. [Bounded Context Domain Layer Class Diagrams](#42261-bounded-context-domain-layer-class-diagrams)
+    - 4.2.3. [Bounded Context: Subscriptions](#423-bounded-context-subscriptions) 
+      - 4.2.3.1. [Domain Layer](#4231-domain-layer)
+        - 4.2.3.1.1. [Model](#42311-model)
+          - 4.2.3.1.1.1. [Aggregates](#423111-aggregates)
+          - 4.2.3.1.1.2. [Commands](#423112-commands)
+          - 4.2.3.1.1.3. [Entities](#423113-entities)
+          - 4.2.3.1.1.4. [Events](#423114-events)
+          - 4.2.3.1.1.5. [Queries](#423115-queries)
+          - 4.2.3.1.1.6. [Value Objects](#423116-value-objects)
+        - 4.2.3.1.2. [Services](#42312-services)
+      - 4.2.3.2. [Interface Layer](#4232-interface-layer)
+        - 4.2.3.2.1. [Resources](#42321-resources)
+        - 4.2.3.2.2. [Transform](#42322-transform)
+        - 4.2.3.2.3. [Controllers](#42323-controllers)
+      - 4.2.3.3. [Application Layer](#4233-application-layer)
+        - 4.2.3.3.1. [Command Services](#42331-command-services)
+        - 4.2.3.3.2. [Query Services](#42332-query-services)
+        - 4.2.3.3.3. [Event Handlers](#42333-event-handlers)
+      - 4.2.3.4. [Infrastructure Layer](#4234-infrastructure-layer)
+      - 4.2.3.5. [Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
+      - 4.2.3.6. [Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
+        - 4.2.3.6.1. [Bounded Context Domain Layer Class Diagrams](#42361-bounded-context-domain-layer-class-diagrams)
+        - 4.2.3.6.2. [Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
+    - 4.2.4. [Bounded Context: Sport Spaces](#424-bounded-context-sport-spaces) 
+      - 4.2.4.1. [Domain Layer](#4241-domain-layer)
+        - 4.2.4.1.1. [Model](#42411-model)
+          - 4.2.4.1.1.1. [Aggregates](#424111-aggregates)
+          - 4.2.4.1.1.2. [Commands](#424112-commands)
+          - 4.2.4.1.1.3. [Entities](#424113-entities)
+          - 4.2.4.1.1.4. [Events](#424114-events)
+          - 4.2.4.1.1.5. [Queries](#424115-queries)
+          - 4.2.4.1.1.6. [Value Objects](#424116-value-objects)
+        - 4.2.4.1.2. [Services](#42412-services)
+      - 4.2.4.2. [Interface Layer](#4242-interface-layer)
+        - 4.2.4.2.1. [Resources](#42421-resources)
+        - 4.2.4.2.2. [Transform](#42422-transform)
+        - 4.2.4.2.3. [Controllers](#42423-controllers)
+      - 4.2.4.3. [Application Layer](#4243-application-layer)
+        - 4.2.4.3.1. [Command Services](#42431-command-services)
+        - 4.2.4.3.2. [Query Services](#42432-query-services)
+        - 4.2.4.3.3. [Event Handlers](#42433-event-handlers)
+      - 4.2.4.4. [Infrastructure Layer](#4244-infrastructure-layer)
+      - 4.2.4.5. [Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
+      - 4.2.4.6. [Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
+        - 4.2.4.6.1. [Bounded Context Domain Layer Class Diagrams](#42461-bounded-context-domain-layer-class-diagrams)
+        - 4.2.4.6.2. [Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
+    - 4.2.5. [Bounded Context: Reservations](#425-bounded-context-reservations) 
+      - 4.2.5.1. [Domain Layer](#4251-domain-layer)
+        - 4.2.5.1.1. [Model](#42511-model)
+          - 4.2.5.1.1.1. [Aggregates](#425111-aggregates)
+          - 4.2.5.1.1.2. [Commands](#425112-commands)
+          - 4.2.5.1.1.3. [Entities](#425113-entities)
+          - 4.2.5.1.1.4. [Events](#425114-events)
+          - 4.2.5.1.1.5. [Queries](#425115-queries)
+          - 4.2.5.1.1.6. [Value Objects](#425116-value-objects)
+        - 4.2.5.1.2. [Services](#42512-services)
+      - 4.2.5.2. [Interface Layer](#4252-interface-layer)
+        - 4.2.5.2.1. [Resources](#42521-resources)
+        - 4.2.5.2.2. [Transform](#42522-transform)
+        - 4.2.5.2.3. [Controllers](#42523-controllers)
+      - 4.2.5.3. [Application Layer](#4253-application-layer)
+        - 4.2.5.3.1. [Command Services](#42531-command-services)
+        - 4.2.5.3.2. [Query Services](#42532-query-services)
+        - 4.2.5.3.3. [Event Handlers](#42533-event-handlers)
+      - 4.2.5.4. [Infrastructure Layer](#4254-infrastructure-layer)
+      - 4.2.5.5. [Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)
+      - 4.2.5.6. [Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
+        - 4.2.5.6.1. [Bounded Context Domain Layer Class Diagrams](#42561-bounded-context-domain-layer-class-diagrams)
+        - 4.2.5.6.2. [Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
+    - 4.2.6. [Bounded Context: Rooms](#426-bounded-context-rooms) 
+      - 4.2.6.1. [Domain Layer](#4261-domain-layer)
+        - 4.2.6.1.1. [Model](#42611-model)
+          - 4.2.6.1.1.1. [Aggregates](#426111-aggregates)
+          - 4.2.6.1.1.2. [Commands](#426112-commands)
+          - 4.2.6.1.1.3. [Queries](#426113-queries)
+        - 4.2.6.1.2. [Services](#42612-services)
+      - 4.2.6.2. [Interface Layer](#4262-interface-layer)
+        - 4.2.6.2.1. [Resources](#42621-resources)
+        - 4.2.6.2.2. [Transform](#42622-transform)
+        - 4.2.6.2.3. [Controllers](#42623-controllers)
+      - 4.2.6.3. [Application Layer](#4263-application-layer)
+        - 4.2.6.3.1. [Command Services](#42631-command-services)
+        - 4.2.6.3.2. [Query Services](#42632-query-services)
+      - 4.2.6.4. [Infrastructure Layer](#4264-infrastructure-layer)
+      - 4.2.6.5. [Bounded Context Software Architecture Component Level Diagrams](#4265-bounded-context-software-architecture-component-level-diagrams)
+      - 4.2.6.6. [Bounded Context Software Architecture Code Level Diagrams](#4266-bounded-context-software-architecture-code-level-diagrams)
+        - 4.2.6.6.1. [Bounded Context Domain Layer Class Diagrams](#42661-bounded-context-domain-layer-class-diagrams)
+        - 4.2.6.6.2. [Bounded Context Database Design Diagram](#42662-bounded-context-database-design-diagram)
+    - 4.2.7. [Bounded Context: Player List](#427-bounded-context-player-list) 
+      - 4.2.7.1. [Domain Layer](#4271-domain-layer)
+        - 4.2.7.1.1. [Model](#42711-model)
+          - 4.2.7.1.1.1. [Aggregates](#427111-aggregates)
+      - 4.2.7.2. [Interface Layer](#4272-interface-layer)
+        - 4.2.7.2.1. [Resources](#42721-resources)
+        - 4.2.7.2.2. [Transform](#42722-transform)
+        - 4.2.7.2.3. [Controllers](#42723-controllers)
+      - 4.2.7.3. [Infrastructure Layer](#4273-infrastructure-layer)
+      - 4.2.7.4. [Bounded Context Software Architecture Component Level Diagrams](#4274-bounded-context-software-architecture-component-level-diagrams)
+      - 4.2.7.5. [Bounded Context Software Architecture Code Level Diagrams](#4275-bounded-context-software-architecture-code-level-diagrams)
+        - 4.2.7.5.1. [Bounded Context Domain Layer Class Diagrams](#42751-bounded-context-domain-layer-class-diagrams)
+        - 4.2.7.5.2. [Bounded Context Database Design Diagram](#42752-bounded-context-database-design-diagram)
+    - 4.2.8. [Bounded Context: Chat Room](#428-bounded-context-chat-room)
+      - 4.2.8.1. [Domain Layer](#4281-domain-layer)  
+        - 4.2.8.1.1. [Model](#42811-model)  
+          - 4.2.8.1.1.1. [Aggregates](#428111-aggregates)  
+          - 4.2.8.1.1.2. [Entities](#428112-entities)  
+        - 4.2.8.1.2. [Services](#42812-services)  
+        - 4.2.8.1.3. [Config](#42813-config)  
+      - 4.2.8.2. [Interface Layer](#4282-interface-layer)  
+        - 4.2.8.2.1. [Controllers](#42821-controllers)  
+      - 4.2.8.3. [Application Layer](#4283-application-layer)  
+        - 4.2.8.3.1. [Command Services](#42831-command-services)
+      - 4.2.8.4. [Infrastructure Layer](#4284-infrastructure-layer)  
+      - 4.2.8.5. [Bounded Context Software Architecture Component Level Diagrams](#4285-bounded-context-software-architecture-component-level-diagrams)  
+      - 4.2.8.6. [Bounded Context Software Architecture Code Level Diagrams](#4286-bounded-context-software-architecture-code-level-diagrams)  
+        - 4.2.8.6.1. [Bounded Context Domain Layer Class Diagrams](#42861-bounded-context-domain-layer-class-diagrams)  
+        - 4.2.8.6.2. [Bounded Context Database Design Diagram](#42862-bounded-context-database-design-diagram)
+    - 4.2.9. [Bounded Context: Deposit](#429-bounded-context-deposit)
+      - 4.2.9.1. [Domain Layer](#4291-domain-layer)  
+        - 4.2.9.1.1. [Model](#42911-model)  
+          - 4.2.9.1.1.1. [Aggregates](#429111-aggregates)  
+          - 4.2.9.1.1.2. [Commands](#429112-commands)  
+          - 4.2.9.1.1.3. [Queries](#429113-queries)  
+        - 4.2.9.1.2. [Services](#42912-services)  
+      - 4.2.9.2. [Interface Layer](#4292-interface-layer)  
+        - 4.2.9.2.1. [Controllers](#42921-controllers)  
+      - 4.2.9.3. [Application Layer](#4293-application-layer)  
+        - 4.2.9.3.1. [Command Services](#42931-command-services)  
+        - 4.2.9.3.2. [Query Services](#42932-query-services)  
+      - 4.2.9.4. [Infrastructure Layer](#4294-infrastructure-layer)  
+      - 4.2.9.5. [Bounded Context Software Architecture Component Level Diagrams](#4295-bounded-context-software-architecture-component-level-diagrams)  
+      - 4.2.9.6. [Bounded Context Software Architecture Code Level Diagrams](#4296-bounded-context-software-architecture-code-level-diagrams)  
+        - 4.2.9.6.1. [Bounded Context Domain Layer Class Diagrams](#42961-bounded-context-domain-layer-class-diagrams)  
+        - 4.2.9.6.2. [Bounded Context Database Design Diagram](#42962-bounded-context-database-design-diagram)  
+    - 4.2.10. [Bounded Context: Bank Transfer](#4210-bounded-context-bank-transfer)
+      - 4.2.10.1. [Domain Layer](#42101-domain-layer)  
+        - 4.2.10.1.1. [Model](#421011-model)  
+          - 4.2.10.1.1.1. [Aggregates](#4210111-aggregates)  
+          - 4.2.10.1.1.2. [Commands](#4210112-commands)  
+          - 4.2.10.1.1.3. [Queries](#4210113-queries)  
+        - 4.2.10.1.2. [Services](#421012-services)  
+      - 4.2.10.2. [Interface Layer](#42102-interface-layer)  
+        - 4.2.10.2.1. [Resources](#421021-resources)  
+        - 4.2.10.2.2. [Transform](#421022-transform)  
+        - 4.2.10.2.3. [Controllers](#421023-controllers)  
+      - 4.2.10.3. [Application Layer](#42103-application-layer)  
+        - 4.2.10.3.1. [Command Services](#421031-command-services)  
+      - 4.2.10.4. [Infrastructure Layer](#42104-infrastructure-layer)  
+      - 4.2.10.5. [Bounded Context Software Architecture Component Level Diagrams](#42105-bounded-context-software-architecture-component-level-diagrams)  
+      - 4.2.10.6. [Bounded Context Software Architecture Code Level Diagrams](#42106-bounded-context-software-architecture-code-level-diagrams)  
+        - 4.2.10.6.1. [Bounded Context Domain Layer Class Diagrams](#421061-bounded-context-domain-layer-class-diagrams)  
+        - 4.2.10.6.2. [Bounded Context Database Design Diagram](#421062-bounded-context-database-design-diagram)
+    - 4.2.11. [Bounded Context: External Systems](#4211-bounded-context-external-systems)
+      - 4.2.11.1. [Domain Layer](#42111-domain-layer)  
+        - 4.2.11.1.1. [Model](#421111-model)  
+          - 4.2.11.1.1.1. [Aggregates](#4211111-aggregates)  
+          - 4.2.11.1.1.2. [Queries](#4211112-queries)   
+        - 4.2.11.1.2. [Services](#421112-services)   
+      - 4.2.11.2. [Application Layer](#42112-application-layer)  
+        - 4.2.11.2.1. [Command Services](#421121-command-services)  
+        - 4.2.11.2.2. [Query Services](#421122-query-services)  
+      - 4.2.11.3. [Infrastructure Layer](#42113-infrastructure-layer)  
+      - 4.2.11.4. [Bounded Context Software Architecture Component Level Diagrams](#42114-bounded-context-software-architecture-component-level-diagrams)  
+      - 4.2.11.5. [Bounded Context Software Architecture Code Level Diagrams](#42115-bounded-context-software-architecture-code-level-diagrams)  
+        - 4.2.11.5.1. [Bounded Context Domain Layer Class Diagrams](#421151-bounded-context-domain-layer-class-diagrams)  
+        - 4.2.11.5.2. [Bounded Context Database Design Diagram](#421152-bounded-context-database-design-diagram)
 	
-  [Capitulo V - Solution UI/UX Design](#v-solution-uiux-design)<br>  
+
+  [Capitulo V - Solution UI/UX Design](#v-solution-uiux-design)  
    - 5.1. [Style Guidelines](#51-style-guidelines)     
      - 5.1.2. [General Style Guidelines](#512-general-style-guidelines)    
        - 5.1.2.1. [Web](#5121-web)    
@@ -495,8 +476,8 @@
        - 5.4.4.1. [Web](#5441-web)    
        - 5.4.4.2. [Mobile](#5442-mobile)  
    - 5.5. [Applications Prototyping](#55-applications-prototyping)   
-  
-  [Capítulo VI - Product Implementation, Validation & Deployment](#vi-product-implementation-validation--deployment)<br>
+
+  [Capítulo VI - Product Implementation, Validation & Deployment](#vi-product-implementation-validation--deployment)
    - 6.1. [Software Configuration Management](#61-software-configuration-management)
      - 6.1.1 [Software Development Environment Configuration](#611-software-development-environment-configuration)    
      - 6.1.2. [Source Code Management](#612-source-code-management)    
@@ -536,12 +517,9 @@
        - 6.2.4.5 [Software Deployment Evidence for Sprint Review](#6245-software-deployment-evidence-for-sprint-review)
        - 6.2.4.6 [Team Collaboration Insights during Sprint](#6246-team-collaboration-insights-during-sprint) 
 
-  [Conclusiones](#conclusiones)<br>
-  [Bibliografía](#bibliografia)<br>
-  [Anexos](#anexos)<br>
-
-</div>
-<br>
+  [Conclusiones](#conclusiones)
+  [Bibliografía](#bibliografia)
+  [Anexos](#anexos)
 
 # I. Introduccion
 
@@ -553,8 +531,6 @@
 
 Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera de Ingenieria de Software. Está dedicada a impulsar la transformación digital a través de soluciones tecnológicas creativas y eficientes. Desde desarrollo de software a medida hasta consultoría tecnológica. Nuestro enfoque se centra en satisfacer las necesidades de nuestros clientes con soluciones personalizadas y de vanguardia. En Tecny, estamos comprometidos con la excelencia tecnológica y la creación de un futuro digital más accesible y dinámico para todos.
 
-</div>
-
 ### 1.1.2. Perfiles de integrantes del grupo
 
 **Henry Centurion**
@@ -562,28 +538,28 @@ Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera d
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
 | <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//henry1.png" alt="UPC"> | Mi nombre es Henry Centurión, tengo 22 años y soy estudiante de la carrera de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Soy alguien feliz, tranquilo y a quien le gusta trabajar en equipo para llegar a las metas acordadas. Siempre he estado interesado en la tecnología y cómo es que funcionan desde su código base. Además de ello, mis pasatiempos son hacer deporte en general y programar en C++, el cual es mi principal lenguaje de programación. Mi meta es convertirme en un gran profesional y aportar mi conocimiento a la sociedad.|
-<br>
+|||
 
 **John Atencio**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
 | <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//john2.jpg" alt="UPC"> | Mi nombre es John Atencio, actualmente tengo 22 años y estoy estudiando la carrera de Ingeniería de software en la Universidad Peruana de Ciencias Aplicadas (UPC). Dentro de mis aspectos personales, siempre me he considerado alguien bastante relajado y sobre todo curioso. Por ello, desde niño he tenido la curiosidad de conocer los procesos y funciones detrás de las computadoras para que estas operen como un minicerebro. Esto último, fue fundamental para la elección de mi carrera.|
 
-<br>
+
 
 **Sebastian Frisancho**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
 | <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//free1.jpg" alt="UPC"> | Mi nombre es Sebastian Frisancho, tengo 22 años y soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Me gustan los deportes como ir al gimnasio, practicar fútbol, básquet e incluso natación. Desde pequeño me encontré rodeado de tecnología por lo que me gustaría poder tener softwares propios que me generen ingresos sin tener que trabajar en una ciudad fija. Me gustaría estudiar de manera autodidacta HTML, CSS y SQL para poder tener más conocimientos que me sirvan en mi futuro.|
 
-<br>
+
 
 **Sebastian Mendez**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
 | <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//sebas.png" alt="UPC"> | Mi nombre es Sebastian Mendez, tengo 20 años y actualmente estoy cursando el séptimo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Puedo decir que soy una persona muy perseverante, con metas claras y con objetivos propuestos a futuro. Además, soy una persona que considera que tiene mucha curiosidad con respecto al tema de la tecnología y sobre qué hay detrás de todo el tema de la programación. Mis pasatiempos son, jugar al básquet, los videojuegos, ir al gimnasio y programar ocasionalmente.|
 
-<br>
+
 
 **Willy Valentin**
 | Foto                                     | Descripción              |
@@ -597,7 +573,7 @@ Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera d
 | <img width="906px" height="170px" src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//clara.png" alt="UPC"> | Mi nombre es Clara Valverde y actualmente formo parte del equipo Atlassian en la empresa Software Enterprise Services, donde brindamos soluciones especializadas en SAP. Me encuentro cursando el noveno ciclo de la carrera de Ingeniería de Software, y tengo un fuerte interés en la eficiencia y la mejora continua dentro del desarrollo de proyectos. Me considero una persona organizada, comprometida con mis objetivos y en constante búsqueda de crecimiento tanto profesional como personal. Tengo una gran afinidad por el mundo tecnológico, especialmente en lo relacionado con la gestión de proyectos y el uso de herramientas colaborativas que optimicen los procesos. En mi tiempo libre, disfruto entrenar en el gimnasio, ya que es parte de mis metas personales de bienestar, y también dedico atención al cuidado de la piel, un tema que me interesa mucho a nivel personal. |
 
 
-<br>
+
 
 ## 1.2. Solution Profile
 
@@ -652,12 +628,12 @@ Además del fútbol, el billar está ganando popularidad entre los limeños, con
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-**Problem Statement 1** <br>
+**Problem Statement 1** 
 Nuestra startup enfrenta el desafío de desarrollar una plataforma digital que simplifique la reserva de espacios deportivos y a la vez fomente la formación de comunidades activas en Lima Metropolitana. La plataforma debe permitir a los usuarios realizar reservas personales o crear reservas comunitarias, estas últimas generando automáticamente salas abiertas para que otros jugadores se unan. Este sistema debe facilitar la conexión entre personas con intereses comunes, la elección eficiente de espacios deportivos disponibles, y una coordinación fluida para la realización de partidos de fútbol o sesiones de billar.
 ¿Cómo podemos diseñar una plataforma que combine reservas flexibles con herramientas de comunidad, para que los usuarios no solo organicen actividades fácilmente, sino también fortalezcan vínculos sociales a través del deporte?
 
 
-**Problem Statement 2** <br>
+**Problem Statement 2** 
 A medida que los usuarios interactúan en un entorno que mezcla lo social con la organización de eventos presenciales, surge el reto de garantizar un espacio seguro, confiable y transparente. Es crucial proteger tanto a jugadores como a propietarios de espacios deportivos, generando confianza en cada paso del proceso: desde la creación de una reserva, hasta la participación en una sala comunitaria o el uso de las instalaciones.
 ¿Cómo podemos asegurar que la plataforma ofrezca una experiencia segura y confiable para todos los usuarios, promoviendo interacciones genuinas, coordinación efectiva y un entorno donde se valore el respeto y la integridad dentro de las actividades deportivas?
 
@@ -782,8 +758,6 @@ Estrategias:
 - *Segmentacion del mercado:* Definir correctamente nuestro público objetivo nos permitirá conocer sus ideales y caracaterísticas.
 - *Experiencia de usuario (UX) y diseño:* Asegurar que el servicio sea facil de utilizar y visualmente atractiva.
 - *Gamificacion*: Diseñar e implementar un servicio de subscripción para brindar mejoras a los usuarios afiliados.
-
-</div>
 
 ## 2.2. Entrevistas
 
@@ -999,11 +973,7 @@ Las entrevistas realizadas dejan clara una necesidad compartida de digitalizar y
 
 Además, la versión móvil es vista como el canal más conveniente por todos los actores, lo que implica que el desarrollo debe enfocarse en "mobile-first". A nivel funcional, la app no solo debe ofrecer reservas, sino convertirse en una herramienta de gestión, promoción, comunicación y análisis. Finalmente, para asegurar una correcta adopción, se debe considerar una estrategia de soporte técnico y educación digital para los propietarios, especialmente aquellos menos familiarizados con la tecnología.
 
-</div>
-
 ## 2.3. Needfinding
-
-</div>
 
 ### 2.3.1. User Personas
 
@@ -1018,9 +988,6 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 <p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userpersona-owner.png" alt="UPC">
 </p>
-
-</div>
-
 ### 2.3.2. User Task Matrix
 
 <div style="text-align: justify;">
@@ -1052,8 +1019,6 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 | Hacer seguimiento a la satisfacción de los clientes |   Baja   |     Baja     |
 | Mantener las instalaciones en condiciones óptimas     |   Baja   |    Media     |
 
-</div>
-
 ### 2.3.3. User Journey Mapping
 
 <div style="text-align: justify;">
@@ -1065,8 +1030,6 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 **User persona 2: Juan Perez**
 
 <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//journey3.png" alt="UPC">
-
-</div>
 
 ### 2.3.4. Empathy Mapping
 
@@ -1081,13 +1044,9 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 <p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//empathy-owner.png" alt="UPC">
 </p>
-
-</div>
-
 ### 2.3.5. As Is Scenario Mapping
 
 <div style="text-align: justify;">
-
 **User persona 1: Andres Martinez**  
 
 <p align="center">
@@ -1099,9 +1058,6 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 <p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//asis-owner.jpg" alt="UPC">
 </p>
-
-</div>
-
 ### 2.4. Ubiquitous Language
 
 <div style="text-align: justify;">
@@ -1129,8 +1085,6 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 - **Interfaz responsiva**:
     - Diseño adaptable a distintos dispositivos (desktop, móvil), especialmente útil para el chat y sidebar.
 
-</div>
-
 # III. Requirements Specification
 
 ## 3.1. To-Be Scenario Mapping
@@ -1147,9 +1101,6 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 <p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//tobe-owner.png" alt="UPC">
 </p>
-
-</div>
-
 ## 3.2 Functional and Non-Functional Requirements
 
 | ID | Título | Descripción |
@@ -1202,11 +1153,11 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 | **Backend**   | EP17    | Implementación del módulo rooms         | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo rooms funcione       | TS30, TS31, TS32, TS33, TS34                   |
 | **Backend**   | EP18    | Implementación del módulo external Systems         | Como desarrollador quiero implementar las funcionalidades esenciales para que el módulo external systems funcione       | TS35, TS36                  |
 
-<br>
-<br>
-<br>
 
-|User Story ID|Título|Descripción|Criterio de aceptación|<p>Relación (EPIC ID)</p><p></p>|
+
+
+
+|User Story ID|Título|Descripción|Criterio de aceptación|Relación (EPIC ID)|
 | :-: | :-: | :-: | :-: | :-: |
 |US01|Registro de cuenta de usuario|Como jugador o propietario quiero registrarme para tener una cuenta en D'Taquito|<p>***Escenario 1: Registro de cuenta exitoso de usuario***</p><p></p><p>Dado que el usuario se encuentra en la pantalla de registro de cuenta</p><p>Cuando el usuario ingresa los datos de su registro de cuenta completos y correctos en los campos: nombre, correo electrónico, contraseña y rol</p><p>Y hace clic en el botón “Registrarse”</p><p>Entonces la aplicación crea la cuenta para el usuario</p><p></p><p>***Escenario 2: Registro de cuenta fallido de usuario***</p><p></p><p>Dado que el usuario se encuentra registrado en la aplicación</p><p>Cuando el usuario se encuentra en la pantalla de inicio de sesión</p><p>Y escribe correctamente su correo y su contraseña</p><p>Y haga clic en el botón "iniciar sesión"</p><p>Entonces la aplicación llevará al usuario a la página principal</p><p>***Escenario 3: Registro de cuenta fallido por un correo ya registrado***</p><p></p><p>Dado que el usuario se encuentra en la pantalla de registro de cuenta</p><p>Cuando el usuario ingresa los datos de su registro de cuenta completos y correctos en los campos: nombre, correo electrónico, contraseña y rol</p><p>Y hace clic en el botón “Registrarse”</p><p>Entonces la aplicación muestra un mensaje de error indicando que ya existe un correo en uso</p>|EP01|
 |US02|Inicio de sesión de cuenta|Como jugador o propietario quiero ingresar a mi cuenta para usar de las funcionalidades de la aplicación D’Taquito|<p>***Escenario 1: Inicio de sesión exitoso***</p><p></p><p>Dado que el usuario se encuentra registrado en la aplicación.</p><p>Cuando el usuario se encuentra en la pantalla de inicio de sesión</p><p>Y escribe correctamente su correo y su contraseña</p><p>Y haga clic en el botón "iniciar sesión"</p><p>Entonces la aplicación llevará al usuario a la página principal</p><p></p><p>***Escenario 2: Inicio de sesión fallido***</p><p></p><p>Dado que el usuario se encuentra registrado en la aplicación</p><p>Cuando el usuario se encuentra en la pantalla de inicio de sesión</p><p>Y escribe incorrectamente su correo y/o su contraseña</p><p>Y haga clic en el botón "iniciar sesión"</p><p>Entonces la aplicación notifica que se ingresaron incorrectamente los datos</p>|EP01|
@@ -1254,12 +1205,12 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 |TS18|Obtener una reserva|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "reservations/my-reservations" para que un usuario PLAYER pueda visualizar sus reservas|<p>***Escenario 1: Obtención de una reserva de un usuario PLAYER***</p><p>Dado que el desarrollador implementa un endpoint para la obtención de una reserva</p><p>Cuando solicita la petición sin body ni params</p><p>Y el usuario tiene rol PLAYER</p><p>Entonces, es permitido la obtención de sus reservas y devuelve un code 200.</p>|EP12|
 |TS19|Eliminar una reserva|Como desarrollador, necesito implementar un endpoint DELETE en el API nombrado "reservations/{id}" para que un usuario PLAYER pueda eliminar sus reservas|<p>***Escenario 1: Eliminación de una reserva de un usuario PLAYER***</p><p>Dado que el desarrollador implementa un endpoint para la eliminación de una de sus reservas</p><p>Cuando solicita la petición con params: id</p><p>Y el usuario tiene rol PLAYER</p><p>Y el tipo de la reserva es COMMUNITY</p><p>Y la sala no está llena</p><p>Entonces, es permitido la eliminación de la reserva específica y devuelve un code 200.</p><p>***Escenario 2: Eliminación fallida por restricción de horario y día de semana***</p><p>Dado que se envía una solicitud para la eliminación de una de sus reservas</p><p>Cuando solicita la petición con params: id</p><p>Y el usuario tiene rol PLAYER</p><p>Y el tipo de la reserva es COMMUNITY</p><p>Y la sala no está llena</p><p>Y el día de la eliminación no es lunes, ni está en el intervalo de 00:00 a 06:00</p><p>Entonces, es denegada la eliminación de la reserva específica y devuelve un error 500.</p>|EP12|
 |TS20|Obtener y verificar un Qr|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "reservations/verify-qr-image” para que un usuario PLAYER pueda obtener sus QR para ingresar al espacio deportivo|<p>***Escenario 1: Obtención de QR para acceder al espacio deportivo***</p><p>Dado que el desarrollador implementa un endpoint para la obtención del QR para acceder a los espacios deportivos reservados por un usuario</p><p>Cuando solicita la petición con params: token</p><p>Y el usuario tiene rol PLAYER</p><p>Entonces, es permitido la obtención del QR para acceder al espacio deportivo de acuerdo con la reserva del usuario y devuelve un code 200</p>|EP12|
-|TS21|Usar Qr|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "reservations/user-qr-token” para que un usuario PLAYER pueda usar sus QR para ingresar al espacio deportivo|<p>***Escenario 1: Usar el QR al acceder al espacio deportivo***</p><p>Dado que el desarrollador implementa un endpoint para el uso del QR al acceder a los espacios deportivos reservados por un usuario</p><p>Cuando solicita la petición con params: token</p><p>Y el usuario tiene rol PLAYER</p><p>Entonces, es permitido el uso del QR para acceder al espacio deportivo de acuerdo con la reserva del usuario y devuelve un code 200</p><br><p>***Escenario 2: Escaneo de Qr fallido por uso ya existente***</p><p>Dado que el desarrollador implementa un endpoint para el uso del QR al acceder a los espacios deportivos reservados por un usuario</p><p>Cuando solicita la petición con params: token</p><p>Y el usuario tiene rol PLAYER</p><p>Y el QR ya ha sido usado</p><p>Entonces, es denegado el uso del QR para acceder al espacio deportivo de acuerdo con la reserva del usuario y devuelve un error 500</p><br><p>***Escenario 3: Escaneo de Qr fallido por token expirado***</p><p>Dado que el desarrollador implementa un endpoint para el uso del QR al acceder a los espacios deportivos reservados por un usuario</p><p>Cuando solicita la petición con params: token</p><p>Y el usuario tiene rol PLAYER</p><p>Y ha expirado el token del QR para poder usarlo, de acuerdo con las fechas establecidas de uso en el intervalo del horario de la reserva</p><p>Entonces, es denegado el uso del QR para acceder al espacio deportivo de acuerdo con la reserva del usuario y devuelve un error 500</p>|EP12|
-|TS22|Unirse a una sala comunidad|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "player-lists/join” para que un usuario PLAYER pueda unirse a una reserva de tipo COMMUNITY creada por otro usuario PLAYER|<p>***Escenario 1: Unirse a una reserva de tipo COMMUNITY***</p><p>Dado que el desarrollador implementa un endpoint para que un usuario se pueda unir a una reserva tipo COMMUNITY</p><p>Cuando solicita la petición con params: roomId</p><p>Y el usuario tiene rol PLAYER</p><p>Y el usuario tiene créditos suficientes para cubrir el monto del adelanto</p><p>Entonces, es permitido el poder unirse a una reserva de tipo COMMUNITY y devuelve un code 200</p><br><p>***Escenario 2: Integración a una sala fallida por cantidad de créditos insuficientes***</p><p>Dado que se envía una solicitud para la integración a una sala</p><p>Cuando solicita la petición con params: roomId</p><p>Y el usuario tiene rol PLAYER</p><p>Y la cantidad de créditos del usuario no cubre el monto solicitado de la reserva</p><p>Entonces, es denegada la integración a esa sala y devuelve un error 500</p>|EP13|
+|TS21|Usar Qr|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "reservations/user-qr-token” para que un usuario PLAYER pueda usar sus QR para ingresar al espacio deportivo|<p>***Escenario 1: Usar el QR al acceder al espacio deportivo***</p><p>Dado que el desarrollador implementa un endpoint para el uso del QR al acceder a los espacios deportivos reservados por un usuario</p><p>Cuando solicita la petición con params: token</p><p>Y el usuario tiene rol PLAYER</p><p>Entonces, es permitido el uso del QR para acceder al espacio deportivo de acuerdo con la reserva del usuario y devuelve un code 200</p><p>***Escenario 2: Escaneo de Qr fallido por uso ya existente***</p><p>Dado que el desarrollador implementa un endpoint para el uso del QR al acceder a los espacios deportivos reservados por un usuario</p><p>Cuando solicita la petición con params: token</p><p>Y el usuario tiene rol PLAYER</p><p>Y el QR ya ha sido usado</p><p>Entonces, es denegado el uso del QR para acceder al espacio deportivo de acuerdo con la reserva del usuario y devuelve un error 500</p><p>***Escenario 3: Escaneo de Qr fallido por token expirado***</p><p>Dado que el desarrollador implementa un endpoint para el uso del QR al acceder a los espacios deportivos reservados por un usuario</p><p>Cuando solicita la petición con params: token</p><p>Y el usuario tiene rol PLAYER</p><p>Y ha expirado el token del QR para poder usarlo, de acuerdo con las fechas establecidas de uso en el intervalo del horario de la reserva</p><p>Entonces, es denegado el uso del QR para acceder al espacio deportivo de acuerdo con la reserva del usuario y devuelve un error 500</p>|EP12|
+|TS22|Unirse a una sala comunidad|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "player-lists/join” para que un usuario PLAYER pueda unirse a una reserva de tipo COMMUNITY creada por otro usuario PLAYER|<p>***Escenario 1: Unirse a una reserva de tipo COMMUNITY***</p><p>Dado que el desarrollador implementa un endpoint para que un usuario se pueda unir a una reserva tipo COMMUNITY</p><p>Cuando solicita la petición con params: roomId</p><p>Y el usuario tiene rol PLAYER</p><p>Y el usuario tiene créditos suficientes para cubrir el monto del adelanto</p><p>Entonces, es permitido el poder unirse a una reserva de tipo COMMUNITY y devuelve un code 200</p><p>***Escenario 2: Integración a una sala fallida por cantidad de créditos insuficientes***</p><p>Dado que se envía una solicitud para la integración a una sala</p><p>Cuando solicita la petición con params: roomId</p><p>Y el usuario tiene rol PLAYER</p><p>Y la cantidad de créditos del usuario no cubre el monto solicitado de la reserva</p><p>Entonces, es denegada la integración a esa sala y devuelve un error 500</p>|EP13|
 |TS23|Obtener la lista de jugadores de una sala|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "player-lists/room/{roomId}” para que obtener a los usuarios que están en una sala|<p>***Escenario 1: Obtener la lista de jugadores de una sala***</p><p>Dado que el desarrollador implementa un endpoint para que obtener la lista de jugadores de una sala</p><p>Cuando solicita la petición con params: roomId</p><p>Entonces, es permitido el poder obtener la lista de jugadores y devuelve un code 200</p>|EP13|
 |TS24|Enviar mensaje al chat de una sala|Como desarrollador necesito implementar el endpoint POST en el API nombrado "chat/rooms/{chatRoomId}/messages" para poder enviar mensajes a un chat específico|<p>***Escenario 1: Creación de mensajes en un chat de sala***</p><p>Dado que el desarrollador implementa un endpoint para enviar mensajes en un chat de una sala</p><p>Cuando solicita la petición con params: chatRoomId</p><p>Entonces, es permitido el poder enviar un mensaje al chat y devuelve un code 200</p>|EP14|
-|TS25|Crear un depósito|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "deposit/create-deposit” para que se realice un depósito como usuario PLAYER|<p>***Escenario 1: Creación de un depósito***</p><p>Dado que el desarrollador implementa un endpoint para la creación de un depósito</p><p>Cuando solicita la petición con params: amount</p><p>Y lo redirige a una API externa, vía PayPal</p><p>Y le pide sus datos para continuar con el pago</p><p>Y el usuario paga con su cuenta de PayPal</p><p>Entonces, es permitida la creación del depósito y devuelve un code 200.</p><br><p>***Escenario 2: Creación fallida por insuficiente dinero en cuenta de PayPal***</p><p>Dado que se envía una solicitud de creación de depósito</p><p>Cuando solicita la petición con params: amount</p><p>Y lo redirige a una API externa, vía PayPal</p><p>Y le pide sus datos para continuar con el pago</p><p>Y el usuario intenta pagar con su cuenta de PayPal</p><p>Y su cuenta de PayPal no tiene fondos suficientes</p><p>Entonces, es denegada la creación de depósito y devuelve un error 500.</p>|EP15|
-|TS26|Crear una petición para retiro|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "bank-transfer/create” para que se realice una petición de retiro de créditos como usuario OWNER|<p>***Escenario 1: Creación de una petición de retiro***</p><p>Dado que el desarrollador implementa un endpoint para la creación de una petición de retiro de un usuario OWNER</p><p>Cuando solicita la petición con body: fullName, bankName, transferType y accountNumber</p><p>Y el usuario tiene créditos por cobrar</p><p>Entonces, es permitida la creación de la petición para retiro y devuelve un code 200.</p><br><p>***Escenario 2: Creación fallida por tener una petición activa***</p><p>Dado que el desarrollador implementa un endpoint para la creación de una petición de retiro de un usuario OWNER</p><p>Cuando solicita la petición con body: fullName, bankName, transferType y accountNumber</p><p>Y el usuario ya realizó una petición de retiro</p><p>Entonces, es denegada la creación de la petición para retiro y devuelve un error 500.</p>|EP16|
+|TS25|Crear un depósito|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "deposit/create-deposit” para que se realice un depósito como usuario PLAYER|<p>***Escenario 1: Creación de un depósito***</p><p>Dado que el desarrollador implementa un endpoint para la creación de un depósito</p><p>Cuando solicita la petición con params: amount</p><p>Y lo redirige a una API externa, vía PayPal</p><p>Y le pide sus datos para continuar con el pago</p><p>Y el usuario paga con su cuenta de PayPal</p><p>Entonces, es permitida la creación del depósito y devuelve un code 200.</p><p>***Escenario 2: Creación fallida por insuficiente dinero en cuenta de PayPal***</p><p>Dado que se envía una solicitud de creación de depósito</p><p>Cuando solicita la petición con params: amount</p><p>Y lo redirige a una API externa, vía PayPal</p><p>Y le pide sus datos para continuar con el pago</p><p>Y el usuario intenta pagar con su cuenta de PayPal</p><p>Y su cuenta de PayPal no tiene fondos suficientes</p><p>Entonces, es denegada la creación de depósito y devuelve un error 500.</p>|EP15|
+|TS26|Crear una petición para retiro|Como desarrollador, necesito implementar un endpoint POST en el API nombrado "bank-transfer/create” para que se realice una petición de retiro de créditos como usuario OWNER|<p>***Escenario 1: Creación de una petición de retiro***</p><p>Dado que el desarrollador implementa un endpoint para la creación de una petición de retiro de un usuario OWNER</p><p>Cuando solicita la petición con body: fullName, bankName, transferType y accountNumber</p><p>Y el usuario tiene créditos por cobrar</p><p>Entonces, es permitida la creación de la petición para retiro y devuelve un code 200.</p><p>***Escenario 2: Creación fallida por tener una petición activa***</p><p>Dado que el desarrollador implementa un endpoint para la creación de una petición de retiro de un usuario OWNER</p><p>Cuando solicita la petición con body: fullName, bankName, transferType y accountNumber</p><p>Y el usuario ya realizó una petición de retiro</p><p>Entonces, es denegada la creación de la petición para retiro y devuelve un error 500.</p>|EP16|
 |TS27|Atender la solicitud de retiro de un usuario OWNER|Como desarrollador, necesito implementar un endpoint PATCH en el API nombrado "bank-transfer/confirm/{id}” para que se atienda una petición de retiro de créditos como usuario ADMIN|<p>***Escenario 1: Atender la petición de retiro de un usuario OWNER***</p><p>Dado que el desarrollador implementa un endpoint para atender una petición de retiro de un usuario OWNER siendo usuario ADMIN</p><p>Cuando solicita la petición con params: id</p><p>Y la petición del usuario OWNER tiene créditos por cobrar</p><p>Entonces, es permitido la creación de la petición para atender el retiro y se le reduce la cantidad de créditos del usuario que solicitó la solicitud a 0 y devuelve un code 200.</p>|EP16|
 |TS28|Obtener la solicitud de retiro de un usuario OWNER|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "bank-transfer/user/{userId}” para que se obtenga la petición propia de retiro de créditos de un usuario específico como usuario OWNER y de todos, de acuerdo con el userId, según usuario ADMIN|<p>***Escenario 1: Obtener la petición de retiro de un usuario OWNER propia***</p><p>Dado que el desarrollador implementa un endpoint para obtener una petición de retiro de un usuario OWNER</p><p>Cuando solicita la petición con params: userId</p><p>Y el usuario tiene rol OWNER o ADMIN</p><p>Entonces, es permitido la obtención de la petición de retiro y devuelve un code 200.</p>|EP16|
 |TS29|Obtener la solicitud de todos los retiros de todos los usuarios OWNER|Como desarrollador, necesito implementar un endpoint GET en el API nombrado "bank-transfer/all” para que se obtenga los retiros de créditos de todos los usuarios OWNER con usuario ADMIN|<p>***Escenario 1: Obtener todas las peticiones de retiro de todos los usuarios OWNER***</p><p>Dado que el desarrollador implementa un endpoint para obtener todas las peticiones de retiro de créditos de todos los usuarios OWNER</p><p>Cuando solicita la petición sin body ni params</p><p>Y el usuario tiene rol ADMIN</p><p>Entonces, es permitido la obtención de todas las peticiones de retiro y devuelve un code 200.</p>|EP16|
@@ -1351,7 +1302,7 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 | 65 | US25 | Salir de una sala | Como jugador quiero salirme de una sala comunidad | 2 |
 | 66 | US26 | Conocer acerca de la aplicación | Como visitante del landing page quiero saber acerca de la aplicación para conocer sus detalles | 2 |
 
-<br>
+
 
 # IV. Solution Software Design
 
@@ -1764,7 +1715,7 @@ Contiene:
 ###### 4.2.1.1.1.4. Events
 
 - UserCreatedEvent: Es un evento de dominio que se lanza cuando se crea un nuevo usuario en el sistema.
-Extiende de ApplicationEvent de Spring, lo que permite que otros componentes del sistema reaccionen a este evento de forma desacoplada.
+  Extiende de ApplicationEvent de Spring, lo que permite que otros componentes del sistema reaccionen a este evento de forma desacoplada.
 
   Contiene:
 
@@ -1821,7 +1772,7 @@ Se enfoca en obtener información sin modificar el estado del sistema.
   - getUserRoleByUserId(Long userId): obtiene el rol asignado a un usuario a partir de su ID.
 
 - RoleCommandService: Es una interfaz de servicio de dominio que define la operación de comando relacionada con la entidad Role.
-Su objetivo es ejecutar la inicialización de los tipos de roles en el sistema.
+  Su objetivo es ejecutar la inicialización de los tipos de roles en el sistema.
 
   Contiene el método:
 
@@ -2896,7 +2847,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
           - 403 Forbidden: Usuario no tiene permiso para crear espacios.
 
       - DELETE /api/v1/sport-spaces/{sportSpaceId}
-          
+        
           - Permite al OWNER eliminar un espacio deportivo propio.
 
         - Validaciones:
@@ -2914,7 +2865,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
           - 409 Conflict: Existen reservas futuras, no se puede eliminar.
 
       - GET /api/v1/sport-spaces
-         
+        
           - Retorna todos los espacios deportivos disponibles en el sistema.
 
         - Restricción:
@@ -2928,7 +2879,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
           - 403 Forbidden: Acceso denegado a usuarios OWNER.
 
       - GET /api/v1/sport-spaces/user
-          
+        
           - Devuelve todos los espacios deportivos creados por el usuario autenticado (solo OWNER).
 
         - Respuestas:
@@ -2938,7 +2889,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
           - 403 Forbidden: Usuario no es OWNER.
 
       - GET /api/v1/sport-spaces/{sportSpaceId}
-          
+        
           - Devuelve los detalles de un espacio deportivo específico según su ID.
 
         - Respuestas:
@@ -3576,7 +3527,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
         - Añade al jugador a la lista de jugadores de la sala y lo vincula con el chat asociado.
 
     - isRoomCreator(Long roomId, Long userId)
-        
+      
       - Verifica si un usuario es el creador de una sala.
 
       - Operaciones:
@@ -4091,7 +4042,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 - CreateBankTransferCommandFromResourceAssembler: Este ensamblador convierte el recurso de entrada (CreateBankTransferResource) en un comando (CreateBankTransferCommand) que se puede usar en la lógica de negocio, generalmente en el servicio de comandos.
 
   - Metodo:
-      
+    
     - toCommandFromResource:
 
       - Toma un objeto CreateBankTransferResource como entrada.
@@ -4346,8 +4297,8 @@ Lo que sigue es una recopilación de principios visuales que marcarán la identi
 
 |                | BOTONES       | BOTONES       | BOTONES       |
 |----------------|---------------|---------------|---------------|
-| **Font**       | Font: **Righteous**<br>Size: **50px**<br>Espacio de palabra: **24px** | Font: **Righteous**<br>Size: **20/24px**<br>Espacio de palabra: **20px** | Font: **Righteous**<br>Size: **16px**<br>Espacio de palabra: **16px** |
-| **Tamaño**     | **Large**<br>Regular, 400 | **Normal**<br>Regular, 400 | **Small**<br>Regular, 400 |
+| **Font**       | Font: **Righteous**Size: **50px**Espacio de palabra: **24px** | Font: **Righteous**Size: **20/24px**Espacio de palabra: **20px** | Font: **Righteous**Size: **16px**Espacio de palabra: **16px** |
+| **Tamaño**     | **Large**Regular, 400 | **Normal**Regular, 400 | **Small**Regular, 400 |
 
 
 ### 5.1.2. General Style Guidelines
@@ -4362,11 +4313,11 @@ Lo que sigue es una recopilación de principios visuales que marcarán la identi
 
 | Plataforma | Tipo    | Font | Posición|
 |------------|---------|----------------------------------------|---------------------------------|
-| Desktop    | Título  | Font: **Righteous**<br>Size: **100px**  | **Headline 1**<br>Regular, 400 |
-| Desktop    | Título  | Font: **Righteous**<br>Size: **80px**  | **Headline 2**<br>Regular, 400 |
-| Desktop    | Título  | Font: **Righteous**<br>Size: **60px**  | **Headline 3**<br>Regular, 400 |
-| Desktop    | Título  | Font: **Righteous**<br>Size: **40px**  | **Headline 4**<br>Regular, 400 |
-| Desktop    | Párrafo | Font: **Righteous**<br>Size: **16px**  | **Body-1**<br>Regular, 400     |
+| Desktop    | Título  | Font: **Righteous**Size: **100px**  | **Headline 1**Regular, 400 |
+| Desktop    | Título  | Font: **Righteous**Size: **80px**  | **Headline 2**Regular, 400 |
+| Desktop    | Título  | Font: **Righteous**Size: **60px**  | **Headline 3**Regular, 400 |
+| Desktop    | Título  | Font: **Righteous**Size: **40px**  | **Headline 4**Regular, 400 |
+| Desktop    | Párrafo | Font: **Righteous**Size: **16px**  | **Body-1**Regular, 400     |
 
 #### 5.1.2.2. Mobile
 
@@ -4379,11 +4330,11 @@ Lo que sigue es una recopilación de principios visuales que marcarán la identi
 
 | Plataforma | Tipo    | Font | Posición|
 |------------|---------|----------------------------------------|---------------------------------|
-| Mobile    | Título  | Font: **Righteous**<br>Size: **100px**  | **Headline 1**<br>Regular, 400 |
-| Mobile    | Título  | Font: **Righteous**<br>Size: **80px**  | **Headline 2**<br>Regular, 400 |
-| Mobile    | Título  | Font: **Righteous**<br>Size: **60px**  | **Headline 3**<br>Regular, 400 |
-| Mobile    | Título  | Font: **Righteous**<br>Size: **40px**  | **Headline 4**<br>Regular, 400 |
-| Mobile    | Párrafo | Font: **Righteous**<br>Size: **16px**  | **Body-1**<br>Regular, 400     |
+| Mobile    | Título  | Font: **Righteous**Size: **100px**  | **Headline 1**Regular, 400 |
+| Mobile    | Título  | Font: **Righteous**Size: **80px**  | **Headline 2**Regular, 400 |
+| Mobile    | Título  | Font: **Righteous**Size: **60px**  | **Headline 3**Regular, 400 |
+| Mobile    | Título  | Font: **Righteous**Size: **40px**  | **Headline 4**Regular, 400 |
+| Mobile    | Párrafo | Font: **Righteous**Size: **16px**  | **Body-1**Regular, 400     |
 
 ## 5.2. Information Architecture
 
@@ -4676,8 +4627,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <th>Assigned to</th>
     <th>Status</th>
   </tr>
-
-  <!-- TS01 -->
   <tr>
     <td rowspan="3">TS01</td>
     <td rowspan="3">Crear usuario</td>
@@ -4704,8 +4653,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS02 -->
   <tr>
     <td rowspan="2">TS02</td>
     <td rowspan="2">Actualizar nombre</td>
@@ -4724,8 +4671,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS03 -->
   <tr>
     <td rowspan="2">TS03</td>
     <td rowspan="2">Actualizar correo</td>
@@ -4744,8 +4689,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS04 -->
   <tr>
     <td rowspan="2">TS04</td>
     <td rowspan="2">Actualizar contraseña</td>
@@ -4764,8 +4707,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS05 -->
   <tr>
     <td rowspan="2">TS05</td>
     <td rowspan="2">Obtener todos los usuarios</td>
@@ -4784,8 +4725,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS06 -->
   <tr>
     <td rowspan="2">TS06</td>
     <td rowspan="2">Obtener información del usuario</td>
@@ -4804,8 +4743,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS07 -->
   <tr>
     <td rowspan="3">TS07</td>
     <td rowspan="3">Autenticar usuario</td>
@@ -4832,8 +4769,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS08 -->
   <tr>
     <td rowspan="2">TS08</td>
     <td rowspan="2">Desautenticar usuario</td>
@@ -4852,8 +4787,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS09 -->
   <tr>
     <td rowspan="3">TS09</td>
     <td rowspan="3">Verificar autenticación</td>
@@ -4880,8 +4813,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS10 -->
   <tr>
     <td rowspan="3">TS10</td>
     <td rowspan="3">Actualizar suscripción</td>
@@ -4908,8 +4839,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS11 -->
   <tr>
     <td rowspan="2">TS11</td>
     <td rowspan="2">Obtener suscripción de un usuario</td>
@@ -4928,8 +4857,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS12 -->
   <tr>
     <td rowspan="3">TS12</td>
     <td rowspan="3">Crear espacio deportivo</td>
@@ -4956,8 +4883,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS13 -->
   <tr>
     <td rowspan="2">TS13</td>
     <td rowspan="2">Obtener espacio deportivo por ID</td>
@@ -4976,8 +4901,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS14 -->
   <tr>
     <td rowspan="2">TS14</td>
     <td rowspan="2">Obtener espacios propios</td>
@@ -4996,8 +4919,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS15 -->
   <tr>
     <td rowspan="2">TS15</td>
     <td rowspan="2">Obtener todos los espacios deportivos</td>
@@ -5016,8 +4937,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS16 -->
   <tr>
     <td rowspan="3">TS16</td>
     <td rowspan="3">Eliminar un espacio deportivo</td>
@@ -5044,8 +4963,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS35 -->
   <tr>
     <td rowspan="2">TS35</td>
     <td rowspan="2">Solicitar olvido de contraseña</td>
@@ -5064,8 +4981,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS36 -->
   <tr>
     <td rowspan="2">TS36</td>
     <td rowspan="2">Reiniciar contraseña</td>
@@ -5084,8 +4999,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS37 -->
   <tr>
     <td rowspan="3">TS37</td>
     <td rowspan="3">Recuperar datos del dispositivo IoT al servidor</td>
@@ -5112,8 +5025,6 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS38 -->
   <tr>
     <td rowspan="2">TS38</td>
     <td rowspan="2">Visualizar datos del dispositivo IoT al servidor</td>
@@ -5204,8 +5115,6 @@ No se realizó despliegue.
     <th>Assigned to</th>
     <th>Status</th>
   </tr>
-
-  <!-- TS17 -->
   <tr>
     <td rowspan="3">TS17</td>
     <td rowspan="3">Crear una reserva</td>
@@ -5232,8 +5141,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS18 -->
   <tr>
     <td rowspan="2">TS18</td>
     <td rowspan="2">Obtener reservas</td>
@@ -5252,8 +5159,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS19 -->
   <tr>
     <td rowspan="2">TS19</td>
     <td rowspan="2">Eliminar una reserva</td>
@@ -5272,8 +5177,6 @@ No se realizó despliegue.
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS20 -->
   <tr>
     <td rowspan="2">TS20</td>
     <td rowspan="2">Obtener y verificar un QR</td>
@@ -5292,8 +5195,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS21 -->
   <tr>
     <td rowspan="2">TS21</td>
     <td rowspan="2">Usar QR</td>
@@ -5312,8 +5213,6 @@ No se realizó despliegue.
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS25 -->
   <tr>
     <td rowspan="2">TS25</td>
     <td rowspan="2">Crear un depósito</td>
@@ -5332,8 +5231,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS30 -->
   <tr>
     <td>TS30</td>
     <td>Obtener sala por ID</td>
@@ -5344,8 +5241,6 @@ No se realizó despliegue.
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS31 -->
   <tr>
     <td>TS31</td>
     <td>Obtener salas por usuario específico</td>
@@ -5356,8 +5251,6 @@ No se realizó despliegue.
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS32 -->
   <tr>
     <td>TS32</td>
     <td>Obtener salas por espacios deportivos</td>
@@ -5368,8 +5261,6 @@ No se realizó despliegue.
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS33 -->
   <tr>
     <td>TS33</td>
     <td>Obtener salas unidas por jugador</td>
@@ -5380,8 +5271,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS34 -->
   <tr>
     <td>TS34</td>
     <td>Obtener todas las salas (ADMIN)</td>
@@ -5392,8 +5281,6 @@ No se realizó despliegue.
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS22 -->
   <tr>
     <td rowspan="3">TS22</td>
     <td rowspan="3">Unirse a una sala comunidad</td>
@@ -5420,8 +5307,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS23 -->
   <tr>
     <td rowspan="2">TS23</td>
     <td rowspan="2">Obtener lista de jugadores de una sala</td>
@@ -5440,8 +5325,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS39 -->
   <tr>
     <td rowspan="2">TS39</td>
     <td rowspan="2">Salir de una sala comunidad</td>
@@ -5460,8 +5343,6 @@ No se realizó despliegue.
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS24 -->
   <tr>
     <td rowspan="2">TS24</td>
     <td rowspan="2">Enviar mensaje al chat de una sala</td>
@@ -5480,8 +5361,6 @@ No se realizó despliegue.
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS26 -->
   <tr>
     <td rowspan="3">TS26</td>
     <td rowspan="3">Crear petición para retiro</td>
@@ -5508,8 +5387,6 @@ No se realizó despliegue.
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS27 -->
   <tr>
     <td rowspan="2">TS27</td>
     <td rowspan="2">Atender solicitud de retiro</td>
@@ -5528,8 +5405,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS28 -->
   <tr>
     <td rowspan="2">TS28</td>
     <td rowspan="2">Obtener solicitud de retiro de un usuario</td>
@@ -5548,8 +5423,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS29 -->
   <tr>
     <td>TS29</td>
     <td>Obtener todas solicitudes de retiro</td>
@@ -5560,8 +5433,6 @@ No se realizó despliegue.
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- TS40 -->
   <tr>
     <td>TS40</td>
     <td>Diferir solicitud de retiro</td>
@@ -5646,8 +5517,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <th>Assigned to</th>
     <th>Status</th>
   </tr>
-
-  <!-- US01 -->
   <tr>
     <td rowspan="2">US01</td>
     <td rowspan="2">Registro de cuenta de usuario</td>
@@ -5666,8 +5535,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US02 -->
   <tr>
     <td rowspan="2">US02</td>
     <td rowspan="2">Inicio de sesión de cuenta</td>
@@ -5686,8 +5553,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US03 -->
   <tr>
     <td rowspan="2">US03</td>
     <td rowspan="2">Ver perfil de usuario</td>
@@ -5706,8 +5571,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US04 -->
   <tr>
     <td rowspan="3">US04</td>
     <td rowspan="3">Editar perfil de usuario</td>
@@ -5734,8 +5597,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US05 -->
   <tr>
     <td rowspan="3">US05</td>
     <td rowspan="3">Recargar crédito</td>
@@ -5762,8 +5623,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US06 -->
   <tr>
     <td rowspan="2">US06</td>
     <td rowspan="2">Ver una suscripción</td>
@@ -5782,8 +5641,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US07 -->
   <tr>
     <td rowspan="2">US07</td>
     <td rowspan="2">Actualizar una suscripción</td>
@@ -5802,8 +5659,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>Willy V.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US08 -->
   <tr>
     <td rowspan="2">US08</td>
     <td rowspan="2">Visualizar espacios deportivos</td>
@@ -5822,8 +5677,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US09 -->
   <tr>
     <td rowspan="3">US09</td>
     <td rowspan="3">Añadir un espacio deportivo</td>
@@ -5850,8 +5703,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US12 -->
   <tr>
     <td rowspan="2">US12</td>
     <td rowspan="2">Visualizar horas disponibles</td>
@@ -5870,8 +5721,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US13 -->
   <tr>
     <td rowspan="3">US13</td>
     <td rowspan="3">Crear una reserva en un espacio deportivo</td>
@@ -5898,8 +5747,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>Willy V.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US14 -->
   <tr>
     <td rowspan="2">US14</td>
     <td rowspan="2">Ver reservas realizadas</td>
@@ -5919,7 +5766,6 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>Done</td>
   </tr>
 </table>
-
 #### 6.2.3.3 Development Evidence for Sprint Review
 
 | Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
@@ -5994,8 +5840,6 @@ No se realizó despliegue.
     <th>Assigned to</th>
     <th>Status</th>
   </tr>
-
-  <!-- US16 -->
   <tr>
     <td rowspan="2">US16</td>
     <td rowspan="2">Visualizar salas comunidad</td>
@@ -6014,8 +5858,6 @@ No se realizó despliegue.
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US17 -->
   <tr>
     <td rowspan="3">US17</td>
     <td rowspan="3">Ingresar a una sala comunidad</td>
@@ -6042,8 +5884,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US18 -->
   <tr>
     <td rowspan="2">US18</td>
     <td rowspan="2">Eliminar una sala comunidad</td>
@@ -6062,8 +5902,6 @@ No se realizó despliegue.
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US10 -->
   <tr>
     <td rowspan="2">US10</td>
     <td rowspan="2">Eliminar un espacio deportivo</td>
@@ -6082,8 +5920,6 @@ No se realizó despliegue.
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US22 -->
   <tr>
     <td rowspan="2">US22</td>
     <td rowspan="2">Crear ticket de transferencia</td>
@@ -6102,8 +5938,6 @@ No se realizó despliegue.
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US21 -->
   <tr>
     <td rowspan="2">US21</td>
     <td rowspan="2">Visualizar ticket de transferencia</td>
@@ -6122,8 +5956,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US24 -->
   <tr>
     <td rowspan="2">US24</td>
     <td rowspan="2">Atender ticket de transferencia</td>
@@ -6142,8 +5974,6 @@ No se realizó despliegue.
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US15 -->
   <tr>
     <td rowspan="2">US15</td>
     <td rowspan="2">Generar código QR de acceso</td>
@@ -6162,8 +5992,6 @@ No se realizó despliegue.
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US19 -->
   <tr>
     <td rowspan="2">US19</td>
     <td rowspan="2">Visualizar salas asociadas a mis espacios</td>
@@ -6182,8 +6010,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US20 -->
   <tr>
     <td rowspan="2">US20</td>
     <td rowspan="2">Aplicar filtros a salas comunidad</td>
@@ -6202,8 +6028,6 @@ No se realizó despliegue.
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US11 -->
   <tr>
     <td rowspan="2">US11</td>
     <td rowspan="2">Aplicar filtros a espacios deportivos</td>
@@ -6222,8 +6046,6 @@ No se realizó despliegue.
     <td>John A.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US23 -->
   <tr>
     <td rowspan="2">US23</td>
     <td rowspan="2">Recuperar contraseña</td>
@@ -6242,8 +6064,6 @@ No se realizó despliegue.
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US25 -->
   <tr>
     <td rowspan="2">US25</td>
     <td rowspan="2">Salir de una sala</td>
@@ -6262,8 +6082,6 @@ No se realizó despliegue.
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
-
-  <!-- US26 -->
   <tr>
     <td rowspan="2">US26</td>
     <td rowspan="2">Conocer acerca de la aplicación</td>
@@ -6283,7 +6101,6 @@ No se realizó despliegue.
     <td>Done</td>
   </tr>
 </table>
-
 #### 6.2.7.3 Development Evidence for Sprint Review
 
 | Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
