@@ -1,31 +1,48 @@
-import {ChangeDetectionStrategy, Component, computed, inject, signal} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  computed,
+  inject,
+  signal
+} from '@angular/core';
 import {FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {SportSpaceService} from '../../services/sport-space.service';
 import {timeRangeValidator} from '../../../../shared/validators/forms.validator';
-import {DISTRICTS, GAMEMODE_OPTIONS, gamemodesMap, SPORTS} from '../../../../shared/models/sport-space.constants';
+import {GAMEMODE_OPTIONS, gamemodesMap, SPORTS} from '../../../../shared/models/sport-space.constants';
 import {Router} from '@angular/router';
+import {GeolocationService} from '../../../../shared/services/geolocation.service';
+import * as L from 'leaflet';
+import {environment} from '../../../../../environment/environment';
+import {NgClass} from '@angular/common';
 
 @Component({
   selector: 'app-create-sport-space',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgClass
   ],
   templateUrl: './create-sport-space.component.html',
   styleUrl: './create-sport-space.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CreateSportSpaceComponent{
+export class CreateSportSpaceComponent implements AfterViewInit {
   private sportSpaceService = inject(SportSpaceService);
+  private geolocationService = inject(GeolocationService);
   private fb = inject(NonNullableFormBuilder)
   private router = inject(Router);
+  private cdr = inject(ChangeDetectorRef);
 
   private _sportId = signal<number>(1);
   gamemodes = computed(() => this.getGamemodesBySport(this._sportId()));
 
   createSportSpaceForm: FormGroup;
-  districts = DISTRICTS;
   selectedImageUrl: string | null = null;
   selectedImageFile: File | null = null;
+  latitude: number | null = null;
+  longitude: number | null = null;
+  locationNotSelected = false;
 
   constructor() {
     this.createSportSpaceForm = this.fb.group(
@@ -34,8 +51,6 @@ export class CreateSportSpaceComponent{
         sportId: [1, [Validators.required, Validators.min(1), Validators.max(2)]],
         gamemodeId: [null, [Validators.required]],
         price: [0, [Validators.required, Validators.min(40)]],
-        districtId: [null, [Validators.required]],
-        address: ['', [Validators.required, Validators.minLength(8)]],
         description: ['', [Validators.required, Validators.minLength(10)]],
         openTime: ['', [Validators.required]],
         closeTime: ['', [Validators.required]],
@@ -49,8 +64,60 @@ export class CreateSportSpaceComponent{
     });
   }
 
+  ngAfterViewInit(): void {
+    delete (L.Icon.Default.prototype as any)._getIconUrl;
+
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
+      iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
+      shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png'
+    });
+
+    const map = L.map('map').setView([-12.0603, -77.0416], 13);
+
+    L.tileLayer(`https://tiles.locationiq.com/v3/streets/r/{z}/{x}/{y}.png?key=${environment.locationIQKey}`, {
+      attribution: '&copy; <a href="https://www.locationiq.com/">LocationIQ</a> contributors'
+    }).addTo(map);
+
+    let marker: L.Marker | null = null;
+
+    const updateLocation = (lat: number, lng: number) => {
+      this.latitude = lat;
+      this.longitude = lng;
+      this.locationNotSelected = false;
+      this.cdr.detectChanges();
+      console.log('Lat:', lat, 'Lng:', lng);
+    };
+
+    map.on('click', (e: L.LeafletMouseEvent) => {
+      const { lat, lng } = e.latlng;
+
+      if (!marker) {
+        marker = L.marker([lat, lng], { draggable: true }).addTo(map);
+
+        marker.on('dragend', () => {
+          const position = marker!.getLatLng();
+          updateLocation(position.lat, position.lng);
+        });
+      } else {
+        marker.setLatLng([lat, lng]);
+      }
+
+      updateLocation(lat, lng);
+    });
+  }
+
   createSportSpace() {
+    // Validar si hay imagen seleccionada
     if (!this.selectedImageFile) return;
+
+    // Validar si hay latitud y longitud
+    if (this.latitude === null || this.longitude === null) {
+      this.locationNotSelected = true;
+      return;
+    }
+
+    this.locationNotSelected = false;
 
     const formValues = this.createSportSpaceForm.getRawValue();
 
@@ -60,11 +127,11 @@ export class CreateSportSpaceComponent{
     formData.append('sportId', formValues.sportId.toString());
     formData.append('gamemodeId', formValues.gamemodeId.toString());
     formData.append('price', formValues.price.toString());
-    formData.append('districtId', formValues.districtId.toString());
-    formData.append('address', formValues.address);
     formData.append('description', formValues.description);
     formData.append('openTime', formValues.openTime);
     formData.append('closeTime', formValues.closeTime);
+    formData.append('latitude', this.latitude.toString());
+    formData.append('longitude', this.longitude.toString());
 
     this.sportSpaceService.createSportSpace(formData).subscribe({
       next: () => {
@@ -78,8 +145,10 @@ export class CreateSportSpaceComponent{
         console.error('Error al crear espacio:', error);
       }
     });
+
     console.log('Created', formValues);
   }
+
 
   onImageSelected(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -95,9 +164,23 @@ export class CreateSportSpaceComponent{
     }
   }
 
+  onMapClick(event: { lat: number, lng: number }) {
+    this.latitude = event.lat;
+    this.longitude = event.lng;
+
+    this.geolocationService.reverseGeocode(event.lat, event.lng).subscribe({
+      next: (data) => {
+        const address = data.display_name;
+        this.createSportSpaceForm.get('address')?.setValue(address);
+      },
+      error: (err) => console.error('Error obteniendo dirección:', err)
+    });
+  }
+
+
   private getGamemodesBySport(sportId: number): { id: number, label: string, value: string, sportId: number }[] {
-    const values = gamemodesMap[sportId] ?? [];  // Obtenemos los valores asociados al sportId
-    return GAMEMODE_OPTIONS.filter(g => values.includes(g.value));  // Filtramos por los valores
+    const values = gamemodesMap[sportId] ?? [];
+    return GAMEMODE_OPTIONS.filter(g => values.includes(g.value));
   }
 
   protected readonly SPORTS = SPORTS;

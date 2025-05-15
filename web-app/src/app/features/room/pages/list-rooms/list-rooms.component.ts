@@ -5,7 +5,7 @@ import {RoomCardComponent} from '../../components/room-card/room-card.component'
 import {UserStoreService} from '../../../../core/services/user-store.service';
 import {UserRole} from '../../../../core/models/user.role.enum';
 import {FiltersComponent} from '../../../../shared/components/filter/filter.component';
-import {DISTRICTS, SPORTS} from '../../../../shared/models/sport-space.constants';
+import {SPORTS} from '../../../../shared/models/sport-space.constants';
 import {PriceUtil, TimeUtil} from '../../../../shared/utils/time.util';
 
 @Component({
@@ -29,7 +29,6 @@ export class ListRoomsComponent implements OnInit {
 
   filters = {
     sport: null,
-    district: null,
     gameday: null,
     startTime: null,
     endTime: null,
@@ -68,7 +67,7 @@ export class ListRoomsComponent implements OnInit {
 
   applyFilters() {
     const filtered = this.allRooms.filter(room => {
-      const { sport, district, gameday, startTime, endTime, maxAmount } = this.filters;
+      const { sport, gameday, startTime, endTime, maxAmount } = this.filters;
 
       let hours = 0;
       let roomAmount = 0;
@@ -85,7 +84,6 @@ export class ListRoomsComponent implements OnInit {
 
       return (
         (!sport || room.reservation.sportSpace.sportType === sport) &&
-        (!district || room.reservation.sportSpace.districtTypes === district) &&
         (!gameday || room.reservation.gameDay === gameday) &&
         (!startTime || String(room.reservation.startTime) >= String(startTime)) &&
         (!endTime || String(room.reservation.endTime) <= String(endTime)) &&
@@ -98,5 +96,4 @@ export class ListRoomsComponent implements OnInit {
 
   protected readonly UserRole = UserRole;
   protected readonly SPORTS = SPORTS;
-  protected readonly DISTRICTS = DISTRICTS;
 }
