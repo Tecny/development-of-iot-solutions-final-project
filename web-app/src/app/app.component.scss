@@ -1,0 +1,16 @@
+.loading-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: #3b82f6;
+  animation: loading 1.2s infinite ease-in-out;
+  z-index: 9999;
+}
+
+@keyframes loading {
+  0% { transform: scaleX(0); transform-origin: left; }
+  50% { transform: scaleX(0.5); }
+  100% { transform: scaleX(1); }
+}
