@@ -86,92 +86,108 @@
     <th valign="top">Conclusiones</th>
   </tr>
   <tr>
-    <td rowspan="6" valign="top">Trabaja en equipo para proporcionar liderazgo en forma conjunta </td>
+    <td rowspan="6" valign="top">Trabaja en equipo para proporcionar liderazgo en forma conjunta</td>
     <td valign="top">
-      TB1: John Atencio: Coordiné una de las sesiones de presentación interna, organizando el contenido de manera colaborativa y distribuyendo los roles de exposición.
-      <br><br>
+      John Atencio<br>
+      TB1: Coordiné una de las sesiones internas, liderando la organización del contenido y distribuyendo los roles de presentación en conjunto con el equipo.<br><br>
+      TP: Asumí un rol de liderazgo técnico al guiar el desarrollo de la primera versión de la web app, además de diseñar mockups y wireframes junto al equipo.
     </td>
-    <td rowspan="6" valign="middle">
-      Como equipo, compartimos el liderazgo en cada etapa del proyecto, adaptándonos según las fortalezas y experiencias de cada integrante. Este enfoque permitió una mejor toma de decisiones, mayor compromiso y una distribución equitativa de responsabilidades. La rotación de roles de liderazgo fortaleció la autonomía del grupo y fomentó un sentido colectivo de propiedad sobre el proyecto. (TB1)
+    <td rowspan="6" valign="top">
+      El equipo asumió el liderazgo de manera compartida, rotando roles según las fortalezas de cada integrante. Esta dinámica fomentó una toma de decisiones efectiva, mayor autonomía, y un compromiso colectivo con el proyecto. Se promovió un liderazgo distribuido en las distintas fases, desde la investigación inicial hasta el desarrollo de la aplicación. (TB1)<br><br>
+      En esta etapa, el equipo sentó las bases del diseño de la solución IoT y llevó a cabo el primer Sprint de desarrollo. Como resultado, se entregó una Landing Page funcional y una primera versión operativa de la aplicación web, cumpliendo con los objetivos priorizados y validando de forma temprana los avances del producto. (TP)
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Henry Centurion: Tomé la iniciativa en las decisiones clave del diseño estratégico del dominio, promoviendo la participación equitativa y justificando cada decisión técnica.
-      <br><br>
+      Henry Centurion<br>
+      TB1: Guié al equipo en decisiones clave sobre el diseño estratégico del dominio, incentivando la participación equitativa y argumentando cada elección técnica.<br><br>
+      TP: Participé activamente en la planificación del Sprint 1 y lideré la definición de mockups y wireframes.
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Sebastián Frisancho: Lideré la definición inicial de hipótesis en el proceso Lean UX, coordinando al equipo para alinear ideas y enfocar los esfuerzos desde el inicio.
-      <br><br>
+      Sebastián Frisancho<br>
+      TB1: Coordiné al equipo en la definición de hipótesis del Lean UX, fomentando la alineación de ideas desde las primeras etapas.<br><br>
+      TP: Lideré la elaboración de diagramas de user flows y wireflows, aportando además en la mejora continua de los artefactos previos del equipo.
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Sebastián Mendez: Lideré el diseño de uno de los contextos del Tactical-Level Domain-Driven Design, promoviendo reuniones de revisión con el equipo para asegurar la integración de los módulos.
-      <br><br>
+      Sebastián Mendez<br>
+      TB1: Lideré el diseño de uno de los contextos dentro del enfoque táctico de DDD, promoviendo revisiones colectivas para garantizar la integración entre módulos.<br><br>
+      TP: Implementamos Scrum como marco de trabajo, lo que permitió gestionar roles de liderazgo de forma iterativa y colaborativa.
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Willy Valentin: Dirigí la elaboración del modelo To-Be, integrando los aportes de mis compañeros para construir una propuesta coherente y consensuada.
-      <br><br>
+      Willy Valentin<br>
+      TB1: Dirigí la construcción del modelo To-Be, integrando aportes del equipo para obtener una propuesta coherente.<br><br>
+      TP: Me encargué del diseño colaborativo de los mockups y wireframes, asegurando la cohesión visual de la interfaz.
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Angie Valverde: Asumí el rol de facilitador durante las entrevistas con usuarios, guiando al equipo para obtener información valiosa y respetar los tiempos y turnos de participación
-      <br><br>
+      Angie Valverde<br>
+      TB1: Asumí el rol de facilitadora durante entrevistas con usuarios, guiando al equipo para obtener información relevante dentro de un entorno respetuoso.<br><br>
+      TP: Lideré la planificación y organización del Sprint 1, además de diseñar guías de estilo y mockups para la web app.
     </td>
   </tr>
   <tr>
-    <td rowspan="6" valign="top"> Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.</td>
+    <td rowspan="6" valign="top">Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.</td>
     <td valign="top">
-      TB1: John Atencio: Contribuí a establecer metas claras para la entrega, participando activamente en su cumplimiento y apoyando a mis compañeros cuando fue necesario. 
-      <br><br>
+      John Atencio<br>
+      TB1: Contribuí a establecer metas claras y realistas para la entrega, promoviendo el seguimiento colaborativo de los avances y apoyando a compañeros en sus tareas.<br><br>
+      TP: Supervisé el cumplimiento de los objetivos clave del Sprint 1, asegurando la alineación con las User Stories priorizadas.
     </td>
-    <td rowspan="6" valign="middle">
-      Fomentamos un ambiente de trabajo inclusivo, donde todas las voces fueron valoradas y consideradas en la toma de decisiones. Establecimos metas claras, planificamos tareas de forma colaborativa y cumplimos los objetivos propuestos gracias a una comunicación constante, organización compartida y compromiso conjunto. Esta forma de trabajo potenció la productividad y cohesión del equipo. (TB1)
-    </td>
-  </tr>
-  <tr>
-    <td valign="top">
-      TB1: Henry Centurion: Me aseguré de incluir las ideas de todos en la definición de user stories, promoviendo un ambiente donde todos se sintieran escuchados y representados.
-      <br><br>
+    <td rowspan="6" valign="top">
+      Establecimos un entorno de trabajo colaborativo e inclusivo, donde se valoraron todas las perspectivas y se tomaron decisiones consensuadas. Gracias a una planificación conjunta, una comunicación fluida y una distribución clara de responsabilidades, alcanzamos los objetivos propuestos del Sprint dentro del plazo establecido. Este enfoque colectivo favoreció la productividad, cohesión y satisfacción del equipo. (TB1)<br><br>
+      En esta entrega, el equipo cumplió con la totalidad de las User Stories priorizadas para el Sprint, logrando avances significativos en el desarrollo de la solución web. Este progreso fue posible gracias a una planificación efectiva, una ejecución coordinada y un alto nivel de compromiso por parte de todos los integrantes. (TP)
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Sebastián Frisancho: Organicé sesiones de trabajo en las que rotamos tareas como la toma de notas y el análisis de entrevistas, para fomentar el equilibrio y la equidad.
-      <br><br>
+      Henry Centurion<br>
+      TB1: Fomenté un entorno participativo al integrar ideas del equipo en la definición de User Stories, garantizando que todos se sintieran representados.<br><br>
+      TP: Lideré la planificación del Sprint 1, definiendo el alcance, entregables y guías de estilo para mejorar la consistencia del diseño.
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Sebastián Mendez: Me comprometí con los tiempos del proyecto, entregando mis partes del diseño táctico a tiempo y ayudando a resolver bloqueos que surgieron durante la implementación.
-      <br><br>
+      Sebastián Frisancho<br>
+      TB1: Organicé sesiones de trabajo colaborativo donde se rotaron tareas, como toma de notas y análisis, para asegurar una distribución equitativa.<br><br>
+      TP: Contribuí al cumplimiento de las User Stories del Sprint 1, trabajando en conjunto con el equipo para refinar los entregables.
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Willy Valentin: Impulsé espacios de feedback constructivo durante el diseño de la arquitectura, valorando las ideas de todos y fomentando la mejora continua.
-      <br><br>
+      Sebastián Mendez<br>
+      TB1: Cumplí puntualmente con las entregas del diseño táctico y apoyé la resolución de bloqueos, manteniendo la fluidez en el avance del proyecto.<br><br>
+      TP: Participé en la construcción de mockups y wireframes para la aplicación móvil, alineando el trabajo con los objetivos planteados.
     </td>
   </tr>
   <tr>
     <td valign="top">
-      TB1: Angie Valverde: Propuse la planificación inicial del proyecto utilizando tableros colaborativos, lo que permitió una mejor organización y transparencia en el trabajo en equipo.
-      <br><br>
+      Willy Valentin<br>
+      TB1: Promoví espacios de retroalimentación continua durante el diseño arquitectónico, incorporando sugerencias del equipo para mejorar la propuesta técnica.<br><br>
+      TP: Fomenté el aprendizaje colectivo a través de investigaciones y capacitaciones en temas clave para el equipo.
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      Angie Valverde<br>
+      TB1: Propuse y organicé el uso de tableros colaborativos para la planificación inicial, mejorando la transparencia y seguimiento de tareas.<br><br>
+      TP: Organicé tareas orientadas a la mejora continua y desarrollé diagramas de user flow y wire flow que facilitaron la construcción de la solución.
     </td>
   </tr>
 </table>
+
 
 ### Registro de versiones <br>
 
   | Versión | Fecha | Autor | Descripción de Modificación |
   |-|-|-|-|
-  | 1.0 | 27-04-25 | Grupo Tecny | Completado los primeros 4 capitulos del informe. |
+  | 1.0 | 27-04-25 | Grupo Tecny | Se desarrolló hasta el capítulo 4 |
+  | 1.1 | 16-05-25 | Grupo Tecny | Se desarrolló parcialmente hasta el capítulo 6 |
 
 ### Capitulos <br>
   [Capitulo I - Introduction](#i-introduccion) <br>
