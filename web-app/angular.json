@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dtaquito-2025": {
+    "dtaquito-web-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -25,7 +25,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/dtaquito-2025",
+            "outputPath": "dist/dtaquito-web-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -43,7 +43,10 @@
               "src/styles.scss",
               "node_modules/leaflet/dist/leaflet.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/assets/styles"]
+            }
           },
           "configurations": {
             "production": {
@@ -73,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "dtaquito-2025:build:production"
+              "buildTarget": "dtaquito-web-app:build:production"
             },
             "development": {
-              "buildTarget": "dtaquito-2025:build:development"
+              "buildTarget": "dtaquito-web-app:build:development"
             }
           },
           "defaultConfiguration": "development"

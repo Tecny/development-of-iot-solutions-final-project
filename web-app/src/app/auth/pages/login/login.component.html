@@ -41,14 +41,14 @@
       <label for="emailRecover">Ingresa tu correo electrónico para restaurar tu contraseña</label>
       <input id="emailRecover" type="email" formControlName="email" required />
       <button type="submit" [disabled]="recoverPasswordForm.invalid">Enviar</button>
-    </form>
-    @if (recoverPasswordForm.get('email')?.invalid && (recoverPasswordForm.get('email')?.dirty || recoverPasswordForm.get('email')?.touched)) {
-      @if (recoverPasswordForm.get('email')?.errors?.['required']) {
-        <small>El correo electrónico es obligatorio</small>
-      } @else if (recoverPasswordForm.get('email')?.errors?.['invalidEmail']) {
-      <small>Formato de correo electrónico no válido</small>
+      @if (recoverPasswordForm.get('email')?.invalid && (recoverPasswordForm.get('email')?.dirty || recoverPasswordForm.get('email')?.touched)) {
+        @if (recoverPasswordForm.get('email')?.errors?.['required']) {
+          <small>El correo electrónico es obligatorio</small>
+        } @else if (recoverPasswordForm.get('email')?.errors?.['invalidEmail']) {
+          <small>Formato de correo electrónico no válido</small>
+        }
       }
-    }
+    </form>
   }
 
   @if (errorMessage()) {
