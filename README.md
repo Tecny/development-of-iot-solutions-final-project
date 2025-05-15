@@ -207,9 +207,10 @@
   [Capitulo III - Requirements Specification](#iii-requirements-specification)<br>
   
   - 3.1. [To-Be Scenario Mapping](#31-to-be-scenario-mapping) <br>
-  - 3.2. [User Stories](#32-user-stories)<br>
-  - 3.3. [Impact Mapping](#33-impact-mapping) <br>
-  - 3.4. [Product Backlog](#34-product-backlog) <br>
+  - 3.2. [Functional and Non-Functional Requirements](#32-functional-and-non-functional-requirements)<br>
+  - 3.3. [User Stories](#33-user-stories)<br>
+  - 3.3. [Impact Mapping](#34-impact-mapping) <br>
+  - 3.4. [Product Backlog](#35-product-backlog) <br>
 
   [Capitulo IV - Solution Software Design](#iv-solution-software-design)<br>
   
@@ -1133,7 +1134,36 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 
 </div>
 
-## 3.2. User Stories
+## 3.2 Functional and Non-Functional Requirements
+
+| ID | Título | Descripción |
+|--------|-----------------------------------------------------------|-------------|
+| RF01 | Registro del usuario | Los usuarios deben poder registrarse proporcionando su nombre, correo electrónico, contraseña y rol (jugador o propietario). Durante el registro, el sistema debe validar que el correo electrónico no esté registrado previamente. |
+| RF02 | Inicio de sesión del usuario | Los usuarios deben poder iniciar sesión ingresando su correo electrónico y contraseña. El sistema debe autenticar las credenciales ingresadas y permitir el acceso únicamente a usuarios válidos. Además, al iniciar sesión, se debe establecer una cookie HttpOnly para mantener la sesión activa de forma segura |
+| RF03 | Actualización de información personal del usuario | Los usuarios deben poder actualizar su información personal desde su perfil. Los campos editables son: nombre, correo electrónico y contraseña. Los datos ingresados deben ser validados antes de confirmar los cambios. |
+| RF04 | Mejora de plan de suscripción del propietario | Los usuarios con rol propietario deben poder mejorar su plan de suscripción utilizando PayPal (sandbox), pero solo podrá realizar la mejora entre las 00:00 y las 06:00 horas del lunes. Solo se permite mejorar a un plan superior al actual. Si ya posee el plan de mayor nivel, no deben poder realizar nuevas mejoras. No se permite el downgrade a un plan inferior. La mejora solo se completa si el pago es exitoso. |
+| RF05 | Creación de espacio deportivo | Los usuarios con rol propietario deben poder crear un espacio deportivo, pero solo podrá hacerlo entre las 00:00 y las 06:00 horas del lunes. La cantidad de espacios deportivos que un propietario puede crear está limitada según su plan de suscripción: un propietario con plan Bronce puede crear hasta 1 espacio, con plan Plata hasta 2 espacios, y con plan Oro hasta 3 espacios. Para crear un espacio, se deben ingresar los siguientes campos obligatorios: nombre, ID del deporte, imagen, precio, descripción, hora de apertura, hora de cierre, ID del modo de juego, latitud y longitud. El horario de funcionamiento del espacio deportivo será de 08:00 a 23:00. La creación del espacio solo se completa si todos los campos son válidos y el propietario tiene un plan de suscripción activo diferente del gratuito. |
+| RF06 | Eliminación de espacio deportivo | Los usuarios con rol propietario deben poder eliminar un espacio deportivo, pero solo podrá hacerlo entre las 00:00 y las 06:00 horas del lunes. La eliminación del espacio se realiza una vez confirmada la acción. |
+| RF07 | Recarga de créditos | Solo los usuarios con rol jugador deben poder recargar créditos en su cuenta, y solo se permite realizar una recarga de monto positivo. La recarga de créditos se realiza a través del sistema de pago PayPal (sandbox). El proceso de recarga se completa una vez que el pago ha sido exitoso. |
+| RF08 | Visualización de espacios deportivos | Los usuarios con rol jugador deben poder visualizar todos los espacios deportivos disponibles en la plataforma, incluyendo su disponibilidad de horarios. Los usuarios con rol propietario solo deben poder visualizar los espacios deportivos que ellos mismos han creado, junto con la disponibilidad de horarios de estos espacios. |
+| RF09 | Reserva de espacio deportivo | Los usuarios con rol jugador deben poder realizar reservas de espacios deportivos. La disponibilidad de los espacios es semanal, y las reservas se pueden hacer desde los lunes a partir de las 08:00, pero no está permitido reservar para el mismo lunes. Las reservas solo se pueden hacer para los días de martes a domingo hasta las 23:00. Los tipos de reserva disponibles son PERSONAL, donde un jugador paga el precio según las horas que vaya a jugar, y COMUNIDAD, donde se crea una sala comunidad que otros jugadores pueden unirse. La reserva comunitaria funciona mediante adelantos, calculados a partir del precio del espacio y las horas a jugar. Para crear una reserva, se deben completar los siguientes campos obligatorios: nombre de la reserva, ID del espacio deportivo, tipo (personal o comunidad), día de juego, hora de inicio y hora de fin. |
+| RF10 | Vista de salas comunidad | Los usuarios con rol jugador y propietario deben poder ver las salas comunitarias disponibles. Los jugadores pueden unirse a las salas comunitarias, pero los propietarios solo podrán verlas sin la opción de unirse. La vista debe mostrar la información relevante, como el espacio deportivo, el horario de juego, el número de jugadores ya inscritos, el número máximo de jugadores que se pueden unir a la reserva y el costo del adelanto para ingresar. |
+| RF11 | Unirse a una sala comunidad | Los usuarios con rol jugador son los únicos que pueden unirse a una sala comunidad. Para unirse, deben tener la cantidad de créditos necesarias para pagar el adelanto. Además, la sala no debe estar llena para que un jugador pueda unirse. |
+| RF12 | Crear ticket de retiro de créditos | Los usuarios con rol propietario deben poder crear tickets de retiro de créditos solo los lunes entre las 00:00 y las 06:00 horas. Los campos obligatorios son: nombre completo, nombre del banco, tipo de transferencia (CC o CCI) y número de cuenta. Para poder solicitar un retiro, Los usuarios deben tener créditos disponibles (mayor que 0) y no tener una solicitud pendiente. |
+| RF13 | Eliminar sala comunidad | Solo los usuarios con rol jugador que haya creado la sala comunidad deben poder eliminarla. La eliminación manual solo estará permitida hasta un día antes de la hora de inicio del juego. Si la sala no se llena dentro de ese mismo plazo, se eliminará automáticamente. En ambos casos, ya sea por eliminación manual o automática, se deberá devolver el adelanto de créditos a todos los jugadores |
+| RF14 | Confirmación de reserva | La confirmación de reservas debe ser gestionada automáticamente por el sistema. En una reserva personal, la confirmación es instantánea y los créditos pagados se transfieren directamente al propietario del espacio deportivo. En una reserva comunidad, la confirmación solo ocurre si la sala se llena; una vez confirmada, el pozo de adelantos pagado por los jugadores se transfiere al propietario. |
+| RF15 | Crear ticket de retiro de créditos | Los usuarios con rol propietario deben poder crear un ticket de retiro de créditos, exclusivamente los lunes entre las 00:00 y las 06:00 horas. Para realizar la solicitud, deben cumplir con dos condiciones: tener una cantidad de créditos mayor a cero y no contar con otra solicitud pendiente. Además, se deben completar los siguientes campos obligatorios: nombre completo, nombre del banco, tipo de transferencia (CC o CCI) y número de cuenta. |
+| RF16 | Atención de tickets de retiro de créditos | Los tickets de retiro de créditos deben ser gestionados únicamente por los usuarios con rol administrador. La atención debe realizarse durante la misma semana en la que fueron solicitados. El administrador podrá confirmar la transferencia o diferirla en caso de detectar algún dato erróneo. Si se difiere, los usuarios con rol propietario recibirán un correo electrónico notificándole para que pueda corregir la solicitud, por ese mismo medio de contacto. |
+| RF17 | Generación de código QR | Solo los usuarios con rol jugador que hayan creado una reserva deben poder generar el código QR de la reserva, 1 hora antes del inicio de la misma. Una vez finalizada la reserva, ya no será posible generar nuevamente el código QR asociado a dicha reserva. |
+| RF18 | Activación de reserva con QR e IoT | Los usuarios con rol jugador que hayan creado una reserva deben poder activarla al llegar al espacio deportivo acercando el código QR generado a un dispositivo IoT con lector QR (ESP32-CAM). El dispositivo debe validar el token del QR con el servidor. Si el servidor está caído, el dispositivo IoT deberá validar los QR localmente desde una memoria microSD donde estén almacenados previamente los tokens. Cada 5 minutos intentará contactar al servidor para validar el QR. Una vez activado un QR, no podrá volver a utilizarse. |
+| RF19 | Conteo de personas mediante IoT | Un dispositivo IoT (ESP32 DevKit con sensor PIR) deberá contar la cantidad de personas que ingresan al establecimiento donde se encuentra el espacio deportivo. Cada 5 minutos, el dispositivo enviará el total contado al servidor y luego reiniciará el contador. Si el servidor está inactivo, el contador se guardará en una memoria microSD hasta que pueda enviarse. El dispositivo intentará contactar al servidor cada 5 minutos para enviar los datos pendientes. |
+| RNF01 | Seguridad: Cookie HttpOnly | El sistema deberá enviar una cookie HttpOnly al cliente para ser utilizada en las solicitudes en el 100% de las veces. Esta cookie asegura que la información de autenticación solo pueda ser accedida por el servidor y no por scripts en el navegador, garantizando así una mayor seguridad en la plataforma. |
+| RNF02 | Disponibilidad: consulta de horarios de espacios deportivos | El servidor deberá estar disponible para responder a las solicitudes de disponibilidad semanal de los horarios de los espacios deportivos realizadas por los jugadores, las 24 horas del día, los 7 días de la semana, garantizando acceso continuo. |
+| RNF03 | Desempeño: Visualización de espacios deportivos | El jugador podrá consultar la visualización de los espacios deportivos y esta deberá mostrarse en un tiempo menor a 3 segundos, garantizando una experiencia fluida y rápida para Los usuarios. |
+| RNF04 | Confiabilidad: Confirmación o rechazo de reserva | El sistema deberá confirmar o rechazar la reserva de un espacio deportivo el 99.9% de las veces de forma correcta, asegurando que la gestión de reservas sea altamente confiable y precisa. |
+
+
+## 3.3. User Stories
 
 | Categoría     | Epic ID | Título                                 | Descripción                                                                                                   | Relacionado con (Story ID)                     |
 |---------------|---------|-----------------------------------------|---------------------------------------------------------------------------------------------------------------|------------------------------------------------|
@@ -1230,11 +1260,11 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 |TS40|Diferir la solicitud de retiro de un usuario OWNER|Como desarrollador, necesito implementar un endpoint PATCH en el API nombrado "bank-transfer/defer/{id}” para que se difiera una petición de retiro de créditos como usuario ADMIN|<p>***Escenario 1: Diferir la petición de retiro de un usuario OWNER***</p><p>Dado que el desarrollador implementa un endpoint para diferir una petición de retiro de un usuario OWNER siendo usuario ADMIN</p><p>Cuando solicita la petición con params: id</p><p>Y la petición del usuario OWNER tiene créditos por cobrar</p><p>Y la petición del usuario OWNER tiene datos que no se pueden corroborar a primera instancia</p><p>Entonces, es diferido la creación para atender el retiro y se le induce a contactarse con soporte vía correo y devuelve un code 200.</p>|EP16|
 
 
-## 3.3. Impact Mapping
+## 3.4. Impact Mapping
 
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//impact-mapping.png" alt="UPC">
 
-## 3.4. Product Backlog
+## 3.5. Product Backlog
 
 | Orden | ID   | Título | Descripción | Story Points |
 |-------|------|--------|-------------|--------------|
