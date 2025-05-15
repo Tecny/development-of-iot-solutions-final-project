@@ -27,7 +27,7 @@ import {UserStoreService} from '../../../../core/services/user-store.service';
       <div class="room-card__details">
         <p>Modo de juego: {{ room.reservation.sportSpace.gamemode.replaceAll('_', ' ') | titlecase }}</p>
         <p>Fecha: {{ TimeUtil.formatDate(room.reservation.gameDay) }}, {{ room.reservation.startTime }}
-          -{{ room.reservation.endTime }}</p>
+          - {{ room.reservation.endTime }}</p>
         <p>Lugar: {{ room.reservation.sportSpace.address }}</p>
         Espacio deportivo: <a
         [routerLink]="['/sport-spaces', room.reservation.sportSpace.id]"> {{ room.reservation.sportSpace.name }}</a>
@@ -41,7 +41,9 @@ import {UserStoreService} from '../../../../core/services/user-store.service';
                 <button class="room-card__view" (click)="viewRoom()">Ir a la sala</button>
                 @if (isRoomCreator()) {
                   <button class="room-card__delete" (click)="deleteRoom()">Borrar sala</button>
-                  <button (click)="showQr = true">Ver QR</button>
+<!--                  <button (click)="showQr = true">Ver QR</button>-->
+                } @else {
+                  <button class="room-card__leave" (click)="leaveRoom()">Abandonar la sala</button>
                 }
               } @else {
                 <button class="room-card__join" (click)="joinRoom()">Unirse</button>
@@ -116,6 +118,20 @@ export class RoomCardComponent implements OnInit {
         },
         error: (error) => {
           console.error('Error joining room:', error);
+        }
+      });
+    }
+  }
+
+  leaveRoom() {
+    if (window.confirm('¿Estás seguro de que deseas abandonar esta sala?')) {
+      this.roomService.leaveRoom(this.room.id).subscribe({
+        next: () => {
+          this.roomService.clearAccess(this.room.id);
+          window.location.reload();
+        },
+        error: (error) => {
+          console.error('Error leaving room:', error);
         }
       });
     }

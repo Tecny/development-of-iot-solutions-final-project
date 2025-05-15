@@ -37,6 +37,10 @@ export class RoomService {
     return this.http.post(`${this.baseUrl}/player-lists/join/${id}`, {});
   }
 
+  leaveRoom(id: number) {
+    return this.http.delete(`${this.baseUrl}/player-lists/leave/${id}`, {});
+  }
+
   getPlayerList(roomId: number) {
     return this.http.get<PlayerList[]>(`${this.baseUrl}/player-lists/room/${roomId}`);
   }
