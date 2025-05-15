@@ -1,7 +1,6 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {SportSpace} from '../../models/sport-space.interface';
 import {
-  districtIdToLabelMap,
   gamemodeIdToLabelMap,
   sportIdToLabelMap
 } from '../../../../shared/models/sport-space.constants';
@@ -25,5 +24,4 @@ export class SportSpaceInfoComponent {
 
   protected readonly sportIdToLabelMap = sportIdToLabelMap;
   protected readonly gamemodeIdToLabelMap = gamemodeIdToLabelMap;
-  protected readonly districtIdToLabelMap = districtIdToLabelMap;
 }

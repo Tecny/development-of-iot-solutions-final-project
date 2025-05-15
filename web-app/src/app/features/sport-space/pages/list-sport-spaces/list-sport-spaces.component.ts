@@ -7,7 +7,7 @@ import {UserRole} from '../../../../core/models/user.role.enum';
 import {RouterLink} from '@angular/router';
 import {FiltersComponent} from '../../../../shared/components/filter/filter.component';
 import {
-  DISTRICTS, getDistrictIdByValue, getSportIdByValue,
+  getSportIdByValue,
   SPORTS
 } from '../../../../shared/models/sport-space.constants';
 
@@ -34,7 +34,6 @@ export class ListSportSpacesComponent implements OnInit {
 
   filters = {
     sport: null,
-    district: null,
     price: null,
     openTime: null,
     closeTime: null,
@@ -95,14 +94,12 @@ export class ListSportSpacesComponent implements OnInit {
   }
 
   applyFilters() {
-    const { sport, district, price, openTime, closeTime } = this.filters;
+    const { sport, price, openTime, closeTime } = this.filters;
     const sportId = sport ? getSportIdByValue(sport) : undefined;
-    const districtId = district ? getDistrictIdByValue(district) : undefined;
 
     const filtered = this.allSpaces.filter(space => {
       return (
         (!sportId || space.sportId === sportId) &&
-        (!districtId || space.districtId === districtId) &&
         (!price || space.price <= price) &&
         (!openTime || String(space.openTime) <= String(openTime)) &&
         (!closeTime || String(space.closeTime) <= String(closeTime))
@@ -113,5 +110,4 @@ export class ListSportSpacesComponent implements OnInit {
   }
 
   protected readonly SPORTS = SPORTS;
-  protected readonly DISTRICTS = DISTRICTS;
 }

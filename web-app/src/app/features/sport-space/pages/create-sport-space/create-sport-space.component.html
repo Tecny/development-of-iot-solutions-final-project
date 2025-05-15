@@ -75,35 +75,11 @@
       }
     </div>
 
-    <div>
-      <label>Distrito:</label>
-      <select formControlName="districtId" required>
-        <option value="" disabled selected>Selecciona un distrito</option>
-        @for (district of districts; track district.id) {
-          <option [value]="district.id">{{ district.label }}</option>
-        }
-      </select>
+    <div [ngClass]="{ 'invalid-map': locationNotSelected }" id="map" style="height: 500px; width: 500px; margin-bottom: 1rem;"></div>
 
-      @if (createSportSpaceForm.get('district')?.invalid && (createSportSpaceForm.get('district')?.dirty || createSportSpaceForm.get('district')?.touched)) {
-        @if (createSportSpaceForm.get('district')?.errors?.["required"]) {
-          <small>El distrito es obligatorio</small>
-        }
-      }
-    </div>
-
-
-    <div>
-      <label>Dirección:</label>
-      <input type="text" formControlName="address" required>
-      @if (createSportSpaceForm.get('address')?.invalid && (createSportSpaceForm.get('address')?.dirty || createSportSpaceForm.get('address')?.touched)) {
-        @if (createSportSpaceForm.get('address')?.errors?.["required"]) {
-          <small>La dirección es obligatoria</small>
-        }
-        @if (createSportSpaceForm.get('address')?.errors?.["minlength"]) {
-          <small>La dirección debe tener mínimo 8 caracteres</small>
-        }
-      }
-    </div>
+    @if (locationNotSelected) {
+      <small style="color: red;">Debes seleccionar una ubicación en el mapa</small>
+    }
 
     <div>
       <label>Descripción:</label>

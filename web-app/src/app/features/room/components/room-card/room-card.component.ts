@@ -28,8 +28,7 @@ import {UserStoreService} from '../../../../core/services/user-store.service';
         <p>Modo de juego: {{ room.reservation.sportSpace.gamemode.replaceAll('_', ' ') | titlecase }}</p>
         <p>Fecha: {{ TimeUtil.formatDate(room.reservation.gameDay) }}, {{ room.reservation.startTime }}
           -{{ room.reservation.endTime }}</p>
-        <p>Lugar: {{ room.reservation.sportSpace.address }}
-          , {{ room.reservation.sportSpace.districtTypes.replaceAll('_', ' ') }}</p>
+        <p>Lugar: {{ room.reservation.sportSpace.address }}</p>
         Espacio deportivo: <a
         [routerLink]="['/sport-spaces', room.reservation.sportSpace.id]"> {{ room.reservation.sportSpace.name }}</a>
       </div>

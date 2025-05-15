@@ -6,7 +6,6 @@ export interface SportSpace {
   gamemodeId: number;
   price: number;
   amount: number;
-  districtId: number;
   address: string;
   description: string;
   openTime: string;

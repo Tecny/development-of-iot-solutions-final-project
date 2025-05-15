@@ -2,12 +2,11 @@ interface SportSpace {
   id: number;
   name: string;
   image: string;
+  address: string;
   sportType: string;
   gamemode: string;
   price: number;
   amount: number;
-  districtTypes: string;
-  address: string;
 }
 
 interface Reservation {
