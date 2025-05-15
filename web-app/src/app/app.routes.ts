@@ -8,6 +8,7 @@ import {UserRole} from './core/models/user.role.enum';
 import {roomGuard} from './core/guards/room.guard';
 import {ResetPasswordComponent} from './auth/pages/reset-password/reset-password.component';
 import {RedirectComponent} from './core/components/redirect/redirect.component';
+import {HomeComponent} from './shared/pages/home/home.component';
 
 export const routes: Routes = [
   {
@@ -21,6 +22,12 @@ export const routes: Routes = [
   {
     path: 'reset-password',
     component: ResetPasswordComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [authGuard],
+    data: { roles: [UserRole.PLAYER, UserRole.OWNER] },
   },
   {
     path: 'profile',

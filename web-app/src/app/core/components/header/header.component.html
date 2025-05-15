@@ -4,19 +4,22 @@
     @if (isAuthenticated()) {
       @switch (role()) {
         @case ('PLAYER') {
+          <a routerLink="/home">Inicio</a>
           <a routerLink="/rooms">Salas comunidad</a>
           <a routerLink="/sport-spaces">Espacios deportivos</a>
           <a routerLink="/reservations">Mis Reservas</a>
           <a routerLink="/profile">Perfil</a>
         }
         @case ('OWNER') {
+          <a routerLink="/home">Inicio</a>
           <a routerLink="/sport-spaces">Mis espacios deportivos</a>
-          <a routerLink="/rooms">Salas comunidas</a>
+          <a routerLink="/rooms">Salas comunidad</a>
           <a routerLink="/subscription">Subscripción</a>
           <a routerLink="/bank-transfer">Retiro de créditos</a>
           <a routerLink="/profile">Perfil</a>
         }
         @case ('ADMIN') {
+          <a routerLink="/home">Inicio</a>
           <a routerLink="/bank-transfer">Dashboard de tickets</a>
           <button (click)="logout()">Cerrar sesión</button>
         }
