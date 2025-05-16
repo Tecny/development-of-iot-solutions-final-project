@@ -1390,7 +1390,7 @@ Son conjuntos de objetos que se manejan como una sola entidad para la gestión d
 Es una delimitación precisa dentro del dominio del sistema en la que se aplica un modelo específico. Establece una frontera donde un conjunto de conceptos y términos adquieren un significado particular, lo que ayuda a evitar confusiones y gestionar las complejidades en sistemas grandes y distribuidos.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs10.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs10.jpg" alt="UPC">
 </p>
 
 ### 4.1.2. Candidate Context Discovery
@@ -1467,7 +1467,7 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 **External Systems:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-payment.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-payment.jpg" alt="UPC">
 </p>
 
 ### 4.1.3. Domain Message Flows Modeling
@@ -1481,7 +1481,7 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 **2. Player recharging credits**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm2.PNG" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm2.jpg" alt="UPC">
 </p>
 
 **3. Player recharging credits**
@@ -1505,7 +1505,7 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 **6. Owner upgrading subscription**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm6.PNG" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm6.jpg" alt="UPC">
 </p>
 
 **7. Owner creating sportspace**
@@ -1549,19 +1549,19 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 **3. Subscription Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-sub.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-sub.jpg" alt="UPC">
 </p>
 
 **4. Deposit Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-deposit.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-deposit.jpg" alt="UPC">
 </p>
 
 **5. External Systems Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-payment.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bcanvas-payment.jpg alt="UPC">
 </p>
 
 **6. Bank Transfer Context**
@@ -1605,7 +1605,7 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 El "Context Mapping" representa cómo los diferentes módulos interactúan entre sí distintos Bounded Contexts dentro de un sistema complejo. Ayuda a entender las relaciones, dependencias y límites entre las diferentes partes de un sistema que tienen sus propios modelos de dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-mapping.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-mapping.jpg" alt="UPC">
 </p>
 
 ### 4.1.6. Software Architecture
@@ -3024,7 +3024,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 Aquí se detalla la arquitectura del software a nivel de código, presentando la clase sportspace dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-sportspace.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-sportspace.jpg" alt="UPC">
 </p>
 
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram 
@@ -3032,7 +3032,7 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-sport.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-sport.jpg" alt="UPC">
 </p>
 
 ### 4.2.5. Bounded Context: Reservations
@@ -3265,7 +3265,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 #### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//reservation-component.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//reservation-component.jpg" alt="UPC">
 </p>
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
