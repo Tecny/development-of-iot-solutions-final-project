@@ -980,6 +980,7 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 <p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userpersona-owner.png" alt="UPC">
 </p>
+
 ### 2.3.2. User Task Matrix
 
 <div style="text-align: justify;">
@@ -1036,6 +1037,7 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 <p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//empathy-owner.png" alt="UPC">
 </p>
+
 ### 2.3.5. As Is Scenario Mapping
 
 <div style="text-align: justify;">
@@ -1050,6 +1052,7 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 <p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//asis-owner.jpg" alt="UPC">
 </p>
+
 ### 2.4. Ubiquitous Language
 
 <div style="text-align: justify;">
@@ -4349,6 +4352,7 @@ Los sistemas de etiquetado se emplean para transmitir información al usuario, p
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//labeling-2.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//labeling-3.png" alt="UPC">
 </p>
+
 ### 5.2.3. Searching Systems
 
 Los sistemas de búsqueda de información son cruciales para que el usuario pueda localizar lo que necesita de manera rápida y efectiva. Para facilitar la búsqueda de distintos tipos de datos, contamos con una barra de búsqueda situada en la parte superior, que incluye sugerencias sobre qué se puede buscar y encontrar.
@@ -4356,7 +4360,9 @@ Los sistemas de búsqueda de información son cruciales para que el usuario pued
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//searchingS-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//searchingS-2.png" alt="UPC">
 </p>
+
 ### 5.2.4. SEO Tags and Meta Tags
+
 ### 5.2.5. Navigation Systems
 
 Los sistemas de navegación incluyen botones e interfaces que permiten moverse de una sección a otra dentro de la aplicación, como los botones en la parte superior de la página web que llevan a diferentes funciones. Estos botones tienen texto que indica la acción que se realizará al presionarlos, además de ofrecer opciones de navegación rápida a través de atajos. 
@@ -4524,20 +4530,20 @@ Para asegurar un desarrollo homogéneo y comprensible a nivel internacional, hem
 - **Landing Page**: HTML, CSS & JavaScript
 - **Herramientas adicionales**: LucidChart, Figma, GitHub, Miro, Canva y Visual Paradigm
 
-### Convenciones de idioma:
+Convenciones de idioma:
 
 - El código desarrollado, tanto para la Landing Page como para el Front-end y Back-end, se escribirá íntegramente en inglés. Esto incluye los comentarios dentro del código, los mensajes de los commits y cualquier otra interacción en el repositorio de control de versiones.
 
 - La documentación formal y los artefactos del proyecto que forman parte de este reporte serán redactados en español, garantizando claridad en la presentación final.
 
 
-### Convenciones tecnológicas generales:
+Convenciones tecnológicas generales:
 
 - Los nombres de las tablas en la base de datos estarán en minúsculas y, en caso de tener más de una palabra, estas se separarán con un guion bajo ("_").
 - El flujo de trabajo en GitHub seguirá la metodología de GitFlow para el control de versiones, asegurando un ciclo de desarrollo estructurado y eficiente.
 - Los commits se estructurarán bajo el formato de Conventional Commits, cuyas reglas pueden consultarse en: https://www.conventionalcommits.org/en/v1.0.0/
 
-### Convenciones específicas por tecnología:
+Convenciones específicas por tecnología:
 
 1. **Landing Page (HTML, CSS & JavaScript):**
    - Se seguirán las convenciones de Google para HTML/CSS, disponibles en: https://google.github.io/styleguide/htmlcssguide.html.
@@ -6098,7 +6104,7 @@ No se realizó despliegue.
   </tr>
 </table>
 
-#### 6.2.7.3 Development Evidence for Sprint Review
+#### 6.2.4.3 Development Evidence for Sprint Review
 
 | Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
 |---|---|---|---|---|---|
