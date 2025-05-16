@@ -6131,8 +6131,6 @@ No se realizó despliegue.
 
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dep-s4-1.png" alt="UPC">
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dep-s4-2.png" alt="UPC">
-
 #### 6.2.4.6 Team Collaboration Insights during Sprint 
 
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s3.png" alt="UPC">
