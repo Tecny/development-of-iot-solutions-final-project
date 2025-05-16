@@ -166,8 +166,15 @@
 
   | Versión | Fecha | Autor | Descripción de Modificación |
   |-|-|-|-|
-  | 1.0 | 27-04-25 | Grupo Tecny | Se desarrolló hasta el capítulo 4 |
-  | 1.1 | 16-05-25 | Grupo Tecny | Se desarrolló parcialmente hasta el capítulo 6 |
+  | 0.1 | 27-04-25 | Grupo Tecny | Se desarrolló hasta el capítulo 4 |
+  | 0.1.1 | 30/04/2025 | Grupo Tecny | Corrección del AS-IS y TO-BE scenarios |
+  | 0.1.2 | 03/05/2025 | Grupo Tecny | Se corrigió los diagramas C4 |
+  | 0.1.3 | 03/05/2025 | Grupo Tecny | Se mejoró las user stories |
+  | 0.2 | 06/05/25 | Grupo Tecny | Se desarrolló parcialmente el capítulo 6 |
+  | 0.2.1 | 08/05/2025 | Grupo Tecny | Se corrigió secciones de la parte estratégica y táctica del enfoque DDD |
+  | 0.2.2 | 12/04/2025 | Grupo Tecny | Se corrigió el Product Backlog |
+  | 0.3 | 13/05/25 | Grupo Tecny | Se completó el capítulo 6 |
+  | 0.3.1 | 14/05/25 | Grupo Tecny | Se corrigió el formato de los sprints |
 
 ### Capitulos 
   [Capitulo I - Introduction](#i-introduccion) 
@@ -679,10 +686,10 @@ A medida que los usuarios interactúan en un entorno que mezcla lo social con la
 
 ### 1.3. Segmentos objetivo
 
-**Segmento objetivo 1: Personas que juegan futbol**
+**Segmento objetivo 1: Personas que practican fútbol y/o billar**
   - Aspectos demográficos:
     - Sexo: Hombres y mujeres.
-    - Edades: De 15 a 45 años.
+    - Edades: De 18 a 55 años.
     - Nivel Socioeconómico: Medio y medio-alto.
 
   - Aspectos geográficos:
@@ -691,25 +698,10 @@ A medida que los usuarios interactúan en un entorno que mezcla lo social con la
     - Departamento: Lima Metropolitana.
 
   - Aspectos psicográficos:
-    - Intereses: Aficionados al fútbol, tanto jugadores como espectadores.
+    - Intereses: Aficionados al fútbol y/o billar, tanto jugadores como espectadores.
     - Estilo de Vida: Activo y deportivo.
 
-**Segmento objetivo 2: Personas que juegan billar**  
-  - Aspectos demográficos:
-    -	Sexo: Hombres y mujeres.
-    - Edades: De 15 a 45 años.
-    - Nivel Socioeconómico: Medio y medio-alto.
-
-  - Aspectos geográficos:
-    - Nacionalidad: Residentes en Lima, Perú.
-    - Zona Geográfica: Área Metropolitana de Lima.
-    - Departamento: Lima Metropolitana.
-
-  - Aspectos psicográficos:
-    - Intereses: Aficionados al billar, tanto jugadores como espectadores.
-    - Estilo de Vida: Activo y deportivo.
-
-**Segmento objetivo 3: Personas dueñas de un espacio de juego**
+**Segmento objetivo 2: Personas dueñas de un espacio deportivo**
   - Aspectos demográficos:
     -	Sexo: Hombres y mujeres.
     - Edades: De 25 a 60 años.
@@ -1101,6 +1093,7 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 <p align="center">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//tobe-owner.png" alt="UPC">
 </p>
+
 ## 3.2 Functional and Non-Functional Requirements
 
 | ID | Título | Descripción |
@@ -1118,7 +1111,7 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 | RF11 | Unirse a una sala comunidad | Los usuarios con rol jugador son los únicos que pueden unirse a una sala comunidad. Para unirse, deben tener la cantidad de créditos necesarias para pagar el adelanto. Además, la sala no debe estar llena para que un jugador pueda unirse. |
 | RF12 | Crear ticket de retiro de créditos | Los usuarios con rol propietario deben poder crear tickets de retiro de créditos solo los lunes entre las 00:00 y las 06:00 horas. Los campos obligatorios son: nombre completo, nombre del banco, tipo de transferencia (CC o CCI) y número de cuenta. Para poder solicitar un retiro, Los usuarios deben tener créditos disponibles (mayor que 0) y no tener una solicitud pendiente. |
 | RF13 | Eliminar sala comunidad | Solo los usuarios con rol jugador que haya creado la sala comunidad deben poder eliminarla. La eliminación manual solo estará permitida hasta un día antes de la hora de inicio del juego. Si la sala no se llena dentro de ese mismo plazo, se eliminará automáticamente. En ambos casos, ya sea por eliminación manual o automática, se deberá devolver el adelanto de créditos a todos los jugadores |
-| RF14 | Confirmación de reserva | La confirmación de reservas debe ser gestionada automáticamente por el sistema. En una reserva personal, la confirmación es instantánea y los créditos pagados se transfieren directamente al propietario del espacio deportivo. En una reserva comunidad, la confirmación solo ocurre si la sala se llena; una vez confirmada, el pozo de adelantos pagado por los jugadores se transfiere al propietario. |
+| RF14 | Confirmación de reserva y almacenamiento en la blockchain | La confirmación de reservas debe ser gestionada automáticamente por el sistema. En una reserva personal, la confirmación es instantánea y los créditos pagados se transfieren directamente al propietario del espacio deportivo. En una reserva comunidad, la confirmación solo ocurre si la sala se llena; una vez confirmada, el pozo de adelantos pagado por los jugadores se transfiere al propietario. Además, todas las reservas confirmadas deben ser almacenadas en la blockchain mediante el uso de smart contracts, asegurando la trazabilidad y la integridad de las reservas. |
 | RF15 | Crear ticket de retiro de créditos | Los usuarios con rol propietario deben poder crear un ticket de retiro de créditos, exclusivamente los lunes entre las 00:00 y las 06:00 horas. Para realizar la solicitud, deben cumplir con dos condiciones: tener una cantidad de créditos mayor a cero y no contar con otra solicitud pendiente. Además, se deben completar los siguientes campos obligatorios: nombre completo, nombre del banco, tipo de transferencia (CC o CCI) y número de cuenta. |
 | RF16 | Atención de tickets de retiro de créditos | Los tickets de retiro de créditos deben ser gestionados únicamente por los usuarios con rol administrador. La atención debe realizarse durante la misma semana en la que fueron solicitados. El administrador podrá confirmar la transferencia o diferirla en caso de detectar algún dato erróneo. Si se difiere, los usuarios con rol propietario recibirán un correo electrónico notificándole para que pueda corregir la solicitud, por ese mismo medio de contacto. |
 | RF17 | Generación de código QR | Solo los usuarios con rol jugador que hayan creado una reserva deben poder generar el código QR de la reserva, 1 hora antes del inicio de la misma. Una vez finalizada la reserva, ya no será posible generar nuevamente el código QR asociado a dicha reserva. |
@@ -1232,6 +1225,8 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//impact-mapping.png" alt="UPC">
 
 ## 3.5. Product Backlog
+
+La priorización del Product Backlog se llevó a cabo en base a la secuencia lógica de funcionamiento del software, asegurando que los elementos fundamentales se desarrollen antes que aquellos que dependen de ellos. Esta secuencia lógica también está alineada con los distintos bounded contexts identificados en el sistema, lo que permitió estructurar el desarrollo de forma más clara y coherente en torno a las responsabilidades de cada contexto. Además, para estimar la complejidad de cada ítem del backlog, se utilizó la escala de Fibonacci (1, 2, 3, 5, 8, 13...), lo que facilitó una valoración relativa del esfuerzo requerido y una mejor planificación del desarrollo.
 
 | Orden | ID   | Título | Descripción | Story Points |
 |-------|------|--------|-------------|--------------|
@@ -1466,7 +1461,7 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-banktransfer.png" alt="UPC">
 </p>
 
-**Payments:**
+**External Systems:**
 
 <p align="center">
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-payment.png" alt="UPC">
@@ -1560,7 +1555,7 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-deposit.png" alt="UPC">
 </p>
 
-**5. Payment Context**
+**5. External Systems Context**
 
 <p align="center">
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-payment.png" alt="UPC">
@@ -4633,7 +4628,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear endpoint POST /users/sign-up</td>
     <td>Definir ruta y controlador base para registrar nuevos usuarios</td>
-    <td>2</td>
+    <td>5</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -4641,7 +4636,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Validar datos de entrada</td>
     <td>Agregar validaciones para nombre, email y contraseña</td>
-    <td>3</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -4649,7 +4644,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK03</td>
     <td>Guardar usuario en base de datos</td>
     <td>Insertar usuario con contraseña encriptada</td>
-    <td>2</td>
+    <td>6</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -4659,7 +4654,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear endpoint PUT /users/name</td>
     <td>Definir ruta y lógica para actualizar el nombre del usuario</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -4667,7 +4662,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Validar nuevo nombre</td>
     <td>Agregar reglas de validación para nombre válido</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -4677,7 +4672,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear endpoint PUT /users/email</td>
     <td>Definir ruta y controlador para actualizar el email del usuario</td>
-    <td>2</td>
+    <td>5</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -4685,7 +4680,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Verificar formato y duplicados</td>
     <td>Validar email nuevo y asegurar que no esté registrado</td>
-    <td>2</td>
+    <td>6</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -4695,7 +4690,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear endpoint PUT /users/password</td>
     <td>Definir lógica para actualizar la contraseña del usuario autenticado</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -4703,7 +4698,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Encriptar y guardar nueva contraseña</td>
     <td>Verificar y encriptar nueva contraseña antes de actualizar</td>
-    <td>2</td>
+    <td>5</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -4713,7 +4708,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear endpoint GET /users/all</td>
     <td>Configurar ruta para obtener la lista de usuarios</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -4721,7 +4716,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Restringir acceso solo a ADMIN</td>
     <td>Validar rol del usuario antes de devolver los datos</td>
-    <td>2</td>
+    <td>5</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -4731,7 +4726,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear endpoint GET /users/me</td>
     <td>Definir la ruta y lógica para retornar los datos del usuario autenticado</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -4739,7 +4734,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Extraer ID del token</td>
     <td>Obtener el ID del usuario desde el token JWT para usar en la consulta</td>
-    <td>1</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -4749,7 +4744,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear endpoint POST /authentication/sign-in</td>
     <td>Definir ruta y lógica para recibir credenciales y autenticar al usuario</td>
-    <td>2</td>
+    <td>5</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -4757,7 +4752,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Verificar credenciales y generar token</td>
     <td>Comparar credenciales del usuario y generar token JWT si son válidas</td>
-    <td>3</td>
+    <td>7</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -4765,7 +4760,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK03</td>
     <td>Enviar token en cookie HttpOnly</td>
     <td>Retornar token JWT en una cookie segura HttpOnly para mantener la sesión</td>
-    <td>2</td>
+    <td>5</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -4775,7 +4770,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear endpoint POST /authentication/log-out</td>
     <td>Definir la ruta y lógica para cerrar sesión del usuario autenticado</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -4783,7 +4778,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Eliminar cookie HttpOnly del token</td>
     <td>Configurar la respuesta para eliminar la cookie que contiene el JWT</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -4793,7 +4788,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear endpoint GET /authentication/is-authenticated</td>
     <td>Definir ruta para verificar si el usuario tiene una sesión activa</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -4801,7 +4796,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Leer y validar token desde cookie</td>
     <td>Extraer el token JWT desde la cookie HttpOnly y verificar su validez</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -4809,7 +4804,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK03</td>
     <td>Responder estado de autenticación</td>
     <td>Retornar true o false según si el token es válido o ha expirado</td>
-    <td>1</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -4819,7 +4814,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Diseñar modelo de actualización</td>
     <td>Crear estructura de datos para el cambio de suscripción</td>
-    <td>3</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -4827,7 +4822,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Implementar lógica de upgrade</td>
     <td>Programar lógica para actualizar suscripción del usuario</td>
-    <td>3</td>
+    <td>6</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -4835,7 +4830,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK03</td>
     <td>Validar tipos de suscripción</td>
     <td>Agregar verificación del tipo de suscripción y restricciones</td>
-    <td>2</td>
+    <td>5</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -4845,7 +4840,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear endpoint de consulta</td>
     <td>Desarrollar endpoint para consultar la suscripción del usuario</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -4853,7 +4848,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Agregar validación de token</td>
     <td>Validar usuario autenticado antes de retornar suscripción</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -4863,7 +4858,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Diseñar esquema del espacio</td>
     <td>Modelar los datos del nuevo espacio deportivo</td>
-    <td>2</td>
+    <td>5</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -4871,7 +4866,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Crear endpoint de creación</td>
     <td>Desarrollar lógica para que OWNER cree espacio</td>
-    <td>3</td>
+    <td>6</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -4879,7 +4874,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK03</td>
     <td>Validar permisos de OWNER</td>
     <td>Verificar que el usuario tenga rol OWNER antes de crear</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -4889,7 +4884,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear consulta por ID</td>
     <td>Programar lógica para obtener un espacio por su ID</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -4897,7 +4892,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Manejar errores por ID inexistente</td>
     <td>Agregar validación si el espacio no existe</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -4907,7 +4902,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear filtro por propietario</td>
     <td>Filtrar espacios por el OWNER autenticado</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -4915,7 +4910,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Validar token del OWNER</td>
     <td>Verificar autenticación antes de retornar datos</td>
-    <td>1</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -4925,7 +4920,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear endpoint público</td>
     <td>Permitir consulta sin autenticación</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -4933,7 +4928,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Ordenar resultados</td>
     <td>Agregar ordenamiento por fecha o nombre</td>
-    <td>2</td>
+    <td>5</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -4943,7 +4938,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Agregar validación de propiedad</td>
     <td>Verificar si el usuario es OWNER del espacio</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -4951,7 +4946,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Implementar endpoint DELETE</td>
     <td>Programar lógica para eliminar espacio deportivo</td>
-    <td>3</td>
+    <td>6</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -4959,7 +4954,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK03</td>
     <td>Manejo de errores</td>
     <td>Validar existencia del espacio antes de eliminar</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -4969,7 +4964,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Diseñar flujo de recuperación</td>
     <td>Definir pasos y estructura para recuperación de contraseña</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -4977,7 +4972,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Enviar correo de recuperación</td>
     <td>Configurar envío de correo con enlace único</td>
-    <td>2</td>
+    <td>5</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -4987,7 +4982,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Validar token de recuperación</td>
     <td>Verificar que el token sea válido y no haya expirado</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -4995,7 +4990,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Actualizar contraseña</td>
     <td>Reemplazar la contraseña antigua por la nueva</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5005,7 +5000,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Definir estructura de datos IoT</td>
     <td>Modelar los datos recibidos por el dispositivo</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5013,7 +5008,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Crear endpoint PATCH</td>
     <td>Recibir y almacenar cantidad de personas</td>
-    <td>3</td>
+    <td>5</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5021,7 +5016,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK03</td>
     <td>Guardar datos por rango horario</td>
     <td>Asociar número de personas a una franja horaria</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5031,7 +5026,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK01</td>
     <td>Crear endpoint de consulta</td>
     <td>Permitir obtener número de personas en cierto horario</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5039,7 +5034,7 @@ La implementación de un software abarca los pasos, procesos y actividades neces
     <td>TK02</td>
     <td>Filtrar por espacio y rango horario</td>
     <td>Agregar filtros en la consulta del dispositivo</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5075,7 +5070,7 @@ No se realizó despliegue.
 
 #### 6.2.1.8 Team Collaboration Insights during Sprint 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s3.png" alt="UPC">
 
 
 
@@ -5121,7 +5116,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Crear lógica de reservas</td>
     <td>Programar la lógica para crear una reserva válida</td>
-    <td>6</td>
+    <td>7</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5129,7 +5124,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Validar disponibilidad</td>
     <td>Agregar validación para evitar reservas dobles</td>
-    <td>4</td>
+    <td>5</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5137,7 +5132,7 @@ No se realizó despliegue.
     <td>TK03</td>
     <td>Persistir reserva</td>
     <td>Guardar la reserva en la base de datos</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5147,7 +5142,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Obtener reservas por usuario</td>
     <td>Crear endpoint para obtener reservas del usuario actual</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5155,7 +5150,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Formatear respuesta</td>
     <td>Devolver reservas con formato legible para frontend</td>
-    <td>1</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5165,7 +5160,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Eliminar reserva por ID</td>
     <td>Implementar lógica para eliminar una reserva existente</td>
-    <td>3</td>
+    <td>5</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5173,7 +5168,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Verificar permisos del jugador</td>
     <td>Asegurarse que el jugador solo elimine sus reservas</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5183,7 +5178,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Generar imagen QR</td>
     <td>Programar generación de imagen QR con información de acceso</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5191,7 +5186,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Validar datos del QR</td>
     <td>Verificar que el QR represente una reserva válida</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5201,7 +5196,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Escanear y validar QR</td>
     <td>Leer el QR y validar su autenticidad y vigencia</td>
-    <td>3</td>
+    <td>5</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5209,7 +5204,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Registrar acceso</td>
     <td>Actualizar la base de datos para registrar la entrada</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5219,7 +5214,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Crear endpoint de depósitos</td>
     <td>Programar endpoint para que el jugador recargue saldo</td>
-    <td>3</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5227,7 +5222,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Validar datos del depósito</td>
     <td>Revisar que los montos y datos sean correctos</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5237,7 +5232,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Buscar sala por ID</td>
     <td>Permitir obtener una sala específica mediante su ID</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5247,7 +5242,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Obtener salas propias</td>
     <td>Crear endpoint para retornar salas del usuario autenticado</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5257,7 +5252,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Obtener salas de espacios</td>
     <td>Permitir al usuario obtener salas asociadas a sus espacios</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5267,7 +5262,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Salas unidas por jugador</td>
     <td>Listar salas en las que el jugador está participando</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5277,7 +5272,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Listar todas las salas</td>
     <td>Crear endpoint que muestre todas las salas disponibles para el ADMIN</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5287,7 +5282,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Crear lógica de unión a sala</td>
     <td>Desarrollar endpoint para permitir que un jugador se una a una sala comunidad</td>
-    <td>3</td>
+    <td>5</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5295,7 +5290,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Validar acceso según tipo de sala</td>
     <td>Agregar lógica para verificar si la sala es del tipo COMMUNITY antes de permitir el ingreso</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5303,7 +5298,7 @@ No se realizó despliegue.
     <td>TK03</td>
     <td>Test de integración</td>
     <td>Crear pruebas para verificar el proceso completo de unión a una sala</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5313,7 +5308,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Implementar endpoint de listado</td>
     <td>Desarrollar la lógica para obtener los jugadores de una sala específica</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5321,7 +5316,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Validar ID de sala</td>
     <td>Verificar que la sala exista antes de retornar los jugadores</td>
-    <td>1</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5331,7 +5326,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Crear endpoint de salida</td>
     <td>Desarrollar lógica para que un jugador pueda salirse de una sala comunidad</td>
-    <td>3</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5339,7 +5334,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Actualizar lista de jugadores</td>
     <td>Remover jugador de la lista de miembros activos de la sala</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5349,7 +5344,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Diseñar estructura del chat</td>
     <td>Definir el modelo de datos para mensajes vinculados a salas</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5357,7 +5352,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Implementar endpoint de mensajes</td>
     <td>Crear endpoint para enviar mensajes desde una sala activa</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5367,7 +5362,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Diseñar endpoint de retiro</td>
     <td>Desarrollar funcionalidad para que OWNER solicite retiro de créditos</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5375,7 +5370,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Validar monto disponible</td>
     <td>Verificar que el usuario tenga suficientes créditos para retirar</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5383,7 +5378,7 @@ No se realizó despliegue.
     <td>TK03</td>
     <td>Guardar solicitud</td>
     <td>Almacenar la petición de retiro con estado pendiente</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5393,7 +5388,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Actualizar estado de retiro</td>
     <td>Permitir que un ADMIN apruebe o rechace la solicitud de retiro</td>
-    <td>3</td>
+    <td>5</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5401,7 +5396,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Registrar auditoría</td>
     <td>Guardar el historial de cambios de estado para seguimiento</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5411,7 +5406,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Crear lógica de consulta individual</td>
     <td>Desarrollar endpoint para obtener solicitudes de retiro por usuario</td>
-    <td>1</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5419,7 +5414,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Validar existencia de usuario</td>
     <td>Agregar validación del ID del usuario antes de retornar los datos</td>
-    <td>1</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5429,7 +5424,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Listar solicitudes globales</td>
     <td>Implementar endpoint para retornar todas las solicitudes como ADMIN</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5439,12 +5434,11 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Actualizar solicitud como diferida</td>
     <td>Permitir que un ADMIN difiera una solicitud de retiro y actualice su estado</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
 </table>
-
 
 #### 6.2.2.3 Development Evidence for Sprint Review
 
@@ -5478,7 +5472,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
 
 #### 6.2.2.8 Team Collaboration Insights during Sprint 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s3.png" alt="UPC">
 
 ### 6.2.3 Sprint 3
 
@@ -5523,7 +5517,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK01</td>
     <td>Diseñar formulario de registro</td>
     <td>Crear el formulario en la web app para capturar datos del nuevo usuario.</td>
-    <td>3</td>
+    <td>4</td>
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
@@ -5531,7 +5525,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK02</td>
     <td>Conectar frontend con endpoint de registro</td>
     <td>Integrar el formulario con el backend para enviar los datos correctamente.</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5541,7 +5535,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK01</td>
     <td>Implementar vista de login</td>
     <td>Diseñar la pantalla de login y validaciones de formulario.</td>
-    <td>2</td>
+    <td>4</td>
     <td>Willy V.</td>
     <td>Done</td>
   </tr>
@@ -5549,7 +5543,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK02</td>
     <td>Integrar autenticación con backend</td>
     <td>Conectar los datos del formulario con el endpoint de inicio de sesión.</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5559,7 +5553,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK01</td>
     <td>Diseñar componente de perfil</td>
     <td>Crear la interfaz para mostrar los datos del perfil del usuario.</td>
-    <td>3</td>
+    <td>5</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5567,7 +5561,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK02</td>
     <td>Obtener datos del perfil desde API</td>
     <td>Hacer la llamada al endpoint para cargar la información del perfil.</td>
-    <td>2</td>
+    <td>4</td>
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
@@ -5577,7 +5571,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK01</td>
     <td>Agregar botones de edición en el perfil</td>
     <td>Permitir al usuario cambiar datos como nombre o correo.</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5585,7 +5579,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK02</td>
     <td>Validar cambios antes de enviar</td>
     <td>Validar que los datos ingresados sean correctos antes de actualizarlos.</td>
-    <td>1</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5593,7 +5587,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK03</td>
     <td>Conectar cambios con backend</td>
     <td>Enviar los datos modificados al backend para actualizarlos.</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5603,7 +5597,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK01</td>
     <td>Diseñar interfaz de recarga</td>
     <td>Crear vista donde el usuario ingresa el monto a recargar.</td>
-    <td>2</td>
+    <td>4</td>
     <td>Willy V.</td>
     <td>Done</td>
   </tr>
@@ -5611,7 +5605,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK02</td>
     <td>Implementar integración con backend</td>
     <td>Enviar la solicitud de recarga al backend y mostrar la respuesta.</td>
-    <td>3</td>
+    <td>5</td>
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
@@ -5619,7 +5613,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK03</td>
     <td>Actualizar saldo en el perfil</td>
     <td>Reflejar el nuevo saldo del usuario después de recargar.</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5629,7 +5623,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK01</td>
     <td>Crear sección de estado de suscripción</td>
     <td>Diseñar un área en el perfil donde se muestre la suscripción activa.</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5637,7 +5631,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK02</td>
     <td>Conectar con backend para obtener suscripción</td>
     <td>Obtener la suscripción actual del usuario desde el API.</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5647,7 +5641,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK01</td>
     <td>Implementar lógica de actualización</td>
     <td>Crear la lógica para actualizar una suscripción existente del usuario</td>
-    <td>3</td>
+    <td>5</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5655,7 +5649,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK02</td>
     <td>Validar nivel de suscripción</td>
     <td>Verificar que la nueva suscripción cumpla con los requisitos y reglas del sistema</td>
-    <td>2</td>
+    <td>4</td>
     <td>Willy V.</td>
     <td>Done</td>
   </tr>
@@ -5665,7 +5659,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK01</td>
     <td>Obtener lista de espacios deportivos</td>
     <td>Consumir el endpoint que devuelve los espacios deportivos disponibles</td>
-    <td>2</td>
+    <td>4</td>
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
@@ -5673,7 +5667,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK02</td>
     <td>Filtrar espacios por ubicación</td>
     <td>Aplicar lógica para filtrar espacios deportivos según la ubicación del usuario</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5683,7 +5677,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK01</td>
     <td>Crear formulario para espacio deportivo</td>
     <td>Diseñar y desarrollar un formulario de registro de nuevo espacio</td>
-    <td>3</td>
+    <td>5</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5691,7 +5685,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK02</td>
     <td>Enviar datos al backend</td>
     <td>Conectar el formulario con el backend mediante el endpoint correspondiente</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5699,7 +5693,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK03</td>
     <td>Validar campos requeridos</td>
     <td>Aplicar validaciones para asegurar el envío de información correcta</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5709,7 +5703,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK01</td>
     <td>Diseñar vista de disponibilidad</td>
     <td>Mostrar visualmente las horas disponibles por cada espacio deportivo</td>
-    <td>2</td>
+    <td>4</td>
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
@@ -5717,7 +5711,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK02</td>
     <td>Conectar con disponibilidad del backend</td>
     <td>Utilizar el endpoint para consultar las horas libres por espacio deportivo</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5727,7 +5721,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK01</td>
     <td>Diseñar formulario de reserva</td>
     <td>Crear formulario para seleccionar espacio, hora y tipo de juego</td>
-    <td>3</td>
+    <td>5</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5735,7 +5729,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK02</td>
     <td>Conectar formulario con backend</td>
     <td>Enviar datos del formulario al servidor usando el endpoint de reservas</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5743,7 +5737,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK03</td>
     <td>Validar crédito disponible</td>
     <td>Verificar que el jugador tenga crédito suficiente antes de permitir la reserva</td>
-    <td>2</td>
+    <td>4</td>
     <td>Willy V.</td>
     <td>Done</td>
   </tr>
@@ -5753,7 +5747,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK01</td>
     <td>Diseñar vista de reservas</td>
     <td>Mostrar al usuario sus reservas anteriores en una lista ordenada</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5761,11 +5755,12 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
     <td>TK02</td>
     <td>Conectar con backend de reservas</td>
     <td>Consultar las reservas del jugador y mostrarlas con detalles</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
 </table>
+
 #### 6.2.3.3 Development Evidence for Sprint Review
 
 | Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
@@ -5822,6 +5817,7 @@ No se realizó despliegue.
 |Sum of Story Points| 36 |
 
 #### 6.2.4.2 Sprint Backlog
+
 <table>
   <tr>
     <th colspan="8">Sprint 4</th>
@@ -5846,7 +5842,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Mostrar listado de salas</td>
     <td>Crear vista para mostrar las salas comunidad disponibles</td>
-    <td>2</td>
+    <td>5</td>
     <td>Willy V.</td>
     <td>Done</td>
   </tr>
@@ -5854,7 +5850,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Diseñar tarjetas de sala</td>
     <td>Diseñar visualmente cada sala con nombre, número de jugadores y botón de unirse</td>
-    <td>2</td>
+    <td>5</td>
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
@@ -5864,7 +5860,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Botón de unirse</td>
     <td>Agregar botón funcional en la tarjeta de sala para ingresar</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5872,7 +5868,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Validar capacidad de la sala</td>
     <td>Evitar que el usuario se una si la sala está llena</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5880,7 +5876,7 @@ No se realizó despliegue.
     <td>TK03</td>
     <td>Notificar ingreso exitoso</td>
     <td>Mostrar notificación cuando el usuario se una correctamente</td>
-    <td>1</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5890,7 +5886,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Agregar botón de eliminar</td>
     <td>Diseñar e implementar el botón para que el creador elimine su sala</td>
-    <td>2</td>
+    <td>5</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5898,7 +5894,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Confirmación de eliminación</td>
     <td>Mostrar modal de confirmación antes de eliminar la sala</td>
-    <td>1</td>
+    <td>4</td>
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
@@ -5908,7 +5904,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Diseñar vista de gestión de espacios</td>
     <td>Mostrar lista de espacios con botón para eliminar</td>
-    <td>2</td>
+    <td>5</td>
     <td>Willy V.</td>
     <td>Done</td>
   </tr>
@@ -5916,7 +5912,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Eliminar espacio con confirmación</td>
     <td>Confirmar y ejecutar la acción de eliminación en la interfaz</td>
-    <td>1</td>
+    <td>4</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5926,7 +5922,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Diseñar formulario de ticket</td>
     <td>Permitir a propietarios ingresar monto y datos para el ticket</td>
-    <td>2</td>
+    <td>5</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5934,7 +5930,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Validar campos del ticket</td>
     <td>Revisar que todos los campos estén correctos antes de enviar</td>
-    <td>1</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -5944,7 +5940,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Diseñar vista de tickets</td>
     <td>Diseñar una pantalla donde se visualicen los tickets generados por el usuario</td>
-    <td>2</td>
+    <td>5</td>
     <td>Willy V.</td>
     <td>Done</td>
   </tr>
@@ -5952,7 +5948,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Mostrar estado de cada ticket</td>
     <td>Mostrar en la interfaz si el ticket ya fue atendido o está pendiente</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -5962,7 +5958,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Diseñar lista de tickets</td>
     <td>Crear vista donde el admin vea todos los tickets con su estado</td>
-    <td>3</td>
+    <td>6</td>
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
@@ -5970,7 +5966,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Botón para marcar como atendido</td>
     <td>Implementar botón para actualizar el estado de un ticket como pagado</td>
-    <td>2</td>
+    <td>5</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -5980,7 +5976,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Diseñar botón para generar QR</td>
     <td>Crear un botón que permita generar el código QR para el acceso</td>
-    <td>2</td>
+    <td>5</td>
     <td>Sebastian F.</td>
     <td>Done</td>
   </tr>
@@ -5988,7 +5984,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Mostrar QR generado</td>
     <td>Diseñar modal o componente que muestre el QR generado</td>
-    <td>2</td>
+    <td>5</td>
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
@@ -5998,7 +5994,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Obtener salas del backend</td>
     <td>Consumir el servicio que devuelve las salas relacionadas al espacio del propietario</td>
-    <td>2</td>
+    <td>5</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -6006,7 +6002,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Mostrar salas asociadas</td>
     <td>Diseñar listado para visualizar las salas en la web</td>
-    <td>2</td>
+    <td>5</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -6016,7 +6012,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Agregar filtros visuales</td>
     <td>Diseñar opciones de filtro por nivel, tipo de juego y ubicación</td>
-    <td>2</td>
+    <td>5</td>
     <td>Willy V.</td>
     <td>Done</td>
   </tr>
@@ -6024,7 +6020,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Aplicar filtros a resultados</td>
     <td>Implementar la lógica para que los filtros afecten el listado de salas</td>
-    <td>2</td>
+    <td>5</td>
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
@@ -6034,7 +6030,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Diseñar filtros en la interfaz</td>
     <td>Agregar controles visuales para filtrar espacios por ubicación y tipo</td>
-    <td>2</td>
+    <td>5</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -6042,7 +6038,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Aplicar filtros dinámicos</td>
     <td>Filtrar la lista de espacios deportivos según las opciones seleccionadas</td>
-    <td>2</td>
+    <td>5</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
@@ -6052,7 +6048,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Diseñar formulario de recuperación</td>
     <td>Crear pantalla para ingresar email y solicitar recuperación</td>
-    <td>2</td>
+    <td>4</td>
     <td>Sebastian M.</td>
     <td>Done</td>
   </tr>
@@ -6060,7 +6056,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Mostrar confirmación</td>
     <td>Notificar al usuario que se ha enviado el correo de recuperación</td>
-    <td>1</td>
+    <td>4</td>
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
@@ -6070,7 +6066,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Botón para salir</td>
     <td>Agregar opción en la sala para que el jugador pueda salir</td>
-    <td>2</td>
+    <td>4</td>
     <td>Willy V.</td>
     <td>Done</td>
   </tr>
@@ -6078,7 +6074,7 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Actualizar estado del jugador</td>
     <td>Actualizar en la interfaz y backend que el jugador ya no pertenece a la sala</td>
-    <td>2</td>
+    <td>4</td>
     <td>Henry C.</td>
     <td>Done</td>
   </tr>
@@ -6088,7 +6084,7 @@ No se realizó despliegue.
     <td>TK01</td>
     <td>Diseñar sección "Acerca de"</td>
     <td>Crear sección en el landing page con información general de la app</td>
-    <td>2</td>
+    <td>4</td>
     <td>Angie V.</td>
     <td>Done</td>
   </tr>
@@ -6096,11 +6092,12 @@ No se realizó despliegue.
     <td>TK02</td>
     <td>Agregar enlaces útiles</td>
     <td>Incluir enlaces a términos de uso, contacto y preguntas frecuentes</td>
-    <td>2</td>
+    <td>4</td>
     <td>John A.</td>
     <td>Done</td>
   </tr>
 </table>
+
 #### 6.2.7.3 Development Evidence for Sprint Review
 
 | Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
@@ -6175,8 +6172,17 @@ Zmijewski, B. (2024, enero 4). *Needfinding: Crafting products aligned with user
 Enlace a Miro:
 https://miro.com/app/board/uXjVIAV685w=/?share_link_id=948119735363
 
-Enlace a figma:
+Enlace a Figma:
 https://www.figma.com/file/9b5VMPb1CCHGYuWQkP2554/UX-Design?type=design&node-id=0%3A1&mode=design&t=K3kzNMJ1UGVbxDsc-1
 
 Enlace al repositorio en Github: 
 https://github.com/Tecny/development-of-iot-solutions-final-project
+
+Enlace al Landing Page:
+https://dtaquito-landing-page.netlify.app/
+
+Enlace a los Web Services:
+https://dtaquito-backend.azurewebsites.net/swagger-ui/index.html
+
+Enlace al Web App:
+https://dtaquito-web.netlify.app
