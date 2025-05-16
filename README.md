@@ -1561,7 +1561,7 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 **5. External Systems Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bcanvas-payment.jpg alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bcanvas-payment.jpg" alt="UPC">
 </p>
 
 **6. Bank Transfer Context**
