@@ -1663,7 +1663,7 @@ Este diagrama ilustra cómo los diferentes elementos del sistema están conectad
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//deployment-diagram.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//deployment-diagram-v2.png" alt="UPC">
 </p>
 
 
