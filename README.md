@@ -5829,14 +5829,14 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
 
 #### 6.2.3.4 Testing Suite Evidence for Sprint Review 
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
-  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test1.png" alt="ac-test1" style="max-width: 200px; height: auto;" />
-  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test2.png" alt="ac-test2" style="max-width: 200px; height: auto;" />
-  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test3-4.png" alt="ac-test3-4" style="max-width: 200px; height: auto;" />
-  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test5.png" alt="ac-test5" style="max-width: 200px; height: auto;" />
-  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test6-7.png" alt="ac-test6-7" style="max-width: 200px; height: auto;" />
-  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test8-12.png" alt="ac-test8-12" style="max-width: 200px; height: auto;" />
-  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test13-15.png" alt="ac-test13-15" style="max-width: 200px; height: auto;" />
+<div align="center" style="display: flex; flex-wrap: wrap; gap: 4px; justify-content: center;">
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test1.png" alt="ac-test1" style="max-width: 150px; height: auto;" />
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test2.png" alt="ac-test2" style="max-width: 150px; height: auto;" />
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test3-4.png" alt="ac-test3-4" style="max-width: 150px; height: auto;" />
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test5.png" alt="ac-test5" style="max-width: 150px; height: auto;" />
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test6-7.png" alt="ac-test6-7" style="max-width: 150px; height: auto;" />
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test8-12.png" alt="ac-test8-12" style="max-width: 150px; height: auto;" />
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test13-15.png" alt="ac-test13-15" style="max-width: 150px; height: auto;" />
 </div>
 
 Link del repositorio donde se almacena los acceptant tests: https://github.com/Tecny/development-of-iot-solutions-final-project/tree/develop/testing
