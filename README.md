@@ -53,8 +53,10 @@
 
 <p align="center"><strong>Valverde Salazar, Clara Angie - U20201B940</strong></p>
 
+<div style="page-break-before: always;"></div>
 
 ## Tabla de Contenido
+
 <div style="margin-left: 30px;">
 
 ### Student Outcome
@@ -160,7 +162,7 @@
     </td>
   </tr>
 </table>
-
+<div style="page-break-before: always;"></div>
 
 ### Registro de versiones 
 
@@ -176,7 +178,10 @@
   | 0.3 | 13/05/25 | Grupo Tecny | Se completó el capítulo 6 |
   | 0.3.1 | 14/05/25 | Grupo Tecny | Se corrigió el formato de los sprints |
 
+<div style="page-break-before: always;"></div>
+
 ### Capitulos 
+
   [Capitulo I - Introduction](#i-introduccion) 
   - 1.1. [Startup Profile](#11-startup-profile) 
     - 1.1.1. [Descripcion de la Startup](#111-descripcion-de-la-startup) 
@@ -528,6 +533,8 @@
   [Bibliografía](#bibliografia)
   [Anexos](#anexos)
 
+<div style="page-break-before: always;"></div>
+
 # I. Introduccion
 
 ## 1.1. Startup Profile
@@ -716,6 +723,8 @@ A medida que los usuarios interactúan en un entorno que mezcla lo social con la
     - Intereses: Administradores de espacios de juego.
     - Estilo de Vida: Activo para hacer negocios.
 
+<div style="page-break-before: always;"></div>
+
 # II. Requirements Analysis
 
 ## 2.1. Competidores
@@ -801,7 +810,6 @@ Estrategias:
 - ¿Qué tipo de reportes o estadísticas te gustaría recibir sobre el uso de tus espacios deportivos a través de la aplicación?
 - ¿Qué dudas o preocupaciones tendrías al usar una nueva plataforma para la promoción y gestión de las reservas de tus espacios deportivos?
 - ¿Qué tipo de soporte o asistencia esperas recibir de la plataforma en caso de problemas o inconvenientes?
-
 
 </div>
 
@@ -1080,6 +1088,8 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 - **Interfaz responsiva**:
     - Diseño adaptable a distintos dispositivos (desktop, móvil), especialmente útil para el chat y sidebar.
 
+<div style="page-break-before: always;"></div>
+
 # III. Requirements Specification
 
 ## 3.1. To-Be Scenario Mapping
@@ -1300,7 +1310,7 @@ La priorización del Product Backlog se llevó a cabo en base a la secuencia ló
 | 65 | US25 | Salir de una sala | Como jugador quiero salirme de una sala comunidad | 2 |
 | 66 | US26 | Conocer acerca de la aplicación | Como visitante del landing page quiero saber acerca de la aplicación para conocer sus detalles | 2 |
 
-
+<div style="page-break-before: always;"></div>
 
 # IV. Solution Software Design
 
@@ -4270,6 +4280,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 <p align="center">
   <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-payments.png" alt="UPC">
 </p>
+<div style="page-break-before: always;"></div>
 
 # V. Solution UI/UX Design
 
@@ -4498,7 +4509,7 @@ Web prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design
 
 Mobile prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design?node-id=362-3396&t=NmIZ0SfpdrQ0yHLa-1&scaling=scale-down&content-scaling=fixed 
 
-
+<div style="page-break-before: always;"></div>
 
 # VI. Product Implementation, Validation & Deployment  
 
@@ -6157,6 +6168,8 @@ No se realizó despliegue, debido a que el desarrollo del frontend aún no estab
 
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s3.png" alt="UPC">
 
+<div style="page-break-before: always;"></div>
+
 # Conclusiones
 
 - El proceso de entrevistas y la creación de user personas nos ha permitido obtener una comprensión profunda de nuestro segmento objetivo. Esta información compartida es fundamental para asegurarnos de que D’Taquito se adapte a las necesidades y expectativas de nuestros usuarios.
@@ -6170,6 +6183,8 @@ No se realizó despliegue, debido a que el desarrollo del frontend aún no estab
 - El impact mapping es una excelente herramienta para visualizar los resultados que esperamos lograr con nuestra aplicación. Trabajar juntos en este mapa nos ayuda a mantener un enfoque claro en los objetivos y asegurarnos de que cada característica contribuya directamente a esos objetivos compartidos.
 
 - El uso del modelo C4 ha sido clave para mejorar la claridad en la representación visual de la arquitectura de D’Taquito. La aplicación de este modelo ha facilitado la comunicación entre el equipo técnico y no técnico, proporcionando una visión comprensible y coherente de cómo los componentes del sistema se interrelacionan y cómo se cumplen los requisitos del negocio.
+
+<div style="page-break-before: always;"></div>
 
 # Bibliografia
 
@@ -6192,6 +6207,8 @@ Scholten, K. (2023, agosto 16). *Understanding agile: The Difference Between a P
 Vaidya, M. (2020, septiembre 5). *Accessibility: Guidelines for information architecture, UX design, and visual design*. IBM Design. https://medium.com/design-ibm/accessibility-guidelines-for-information-architecture-ux-design-and-visual-design-5ae33ed1d52d
 
 Zmijewski, B. (2024, enero 4). *Needfinding: Crafting products aligned with user needs*. Helio. https://helio.app/blog/the-needfinding-playbook-crafting-products-aligned-with-genuine-desires/
+
+<div style="page-break-before: always;"></div>
 
 # Anexos
 
