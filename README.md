@@ -5078,7 +5078,7 @@ development-of-iot-solutions-final-project| feature/service-EP18-externalsystems
 
 #### 6.2.1.4 Testing Suite Evidence for Sprint Review 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//test-s1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//test-s1-1.png" alt="UPC">
 
 #### 6.2.1.5 Execution Evidence for Sprint Review 
 
