@@ -4477,6 +4477,7 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
 #### 5.4.4.1. Web
 
 <p align="center">
+ <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-0.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-2.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-3.png" alt="UPC">
