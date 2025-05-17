@@ -5111,9 +5111,11 @@ No se realizó despliegue, debido a que el desarrollo del backend aún no estaba
 
 #### 6.2.1.8 Team Collaboration Insights during Sprint 
 
-<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ins-s3.png" alt="UPC">
-
-
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-1.png" alt="UPC">
+<br><br><br>
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-2.png" alt="UPC">
+</p>
 
 ### 6.2.2 Sprint 2
 #### 6.2.2.1 Sprint Planning 
@@ -5513,7 +5515,11 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
 
 #### 6.2.2.8 Team Collaboration Insights during Sprint 
 
-<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ins-s3.png" alt="UPC">
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-1.png" alt="UPC">
+<br><br><br>
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-2.png" alt="UPC">
+</p>
 
 ### 6.2.3 Sprint 3
 
@@ -5859,7 +5865,11 @@ No se realizó despliegue, debido a que el desarrollo del frontend aún no estab
 
 #### 6.2.3.7 Team Collaboration Insights during Sprint 
 
-<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ins-s3.png" alt="UPC">
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-1.png" alt="UPC">
+<br><br><br>
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-2.png" alt="UPC">
+</p>
 
 ### 6.2.4 Sprint 4
 #### 6.2.4.1 Sprint Planning 
@@ -6202,7 +6212,11 @@ Link del repositorio donde se almacena los acceptant tests: https://github.com/T
 
 #### 6.2.4.7 Team Collaboration Insights during Sprint 
 
-<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ins-s3.png" alt="UPC">
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-1.png" alt="UPC">
+<br><br><br>
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-2.png" alt="UPC">
+</p>
 
 <div style="page-break-before: always;"></div>
 
