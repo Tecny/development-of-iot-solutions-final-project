@@ -6178,6 +6178,7 @@ No se realizó despliegue, debido a que el desarrollo del frontend aún no estab
 
 #### 6.2.4.4 Testing Suite Evidence for Sprint Review 
 
+<div align="center" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center;">
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test16-20-25.png" alt="UPC">
 <br><br><br>
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test21-24.png" alt="UPC">
@@ -6185,6 +6186,7 @@ No se realizó despliegue, debido a que el desarrollo del frontend aún no estab
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test26.png" alt="UPC">
 <br><br><br>
 Link del repositorio donde se almacena los acceptant tests: https://github.com/Tecny/development-of-iot-solutions-final-project/tree/develop/testing
+</div>
 
 #### 6.2.4.5 Execution Evidence for Sprint Review 
 
