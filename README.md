@@ -518,16 +518,18 @@
        - 6.2.3.1 [Sprint Planning](#6231-sprint-planning)
        - 6.2.3.2 [Sprint Backlog](#6232-sprint-backlog)
        - 6.2.3.3 [Development Evidence for Sprint Review](#6233-development-evidence-for-sprint-review)
-       - 6.2.3.4 [Execution Evidence for Sprint Review](#6234-execution-evidence-for-sprint-review)
-       - 6.2.3.5 [Software Deployment Evidence for Sprint Review](#6235-software-deployment-evidence-for-sprint-review)
-       - 6.2.3.6 [Team Collaboration Insights during Sprint](#6236-team-collaboration-insights-during-sprint)
+       - 6.2.3.4 [Testing Suite Evidence for Sprint Review](#6234-testing-suite-evidence-for-sprint-review)
+       - 6.2.3.5 [Execution Evidence for Sprint Review](#6234-execution-evidence-for-sprint-review)
+       - 6.2.3.6 [Software Deployment Evidence for Sprint Review](#6235-software-deployment-evidence-for-sprint-review)
+       - 6.2.3.7 [Team Collaboration Insights during Sprint](#6236-team-collaboration-insights-during-sprint)
      - 6.2.4 [Sprint 4](#624-sprint-4)
        - 6.2.4.1 [Sprint Planning](#6241-sprint-planning)
        - 6.2.4.2 [Sprint Backlog](#6242-sprint-backlog)
        - 6.2.4.3 [Development Evidence for Sprint Review](#6243-development-evidence-for-sprint-review)
-       - 6.2.4.4 [Execution Evidence for Sprint Review](#6244-execution-evidence-for-sprint-review)
-       - 6.2.4.5 [Software Deployment Evidence for Sprint Review](#6245-software-deployment-evidence-for-sprint-review)
-       - 6.2.4.6 [Team Collaboration Insights during Sprint](#6246-team-collaboration-insights-during-sprint) 
+       - 6.2.4.4 [Testing Suite Evidence for Sprint Review](#6244-testing-suite-evidence-for-sprint-review)
+       - 6.2.4.5 [Execution Evidence for Sprint Review](#6244-execution-evidence-for-sprint-review)
+       - 6.2.4.6 [Software Deployment Evidence for Sprint Review](#6245-software-deployment-evidence-for-sprint-review)
+       - 6.2.4.7 [Team Collaboration Insights during Sprint](#6246-team-collaboration-insights-during-sprint) 
 
   [Conclusiones](#conclusiones)
   [Bibliografía](#bibliografia)
@@ -5825,15 +5827,33 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
 | development-of-iot-solutions-final-project | feature/web-US13-create-reservation | d155aeb | feat(web-US13): add sport space reservation functionality | - | 17/04/2025 |
 | development-of-iot-solutions-final-project | feature/web-US14-view-reservations | 5bfb257 | feat(web-US14): add reservations list for player | - | 18/04/2025 |
 
-#### 6.2.3.4 Execution Evidence for Sprint Review 
+#### 6.2.3.4 Testing Suite Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test1.png" alt="UPC">
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test2.png" alt="UPC">
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test3-4.png" alt="UPC">
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test5.png" alt="UPC">
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test6-7.png" alt="UPC">
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test8-12.png" alt="UPC">
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test13-15.png" alt="UPC">
+
+Link del repositorio donde se almacena los acceptant tests: https://github.com/Tecny/development-of-iot-solutions-final-project/tree/develop/testing
+
+#### 6.2.3.5 Execution Evidence for Sprint Review 
 
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//exec-s3.png" alt="UPC">
 
-#### 6.2.3.5 Software Deployment Evidence for Sprint Review 
+#### 6.2.3.6 Software Deployment Evidence for Sprint Review 
 
 No se realizó despliegue, debido a que el desarrollo del frontend aún no estaba terminado.
 
-#### 6.2.3.6 Team Collaboration Insights during Sprint 
+#### 6.2.3.7 Team Collaboration Insights during Sprint 
 
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s3.png" alt="UPC">
 
@@ -6154,17 +6174,27 @@ No se realizó despliegue, debido a que el desarrollo del frontend aún no estab
 | development-of-iot-solutions-final-project | feature/web-US20-apply-room-filters | ef4671d | feat(web-US20): add filtering functionality for room listings with dynamic filter options | - | 01/05/2025 |
 | development-of-iot-solutions-final-project | feature/web-US11-apply-sportspace-filters | 7be2653 | feat(web-US11): add filtering functionality for sport spaces with dynamic options | - | 01/05/2025 |
 
-#### 6.2.4.4 Execution Evidence for Sprint Review 
+#### 6.2.4.4 Testing Suite Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test16-20-25.png" alt="UPC">
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test21-24.png" alt="UPC">
+
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test26.png" alt="UPC">
+
+Link del repositorio donde se almacena los acceptant tests: https://github.com/Tecny/development-of-iot-solutions-final-project/tree/develop/testing
+
+#### 6.2.4.5 Execution Evidence for Sprint Review 
 
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//exec-s4.png" alt="UPC">
 
-#### 6.2.4.5 Software Deployment Evidence for Sprint Review 
+#### 6.2.4.6 Software Deployment Evidence for Sprint Review 
 
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dep-s4-1.png" alt="UPC">
 
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dep-s4-2.jpg" alt="UPC">
 
-#### 6.2.4.6 Team Collaboration Insights during Sprint 
+#### 6.2.4.7 Team Collaboration Insights during Sprint 
 
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s3.png" alt="UPC">
 
