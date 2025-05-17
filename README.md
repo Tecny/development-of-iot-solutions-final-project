@@ -5491,7 +5491,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
 
 #### 6.2.2.4 Testing Suite Evidence for Sprint Review 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//test-s1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//test-s2.png" alt="UPC">
 
 #### 6.2.2.5 Execution Evidence for Sprint Review 
 
