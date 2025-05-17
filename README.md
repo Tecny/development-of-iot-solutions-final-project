@@ -4597,6 +4597,20 @@ Convenciones específicas por tecnología:
 
 La implementación de un software abarca los pasos, procesos y actividades necesarios para poner a disposición de los usuarios que visiten nuestra aplicación móvil una actualización o un sistema. La configuración para desplegar la solución de manera satisfactoria para cada uno de nuestros productos digitales se llevará a cabo a través de un servidor (Git), junto con el uso de GitHub. Esto implica que cada archivo será subido a un repositorio, permitiendo la configuración de cualquier parte del código de nuestra aplicación móvil. Posteriormente, se ejecutará en un servidor de prueba para verificar el correcto funcionamiento y detectar posibles errores en el código. El proceso de implementación de un software consta de tres fases principales: preparación, pruebas y despliegue.
 
+**Flujo de implementación (deploy) por tipo de producto digital**:
+
+**Landing Page (Angular) – Deploy con Netlify**
+La landing page, desarrollada con HTML, CSS y JS, se despliega mediante Netlify, que permite conectar directamente el repositorio de GitHub. Al detectar cambios, Netlify construye y publica automáticamente la página. Esto facilita actualizaciones rápidas para mostrar información de la aplicación, beneficios o formularios de contacto.
+
+**Frontend Web (Angular) – Deploy con Netlify**
+El frontend de la aplicación, desarrollado con Angular, se despliega utilizando Netlify, una plataforma que permite subir el proyecto directamente desde un repositorio en GitHub. Netlify detecta los cambios en el repositorio, construye el proyecto automáticamente y lo publica en línea. Esto facilita un despliegue rápido y continuo del sitio web.
+
+**Aplicación Móvil (Kotlin) – Deploy con Firebase**
+La aplicación móvil, construida en Kotlin, se sube a Firebase App Distribution, una herramienta de Google que permite distribuir versiones de prueba (APK o AAB) a testers antes de publicarla en la Play Store. Se carga el archivo generado desde Android Studio a través de Firebase CLI o directamente desde la consola web.
+
+**Backend (Java Spring Boot) – Deploy con Azure Web Apps**
+El backend, implementado en Java con Spring Boot, se despliega en Azure App Service, una plataforma de Microsoft que permite subir aplicaciones web de forma sencilla. El código se puede integrar desde GitHub o usar pipelines de CI/CD para automatizar el despliegue. Azure se encarga del hosting y escalabilidad del backend.
+
 ## 6.2 Landing Page, Services & Applications Implementation
 ### 6.2.1 Sprint 1
 #### 6.2.1.1 Sprint Planning 
@@ -5078,7 +5092,7 @@ development-of-iot-solutions-final-project| feature/service-EP18-externalsystems
 
 #### 6.2.1.7 Software Deployment Evidence for Sprint Review 
 
-No se realizó despliegue.
+No se realizó despliegue, debido a que el desarrollo del backend aún no estaba terminado.
 
 #### 6.2.1.8 Team Collaboration Insights during Sprint 
 
@@ -5806,7 +5820,7 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
 
 #### 6.2.3.5 Software Deployment Evidence for Sprint Review 
 
-No se realizó despliegue.
+No se realizó despliegue, debido a que el desarrollo del frontend aún no estaba terminado.
 
 #### 6.2.3.6 Team Collaboration Insights during Sprint 
 
