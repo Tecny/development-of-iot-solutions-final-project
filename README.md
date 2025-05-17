@@ -690,7 +690,7 @@ A medida que los usuarios interactúan en un entorno que mezcla lo social con la
 
 #### 1.2.2.4. Lean UX Canvas
 <div style="text-align: justify;">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ux-canvas.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ux-canvas-1.png" alt="UPC">
 </div>
 
 ### 1.3. Segmentos objetivo
