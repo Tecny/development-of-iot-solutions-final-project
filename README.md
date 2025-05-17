@@ -5829,16 +5829,22 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
 
 #### 6.2.3.4 Testing Suite Evidence for Sprint Review 
 
-<div align="center" style="display: flex; flex-wrap: wrap; gap: 4px; justify-content: center;">
+<div align="center" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center;">
   <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test1.png" alt="ac-test1" style="max-width: 150px; height: auto;" />
+<br><br><br>
   <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test2.png" alt="ac-test2" style="max-width: 150px; height: auto;" />
+<br><br><br>
   <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test3-4.png" alt="ac-test3-4" style="max-width: 150px; height: auto;" />
+<br><br><br>
   <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test5.png" alt="ac-test5" style="max-width: 150px; height: auto;" />
+<br><br><br>
   <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test6-7.png" alt="ac-test6-7" style="max-width: 150px; height: auto;" />
+<br><br><br>
   <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test8-12.png" alt="ac-test8-12" style="max-width: 150px; height: auto;" />
+<br><br><br>
   <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test13-15.png" alt="ac-test13-15" style="max-width: 150px; height: auto;" />
 </div>
-
+<br><br><br>
 Link del repositorio donde se almacena los acceptant tests: https://github.com/Tecny/development-of-iot-solutions-final-project/tree/develop/testing
 
 #### 6.2.3.5 Execution Evidence for Sprint Review 
@@ -6173,11 +6179,11 @@ No se realizó despliegue, debido a que el desarrollo del frontend aún no estab
 #### 6.2.4.4 Testing Suite Evidence for Sprint Review 
 
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test16-20-25.png" alt="UPC">
-
+<br><br><br>
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test21-24.png" alt="UPC">
-
+<br><br><br>
 <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test26.png" alt="UPC">
-
+<br><br><br>
 Link del repositorio donde se almacena los acceptant tests: https://github.com/Tecny/development-of-iot-solutions-final-project/tree/develop/testing
 
 #### 6.2.4.5 Execution Evidence for Sprint Review 
