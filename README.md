@@ -4490,13 +4490,13 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//webprototyping.png.jpg" alt="UPC">
 </p>
 
-Web Prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design?page-id=214%3A3387&node-id=317-2250&p=f&viewport=-3264%2C916%2C0.21&t=WwpkagOpeSZJLJdT-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=317%3A2250
+Web prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design?page-id=214%3A3387&node-id=317-2250&p=f&viewport=-3264%2C916%2C0.21&t=WwpkagOpeSZJLJdT-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=317%3A2250
 
 <p align="center">
  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//prototyping.png" alt="UPC">
 </p>
 
-Movile Prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design?node-id=362-3396&t=NmIZ0SfpdrQ0yHLa-1&scaling=scale-down&content-scaling=fixed 
+Mobile prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design?node-id=362-3396&t=NmIZ0SfpdrQ0yHLa-1&scaling=scale-down&content-scaling=fixed 
 
 
 
