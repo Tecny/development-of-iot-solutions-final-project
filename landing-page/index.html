@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'Taquito</title>
+    <link rel="shortcut icon" href="./images/dtaquito_logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <meta name="theme-color" content="#2091F9">
+</head>
+
+<body>
+    <header class="hero">
+        <nav class="nav container">
+            <div class="nav__logo">
+                <h2 class="nav__title">D'Taquito</h2>
+            </div>
+
+            <ul class="nav__link nav__link--menu">
+                <li class="nav__items">
+                    <a href="#inicio" class="nav__links">Inicio</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#about" class="nav__links">Acerca de</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#plan" class="nav__links">Planes</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#questions" class="nav__links">Preguntas</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#us" class="nav__links">Nosotros</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#mobile-app" class="nav__links">App Móvil</a>
+                </li>
+                <li class="nav__items">
+                    <a href="#contact" class="nav__links">Contactanos</a>
+                </li>
+                <img src="./images/close.png" class="nav__close">
+            </ul>
+
+            <div class="nav__menu">
+                <img src="./images/menu.png" class="nav__img">
+            </div>
+        </nav>
+
+        <section class="hero__container container" id="inicio">
+            <h1 class="hero__title">Organiza partidas de fútbol y billar de forma rápida</h1>
+            <p class="hero__paragraph">Únete a la nueva forma de reservar, jugar y conectar. Somos una plataforma web y móvil que combina lo mejor de la tecnología digital e IoT para ofrecerte una experiencia totalmente automatizada, segura y sin complicaciones. ¡Descúbrela ahora!</p>
+            <a href="https://dtaquito-web.netlify.app/login" class="hero__cta">
+                Ir a la aplicación web
+            </a>
+        </section>
+    </header>
+
+    <main>
+
+        <section class="knowledge" id="about">
+            <div class="knowledge__container container">
+                <div class="knowledege__texts">
+                    <h2 class="subtitle">El problema de la organización de partidas deportivas</h2>
+                    <p class="knowledge__paragraph">El proceso de organización de partidas de fútbol y billar en 
+                        Lima Metropolitana es complicado y poco eficiente. Los usuarios deben 
+                        esperar a que las condiciones en sus grupos de amistades sean las adecuada 
+                        para que salga un plan y durante ese proceso no se acuerdan correctamente 
+                        los detalles, perdiendo así mucho tiempo y entusiasmo. </p>
+                </div>
+
+                <figure class="knowledge__picture">
+                    <img src="./images/deportes.png" class="knowledge__img">
+                </figure>
+            </div>
+        </section>
+
+        <section class="background-container">
+            <section class="container about">
+                <h2 class="subtitle">¿Qué hacemos?</h2>
+                <p class="about__paragraph">
+                    Simplificamos la organización de partidas de fútbol y billar en Lima, 
+                    permitiendo a los jugadores disfrutar de una experiencia fluida y conocer nuevas personas. 
+                    Además, ofrecemos mayor visibilidad a los dueños de espacios deportivos al registrarse en 
+                    nuestra aplicación.
+                </p>
+
+                <div class="about__main">
+                    <article class="about__icons">
+                        <img src="./images/calidad.png" class="about__icon">
+                        <h3 class="about__title">Calidad</h3>
+                        <p class="about__paragrah">Calidad de espacios deportivos distribuido por nuestros proveedores</p>
+                    </article>
+    
+                    <article class="about__icons">
+                        <img src="./images/facilidad.png" class="about__icon">
+                        <h3 class="about__title">Facilidad</h3>
+                        <p class="about__paragraph">Con tan solo un clic de puedes organizar una nueva partida creando o uniéndote a una sala de juego</p>
+                    </article>
+    
+                    <article class="about__icons">
+                        <img src="./images/confiabilidad.png" class="about__icon">
+                        <h3 class="about__title">Confiabilidad</h3>
+                        <p class="about__paragraph">Organiza partidas con toda la seguridad necesaria al momento de interactuar con las demás personas</p>
+                    </article>
+
+                    <article class="about__icons">
+                        <div class="about__wrapper">
+                            <div class="about__badge">¡Nuevo!</div>
+                            <img src="./images/iot.png" class="about__icon">
+                        </div>
+                        <h3 class="about__title">IoT's Integrados</h3>
+                        <p class="about__paragraph">
+                        <p class="about__paragraph">
+                            Uso de dispositivos inteligentes para el control de acceso a las reservas y conteo de aforo de espacios deportivos.
+                            <a href="#contact" style="color: #4fc3f7; font-weight:600 ; text-decoration: underline;">¡Contáctanos para saber más información!</a>
+                        </p>
+                    </article>
+
+                </div>
+            </section>
+        </section>
+        
+
+        <section class="price container" id="plan">
+            <h2 class="subtitle">Obten el plan perfecto como dueño de espacios deportivos</h2>
+
+            <div class="price__table">
+
+
+                <div class="price__element price__element--bronce">
+                    <p class="price__name">Plan Bronce</p>
+                    <h3 class="price__price">S/20.00/mes</h3>
+
+                    <div class="price__items">
+                        <p class="price__features">Agregar 1 espacio deportivo</p>
+                        <p class="price__features">Personalización de tus espacios deportivos</p>
+                        <p class="price__features">Mayor visibilidad de tus espacios deportivos</p>
+                        <p class="price__features">Servicio al cliente 24 horas</p>
+                    </div>
+
+                    <a href="https://dtaquito-web.netlify.app/login" class="price__cta">Empieza ahora</a>
+                </div>
+
+                <div class="price__element price__element--plata">
+                    <p class="price__name">Plan Plata</p>
+                    <h3 class="price__price">S/36.00/mes</h3>
+
+                    <div class="price__items">
+                        <p class="price__features">Agregar 2 espacios deportivos</p>
+                        <p class="price__features">Personalización de tus espacios deportivos</p>
+                        <p class="price__features">Mayor visibilidad de tus espacios deportivos</p>
+                        <p class="price__features">Servicio al cliente 24 horas</p>
+                    </div>
+
+                    <a href="https://dtaquito-web.netlify.app/login" class="price__cta">Empieza ahora</a>
+                </div>
+
+                
+                <div class="price__element price__element--oro">
+                    <p class="price__name">Plan Oro</p>
+                    <h3 class="price__price">S/55.00/mes</h3>
+
+                    <div class="price__items">
+                        <p class="price__features">Agregar 3 espacios deportivos</p>
+                        <p class="price__features">Personalización de tus espacios deportivos</p>
+                        <p class="price__features">Mayor visibilidad de tus espacios deportivos</p>
+                        <p class="price__features">Servicio al cliente 24 horas</p>
+                    </div>
+
+                    <a href="https://dtaquito-web.netlify.app/login" class="price__cta">Empieza ahora</a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mobile-app" id="mobile-app">
+            <div class="mobile-app__container container">
+                <h2 class="subtitle">¡Prueba también ya nuestra aplicación móvil!</h2>
+                <p class="mobile-app__paragraph">Descarga nuestra aplicación móvil y organiza partidas de fútbol y billar de forma rápida y sencilla. ¡Disponible en iOS y Android!</p>
+
+                <div class="mobile-app__buttons" style="display: flex; gap: 20px; justify-content: center; margin: 30px 0;">
+                    <a href="https://play.google.com/store" target="_blank" class="mobile-app__cta" style="display: flex; align-items: center; gap: 8px; background: #4fc3f7; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                        <img src="./images/gplay.png" alt="Android" style="width: 28px; height: 28px;">
+                        Descargar en Android
+                    </a>
+                    <!-- <a href="https://www.apple.com/la/app-store/" target="_blank" class="mobile-app__cta" style="display: flex; align-items: center; gap: 8px; background: #4fc3f7; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: 600;">
+                        <img src="./images/appstore.png" alt="iOS" style="width: 28px; height: 28px;">
+                        Descargar en iOS
+                    </a> -->
+                </div>
+                
+                <div class="mobile-app__gallery">
+                    <figure class="mobile-app__picture">
+                        <img src="./images/m-img1.jpg" class="mobile-app__img" alt="App Screenshot 1">
+                    </figure>
+                    <figure class="mobile-app__picture">
+                        <img src="./images/m-img2.jpg" class="mobile-app__img" alt="App Screenshot 2">
+                    </figure>
+                    <figure class="mobile-app__picture">
+                        <img src="./images/m-img3.jpg" class="mobile-app__img" alt="App Screenshot 3">
+                    </figure>
+                    <figure class="mobile-app__picture">
+                        <img src="./images/m-img4.jpg" class="mobile-app__img" alt="App Screenshot 4">
+                    </figure>
+                    <figure class="mobile-app__picture">
+                        <img src="./images/m-img5.jpg" class="mobile-app__img" alt="App Screenshot 5">
+                    </figure>
+                    <figure class="mobile-app__picture">
+                        <img src="./images/m-img6.jpg" class="mobile-app__img" alt="App Screenshot 6">
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="questions-container">
+            <section class="container questions" id="questions">
+                <h2 class="subtitle">Preguntas frecuentes</h2>
+    
+                <section class="questions__container">
+                    <article class="questions__padding">
+                        <div class="questions__answer">
+                            <h3 class="questions__title">¿Qué es D'Taquito?
+                                <span class="questions__arrow">
+                                    <img src="./images/arrow.svg" class="questions__img">
+                                </span>
+                            </h3>
+    
+                            <p class="questions__show">D'Taquito es una aplicación web y móvil que facilita la organización de partidos y da visibilidad a dueños de canchas de fútbol y mesas de billar en Lima. Los jugadores pueden unirse a salas  de manera conveniente, mientras los propietarios agregan y promocionan sus instalaciones.</p>
+                        </div>
+                    </article>
+    
+                    <article class="questions__padding">
+                        <div class="questions__answer">
+                            <h3 class="questions__title">¿Qué se puede aprender con este emprendimiento?
+                                <span class="questions__arrow">
+                                    <img src="./images/arrow.svg" class="questions__img">
+                                </span>
+                            </h3>
+    
+                            <p class="questions__show">Dar solucion a la problematica de la organizar partidas deportivas, permitiendo a los usuarios interactuar de mejor manera.
+                                Además, se puede aprender a trabajar en equipo, a desarrollar habilidades de comunicación y a mejorar la capacidad de resolución de problemas. </p>
+                            </p>
+                        </div>
+                    </article>
+    
+                    <article class="questions__padding">
+                        <div class="questions__answer">
+                            <h3 class="questions__title">¿Por qué somos la mejor opción?
+                                <span class="questions__arrow">
+                                    <img src="./images/arrow.svg" class="questions__img">
+                                </span>
+                            </h3>
+    
+                            <p class="questions__show">Porque ofrecemos la mejor experiencia de visualización de espacios deportivos
+                                Además, con una amplia variedad de canchas y salones disponibles, los usuarios pueden encontrar la que mejor se ajuste a sus preferencias en términos de ubicación, precio y calidad. </p>
+                        </div>
+                    </article>
+                </section>
+            </section>
+        </section>
+
+        <section class="testimony", id="us">
+            <div class="testimony__container container">
+                <img src="./images/leftarrow.svg" class="testimony__arrow" id="before">
+
+                <section class="testimony__body testimony__body--show" data-id="1">
+                    <div class="testimony__texts">
+                        <h2 class="subtitle">Mi nombre es Sebastián Méndez, <span class="testimony__course">estudiante
+                                de ISW.</span></h2>
+                        <p class="testimony__review">Mi nombre es Sebastián Méndez, estoy cursando la carrera de
+                            Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Puedo decir que soy una persona muy perseverante, con metas claras y con
+                            objetivos propuestos a futuro. Además, soy una persona que considera que tiene mucha curiosidad con respecto al
+                            tema de la tecnología y sobre qué hay detrás de todo el tema de la programación. Mis pasatiempos son, jugar al básquet, los videojuegos, ir al
+                            gimnasio y programar ocasionalmente.
+                        </p>
+                    </div>
+
+                    <figure class="testimony__picture">
+                        <img src="./images/sebas.jpg" class="testimony__img">
+                    </figure>
+                </section>
+
+                <section class="testimony__body" data-id="2">
+                    <div class="testimony__texts">
+                        <h2 class="subtitle">Mi nombre es Henry Centurión, <span class="testimony__course">estudiante de
+                                ISW.</span></h2>
+                        <p class="testimony__review">Mi nombre es Henry Centurión, soy estudiante de la carrera de Ingeniería de Software de la
+                            Universidad Peruana de Ciencias Aplicadas (UPC). Soy alguien feliz, tranquilo y a quien le gusta trabajar en
+                            equipo para llegar a las metas acordadas. Siempre he estado interesado en la tecnología y cómo es que
+                            funcionan desde su código base. Además de ello, mis pasatiempos son hacer deporte en general y programar en C++, el cual es mi
+                            principal lenguaje de programación. Mi meta es convertirme en un gran profesional y aportar mi conocimiento a la sociedad.
+                        </p>
+                    </div>
+
+                    <figure class="testimony__picture">
+                        <img src="./images/henry.png" class="testimony__img">
+                    </figure>
+                </section>
+
+                <section class="testimony__body" data-id="3">
+                    <div class="testimony__texts">
+                        <h2 class="subtitle">Mi nombre es John Atencio, <span class="testimony__course">estudiante de
+                                ISW.</span></h2>
+                        <p class="testimony__review">Mi nombre es John Atencio, estoy estudiando la carrera de Ingeniería de software
+                            en la Universidad Peruana de Ciencias Aplicadas (UPC). Dentro de mis aspectos personales, siempre me he considerado alguien bastante relajado
+                            y sobre todo curioso. Por ello, desde niño he tenido la curiosidad de conocer los procesos y funciones detrás de las computadoras
+                            para que estas operen como un minicerebro. Esto último, fue fundamental para la elección de mi carrera.</p>
+                    </div>
+
+                    <figure class="testimony__picture">
+                        <img src="./images/john1.jpg" class="testimony__img">
+                    </figure>
+                </section>
+
+                <section class="testimony__body" data-id="4">
+                    <div class="testimony__texts">
+                        <h2 class="subtitle">Mi nombre es Sebastian Frisancho, <span class="testimony__course">estudiante de
+                                ISW.</span></h2>
+                        <p class="testimony__review">Mi nombre es Sebastian Frisancho, soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas.
+                            Me gustan los deportes como ir al gimnasio, practicar fútbol, básquet e incluso natación. Desde pequeño me encontré rodeado de tecnología por lo que me gustaría
+                            poder tener softwares propios que me generen ingresos sin tener que trabajar en una ciudad fija. Me gustaría estudiar de manera autodidacta HTML, CSS y SQL para poder tener
+                            más conocimientos que me sirvan en mi futuro.</p>
+                    </div>
+
+                    <figure class="testimony__picture">
+                        <img src="./images/free.jpg" class="testimony__img">
+                    </figure>
+                </section>
+
+                <section class="testimony__body" data-id="5">
+                    <div class="testimony__texts">
+                        <h2 class="subtitle">Mi nombre es Willy Valentin, <span class="testimony__course">estudiante de
+                                ISW.</span></h2>
+                        <p class="testimony__review">Mi nombre es Willy Valentin, Actualmente, me encuentro trabajando en una empresa minera en el área de TI. Tengo experiencia en desarrollo, gestión y mantenimiento de Software utilizando metodologías ágiles y tecnologías modernas. Lidero la rama estudiantil ACM - UPC desde hace más de un año y esto representa el nivel de liderazgo que tengo en proyectos medianos y grandes.</p>
+                    </div>
+
+                    <figure class="testimony__picture">
+                        <img src="./images/willy.png" class="testimony__img">
+                    </figure>
+                </section>
+
+                                <section class="testimony__body" data-id="6">
+                    <div class="testimony__texts">
+                        <h2 class="subtitle">Mi nombre es Angie Valverde, <span class="testimony__course">estudiante de
+                                ISW.</span></h2>
+                        <p class="testimony__review">Mi nombre es Clara Valverde y actualmente formo parte del equipo Atlassian en la empresa Software Enterprise Services, donde brindamos soluciones especializadas en SAP. Me encuentro cursando el noveno ciclo de la carrera de Ingeniería de Software, y tengo un fuerte interés en la eficiencia y la mejora continua dentro del desarrollo de proyectos. Me considero una persona organizada, comprometida con mis objetivos y en constante búsqueda de crecimiento tanto profesional como personal. Tengo una gran afinidad por el mundo tecnológico, especialmente en lo relacionado con la gestión de proyectos y el uso de herramientas colaborativas que optimicen los procesos. En mi tiempo libre, disfruto entrenar en el gimnasio, ya que es parte de mis metas personales de bienestar, y también dedico atención al cuidado de la piel, un tema que me interesa mucho a nivel personal.</p>
+                    </div>
+
+                    <figure class="testimony__picture">
+                        <img src="./images/clara.png" class="testimony__img">
+                    </figure>
+                </section>
+                <img src="./images/rightarrow.svg" class="testimony__arrow" id="next">
+            </div>
+        </section>
+
+
+        <section class="videos-section">
+            <h2 class="subtitle">Conoce más sobre nosotros</h2>
+            <div class="videos__container">
+                <div class="video__item">
+                    <!-- <iframe src="https://1drv.ms/v/c/7c28f22b31116b1f/EXPuHY3VvWFEl-xN77_ZoFQBkb91DDmm0026_1Z15jCMPQ?e=3STRGF" title="About the Product"></iframe> -->
+                    <iframe src="https://1drv.ms/v/c/7c28f22b31116b1f/IQRz7h2N1b1hRJfsTe-_2aBUAbLEnMXhiGyiS6uKiw4fKNM" title="About the Product" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                    <h3>Acerca del Producto</h3>
+                </div>
+                <div class="video__item">
+                    <!-- <iframe src="images/about-the-team.mp4" title="About the Team"></iframe> -->
+                    <iframe src="https://1drv.ms/v/c/7c28f22b31116b1f/IQQLc2hURBalTaj00DjNOHmrAVncngRSnHMqZJnr-LDvNXA" title="About the Team" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                    <h3>Conoce al Equipo</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="questions__offer">
+            <h2 class="subtitle">¡Únete a D'Taquito!</h2>
+            <p class="questions__paragraph">¡Disfruta de la mejor experiencia de reserva de canchas y mesas de billar en Lima Metropolitana! Con una amplia variedad de opciones disponibles, encontrarás la que mejor se ajuste a tus necesidades y preferencias. ¡No esperes más y reserva tu espacio ahora!</p>
+        </section>
+
+
+    </main>
+
+    <footer class="footer" id="contact">
+        <section class="footer__container container">
+            <nav class="nav nav--footer">
+                <h2 class="footer__title">D'Taquito</h2>
+
+                <ul class="nav__link nav__link--footer">
+                    <li class="nav__items">
+                        <a href="#inicio" class="nav__links">Inicio</a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="#about" class="nav__links">Acerca de</a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="#plan" class="nav__links">Planes</a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="#questions" class="nav__links">Preguntas</a>
+                    </li>
+                    <li class="nav__items">
+                        <a href="#us" class="nav__links">Nosotros</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <form class="footer__form" action="https://formspree.io/f/mknkkrkj" method="POST">
+                <h2 class="footer__newsletter">Mandanos un email</h2>
+                <div class="footer__inputs">
+                    <input type="email" placeholder="Email:" class="footer__input" name="_replyto">
+                    <input type="submit" value="Registrate" class="footer__submit">
+                </div>
+            </form>
+        </section>
+
+        <section class="footer__copy container">
+            <div class="footer__social">
+                <a href="#" class="footer__icons"><img src="./images/facebook.svg" class="footer__img"></a>
+                <a href="#" class="footer__icons"><img src="./images/twitter.svg" class="footer__img"></a>
+                <a href="#" class="footer__icons"><img src="./images/youtube.svg" class="footer__img"></a>
+            </div>
+
+            <h3 class="footer__copyright">Derechos reservados &copy; Tecny</h3>
+        </section>
+    </footer>
+
+    <script src="./js/slider.js"></script>
+    <script src="./js/menu.js"></script>
+    <script src="./js/questions.js"></script>  
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+function smoothScrollTo(target, duration = 1200) {
+  const start = window.pageYOffset;
+  const end = target.getBoundingClientRect().top + start;
+  const change = end - start;
+  let startTime = null;
+
+  function animateScroll(currentTime) {
+    if (!startTime) startTime = currentTime;
+    const timeElapsed = currentTime - startTime;
+    const progress = Math.min(timeElapsed / duration, 1);
+    window.scrollTo(0, start + change * easeInOutQuad(progress));
+    if (progress < 1) {
+      requestAnimationFrame(animateScroll);
+    }
+  }
+
+  function easeInOutQuad(t) {
+    return t < 0.5 ? 2*t*t : -1+(4-2*t)*t;
+  }
+
+  requestAnimationFrame(animateScroll);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const targetId = this.getAttribute('href');
+    if (targetId.length > 1 && document.querySelector(targetId)) {
+      e.preventDefault();
+      smoothScrollTo(document.querySelector(targetId), 800); // 1200ms = 1.2s
+    }
+  });
+});
+</script>
+</body>
