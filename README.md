@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//upc.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//upc.png" alt="UPC">
 </p>
 
 
@@ -520,17 +520,17 @@
        - 6.2.3.2 [Sprint Backlog](#6232-sprint-backlog)
        - 6.2.3.3 [Development Evidence for Sprint Review](#6233-development-evidence-for-sprint-review)
        - 6.2.3.4 [Testing Suite Evidence for Sprint Review](#6234-testing-suite-evidence-for-sprint-review)
-       - 6.2.3.5 [Execution Evidence for Sprint Review](#6234-execution-evidence-for-sprint-review)
-       - 6.2.3.6 [Software Deployment Evidence for Sprint Review](#6235-software-deployment-evidence-for-sprint-review)
-       - 6.2.3.7 [Team Collaboration Insights during Sprint](#6236-team-collaboration-insights-during-sprint)
+       - 6.2.3.5 [Execution Evidence for Sprint Review](#6235-execution-evidence-for-sprint-review)
+       - 6.2.3.6 [Software Deployment Evidence for Sprint Review](#6236-software-deployment-evidence-for-sprint-review)
+       - 6.2.3.7 [Team Collaboration Insights during Sprint](#6237-team-collaboration-insights-during-sprint)
      - 6.2.4 [Sprint 4](#624-sprint-4)
        - 6.2.4.1 [Sprint Planning](#6241-sprint-planning)
        - 6.2.4.2 [Sprint Backlog](#6242-sprint-backlog)
        - 6.2.4.3 [Development Evidence for Sprint Review](#6243-development-evidence-for-sprint-review)
        - 6.2.4.4 [Testing Suite Evidence for Sprint Review](#6244-testing-suite-evidence-for-sprint-review)
-       - 6.2.4.5 [Execution Evidence for Sprint Review](#6244-execution-evidence-for-sprint-review)
-       - 6.2.4.6 [Software Deployment Evidence for Sprint Review](#6245-software-deployment-evidence-for-sprint-review)
-       - 6.2.4.7 [Team Collaboration Insights during Sprint](#6246-team-collaboration-insights-during-sprint) 
+       - 6.2.4.5 [Execution Evidence for Sprint Review](#6245-execution-evidence-for-sprint-review)
+       - 6.2.4.6 [Software Deployment Evidence for Sprint Review](#6246-software-deployment-evidence-for-sprint-review)
+       - 6.2.4.7 [Team Collaboration Insights during Sprint](#6247-team-collaboration-insights-during-sprint) 
 
   [Conclusiones](#conclusiones)
   [Bibliografía](#bibliografia)
@@ -554,40 +554,40 @@ Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera d
 
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//henry1.png" alt="UPC"> | Mi nombre es Henry Centurión, tengo 22 años y soy estudiante de la carrera de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Soy alguien feliz, tranquilo y a quien le gusta trabajar en equipo para llegar a las metas acordadas. Siempre he estado interesado en la tecnología y cómo es que funcionan desde su código base. Además de ello, mis pasatiempos son hacer deporte en general y programar en C++, el cual es mi principal lenguaje de programación. Mi meta es convertirme en un gran profesional y aportar mi conocimiento a la sociedad.|
+| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project/develop//informe//images//henry1.png" alt="UPC"> | Mi nombre es Henry Centurión, tengo 22 años y soy estudiante de la carrera de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC). Soy alguien feliz, tranquilo y a quien le gusta trabajar en equipo para llegar a las metas acordadas. Siempre he estado interesado en la tecnología y cómo es que funcionan desde su código base. Además de ello, mis pasatiempos son hacer deporte en general y programar en C++, el cual es mi principal lenguaje de programación. Mi meta es convertirme en un gran profesional y aportar mi conocimiento a la sociedad.|
 |||
 
 **John Atencio**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//john2.jpg" alt="UPC"> | Mi nombre es John Atencio, actualmente tengo 22 años y estoy estudiando la carrera de Ingeniería de software en la Universidad Peruana de Ciencias Aplicadas (UPC). Dentro de mis aspectos personales, siempre me he considerado alguien bastante relajado y sobre todo curioso. Por ello, desde niño he tenido la curiosidad de conocer los procesos y funciones detrás de las computadoras para que estas operen como un minicerebro. Esto último, fue fundamental para la elección de mi carrera.|
+| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project/develop//informe//images//john2.jpg" alt="UPC"> | Mi nombre es John Atencio, actualmente tengo 22 años y estoy estudiando la carrera de Ingeniería de software en la Universidad Peruana de Ciencias Aplicadas (UPC). Dentro de mis aspectos personales, siempre me he considerado alguien bastante relajado y sobre todo curioso. Por ello, desde niño he tenido la curiosidad de conocer los procesos y funciones detrás de las computadoras para que estas operen como un minicerebro. Esto último, fue fundamental para la elección de mi carrera.|
 
 
 
 **Sebastian Frisancho**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//free1.jpg" alt="UPC"> | Mi nombre es Sebastian Frisancho, tengo 22 años y soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Me gustan los deportes como ir al gimnasio, practicar fútbol, básquet e incluso natación. Desde pequeño me encontré rodeado de tecnología por lo que me gustaría poder tener softwares propios que me generen ingresos sin tener que trabajar en una ciudad fija. Me gustaría estudiar de manera autodidacta HTML, CSS y SQL para poder tener más conocimientos que me sirvan en mi futuro.|
+| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project/develop//informe//images//free1.jpg" alt="UPC"> | Mi nombre es Sebastian Frisancho, tengo 22 años y soy estudiante de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas. Me gustan los deportes como ir al gimnasio, practicar fútbol, básquet e incluso natación. Desde pequeño me encontré rodeado de tecnología por lo que me gustaría poder tener softwares propios que me generen ingresos sin tener que trabajar en una ciudad fija. Me gustaría estudiar de manera autodidacta HTML, CSS y SQL para poder tener más conocimientos que me sirvan en mi futuro.|
 
 
 
 **Sebastian Mendez**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project//develop//informe//images//sebas.png" alt="UPC"> | Mi nombre es Sebastian Mendez, tengo 20 años y actualmente estoy cursando el séptimo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Puedo decir que soy una persona muy perseverante, con metas claras y con objetivos propuestos a futuro. Además, soy una persona que considera que tiene mucha curiosidad con respecto al tema de la tecnología y sobre qué hay detrás de todo el tema de la programación. Mis pasatiempos son, jugar al básquet, los videojuegos, ir al gimnasio y programar ocasionalmente.|
+| <img src="https://raw.githubusercontent.com/HenryCenturion/open-source-final-project/develop//informe//images//sebas.png" alt="UPC"> | Mi nombre es Sebastian Mendez, tengo 20 años y actualmente estoy cursando el séptimo ciclo de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Puedo decir que soy una persona muy perseverante, con metas claras y con objetivos propuestos a futuro. Además, soy una persona que considera que tiene mucha curiosidad con respecto al tema de la tecnología y sobre qué hay detrás de todo el tema de la programación. Mis pasatiempos son, jugar al básquet, los videojuegos, ir al gimnasio y programar ocasionalmente.|
 
 
 
 **Willy Valentin**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img width="459px" height="170px" src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//willy.png" alt="UPC"> | Soy Willy David Valentin Ricaldi, estudio la carrera de Ingeniería de Software. Actualmente, me encuentro trabajando en una empresa minera en el área de TI. Tengo experiencia en desarrollo, gestión y mantenimiento de Software utilizando metodologías ágiles y tecnologías modernas. Lidero la rama estudiantil ACM - UPC desde hace más de un año y esto representa el nivel de liderazgo que tengo en proyectos medianos y grandes. |
+| <img width="459px" height="170px" src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//willy.png" alt="UPC"> | Soy Willy David Valentin Ricaldi, estudio la carrera de Ingeniería de Software. Actualmente, me encuentro trabajando en una empresa minera en el área de TI. Tengo experiencia en desarrollo, gestión y mantenimiento de Software utilizando metodologías ágiles y tecnologías modernas. Lidero la rama estudiantil ACM - UPC desde hace más de un año y esto representa el nivel de liderazgo que tengo en proyectos medianos y grandes. |
 
 
 **Angie Valverde**
 | Foto                                     | Descripción              |
 |--------------------------------------------|--------------------------|
-| <img width="906px" height="170px" src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//clara.png" alt="UPC"> | Mi nombre es Clara Valverde y actualmente formo parte del equipo Atlassian en la empresa Software Enterprise Services, donde brindamos soluciones especializadas en SAP. Me encuentro cursando el noveno ciclo de la carrera de Ingeniería de Software, y tengo un fuerte interés en la eficiencia y la mejora continua dentro del desarrollo de proyectos. Me considero una persona organizada, comprometida con mis objetivos y en constante búsqueda de crecimiento tanto profesional como personal. Tengo una gran afinidad por el mundo tecnológico, especialmente en lo relacionado con la gestión de proyectos y el uso de herramientas colaborativas que optimicen los procesos. En mi tiempo libre, disfruto entrenar en el gimnasio, ya que es parte de mis metas personales de bienestar, y también dedico atención al cuidado de la piel, un tema que me interesa mucho a nivel personal. |
+| <img width="906px" height="170px" src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//clara.png" alt="UPC"> | Mi nombre es Clara Valverde y actualmente formo parte del equipo Atlassian en la empresa Software Enterprise Services, donde brindamos soluciones especializadas en SAP. Me encuentro cursando el noveno ciclo de la carrera de Ingeniería de Software, y tengo un fuerte interés en la eficiencia y la mejora continua dentro del desarrollo de proyectos. Me considero una persona organizada, comprometida con mis objetivos y en constante búsqueda de crecimiento tanto profesional como personal. Tengo una gran afinidad por el mundo tecnológico, especialmente en lo relacionado con la gestión de proyectos y el uso de herramientas colaborativas que optimicen los procesos. En mi tiempo libre, disfruto entrenar en el gimnasio, ya que es parte de mis metas personales de bienestar, y también dedico atención al cuidado de la piel, un tema que me interesa mucho a nivel personal. |
 
 
 
@@ -691,7 +691,7 @@ A medida que los usuarios interactúan en un entorno que mezcla lo social con la
 
 #### 1.2.2.4. Lean UX Canvas
 <div style="text-align: justify;">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ux-canvas-1.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ux-canvas-1.png" alt="UPC">
 </div>
 
 ### 1.3. Segmentos objetivo
@@ -736,7 +736,7 @@ A medida que los usuarios interactúan en un entorno que mezcla lo social con la
 
 | Competidores             | D'Taquito              | MiCancha              | ¿Donde juego?              | AlquilaTuCancha          |
 |-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
-| Logos | <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//logo.jpg" alt="UPC">    | <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//logo2.jpg" alt="UPC">    | <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//logo3.png" alt="UPC">    | <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//logo4.png" alt="UPC">    |
+| Logos | <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//logo.jpg" alt="UPC">    | <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//logo2.jpg" alt="UPC">    | <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//logo3.png" alt="UPC">    | <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//logo4.png" alt="UPC">    |
 | Overview | D'Taquito es una plataforma diseñada para facilitar la reserva de canchas de fútbol y mesas de billar en la región de Lima Metropolitana. Permite a los usuarios encontrar y reservar, ofreciendo una amplia selección de opciones en diferentes ubicaciones. La aplicación proporciona información detallada sobre cada cancha y mesa, incluyendo fotos e instalaciones, y garantiza transacciones seguras | MiCancha es una aplicación que facilita la reserva de canchas deportivas. Con MiCancha, puedes hacer tu reserva en cualquier momento y en cualquier lugar. Esta plataforma digital elimina la necesidad de llamar para reservar tu cancha, ofreciendo una forma más fácil y rápida de reservar. | ¿Donde juego?, es una aplicacion que facilita al usuario a poder reservar espacios deportivos de manera efectiva y rapida, quitando toda la parte tediosa de recurrir al local antes del evento, esto facilita que la reserva se realize de manera remota.| AlquilaTuCancha ofrece una plataforma de gestión para centros deportivos en América Latina, con el propósito de digitalizar y optimizar los procesos burocráticos relacionados con la renta de estos establecimientos. Permite a los usuarios explorar y reservar canchas disponibles en tiempo real en su ciudad. Además, genera ingresos mediante el cobro de una tarifa mensual.|
 | Ventaja competitiva | D'Taquito ofrece una ventaja competitiva al simplificar la reserva de canchas deportivas y mesas de billar. D'Taquito destaca por su plataforma integral y conveniente, permitiendo a los usuarios encontrar y reservar canchas y mesas con facilidad y seguridad desde cualquier lugar con conexión a internet. |Mientras tanto, MiCancha ofrece una solución rápida y sencilla al eliminar la necesidad de llamar para reservar, lo que ahorra tiempo y esfuerzo a los usuarios.| ¿Dónde Juego? te ofrece un sistema innovador para estar más actualizado que nunca. A través de nuestra plataforma, puedes navegar por las canchas, ver sus galería de imágenes, turnos disponibles y reservar rápidamente, sin pérdidas de tiempo.| La plataforma permite a los usuarios verificar y reservar canchas en tiempo real, con un proceso automatizado que asegura respuestas inmediatas las 24 horas del día. Esto no solo beneficia a los usuarios, sino que también incrementa los ingresos de los clubes al maximizar la ocupación de sus instalaciones.|
 | Mercado objetivo | El mercado objetivo son personas que juegan futbol y billar. Se compone principalmente de hombres con edades comprendidas entre los 15 y 45 años, pertenecientes a niveles socioeconómicos medios y medio-altos. Residen en Lima, Perú, específicamente en el área metropolitana de la ciudad. Estos individuos tienen un fuerte interés en el fútbol y en el billar, tanto como jugadores activos como espectadores entusiastas del deporte. | Esta aplicación está dirigida a personas que buscan una forma fácil y rápida de reservar canchas deportivas. Su mercado objetivo puede incluir a deportistas aficionados, equipos deportivos y organizadores de eventos deportivos que necesitan una forma conveniente de reservar canchas. La aplicación puede ser especialmente útil para personas que viven en áreas urbanas donde la demanda de canchas deportivas puede ser alta. | Al igual que MiCancha, Se dirige a individuos y grupos que buscan una forma fácil de encontrar y reservar canchas deportivas. Esto podría incluir a jugadores individuales, equipos deportivos, entrenadores y organizadores de eventos deportivos.| Alquila tu Cancha brinda una solución integral para dos grupos clave: en primer lugar, ayuda a los propietarios de instalaciones deportivas a simplificar y modernizar sus operaciones, eliminando la burocracia asociada con la gestión de alquileres. Por otro lado, ofrece a los deportistas aficionados la comodidad de encontrar y reservar fácilmente canchas para una variedad de deportes, desde fútbol y pádel hasta tenis y básquetbol, de manera rápida y conveniente.|
@@ -824,7 +824,7 @@ Link de las entrevistas en anexos
 
 Entrevista N°1:
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//entrevistado1.png" alt="UPC">
 
 - **Entrevistador:** Clara Valverde Salazar
 - **Entrevistado:** Rafael Arturo Luyo Ramor
@@ -838,7 +838,7 @@ Entrevista N°1:
 
 Entrevista N°2:
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado2.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//entrevistado2.png" alt="UPC">
 
 - **Entrevistador:** Clara Valverde Salazar
 - **Entrevistado:** Daniel Rodrigo Chillos Arevalos
@@ -851,7 +851,7 @@ Entrevista N°2:
 
 Entrevista N°3:
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado3.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//entrevistado3.png" alt="UPC">
 
 - **Entrevistador:** Clara Valverde Salazar
 - **Entrevistado:** Danny Cao Cao
@@ -865,7 +865,7 @@ Le atrae la idea de una aplicación móvil que le permita realizar reservas con 
 
 Entrevista N°4:
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado4.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//entrevistado4.png" alt="UPC">
 
 - **Entrevistador:** Clara Valverde Salazar
 - **Entrevistado:** Jose Luis Figeroa
@@ -878,7 +878,7 @@ Entrevista N°4:
 
 Entrevista N°5:
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado5.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//entrevistado5.png" alt="UPC">
 
 - **Entrevistador:** Clara Valverde Salazar
 - **Entrevistado:** Julio Cesar Matos
@@ -891,7 +891,7 @@ Entrevista N°5:
 
 Entrevista N°6:
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado6.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//entrevistado6.png" alt="UPC">
 
 - **Entrevistador:** Willy Valentin
 - **Entrevistado:** Diego Portales
@@ -904,7 +904,7 @@ Entrevista N°6:
 
 Entrevista N°7:
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado7.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//entrevistado7.png" alt="UPC">
 
 - **Entrevistador:** Willy Valentin
 - **Entrevistado:** Johan Moreno
@@ -917,7 +917,7 @@ Entrevista N°7:
 
 Entrevista N°8:
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado8.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//entrevistado8.png" alt="UPC">
 
 - **Entrevistador:** Willy Valentin
 - **Entrevistado:** Miguel Ybañez
@@ -930,7 +930,7 @@ Entrevista N°8:
 
 Entrevista N°9:
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado9.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//entrevistado9.png" alt="UPC">
 
 - **Entrevistador:** Willy Valentin
 - **Entrevistado:** Alexis Patasca 
@@ -943,7 +943,7 @@ Entrevista N°9:
 
 Entrevista N°10:
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//entrevistado10.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//entrevistado10.png" alt="UPC">
 
 - **Entrevistador:** Willy Valentin
 - **Entrevistado:** Oscar Soto 
@@ -984,12 +984,12 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 
 **Segmento 1: Personas que practica futbol y/o billar**
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userpersona-player.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userpersona-player.png" alt="UPC">
 
 **Segmento 2: Personas dueñas de un espacio deportivo** 
 
 <p align="center">
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userpersona-owner.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userpersona-owner.png" alt="UPC">
 </p>
 
 ### 2.3.2. User Task Matrix
@@ -1029,11 +1029,11 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 
 **User persona 1: Andres Martinez**
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//journey2.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//journey2.png" alt="UPC">
 
 **User persona 2: Juan Perez**
 
-<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project//develop//informe//images//journey3.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//journey3.png" alt="UPC">
 
 ### 2.3.4. Empathy Mapping
 
@@ -1041,12 +1041,12 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 
 **User persona 1: Andres Martinez**
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//empathy-player.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//empathy-player.png" alt="UPC">
 
 **User persona 2: Juan Perez**
 
 <p align="center">
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//empathy-owner.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//empathy-owner.png" alt="UPC">
 </p>
 
 ### 2.3.5. As Is Scenario Mapping
@@ -1055,13 +1055,13 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 **User persona 1: Andres Martinez**  
 
 <p align="center">
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//asis-player.jpg" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//asis-player.jpg" alt="UPC">
 </p>
 
 **User persona 2: Juan Perez**
 
 <p align="center">
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//asis-owner.jpg" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//asis-owner.jpg" alt="UPC">
 </p>
 
 ### 2.4. Ubiquitous Language
@@ -1101,13 +1101,13 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 
 **User persona 1: Andres Martinez**  
 <p align="center">
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//tobe-player.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//tobe-player.png" alt="UPC">
 </p>
 
 **User persona 2: Juan Perez**
 
 <p align="center">
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//tobe-owner.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//tobe-owner.png" alt="UPC">
 </p>
 
 ## 3.2 Functional and Non-Functional Requirements
@@ -1238,7 +1238,7 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 
 ## 3.4. Impact Mapping
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//impact-mapping.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//impact-mapping.png" alt="UPC">
 
 ## 3.5. Product Backlog
 
@@ -1331,7 +1331,7 @@ Es una técnica visual que involucra a todas las partes interesadas con el fin d
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs1.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//evs1.png" alt="UPC">
 </p>
 
 #### 4.1.1.2. Timelines
@@ -1339,7 +1339,7 @@ Es una técnica visual que involucra a todas las partes interesadas con el fin d
 Hace referencia al orden cronológico de los eventos que tienen lugar dentro del sistema. Representar esta secuencia en una línea de tiempo permite visualizar la interacción entre eventos y su impacto en el flujo de trabajo, además de ayudar a detectar momentos clave en el proceso.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs2.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//evs2.png" alt="UPC">
 </p>
 
 #### 4.1.1.3. Pain Points
@@ -1347,7 +1347,7 @@ Hace referencia al orden cronológico de los eventos que tienen lugar dentro del
 Se trata de los retos o inconvenientes que experimentan los usuarios y las partes interesadas dentro del contexto del sistema. Reconocer estos problemas permite enfocar esfuerzos en priorizar funcionalidades y soluciones que respondan de manera efectiva a las necesidades reales de los usuarios.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs3.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//evs3.png" alt="UPC">
 </p>
 
 #### 4.1.1.4. Pivotal Points
@@ -1355,7 +1355,7 @@ Se trata de los retos o inconvenientes que experimentan los usuarios y las parte
 Corresponden a instantes decisivos dentro del flujo de eventos que pueden alterar el estado del sistema o tener un impacto notable en la experiencia del usuario. Detectarlos permite enfocar los esfuerzos en las áreas de mayor relevancia.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs4.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//evs4.png" alt="UPC">
 </p>
 
 #### 4.1.1.5. Commands
@@ -1363,7 +1363,7 @@ Corresponden a instantes decisivos dentro del flujo de eventos que pueden altera
 Representan las acciones o comandos que un usuario o el sistema pueden realizar para generar una modificación en el estado del sistema. Ejemplos de ello son "Crear Pedido" o "Actualizar Inventario".
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs5.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//evs5.png" alt="UPC">
 </p>
 
 #### 4.1.1.6. Policies
@@ -1371,7 +1371,7 @@ Representan las acciones o comandos que un usuario o el sistema pueden realizar 
 Son normas o lineamientos que establecen cómo deben tomarse las decisiones dentro del sistema. Estas reglas de negocio definen, por ejemplo, cuándo deben ejecutarse determinados comandos o cómo deben gestionarse ciertos eventos.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs6.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//evs6.png" alt="UPC">
 </p>
 
 #### 4.1.1.7. Read Models
@@ -1379,7 +1379,7 @@ Son normas o lineamientos que establecen cómo deben tomarse las decisiones dent
 Son estructuras de datos utilizadas para atender consultas o solicitudes de información. Estos modelos de lectura están optimizados para facilitar el acceso a los datos y se mantienen separados de los modelos de escritura, lo que permite mejorar tanto el rendimiento como la escalabilidad del sistema.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs7.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//evs7.png" alt="UPC">
 </p>
 
 #### 4.1.1.8. External Systems
@@ -1387,7 +1387,7 @@ Son estructuras de datos utilizadas para atender consultas o solicitudes de info
 Hace referencia a otros sistemas o servicios que se comunican con el sistema principal. Identificar estos sistemas es clave para comprender las dependencias e integraciones necesarias para el correcto funcionamiento del sistema.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs8.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//evs8.png" alt="UPC">
 </p>
 
 #### 4.1.1.9. Aggregates
@@ -1395,7 +1395,7 @@ Hace referencia a otros sistemas o servicios que se comunican con el sistema pri
 Son conjuntos de objetos que se manejan como una sola entidad para la gestión de datos y la lógica empresarial. Un agregado asegura la consistencia de sus elementos durante las operaciones y agrupa la lógica de negocio asociada.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs9.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//evs9.png" alt="UPC">
 </p>
 
 #### 4.1.1.10. Bounded Contexts
@@ -1403,7 +1403,7 @@ Son conjuntos de objetos que se manejan como una sola entidad para la gestión d
 Es una delimitación precisa dentro del dominio del sistema en la que se aplica un modelo específico. Establece una frontera donde un conjunto de conceptos y términos adquieren un significado particular, lo que ayuda a evitar confusiones y gestionar las complejidades en sistemas grandes y distribuidos.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//evs10.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//evs10.jpg" alt="UPC">
 </p>
 
 ### 4.1.2. Candidate Context Discovery
@@ -1420,67 +1420,67 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 **Users:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-user.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//cdiscovery-user.png" alt="UPC">
 </p>
 
 **Identity and Access Management:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-iam.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//cdiscovery-iam.png" alt="UPC">
 </p>
 
 **Subscriptions:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-sub.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//cdiscovery-sub.png" alt="UPC">
 </p>
 
 **Sport Spaces:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-sportspace.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//cdiscovery-sportspace.png" alt="UPC">
 </p>
 
 **Reservations:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-reservation.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//cdiscovery-reservation.png" alt="UPC">
 </p>
 
 **Rooms:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-room.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//cdiscovery-room.png" alt="UPC">
 </p>
 
 **Player List:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-pl.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//cdiscovery-pl.png" alt="UPC">
 </p>
 
 **Chat Room:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-chatroom.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//cdiscovery-chatroom.png" alt="UPC">
 </p>
 
 **Deposit:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-deposit.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//cdiscovery-deposit.png" alt="UPC">
 </p>
 
 **Bank Transfer:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-banktransfer.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//cdiscovery-banktransfer.png" alt="UPC">
 </p>
 
 **External Systems:**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//cdiscovery-payment.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//cdiscovery-payment.jpg" alt="UPC">
 </p>
 
 ### 4.1.3. Domain Message Flows Modeling
@@ -1488,61 +1488,61 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 **1. User signing**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm1.PNG" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//fm1.PNG" alt="UPC">
 </p>
 
 **2. Player recharging credits**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm2.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//fm2.jpg" alt="UPC">
 </p>
 
 **3. Player recharging credits**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm3.PNG" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//fm3.PNG" alt="UPC">
 </p>
 
 **4. Player creating a community reservation**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm4.PNG" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//fm4.PNG" alt="UPC">
 </p>
 
 **5. Player deleting a community reservation**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm5.PNG" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//fm5.PNG" alt="UPC">
 </p>
 
 **6. Owner upgrading subscription**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm6.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//fm6.jpg" alt="UPC">
 </p>
 
 **7. Owner creating sportspace**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm7.PNG" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//fm7.PNG" alt="UPC">
 </p>
 
 **8. Owner deleting sportspace**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm8.PNG" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//fm8.PNG" alt="UPC">
 </p>
 
 **9. Owner creating bank transfer**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm9.PNG" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//fm9.PNG" alt="UPC">
 </p>
 
 **10. Admin attending bank transfer**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//fm10.PNG" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//fm10.PNG" alt="UPC">
 </p>
 
 ### 4.1.4. Bounded Context Canvases
@@ -1550,67 +1550,67 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 **1. IAM Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-iam.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bccanvas-iam.png" alt="UPC">
 </p>
 
 **2. User Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-user.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bccanvas-user.png" alt="UPC">
 </p>
 
 **3. Subscription Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-sub.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bccanvas-sub.jpg" alt="UPC">
 </p>
 
 **4. Deposit Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-deposit.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bccanvas-deposit.jpg" alt="UPC">
 </p>
 
 **5. External Systems Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bcanvas-payment.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bcanvas-payment.jpg" alt="UPC">
 </p>
 
 **6. Bank Transfer Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-banktransfer.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bccanvas-banktransfer.png" alt="UPC">
 </p>
 
 **7. Sportspace Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-sportspace.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bccanvas-sportspace.png" alt="UPC">
 </p>
 
 **8. Reservation Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-reservation.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bccanvas-reservation.png" alt="UPC">
 </p>
 
 **9. Room Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-room.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bccanvas-room.png" alt="UPC">
 </p>
 
 **10. Player List Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-pl.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bccanvas-pl.png" alt="UPC">
 </p>
 
 **11. Chat Room Context**
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bccanvas-chatroom.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bccanvas-chatroom.png" alt="UPC">
 </p>
 
 ### 4.1.5. Context Mapping
@@ -1618,7 +1618,7 @@ A través de este enfoque, logramos establecer una comprensión clara de los asp
 El "Context Mapping" representa cómo los diferentes módulos interactúan entre sí distintos Bounded Contexts dentro de un sistema complejo. Ayuda a entender las relaciones, dependencias y límites entre las diferentes partes de un sistema que tienen sus propios modelos de dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-mapping.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//context-mapping.jpg" alt="UPC">
 </p>
 
 ### 4.1.6. Software Architecture
@@ -1628,7 +1628,7 @@ El "Context Mapping" representa cómo los diferentes módulos interactúan entre
 Este diagrama muestra el panorama general del sistema, destacando las principales entidades involucradas, como los Usuarios, Administrador, y las interacciones del sistema de gestión empresarial con componentes externos como la API de Pago (PayPal API) y la API de correos Gmail API. Representa las conexiones entre estos actores y cómo interactúan con el sistema para proporcionar acceso a funciones clave como pagos, envío de correos y visualización de espacios deportivos en el mapa a tiempo real.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-diagram.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//context-diagram.jpg" alt="UPC">
 </p>
 
 #### 4.1.6.2. Software Architecture Context Level Diagrams
@@ -1636,7 +1636,7 @@ Este diagrama muestra el panorama general del sistema, destacando las principale
 Este diagrama desglosa el contexto a un nivel más detallado, mostrando las interacciones entre los usuarios y el sistema en términos de roles y permisos. Aquí, tanto los Usuarios como los Administradores tienen acceso al Sistema de Gestión Empresarial, pero interactúan de manera diferente, con los usuarios accediendo a características específicas como pagos a través de la API de PayPal y recuperación de contraseña a tráves de la API de Gmail. 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//context-diagram.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//context-diagram.jpg" alt="UPC">
 </p>
 
 #### 4.1.6.3. Software Architecture Container Level Diagrams
@@ -1644,7 +1644,7 @@ Este diagrama desglosa el contexto a un nivel más detallado, mostrando las inte
 Aqui especificamos los contenedores de software que soportan la arquitectura, como la Aplicación Web (Web App), la Aplicación Móvil (Mobile App), el lado del servidor (Backend) y los Dispositivos IoT Gestionados (Managed IoT Devices). Aquí también se destacan las conexiones los sistemas externos, con lo que proporciona un mapa claro de cómo los distintos módulos del sistema se comunican entre sí y con componentes externos.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//container-diagram1.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//container-diagram1.png" alt="UPC">
 </p>
 
 #### 4.1.6.4. Software Architecture Deployment Level Diagrams
@@ -1663,7 +1663,7 @@ Este diagrama ilustra cómo los diferentes elementos del sistema están conectad
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//deployment-diagram-v2.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//deployment-diagram-v2.png" alt="UPC">
 </p>
 
 
@@ -1997,7 +1997,7 @@ El método toResourceFromEntity extrae los datos relevantes de la entidad User (
 Este diagrama ilustra la arquitectura del sistema a nivel de componentes dentro de un contexto delimitado. Se basa en los principios de DDD para reflejar cómo ha sido estructurado el sistema. Muestra los distintos componentes, cada uno responsable de una funcionalidad específica, y cómo interactúan entre sí mediante el intercambio de mensajes para satisfacer los requerimientos del negocio. La base de datos se representa como el repositorio central de información, accesible por los distintos servicios. Este diagrama es fundamental para comprender la organización modular del sistema y la manera en que se gestiona el flujo de información entre los componentes.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//user-component.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//user-component.png" alt="UPC">
 </p>
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
@@ -2007,7 +2007,7 @@ Este diagrama ilustra la arquitectura del sistema a nivel de componentes dentro 
 Aquí se detalla la arquitectura del software a nivel de código, presentando la clase User dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-user.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dcode-user.png" alt="UPC">
 </p>
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram 
@@ -2015,7 +2015,7 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//db-user.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//db-user.png" alt="UPC">
 </p>
 
 ### 4.2.2. Bounded Context: IAM
@@ -2313,7 +2313,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//iam-component.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//iam-component.png" alt="UPC">
 </p>
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
@@ -2324,7 +2324,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 Aquí se detalla la arquitectura del software a nivel de código, presentando la clase IAM dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-iam.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dcode-iam.png" alt="UPC">
 </p>
 
 ### 4.2.3. Bounded Context: Subscriptions
@@ -2684,7 +2684,7 @@ Además, publica un evento SubscriptionCreatedEvent cuando se crea una nueva sus
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//subscription-component.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//subscription-component.png" alt="UPC">
 </p>
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams 
@@ -2694,7 +2694,7 @@ Además, publica un evento SubscriptionCreatedEvent cuando se crea una nueva sus
 Aquí se detalla la arquitectura del software a nivel de código, presentando la clase subscription dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-sub.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dcode-sub.png" alt="UPC">
 </p>
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram 
@@ -2702,7 +2702,7 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-subs.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bd-subs.png" alt="UPC">
 </p>
 
 ### 4.2.4. Bounded Context: Sport Spaces
@@ -3027,7 +3027,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//sport-spaces-component.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//sport-spaces-component.jpg" alt="UPC">
 </p>
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams 
@@ -3037,7 +3037,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 Aquí se detalla la arquitectura del software a nivel de código, presentando la clase sportspace dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-sportspace.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dcode-sportspace.jpg" alt="UPC">
 </p>
 
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram 
@@ -3045,7 +3045,7 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-sport.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bd-sport.jpg" alt="UPC">
 </p>
 
 ### 4.2.5. Bounded Context: Reservations
@@ -3278,7 +3278,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 #### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//reservation-component.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//reservation-component.jpg" alt="UPC">
 </p>
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
@@ -3288,7 +3288,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 Aquí se detalla la arquitectura del software a nivel de código, presentando la clase reservations dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-reservation.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dcode-reservation.png" alt="UPC">
 </p>
 
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
@@ -3296,7 +3296,7 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-reservations.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bd-reservations.png" alt="UPC">
 </p>
 
 ### 4.2.6. Bounded Context: Rooms
@@ -3576,7 +3576,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 #### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//room-component.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//room-component.png" alt="UPC">
 </p>
 
 #### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
@@ -3587,7 +3587,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 Aquí se detalla la arquitectura del software a nivel de código, presentando la clase room dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-room.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dcode-room.png" alt="UPC">
 </p>
 
 ##### 4.2.6.6.2. Bounded Context Database Design Diagram
@@ -3595,7 +3595,7 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-rooms.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bd-rooms.png" alt="UPC">
 </p>
 
 ### 4.2.7. Bounded Context: Player List
@@ -3699,7 +3699,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 #### 4.2.7.4. Bounded Context Software Architecture Component Level Diagrams
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//playerlist-component.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//playerlist-component.png" alt="UPC">
 </p>
 
 #### 4.2.7.5. Bounded Context Software Architecture Code Level Diagrams
@@ -3709,7 +3709,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 Aquí se detalla la arquitectura del software a nivel de código, presentando la clase playerlist dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-pl.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dcode-pl.png" alt="UPC">
 </p>
 
 ##### 4.2.7.5.2. Bounded Context Database Design Diagram
@@ -3717,7 +3717,7 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-pl.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bd-pl.png" alt="UPC">
 </p>
 
 
@@ -3857,7 +3857,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//chat-component.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//chat-component.png" alt="UPC">
 </p>
 
 #### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
@@ -3867,7 +3867,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 Aquí se detalla la arquitectura del software a nivel de código, presentando la clase chatroom dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-chatroom.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dcode-chatroom.png" alt="UPC">
 </p>
 
 ##### 4.2.8.6.2. Bounded Context Database Design Diagram
@@ -3875,7 +3875,7 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-chat.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bd-chat.png" alt="UPC">
 </p>
 
 ### 4.2.9. Bounded Context: Deposit
@@ -3993,7 +3993,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 #### 4.2.9.5. Bounded Context Software Architecture Component Level Diagrams 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//deposit-component.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//deposit-component.jpg" alt="UPC">
 </p>
 
 #### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
@@ -4003,7 +4003,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 Aquí se detalla la arquitectura del software a nivel de código, presentando la clase deposit dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-deposit.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dcode-deposit.png" alt="UPC">
 </p>
 
 ##### 4.2.9.6.2. Bounded Context Database Design Diagram
@@ -4011,7 +4011,7 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-deposit.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bd-deposit.png" alt="UPC">
 </p>
 
 ### 4.2.10. Bounded Context: Bank Transfer
@@ -4167,7 +4167,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 #### 4.2.10.5. Bounded Context Software Architecture Component Level Diagrams 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//banktransfer-component.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//banktransfer-component.png" alt="UPC">
 </p>
 
 #### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams
@@ -4177,7 +4177,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 Aquí se detalla la arquitectura del software a nivel de código, presentando la clase User dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//code-banktransfer.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//code-banktransfer.png" alt="UPC">
 </p>
 
 ##### 4.2.10.6.2. Bounded Context Database Design Diagram
@@ -4185,7 +4185,7 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-bank.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bd-bank.png" alt="UPC">
 </p>
 
 ### 4.2.11. Bounded Context: External Systems
@@ -4262,7 +4262,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 #### 4.2.11.4. Bounded Context Software Architecture Component Level Diagrams 
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//external-systems-component.jpg" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//external-systems-component.jpg" alt="UPC">
 </p>
 
 #### 4.2.11.5. Bounded Context Software Architecture Code Level Diagrams
@@ -4272,7 +4272,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 Aquí se detalla la arquitectura del software a nivel de código, presentando la clase payments dentro del contexto de dominio. El diagrama muestra los atributos de la clase y métodos asociados.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dcode-payment.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dcode-payment.png" alt="UPC">
 </p>
 
 
@@ -4281,7 +4281,7 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 Este diagrama representa el diseño de la base de datos dentro de un Bounded Context específico del sistema. En él se detallan las entidades principales, sus atributos clave y las relaciones entre ellas, según las responsabilidades y límites funcionales de cada contexto. Su objetivo es proporcionar una visión clara y aislada de cómo se estructuran y gestionan los datos dentro de ese contexto, asegurando una alta cohesión interna y una baja dependencia con otros contextos del dominio.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//bd-payments.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bd-payments.png" alt="UPC">
 </p>
 <div style="page-break-before: always;"></div>
 
@@ -4354,25 +4354,25 @@ Lo que sigue es una recopilación de principios visuales que marcarán la identi
 
 Los sistemas de organización se refieren a cómo se presentan los productos, imágenes, y demás elementos, con el objetivo de no saturar al usuario con exceso de información en la pantalla. La estructura ideal para organizar los diferentes tipos de datos comienza por mostrar quiénes somos como empresa, seguido de nuestra misión, visión y valores. Por último, se incluye al equipo de desarrolladores en la página de aterrizaje. En nuestra aplicación web, buscamos que las imágenes estén siempre acompañadas de texto para asegurar que el contexto no se pierda y ofrecer información relevante a los usuarios, organizando todo en vistas responsive y tarjetas tipo "cards".
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//orS-1.png" alt="UPC">
-  <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//orS-2.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//orS-1.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//orS-2.png" alt="UPC">
 </p>
 
 ### 5.2.2. Labeling Systems
 
 Los sistemas de etiquetado se emplean para transmitir información al usuario, permitiendo que tenga una experiencia eficiente sin tener que invertir demasiado tiempo buscando o usando la aplicación. El aplicativo presenta encabezados con un tamaño de letra más grande, para recordar al usuario en qué sección o función se encuentra, y proporciona instrucciones detalladas sobre los pasos a seguir para continuar navegando por el sistema. Usamos terminología simple para que cualquier persona pueda entender y utilizar la aplicación de manera fácil.
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//labeling-1.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//labeling-2.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//labeling-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//labeling-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//labeling-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//labeling-3.png" alt="UPC">
 </p>
 
 ### 5.2.3. Searching Systems
 
 Los sistemas de búsqueda de información son cruciales para que el usuario pueda localizar lo que necesita de manera rápida y efectiva. Para facilitar la búsqueda de distintos tipos de datos, contamos con una barra de búsqueda situada en la parte superior, que incluye sugerencias sobre qué se puede buscar y encontrar.
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//searchingS-1.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//searchingS-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//searchingS-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//searchingS-2.png" alt="UPC">
 </p>
 
 ### 5.2.4. SEO Tags and Meta Tags
@@ -4382,8 +4382,8 @@ Los sistemas de búsqueda de información son cruciales para que el usuario pued
 Los sistemas de navegación incluyen botones e interfaces que permiten moverse de una sección a otra dentro de la aplicación, como los botones en la parte superior de la página web que llevan a diferentes funciones. Estos botones tienen texto que indica la acción que se realizará al presionarlos, además de ofrecer opciones de navegación rápida a través de atajos. 
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//navigationS-1.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//navigationS-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//navigationS-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//navigationS-2.png" alt="UPC">
  </p>
 
 ## 5.3. Landing Page UI Design
@@ -4391,13 +4391,13 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
 ### 5.3.1. Landing Page Wireframe
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//landingW.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landingW.png" alt="UPC">
 </p>
 
 ### 5.3.2. Landing Page Mock-up
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//landingM.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landingM.png" alt="UPC">
 </p>
 
 ## 5.4. Applications UX/UI Design
@@ -4407,47 +4407,47 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
 #### 5.4.1.1. Web
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-1.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-2.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-3.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-4.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-5.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesWeb-6.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesWeb-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesWeb-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesWeb-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesWeb-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesWeb-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesWeb-6.png" alt="UPC">
 </p>
 
 #### 5.4.1.2. Mobile
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-1.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-2.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-3.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-4.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireframesMobile-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesMobile-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesMobile-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesMobile-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesMobile-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesMobile-5.png" alt="UPC">
 </p>
 
 ### 5.4.2. Applications Wireflow Diagrams
 #### 5.4.2.1. Web
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-1.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-2.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-3.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-4.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-5.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-6.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowWeb-7.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowWeb-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowWeb-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowWeb-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowWeb-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowWeb-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowWeb-6.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowWeb-7.png" alt="UPC">
 </p>
 
 #### 5.4.2.2. Mobile
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-1.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-2.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-3.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-4.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-5.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-6.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//wireflowMobile-7.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowMobile-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowMobile-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowMobile-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowMobile-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowMobile-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowMobile-6.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowMobile-7.png" alt="UPC">
 </p>
 
 ### 5.4.3. Applications Mock-ups
@@ -4455,60 +4455,60 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
 #### 5.4.3.1. Web
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-1.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-2.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-3.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-4.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-5.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-6.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-7.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockWeb-8.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockWeb-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockWeb-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockWeb-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockWeb-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockWeb-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockWeb-6.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockWeb-7.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockWeb-8.png" alt="UPC">
 </p>
 
 #### 5.4.3.2. Mobile
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockMobile-1.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockMobile-2.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockMobile-3.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//mockMobile-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockMobile-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockMobile-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockMobile-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockMobile-4.png" alt="UPC">
 </p>
 
 ### 5.4.4. Applications User Flow Diagrams
 #### 5.4.4.1. Web
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-0.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-1.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-2.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-3.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-4.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-5.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowWeb-6.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-0.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-6.png" alt="UPC">
 </p>
 
 #### 5.4.4.2. Mobile
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-1.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-2.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-3.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-4.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-5.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-6.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//userFlowMobile-7.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowMobile-1.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowMobile-2.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowMobile-3.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowMobile-4.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowMobile-5.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowMobile-6.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowMobile-7.png" alt="UPC">
 </p>
 
 ## 5.5. Applications Prototyping
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//webprototyping.png.jpg" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//webprototyping.png.jpg" alt="UPC">
 </p>
 
 Web prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design?page-id=214%3A3387&node-id=317-2250&p=f&viewport=-3264%2C916%2C0.21&t=WwpkagOpeSZJLJdT-1&scaling=scale-down&content-scaling=fixed&starting-point-node-id=317%3A2250
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//prototyping.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//prototyping.png" alt="UPC">
 </p>
 
 Mobile prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design?node-id=362-3396&t=NmIZ0SfpdrQ0yHLa-1&scaling=scale-down&content-scaling=fixed 
@@ -5093,17 +5093,17 @@ development-of-iot-solutions-final-project| feature/service-EP18-externalsystems
 
 #### 6.2.1.4 Testing Suite Evidence for Sprint Review 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//test-s1-1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//test-s1-1.png" alt="UPC">
 
 #### 6.2.1.5 Execution Evidence for Sprint Review 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//exec-s1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//exec-s1.png" alt="UPC">
 
 #### 6.2.1.6 Services Documentation Evidence for Sprint Review
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//sdoc-s1-1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//sdoc-s1-1.png" alt="UPC">
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//sdoc-s1-2.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//sdoc-s1-2.png" alt="UPC">
 
 #### 6.2.1.7 Software Deployment Evidence for Sprint Review 
 
@@ -5111,7 +5111,7 @@ No se realizó despliegue, debido a que el desarrollo del backend aún no estaba
 
 #### 6.2.1.8 Team Collaboration Insights during Sprint 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s3.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ins-s3.png" alt="UPC">
 
 
 
@@ -5495,25 +5495,25 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
 
 #### 6.2.2.4 Testing Suite Evidence for Sprint Review 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//test-s2.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//test-s2.png" alt="UPC">
 
 #### 6.2.2.5 Execution Evidence for Sprint Review 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//exec-s2.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//exec-s2.png" alt="UPC">
 
 #### 6.2.2.6 Services Documentation Evidence for Sprint Review
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//sdoc-s2-1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//sdoc-s2-1.png" alt="UPC">
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//sdoc-s2-2.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//sdoc-s2-2.png" alt="UPC">
 
 #### 6.2.2.7 Software Deployment Evidence for Sprint Review 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dep-s2.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dep-s2.png" alt="UPC">
 
 #### 6.2.2.8 Team Collaboration Insights during Sprint 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s3.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ins-s3.png" alt="UPC">
 
 ### 6.2.3 Sprint 3
 
@@ -5851,7 +5851,7 @@ Link del repositorio donde se almacena los acceptant tests: https://github.com/T
 
 #### 6.2.3.5 Execution Evidence for Sprint Review 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//exec-s3.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//exec-s3.png" alt="UPC">
 
 #### 6.2.3.6 Software Deployment Evidence for Sprint Review 
 
@@ -5859,7 +5859,7 @@ No se realizó despliegue, debido a que el desarrollo del frontend aún no estab
 
 #### 6.2.3.7 Team Collaboration Insights during Sprint 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s3.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ins-s3.png" alt="UPC">
 
 ### 6.2.4 Sprint 4
 #### 6.2.4.1 Sprint Planning 
@@ -6181,28 +6181,28 @@ No se realizó despliegue, debido a que el desarrollo del frontend aún no estab
 #### 6.2.4.4 Testing Suite Evidence for Sprint Review 
 
 <div align="center" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center;">
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test16-20-25.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ac-test16-20-25.png" alt="UPC">
 <br><br><br>
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test21-24.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ac-test21-24.png" alt="UPC">
 <br><br><br>
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ac-test26.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ac-test26.png" alt="UPC">
 <br><br><br>
 Link del repositorio donde se almacena los acceptant tests: https://github.com/Tecny/development-of-iot-solutions-final-project/tree/develop/testing
 </div>
 
 #### 6.2.4.5 Execution Evidence for Sprint Review 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//exec-s4.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//exec-s4.png" alt="UPC">
 
 #### 6.2.4.6 Software Deployment Evidence for Sprint Review 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dep-s4-1.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dep-s4-1.png" alt="UPC">
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//dep-s4-2.jpg" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dep-s4-2.jpg" alt="UPC">
 
 #### 6.2.4.7 Team Collaboration Insights during Sprint 
 
-<img src="https://raw.githubusercontent.com//Tecny//development-of-iot-solutions-final-project//develop//images//ins-s3.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ins-s3.png" alt="UPC">
 
 <div style="page-break-before: always;"></div>
 
