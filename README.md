@@ -511,6 +511,7 @@
        - 6.2.1.6 [Services Documentation Evidence for Sprint Review](#6216-services-documentation-evidence-for-sprint-review)
        - 6.2.1.7 [Software Deployment Evidence for Sprint Review](#6217-software-deployment-evidence-for-sprint-review)
        - 6.2.1.8 [Team Collaboration Insights during Sprint](#6218-team-collaboration-insights-during-sprint)
+       - 6.2.1.9. [Burndown Chart during Sprint 1](#6219-burndown-chart-during-sprint-1)
      - 6.2.2 [Sprint 2](#622-sprint-2)
        - 6.2.2.1 [Sprint Planning](#6221-sprint-planning)
        - 6.2.2.2 [Sprint Backlog](#6222-sprint-backlog)
@@ -520,6 +521,7 @@
        - 6.2.2.6 [Services Documentation Evidence for Sprint Review](#6226-services-documentation-evidence-for-sprint-review)
        - 6.2.2.7 [Software Deployment Evidence for Sprint Review](#6227-software-deployment-evidence-for-sprint-review)
        - 6.2.2.8 [Team Collaboration Insights during Sprint](#6228-team-collaboration-insights-during-sprint)
+       - 6.2.2.9. [Burndown Chart during Sprint 2](#6229-burndown-chart-during-sprint-2)
      - 6.2.3 [Sprint 3](#623-sprint-3)
        - 6.2.3.1 [Sprint Planning](#6231-sprint-planning)
        - 6.2.3.2 [Sprint Backlog](#6232-sprint-backlog)
@@ -528,6 +530,7 @@
        - 6.2.3.5 [Execution Evidence for Sprint Review](#6235-execution-evidence-for-sprint-review)
        - 6.2.3.6 [Software Deployment Evidence for Sprint Review](#6236-software-deployment-evidence-for-sprint-review)
        - 6.2.3.7 [Team Collaboration Insights during Sprint](#6237-team-collaboration-insights-during-sprint)
+       - 6.2.3.8. [Burndown Chart during Sprint 3](#6238-burndown-chart-during-sprint-3)
      - 6.2.4 [Sprint 4](#624-sprint-4)
        - 6.2.4.1 [Sprint Planning](#6241-sprint-planning)
        - 6.2.4.2 [Sprint Backlog](#6242-sprint-backlog)
@@ -535,7 +538,8 @@
        - 6.2.4.4 [Testing Suite Evidence for Sprint Review](#6244-testing-suite-evidence-for-sprint-review)
        - 6.2.4.5 [Execution Evidence for Sprint Review](#6245-execution-evidence-for-sprint-review)
        - 6.2.4.6 [Software Deployment Evidence for Sprint Review](#6246-software-deployment-evidence-for-sprint-review)
-       - 6.2.4.7 [Team Collaboration Insights during Sprint](#6247-team-collaboration-insights-during-sprint) 
+       - 6.2.4.7 [Team Collaboration Insights during Sprint](#6247-team-collaboration-insights-during-sprint)
+       - 6.2.4.8. [Burndown Chart during Sprint 4](#6248-burndown-chart-during-sprint-4)
 
   [Conclusiones](#conclusiones)
   [Bibliografía](#bibliografia)
@@ -5214,6 +5218,16 @@ No se realizó despliegue, debido a que el desarrollo del backend aún no estaba
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-2.png" alt="UPC">
 </p>
 
+#### 6.2.1.9. Burndown Chart during Sprint 1
+
+- Sprint 1 (212 h, 8 días):
+Comenzamos despacio, quemando apenas 11 h el primer día, para ir subiendo confianza y acomodar dependencias. El núcleo del sprint (días 3–5) concentra el 60 % del trabajo, aprovechando la curva de aprendizaje y evitando bloqueos tempranos. Cerramos con un remate ligero para pulir detalles y corregir bugs.
+Este chart representa el flujo en base a la elaboración de la primera parte de los web services.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bchart-sprint-1.png" alt="UPC">
+</p>
+
 ### 6.2.2 Sprint 2
 #### 6.2.2.1 Sprint Planning 
 
@@ -5618,6 +5632,16 @@ development-of-iot-solutions-final-project| feature/service-EP16-banktransfer-bc
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-2.png" alt="UPC">
 </p>
 
+#### 6.2.2.9. Burndown Chart during Sprint 2
+
+- Sprint 2 (152 h, 8 días):
+Repetimos la estrategia de “calentamiento – pico – enfriamiento”. Arrancamos con tareas de baja complejidad para validar entorno, luego dedicamos la mitad del sprint a las historias más críticas (reservas y QR). Finalizamos con remanentes y pruebas finales, asegurando completar todo antes del cierre.
+Este chart representa el flujo en base a la elaboración de la última parte de los web services.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bchart-sprint-2.png" alt="UPC">
+</p>
+
 ### 6.2.3 Sprint 3
 
 #### 6.2.3.1 Sprint Planning 
@@ -5968,6 +5992,16 @@ No se realizó despliegue, debido a que el desarrollo del frontend aún no estab
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-2.png" alt="UPC">
 </p>
 
+#### 6.2.3.8. Burndown Chart during Sprint 3
+
+- Sprint 3 (117 h, 8 días):
+Ajustamos la curva, en el cual, arrancamos algo más fuerte (9 h) para las integraciones de frontend, alcanzamos el máximo de 26 h el día 4 en tareas de perfil y recarga, y luego bajamos bruscamente para enfocarnos en pruebas de usabilidad y ajustes de UX, dejando solo un 2 % de horas para pulir al final.
+Este chart representa el flujo en base a la elaboración de la primera parte del frontend.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bchart-sprint-3.png" alt="UPC">
+</p>
+
 ### 6.2.4 Sprint 4
 #### 6.2.4.1 Sprint Planning 
 
@@ -6313,6 +6347,16 @@ Link del repositorio donde se almacena los acceptant tests: https://github.com/T
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-1.png" alt="UPC">
 <br><br><br>
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-2.png" alt="UPC">
+</p>
+
+#### 6.2.4.8. Burndown Chart during Sprint 4
+
+- Sprint 4 (133 h, 8 días):
+Distribución más ondulante, el cual, tuvo un arranque sólido (13 h) con vistas de salas, pico inicial de 27 h en gestión de tickets, luego un bache previsto para integrar confirmaciones y validaciones, un repunte en el día 6 para QR y filtros, y un remate controlado dedicando el 5 % final a documentación y sección “Acerca de”.
+Este chart representa el flujo en base a la elaboración de la primera parte del frontend.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bchart-sprint-4.png" alt="UPC">
 </p>
 
 <div style="page-break-before: always;"></div>
