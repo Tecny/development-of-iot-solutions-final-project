@@ -488,8 +488,13 @@
      - 5.4.4. [Applications User Flow Diagrams](#544-applications-user-flow-diagrams)    
        - 5.4.4.1. [Web](#5441-web)    
        - 5.4.4.2. [Mobile](#5442-mobile)  
-   - 5.5. [Applications Prototyping](#55-applications-prototyping)   
-
+   - 5.5. [Applications Prototyping](#55-applications-prototyping)
+   - 5.6. [Applications Responsive View](#56-applications-responsive-view)   
+     - 5.6.1. [Responsive landing page view from browser](#561-responsive-landing-page-view-from-browser)
+     - 5.6.2. [Responsive landing page view from mobile device](#562-responsive-landing-page-view-from-mobile-device)
+     - 5.6.3. [Responsive frontend web view from browser](#563-responsive-frontend-web-view-from-browser)
+     - 5.6.4. [Responsive frontend web view from mobile device](#564-responsive-frontend-web-view-from-mobile-device)
+ 
   [Capítulo VI - Product Implementation, Validation & Deployment](#vi-product-implementation-validation--deployment)
    - 6.1. [Software Configuration Management](#61-software-configuration-management)
      - 6.1.1 [Software Development Environment Configuration](#611-software-development-environment-configuration)    
@@ -4558,6 +4563,54 @@ Web prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design
 Mobile prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Design?node-id=362-3396&t=NmIZ0SfpdrQ0yHLa-1&scaling=scale-down&content-scaling=fixed 
 
 <div style="page-break-before: always;"></div>
+
+## 5.6. Applications Responsive View
+
+### 5.6.1. Responsive landing page view from browser
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landing-test-web-view-1.png" alt="UPC">
+<br><br><br>
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landing-test-web-view-2.png" alt="UPC">
+<br><br><br>
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landing-test-web-view-3.png" alt="UPC">
+</p>
+
+### 5.6.2. Responsive landing page view from mobile device
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landing-test-mobile-view-1.png" alt="UPC">
+<br><br><br>
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landing-test-mobile-view-2.png" alt="UPC">
+<br><br><br>
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landing-test-mobile-view-3.png" alt="UPC">
+</p>
+
+### 5.6.3. Responsive frontend web view from browser
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//front-test-web-view-1.png" alt="UPC">
+<br><br><br>
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//front-test-web-view-2.png" alt="UPC">
+<br><br><br>
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//front-test-web-view-3.png" alt="UPC">
+</p>
+
+### 5.6.4. Responsive frontend web view from mobile device
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//front-test-mobile-view-1.png" alt="UPC">
+<br><br><br>
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//front-test-mobile-view-2.png" alt="UPC">
+<br><br><br>
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//front-test-mobile-view-3.png" alt="UPC">
+</p>
 
 # VI. Product Implementation, Validation & Deployment  
 
