@@ -4434,13 +4434,13 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
 ### 5.3.1. Landing Page Wireframe
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landingW.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landingW1.png" alt="UPC">
 </p>
 
 ### 5.3.2. Landing Page Mock-up
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landingM.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landingM1.png" alt="UPC">
 </p>
 
 ## 5.4. Applications UX/UI Design
