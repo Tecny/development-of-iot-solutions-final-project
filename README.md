@@ -178,6 +178,7 @@
   | 0.3 | 13/05/25 | Grupo Tecny | Se completó el capítulo 6 |
   | 0.3.1 | 14/05/25 | Grupo Tecny | Se corrigió el formato de los sprints |
   | 0.4 | 17/05/25 | Grupo Tecny | Se levantó las observaciones dadas en el feedback del TB1, brindada por el docente |
+  | 0.5 | 18/05/25 | Grupo Tecny | Se levantó las observaciones dadas en el feedback del TP, brindada por el docente |
 
 <div style="page-break-before: always;"></div>
 
