@@ -495,7 +495,7 @@
      - 5.6.2. [Responsive landing page view from mobile device](#562-responsive-landing-page-view-from-mobile-device)
      - 5.6.3. [Responsive frontend web view from browser](#563-responsive-frontend-web-view-from-browser)
      - 5.6.4. [Responsive frontend web view from mobile device](#564-responsive-frontend-web-view-from-mobile-device)
- 
+
   [Capítulo VI - Product Implementation, Validation & Deployment](#vi-product-implementation-validation--deployment)
    - 6.1. [Software Configuration Management](#61-software-configuration-management)
      - 6.1.1 [Software Development Environment Configuration](#611-software-development-environment-configuration)    
@@ -988,19 +988,24 @@ Los aspectos que más valoran al momento de reservar son la calidad del espacio,
 Hipótesis vinculadas y que cumplirían:
 
 Hipótesis 1 – Si los usuarios pueden crear reservas rápidamente mediante una interfaz intuitiva, reduciremos los tiempos de organización.
-↪ Responde directamente a la necesidad de un sistema ágil y claro.
+
+Responde directamente a la necesidad de un sistema ágil y claro.
 
 Hipótesis 2 – Si los usuarios pueden conectarse y organizar eventos compartidos desde la reserva, aumentará la participación en reservas comunitarias.
-↪ Relacionada con el deseo de socializar y coordinar con nuevos jugadores.
+
+Relacionada con el deseo de socializar y coordinar con nuevos jugadores.
 
 Hipótesis 3 – Si la experiencia de organización y comunidad es fluida y conectada, la satisfacción del usuario aumentará.
-↪ Refuerza el impacto positivo de facilitar chats, notificaciones y coordinación.
+
+Refuerza el impacto positivo de facilitar chats, notificaciones y coordinación.
 
 Hipótesis 5 – Si ofrecemos flexibilidad en la organización y una experiencia consistente, mejorará la retención de usuarios.
-↪ Los usuarios valoran una experiencia constante sin fricciones ni incertidumbres.
+
+Los usuarios valoran una experiencia constante sin fricciones ni incertidumbres.
 
 Hipótesis 7 – Si implementamos IoT que valide el acceso con reservas, garantizaremos el acceso exclusivo.
-↪ Alineado con la necesidad de control y confianza al momento de acceder a un espacio reservado.
+
+Alineado con la necesidad de control y confianza al momento de acceder a un espacio reservado.
 
 **Segmento 2:**
 
@@ -1011,16 +1016,20 @@ Estos propietarios valoran mucho la posibilidad de contar con una aplicación qu
 Hipotesís vinculadas y que cumplirían:
 
 Hipótesis 4 – Si los espacios pueden promocionarse en reservas comunitarias, mejorará su visibilidad y cantidad de reservas.
-↪ Directamente relacionada con su dificultad para atraer nuevos clientes.
+
+Directamente relacionada con su dificultad para atraer nuevos clientes.
 
 Hipótesis 6 – Si conectamos bien a usuarios y espacios mediante reservas comunitarias, aumentará el uso de instalaciones.
-↪ Apunta a optimizar su capacidad instalada y mejorar días con baja afluencia.
+
+Apunta a optimizar su capacidad instalada y mejorar días con baja afluencia.
 
 Hipótesis 8 – Si implementamos un sensor IoT para contar personas, lograremos un mejor control del aforo.
-↪ Responde a la necesidad de tener métricas claras y tomar decisiones basadas en datos.
+
+Responde a la necesidad de tener métricas claras y tomar decisiones basadas en datos.
 
 Hipótesis 3 – Si la experiencia es fluida y conectada, la satisfacción del usuario crecerá, también para propietarios.
-↪ Importante por su preocupación sobre la facilidad de uso y necesidad de soporte.
+
+Importante por su preocupación sobre la facilidad de uso y necesidad de soporte.
 
 **Conclusiones:**
 
@@ -4362,8 +4371,8 @@ Lo que sigue es una recopilación de principios visuales que marcarán la identi
 
 |                | BOTONES       | BOTONES       | BOTONES       |
 |----------------|---------------|---------------|---------------|
-| **Font**       | Font: **Righteous**Size: **50px**Espacio de palabra: **24px** | Font: **Righteous**Size: **20/24px**Espacio de palabra: **20px** | Font: **Righteous**Size: **16px**Espacio de palabra: **16px** |
-| **Tamaño**     | **Large**Regular, 400 | **Normal**Regular, 400 | **Small**Regular, 400 |
+| **Font**       | Font: **Righteous**<br />Size: **50px**<br />Espacio de palabra: **24px** | Font: **Righteous**<br />Size: **20/24px**<br />Espacio de palabra: **20px** | Font: **Righteous**<br />Size: **16px**<br />Espacio de palabra: **16px** |
+| **Tamaño**     | **Large**: Regular, 400 | **Normal**: Regular, 400 | **Small**: Regular, 400 |
 
 
 ### 5.1.2. General Style Guidelines
@@ -4378,11 +4387,11 @@ Lo que sigue es una recopilación de principios visuales que marcarán la identi
 
 | Plataforma | Tipo    | Font | Posición|
 |------------|---------|----------------------------------------|---------------------------------|
-| Desktop    | Título  | Font: **Righteous**Size: **100px**  | **Headline 1**Regular, 400 |
-| Desktop    | Título  | Font: **Righteous**Size: **80px**  | **Headline 2**Regular, 400 |
-| Desktop    | Título  | Font: **Righteous**Size: **60px**  | **Headline 3**Regular, 400 |
-| Desktop    | Título  | Font: **Righteous**Size: **40px**  | **Headline 4**Regular, 400 |
-| Desktop    | Párrafo | Font: **Righteous**Size: **16px**  | **Body-1**Regular, 400     |
+| Desktop    | Título  | Font: **Righteous**<br />Size: **100px** | **Headline 1**: Regular, 400 |
+| Desktop    | Título  | Font: **Righteous**<br />Size: **80px** | **Headline 2**: Regular, 400 |
+| Desktop    | Título  | Font: **Righteous**<br />Size: **60px** | **Headline 3**: Regular, 400 |
+| Desktop    | Título  | Font: **Righteous**<br />Size: **40px** | **Headline 4**: Regular, 400 |
+| Desktop    | Párrafo | Font: **Righteous**<br />Size: **16px** | **Body 1**: Regular, 400  |
 
 #### 5.1.2.2. Mobile
 
@@ -4395,11 +4404,11 @@ Lo que sigue es una recopilación de principios visuales que marcarán la identi
 
 | Plataforma | Tipo    | Font | Posición|
 |------------|---------|----------------------------------------|---------------------------------|
-| Mobile    | Título  | Font: **Righteous**Size: **100px**  | **Headline 1**Regular, 400 |
-| Mobile    | Título  | Font: **Righteous**Size: **80px**  | **Headline 2**Regular, 400 |
-| Mobile    | Título  | Font: **Righteous**Size: **60px**  | **Headline 3**Regular, 400 |
-| Mobile    | Título  | Font: **Righteous**Size: **40px**  | **Headline 4**Regular, 400 |
-| Mobile    | Párrafo | Font: **Righteous**Size: **16px**  | **Body-1**Regular, 400     |
+| Mobile    | Título  | Font: **Righteous**<br />Size: **100px** | **Headline 1**: Regular, 400 |
+| Mobile    | Título  | Font: **Righteous**<br />Size: **80px** | **Headline 2**: Regular, 400 |
+| Mobile    | Título  | Font: **Righteous**<br />Size: **60px** | **Headline 3**: Regular, 400 |
+| Mobile    | Título  | Font: **Righteous**<br />Size: **40px** | **Headline 4**: Regular, 400 |
+| Mobile    | Párrafo | Font: **Righteous**<br />Size: **16px** | **Body-1**: Regular, 400   |
 
 ## 5.2. Information Architecture
 
@@ -4575,23 +4584,24 @@ Mobile prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Des
 <p align="center">
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landing-test-web-view-1.png" alt="UPC">
 <br><br><br>
-
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landing-test-web-view-2.png" alt="UPC">
 <br><br><br>
 
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landing-test-web-view-3.png" alt="UPC">
-</p>
 
 ### 5.6.2. Responsive landing page view from mobile device
 
 <p align="center">
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landing-test-mobile-view-1.png" alt="UPC">
 <br><br><br>
-
+<p align="center">
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landing-test-mobile-view-2.png" alt="UPC">
 <br><br><br>
+<br><br><br>
 
+<p align="center">
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//landing-test-mobile-view-3.png" alt="UPC">
+<br><br><br>
 </p>
 
 ### 5.6.3. Responsive frontend web view from browser
@@ -4610,11 +4620,16 @@ Mobile prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Des
 <p align="center">
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//front-test-mobile-view-1.png" alt="UPC">
 <br><br><br>
-
+<p align="center">
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//front-test-mobile-view-2.png" alt="UPC">
 <br><br><br>
+</p>
 
+<p align="center">
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//front-test-mobile-view-3.png" alt="UPC">
+<br><br><br>
+</p>
+
 </p>
 
 # VI. Product Implementation, Validation & Deployment  
