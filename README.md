@@ -594,18 +594,25 @@ Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera d
 
 ## 1.2. Solution Profile
 
-D’Taquito es una plataforma innovadora diseñada para revolucionar la forma en que se organizan y disfrutan las actividades deportivas en Lima Metropolitana, conectando a personas con intereses comunes en fútbol, billar y más. Vamos más allá de la simple reserva, ofreciendo una experiencia comunitaria enriquecedora y, gracias a una solución IoT de vanguardia, garantizando la seguridad y eficiencia en el acceso a los espacios deportivos.
+D’Taquito es una plataforma innovadora diseñada para revolucionar la forma en que se organizan y disfrutan las actividades deportivas en Lima Metropolitana, conectando a personas con intereses comunes en fútbol, billar y más. Vamos más allá de la simple reserva, ofreciendo una experiencia comunitaria enriquecedora y, gracias a una solución IoT de vanguardia, garantizando la seguridad, el control y la eficiencia en el acceso a los espacios deportivos.
 
 Nuestra plataforma facilita la creación de comunidades vibrantes y la interacción entre usuarios, permitiendo la organización eficiente de eventos deportivos a través de dos modalidades de reserva:
 
-- Reservas Personales: Asegura directamente un horario para tu uso privado del espacio deportivo de manera rápida y sencilla.
-- Reservas Comunitarias: Crea automáticamente una sala abierta donde otros jugadores interesados pueden unirse a tu evento, fomentando la colaboración y nuevas conexiones dentro de la comunidad deportiva.
+  - Reservas Personales: Asegura directamente un horario para tu uso privado del espacio deportivo de manera rápida y sencilla.
+
+  - Reservas Comunitarias: Crea automáticamente una sala abierta donde otros jugadores interesados pueden unirse a tu evento, fomentando la colaboración y nuevas conexiones dentro de la comunidad deportiva.
 
 La experiencia comunitaria se enriquece con salas dedicadas donde los usuarios pueden chatear, compartir información crucial del evento y gestionar la asistencia sin complicaciones.
 
-Para los propietarios de espacios deportivos, D'Taquito se convierte en una poderosa herramienta de promoción y administración. Sus instalaciones se presentan con información detallada, permitiendo a los usuarios explorar, filtrar y reservar en tiempo real según sus preferencias. Además integra una solución IoT de seguridad que optimiza el acceso a los espacios deportivos. Cada reserva genera un código QR único. Al llegar al espacio deportivo, los usuarios simplemente escanean este código a través de un lector QR instalado, activando automáticamente su reserva y permitiendo el acceso seguro. Este sistema no solo agiliza el proceso de entrada, sino que también proporciona un registro digital de los accesos, mejorando la seguridad y el control del espacio deportivo.
+Para los propietarios de espacios deportivos, D'Taquito se convierte en una poderosa herramienta de promoción y administración. Sus instalaciones se presentan con información detallada, permitiendo a los usuarios explorar, filtrar y reservar en tiempo real según sus preferencias.
 
-Con su interfaz intuitiva y la incorporación de esta innovadora solución IoT, D'Taquito simplifica la organización de actividades deportivas, elimina las tediosas coordinaciones externas, ahorra tiempo valioso y, lo más importante, ofrece una experiencia segura y fluida para todos los usuarios, permitiéndoles enfocarse en la pasión por el deporte y la comunidad que lo comparte.
+Además, la plataforma integra una solución IoT que optimiza la seguridad y la gestión operativa de los espacios:
+
+  - Validación de reservas mediante código QR: Cada reserva genera un código QR único que los usuarios deben escanear al llegar al espacio deportivo mediante un lector QR instalado en el lugar. Este dispositivo solo valida la reserva activa, sin abrir puertas ni controlar accesos físicos, lo cual sigue siendo responsabilidad del personal del establecimiento. Esta validación permite llevar un registro digital preciso de los accesos, fortaleciendo la seguridad.
+
+  - Control de aforo en tiempo real: Gracias a sensores instalados en las puertas de cada estableciiento, se monitorea el ingreso y salida de personas, permitiendo llevar un conteo dinámico del aforo. Esta información es visible tanto de forma general como detallada dentro de la plataforma, brindando a los usuarios propietarios una vista clara de la ocupación del lugar antes de asistir o reservar.
+
+Con su interfaz intuitiva y la incorporación de estas soluciones tecnológicas, D'Taquito simplifica la organización de actividades deportivas, elimina las tediosas coordinaciones externas, ahorra tiempo valioso y, lo más importante, ofrece una experiencia segura y fluida para todos los usuarios, permitiéndoles enfocarse en la pasión por el deporte y la comunidad que lo comparte.
 
 ### 1.2.1. Antecedentes y problematica
 
@@ -687,6 +694,10 @@ A medida que los usuarios interactúan en un entorno que mezcla lo social con la
 4.	Creemos que mejorar la visibilidad y reservas de espacios deportivos se logrará si estos pueden promocionarse dentro del flujo de reservas comunitarias. Lo sabremos cuando veamos más reservas asociadas a espacios destacados y mayor tráfico en sus perfiles.
 5.	Creemos que la retención de usuarios mejorará si ofrecemos flexibilidad en la organización y una experiencia consistente. Lo sabremos cuando aumente la tasa de usuarios recurrentes.
 6.	Creemos que la utilización de espacios deportivos crecerá si facilitamos la conexión entre usuarios y espacios mediante reservas comunitarias bien estructuradas. Lo sabremos cuando aumente el uso constante de instalaciones por usuarios activos.
+7.  Creemos que podremos garantizar el acceso exclusivo a los espacios deportivos si implementamos una solución IoT que permita el ingreso solo a quienes tengan una reserva.
+Lo sabremos cuando observemos que únicamente ingresan usuarios con reservas válidas.
+8.  Creemos que lograremos un mejor control del aforo en el establecimiento si utilizamos una solución IoT que cuente a todas las personas que ingresan.
+Lo sabremos cuando dispongamos de datos precisos sobre la cantidad total de visitantes.
 
 
 #### 1.2.2.4. Lean UX Canvas
@@ -964,11 +975,42 @@ Las entrevistas realizadas a jugadores aficionados, tanto al fútbol como al bil
 
 Los aspectos que más valoran al momento de reservar son la calidad del espacio, la ubicación, la disponibilidad clara y la comodidad del proceso. Existe un fuerte interés en una solución tecnológica, específicamente una aplicación móvil, que les permita ver disponibilidad en tiempo real, reservar en segundos, coordinar mediante chat interno, recibir notificaciones y organizar mejor su tiempo libre. Adicionalmente, algunos usuarios muestran apertura a socializar con nuevas personas a través del deporte, por lo que incluir funciones de “match deportivo” podría ser un valor agregado interesante en el mediano plazo.
 
+Hipótesis vinculadas y que cumplirían:
+
+Hipótesis 1 – Si los usuarios pueden crear reservas rápidamente mediante una interfaz intuitiva, reduciremos los tiempos de organización.
+↪ Responde directamente a la necesidad de un sistema ágil y claro.
+
+Hipótesis 2 – Si los usuarios pueden conectarse y organizar eventos compartidos desde la reserva, aumentará la participación en reservas comunitarias.
+↪ Relacionada con el deseo de socializar y coordinar con nuevos jugadores.
+
+Hipótesis 3 – Si la experiencia de organización y comunidad es fluida y conectada, la satisfacción del usuario aumentará.
+↪ Refuerza el impacto positivo de facilitar chats, notificaciones y coordinación.
+
+Hipótesis 5 – Si ofrecemos flexibilidad en la organización y una experiencia consistente, mejorará la retención de usuarios.
+↪ Los usuarios valoran una experiencia constante sin fricciones ni incertidumbres.
+
+Hipótesis 7 – Si implementamos IoT que valide el acceso con reservas, garantizaremos el acceso exclusivo.
+↪ Alineado con la necesidad de control y confianza al momento de acceder a un espacio reservado.
+
 **Segmento 2:**
 
 Por el lado de los propietarios, los hallazgos apuntan a una gestión operativa manual y vulnerable. Actualmente utilizan cuadernos, llamadas o mensajes de WhatsApp para controlar reservas, lo cual ha derivado en errores como la duplicación de horarios o la pérdida de información importante. También enfrentan una baja afluencia durante ciertos días (como lunes y martes), y no tienen herramientas para evaluar por qué o cómo solucionarlo. Aunque algunos promueven sus servicios por redes sociales, no logran atraer nuevos clientes de forma sostenida, y carecen de indicadores que les ayuden a mejorar su gestión comercial.
 
 Estos propietarios valoran mucho la posibilidad de contar con una aplicación que les permita centralizar su operación, visualizar reservas en tiempo real, recibir pagos mediante plataformas como Yape o tarjetas, y generar reportes sobre afluencia, comportamiento de clientes y efectividad de promociones. Sin embargo, expresan una preocupación importante sobre la facilidad de uso de la herramienta, tanto para ellos como para el personal a su cargo, y consideran esencial contar con soporte técnico accesible y confiable que los ayude a adaptarse sin complicaciones.
+
+Hipotesís vinculadas y que cumplirían:
+
+Hipótesis 4 – Si los espacios pueden promocionarse en reservas comunitarias, mejorará su visibilidad y cantidad de reservas.
+↪ Directamente relacionada con su dificultad para atraer nuevos clientes.
+
+Hipótesis 6 – Si conectamos bien a usuarios y espacios mediante reservas comunitarias, aumentará el uso de instalaciones.
+↪ Apunta a optimizar su capacidad instalada y mejorar días con baja afluencia.
+
+Hipótesis 8 – Si implementamos un sensor IoT para contar personas, lograremos un mejor control del aforo.
+↪ Responde a la necesidad de tener métricas claras y tomar decisiones basadas en datos.
+
+Hipótesis 3 – Si la experiencia es fluida y conectada, la satisfacción del usuario crecerá, también para propietarios.
+↪ Importante por su preocupación sobre la facilidad de uso y necesidad de soporte.
 
 **Conclusiones:**
 
@@ -1131,8 +1173,9 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 | RF15 | Crear ticket de retiro de créditos | Los usuarios con rol propietario deben poder crear un ticket de retiro de créditos, exclusivamente los lunes entre las 00:00 y las 06:00 horas. Para realizar la solicitud, deben cumplir con dos condiciones: tener una cantidad de créditos mayor a cero y no contar con otra solicitud pendiente. Además, se deben completar los siguientes campos obligatorios: nombre completo, nombre del banco, tipo de transferencia (CC o CCI) y número de cuenta. |
 | RF16 | Atención de tickets de retiro de créditos | Los tickets de retiro de créditos deben ser gestionados únicamente por los usuarios con rol administrador. La atención debe realizarse durante la misma semana en la que fueron solicitados. El administrador podrá confirmar la transferencia o diferirla en caso de detectar algún dato erróneo. Si se difiere, los usuarios con rol propietario recibirán un correo electrónico notificándole para que pueda corregir la solicitud, por ese mismo medio de contacto. |
 | RF17 | Generación de código QR | Solo los usuarios con rol jugador que hayan creado una reserva deben poder generar el código QR de la reserva, 1 hora antes del inicio de la misma. Una vez finalizada la reserva, ya no será posible generar nuevamente el código QR asociado a dicha reserva. |
-| RF18 | Activación de reserva con QR e IoT | Los usuarios con rol jugador que hayan creado una reserva deben poder activarla al llegar al espacio deportivo acercando el código QR generado a un dispositivo IoT con lector QR (ESP32-CAM). El dispositivo debe validar el token del QR con el servidor. Si el servidor está caído, el dispositivo IoT deberá validar los QR localmente desde una memoria microSD donde estén almacenados previamente los tokens. Cada 5 minutos intentará contactar al servidor para validar el QR. Una vez activado un QR, no podrá volver a utilizarse. |
-| RF19 | Conteo de personas mediante IoT | Un dispositivo IoT (ESP32 DevKit con sensor PIR) deberá contar la cantidad de personas que ingresan al establecimiento donde se encuentra el espacio deportivo. Cada 5 minutos, el dispositivo enviará el total contado al servidor y luego reiniciará el contador. Si el servidor está inactivo, el contador se guardará en una memoria microSD hasta que pueda enviarse. El dispositivo intentará contactar al servidor cada 5 minutos para enviar los datos pendientes. |
+| RF18 | Activación de reserva con QR e IoT | Los usuarios con rol jugador que hayan creado una reserva deben poder activarla al llegar al espacio deportivo acercando el código QR generado a un dispositivo IoT con lector QR (ESP32-CAM). El dispositivo debe validar el token del QR con el servidor. Si el servidor está caído, el dispositivo IoT deberá validar los QR localmente desde una memoria microSD donde estén almacenados previamente los tokens. Cada 5 minutos intentará contactar al servidor para validar el QR. Una vez activado un QR, no podrá volver a utilizarse. La activación de la reserva no está vinculada a la apertura de la puerta del espacio deportivo, de eso se encarga el personal. |
+| RF19 | Conteo de personas mediante IoT | Un dispositivo IoT (ESP32 DevKit con sensor PIR) deberá contar la cantidad de personas que ingresan al establecimiento donde se encuentra el espacio deportivo. Cada 5 minutos, el dispositivo enviará el total contado al servidor y luego reiniciará el contador. Si el servidor está inactivo, el contador se guardará en una memoria microSD hasta que pueda enviarse. El dispositivo intentará contactar al servidor cada 5 minutos para enviar los datos pendientes. De igual forma, el sistema debe mostar un dashboard al usuario con rol propietario indicando la cantidad de personas que visitan el estableciminetoi
+|
 | RNF01 | Seguridad: Cookie HttpOnly | El sistema deberá enviar una cookie HttpOnly al cliente para ser utilizada en las solicitudes en el 100% de las veces. Esta cookie asegura que la información de autenticación solo pueda ser accedida por el servidor y no por scripts en el navegador, garantizando así una mayor seguridad en la plataforma. |
 | RNF02 | Disponibilidad: consulta de horarios de espacios deportivos | El servidor deberá estar disponible para responder a las solicitudes de disponibilidad semanal de los horarios de los espacios deportivos realizadas por los jugadores, las 24 horas del día, los 7 días de la semana, garantizando acceso continuo. |
 | RNF03 | Desempeño: Visualización de espacios deportivos | El jugador podrá consultar la visualización de los espacios deportivos y esta deberá mostrarse en un tiempo menor a 3 segundos, garantizando una experiencia fluida y rápida para Los usuarios. |
