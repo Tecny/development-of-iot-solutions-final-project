@@ -32,6 +32,10 @@
     <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
   </form>
 
+  @if (errorMessage()) {
+    <p>Correo electrónico o contraseña incorrectos</p>
+  }
+
   <p>¿No tienes una cuenta? <a routerLink="/register">Regístrate</a></p>
 
   <button (click)="toggleForgotPassword()">¿Olvidaste tu contraseña?</button>
@@ -49,9 +53,5 @@
         }
       }
     </form>
-  }
-
-  @if (errorMessage()) {
-    <p>Correo electrónico o contraseña incorrectos</p>
   }
 </div>

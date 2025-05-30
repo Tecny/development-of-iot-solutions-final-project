@@ -1,4 +1,4 @@
-import {Component, effect, inject, signal} from '@angular/core';
+import {Component, computed, effect, inject, signal} from '@angular/core';
 import {NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterOutlet} from '@angular/router';
 import {HeaderComponent} from './core/components/header/header.component';
 import {AuthService} from './auth/services/auth.service';
@@ -22,6 +22,16 @@ export class AppComponent {
   private isNavigating = signal(false);
   isLoading = signal(false);
 
+  private currentUrl = signal('');
+
+  private hiddenHeaderRoutes = ['correct-payment', 'error-payment'];
+
+  showHeader = computed(() =>
+    !this.hiddenHeaderRoutes.some(route =>
+      this.currentUrl().includes(route)
+    )
+  );
+
   constructor() {
     this.authService.isAuthenticated().subscribe((auth) => {
       this.isAuthenticated.set(auth);
@@ -38,6 +48,7 @@ export class AppComponent {
         event instanceof NavigationError
       ) {
         this.isNavigating.set(false);
+        this.currentUrl.set(this.router.url);
       }
     });
 

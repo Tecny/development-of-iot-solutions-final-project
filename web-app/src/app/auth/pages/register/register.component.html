@@ -59,12 +59,12 @@
       }
     </div>
 
+    @if (errorMessage()) {
+      <p>Error en el registro, intente nuevamente.</p>
+    }
+
     <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
   </form>
 
   <p>¿Ya tienes una cuenta? <a routerLink="/login">Iniciar Sesión</a></p>
-
-  @if (errorMessage()) {
-    <p>Error en el registro, intente nuevamente.</p>
-  }
 </div>

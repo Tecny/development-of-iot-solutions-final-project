@@ -9,6 +9,8 @@ import {roomGuard} from './core/guards/room.guard';
 import {ResetPasswordComponent} from './auth/pages/reset-password/reset-password.component';
 import {RedirectComponent} from './core/components/redirect/redirect.component';
 import {HomeComponent} from './shared/pages/home/home.component';
+import {CorrectPaymentComponent} from './shared/pages/correct-payment/correct-payment.component';
+import {ErrorPaymentComponent} from './shared/pages/error-payment/error-payment.component';
 
 export const routes: Routes = [
   {
@@ -24,10 +26,18 @@ export const routes: Routes = [
     component: ResetPasswordComponent
   },
   {
+    path: 'correct-payment',
+    component: CorrectPaymentComponent
+  },
+  {
+    path: 'error-payment',
+    component: ErrorPaymentComponent
+  },
+  {
     path: 'home',
     component: HomeComponent,
     canActivate: [authGuard],
-    data: { roles: [UserRole.PLAYER, UserRole.OWNER] },
+    data: { roles: [UserRole.PLAYER, UserRole.OWNER, UserRole.ADMIN] },
   },
   {
     path: 'profile',
@@ -61,6 +71,13 @@ export const routes: Routes = [
     path: 'sport-spaces/:id',
     loadComponent: () => import('./features/sport-space/pages/sport-space-detail/sport-space-detail.component')
       .then(m => m.SportSpaceDetailComponent),
+  },
+  {
+    path: 'sport-spaces/:id/dashboard',
+    loadComponent: () => import('./features/sport-space/pages/sport-space-dashboard/sport-space-dashboard.component')
+      .then(m => m.SportSpaceDashboardComponent),
+    canActivate: [authGuard],
+    data: { roles: [UserRole.OWNER] },
   },
   {
     path: 'reservations',
