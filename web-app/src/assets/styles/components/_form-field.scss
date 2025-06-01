@@ -1,0 +1,66 @@
+@use 'abstracts/variables' as var;
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  label {
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var.$neutral-dark;
+  }
+
+  input {
+    padding: 0.75rem 2.75rem 0.75rem 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    box-sizing: border-box;
+
+    &.ng-invalid.ng-touched {
+      border-color: var.$error;
+    }
+
+    &.ng-valid.ng-touched {
+      border-color: var.$green-lighter;
+    }
+  }
+
+  .input-icon-wrapper {
+    position: relative;
+
+    .icon {
+      position: absolute;
+      right: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: var.$neutral-dark;
+      pointer-events: none;
+      transition: color 0.3s ease;
+    }
+  }
+
+  small {
+    position: absolute;
+    bottom: -1.25rem;
+    left: 0;
+    color: red;
+    font-size: 0.8rem;
+    pointer-events: none;
+    font-weight: 400;
+  }
+
+  .correct-message {
+    display: flex;
+    justify-content: left;
+    color: green;
+    font-weight: 400;
+    font-size: 0.8rem;
+    margin: 1rem 0 0;
+  }
+}
