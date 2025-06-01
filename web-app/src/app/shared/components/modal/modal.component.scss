@@ -1,20 +1,101 @@
+@use 'abstracts/variables' as var;
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
 .modal {
-  background: #fff;
+  background-color: var.$background;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  max-width: 600px;
+  width: 90%;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  z-index: 1000;
+  animation: scaleIn 0.3s ease;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 50px;
 }
+
 .modal__header {
+  padding: 0.5rem 1rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  width: 100%;
+  background: linear-gradient(90deg, rgba(193, 250, 172, 0.7) 0%, rgba(139, 212, 80, 0.7) 50%, rgba(122, 212, 85, 0.7) 100%);
+  font-weight: 400;
+  font-size: 1rem;
+  color: var.$green-black;
+
+  button {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
 }
+
 .modal__body {
-  flex: 1;
+  padding: 1.5rem 1rem;
+  max-height: 70vh;
+  overflow-y: auto;
+  color: var.$neutral-dark;
+  font-size: 0.9rem;
+  font-weight: 400;
 }
 
 .modal__footer {
+  padding: 0 1rem 1rem 0;
   display: flex;
+  align-items: center;
   justify-content: flex-end;
+  gap: 1rem;
+  background-color: transparent;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    width: 95%;
+    border-radius: 1rem;
+  }
+
+  .modal__body {
+    //padding: 1.25rem;
+  }
+
+  .modal__header,
+  .modal__footer {
+    //padding: 1rem;
+  }
 }
