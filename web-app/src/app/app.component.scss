@@ -1,10 +1,20 @@
+@use 'abstracts/variables' as var;
+
+.content {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
 .loading-bar {
   position: fixed;
   top: 0;
   left: 0;
   height: 4px;
   width: 100%;
-  background: #3b82f6;
+  background: var.$indigo-light;
+  //background: #3b82f6;
   animation: loading 1.2s infinite ease-in-out;
   z-index: 9999;
 }
