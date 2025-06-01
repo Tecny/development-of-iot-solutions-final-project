@@ -141,7 +141,6 @@ export class RoomCardComponent implements OnInit {
     if (window.confirm('¿Estás seguro de que deseas borrar esta sala?')) {
       this.reservationService.deleteReservation(this.room.reservation.id).subscribe({
         next: () => {
-          console.log('Room deleted successfully');
           window.location.reload();
         },
         error: (error) => {

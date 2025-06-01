@@ -161,7 +161,6 @@ export class SportSpaceAvailabilityComponent implements OnInit {
     }
 
     this.selectedSlots.set(newSlots);
-    console.log(`Selected Slots:`, newSlots);
   }
 
   isSelected(date: string, time: string): boolean {
@@ -193,7 +192,6 @@ export class SportSpaceAvailabilityComponent implements OnInit {
       });
 
       this.showReservationModal = true;
-      console.log(this.reservationForm.get('endTime')?.value);
     } else {
       console.warn('Debes seleccionar al menos un horario.');
     }
@@ -211,7 +209,6 @@ export class SportSpaceAvailabilityComponent implements OnInit {
 
       this.reservationService.createReservation(reservationData).subscribe({
         next: () => {
-          console.log('Reserva creada exitosamente:', reservationData);
           this.selectedSlots.set([]);
           this.closeReservationModal();
           this.router.navigate(['/reservations']).then();

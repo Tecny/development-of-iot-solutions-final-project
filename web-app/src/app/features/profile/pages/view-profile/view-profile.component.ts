@@ -80,7 +80,6 @@ export class ViewProfileComponent implements OnInit {
 
     this.profileService.changeName(name).subscribe({
       next: () => {
-        console.log('Name updated successfully.');
         this.editingName = false;
         this.loadUserInfo();
         nameControl.reset();
@@ -107,7 +106,6 @@ export class ViewProfileComponent implements OnInit {
 
     this.profileService.changeEmail(email).subscribe({
       next: () => {
-        console.log('Email updated successfully.');
         this.editingEmail = false;
         this.loadUserInfo();
         emailControl.reset();
@@ -130,7 +128,6 @@ export class ViewProfileComponent implements OnInit {
 
     this.profileService.changePassword(password).subscribe({
       next: () => {
-        console.log('Password updated successfully.');
         this.editingPassword = false;
         passwordControl.reset();
       },

@@ -37,7 +37,6 @@ export class ChatService {
   }
 
   sendMessage(chatRoomId: number, content: string): Observable<any> {
-    console.log('Sending message:', content, 'to room:', chatRoomId);
     return this.http.post(`${this.baseUrl}/chat/rooms/${chatRoomId}/messages`, { content });
   }
 
@@ -46,7 +45,6 @@ export class ChatService {
   }
 
   getChatMessages(chatRoomId: number): Observable<any> {
-    console.log('Fetching chat messages for room:', chatRoomId);
     return this.http.get(`${this.baseUrl}/chat/rooms/${chatRoomId}/messages`);
   }
 }

@@ -72,7 +72,6 @@ export class ListTicketsComponent implements OnInit {
     if (this.userRole === UserRole.OWNER) {
       this.bankTransferService.getTicketsByOwner().subscribe({
         next: (tickets) => {
-          console.log(tickets);
           this.tickets.set(tickets);
         },
         error: (err) => {
@@ -86,7 +85,6 @@ export class ListTicketsComponent implements OnInit {
     } else {
       this.bankTransferService.getAllTickets().subscribe({
         next: (tickets) => {
-          console.log(tickets);
           this.tickets.set(tickets);
         },
         error: () => {
@@ -113,11 +111,8 @@ export class ListTicketsComponent implements OnInit {
     if (this.ticketForm.valid) {
       const bankTransferData: TicketRequest = this.ticketForm.getRawValue();
 
-      console.log(bankTransferData);
-
       this.bankTransferService.createTicket(bankTransferData).subscribe({
         next: () => {
-          console.log('Bank transfer request created successfully');
           this.closeTicketModal();
           this.loadTickets();
         },

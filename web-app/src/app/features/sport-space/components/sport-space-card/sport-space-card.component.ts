@@ -81,11 +81,9 @@ export class SportSpaceCardComponent implements OnChanges {
       if (this.sportSpace) {
         this.sportSpaceService.deleteSportSpace(this.sportSpace.id).subscribe({
           next: () => {
-            console.log('Espacio deportivo eliminado');
             window.location.reload();
           },
           error: (error) => {
-            console.error('Error al eliminar el espacio deportivo', error);
           }
         });
       }

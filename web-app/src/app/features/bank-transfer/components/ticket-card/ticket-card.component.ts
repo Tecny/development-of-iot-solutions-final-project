@@ -59,7 +59,6 @@ export class TicketCardComponent {
       if (this.isAdmin()) {
         this.bankTransferService.confirmTicket(this.ticket.id).subscribe({
           next: () => {
-            console.log('Ticket confirmed and approved successfully');
             this.ticketConfirmed.emit();
           },
           error: (error) => {
@@ -77,7 +76,6 @@ export class TicketCardComponent {
       if (this.isAdmin()) {
         this.bankTransferService.deferTicket(this.ticket.id).subscribe({
           next: () => {
-            console.log('Ticket deferred successfully');
             this.ticketDeferred.emit();
           },
           error: (error) => {

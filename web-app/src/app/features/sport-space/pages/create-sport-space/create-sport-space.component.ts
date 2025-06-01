@@ -86,7 +86,6 @@ export class CreateSportSpaceComponent implements AfterViewInit {
       this.longitude = lng;
       this.locationNotSelected = false;
       this.cdr.detectChanges();
-      console.log('Lat:', lat, 'Lng:', lng);
     };
 
     map.on('click', (e: L.LeafletMouseEvent) => {
@@ -145,8 +144,6 @@ export class CreateSportSpaceComponent implements AfterViewInit {
         console.error('Error al crear espacio:', error);
       }
     });
-
-    console.log('Created', formValues);
   }
 
 
