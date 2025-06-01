@@ -1,57 +1,109 @@
-<div class="login-container">
-  <h2>Iniciar Sesión</h2>
+<!--<div class="logo">-->
+<!--  <img src="assets/images/dtaquito-logo.png" alt="dtaquito-logo" class="logo-image">-->
+<!--</div>-->
 
-  <form [formGroup]="loginForm" (ngSubmit)="login()">
+<div class="main-container">
 
-    <div>
-      <label>Email:</label>
-      <input type="email" formControlName="email">
-      @if (loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty ||loginForm.get('email')?.touched)) {
-        @if (loginForm.get('email')?.errors?.["required"]) {
-          <small>El correo electrónico es obligatorio</small>
-        }
-        @if (loginForm.get('email')?.errors?.["invalidEmail"]) {
-          <small>Formato de correo electrónico no válido</small>
-        }
-      }
+  <div class="illustration-section">
+    <img src="assets/images/login.png" alt="Login Illustration" class="login-illustration">
+  </div>
+
+  <div class="login-section">
+
+    <div class="form-header">
+      <h2>¡Bienvenido!</h2>
     </div>
 
-    <div>
-      <label>Contraseña:</label>
-      <input type="password" formControlName="password" required>
-      @if (loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty ||loginForm.get('password')?.touched)) {
-        @if (loginForm.get('password')?.errors?.["required"]) {
-          <small>La contraseña es obligatoria</small>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="form-field">
+        <label>Email:</label>
+        <div class="input-icon-wrapper">
+          <input type="email" formControlName="email" />
+          <i class="lni lni-envelope-1 icon"></i>
+          @if (loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)) {
+            @if (loginForm.get('email')?.errors?.["required"]) {
+              <small>El correo electrónico es obligatorio</small>
+            }
+            @if (loginForm.get('email')?.errors?.["invalidEmail"]) {
+              <small>Formato de correo electrónico no válido</small>
+            }
+          }
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label>Contraseña:</label>
+        <div class="input-icon-wrapper">
+          <input type="password" formControlName="password" required>
+          <i class="lni lni-locked-2 icon"></i>
+          @if (loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty ||loginForm.get('password')?.touched)) {
+            @if (loginForm.get('password')?.errors?.["required"]) {
+              <small>La contraseña es obligatoria</small>
+            }
+          }
+        </div>
+      </div>
+      <button type="submit" class="button-submit" [disabled]="isLoading()">
+        @if (isLoading()) {
+          <span class="spinner"></span>
+          Ingresando...
+        } @else {
+          Ingresar
         }
-        @if (loginForm.get('password')?.errors?.["minlength"]) {
-          <small>La contraseña debe tener al menos 16 caracteres</small>
-        }
-      }
-    </div>
-
-    <button type="submit" [disabled]="loginForm.invalid">Ingresar</button>
-  </form>
-
-  @if (errorMessage()) {
-    <p>Correo electrónico o contraseña incorrectos</p>
-  }
-
-  <p>¿No tienes una cuenta? <a routerLink="/register">Regístrate</a></p>
-
-  <button (click)="toggleForgotPassword()">¿Olvidaste tu contraseña?</button>
-
-  @if (showEmailInputForgotPassword) {
-    <form [formGroup]="recoverPasswordForm" (ngSubmit)="forgotPassword(recoverPasswordForm.get('email')?.getRawValue())">
-      <label for="emailRecover">Ingresa tu correo electrónico para restaurar tu contraseña</label>
-      <input id="emailRecover" type="email" formControlName="email" required />
-      <button type="submit" [disabled]="recoverPasswordForm.invalid">Enviar</button>
-      @if (recoverPasswordForm.get('email')?.invalid && (recoverPasswordForm.get('email')?.dirty || recoverPasswordForm.get('email')?.touched)) {
-        @if (recoverPasswordForm.get('email')?.errors?.['required']) {
-          <small>El correo electrónico es obligatorio</small>
-        } @else if (recoverPasswordForm.get('email')?.errors?.['invalidEmail']) {
-          <small>Formato de correo electrónico no válido</small>
-        }
-      }
+      </button>
     </form>
-  }
+
+    @if (errorMessage()) {
+      <p class="error-message">Credenciales incorrectas</p>
+    }
+
+    <p class="register-disclaimer">
+      ¿No tienes una cuenta?&nbsp;
+      <a routerLink="/register">Regístrate</a>
+    </p>
+
+    <button class="button-link" (click)="openRecoverModal()">¿Olvidaste tu contraseña?</button>
+
+    @if (showRecoverModal) {
+      <app-modal [width]="'400px'" (closeModal)="closeRecoverModal()">
+        <ng-container modal-header>Recuperar contraseña</ng-container>
+        <ng-container modal-body>
+          <form [formGroup]="recoverPasswordForm"
+                (ngSubmit)="forgotPassword(recoverPasswordForm.get('email')?.getRawValue())"
+                id="recoverForm">
+            <div class="form-field">
+              <label for="emailRecover">Ingresa tu correo electrónico</label>
+              <div class="input-icon-wrapper">
+                <input id="emailRecover" type="email" formControlName="email" required />
+                <i class="lni lni-envelope-1 icon"></i>
+              </div>
+              @if (recoverPasswordForm.get('email')?.invalid && (recoverPasswordForm.get('email')?.dirty || recoverPasswordForm.get('email')?.touched)) {
+                @if (recoverPasswordForm.get('email')?.errors?.['required']) {
+                  <small>El correo electrónico es obligatorio</small>
+                } @else if (recoverPasswordForm.get('email')?.errors?.['invalidEmail']) {
+                  <small>Formato de correo electrónico no válido</small>
+                }
+              }
+              @if (correctMessage()) {
+                <p class="correct-message">Se envió una enlace de recuperación al correo</p>
+              }
+            </div>
+          </form>
+        </ng-container>
+        <ng-container modal-footer>
+          <button class="button-submit"
+                  type="submit"
+                  [disabled]="isLoading()"
+                  form="recoverForm">
+            @if (isLoading()) {
+              <span class="spinner"></span>
+              Enviando...
+            } @else {
+              Enviar
+            }
+          </button>
+        </ng-container>
+      </app-modal>
+    }
+  </div>
 </div>

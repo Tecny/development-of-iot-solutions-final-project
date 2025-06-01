@@ -4,12 +4,15 @@ import {AuthService} from '../../services/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import {LoginRequest} from '../../models/login.interface';
 import {customEmailValidator} from '../../../shared/validators/forms.validator';
+import {ModalComponent} from '../../../shared/components/modal/modal.component';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-login',
   imports: [
     ReactiveFormsModule,
-    RouterLink
+    RouterLink,
+    ModalComponent
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
@@ -20,14 +23,17 @@ export class LoginComponent {
   private authService = inject(AuthService);
   private router = inject(Router);
   private fb = inject(NonNullableFormBuilder);
+  private toastService = inject(ToastrService);
 
-  showEmailInputForgotPassword = false;
+  showRecoverModal = false;
 
+  isLoading = signal(false);
+  correctMessage = signal<boolean | null>(null);
   errorMessage = signal<boolean | null>(null);
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, customEmailValidator()]],
-    password: ['', [Validators.required, Validators.minLength(16)]],
+    password: ['', [Validators.required]],
   });
 
   recoverPasswordForm = this.fb.group({
@@ -35,34 +41,55 @@ export class LoginComponent {
   });
 
   login() {
+    if (this.loginForm.invalid || this.isLoading()) {
+      this.loginForm.markAllAsTouched();
+      return;
+    }
+    this.isLoading.set(true);
     const userData: LoginRequest = this.loginForm.getRawValue();
 
     this.authService.login(userData).subscribe({
       next: () => {
+        this.isLoading.set(false);
         this.router.navigate(['/home']).then();
+        this.toastService.success('Inicio de sesión correcto', 'Éxito');
       },
       error: () => {
+        this.isLoading.set(false);
         this.errorMessage.set(true);
+        this.toastService.error('Inicio de sesión fallido', 'Error');
       }
     });
   }
 
-  toggleForgotPassword() {
-    this.showEmailInputForgotPassword = !this.showEmailInputForgotPassword;
+  openRecoverModal() {
+    this.showRecoverModal = true;
+  }
+
+  closeRecoverModal() {
+    this.showRecoverModal = false;
+    this.recoverPasswordForm.reset();
   }
 
   forgotPassword(email: string) {
-    if (this.recoverPasswordForm.invalid) {
+    if (this.recoverPasswordForm.invalid || this.isLoading()) {
+      this.recoverPasswordForm.markAllAsTouched();
       return;
     }
+    this.isLoading.set(true);
     this.authService.forgotPassword(email).subscribe({
       next: () => {
-        this.showEmailInputForgotPassword = false;
         this.recoverPasswordForm.reset();
-        console.log('Password reset email sent');
+        this.showRecoverModal = false;
+        //this.correctMessage.set(true);
+        this.isLoading.set(false);
+        this.toastService.success('Se envió un enlace de recuperación a tu correo', 'Éxito');
       },
-      error: (error) => {
-        console.error('Error sending password reset email', error);
+      error: () => {
+        this.isLoading.set(false);
+        //this.correctMessage.set(false);
+        this.errorMessage.set(true);
+        this.toastService.error('Error al enviar el correo de recuperación', 'Error');
       }
     })
   }
