@@ -33,7 +33,7 @@ export class LoginComponent {
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, customEmailValidator()]],
-    password: ['', [Validators.required]],
+    password: ['', Validators.required],
   });
 
   recoverPasswordForm = this.fb.group({

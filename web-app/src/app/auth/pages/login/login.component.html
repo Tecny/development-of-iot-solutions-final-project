@@ -5,20 +5,19 @@
 <div class="main-container">
 
   <div class="illustration-section">
-    <img src="assets/images/login.png" alt="Login Illustration" class="login-illustration">
+    <img src="assets/images/login.png" alt="Login Illustration" class="illustration">
   </div>
 
-  <div class="login-section">
+  <div class="form-section">
 
     <div class="form-header">
       <h2>¡Bienvenido!</h2>
     </div>
 
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <form class="form-body" [formGroup]="loginForm" (ngSubmit)="login()">
       <div class="form-field">
-        <label>Email:</label>
         <div class="input-icon-wrapper">
-          <input type="email" formControlName="email" />
+          <input type="email" formControlName="email" placeholder="Correo electrónico">
           <i class="lni lni-envelope-1 icon"></i>
           @if (loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)) {
             @if (loginForm.get('email')?.errors?.["required"]) {
@@ -32,9 +31,8 @@
       </div>
 
       <div class="form-field">
-        <label>Contraseña:</label>
         <div class="input-icon-wrapper">
-          <input type="password" formControlName="password" required>
+          <input type="password" formControlName="password" required placeholder="Contraseña">
           <i class="lni lni-locked-2 icon"></i>
           @if (loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty ||loginForm.get('password')?.touched)) {
             @if (loginForm.get('password')?.errors?.["required"]) {
@@ -46,7 +44,6 @@
       <button type="submit" class="button-submit" [disabled]="isLoading()">
         @if (isLoading()) {
           <span class="spinner"></span>
-          Ingresando...
         } @else {
           Ingresar
         }
@@ -57,53 +54,52 @@
       <p class="error-message">Credenciales incorrectas</p>
     }
 
-    <p class="register-disclaimer">
+    <p>
       ¿No tienes una cuenta?&nbsp;
       <a routerLink="/register">Regístrate</a>
     </p>
 
     <button class="button-link" (click)="openRecoverModal()">¿Olvidaste tu contraseña?</button>
-
-    @if (showRecoverModal) {
-      <app-modal [width]="'400px'" (closeModal)="closeRecoverModal()">
-        <ng-container modal-header>Recuperar contraseña</ng-container>
-        <ng-container modal-body>
-          <form [formGroup]="recoverPasswordForm"
-                (ngSubmit)="forgotPassword(recoverPasswordForm.get('email')?.getRawValue())"
-                id="recoverForm">
-            <div class="form-field">
-              <label for="emailRecover">Ingresa tu correo electrónico</label>
-              <div class="input-icon-wrapper">
-                <input id="emailRecover" type="email" formControlName="email" required />
-                <i class="lni lni-envelope-1 icon"></i>
-              </div>
-              @if (recoverPasswordForm.get('email')?.invalid && (recoverPasswordForm.get('email')?.dirty || recoverPasswordForm.get('email')?.touched)) {
-                @if (recoverPasswordForm.get('email')?.errors?.['required']) {
-                  <small>El correo electrónico es obligatorio</small>
-                } @else if (recoverPasswordForm.get('email')?.errors?.['invalidEmail']) {
-                  <small>Formato de correo electrónico no válido</small>
-                }
-              }
-              @if (correctMessage()) {
-                <p class="correct-message">Se envió una enlace de recuperación al correo</p>
-              }
-            </div>
-          </form>
-        </ng-container>
-        <ng-container modal-footer>
-          <button class="button-submit"
-                  type="submit"
-                  [disabled]="isLoading()"
-                  form="recoverForm">
-            @if (isLoading()) {
-              <span class="spinner"></span>
-              Enviando...
-            } @else {
-              Enviar
-            }
-          </button>
-        </ng-container>
-      </app-modal>
-    }
   </div>
 </div>
+
+@if (showRecoverModal) {
+  <app-modal [width]="'450px'" (closeModal)="closeRecoverModal()">
+    <ng-container modal-header>Recuperar contraseña</ng-container>
+    <ng-container modal-body>
+      <form [formGroup]="recoverPasswordForm"
+            (ngSubmit)="forgotPassword(recoverPasswordForm.get('email')?.getRawValue())"
+            id="recoverForm">
+        <div class="form-field">
+          <label for="emailRecover">Ingresa tu correo electrónico</label>
+          <div class="input-icon-wrapper">
+            <input id="emailRecover" type="email" formControlName="email" required />
+            <i class="lni lni-envelope-1 icon"></i>
+          </div>
+          @if (recoverPasswordForm.get('email')?.invalid && (recoverPasswordForm.get('email')?.dirty || recoverPasswordForm.get('email')?.touched)) {
+            @if (recoverPasswordForm.get('email')?.errors?.['required']) {
+              <small>El correo electrónico es obligatorio</small>
+            } @else if (recoverPasswordForm.get('email')?.errors?.['invalidEmail']) {
+              <small>Formato de correo electrónico no válido</small>
+            }
+          }
+          @if (correctMessage()) {
+            <p class="correct-message">Se envió una enlace de recuperación al correo</p>
+          }
+        </div>
+      </form>
+    </ng-container>
+    <ng-container modal-footer>
+      <button class="button-submit"
+              type="submit"
+              [disabled]="isLoading()"
+              form="recoverForm">
+        @if (isLoading()) {
+          <span class="spinner"></span>
+        } @else {
+          Enviar
+        }
+      </button>
+    </ng-container>
+  </app-modal>
+}
