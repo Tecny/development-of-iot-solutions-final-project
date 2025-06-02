@@ -4,6 +4,7 @@ import {AuthService} from '../../services/auth.service';
 import {Router, RouterLink} from '@angular/router';
 import {RegisterRequest} from '../../models/register.interface';
 import {customEmailValidator} from '../../../shared/validators/forms.validator';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -19,12 +20,14 @@ export class RegisterComponent {
   private authService = inject(AuthService);
   private router = inject(Router);
   private fb = inject(NonNullableFormBuilder);
+  private toastService = inject(ToastrService);
 
+  isLoading = signal(false);
   errorMessage = signal<boolean | null>(null);
 
   registerForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
-    email: ['', [Validators.required, customEmailValidator]],
+    email: ['', [Validators.required, customEmailValidator()]],
     password: ['', [
       Validators.required,
       Validators.minLength(16),
@@ -34,11 +37,24 @@ export class RegisterComponent {
   });
 
   register() {
+    if (this.registerForm.invalid || this.isLoading()) {
+      this.registerForm.markAllAsTouched();
+      return;
+    }
+    this.isLoading.set(true);
     const userData: RegisterRequest = this.registerForm.getRawValue();
 
     this.authService.register(userData).subscribe({
-      next: () => this.router.navigate(['/login']),
-      error: () => this.errorMessage.set(true),
+      next: () => {
+        this.isLoading.set(false);
+        this.router.navigate(['/login']).then();
+        this.toastService.success('Registro exitoso', 'Éxito');
+      },
+      error: () => {
+        this.isLoading.set(false);
+        this.errorMessage.set(true);
+        this.toastService.error('Registro fallido', 'Error');
+      },
     });
   }
 }

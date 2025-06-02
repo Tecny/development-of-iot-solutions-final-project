@@ -1,70 +1,97 @@
-<div class="register-container">
-  <h2>Registro</h2>
+<div class="main-container">
 
-  <form [formGroup]="registerForm" (ngSubmit)="register()">
+  <div class="form-section">
 
-    <div>
-      <label>Nombre:</label>
-      <input type="text" formControlName="name" required>
-      @if (registerForm.get('name')?.invalid && (registerForm.get('name')?.dirty ||registerForm.get('name')?.touched)) {
-        @if (registerForm.get('name')?.errors?.["required"]) {
-          <small>El nombre es obligatorio</small>
-        }
-        @if (registerForm.get('name')?.errors?.["minlength"]) {
-          <small>El nombre debe tener mínimo 3 letras</small>
-        }
-      }
+    <div class="form-header">
+      <h2>¡Crea tu cuenta!</h2>
     </div>
 
-    <div>
-      <label>Email:</label>
-      <input type="email" formControlName="email" required>
-      @if (registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)) {
-        @if (registerForm.get('email')?.errors?.['required']) {
-          <small>El correo electrónico es obligatorio</small>
-        } @else if (registerForm.get('email')?.errors?.['invalidEmail']) {
-          <small>Formato de correo electrónico no válido</small>
-        }
-      }
-    </div>
+    <form class="form-body" [formGroup]="registerForm" (ngSubmit)="register()">
 
-    <div>
-      <label>Contraseña:</label>
-      <input type="password" formControlName="password" required>
-      @if (registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)) {
-        @if (registerForm.get('password')?.errors?.['required']) {
-          <small>La contraseña es obligatoria</small>
+      <div class="form-field">
+        <div class="input-icon-wrapper">
+          <input type="text" formControlName="name" required placeholder="Nombre">
+          <i class="lni lni-user-4 icon"></i>
+          @if (registerForm.get('name')?.invalid && (registerForm.get('name')?.dirty ||registerForm.get('name')?.touched)) {
+            @if (registerForm.get('name')?.errors?.["required"]) {
+              <small>El nombre es obligatorio</small>
+            }
+            @if (registerForm.get('name')?.errors?.["minlength"]) {
+              <small>El nombre debe tener mínimo 3 letras</small>
+            }
+          }
+        </div>
+      </div>
+
+      <div class="form-field">
+        <div class="input-icon-wrapper">
+          <input type="email" formControlName="email" required placeholder="Correo electrónico">
+          <i class="lni lni-envelope-1 icon"></i>
+          @if (registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)) {
+            @if (registerForm.get('email')?.errors?.['required']) {
+              <small>El correo electrónico es obligatorio</small>
+            } @else if (registerForm.get('email')?.errors?.['invalidEmail']) {
+              <small>Formato de correo electrónico no válido</small>
+            }
+          }
+        </div>
+      </div>
+
+      <div class="form-field" >
+        <div class="input-icon-wrapper">
+          <input type="password" formControlName="password" required placeholder="Contraseña">
+          <i class="lni lni-locked-2 icon"></i>
+          @if (registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)) {
+            @if (registerForm.get('password')?.errors?.['required']) {
+              <small>La contraseña es obligatoria</small>
+            } @else {
+              @if (registerForm.get('password')?.errors?.['minlength']) {
+                <small class="long-error-message-one">La contraseña debe tener al menos 16 caracteres</small>
+              }
+              @else  {
+                <small class="long-error-message-second">La contraseña debe tener al menos una mayúscula, un número y un carácter especial en su estructura</small>
+              }
+            }
+          }
+        </div>
+      </div>
+
+      <div class="form-field">
+        <div class="input-icon-wrapper">
+          <select formControlName="role" required>
+            <option value="" disabled selected hidden>Selecciona un rol</option>
+            <option value="PLAYER">Jugador</option>
+            <option value="OWNER">Propietario</option>
+          </select>
+          <i class="lni lni-hierarchy-1 icon"></i>
+          @if (registerForm.get('role')?.invalid && (registerForm.get('role')?.dirty || registerForm.get('role')?.touched)) {
+            @if (registerForm.get('role')?.errors?.['required']) {
+              <small>El rol es obligatorio</small>
+            }
+          }
+        </div>
+      </div>
+
+      <button type="submit" class="button-submit" [disabled]="isLoading()">
+        @if (isLoading()) {
+          <span class="spinner"></span>
         } @else {
-          @if (registerForm.get('password')?.errors?.['minlength']) {
-            <small>La contraseña debe tener al menos 16 caracteres</small>
-          }
-          @else  {
-            <small>La contraseña debe incluir una mayúscula, un número y un carácter especial</small>
-          }
+          Registrarse
         }
-      }
-    </div>
-
-    <div>
-      <label>Rol:</label>
-      <select formControlName="role" required>
-        <option value="">Selecciona un rol</option>
-        <option value="PLAYER">Jugador</option>
-        <option value="OWNER">Propietario</option>
-      </select>
-      @if (registerForm.get('role')?.invalid && (registerForm.get('role')?.dirty || registerForm.get('role')?.touched)) {
-        @if (registerForm.get('role')?.errors?.['required']) {
-          <small>El rol es obligatorio</small>
-        }
-      }
-    </div>
+      </button>
+    </form>
 
     @if (errorMessage()) {
-      <p>Error en el registro, intente nuevamente.</p>
+      <p class="error-message">Ocurrió un error, intente nuevamente.</p>
     }
 
-    <button type="submit" [disabled]="registerForm.invalid">Registrarse</button>
-  </form>
+    <p>
+      ¿Ya tienes cuenta?&nbsp;
+      <a routerLink="/login">Inicia sesión</a>
+    </p>
+  </div>
 
-  <p>¿Ya tienes una cuenta? <a routerLink="/login">Iniciar Sesión</a></p>
+  <div class="illustration-section">
+    <img src="assets/images/register.png" alt="Register Illustration" class="illustration">
+  </div>
 </div>
