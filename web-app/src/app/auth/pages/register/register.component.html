@@ -82,7 +82,7 @@
     </form>
 
     @if (errorMessage()) {
-      <p class="error-message">Ocurrió un error, intente nuevamente.</p>
+      <p class="error-message">{{ errorMessage() }}</p>
     }
 
     <p>

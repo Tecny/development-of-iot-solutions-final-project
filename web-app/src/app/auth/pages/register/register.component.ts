@@ -23,7 +23,7 @@ export class RegisterComponent {
   private toastService = inject(ToastrService);
 
   isLoading = signal(false);
-  errorMessage = signal<boolean | null>(null);
+  errorMessage = signal<string | null>(null);
 
   registerForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
@@ -50,10 +50,20 @@ export class RegisterComponent {
         this.router.navigate(['/login']).then();
         this.toastService.success('Registro exitoso', 'Éxito');
       },
-      error: () => {
+      error: (error) => {
         this.isLoading.set(false);
-        this.errorMessage.set(true);
-        this.toastService.error('Registro fallido', 'Error');
+        let mensaje = 'Registro fallido';
+        if (error.status === 400 && error.error?.message) {
+          switch (error.error.message) {
+            case 'User with this email already exists':
+              mensaje = 'Ya existe un usuario con este correo electrónico';
+              break;
+            default:
+              mensaje = error.error.message;
+          }
+        }
+        this.errorMessage.set(mensaje);
+        this.toastService.error(mensaje, 'Error');
       },
     });
   }
