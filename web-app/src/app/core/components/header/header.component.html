@@ -1,34 +1,97 @@
-<header class="header">
-  <nav>
-    @if (isAuthenticated()) {
-      @switch (role()) {
-        @case ('PLAYER') {
-          <a routerLink="/home">Inicio</a>
-          <a routerLink="/rooms">Salas comunidad</a>
-          <a routerLink="/sport-spaces">Espacios deportivos</a>
-          <a routerLink="/reservations">Mis Reservas</a>
-          <a routerLink="/profile">Perfil</a>
-        }
-        @case ('OWNER') {
-          <a routerLink="/home">Inicio</a>
-          <a routerLink="/sport-spaces">Mis espacios deportivos</a>
-          <a routerLink="/rooms">Salas comunidad</a>
-          <a routerLink="/subscription">Subscripción</a>
-          <a routerLink="/bank-transfer">Retiro de créditos</a>
-          <a routerLink="/profile">Perfil</a>
-        }
-        @case ('ADMIN') {
-          <a routerLink="/home">Inicio</a>
-          <a routerLink="/bank-transfer">Dashboard de tickets</a>
-          <button (click)="logout()">Cerrar sesión</button>
-        }
-        @default {
-          <span>Rol no reconocido</span>
-        }
+<header class="header-container">
+
+      <div class="logo">
+        <img src="assets/images/dtaquito-logo.png" alt="Logo" />
+      </div>
+
+      <a class="menu__item menu-toggle" (click)="toggleMenu()">
+        <i class="lni lni-menu-meatballs-2 menu__icon"></i>
+      </a>
+
+      @if (isMenuOpen) {
+        <div class="backdrop" (click)="toggleMenu()"></div>
       }
-    } @else {
-      <a routerLink="/login">Iniciar sesión</a>
-      <a routerLink="/register">Registrarse</a>
-    }
-  </nav>
-</header>
+
+      <nav class="menu" [class.open]="isMenuOpen">
+        @if (isAuthenticated()) {
+          @switch (role()) {
+            @case ('PLAYER') {
+              <a class="menu__item" routerLink="/home" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-home-2 menu__icon"></i>
+                <span class="menu__label">Inicio</span>
+              </a>
+              <a class="menu__item" routerLink="/rooms" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-hand-shake menu__icon"></i>
+                <span class="menu__label">Salas comunidad</span>
+              </a>
+              <a class="menu__item" routerLink="/sport-spaces" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-busket-ball menu__icon"></i>
+                <span class="menu__label">Espacios deportivos</span>
+              </a>
+              <a class="menu__item" routerLink="/reservations" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-calendar-days menu__icon"></i>
+                <span class="menu__label">Mis Reservas</span>
+              </a>
+              <a class="menu__item" routerLink="/profile" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-user-4 menu__icon"></i>
+                <span class="menu__label">Perfil</span>
+              </a>
+            }
+            @case ('OWNER') {
+              <a class="menu__item" routerLink="/home" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-home-2 menu__icon"></i>
+                <span class="menu__label">Inicio</span>
+              </a>
+              <a class="menu__item" routerLink="/sport-spaces" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-busket-ball menu__icon"></i>
+                <span class="menu__label">Mis espacios</span>
+              </a>
+              <a class="menu__item" routerLink="/rooms" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-hand-shake menu__icon"></i>
+                <span class="menu__label">Salas comunidad</span>
+              </a>
+              <a class="menu__item" routerLink="/subscription" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-crown-3 menu__icon"></i>
+                <span class="menu__label">Subscripción</span>
+              </a>
+              <a class="menu__item" routerLink="/bank-transfer" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-dollar-circle menu__icon"></i>
+                <span class="menu__label">Retiro de créditos</span>
+              </a>
+              <a class="menu__item" routerLink="/profile" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-user-4 menu__icon"></i>
+                <span class="menu__label">Perfil</span>
+              </a>
+            }
+            @case ('ADMIN') {
+              <a class="menu__item" routerLink="/home" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-home-2 menu__icon"></i>
+                <span class="menu__label">Inicio</span>
+              </a>
+              <a class="menu__item" routerLink="/bank-transfer" (click)="closeMenuOnNavigate()">
+                <i class="lni lni-ticket-1 menu__icon"></i>
+                <span class="menu__label">Tickets</span>
+              </a>
+              <button class="menu__item" (click)="logout()">
+                <i class="lni lni-exit menu__icon"></i>
+                <span class="menu__label">Cerrar sesión</span>
+              </button>
+            }
+            @default {
+              <span class="menu__item">
+                <i class="lni lni-ban-2 menu__icon"></i>
+              </span>
+            }
+          }
+        } @else {
+          <a class="menu__item" routerLink="/login" (click)="closeMenuOnNavigate()">
+            <i class="lni lni-unlock menu__icon"></i>
+            <span class="menu__label">Iniciar sesión</span>
+          </a>
+          <a class="menu__item" routerLink="/register" (click)="closeMenuOnNavigate()">
+            <i class="lni lni-user menu__icon"></i>
+            <span class="menu__label">Registrarse</span>
+          </a>
+        }
+      </nav>
+    </header>

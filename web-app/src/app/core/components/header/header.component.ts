@@ -1,4 +1,4 @@
-import {Component, computed, inject, signal} from '@angular/core';
+import {Component, computed, HostListener, inject, signal} from '@angular/core';
 import {UserStoreService} from '../../services/user-store.service';
 import {AuthService} from '../../../auth/services/auth.service';
 import {RouterLink} from '@angular/router';
@@ -13,6 +13,13 @@ import {RouterLink} from '@angular/router';
 })
 export class HeaderComponent {
 
+  @HostListener('window:resize')
+  onResize() {
+    if (window.innerWidth > 650 && this.isMenuOpen) {
+      this.isMenuOpen = false;
+    }
+  }
+
   private userStore = inject(UserStoreService);
   private authService = inject(AuthService);
 
@@ -20,6 +27,9 @@ export class HeaderComponent {
 
   isAuthenticated = signal(false);
   role = computed(() => this.currentUser()?.roleType ?? null);
+
+  isMenuOpen = false;
+  isTouchDevice = false;
 
   constructor() {
     this.authService.isAuthenticated().subscribe(auth => {
@@ -30,5 +40,13 @@ export class HeaderComponent {
   logout() {
     this.userStore.clearUser();
     this.authService.logout();
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenuOnNavigate() {
+    this.isMenuOpen = false;
   }
 }
