@@ -71,9 +71,8 @@
             (ngSubmit)="forgotPassword(recoverPasswordForm.get('email')?.getRawValue())"
             id="recoverForm">
         <div class="form-field">
-          <label for="emailRecover">Ingresa tu correo electrónico</label>
           <div class="input-icon-wrapper">
-            <input id="emailRecover" type="email" formControlName="email" required />
+            <input id="emailRecover" type="email" formControlName="email" required placeholder="Ingresa tu correo electrónico" />
             <i class="lni lni-envelope-1 icon"></i>
           </div>
           @if (recoverPasswordForm.get('email')?.invalid && (recoverPasswordForm.get('email')?.dirty || recoverPasswordForm.get('email')?.touched)) {
