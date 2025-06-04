@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100dvh;
+  //min-height: 100dvh;
   width: 100%;
   z-index: 0;
 }
@@ -14,7 +14,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var.$neutral;
+  //background-color: var.$neutral;
   //background-image: url("/assets/images/stadium2.jpg");
   //background-size: cover;
   opacity: 0.3;
