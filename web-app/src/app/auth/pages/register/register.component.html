@@ -17,7 +17,7 @@
               <small>El nombre es obligatorio</small>
             }
             @if (registerForm.get('name')?.errors?.["minlength"]) {
-              <small>El nombre debe tener mínimo 3 letras</small>
+              <small>Debe tener mínimo 3 letras</small>
             }
           }
         </div>
@@ -31,7 +31,7 @@
             @if (registerForm.get('email')?.errors?.['required']) {
               <small>El correo electrónico es obligatorio</small>
             } @else if (registerForm.get('email')?.errors?.['invalidEmail']) {
-              <small>Formato de correo electrónico no válido</small>
+              <small>Formato no válido</small>
             }
           }
         </div>
@@ -46,10 +46,10 @@
               <small>La contraseña es obligatoria</small>
             } @else {
               @if (registerForm.get('password')?.errors?.['minlength']) {
-                <small class="long-error-message-one">La contraseña debe tener al menos 16 caracteres</small>
+                <small class="long-error-message-one">Mínimo 16 caracteres</small>
               }
               @else  {
-                <small class="long-error-message-second">La contraseña debe tener al menos una mayúscula, un número y un carácter especial en su estructura</small>
+                <small class="long-error-message-second">Debe incluir mayúscula, número y caracter especial</small>
               }
             }
           }
