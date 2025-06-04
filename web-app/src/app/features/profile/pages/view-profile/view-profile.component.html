@@ -1,110 +1,211 @@
 @let user = userInfo();
-
-<h1>Perfil</h1>
 @if (user) {
-  <div [formGroup]="profileForm">
+  <div class="profile-panel">
+    <div class="panel-header">
+      <div class="avatar-section">
+        <h2>Perfil</h2>
+        <span class="user-role">{{ user.roleType === 'PLAYER' ? 'Jugador' : 'Propietario' }}</span>
+        <img src="assets/images/avatar.png" alt="Avatar" class="avatar" />
+      </div>
+      <div class="tab-buttons">
+        <button [class.active]="activeTab === 'info'" (click)="activeTab = 'info'">Información</button>
+        <button [class.active]="activeTab === 'prefs'" (click)="activeTab = 'prefs'">Preferencias</button>
+      </div>
+    </div>
 
-    <!-- Nombre -->
-    <div>
-      <p><strong>Nombre:</strong> {{ user.name }}</p>
-      <button type="button" (click)="editingName = !editingName">
-        {{ editingName ? 'Cancelar' : 'Editar nombre' }}
-      </button>
-      @if (editingName) {
-        <input type="text" formControlName="name" placeholder="Nuevo nombre" />
-        @if (profileForm.get('name')?.touched && profileForm.get('name')?.invalid) {
-          @if (profileForm.get('name')?.errors?.['required']) {
-            <small>El nombre es obligatorio</small>
-          }
-          @if (profileForm.get('name')?.errors?.['minlength']) {
-            <small>El nombre debe tener mínimo 3 letras</small>
-          }
-        }
-        <button type="button" (click)="updateName()" [disabled]="profileForm.get('name')?.invalid">Guardar</button>
+    <div class="panel-content" [formGroup]="profileForm">
+      <!-- Información del perfil -->
+      @if (activeTab === 'info') {
+        <div class="profile-fields">
+
+          <!-- Nombre -->
+          <div class="profile-field">
+            @if (!editingName) {
+              <label>Nombre</label>
+              <span>{{ user.name }}</span>
+              <button type="button" (click)="editingName = !editingName">
+                <i class="lni lni-pencil-1"></i>
+              </button>
+            } @else {
+              <input type="text" formControlName="name" placeholder="Nuevo nombre" />
+              @if (profileForm.get('name')?.touched && profileForm.get('name')?.invalid) {
+                <small>
+                  @if (profileForm.get('name')?.errors?.['required']) {
+                    El nombre es obligatorio
+                  } @else if (profileForm.get('name')?.errors?.['minlength']) {
+                    Debe tener mínimo 3 letras
+                  }
+                </small>
+              }
+              <button (click)="updateName()" [disabled]="isLoading()">
+                @if (isLoading()) {
+                  <i class="lni lni-spinner-2-sacle"></i>
+                } @else {
+                  <i class="lni lni-floppy-disk-1"></i>
+                }
+              </button>
+              <button type="button" class="cancel-btn" (click)="editingName = false; profileForm.get('name')?.reset()" aria-label="Cancelar edición">
+                <i class="lni lni-xmark"></i>
+              </button>
+            }
+          </div>
+
+          <!-- Email -->
+          <div class="profile-field">
+            @if (!editingEmail) {
+              <label>Email</label>
+              <span>{{ user.email }}</span>
+              <button type="button" (click)="editingEmail = !editingEmail">
+                <i class="lni lni-pencil-1"></i>
+              </button>
+            } @else {
+              <input type="email" formControlName="email" placeholder="Nuevo email" />
+              @if (profileForm.get('email')?.touched && profileForm.get('email')?.invalid) {
+                <small>
+                  @if (profileForm.get('email')?.errors?.['required']) {
+                    El correo electrónico es obligatorio
+                  } @else if (profileForm.get('email')?.errors?.['invalidEmail']) {
+                    Formato inválido
+                  }
+                </small>
+              }
+              <button (click)="updateEmail()" [disabled]="isLoading()">
+                @if (isLoading()) {
+                  <i class="lni lni-spinner-2-sacle"></i>
+                } @else {
+                  <i class="lni lni-floppy-disk-1"></i>
+                }
+              </button>
+              <button type="button" class="cancel-btn" (click)="editingEmail = false; profileForm.get('email')?.reset()" aria-label="Cancelar edición">
+                <i class="lni lni-xmark"></i>
+              </button>
+            }
+          </div>
+
+          <!-- Contraseña -->
+          <div class="profile-field">
+            @if (!editingPassword) {
+              <label>Contraseña</label>
+              <span>********</span>
+              <button type="button" (click)="editingPassword = !editingPassword">
+                <i class="lni lni-pencil-1"></i>
+              </button>
+            } @else {
+              <input type="password" formControlName="password" placeholder="Nueva contraseña" />
+              @if (profileForm.get('password')?.touched && profileForm.get('password')?.invalid) {
+                <small>
+                  @if (profileForm.get('password')?.errors?.['required']) {
+                    La contraseña es obligatoria
+                  } @else if (profileForm.get('password')?.errors?.['minlength']) {
+                    Mínimo 16 caracteres
+                  } @else {
+                    Debe incluir mayúscula, número y caracter especial
+                  }
+                </small>
+              }
+              <button (click)="updatePassword()" [disabled]="isLoading()">
+                @if (isLoading()) {
+                  <i class="lni lni-spinner-2-sacle"></i>
+                } @else {
+                  <i class="lni lni-floppy-disk-1"></i>
+                }
+              </button>
+              <button type="button" class="cancel-btn" (click)="editingPassword = false; profileForm.get('password')?.reset()" aria-label="Cancelar edición">
+                <i class="lni lni-xmark"></i>
+              </button>
+            }
+          </div>
+
+          <div class="profile-field">
+            <label>Créditos</label>
+            <span>{{ user.credits }}</span>
+            @if (user.roleType === 'PLAYER') {
+              <button (click)="openRechargeModal()">
+                <i class="lni lni-dollar-circle"></i>
+              </button>
+            }
+          </div>
+        </div>
+      }
+
+      <!-- Preferencias -->
+      @if (activeTab === 'prefs') {
+        <div class="preferences">
+          <div class="pref-item">
+            <label for="theme">Tema</label>
+            <select id="theme">
+              <option>Claro</option>
+              <option>Oscuro</option>
+            </select>
+          </div>
+          <div class="pref-item">
+            <label for="language">Idioma</label>
+            <select id="language">
+              <option>Español</option>
+              <option>Inglés</option>
+            </select>
+          </div>
+          <div class="prefs-footer">
+            <button (click)="logout()">Cerrar sesión</button>
+          </div>
+        </div>
       }
     </div>
-
-    <!-- Email -->
-    <div>
-      <p><strong>Email:</strong> {{ user.email }}</p>
-      <button type="button" (click)="editingEmail = !editingEmail">
-        {{ editingEmail ? 'Cancelar' : 'Editar email' }}
-      </button>
-      @if (editingEmail) {
-        <input type="email" formControlName="email" placeholder="Nuevo email" />
-        @if (profileForm.get('email')?.touched && profileForm.get('email')?.invalid) {
-          @if (profileForm.get('email')?.errors?.['required']) {
-            <small>El correo electrónico es obligatorio</small>
-          }
-          @if (profileForm.get('email')?.errors?.['invalidEmail']) {
-            <small>Formato de correo electrónico no válido</small>
-          }
-        }
-        <button type="button" (click)="updateEmail()" [disabled]="profileForm.get('email')?.invalid">Guardar</button>
-      }
-    </div>
-
-    <!-- Contraseña -->
-    <div>
-      <p><strong>Contraseña:</strong> ********</p>
-      <button type="button" (click)="editingPassword = !editingPassword">
-        {{ editingPassword ? 'Cancelar' : 'Cambiar contraseña' }}
-      </button>
-      @if (editingPassword) {
-        <input type="password" formControlName="password" placeholder="Nueva contraseña" />
-        @if (profileForm.get('password')?.touched && profileForm.get('password')?.invalid) {
-          @if (profileForm.get('password')?.errors?.['required']) {
-            <small>La contraseña es obligatoria</small>
-          } @else {
-            @if (profileForm.get('password')?.errors?.['minlength']) {
-              <small>La contraseña debe tener al menos 16 caracteres</small>
-            }
-            @else  {
-              <small>La contraseña debe incluir una mayúscula, un número y un carácter especial</small>
-            }
-          }
-        }
-        <button type="button" (click)="updatePassword()" [disabled]="profileForm.get('password')?.invalid">Guardar</button>
-      }
-    </div>
-
-    <!-- Rol -->
-    <div>
-      <p><strong>Rol:</strong> {{ user.roleType | titlecase }}</p>
-    </div>
-
-    <!-- Creditos -->
-    <div>
-      <p><strong>Créditos:</strong> {{ user.credits }}</p>
-      @if (user.roleType === 'PLAYER') {
-        <button (click)="openRechargeModal()">Recargar Créditos</button>
-      }
-    </div>
-
-    <!-- Modal para recargar créditos -->
-    @if (showRechargeModal) {
-      <app-modal (closeModal)="closeRechargeModal()">
-        <ng-container modal-header>Recargar Créditos</ng-container>
-        <ng-container modal-body>
-          <input type="number" formControlName="amount" placeholder="Monto a recargar" />
-          @if (profileForm.get('amount')?.touched && profileForm.get('amount')?.invalid) {
-            @if (profileForm.get('amount')?.errors?.['required']) {
-              <small>El monto es obligatorio</small>
-            }
-            @if (profileForm.get('amount')?.errors?.['min']) {
-              <small>El monto debe ser al menos 1</small>
-            }
-          }
-        </ng-container>
-        <ng-container modal-footer>
-          <button (click)="recharge()">Aceptar</button>
-          <button (click)="closeRechargeModal()">Cancelar</button>
-        </ng-container>
-      </app-modal>
-    }
   </div>
 
+  @if (showRechargeModal) {
+    <app-modal [width]="'400px'" (closeModal)="closeRechargeModal()">
+      <ng-container modal-header>Recargar créditos</ng-container>
+      <ng-container modal-body>
+        <form [formGroup]="profileForm">
+          <div class="form-field">
+            <div class="input-icon-wrapper">
+              <input type="number" formControlName="amount" placeholder="Monto a recargar">
+              <i class="lni lni-paypal icon"></i>
+              @if (profileForm.get('amount')?.touched && profileForm.get('amount')?.invalid) {
+                @if (profileForm.get('amount')?.errors?.['required']) {
+                  <small>El monto es obligatorio</small>
+                }
+                @if (profileForm.get('amount')?.errors?.['min']) {
+                  <small>El monto debe ser al menos 1</small>
+                }
+              }
+            </div>
+          </div>
+        </form>
+      </ng-container>
+      <ng-container modal-footer>
+        <button class="button-submit" (click)="recharge()" [disabled]="isLoading()">
+          @if (isLoading()) {
+          <span class="spinner"></span>
+          } @else {
+            Aceptar
+          }
+        </button>
+      </ng-container>
+    </app-modal>
+  }
 } @else {
-  <p>Cargando perfil...</p>
+  <div class="profile-skeleton-wrapper">
+    <p class="profile-skeleton-title">Cargando perfil…</p>
+
+    <div class="profile-skeleton-card">
+      <div class="profile-skeleton-header">
+        <div class="profile-skeleton-img"></div>
+        <div class="profile-skeleton-details">
+          <span class="profile-skeleton-name"></span>
+          <span class="profile-skeleton-about"></span>
+        </div>
+      </div>
+      <div class="profile-skeleton-description">
+        <div class="profile-skeleton-line line-1"></div>
+        <div class="profile-skeleton-line line-2"></div>
+        <div class="profile-skeleton-line line-3"></div>
+      </div>
+      <div class="profile-skeleton-btns">
+        <div class="profile-skeleton-btn btn-1"></div>
+        <div class="profile-skeleton-btn btn-2"></div>
+      </div>
+    </div>
+  </div>
 }
-<button (click)="logout()">Cerrar sesión</button>

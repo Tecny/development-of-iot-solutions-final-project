@@ -5,15 +5,14 @@ import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {AuthService} from '../../../../auth/services/auth.service';
 import {customEmailValidator} from '../../../../shared/validators/forms.validator';
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
-import {TitleCasePipe} from '@angular/common';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-view-profile',
   imports: [
     ReactiveFormsModule,
     ModalComponent,
-    FormsModule,
-    TitleCasePipe
+    FormsModule
   ],
   templateUrl: './view-profile.component.html',
   styleUrl: './view-profile.component.scss',
@@ -21,13 +20,17 @@ import {TitleCasePipe} from '@angular/common';
 })
 
 export class ViewProfileComponent implements OnInit {
+
   private profileService = inject(ProfileService);
   private authService = inject(AuthService);
   private fb = inject(FormBuilder);
+  private toastService = inject(ToastrService);
 
   userInfo = signal<UserProfile | null>(null);
+  isLoading = signal(false);
 
   profileForm!: FormGroup;
+  activeTab: 'info' | 'prefs' = 'info';
 
   editingName = false;
   editingEmail = false;
@@ -56,7 +59,7 @@ export class ViewProfileComponent implements OnInit {
       password: ['', [
         Validators.required,
         Validators.minLength(16),
-        Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{16,}$/)
+        Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{16,}$/)
       ]],
       amount: ['', [Validators.required, Validators.min(1)]],
     });
@@ -66,25 +69,29 @@ export class ViewProfileComponent implements OnInit {
     const nameControl = this.profileForm.get('name');
     const name = nameControl?.value.trim();
     const currentName = this.userInfo()?.name;
-
     if (!nameControl?.valid) {
       nameControl?.markAsTouched();
-      console.error('Invalid or empty name.');
       return;
     }
 
     if (name === currentName) {
-      console.error('New name must be different.');
+      this.toastService.error('No se puede repetir el nombre ya existente', 'Error');
       return;
     }
 
+    this.isLoading.set(true);
     this.profileService.changeName(name).subscribe({
       next: () => {
+        this.isLoading.set(false);
         this.editingName = false;
         this.loadUserInfo();
         nameControl.reset();
+        this.toastService.success('Nombre actualizado correctamente', 'Éxito');
       },
-      error: () => console.error('Error updating name.')
+      error: () => {
+        this.isLoading.set(false);
+        this.toastService.error('Hubo un error al actualizar el nombre', 'Error');
+      }
     });
   }
 
@@ -95,22 +102,27 @@ export class ViewProfileComponent implements OnInit {
 
     if (!emailControl?.valid) {
       emailControl?.markAsTouched();
-      console.error('Invalid or empty email.');
       return;
     }
 
     if (email === currentEmail) {
-      console.error('New email must be different.');
+      this.toastService.error('No se puede repetir el email ya existente', 'Error');
       return;
     }
 
+    this.isLoading.set(true);
     this.profileService.changeEmail(email).subscribe({
       next: () => {
+        this.isLoading.set(false);
         this.editingEmail = false;
         this.loadUserInfo();
         emailControl.reset();
+        this.toastService.success('Correo electrónico actualizado correctamente', 'Éxito');
       },
-      error: () => console.error('Error updating email.')
+      error: () => {
+        this.isLoading.set(false);
+        this.toastService.error('Hubo un error al actualizar el correo electrónico', 'Error');
+      }
     });
   }
 
@@ -126,12 +138,18 @@ export class ViewProfileComponent implements OnInit {
       return;
     }
 
+    this.isLoading.set(true);
     this.profileService.changePassword(password).subscribe({
       next: () => {
+        this.isLoading.set(false);
         this.editingPassword = false;
         passwordControl.reset();
+        this.toastService.success('Contraseña actualizada correctamente', 'Éxito');
       },
-      error: () => console.error('Error updating password.')
+      error: () => {
+        this.isLoading.set(false);
+        this.toastService.error('Hubo un error al actualizar la contraseña', 'Error');
+      }
     });
   }
 
@@ -145,31 +163,49 @@ export class ViewProfileComponent implements OnInit {
   }
 
   recharge() {
+    if (!this.profileForm.get('amount')?.valid) {
+      this.profileForm.get('amount')?.markAsTouched();
+      return;
+    }
+
+    const width = Math.min(800, Math.floor(window.innerWidth * 0.9));
+    const height = Math.min(600, Math.floor(window.innerHeight * 0.85));
+    const left = Math.floor((window.innerWidth - width) / 2);
+    const top = Math.floor((window.innerHeight - height) / 2);
+
+    const features = `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`;
+
     const amountControl = this.profileForm.get('amount');
     const amount = amountControl?.value;
-    this.closeRechargeModal();
 
+    this.isLoading.set(true);
     this.profileService.rechargeCredits(amount).subscribe({
       next: (response) => {
         const approvalUrl = response.approval_url;
-        const paymentWindow = window.open(approvalUrl, 'PayPal Payment', 'width=800, height=600');
+        const paymentWindow = window.open(approvalUrl, 'PayPal Payment', features);
         if (paymentWindow) {
           const interval = setInterval(() => {
             if (paymentWindow.closed) {
+              this.isLoading.set(false);
+              this.closeRechargeModal();
               clearInterval(interval);
               this.loadUserInfo();
+              this.toastService.success('Recarga realizada correctamente', 'Éxito');
             }
           }, 1000);
         } else {
-          console.error('No se pudo abrir la ventana de pago.');
+          this.toastService.error('No se pudo abrir la ventana de pago', 'Error');
         }
       },
-      error: () => console.error('Error during recharge.')
+      error: () => {
+        this.toastService.error('Hubo un error al abrir la ventana de pago', 'Error');
+      }
     });
   }
 
   logout() {
     this.authService.logout();
+    this.toastService.success('Has cerrado sesión correctamente', 'Éxito');
   }
 }
 
