@@ -127,6 +127,26 @@
     padding: 3rem 1.5rem 1.5rem;
     background-color: var.$background;
 
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      position: relative;
+
+      small {
+        margin-top: 0.2rem;
+        color: var.$error;
+        font-size: 0.85rem;
+        text-align: left;
+        position: static;
+        padding-top: 0;
+        left: unset;
+        bottom: unset;
+        flex-basis: unset;
+        display: block;
+      }
+    }
+
     .profile-fields,
     .preferences {
       display: flex;
@@ -144,6 +164,7 @@
       input, select {
         flex: 1 1 auto;
         border-color: #ccc;
+        padding-bottom: 1.7rem;
 
         &.ng-invalid.ng-touched,
         &.ng-invalid.ng-dirty {
@@ -242,15 +263,6 @@
         font-size: 1rem;
         transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
-      }
-
-      small {
-        color: var.$error;
-        font-size: 0.85rem;
-        margin-left: 0.5rem;
-        flex-basis: 100%;
-        text-align: right;
-        padding-top: 0.2rem;
       }
     }
 

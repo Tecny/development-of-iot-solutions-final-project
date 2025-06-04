@@ -27,16 +27,18 @@
                 <i class="lni lni-pencil-1"></i>
               </button>
             } @else {
-              <input type="text" formControlName="name" placeholder="Nuevo nombre" />
-              @if (profileForm.get('name')?.touched && profileForm.get('name')?.invalid) {
-                <small>
-                  @if (profileForm.get('name')?.errors?.['required']) {
-                    El nombre es obligatorio
-                  } @else if (profileForm.get('name')?.errors?.['minlength']) {
-                    Debe tener mínimo 3 letras
-                  }
-                </small>
-              }
+              <div class="input-group">
+                <input type="text" formControlName="name" placeholder="Nuevo nombre" />
+                @if (profileForm.get('name')?.touched && profileForm.get('name')?.invalid) {
+                  <small>
+                    @if (profileForm.get('name')?.errors?.['required']) {
+                      El nombre es obligatorio
+                    } @else if (profileForm.get('name')?.errors?.['minlength']) {
+                      Debe tener mínimo 3 letras
+                    }
+                  </small>
+                }
+              </div>
               <button (click)="updateName()" [disabled]="isLoading()">
                 @if (isLoading()) {
                   <i class="lni lni-spinner-2-sacle"></i>
@@ -59,16 +61,18 @@
                 <i class="lni lni-pencil-1"></i>
               </button>
             } @else {
-              <input type="email" formControlName="email" placeholder="Nuevo email" />
-              @if (profileForm.get('email')?.touched && profileForm.get('email')?.invalid) {
-                <small>
-                  @if (profileForm.get('email')?.errors?.['required']) {
-                    El correo electrónico es obligatorio
-                  } @else if (profileForm.get('email')?.errors?.['invalidEmail']) {
-                    Formato inválido
-                  }
-                </small>
-              }
+              <div class="input-group">
+                <input type="email" formControlName="email" placeholder="Nuevo email" />
+                @if (profileForm.get('email')?.touched && profileForm.get('email')?.invalid) {
+                  <small>
+                    @if (profileForm.get('email')?.errors?.['required']) {
+                      El correo electrónico es obligatorio
+                    } @else if (profileForm.get('email')?.errors?.['invalidEmail']) {
+                      Formato inválido
+                    }
+                  </small>
+                }
+              </div>
               <button (click)="updateEmail()" [disabled]="isLoading()">
                 @if (isLoading()) {
                   <i class="lni lni-spinner-2-sacle"></i>
@@ -91,18 +95,20 @@
                 <i class="lni lni-pencil-1"></i>
               </button>
             } @else {
-              <input type="password" formControlName="password" placeholder="Nueva contraseña" />
-              @if (profileForm.get('password')?.touched && profileForm.get('password')?.invalid) {
-                <small>
-                  @if (profileForm.get('password')?.errors?.['required']) {
-                    La contraseña es obligatoria
-                  } @else if (profileForm.get('password')?.errors?.['minlength']) {
-                    Mínimo 16 caracteres
-                  } @else {
-                    Debe incluir mayúscula, número y caracter especial
-                  }
-                </small>
-              }
+              <div class="input-group">
+                <input type="password" formControlName="password" placeholder="Nueva contraseña" />
+                @if (profileForm.get('password')?.touched && profileForm.get('password')?.invalid) {
+                  <small>
+                    @if (profileForm.get('password')?.errors?.['required']) {
+                      La contraseña es obligatoria
+                    } @else if (profileForm.get('password')?.errors?.['minlength']) {
+                      Mínimo 16 caracteres
+                    } @else {
+                      Debe incluir mayúscula, número y caracter especial
+                    }
+                  </small>
+                }
+              </div>
               <button (click)="updatePassword()" [disabled]="isLoading()">
                 @if (isLoading()) {
                   <i class="lni lni-spinner-2-sacle"></i>
