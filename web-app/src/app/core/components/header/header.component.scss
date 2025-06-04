@@ -1,23 +1,37 @@
+@use 'abstracts/variables' as var;
+
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(
-      180deg,
-      #049f77 0%,
-      #048f6b 25%,
-      #037f5f 55%,
-      #036f53 80%,
-      #025f47 100%
-  );
+  //background: linear-gradient(
+  //    180deg,
+  //    #049f77 0%,
+  //    #048f6b 25%,
+  //    #037f5f 55%,
+  //    #036f53 80%,
+  //    #025f47 100%
+  //);
+  //background: linear-gradient(90deg, var.$green-dark 0%, var.$green-medium 60%, var.$green-deep 100%);
+  background: var.$neutral;
   padding: 0 2rem;
   height: 4rem;
+  font-family: 'Poppins', sans-serif;
 
   .logo {
-    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 
     img {
       height: 2.5rem;
+    }
+
+    .logo__text {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #222222;
+      margin-left: 0.5rem;
     }
   }
 
@@ -62,7 +76,7 @@
 
     .menu__icon {
       font-size: 1.8rem;
-      color: #e1fbe3;
+      color: #222222;
     }
 
     .menu__label {
