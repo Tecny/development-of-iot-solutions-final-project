@@ -21,7 +21,9 @@ import {NgStyle} from '@angular/common';
         <div class="modal" [ngStyle]="{ 'max-width': width }">
           <div class="modal__header">
             <ng-content select="[modal-header]"></ng-content>
-            <button (click)="closeModal.emit()">×</button>
+            <button class="modal__close" (click)="closeModal.emit()" aria-label="Cerrar">
+              <i class="lni lni-xmark"></i>
+            </button>
           </div>
           <div class="modal__body">
             <ng-content select="[modal-body]"></ng-content>
