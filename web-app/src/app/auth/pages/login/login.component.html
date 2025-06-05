@@ -43,7 +43,7 @@
       </div>
       <button type="submit" class="button-submit" [disabled]="isLoading()">
         @if (isLoading()) {
-          <span class="spinner"></span>
+          <span class="spinner-default"></span>
         } @else {
           Ingresar
         }
@@ -94,7 +94,7 @@
               [disabled]="isLoading()"
               form="recoverForm">
         @if (isLoading()) {
-          <span class="spinner"></span>
+          <span class="spinner-default"></span>
         } @else {
           Enviar
         }

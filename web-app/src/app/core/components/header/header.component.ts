@@ -29,7 +29,6 @@ export class HeaderComponent {
   role = computed(() => this.currentUser()?.roleType ?? null);
 
   isMenuOpen = false;
-  isTouchDevice = false;
 
   constructor() {
     this.authService.isAuthenticated().subscribe(auth => {
