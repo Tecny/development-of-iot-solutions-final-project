@@ -518,7 +518,7 @@ input[type="number"] {
   }
 }
 
-@media (max-height: 360px) {
+@media (max-height: 520px) {
   .profile-panel {
     height: calc(100dvh - 4rem);
     overflow-y: auto;

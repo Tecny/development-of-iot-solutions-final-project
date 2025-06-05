@@ -25,7 +25,8 @@ export class AuthService {
   login(loginRequest: LoginRequest) {
     return this.http.post<{ token: string }>(`${this.baseUrl}/authentication/sign-in`, loginRequest).pipe(
       tap((response) => {
-        document.cookie = `tokenCookie=${response.token}; path=/`;
+        const expires = new Date((JSON.parse(atob(response.token.split('.')[1])).exp * 1000) - (5 * 60 * 60 * 1000)).toUTCString();
+        document.cookie = `tokenCookie=${response.token}; path=/; expires=${expires};`;
         this.isLoggedIn.next(true);
 
         this.http.get<UserProfile>(`${this.baseUrl}/users/me`).subscribe({
@@ -35,7 +36,6 @@ export class AuthService {
       })
     );
   }
-
 
   register(registerRequest: RegisterRequest) {
     return this.http.post(`${this.baseUrl}/users/sign-up`, registerRequest);
@@ -53,7 +53,7 @@ export class AuthService {
         next: (user) => this.userStore.setUser(user),
         error: (err) => {
           console.error('Error al cargar usuario en checkAuth()', err);
-          this.isLoggedIn.next(false); // fallback
+          this.isLoggedIn.next(false);
         }
       });
     } else {
@@ -61,7 +61,6 @@ export class AuthService {
       this.userStore.clearUser();
     }
   }
-
 
   isAuthenticated(): Observable<boolean> {
     return this.isLoggedIn.asObservable();
