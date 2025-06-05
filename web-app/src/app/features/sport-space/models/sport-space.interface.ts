@@ -10,6 +10,8 @@ export interface SportSpace {
   description: string;
   openTime: string;
   closeTime: string;
+  latitude: number;
+  longitude: number;
   user: User;
 }
 

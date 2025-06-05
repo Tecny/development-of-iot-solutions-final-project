@@ -19,35 +19,52 @@
   />
 }
 
-@defer (prefetch on viewport) {
-  @if (sportSpaces(); as spaces) {
-    <div class="cards-grid">
-      @for (space of spaces; track space.id) {
-        <app-sport-space-card [sportSpace]="space" />
-      } @empty {
-        <div class="empty-state">
-          <i class="lni lni-megaphone-1 empty-icon"></i>
-          <p>No tienes espacios deportivos registrados, empieza agregando uno mejorando tu suscripción</p>
-        </div>
-      }
+<div class="grid-map-wrapper">
+  @if (isMapView()) {
+    <div class="map-container">
+      <div id="map"></div>
     </div>
   } @else {
-    <div class="cards-grid">
-      @for (i of loadingSkeletons(); track i) {
-        <div class="skeleton-card"></div>
+    @defer (prefetch on viewport) {
+      @if (sportSpaces(); as spaces) {
+        <div class="cards-grid">
+          @for (space of spaces; track space.id) {
+            <app-sport-space-card [sportSpace]="space" />
+          } @empty {
+            <div class="empty-state">
+              <i class="lni lni-megaphone-1 empty-icon"></i>
+              <p>No tienes espacios deportivos registrados, empieza agregando uno mejorando tu suscripción</p>
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="cards-grid">
+          @for (i of loadingSkeletons(); track i) {
+            <div class="skeleton-card"></div>
+          }
+        </div>
       }
-    </div>
-  }
-} @placeholder {
-  <div class="empty-state">
-    <i class="lni lni-hourglass placeholder-icon"></i>
-    <p>Preparando carga de espacios deportivos...</p>
-  </div>
-} @loading {
-  <div class="cards-grid">
-    @for (i of loadingSkeletons(); track i) {
-      <div class="skeleton-card"></div>
+    } @placeholder {
+      <div class="empty-state">
+        <i class="lni lni-hourglass placeholder-icon"></i>
+        <p>Preparando carga de espacios deportivos...</p>
+      </div>
+    } @loading {
+      <div class="cards-grid">
+        @for (i of loadingSkeletons(); track i) {
+          <div class="skeleton-card"></div>
+        }
+      </div>
     }
-  </div>
-}
+  }
+</div>
+
+<button class="toggle-view-btn" (click)="toggleView()">
+  <i class="lni" [ngClass]="{
+    'lni-map-marker-1': !isMapView(),
+    'lni-layout-9': isMapView()
+  }"></i>
+</button>
+
+
 
