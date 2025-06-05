@@ -38,3 +38,30 @@
   }
 }
 
+.button-submit--danger {
+  display: inline-block;
+  width: fit-content;
+  align-self: center;
+  padding: 0.75rem 1.5rem;
+  background-color: #dc2626;
+  color: #fff;
+  font-weight: 400;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.35s ease-in-out;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.15);
+
+  &:hover {
+    background-color: #b91c1c;
+  }
+
+  &:disabled {
+    background-color: #dc2626;
+    cursor: not-allowed;
+  }
+}
+
+
