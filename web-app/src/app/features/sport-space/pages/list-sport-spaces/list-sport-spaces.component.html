@@ -1,20 +1,23 @@
-<h1>Espacios deportivos</h1>
-
-@defer (on timer(300ms)) {
-  @if (showAddSportSpaceButton) {
-    <button routerLink="/sport-spaces/create">Añadir un espacio deportivo</button>
+<div class="title-wrapper">
+  <h2 class="section-title">Espacios Deportivos</h2>
+  @if (showAddSportSpaceButton()) {
+    <button class="add-sport-btn" routerLink="/sport-spaces/create" title="Añadir espacio">
+      <i class="lni lni-plus"></i>
+    </button>
   }
-}
+</div>
 
-<app-filter
-  [config]="[
+@if (this.userRole === UserRole.PLAYER) {
+  <app-filter
+    [config]="[
     { field: 'sport', type: 'select', label: 'Deporte', options: SPORTS },
     { field: 'price', type: 'number', label: 'Precio máximo' },
     { field: 'openTime', type: 'time', label: 'Hora de apertura'},
     { field: 'closeTime', type: 'time', label: 'Hora de cierre'}
   ]"
-  (filtersChanged)="onFiltersChanged($event)"
-/>
+    (filtersChanged)="onFiltersChanged($event)"
+  />
+}
 
 @defer (prefetch on viewport) {
   @if (sportSpaces(); as spaces) {
@@ -22,14 +25,29 @@
       @for (space of spaces; track space.id) {
         <app-sport-space-card [sportSpace]="space" />
       } @empty {
-        <p>No tienes espacios deportivos registrados</p>
+        <div class="empty-state">
+          <i class="lni lni-megaphone-1 empty-icon"></i>
+          <p>No tienes espacios deportivos registrados, empieza agregando uno mejorando tu suscripción</p>
+        </div>
       }
     </div>
   } @else {
-    <p>Cargando espacios deportivos...</p>
+    <div class="cards-grid">
+      @for (i of loadingSkeletons(); track i) {
+        <div class="skeleton-card"></div>
+      }
+    </div>
   }
 } @placeholder {
-  <p>Preparando carga de espacios deportivos...</p>
+  <div class="empty-state">
+    <i class="lni lni-hourglass placeholder-icon"></i>
+    <p>Preparando carga de espacios deportivos...</p>
+  </div>
 } @loading {
-  <p>Cargando espacios deportivos...</p>
+  <div class="cards-grid">
+    @for (i of loadingSkeletons(); track i) {
+      <div class="skeleton-card"></div>
+    }
+  </div>
 }
+

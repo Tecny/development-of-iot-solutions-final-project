@@ -1,5 +1,62 @@
-.cards-grid{
+@use 'abstracts/variables' as var;
+@use 'components/section-title';
+
+.cards-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+.skeleton-card {
+  height: 180px;
+  border-radius: 1rem;
+  background: linear-gradient(
+      90deg,
+      #e0e0e0 25%,
+      #f0f0f0 50%,
+      #e0e0e0 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.2s infinite;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #777;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: rgba(var.$green-medium, 0.6);
+  }
+
+  p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #555;
+  }
+
+  &.placeholder-icon {
+    color: #ccc;
+  }
+
+  &.empty-icon {
+    color: #bbb;
+  }
+}
+
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }

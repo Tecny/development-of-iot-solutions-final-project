@@ -30,7 +30,8 @@ export class ListSportSpacesComponent implements OnInit {
 
   allSpaces: SportSpace[] = [];
   sportSpaces = signal<SportSpace[] | null>(null);
-  showAddSportSpaceButton = false;
+  showAddSportSpaceButton = signal(false);
+  loadingSkeletons = signal(Array.from({ length: 20 }, (_, i) => i));
 
   filters = {
     sport: null,
@@ -56,21 +57,19 @@ export class ListSportSpacesComponent implements OnInit {
         if (this.userRole === UserRole.OWNER) {
           this.canAddSportSpace();
         } else {
-          this.showAddSportSpaceButton = false;
+          this.showAddSportSpaceButton.set(false);
         }
       },
       error: (err) => {
         if (err.status === 404) {
           this.allSpaces = [];
           this.sportSpaces.set([]);
-        } else {
-          console.error('Error loading sport spaces');
         }
 
         if (this.userRole === UserRole.OWNER) {
           this.canAddSportSpace();
         } else {
-          this.showAddSportSpaceButton = false;
+          this.showAddSportSpaceButton.set(false);
         }
       }
     });
@@ -79,11 +78,10 @@ export class ListSportSpacesComponent implements OnInit {
   canAddSportSpace(): void {
     this.sportSpaceService.canAddSportSpace().subscribe({
       next: (allow) => {
-        this.showAddSportSpaceButton = allow.canAdd;
+        this.showAddSportSpaceButton.set(allow.canAdd);
       },
       error: () => {
-        console.error('Error checking if user can add sport space');
-        this.showAddSportSpaceButton = false;
+        this.showAddSportSpaceButton.set(false);
       }
     });
   }
@@ -110,4 +108,5 @@ export class ListSportSpacesComponent implements OnInit {
   }
 
   protected readonly SPORTS = SPORTS;
+  protected readonly UserRole = UserRole;
 }

@@ -29,6 +29,8 @@
 }
 
   @if (Object.keys(filters).length > 0) {
-    <button (click)="clearFilters()">Limpiar filtros</button>
+    <button class="clear-filters-btn" (click)="clearFilters()">
+      <i class="lni lni-funnel-1"></i>
+    </button>
   }
 </div>
