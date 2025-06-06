@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  height: calc(100vh - 180px);
 
   @media (min-width: 1024px) {
     flex-direction: row;
@@ -21,12 +20,16 @@
 }
 
 .map-container {
-  flex: 1;
   min-width: 300px;
   position: sticky;
   top: 16rem;
   height: calc(100vh - 160px);
   padding: 1rem;
+
+  // Mover el flex solo a escritorio
+  @media (min-width: 1024px) {
+    flex: 1;
+  }
 
   #map {
     height: 100%;
@@ -34,8 +37,23 @@
     border-radius: 1rem;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
   }
-}
 
+  // En mobile, podemos usar un alto fijo
+  @media (max-width: 1023px) {
+    .map-container {
+      position: relative;
+      top: unset;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+    }
+
+    .map-container #map {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
 
 .cards-grid {
   display: grid;
@@ -88,10 +106,9 @@
 }
 
 .toggle-view-btn {
-  position: sticky;
+  position: fixed;
   bottom: 1.5rem;
-  left: 100%;
-  transform: translateX(-4rem);
+  right: 1.5rem; /* Mejor usar right que left + translate */
   background-color: rgba(#333, 0.9);
   border: none;
   border-radius: 50%;
@@ -110,6 +127,7 @@
     background-color: rgba(#111, 0.9);
   }
 }
+
 
 @keyframes skeleton-shimmer {
   0% {

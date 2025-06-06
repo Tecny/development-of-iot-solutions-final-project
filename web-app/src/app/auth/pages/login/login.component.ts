@@ -81,13 +81,11 @@ export class LoginComponent {
       next: () => {
         this.recoverPasswordForm.reset();
         this.showRecoverModal = false;
-        //this.correctMessage.set(true);
         this.isLoading.set(false);
         this.toastService.success('Se envió un enlace de recuperación a tu correo', 'Éxito');
       },
       error: () => {
         this.isLoading.set(false);
-        //this.correctMessage.set(false);
         this.errorMessage.set(true);
         this.toastService.error('Error al enviar el correo de recuperación', 'Error');
       }

@@ -1,9 +1,10 @@
 import {
+  AfterViewInit,
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
   inject,
-  Input,
+  Input, OnDestroy,
   OnInit,
   Output,
   ViewChild
@@ -39,7 +40,7 @@ import {NgClass, NgStyle} from '@angular/common';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class ModalComponent implements OnInit {
+export class ModalComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(CdkPortal) portal: CdkPortal | undefined;
   @Input() width: string = '600px';
   @Input() variant: 'default' | 'danger' | 'info' | 'success' = 'default';

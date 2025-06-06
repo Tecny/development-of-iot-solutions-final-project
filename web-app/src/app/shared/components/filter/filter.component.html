@@ -3,9 +3,14 @@
     <label [for]="filter.field">{{ filter.label }}</label>
 
     @if (filter.type === 'select') {
-      <select [id]="filter.field" [(ngModel)]="filters[filter.field]" (change)="emitChanges()">
+      <select
+        [id]="filter.field"
+        [(ngModel)]="filters[filter.field]"
+        (change)="onSelectChange(filter.field, getSelectValue($event))"
+        [disabled]="filter.field === 'gamemode' && !filters['sport']"
+      >
         @for (option of filter.options; track option.value) {
-          <option [value]="option.value">{{ option.label }}</option>
+          <option [value]="option.value" [disabled]="option.disabled">{{ option.label }}</option>
         }
       </select>
     }

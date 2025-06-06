@@ -11,7 +11,7 @@ import {SportSpace} from '../../models/sport-space.interface';
 import {RouterLink} from '@angular/router';
 import {SportSpaceService} from '../../services/sport-space.service';
 import {UserStoreService} from '../../../../core/services/user-store.service';
-import {sportIdToLabelMap} from '../../../../shared/models/sport-space.constants';
+import {gamemodeIdToLabelMap} from '../../../../shared/models/sport-space.constants';
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 import {ToastrService} from 'ngx-toastr';
 @Component({
@@ -27,7 +27,7 @@ import {ToastrService} from 'ngx-toastr';
 
         <div class="sportspace-card__type-badge">
           {{ sportIdToEmojiMap[sportSpace.sportId] }}
-          {{ sportIdToLabelMap[sportSpace.sportId] }}
+          {{ gamemodeIdToLabelMap[sportSpace.gamemodeId] }}
         </div>
 
         @if (isOwner()) {
@@ -131,5 +131,5 @@ export class SportSpaceCardComponent implements OnChanges {
     }
   }
 
-  protected readonly sportIdToLabelMap = sportIdToLabelMap;
+  protected readonly gamemodeIdToLabelMap = gamemodeIdToLabelMap;
 }

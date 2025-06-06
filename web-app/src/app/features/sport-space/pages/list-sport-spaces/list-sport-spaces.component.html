@@ -11,9 +11,9 @@
   <app-filter
     [config]="[
     { field: 'sport', type: 'select', label: 'Deporte', options: SPORTS },
+    { field: 'gamemode', type: 'select', label: 'Modo de juego', options: [] },
     { field: 'price', type: 'number', label: 'Precio máximo' },
-    { field: 'openTime', type: 'time', label: 'Hora de apertura'},
-    { field: 'closeTime', type: 'time', label: 'Hora de cierre'}
+    { field: 'openTime', type: 'time', label: 'Hora de apertura'}
   ]"
     (filtersChanged)="onFiltersChanged($event)"
   />
@@ -31,10 +31,17 @@
           @for (space of spaces; track space.id) {
             <app-sport-space-card [sportSpace]="space" />
           } @empty {
-            <div class="empty-state">
-              <i class="lni lni-megaphone-1 empty-icon"></i>
-              <p>No tienes espacios deportivos registrados, empieza agregando uno mejorando tu suscripción</p>
-            </div>
+            @if (this.userRole === UserRole.OWNER) {
+              <div class="empty-state">
+                <i class="lni lni-megaphone-1 empty-icon"></i>
+                <p>No tienes espacios deportivos registrados, empieza agregando uno mejorando tu suscripción</p>
+              </div>
+            } @else {
+              <div class="empty-state">
+                <i class="lni lni-eraser-1"></i>
+                <p>No se encontaron espacios deportivos :(</p>
+              </div>
+            }
           }
         </div>
       } @else {
@@ -62,7 +69,7 @@
 <button class="toggle-view-btn" (click)="toggleView()">
   <i class="lni" [ngClass]="{
     'lni-map-marker-1': !isMapView(),
-    'lni-layout-9': isMapView()
+    'lni-dashboard-square-1 ': isMapView()
   }"></i>
 </button>
 

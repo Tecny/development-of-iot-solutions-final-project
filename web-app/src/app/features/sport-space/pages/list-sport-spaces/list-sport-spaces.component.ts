@@ -13,6 +13,7 @@ import {UserRole} from '../../../../core/models/user.role.enum';
 import {RouterLink} from '@angular/router';
 import {FiltersComponent} from '../../../../shared/components/filter/filter.component';
 import {
+  GAMEMODE_OPTIONS,
   getSportIdByValue,
   SPORTS
 } from '../../../../shared/models/sport-space.constants';
@@ -47,9 +48,9 @@ export class ListSportSpacesComponent implements OnInit {
 
   filters = {
     sport: null,
+    gamemode: null,
     price: null,
-    openTime: null,
-    closeTime: null,
+    openTime: null
   };
 
   constructor() {
@@ -71,7 +72,6 @@ export class ListSportSpacesComponent implements OnInit {
         }
       });
 
-      // Agregar marcadores actualizados
       spaces.forEach(space => {
         if (space.latitude && space.longitude) {
           const popupHtml = `
@@ -255,7 +255,6 @@ export class ListSportSpacesComponent implements OnInit {
 
   }
 
-
   loadSportSpaces() {
     const request$ = this.userRole === UserRole.OWNER
       ? this.sportSpaceService.getMySportSpaces()
@@ -304,15 +303,20 @@ export class ListSportSpacesComponent implements OnInit {
   }
 
   applyFilters() {
-    const { sport, price, openTime, closeTime } = this.filters;
+    const { sport, price, openTime, gamemode } = this.filters;
+
     const sportId = sport ? getSportIdByValue(sport) : undefined;
+
+    const gamemodeId = gamemode
+      ? GAMEMODE_OPTIONS.find(g => g.value === gamemode)?.id
+      : undefined;
 
     const filtered = this.allSpaces.filter(space => {
       return (
         (!sportId || space.sportId === sportId) &&
         (!price || space.price <= price) &&
         (!openTime || String(space.openTime) <= String(openTime)) &&
-        (!closeTime || String(space.closeTime) <= String(closeTime))
+        (!gamemodeId || space.gamemodeId === gamemodeId)
       );
     });
 
