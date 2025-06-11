@@ -547,8 +547,10 @@
      - 6.3.3. [Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
   - 6.4. [Video About the Product](#64-video-about-the-product)
 
- [Conclusiones](#vii-conclusiones)
- [Bibliografía](#viii-bibliografia)
+ [Conclusiones y Recomendaciones](#vii-conclusiones-y-recomendaciones)
+  - 7.1. [About the Team](#71-about-the-team)<br>
+  
+ [Bibliografía](#viii-bibliografia)<br>
  [Anexos](#ix-anexos)
 
 <div style="page-break-before: always;"></div>
@@ -6395,7 +6397,7 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 
 <div style="page-break-before: always;"></div>
 
-# VII. Conclusiones
+# VII. Conclusiones y Recomendaciones
 
 - El proceso de entrevistas y la creación de user personas nos ha permitido obtener una comprensión profunda de nuestro segmento objetivo. Esta información compartida es fundamental para asegurarnos de que D’Taquito se adapte a las necesidades y expectativas de nuestros usuarios.
 
@@ -6408,6 +6410,10 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 - El impact mapping es una excelente herramienta para visualizar los resultados que esperamos lograr con nuestra aplicación. Trabajar juntos en este mapa nos ayuda a mantener un enfoque claro en los objetivos y asegurarnos de que cada característica contribuya directamente a esos objetivos compartidos.
 
 - El uso del modelo C4 ha sido clave para mejorar la claridad en la representación visual de la arquitectura de D’Taquito. La aplicación de este modelo ha facilitado la comunicación entre el equipo técnico y no técnico, proporcionando una visión comprensible y coherente de cómo los componentes del sistema se interrelacionan y cómo se cumplen los requisitos del negocio.
+
+## 7.1. About the Team
+
+
 
 <div style="page-break-before: always;"></div>
 
