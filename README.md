@@ -546,12 +546,10 @@
      - 6.3.2. [Registro de Entrevistas](#632-registro-de-entrevistas)
      - 6.3.3. [Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
   - 6.4. [Video About the Product](#64-video-about-the-product)
-    <br>
-    [Conclusiones](#conclusiones)
-    <br>
-    [Bibliografía](#bibliografia)
-    <br>
-    [Anexos](#anexos)
+
+ [Conclusiones](#vii-conclusiones)
+ [Bibliografía](#viii-bibliografia)
+ [Anexos](#ix-anexos)
 
 <div style="page-break-before: always;"></div>
 
@@ -6397,7 +6395,7 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 
 <div style="page-break-before: always;"></div>
 
-# Conclusiones
+# VII. Conclusiones
 
 - El proceso de entrevistas y la creación de user personas nos ha permitido obtener una comprensión profunda de nuestro segmento objetivo. Esta información compartida es fundamental para asegurarnos de que D’Taquito se adapte a las necesidades y expectativas de nuestros usuarios.
 
@@ -6413,7 +6411,7 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 
 <div style="page-break-before: always;"></div>
 
-# Bibliografia
+# VIII. Bibliografia
 
 Atlassian. (s/f). *Configuration management*. Atlassian. Recuperado el 14 de abril de 2024, de https://www.atlassian.com/microservices/microservices-architecture/configuration-management
 
@@ -6437,7 +6435,7 @@ Zmijewski, B. (2024, enero 4). *Needfinding: Crafting products aligned with user
 
 <div style="page-break-before: always;"></div>
 
-# Anexos
+# IX. Anexos
 
 Enlace a Miro:
 https://miro.com/app/board/uXjVIAV685w=/?share_link_id=948119735363
