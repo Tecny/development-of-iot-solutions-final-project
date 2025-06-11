@@ -502,7 +502,7 @@
      - 6.1.2. [Source Code Management](#612-source-code-management)    
      - 6.1.3. [Source Code Style Guide & Conventions](#613-source-code-style-guide--conventions)    
      - 6.1.4. [Software Deployment Configuration](#614-software-deployment-configuration)    
-  - 6.2. [Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
+   - 6.2. [Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
      - 6.2.1 [Sprint 1](#621-sprint-1)
        - 6.2.1.1 [Sprint Planning](#6211-sprint-planning)
        - 6.2.1.2 [Sprint Backlog](#6212-sprint-backlog)
@@ -541,10 +541,14 @@
        - 6.2.4.6 [Software Deployment Evidence for Sprint Review](#6246-software-deployment-evidence-for-sprint-review)
        - 6.2.4.7 [Team Collaboration Insights during Sprint](#6247-team-collaboration-insights-during-sprint)
        - 6.2.4.8. [Burndown Chart during Sprint 4](#6248-burndown-chart-during-sprint-4)
-
-  [Conclusiones](#conclusiones)
-  [Bibliografía](#bibliografia)
-  [Anexos](#anexos)
+  - 6.3. [Validation Interviews](#63-validation-interviews)
+     - 6.3.1. [Diseño de Entrevistas](#631-diseño-de-entrevistas)
+     - 6.3.2. [Registro de Entrevistas](#632-registro-de-entrevistas)
+     - 6.3.3. [Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
+  - 6.4. [Video About the Product](#64-video-about-the-product)
+  - 7. [Conclusiones](#conclusiones)
+  - 8. [Bibliografía](#bibliografia)
+  - 9. [Anexos](#anexos)
 
 <div style="page-break-before: always;"></div>
 
@@ -6376,7 +6380,21 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 
 <div style="page-break-before: always;"></div>
 
-# Conclusiones
+## 6.3. Validation Interviews
+
+### 6.3.1. Diseño de Entrevistas
+
+### 6.3.2. Registro de Entrevistas
+
+### 6.3.3. Evaluaciones según heurísticas
+
+<div style="page-break-before: always;"></div>
+
+## 6.4. Video About the Product
+
+<div style="page-break-before: always;"></div>
+
+# 7. Conclusiones
 
 - El proceso de entrevistas y la creación de user personas nos ha permitido obtener una comprensión profunda de nuestro segmento objetivo. Esta información compartida es fundamental para asegurarnos de que D’Taquito se adapte a las necesidades y expectativas de nuestros usuarios.
 
@@ -6392,7 +6410,7 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 
 <div style="page-break-before: always;"></div>
 
-# Bibliografia
+# 8. Bibliografia
 
 Atlassian. (s/f). *Configuration management*. Atlassian. Recuperado el 14 de abril de 2024, de https://www.atlassian.com/microservices/microservices-architecture/configuration-management
 
@@ -6416,7 +6434,7 @@ Zmijewski, B. (2024, enero 4). *Needfinding: Crafting products aligned with user
 
 <div style="page-break-before: always;"></div>
 
-# Anexos
+# 9. Anexos
 
 Enlace a Miro:
 https://miro.com/app/board/uXjVIAV685w=/?share_link_id=948119735363
