@@ -6387,13 +6387,231 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 
 ### 6.3.1. Diseño de Entrevistas
 
+- **Preguntas generales**:
+
+	-  ¿Cuál es tu nombre?
+ 	-  ¿Qué edad tienes?
+ 	-  ¿De qué distrito de Lima Metropolitana eres?
+ 	-  ¿Eres jugador de fútbol o billar? O en caso contrario, ¿eres propietario de un espacio deportivo de fútbol o billar?
+
+- **Landing Page**:
+
+	- ¿Qué te parecen los colores y el estilo de diseño general de la landing page? ¿Crees que son atractivos y transmiten la esencia de D'Taquito?
+	- ¿Consideras que la distribución de los elementos y secciones es lógica y fácil de seguir? ¿Hay algo que te parezca desordenado o difícil de encontrar?
+	- ¿La información sobre D'Taquito se presenta de forma clara y concisa? ¿Entendiste rápidamente los beneficios de la aplicación?
+	- ¿La navegación por la página fue fluida e intuitiva? ¿Encontraste algún elemento que te generará confusión o que no funcionara como esperabas?
+	- ¿Qué opinas sobre los elementos interactivos? ¿Te resultaron útiles y bien ubicados?
+	- Más allá del diseño, ¿hay alguna característica, sección o tipo de contenido adicional que crees que podríamos incorporar para mejorar la presentación y hacerla aún más completa?
+
+- **Aplicación Web**:
+
+	- ¿Qué te parecieron los colores, el estilo visual y la distribución de los elementos en la aplicación web? ¿Crees que son atractivos y que facilitan la interacción?
+ 	- ¿Encontraste una aplicación fácil de usar e intuitiva en general? ¿Hubo alguna sección o función que te resultará confusa o difícil de manejar?
+ 	- ¿Cómo describirías el flujo de las acciones y actividades dentro de la aplicación? ¿Fue lógico y sin interrupciones?
+ 	- ¿Hay alguna funcionalidad específica que te haya gustado mucho o que consideres que es especialmente útil? ¿Por qué?
+ 	- ¿Qué aspectos de la aplicación web crees que podrían mejorarse significativamente? ¿Hay algo que te gustaría ver implementado o modificado?
+
 ### 6.3.2. Registro de Entrevistas
 
+- **Entrevista N° 1**:
+
+	- Entrevistador:
+ 	- Entrevistado:
+	- Sexo:
+	- Edad:
+ 	- Distrito:
+  	- Rol:
+  	- Duración de la entrevista:
+	- Link:
+	- Hallazgos:
+		- Landing Page:
+		- Aplicación Web:
+	- Resumen:
+ <br> 
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+ </p>
+
+ - **Entrevista N° 2**:
+
+	- Entrevistador:
+ 	- Entrevistado:
+	- Sexo:
+	- Edad:
+ 	- Distrito:
+  	- Rol:
+  	- Duración de la entrevista:
+	- Link:
+	- Hallazgos:
+		- Landing Page:
+		- Aplicación Web:
+	- Resumen:
+ <br> 
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+ </p>
+
+ - **Entrevista N° 3**:
+
+	- Entrevistador:
+ 	- Entrevistado:
+	- Sexo:
+	- Edad:
+ 	- Distrito:
+  	- Rol:
+  	- Duración de la entrevista:
+	- Link:
+	- Hallazgos:
+		- Landing Page:
+		- Aplicación Web:
+	- Resumen:
+ <br> 
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+ </p>
+
+ - **Entrevista N° 4**:
+
+	- Entrevistador:
+ 	- Entrevistado:
+	- Sexo:
+	- Edad:
+ 	- Distrito:
+  	- Rol:
+  	- Duración de la entrevista:
+	- Link:
+	- Hallazgos:
+		- Landing Page:
+		- Aplicación Web:
+	- Resumen:
+ <br> 
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+ </p>
+
+ - **Entrevista N° 5**:
+
+	- Entrevistador:
+ 	- Entrevistado:
+	- Sexo:
+	- Edad:
+ 	- Distrito:
+  	- Rol:
+  	- Duración de la entrevista:
+	- Link:
+	- Hallazgos:
+		- Landing Page:
+		- Aplicación Web:
+	- Resumen:
+ <br> 
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+ </p>
+
+- **Entrevista N° 6**:
+
+	- Entrevistador:
+ 	- Entrevistado:
+	- Sexo:
+	- Edad:
+ 	- Distrito:
+  	- Rol:
+  	- Duración de la entrevista:
+	- Link:
+	- Hallazgos:
+		- Landing Page:
+		- Aplicación Web:
+	- Resumen:
+ <br>
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+ </p>
+ 
 ### 6.3.3. Evaluaciones según heurísticas
+
+**CARRERA**: Ingeniería de Software  
+**CURSO**: Desarrollo de Soluciones IoT  
+**NRC**: 15260  
+**PROFESORES**: Todos  
+**AUDITOR**: Tecny  
+**CLIENTE(S)**: Usuarios entrevistados  
+
+---
+
+**SITE o APP A EVALUAR**: D'Taquito
+
+---
+
+### TAREAS A EVALUAR:
+
+El alcance de esta evaluación incluye la revisión de la usabilidad de las siguientes tareas:
+
+#### Usuario con Rol Jugador
+
+1. Inicio de sesión  
+2. Visualización de perfil  
+3. Visualización de espacios deportivos y sus detalles  
+4. Realizar reservas de tipo personal y comunidad  
+5. Visualizar salas comunidad y sus detalles  
+6. Usar el chat en tiempo real en una sala comunidad  
+7. Visualización de las reservas  
+
+#### Usuario con Rol Propietario
+
+1. Inicio de sesión  
+2. Visualización de perfil  
+3. Visualización de las suscripciones y sus detalles  
+4. Visualización de sus espacios deportivos y sus detalles  
+5. Interactuar con el formulario de creación de espacio deportivo  
+6. Visualizar salas comunidad creadas a partir de sus espacios deportivos  
+7. Visualizar tickets de retiro de créditos  
+8. Generar un ticket de retiro de créditos  
+
+---
+
+### ESCALA DE SEVERIDAD:
+
+Los errores serán puntuados tomando en cuenta la siguiente escala de severidad
+
+| Nivel | Descripción |
+|-------|-------------|
+| 1 | Problema superficial: puede ser fácilmente superado por el usuario o ocurre con muy poca frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2 | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara a la siguiente release. |
+| 3 | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| 4 | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento. |
+
+---
+
+### TABLA RESUMEN:
+
+| #  | Problema | Escala de severidad | Heurística/Principio violado(a) |
+|----|----------|----------------------|---------------------------------|
+
+---
+
+### DESCRIPCIÓN DE PROBLEMAS:
+
+**PROBLEMA #1**:   
+**Severidad**:   
+**Heurística violada**:   
+
+**Explicación**:  
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+ </p>
+
+**Recomendación**:  
 
 <div style="page-break-before: always;"></div>
 
 ## 6.4. Video About the Product
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+ </p>
+
+ **Link del video**: 
 
 <div style="page-break-before: always;"></div>
 
@@ -6413,7 +6631,7 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 
 ## 7.1. About the Team
 
-
+**Link del video**: 
 
 <div style="page-break-before: always;"></div>
 
