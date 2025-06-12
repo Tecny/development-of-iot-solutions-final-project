@@ -1120,6 +1120,7 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 ### 2.3.5. As Is Scenario Mapping
 
 <div style="text-align: justify;">
+	
 **User persona 1: Andres Martinez**  
 
 <p align="center">
