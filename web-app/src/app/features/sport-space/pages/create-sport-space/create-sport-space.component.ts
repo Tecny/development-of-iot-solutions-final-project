@@ -16,6 +16,7 @@ import {GeolocationService} from '../../../../shared/services/geolocation.servic
 import * as L from 'leaflet';
 import {environment} from '../../../../../environment/environment';
 import {NgClass} from '@angular/common';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-create-sport-space',
@@ -33,9 +34,11 @@ export class CreateSportSpaceComponent implements AfterViewInit {
   private fb = inject(NonNullableFormBuilder)
   private router = inject(Router);
   private cdr = inject(ChangeDetectorRef);
+  private toastService = inject(ToastrService);
 
   private _sportId = signal<number>(1);
   gamemodes = computed(() => this.getGamemodesBySport(this._sportId()));
+  isLoading = signal(false);
 
   createSportSpaceForm: FormGroup;
   selectedImageUrl: string | null = null;
@@ -43,14 +46,16 @@ export class CreateSportSpaceComponent implements AfterViewInit {
   latitude: number | null = null;
   longitude: number | null = null;
   locationNotSelected = false;
+  selectedAddress: string = '';
+  submitted = false;
 
   constructor() {
     this.createSportSpaceForm = this.fb.group(
       {
         name: ['', [Validators.required, Validators.minLength(7)]],
-        sportId: [1, [Validators.required, Validators.min(1), Validators.max(2)]],
-        gamemodeId: [null, [Validators.required]],
-        price: [0, [Validators.required, Validators.min(40)]],
+        sportId: ['', [Validators.required, Validators.min(1), Validators.max(2)]],
+        gamemodeId: ['', [Validators.required]],
+        price: ['', [Validators.required, Validators.min(40)]],
         description: ['', [Validators.required, Validators.minLength(10)]],
         openTime: ['', [Validators.required]],
         closeTime: ['', [Validators.required]],
@@ -60,7 +65,8 @@ export class CreateSportSpaceComponent implements AfterViewInit {
 
     this.createSportSpaceForm.get('sportId')?.valueChanges.subscribe(value => {
       this._sportId.set(value);
-      this.createSportSpaceForm.get('gamemodeId')?.reset();
+      this.cdr.detectChanges();
+      this.createSportSpaceForm.get('gamemodeId')?.reset('', { emitEvent: false, onlySelf: true });
     });
   }
 
@@ -103,21 +109,22 @@ export class CreateSportSpaceComponent implements AfterViewInit {
       }
 
       updateLocation(lat, lng);
+      this.onMapClick({ lat, lng });
     });
   }
 
   createSportSpace() {
-    // Validar si hay imagen seleccionada
-    if (!this.selectedImageFile) return;
+    this.submitted = true;
 
-    // Validar si hay latitud y longitud
-    if (this.latitude === null || this.longitude === null) {
-      this.locationNotSelected = true;
+    if (this.createSportSpaceForm.invalid || !this.selectedImageFile || this.latitude === null || this.longitude === null) {
+      this.createSportSpaceForm.markAllAsTouched();
+      this.locationNotSelected = this.latitude === null || this.longitude === null;
       return;
     }
 
     this.locationNotSelected = false;
 
+    this.isLoading.set(true);
     const formValues = this.createSportSpaceForm.getRawValue();
 
     const formData = new FormData();
@@ -134,18 +141,20 @@ export class CreateSportSpaceComponent implements AfterViewInit {
 
     this.sportSpaceService.createSportSpace(formData).subscribe({
       next: () => {
+        this.isLoading.set(false);
         this.createSportSpaceForm.reset();
         this.selectedImageUrl = null;
         this.selectedImageFile = null;
         this._sportId.set(1);
         this.router.navigate(['/sport-spaces']).then();
+        this.toastService.success('Espacio deportivo creado correctamente', 'Éxito');
       },
-      error: (error) => {
-        console.error('Error al crear espacio:', error);
+      error: () => {
+        this.isLoading.set(false);
+        this.toastService.error('Error al crear el espacio deportivo:', 'Error');
       }
     });
   }
-
 
   onImageSelected(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -156,6 +165,7 @@ export class CreateSportSpaceComponent implements AfterViewInit {
       const reader = new FileReader();
       reader.onload = () => {
         this.selectedImageUrl = reader.result as string;
+        this.cdr.detectChanges();
       };
       reader.readAsDataURL(this.selectedImageFile);
     }
@@ -167,13 +177,12 @@ export class CreateSportSpaceComponent implements AfterViewInit {
 
     this.geolocationService.reverseGeocode(event.lat, event.lng).subscribe({
       next: (data) => {
-        const address = data.display_name;
-        this.createSportSpaceForm.get('address')?.setValue(address);
+        this.selectedAddress = data.display_name;
+        this.createSportSpaceForm.get('address')?.setValue(data.display_name);
+        this.cdr.detectChanges();
       },
-      error: (err) => console.error('Error obteniendo dirección:', err)
     });
   }
-
 
   private getGamemodesBySport(sportId: number): { id: number, label: string, value: string, sportId: number }[] {
     const values = gamemodesMap[sportId] ?? [];
