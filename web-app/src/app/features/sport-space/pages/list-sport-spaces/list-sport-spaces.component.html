@@ -66,12 +66,11 @@
   }
 </div>
 
-<button class="toggle-view-btn" (click)="toggleView()">
-  <i class="lni" [ngClass]="{
+@if (this.userRole === UserRole.PLAYER){
+  <button class="toggle-view-btn" (click)="toggleView()">
+    <i class="lni" [ngClass]="{
     'lni-map-marker-1': !isMapView(),
     'lni-dashboard-square-1 ': isMapView()
   }"></i>
-</button>
-
-
-
+  </button>
+}
