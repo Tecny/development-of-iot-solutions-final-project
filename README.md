@@ -6511,59 +6511,68 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 
  - **Entrevista N° 4**:
 
-	- Entrevistador:
- 	- Entrevistado:
-	- Sexo:
-	- Edad:
- 	- Distrito:
-  	- Rol:
-  	- Duración de la entrevista:
-	- Link:
+	- Entrevistador: Clara Angie Valverde Salazar
+ 	- Entrevistado: Corayme Diaz
+	- Sexo: Femenino
+	- Edad: 25
+ 	- Distrito: San Martin de Porres
+  	- Rol: Propietario
+  	- Duración de la entrevista: 15:51
+	- Link: https://drive.google.com/file/d/1YUtDg13U-fFzNXQl-LfyV7Z2_3Gm7MMO/view?usp=sharing 
 	- Hallazgos:
 		- Landing Page:
+  			- Se destacó positivamente la gama de colores empleada, señalando que están bien seleccionados ya que representan los colores asociados a deportes como el fútbol y el billar, elementos centrales de D’taquito. Resaltó que la estructura del menú es clara, con accesos fáciles de identificar. La navegación le resultó sencilla e intuitiva, comprendiendo rápidamente la propuesta del sitio sin experimentar confusión. Además, no identificó ningún elemento que considere necesario agregar al landing page. 
 		- Aplicación Web:
+  			- El usuario destacó que los colores y el diseño de la aplicación facilitaron una interacción sencilla y clara. No encontró secciones confusas y percibió un flujo de actividades coherente y bien estructurado. Resaltó como un punto positivo los accesos directos a las salas comunitarias, los cuales consideró muy útiles. Como sugerencia de mejora, propuso ampliar la cantidad de bancos disponibles en el formulario de generación de tickets para ofrecer más opciones a los usuarios. 
 	- Resumen:
+ 		- El usuario valoró positivamente tanto el diseño visual como la experiencia de navegación en la landing page y en la aplicación web de D’taquito. Destacó que los colores utilizados evocan correctamente los deportes representados, y que la estructura del menú facilita una navegación intuitiva y sin confusiones. En cuanto a la aplicación web, resaltó la claridad del diseño y la fluidez en el flujo de actividades. Apreció especialmente los accesos directos a las salas comunitarias y, como única recomendación de mejora, sugirió incluir más opciones de bancos en el formulario de generación de tickets. 
  <br> 
  <p align="center">
-	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Entrevista_Duenio_1.png" alt="UPC">
  </p>
 
  - **Entrevista N° 5**:
 
-	- Entrevistador:
- 	- Entrevistado:
-	- Sexo:
-	- Edad:
- 	- Distrito:
-  	- Rol:
-  	- Duración de la entrevista:
-	- Link:
+	- Entrevistador: Clara Angie Valverde Salazar
+ 	- Entrevistado: Julio Cesar Matos
+	- Sexo: Masculino
+	- Edad: 27
+ 	- Distrito: Jesus Maria
+  	- Rol: Propietario
+  	- Duración de la entrevista: 20:11
+	- Link: https://drive.google.com/file/d/1B1NBxCBnevKvV7VwMGKpCF5XiOF7GRBQ/view?usp=sharing 
 	- Hallazgos:
 		- Landing Page:
+  			- Se valoró favorablemente la paleta de colores en tonos pastel, describiéndolos como suaves y visualmente atractivos. Reconoció una buena división de las secciones del sitio, lo que facilitó su comprensión del servicio ofrecido por D’taquito. Mencionó que la navegación fue fluida e intuitiva. Como recomendación, sugirió mejorar el pie de página, proponiendo incluir un formulario para el registro de usuarios interesados, a quienes se les podría ofrecer descuentos o beneficios exclusivos. 
 		- Aplicación Web:
+  			- Este usuario valoró el diseño minimalista de la aplicación web, ya que evita la saturación visual y permite una navegación limpia. Afirmó que toda la experiencia le pareció intuitiva y libre de confusiones. Mencionó que la estructura de las secciones seguía una lógica clara, lo que le permitió comprender fácilmente el funcionamiento de cada parte. Destacó positivamente la funcionalidad de los créditos, considerándola sorprendente, y también encontró innovador el uso del mapa en el formulario para agregar espacios deportivos. Como sugerencia, indicó que sería conveniente unificar la sección de suscripción con la del perfil en una sola vista. 
 	- Resumen:
+ 		- El usuario destacó el uso de colores pastel en la landing page, describiéndolos como suaves y agradables a la vista. Apreció la buena organización de las secciones y la navegación fluida, lo que facilitó su comprensión del servicio. Como sugerencia, propuso mejorar el pie de página incorporando un formulario de registro para ofrecer beneficios a usuarios interesados.Respecto a la aplicación web, valoró su diseño minimalista por evitar la sobrecarga visual, lo que contribuyó a una experiencia intuitiva y ordenada. Comprendió fácilmente la lógica de navegación y resaltó funciones como el sistema de créditos y el uso del mapa para agregar espacios deportivos. Recomendó integrar las secciones de suscripción y perfil en una sola vista para optimizar la interfaz. 
  <br> 
  <p align="center">
-	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Entrevista_Duenio_2.png" alt="UPC">
  </p>
 
 - **Entrevista N° 6**:
 
-	- Entrevistador:
- 	- Entrevistado:
-	- Sexo:
-	- Edad:
- 	- Distrito:
-  	- Rol:
-  	- Duración de la entrevista:
-	- Link:
+	- Entrevistador: Clara Angie Valverde Salazar
+ 	- Entrevistado: Nicolas Alejandro Gonzalez
+	- Sexo: Masculino
+	- Edad: 27 
+ 	- Distrito: San Martin de Porres
+  	- Rol: Propietario
+  	- Duración de la entrevista: 15:31
+	- Link: https://drive.google.com/file/d/1ATvPQMTjM5MRX0izI7vFTbFT9youbggN/view?usp=sharing 
 	- Hallazgos:
 		- Landing Page:
+  			- Nicolás expresó que los tonos verdes utilizados le evocan la mesa de billar, lo cual consideró un acierto visual alineado al concepto del proyecto. Las imágenes utilizadas le parecieron adecuadas y representativas de cada sección. Apreció la secuencia del contenido como clara y adaptable para distintos tipos de usuarios. Comprendió fácilmente el servicio ofrecido por D’taquito y no identificó elementos confusos. Como mejora, sugirió que el menú superior permanezca visible mientras se navega dentro del landing page para facilitar el acceso constante a otras secciones. 
 		- Aplicación Web:
+  			- El usuario calificó la aplicación como intuitiva y fácil de entender desde su ingreso. Consideró que el flujo de actividades está bien diseñado. Mostró especial interés en la función de creación de espacios deportivos, ya que valora poder gestionar directamente la información de sus propios espacios. Además, percibió la aplicación como robusta y completa, y no identificó la necesidad de añadir funcionalidades adicionales. 
 	- Resumen:
+ 		- El usuario valoró positivamente los tonos verdes de la landing page, ya que le recordaron a una mesa de billar, en sintonía con el concepto del proyecto. Consideró que las imágenes son adecuadas y las secciones están bien representadas. Resaltó la claridad y adaptabilidad del contenido, y comprendió con facilidad el servicio ofrecido. Como sugerencia, recomendó mantener visible el menú superior durante la navegación para mejorar la accesibilidad. En cuanto a la aplicación web, la calificó como intuitiva y fácil de usar desde el primer ingreso. Opinó que el flujo de actividades está bien estructurado y destacó especialmente la función para crear espacios deportivos, valorando el control que ofrece al usuario. Consideró la aplicación robusta y completa, sin necesidad de añadir funcionalidades adicionales. 
  <br>
  <p align="center">
-	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Entrevista_Duenio_3.png" alt="UPC">
  </p>
  
 ### 6.3.3. Evaluaciones según heurísticas
@@ -6721,72 +6730,95 @@ Implementar la opción de proteger salas comunidad con contraseña opcional o li
 <div style="page-break-before: always;"></div>
 
 **PROBLEMA #6**:   
-**Severidad**:   
-**Heurística violada**:   
+
+**Severidad**:   Nivel 2 – Problema menor
+
+**Heurística violada**:   Visibilidad del estado del sistema (Usability)
 
 **Explicación**:  
+El menú superior de navegación desaparece al hacer scroll en la landing page. Esto obliga al usuario a desplazarse hacia arriba cada vez que desea acceder a otra sección, interrumpiendo la navegación fluida. Aunque no impide el uso, afecta la eficiencia del recorrido del usuario.
 
  <p align="center">
-	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Problema_6.png" alt="UPC">
  </p>
 
 **Recomendación**:  
+Implementar un menú de navegación fijo (sticky header) que permanezca visible en la parte superior mientras el usuario navega por la página.
 
 <div style="page-break-before: always;"></div>
 
 **PROBLEMA #7**:   
-**Severidad**:   
-**Heurística violada**:   
+
+**Severidad**:   Nivel 2 – Problema menor
+
+**Heurística violada**:   Flexibilidad y eficiencia de uso (Usability)
 
 **Explicación**:  
+Actualmente no se presenta un formulario de registro directo o de suscripción al final de la landing page, lo que representa una oportunidad perdida para captar usuarios interesados. Este tipo de recurso optimiza el flujo para usuarios decididos, y su ausencia puede traducirse en menos conversiones.
 
  <p align="center">
-	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Problema_7.png" alt="UPC">
  </p>
 
 **Recomendación**:  
+Incorporar un formulario de registro simple (nombre, correo) en el footer o cerca del cierre de la página, facilitando la acción directa del usuario.
 
 <div style="page-break-before: always;"></div>
 
 **PROBLEMA #8**:   
-**Severidad**:   
-**Heurística violada**:   
+
+**Severidad**:   Nivel 2 – Problema menor
+
+**Heurística violada**:   Organización lógica y jerarquía (Information Architecture)
 
 **Explicación**:  
+Algunos usuarios percibieron que las secciones de perfil y suscripción parecen estar desconectadas. Uno de ellos recomendó unificar ambas secciones en una sola vista.
 
  <p align="center">
-	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Problema_8.1.png" alt="UPC">
+ </p>
+  <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Problema_8.2.png" alt="UPC">
  </p>
 
 **Recomendación**:  
+Revisar y rediseñar la estructura de navegación para unificar claramente las secciones de perfil y suscripción dentro de una jerarquía lógica y facilitando la exploración.
 
 <div style="page-break-before: always;"></div>
 
 **PROBLEMA #9**:   
-**Severidad**:   
-**Heurística violada**:   
+
+**Severidad**:   Nivel 1 – Problema superficial
+
+**Heurística violada**:   Reconocimiento antes que recuerdo (Usability)
 
 **Explicación**:  
+No se presentan explícitamente los beneficios que obtiene un usuario al registrarse. Aunque no impide la interacción, puede disminuir la motivación de quienes no entienden claramente el valor añadido de crear una cuenta.
 
  <p align="center">
-	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Problema_9.png" alt="UPC">
  </p>
 
 **Recomendación**:  
+Incluir una breve sección visual o textual que resuma las ventajas del registro (ej. reservar canchas, crear espacios, acceder a promociones), idealmente en puntos estratégicos del recorrido.
 
 <div style="page-break-before: always;"></div>
 
-**PROBLEMA #10**:   
-**Severidad**:   
-**Heurística violada**:   
+**PROBLEMA #10**: 
+
+**Severidad**:   Nivel 2 – Problema menor
+
+**Heurística violada**:   Flexibilidad y eficiencia de uso (Usability)
 
 **Explicación**:  
+Un usuario sugirió ampliar la cantidad de bancos asociados en el formulario de generación de tickets. Actualmente, la oferta es limitada, lo que puede restringir la experiencia de usuarios con cuentas en otras entidades financieras. Esta falta de opciones reduce la eficiencia del proceso y puede generar fricción o desconfianza en el pago.
 
  <p align="center">
-	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Problema_10.png" alt="UPC">
  </p>
 
 **Recomendación**:  
+Ampliar el listado de bancos en el formulario de pagos para incluir una mayor variedad de entidades financieras. Esto permitirá mayor flexibilidad y adaptabilidad al contexto del usuario, aumentando la confianza y fluidez en la operación.
 
 <div style="page-break-before: always;"></div>
 
