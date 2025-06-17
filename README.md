@@ -6634,6 +6634,17 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad
 
 | #  | Problema | Escala de severidad | Heurística/Principio violado(a) |
 |----|----------|----------------------|---------------------------------|
+| 1 | Falta de visibilidad de horarios no disponibles | Nivel 3 – Problema mayor | Feedback y visibilidad del sistema (Usability) |
+| 6 | Menú superior desaparece al hacer scroll en la landing page | Nivel 2 – Problema menor | Visibilidad del estado del sistema (Usability) |
+| 10 | Cantidad limitada de bancos asociados en formulario de tickets | Nivel 2 – Problema menor | Flexibilidad y eficiencia de uso (Usability) |
+| 2 | Descripciones poco detalladas en reservas personales y comunitarias | Nivel 2 – Problema menor | Claridad del contenido (Information Architecture) |
+| 3 | Fondo vacío y falta de diferenciación en salas comunidad | Nivel 2 – Problema menor | Jerarquía visual y balance estético (Design) |
+| 4 | Cards desalineadas en algunas resoluciones | Nivel 2 – Problema menor | Consistencia y estética del diseño (Design) |
+| 5 | Falta de privacidad en salas comunidad | Nivel 2 – Problema menor | Control y flexibilidad del usuario (Usability) |
+| 7 | Falta formulario de registro directo al final de la landing page | Nivel 2 – Problema menor | Flexibilidad y eficiencia de uso (Usability) |
+| 8 | Secciones de perfil y suscripción parecen desconectadas | Nivel 2 – Problema menor | Organización lógica y jerarquía (Information Architecture) |
+| 9 | No se presentan explícitamente los beneficios de registrarse | Nivel 1 – Problema superficial | Reconocimiento antes que recuerdo (Usability) |
+
 
 ---
 
