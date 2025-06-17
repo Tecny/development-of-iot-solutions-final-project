@@ -13,14 +13,21 @@
   left: 0;
   height: 4px;
   width: 100%;
-  background: var.$indigo-light;
-  //background: #3b82f6;
-  animation: loading 1.2s infinite ease-in-out;
+  background: transparent;
+  overflow: hidden;
   z-index: 9999;
 }
 
-@keyframes loading {
-  0% { transform: scaleX(0); transform-origin: left; }
-  50% { transform: scaleX(0.5); }
-  100% { transform: scaleX(1); }
+.loading-bar::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 40%;
+  background: var.$indigo-light;
+  animation: indeterminate-move 1.2s infinite cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes indeterminate-move {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(250%); }
 }

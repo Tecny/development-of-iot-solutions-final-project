@@ -8,7 +8,7 @@ export interface ReservationRequest {
 
 interface SportSpace {
   name: string;
-  image: string;
+  imageUrl: string;
   price: number;
   amount: number;
   sport: string;

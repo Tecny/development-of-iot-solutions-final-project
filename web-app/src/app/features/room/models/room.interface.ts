@@ -1,7 +1,7 @@
 interface SportSpace {
   id: number;
   name: string;
-  image: string;
+  imageUrl: string;
   address: string;
   sportType: string;
   gamemode: string;

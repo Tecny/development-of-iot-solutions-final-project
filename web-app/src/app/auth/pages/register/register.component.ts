@@ -22,7 +22,7 @@ export class RegisterComponent {
   private fb = inject(NonNullableFormBuilder);
   private toastService = inject(ToastrService);
 
-  isLoading = signal(false);
+  isLoadingSubmitRequest = signal(false);
   errorMessage = signal<string | null>(null);
 
   registerForm = this.fb.group({
@@ -37,21 +37,21 @@ export class RegisterComponent {
   });
 
   register() {
-    if (this.registerForm.invalid || this.isLoading()) {
+    if (this.registerForm.invalid || this.isLoadingSubmitRequest()) {
       this.registerForm.markAllAsTouched();
       return;
     }
-    this.isLoading.set(true);
+    this.isLoadingSubmitRequest.set(true);
     const userData: RegisterRequest = this.registerForm.getRawValue();
 
     this.authService.register(userData).subscribe({
       next: () => {
-        this.isLoading.set(false);
+        this.isLoadingSubmitRequest.set(false);
         this.router.navigate(['/login']).then();
         this.toastService.success('Registro exitoso', 'Éxito');
       },
       error: (error) => {
-        this.isLoading.set(false);
+        this.isLoadingSubmitRequest.set(false);
         let mensaje = 'Registro fallido';
         if (error.status === 400 && error.error?.message) {
           switch (error.error.message) {

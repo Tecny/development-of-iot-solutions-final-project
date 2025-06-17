@@ -6,7 +6,7 @@
 :host {
   display: flex;
   flex-direction: column;
-  height: calc(100dvh - 4rem);
+  min-height: calc(100dvh - 4rem);
   justify-content: center;
   align-items: center;
 }
@@ -21,7 +21,6 @@
   width: 100%;
   font-family: 'Poppins', sans-serif;
   color: var.$neutral-dark;
-  max-height: calc(100dvh - 4rem);
   overflow-y: auto;
 
   scrollbar-width: none;
@@ -85,42 +84,7 @@
       }
     }
 
-    .tab-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      position: absolute;
-      bottom: -1.25rem;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 90%;
 
-      button {
-        background-color: #fff;
-        color: var.$green-dark;
-        border: none;
-        padding: 0.8rem 1.5rem;
-        border-radius: 1.56rem;
-        font-size: 1rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
-
-        &:hover:not(.active) {
-          background-color: var.$green-dark;
-          color: #fff;
-          transform: translateY(-0.125rem);
-        }
-
-        &.active {
-          background-color: var.$green-dark;
-          color: #fff;
-          box-shadow: 0 0.25rem 0.94rem rgba(0, 0, 0, 0.25);
-          transform: translateY(-0.25rem);
-        }
-      }
-    }
   }
 
   .panel-content {
@@ -350,155 +314,12 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
-.profile-skeleton-wrapper {
-  display: flex;
-  flex-direction: column;  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-}
-
-.profile-skeleton-title {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var.$indigo-light;
-  margin-bottom: 1rem;
-  text-align: center;
-}
-
-.profile-skeleton-card {
-  max-width: 250px;
-  width: 100%;
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  border: 1px solid #d9d9d9;
-}
-
-.profile-skeleton-header {
-  display: flex;
-  align-items: center;
-}
-
-.profile-skeleton-img {
-  height: 45px;
-  width: 45px;
-  background: #d9d9d9;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-}
-
-.profile-skeleton-details {
-  margin-left: 20px;
-}
-
-.profile-skeleton-details span {
-  display: block;
-  background: #d9d9d9;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.profile-skeleton-name {
-  height: 12px;
-  width: 70px;
-}
-
-.profile-skeleton-about {
-  height: 13px;
-  width: 120px;
-  margin-top: 10px;
-}
-
-.profile-skeleton-description {
-  margin: 25px 0;
-}
-
-.profile-skeleton-line {
-  background: #d9d9d9;
-  border-radius: 10px;
-  height: 11px;
-  margin: 10px 0;
-  overflow: hidden;
-  position: relative;
-}
-
-.profile-skeleton-line.line-1 {
-  width: calc(100% - 15%);
-}
-
-.profile-skeleton-line.line-3 {
-  width: calc(100% - 40%);
-}
-
-.profile-skeleton-btns {
-  display: flex;
-}
-
-.profile-skeleton-btn {
-  height: 25px;
-  width: 100%;
-  background: #d9d9d9;
-  border-radius: 25px;
-  position: relative;
-  overflow: hidden;
-}
-
-.profile-skeleton-btn.btn-1 {
-  margin-right: 8px;
-}
-
-.profile-skeleton-btn.btn-2 {
-  margin-left: 8px;
-}
-
-/* Shimmer effect */
-.profile-skeleton-img::before,
-.profile-skeleton-details span::before,
-.profile-skeleton-line::before,
-.profile-skeleton-btn::before {
-  position: absolute;
-  content: "";
-  height: 100%;
-  width: 100%;
-  background-image: linear-gradient(
-      to right,
-      #d9d9d9 0%,
-      rgba(0, 0, 0, 0.05) 20%,
-      #d9d9d9 40%,
-      #d9d9d9 100%
-  );
-  background-repeat: no-repeat;
-  background-size: 450px 400px;
-  animation: profile-shimmer 1s linear infinite;
-}
-
-.profile-skeleton-img::before {
-  background-size: 650px 600px;
-}
-
-.profile-skeleton-details span::before {
-  animation-delay: 0.2s;
-}
-
-.profile-skeleton-btn.btn-2::before {
-  animation-delay: 0.22s;
-}
-
-@keyframes profile-shimmer {
-  0% {
-    background-position: -450px 0;
-  }
-  100% {
-    background-position: 450px 0;
-  }
-}
-
 @media (max-width: 650px) {
+
   :host {
-    height: auto !important;
+    min-height: 100dvh;
+    justify-content: flex-start;
+    align-items: stretch;
   }
 
   .profile-panel {
@@ -507,6 +328,10 @@ input[type="number"] {
     margin: 0;
     max-width: 100vw;
     width: 100vw;
+
+    .panel-content {
+      background-color: #fafafa;
+    }
   }
 
   .panel-footer {

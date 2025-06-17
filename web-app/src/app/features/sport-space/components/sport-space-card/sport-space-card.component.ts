@@ -4,8 +4,7 @@ import {
   computed,
   inject,
   Input,
-  OnChanges, signal,
-  SimpleChanges
+  signal
 } from '@angular/core';
 import {SportSpace} from '../../models/sport-space.interface';
 import {RouterLink} from '@angular/router';
@@ -23,7 +22,7 @@ import {ToastrService} from 'ngx-toastr';
   template: `
     <div class="sportspace-card" [routerLink]="['/sport-spaces', sportSpace.id]">
       <div class="sportspace-card__image-container">
-        <img [src]="imageUrl" alt="{{ sportSpace.name }}" class="sportspace-card__image"/>
+        <img src="{{ sportSpace.imageUrl }}" alt="{{ sportSpace.name }}" class="sportspace-card__image"/>
 
         <div class="sportspace-card__type-badge">
           {{ sportIdToEmojiMap[sportSpace.sportId] }}
@@ -55,7 +54,7 @@ import {ToastrService} from 'ngx-toastr';
         <div modal-body>¿Estás seguro de que deseas eliminar este espacio deportivo?</div>
         <div modal-footer>
           <button class="button-submit--danger" (click)="confirmDelete()">
-            @if (isLoading()) {
+            @if (isLoadingDeleteRequest()) {
               <span class="spinner-danger"></span>
             } @else {
               Eliminar
@@ -68,7 +67,7 @@ import {ToastrService} from 'ngx-toastr';
   styleUrl: './sport-space-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SportSpaceCardComponent implements OnChanges {
+export class SportSpaceCardComponent {
   @Input() sportSpace!: SportSpace;
 
   private sportSpaceService = inject(SportSpaceService);
@@ -83,7 +82,7 @@ export class SportSpaceCardComponent implements OnChanges {
   imageUrl: string = '';
   showModal = false;
 
-  isLoading = signal(false);
+  isLoadingDeleteRequest = signal(false);
   currentUser = this.userStore.currentUser;
   isOwner = computed(() => {
     const currentUser = this.currentUser();
@@ -91,19 +90,6 @@ export class SportSpaceCardComponent implements OnChanges {
       ? currentUser.id === this.sportSpace.user.id
       : false;
   });
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['sportSpace'] && this.sportSpace?.image) {
-      this.imageUrl = this.getImageUrl(this.sportSpace.image);
-    }
-  }
-
-  getImageUrl(image: string): string {
-    if (image.startsWith('data:image/')) {
-      return image;
-    }
-    return `data:image/jpeg;base64,${image}`;
-  }
 
   handleOpen(): void {
     this.showModal = true;
@@ -115,16 +101,16 @@ export class SportSpaceCardComponent implements OnChanges {
 
   confirmDelete(): void {
     if (this.sportSpace) {
-      this.isLoading.set(true);
+      this.isLoadingDeleteRequest.set(true);
       this.sportSpaceService.deleteSportSpace(this.sportSpace.id).subscribe({
         next: () => {
-          this.isLoading.set(false);
+          this.isLoadingDeleteRequest.set(false);
           window.location.reload();
           this.toastService.success('Espacio deportivo eliminado correctamente','Éxito');
           this.handleClose();
         },
         error: () => {
-          this.isLoading.set(false);
+          this.isLoadingDeleteRequest.set(false);
           this.toastService.error('Error al eliminar el espacio deportivo', 'Error');
         }
       });

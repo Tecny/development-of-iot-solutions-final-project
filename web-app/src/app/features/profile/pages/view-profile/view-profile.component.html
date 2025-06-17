@@ -7,15 +7,15 @@
         <span class="user-role">{{ user.roleType === 'PLAYER' ? 'Jugador' : 'Propietario' }}</span>
         <img src="assets/images/avatar.png" alt="Avatar" class="avatar" />
       </div>
-      <div class="tab-buttons">
-        <button [class.active]="activeTab === 'info'" (click)="activeTab = 'info'">Información</button>
-        <button [class.active]="activeTab === 'prefs'" (click)="activeTab = 'prefs'">Preferencias</button>
+      <div class="tab-buttons tab-buttons--profile">
+        <button [class.active]="activeTab() === 'info'" (click)="setTab('info')">Información</button>
+        <button [class.active]="activeTab() === 'prefs'" (click)="setTab('prefs')">Preferencias</button>
       </div>
     </div>
 
     <div class="panel-content" [formGroup]="profileForm">
       <!-- Información del perfil -->
-      @if (activeTab === 'info') {
+      @if (activeTab() === 'info') {
         <div class="profile-fields">
 
           <!-- Nombre -->
@@ -39,8 +39,8 @@
                   </small>
                 }
               </div>
-              <button (click)="updateName()" [disabled]="isLoading()">
-                @if (isLoading()) {
+              <button (click)="updateName()" [disabled]="isLoadingSubmitRequest()">
+                @if (isLoadingSubmitRequest()) {
                   <i class="lni lni-spinner-2-sacle"></i>
                 } @else {
                   <i class="lni lni-floppy-disk-1"></i>
@@ -73,8 +73,8 @@
                   </small>
                 }
               </div>
-              <button (click)="updateEmail()" [disabled]="isLoading()">
-                @if (isLoading()) {
+              <button (click)="updateEmail()" [disabled]="isLoadingSubmitRequest()">
+                @if (isLoadingSubmitRequest()) {
                   <i class="lni lni-spinner-2-sacle"></i>
                 } @else {
                   <i class="lni lni-floppy-disk-1"></i>
@@ -109,8 +109,8 @@
                   </small>
                 }
               </div>
-              <button (click)="updatePassword()" [disabled]="isLoading()">
-                @if (isLoading()) {
+              <button (click)="updatePassword()" [disabled]="isLoadingSubmitRequest()">
+                @if (isLoadingSubmitRequest()) {
                   <i class="lni lni-spinner-2-sacle"></i>
                 } @else {
                   <i class="lni lni-floppy-disk-1"></i>
@@ -135,7 +135,7 @@
       }
 
       <!-- Preferencias -->
-      @if (activeTab === 'prefs') {
+      @if (activeTab() === 'prefs') {
         <div class="preferences">
           <div class="pref-item">
             <label for="theme">Tema</label>
@@ -181,8 +181,8 @@
         </form>
       </ng-container>
       <ng-container modal-footer>
-        <button class="button-submit" (click)="recharge()" [disabled]="isLoading()">
-          @if (isLoading()) {
+        <button class="button-submit" (click)="recharge()" [disabled]="isLoadingSubmitRequest()">
+          @if (isLoadingSubmitRequest()) {
           <span class="spinner-default"></span>
           } @else {
             Aceptar
@@ -192,26 +192,7 @@
     </app-modal>
   }
 } @else {
-  <div class="profile-skeleton-wrapper">
-    <p class="profile-skeleton-title">Cargando perfil…</p>
-
-    <div class="profile-skeleton-card">
-      <div class="profile-skeleton-header">
-        <div class="profile-skeleton-img"></div>
-        <div class="profile-skeleton-details">
-          <span class="profile-skeleton-name"></span>
-          <span class="profile-skeleton-about"></span>
-        </div>
-      </div>
-      <div class="profile-skeleton-description">
-        <div class="profile-skeleton-line line-1"></div>
-        <div class="profile-skeleton-line line-2"></div>
-        <div class="profile-skeleton-line line-3"></div>
-      </div>
-      <div class="profile-skeleton-btns">
-        <div class="profile-skeleton-btn btn-1"></div>
-        <div class="profile-skeleton-btn btn-2"></div>
-      </div>
-    </div>
+  <div class="view-spinner">
+    <app-spinner/>
   </div>
 }

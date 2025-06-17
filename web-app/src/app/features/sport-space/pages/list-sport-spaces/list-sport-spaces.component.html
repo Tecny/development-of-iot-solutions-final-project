@@ -45,22 +45,14 @@
           }
         </div>
       } @else {
-        <div class="cards-grid">
-          @for (i of loadingSkeletons(); track i) {
-            <div class="skeleton-card"></div>
-          }
+        <div class="view-spinner view-spinner--sm">
+          <app-spinner/>
         </div>
       }
     } @placeholder {
       <div class="empty-state">
         <i class="lni lni-hourglass placeholder-icon"></i>
         <p>Preparando carga de espacios deportivos...</p>
-      </div>
-    } @loading {
-      <div class="cards-grid">
-        @for (i of loadingSkeletons(); track i) {
-          <div class="skeleton-card"></div>
-        }
       </div>
     }
   }

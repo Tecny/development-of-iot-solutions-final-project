@@ -1,5 +1,6 @@
 @use 'abstracts/variables' as var;
 @use 'components/section-title';
+@use 'components/spinner';
 
 .grid-map-wrapper {
   display: flex;
@@ -26,7 +27,6 @@
   height: calc(100vh - 160px);
   padding: 1rem;
 
-  // Mover el flex solo a escritorio
   @media (min-width: 1024px) {
     flex: 1;
   }
@@ -38,7 +38,6 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
   }
 
-  // En mobile, podemos usar un alto fijo
   @media (max-width: 1023px) {
     .map-container {
       position: relative;
@@ -60,19 +59,6 @@
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
   padding: 0 1rem;
-}
-
-.skeleton-card {
-  height: 180px;
-  border-radius: 1rem;
-  background: linear-gradient(
-      90deg,
-      #e0e0e0 25%,
-      #f0f0f0 50%,
-      #e0e0e0 75%
-  );
-  background-size: 200% 100%;
-  animation: skeleton-shimmer 1.2s infinite;
 }
 
 .empty-state {
@@ -108,7 +94,7 @@
 .toggle-view-btn {
   position: fixed;
   bottom: 1.5rem;
-  right: 1.5rem; /* Mejor usar right que left + translate */
+  right: 1.5rem;
   background-color: rgba(#333, 0.9);
   border: none;
   border-radius: 50%;
@@ -127,7 +113,6 @@
     background-color: rgba(#111, 0.9);
   }
 }
-
 
 @keyframes skeleton-shimmer {
   0% {

@@ -20,6 +20,7 @@ import {
 import {environment} from '../../../../../environment/environment';
 import * as L from 'leaflet';
 import {NgClass} from '@angular/common';
+import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
 
 @Component({
   selector: 'app-list-sport-spaces',
@@ -27,7 +28,8 @@ import {NgClass} from '@angular/common';
     SportSpaceCardComponent,
     RouterLink,
     FiltersComponent,
-    NgClass
+    NgClass,
+    SpinnerComponent
   ],
   templateUrl: './list-sport-spaces.component.html',
   styleUrl: './list-sport-spaces.component.scss',
@@ -43,7 +45,6 @@ export class ListSportSpacesComponent implements OnInit {
   allSpaces: SportSpace[] = [];
   sportSpaces = signal<SportSpace[] | null>(null);
   showAddSportSpaceButton = signal(false);
-  loadingSkeletons = signal(Array.from({ length: 20 }, (_, i) => i))
   isMapView = signal(false);
 
   filters = {
@@ -94,7 +95,7 @@ export class ListSportSpacesComponent implements OnInit {
             position: relative;
             border-radius: 0.5rem;
           ">
-            <img src="${this.getImageUrl(space.image)}" alt="${space.name}" style="
+            <img src="${space.imageUrl}" alt="${space.name}" style="
               width: 100%;
               height: 100%;
               object-fit: cover;
@@ -197,7 +198,7 @@ export class ListSportSpacesComponent implements OnInit {
             position: relative;
             border-radius: 0.5rem;
           ">
-            <img src="${this.getImageUrl(space.image)}" alt="${space.name}" style="
+            <img src="${space.imageUrl}" alt="${space.name}" style="
               width: 100%;
               height: 100%;
               object-fit: cover;
@@ -321,13 +322,6 @@ export class ListSportSpacesComponent implements OnInit {
     });
 
     this.sportSpaces.set(filtered);
-  }
-
-  getImageUrl(image: string): string {
-    if (image.startsWith('data:image/')) {
-      return image;
-    }
-    return `data:image/jpeg;base64,${image}`;
   }
 
   toggleView() {

@@ -1,12 +1,13 @@
 import {Component, computed, HostListener, inject, signal} from '@angular/core';
 import {UserStoreService} from '../../services/user-store.service';
 import {AuthService} from '../../../auth/services/auth.service';
-import {RouterLink} from '@angular/router';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 
 @Component({
   selector: 'app-header',
   imports: [
-    RouterLink
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

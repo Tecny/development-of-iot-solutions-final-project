@@ -9,7 +9,7 @@ export class TimeUtil {
   static formatDate(dateStr: string): string {
     const date = new Date(dateStr + 'T00:00:00');
     const formatter = new Intl.DateTimeFormat('es-PE', {
-      weekday: 'long',
+      weekday: 'short',
       day: '2-digit',
       month: '2-digit',
       timeZone: 'America/Lima'

@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {Reservation} from '../../models/reservation.interface';
 import {TitleCasePipe} from '@angular/common';
 import {RouterLink} from '@angular/router';
@@ -15,7 +15,7 @@ import {QrViewerComponent} from "../../../../shared/components/qr-viewer/qr-view
   template: `
     <div class="reservation-card">
       <img
-        [src]="imageUrl"
+        src="{{ reservation.sportSpaces.imageUrl }}"
         alt="Imagen de {{ reservation.sportSpaces.name }}"
         class="reservation-card__image"
         width="300"
@@ -49,24 +49,10 @@ import {QrViewerComponent} from "../../../../shared/components/qr-viewer/qr-view
   styleUrl: './reservation-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ReservationCardComponent implements OnChanges {
+export class ReservationCardComponent {
   @Input() reservation!: Reservation;
 
-  imageUrl: string = '';
   showQr = false;
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if (changes['reservation'] && this.reservation.sportSpaces?.image) {
-      this.imageUrl = this.getImageUrl(this.reservation.sportSpaces.image);
-    }
-  }
-
-  getImageUrl(image: string): string {
-    if (image.startsWith('data:image/')) {
-      return image;
-    }
-    return `data:image/jpeg;base64,${image}`;
-  }
 
   getPrice(): number {
     const hours = TimeUtil.getHoursDifference(this.reservation.startTime, this.reservation.endTime);

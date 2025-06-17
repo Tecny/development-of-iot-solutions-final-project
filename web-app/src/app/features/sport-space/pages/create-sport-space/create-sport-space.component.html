@@ -101,7 +101,7 @@
     <!-- Fila 4: Descripción (ocupa las dos columnas) -->
     <div class="form-field form-field-full">
       <textarea formControlName="description" placeholder=" " required></textarea>
-      <label>Descripción</label>
+      <label>Información adicional</label>
       <small class="error-text">
         @if (createSportSpaceForm.get('description')?.invalid && (createSportSpaceForm.get('description')?.dirty || createSportSpaceForm.get('description')?.touched)) {
           @if (createSportSpaceForm.get('description')?.errors?.['required']) {
@@ -166,8 +166,8 @@
   <div class="button-center">
     <button class="button-submit"
             type="submit"
-            [disabled]="isLoading()">
-      @if (isLoading()) {
+            [disabled]="isLoadingSubmitRequest()">
+      @if (isLoadingSubmitRequest()) {
         <span class="spinner-default"></span>
       } @else {
         Crear

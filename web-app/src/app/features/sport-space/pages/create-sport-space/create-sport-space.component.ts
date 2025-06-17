@@ -38,7 +38,7 @@ export class CreateSportSpaceComponent implements AfterViewInit {
 
   private _sportId = signal<number>(1);
   gamemodes = computed(() => this.getGamemodesBySport(this._sportId()));
-  isLoading = signal(false);
+  isLoadingSubmitRequest = signal(false);
 
   createSportSpaceForm: FormGroup;
   selectedImageUrl: string | null = null;
@@ -124,7 +124,7 @@ export class CreateSportSpaceComponent implements AfterViewInit {
 
     this.locationNotSelected = false;
 
-    this.isLoading.set(true);
+    this.isLoadingSubmitRequest.set(true);
     const formValues = this.createSportSpaceForm.getRawValue();
 
     const formData = new FormData();
@@ -141,7 +141,7 @@ export class CreateSportSpaceComponent implements AfterViewInit {
 
     this.sportSpaceService.createSportSpace(formData).subscribe({
       next: () => {
-        this.isLoading.set(false);
+        this.isLoadingSubmitRequest.set(false);
         this.createSportSpaceForm.reset();
         this.selectedImageUrl = null;
         this.selectedImageFile = null;
@@ -150,7 +150,7 @@ export class CreateSportSpaceComponent implements AfterViewInit {
         this.toastService.success('Espacio deportivo creado correctamente', 'Éxito');
       },
       error: () => {
-        this.isLoading.set(false);
+        this.isLoadingSubmitRequest.set(false);
         this.toastService.error('Error al crear el espacio deportivo:', 'Error');
       }
     });

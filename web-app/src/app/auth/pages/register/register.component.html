@@ -59,7 +59,7 @@
       <div class="form-field">
         <div class="input-icon-wrapper">
           <select formControlName="role" required>
-            <option value="" disabled selected hidden>Selecciona un rol</option>
+            <option value="" disabled selected hidden>Rol</option>
             <option value="PLAYER">Jugador</option>
             <option value="OWNER">Propietario</option>
           </select>
@@ -72,8 +72,8 @@
         </div>
       </div>
 
-      <button type="submit" class="button-submit" [disabled]="isLoading()">
-        @if (isLoading()) {
+      <button type="submit" class="button-submit" [disabled]="isLoadingSubmitRequest()">
+        @if (isLoadingSubmitRequest()) {
           <span class="spinner-default"></span>
         } @else {
           Registrarse

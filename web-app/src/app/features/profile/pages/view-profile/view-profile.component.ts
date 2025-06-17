@@ -6,13 +6,15 @@ import {AuthService} from '../../../../auth/services/auth.service';
 import {customEmailValidator} from '../../../../shared/validators/forms.validator';
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 import {ToastrService} from 'ngx-toastr';
+import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
 
 @Component({
   selector: 'app-view-profile',
   imports: [
     ReactiveFormsModule,
     ModalComponent,
-    FormsModule
+    FormsModule,
+    SpinnerComponent
   ],
   templateUrl: './view-profile.component.html',
   styleUrl: './view-profile.component.scss',
@@ -27,11 +29,10 @@ export class ViewProfileComponent implements OnInit {
   private toastService = inject(ToastrService);
 
   userInfo = signal<UserProfile | null>(null);
-  isLoading = signal(false);
+  isLoadingSubmitRequest = signal(false);
+  activeTab = signal<'info' | 'prefs'>('info');
 
   profileForm!: FormGroup;
-  activeTab: 'info' | 'prefs' = 'info';
-
   editingName = false;
   editingEmail = false;
   editingPassword = false;
@@ -40,6 +41,10 @@ export class ViewProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadUserInfo();
+  }
+
+  setTab(tab: 'info' | 'prefs') {
+    this.activeTab.set(tab);
   }
 
   loadUserInfo() {
@@ -79,17 +84,17 @@ export class ViewProfileComponent implements OnInit {
       return;
     }
 
-    this.isLoading.set(true);
+    this.isLoadingSubmitRequest.set(true);
     this.profileService.changeName(name).subscribe({
       next: () => {
-        this.isLoading.set(false);
+        this.isLoadingSubmitRequest.set(false);
         this.editingName = false;
         this.loadUserInfo();
         nameControl.reset();
         this.toastService.success('Nombre actualizado correctamente', 'Éxito');
       },
       error: () => {
-        this.isLoading.set(false);
+        this.isLoadingSubmitRequest.set(false);
         this.toastService.error('Hubo un error al actualizar el nombre', 'Error');
       }
     });
@@ -110,17 +115,17 @@ export class ViewProfileComponent implements OnInit {
       return;
     }
 
-    this.isLoading.set(true);
+    this.isLoadingSubmitRequest.set(true);
     this.profileService.changeEmail(email).subscribe({
       next: () => {
-        this.isLoading.set(false);
+        this.isLoadingSubmitRequest.set(false);
         this.editingEmail = false;
         this.loadUserInfo();
         emailControl.reset();
         this.toastService.success('Correo electrónico actualizado correctamente', 'Éxito');
       },
       error: () => {
-        this.isLoading.set(false);
+        this.isLoadingSubmitRequest.set(false);
         this.toastService.error('Hubo un error al actualizar el correo electrónico', 'Error');
       }
     });
@@ -138,16 +143,16 @@ export class ViewProfileComponent implements OnInit {
       return;
     }
 
-    this.isLoading.set(true);
+    this.isLoadingSubmitRequest.set(true);
     this.profileService.changePassword(password).subscribe({
       next: () => {
-        this.isLoading.set(false);
+        this.isLoadingSubmitRequest.set(false);
         this.editingPassword = false;
         passwordControl.reset();
         this.toastService.success('Contraseña actualizada correctamente', 'Éxito');
       },
       error: () => {
-        this.isLoading.set(false);
+        this.isLoadingSubmitRequest.set(false);
         this.toastService.error('Hubo un error al actualizar la contraseña', 'Error');
       }
     });
@@ -178,7 +183,7 @@ export class ViewProfileComponent implements OnInit {
     const amountControl = this.profileForm.get('amount');
     const amount = amountControl?.value;
 
-    this.isLoading.set(true);
+    this.isLoadingSubmitRequest.set(true);
     this.profileService.rechargeCredits(amount).subscribe({
       next: (response) => {
         const approvalUrl = response.approval_url;
@@ -186,15 +191,14 @@ export class ViewProfileComponent implements OnInit {
         if (paymentWindow) {
           const interval = setInterval(() => {
             if (paymentWindow.closed) {
-              this.isLoading.set(false);
+              this.isLoadingSubmitRequest.set(false);
               this.closeRechargeModal();
               clearInterval(interval);
               this.loadUserInfo();
-              this.toastService.success('Recarga realizada correctamente', 'Éxito');
             }
           }, 1000);
         } else {
-          this.toastService.error('No se pudo abrir la ventana de pago', 'Error');
+          this.toastService.error('Hubo un error al abrir la ventana de pago', 'Error');
         }
       },
       error: () => {

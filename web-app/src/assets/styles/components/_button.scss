@@ -4,23 +4,55 @@
   display: inline-block;
   width: fit-content;
   align-self: center;
-  padding: 0.75rem 1.5rem;
+  padding: 0.65rem 1.3rem;
   background-color: var.$green-medium;
   color: white;
   font-weight: 400;
-  border: none;
+  border: 1px solid var.$green-medium;
   border-radius: 0.5rem;
   cursor: pointer;
   font-size: 1rem;
   text-decoration: none;
-  transition: background-color 0.35s ease-in-out;
+  transition: background-color 0.35s ease-in-out, border-color 0.35s ease-in-out;
 
   &:hover {
     background-color: var.$green-dark;
+    border-color: var.$green-dark;
   }
 
   &:disabled {
     background-color: var.$green-dark;
+    border-color: var.$green-dark;
+    cursor: not-allowed;
+  }
+}
+
+.button-cancel {
+  display: inline-block;
+  width: fit-content;
+  align-self: center;
+  padding: 0.65rem 1.3rem;
+  background-color: white;
+  color: var.$green-medium;
+  font-weight: 400;
+  border: 1px solid var.$green-medium;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.35s, color 0.35s, border-color 0.35s;
+
+  &:hover {
+    background-color: white;
+    color: var.$green-dark;
+    border-color: var.$green-dark;
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.10);
+  }
+
+  &:disabled {
+    background-color: white;
+    color: var.$green-dark;
+    border-color: var.$green-dark;
     cursor: not-allowed;
   }
 }
@@ -64,4 +96,42 @@
   }
 }
 
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 
+  &--profile {
+    position: absolute;
+    bottom: -1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+
+  button {
+    background-color: #fff;
+    color: var.$green-dark;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 1.56rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+
+    &:hover:not(.active) {
+      background-color: var.$green-dark;
+      color: #fff;
+      transform: translateY(-0.125rem);
+    }
+
+    &.active {
+      background-color: var.$green-dark;
+      color: #fff;
+      box-shadow: 0 0.25rem 0.94rem rgba(0, 0, 0, 0.25);
+      transform: translateY(-0.25rem);
+    }
+  }
+}
