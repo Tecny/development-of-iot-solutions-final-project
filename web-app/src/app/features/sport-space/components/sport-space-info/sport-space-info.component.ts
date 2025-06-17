@@ -36,7 +36,7 @@ export class SportSpaceInfoComponent implements OnInit {
       shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png'
     });
 
-    this.map = L.map(mapEl).setView([this.sportSpace.latitude, this.sportSpace.longitude], 15);
+    this.map = L.map(mapEl).setView([this.sportSpace.latitude, this.sportSpace.longitude], 16);
 
     L.tileLayer(`https://tiles.locationiq.com/v3/streets/r/{z}/{x}/{y}.png?key=${environment.locationIQKey}`, {
       attribution: '&copy; <a href="https://www.locationiq.com/">LocationIQ</a> contributors'
@@ -44,6 +44,7 @@ export class SportSpaceInfoComponent implements OnInit {
 
     L.marker([this.sportSpace.latitude, this.sportSpace.longitude])
       .addTo(this.map)
+      .bindPopup(`<span style="font-family: 'Poppins', sans-serif;">${this.sportSpace.name}</span>`)
   }
 
   protected readonly gamemodeIdToLabelMap = gamemodeIdToLabelMap;

@@ -5,8 +5,8 @@ export const SPORTS = [
 
 export const GAMEMODE_OPTIONS = [
   { id: 1, label: 'Futbol 11', value: 'FUTBOL_11', sportId: 1 },
-  { id: 2, label: 'Futbol 7', value: 'FUTBOL_7', sportId: 1 },
-  { id: 3, label: 'Futbol 8', value: 'FUTBOL_8', sportId: 1 },
+  { id: 2, label: 'Futbol 8', value: 'FUTBOL_8', sportId: 1 },
+  { id: 3, label: 'Futbol 7', value: 'FUTBOL_7', sportId: 1 },
   { id: 4, label: 'Futbol 5', value: 'FUTBOL_5', sportId: 1 },
   { id: 5, label: 'Billar 3', value: 'BILLAR_3', sportId: 2 }
 ];

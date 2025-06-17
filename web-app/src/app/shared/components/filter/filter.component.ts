@@ -1,4 +1,14 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output} from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  ViewChild,
+  Renderer2, inject, AfterViewInit
+} from '@angular/core';
 import {FilterConfig} from '../../models/filter-config.interface';
 import {FormsModule} from '@angular/forms';
 import {GAMEMODE_OPTIONS, getSportIdByValue} from '../../models/sport-space.constants';
@@ -12,11 +22,33 @@ import {GAMEMODE_OPTIONS, getSportIdByValue} from '../../models/sport-space.cons
   styleUrl: './filter.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FiltersComponent {
+export class FiltersComponent implements OnInit, AfterViewInit {
   @Input() config: FilterConfig[] = [];
   @Output() filtersChanged = new EventEmitter<Record<string, any>>();
+  @ViewChild('filtersContainer') filtersContainer!: ElementRef;
+
+  private renderer = inject(Renderer2);
 
   filters: Record<string, any> = {};
+
+  ngOnInit() {
+    this.config.forEach(filter => {
+      if (filter.type === 'select' || filter.type === 'time') {
+        this.filters[filter.field] = '';
+      }
+    });
+  }
+
+  ngAfterViewInit() {
+    this.renderer.listen('window', 'scroll', () => {
+      const offset = window.scrollY || window.pageYOffset;
+      if (offset > 172) {
+        this.renderer.addClass(this.filtersContainer.nativeElement, 'scrolled');
+      } else {
+        this.renderer.removeClass(this.filtersContainer.nativeElement, 'scrolled');
+      }
+    });
+  }
 
   emitChanges() {
     this.filtersChanged.emit(this.filters);
@@ -24,6 +56,11 @@ export class FiltersComponent {
 
   clearFilters() {
     this.filters = {};
+    this.config.forEach(filter => {
+      if (filter.type === 'select' || filter.type === 'time') {
+        this.filters[filter.field] = '';
+      }
+    });
     this.emitChanges();
   }
 
@@ -58,6 +95,9 @@ export class FiltersComponent {
     return (event.target as HTMLSelectElement).value;
   }
 
+  hasSelectedFilters(): boolean {
+    return Object.values(this.filters).some(value => value !== '' && value !== null && value !== undefined);
+  }
 
   protected readonly Object = Object;
 }

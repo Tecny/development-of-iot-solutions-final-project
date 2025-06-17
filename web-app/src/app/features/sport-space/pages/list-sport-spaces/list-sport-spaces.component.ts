@@ -315,9 +315,9 @@ export class ListSportSpacesComponent implements OnInit {
     const filtered = this.allSpaces.filter(space => {
       return (
         (!sportId || space.sportId === sportId) &&
+        (!gamemodeId || space.gamemodeId === gamemodeId) &&
         (!price || space.price <= price) &&
-        (!openTime || String(space.openTime) <= String(openTime)) &&
-        (!gamemodeId || space.gamemodeId === gamemodeId)
+        (!openTime || String(space.openTime) <= String(openTime))
       );
     });
 

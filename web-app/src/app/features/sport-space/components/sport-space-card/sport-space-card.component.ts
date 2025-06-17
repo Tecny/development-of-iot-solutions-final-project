@@ -36,7 +36,7 @@ import {ToastrService} from 'ngx-toastr';
         }
 
         <div class="sportspace-card__price-tag">
-          S/ {{ sportSpace.price }}
+          {{ sportSpace.price }} créditos
         </div>
       </div>
 

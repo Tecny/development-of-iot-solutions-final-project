@@ -89,6 +89,13 @@
     left: 0.6rem;
     font-size: 0.75rem;
     color: var.$green-dark;
+    background: linear-gradient(
+        to bottom,
+        #fafafa 0%,
+        #fafafa 50%,
+        var.$background 50%,
+        var.$background 100%
+    );
   }
 
   input:focus + label,
@@ -101,6 +108,13 @@
     left: 0.6rem;
     font-size: 0.75rem;
     color: var.$green-dark;
+    background: linear-gradient(
+        to bottom,
+        #fafafa 0%,
+        #fafafa 50%,
+        var.$background 50%,
+        var.$background 100%
+    );
   }
 
   small.error-text {
