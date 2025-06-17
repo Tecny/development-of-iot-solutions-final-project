@@ -6426,61 +6426,87 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 	- Link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201c037_upc_edu_pe/EYCourtljLBAvhhXy1d9fE8B6ggWe4hkNHFfR2SehxNcog?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Rb0j5y 
 	- Hallazgos:
 		- Landing Page:
-  			• Le parece que los colores están bien, que no satura mucho la vista y que combinan con la estructura de la página.
-   			• Le parece muy intuitivo con la paleta de colores que elegimos.
-  			• Le parece muy bien el sistema de navegación, pero le gustaría que el menú le siguiera cuando esté en una sección de esta.
-    			• Entendió rápidamente lo que brindamos como servicio, y cree que responde muy bien a la pregunta de por qué elegirnos.
-    			• Todo le pareció intuitivo, pero recalca la idea que el menú lo siga para mejorar la mecánica. Sobre los botones, están bien posicionados, así como los desplegables.
-    			• No tiene otra observación, salvo por el menú, él considera que está bastante bien el landing page.
+  			- Le parece que los colores están bien, que no satura mucho la vista y que combinan con la estructura de la página.
+   			- Le parece muy intuitivo con la paleta de colores que elegimos.
+  			- Le parece muy bien el sistema de navegación, pero le gustaría que el menú le siguiera cuando esté en una sección de esta.
+     		- Entendió rápidamente lo que brindamos como servicio, y cree que responde muy bien a la pregunta de por qué elegirnos.
+       		- Todo le pareció intuitivo, pero recalca la idea que el menú lo siga para mejorar la mecánica. Sobre los botones, están bien posicionados, así como los desplegables.
+         	- No tiene otra observación, salvo por el menú, él considera que está bastante bien el landing page.
+
+    			
 		- Aplicación Web:
-    			• Los colores lo ven bien, no satura la vista. Algo que quisiera observar es sobre los espacios deportivos, en los horarios de apertura no es como que filtre como tal los horarios disponibles o que haya espacios, porque cuando no hay no le aparece nada. El limpiar filtro le parece bien, así como el filtrado de deportes para separar los espacios deportivos por fútbol y billar. Ahora sobre el campo de las reservas le parece genial porque puede ver todo lo que ha reservado y el estado de cada una.
-    			• Todo le pareció intuitivo, le surgió una duda sobre el qr que en una parte del flujo aparece.
-   			• El flujo de acciones considera que fue lógico, pues realizó de manera rápida una reserva. Le parece muy cómodo e intuitivo para ver la disponibilidad de horarios.
-    			• La funcionalidad que le ha gusta bastante es la del QR, pues le parece muy útil ya que la mayoría de las personas utilizan teléfonos móviles para realizar cualquier transacción, en este caso el QR verifica mi estadía en la reserva lo que le parece una función muy buena para poder verificar si hizo la reserva.
-    			• En caso de que se pueda añadir más personas para utilizar la aplicación, algo que le gustaría agregar es una contraseña para acceder a una sala sino cualquiera podría entrar en una sala privada.
+  			- Los colores lo ven bien, no satura la vista. Algo que quisiera observar es sobre los espacios deportivos, en los horarios de apertura no es como que filtre como tal los horarios disponibles o que haya espacios, porque cuando no hay no le aparece nada. El limpiar filtro le parece bien, así como el filtrado de deportes para separar los espacios deportivos por fútbol y billar. Ahora sobre el campo de las reservas le parece genial porque puede ver todo lo que ha reservado y el estado de cada una.
+     		- Todo le pareció intuitivo, le surgió una duda sobre el qr que en una parte del flujo aparece.
+        	- El flujo de acciones considera que fue lógico, pues realizó de manera rápida una reserva. Le parece muy cómodo e intuitivo para ver la disponibilidad de horarios.
+           	- La funcionalidad que le ha gusta bastante es la del QR, pues le parece muy útil ya que la mayoría de las personas utilizan teléfonos móviles para realizar cualquier transacción, en este caso el QR verifica mi estadía en la reserva lo que le parece una función muy buena para poder verificar si hizo la reserva.
+          - En caso de que se pueda añadir más personas para utilizar la aplicación, algo que le gustaría agregar es una contraseña para acceder a una sala sino cualquiera podría entrar en una sala privada.
+    			
 	- Resumen:
-   	Miguel Ángel Ybañez Esquerre, jugador de fútbol de 22 años del distrito del Rímac, brindó su opinión sobre una landing page y una aplicación web. Consideró que el diseño visual de la landing page es agradable y los colores están bien equilibrados, haciendo que la experiencia sea intuitiva. Destacó que comprendió rápidamente el servicio ofrecido, aunque recomendó que el menú de navegación se mantenga visible al hacer scroll para mejorar la usabilidad. En cuanto a la aplicación web, valoró positivamente la interfaz y el sistema de reservas, resaltando la claridad al mostrar sus reservas y sus estados. Señaló como área de mejora el sistema de filtrado de horarios disponibles en los espacios deportivos, ya que cuando no hay disponibilidad, simplemente no se muestra nada. Apreció funciones como el filtro por tipo de deporte y el botón para limpiar filtros. También elogió la integración del código QR como un medio práctico para validar su presencia. Finalmente, sugirió implementar contraseñas en salas privadas como medida de seguridad adicional. En general, encontró la experiencia intuitiva y funcional.
+ 		- Miguel Ángel Ybañez Esquerre, jugador de fútbol de 22 años del distrito del Rímac, brindó su opinión sobre una landing page y una aplicación web. Consideró que el diseño visual de la landing page es agradable y los colores están bien equilibrados, haciendo que la experiencia sea intuitiva. Destacó que comprendió rápidamente el servicio ofrecido, aunque recomendó que el menú de navegación se mantenga visible al hacer scroll para mejorar la usabilidad. En cuanto a la aplicación web, valoró positivamente la interfaz y el sistema de reservas, resaltando la claridad al mostrar sus reservas y sus estados. Señaló como área de mejora el sistema de filtrado de horarios disponibles en los espacios deportivos, ya que cuando no hay disponibilidad, simplemente no se muestra nada. Apreció funciones como el filtro por tipo de deporte y el botón para limpiar filtros. También elogió la integración del código QR como un medio práctico para validar su presencia. Finalmente, sugirió implementar contraseñas en salas privadas como medida de seguridad adicional. En general, encontró la experiencia intuitiva y funcional.
+   	
  <br> 
  <p align="center">
-	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Entrevista_Jugador_1.png" alt="UPC">
  </p>
 
  - **Entrevista N° 2**:
 
-	- Entrevistador:
- 	- Entrevistado:
-	- Sexo:
-	- Edad:
- 	- Distrito:
-  	- Rol:
-  	- Duración de la entrevista:
-	- Link:
+	- Entrevistador: Willy David Valentin Ricaldi
+ 	- Entrevistado: Santos Alexis Patazca Calderon
+	- Sexo: Masculino
+	- Edad: 26
+ 	- Distrito: Los Olivos
+  	- Rol: Jugador de Fútbol
+  	- Duración de la entrevista: 13:48
+	- Link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201c037_upc_edu_pe/EQuNDckpbXJJmZmHBxthGc8BDQyldEf4_ucZRrdaKrw68Q?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=inZRWc 
 	- Hallazgos:
 		- Landing Page:
+  			- Considera que son los colores son intuitivos, que no son fastidiosos para la vista. El contenido que tiene está detallado y lo considera bien.
+   			- Considera que la distribución de los elementos es lógica, porque es similares a otras páginas de negocios.
+   			- Sobre la información, Alexis entendió rápidamente resaltando la sección de que hacemos lo cual le ofreció esta información.
+   			- No encontró ninguna sección que distorsionara la información.
+   			- Sobre el menú, él considera que la navegación sigue una secuencia lógica.
+   			- Algo que le gustaría ver dentro del landing, es una sección donde se puede ver con quienes nos asociamos para llevar a cabo el negocio.
 		- Aplicación Web:
+   			- Le parece genial la sala de la comunidad, tiene una buena idea de los créditos. Entiende la idea pues es muy fácil de aprender porque es detallado.
+   			- Quizás se podría ser más detallado en la descripción de las secciones de las reservas personales y salas comunitarias como que incluir los beneficios.
+   			- Cree que este sistema ayudaría bastante a la hora de gestionar eventos grandes como campeonatos urbanos e incluso interdistritales. 
 	- Resumen:
+ 		- Santos Alexis Patazca Calderón, un joven futbolista de 26 años del distrito de Los Olivos, compartió sus impresiones tras revisar una landing page y una aplicación web. En general, percibió que los colores usados son agradables y el contenido está bien estructurado y explicado, destacando la claridad en la sección “¿Qué hacemos?”. Le pareció que la distribución de los elementos es coherente, similar a otras plataformas comerciales, y no notó secciones que generaran confusión. En cuanto al menú, opinó que su estructura facilita la navegación. Sugeriría añadir una sección que muestre las alianzas del negocio. Sobre la aplicación web, destacó positivamente la sala comunitaria y el sistema de créditos, señalando que es fácil de entender por lo detallado que está. Sin embargo, cree que se podría profundizar en la descripción de las secciones de reservas, sobre todo resaltando sus beneficios. Finalmente, considera que la herramienta sería muy útil para organizar eventos deportivos a gran escala. 
  <br> 
  <p align="center">
-	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Entrevista_Jugador_2.png" alt="UPC">
  </p>
 
  - **Entrevista N° 3**:
 
-	- Entrevistador:
- 	- Entrevistado:
-	- Sexo:
-	- Edad:
- 	- Distrito:
-  	- Rol:
-  	- Duración de la entrevista:
-	- Link:
+	- Entrevistador: Willy David Valentin Ricaldi
+ 	- Entrevistado: Daniel Rodrigo Chirinos Arévalo
+	- Sexo: Masculino
+	- Edad: 22 
+ 	- Distrito: Callao
+  	- Rol: Jugador de Billar
+  	- Duración de la entrevista: 18:33
+	- Link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201c037_upc_edu_pe/EU-Aeo_NS9VDokpkqPhwMi0B_XRmTi-K_Z07UY9QQiWmew?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=soq4lm 
 	- Hallazgos:
 		- Landing Page:
+  			- En base a otras aplicaciones, le parece que los colores están bastante bien, no hay nada que cambiar, es bastante llamativo pues tiene imágenes, precios, y el diseño cumple con los bueno estándares.
+     		- Sobre la distribución de los elementos, no lo considera desordenado por el menú existente, considera que es fácil de encontrar cada sección.
+       		- Sobre la información presentada en el landing page entendió que el sistema se enfoca en reservas de espacios deportivos en línea, lo considera digerible pues entendió rápidamente los beneficios y demás detalles.
+         	- Sobre la navegación, considera fluida y lógica pues si le gustaría que se cambie el botón de Play Store a uno no de simulación como lo está ahora pero por lo demás está bien.
+           	- Sobre los elementos interactivos, le pareció que están bien ubicados y que resalta sobre el botón de acceso a la aplicación web.
+           	- A Daniel le gustaría que se agregaría más preguntas frecuentes, sobre la sección de precios considera que hay cambios algo ligeros, cree que deberían haber más cosas que incentiven pagar por el servicio que ofrecen.
 		- Aplicación Web:
+  			- Los colores de la aplicación web considera que están bien pero en algunas secciones como sala comunidad parecen algo “vacíos” como el fondo por ejemplo.
+     		- No le pareció nada confuso alguna funcionalidad pues cada botón es muy claro, así como la disponibilidad de horas es muy intuitivo, considera que está bien estructurado.
+        	- Sobre el flujo de las acciones, le pareció algo lento con la carga de información pero no representa un problema grande.
+          	- Le gustó la sección de sala comunidad, porque esta funcionalidad lo ve bastante útil para poder entrar y hablar con las personas, esto ayuda bastante al aspecto social.
+          - Cree que se podría mejorar las posiciones de las cards, por ejemplo, en su pantalla se ven muy al costado y le gustaría verlas centradas.  
 	- Resumen:
+ 		- Daniel Rodrigo Chirinos Arévalo, jugador de billar de 22 años del Callao, compartió su opinión sobre una landing page y una aplicación web centradas en reservas deportivas. Señaló que los colores y el diseño general de la landing le parecieron adecuados y llamativos, con imágenes y precios bien presentados. Valoró positivamente la organización del contenido, destacando la claridad del menú y la facilidad para encontrar secciones. Comprendió con rapidez el objetivo de la plataforma y los beneficios del servicio, aunque sugirió reemplazar el botón simulado de Play Store por uno funcional. También propuso incluir más preguntas frecuentes y reforzar los incentivos para que los usuarios paguen por el servicio. En cuanto a la aplicación web, mencionó que los colores están bien, pero algunas secciones como la sala comunitaria podrían mejorar visualmente. Las funcionalidades le resultaron claras y bien ubicadas, aunque notó una ligera lentitud al cargar datos. Apreció especialmente la función social de la sala comunidad, y sugirió centrar mejor las “cards” en la interfaz para mejorar su experiencia visual. 
  <br> 
  <p align="center">
-	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Entrevista_Jugador_3.png" alt="UPC">
  </p>
 
  - **Entrevista N° 4**:
@@ -6604,7 +6630,153 @@ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad
 
 ### DESCRIPCIÓN DE PROBLEMAS:
 
-**PROBLEMA #1**:   
+**PROBLEMA #1**: Falta de visibilidad de horarios no disponibles
+
+**Severidad**: Nivel 3 – Problema mayor
+
+**Heurística violada**: Feedback y visibilidad del sistema (Usability)
+
+**Explicación**:
+Cuando un espacio deportivo no tiene disponibilidad en ciertos horarios, el sistema simplemente no muestra nada, generando incertidumbre en el usuario. No queda claro si el lugar está lleno o si el sistema no ha cargado.
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Problema_1.png" alt="UPC">
+ </p>
+
+**Recomendación**:  
+Mostrar los horarios no disponibles de manera atenuada o tachada, e incluir un mensaje explicativo como “No hay horarios disponibles para este día”. Esto aumenta la transparencia del sistema.
+
+<div style="page-break-before: always;"></div>
+
+**PROBLEMA #2**: Descripciones poco detalladas en reservas personales y comunitarias
+
+**Severidad**: Nivel 2 – Problema menor
+
+**Heurística violada**: Claridad del contenido (Information Architecture)
+
+**Explicación**:  
+Un usuario indicó que no se explica claramente la diferencia entre reservas personales y comunitarias, ni sus beneficios. Esto puede generar confusión al momento de elegir una modalidad.
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Problema_2.png" alt="UPC">
+ </p>
+
+**Recomendación**:  
+Añadir textos breves debajo de cada sección o ícono que expliquen qué incluye cada tipo de reserva, sus beneficios y casos de uso.
+
+<div style="page-break-before: always;"></div>
+
+**PROBLEMA #3**:   Fondo vacío y falta de diferenciación en salas comunidad
+
+**Severidad**:   Nivel 2 – Problema menor
+
+**Heurística violada**:   Jerarquía visual y balance estético (Design)
+
+**Explicación**:  
+En la sala comunidad, el fondo luce visualmente “vacío” o poco trabajado. Esto disminuye el atractivo visual y la percepción de completitud del producto.
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Problema_3.png" alt="UPC">
+ </p>
+
+**Recomendación**:  
+Incluir fondos suaves con textura o imágenes tenues relacionadas a deportes. También se pueden usar componentes gráficos para dividir secciones y mejorar la jerarquía visual.
+
+<div style="page-break-before: always;"></div>
+
+**PROBLEMA #4**: Cards desalineadas en algunas resoluciones  
+
+**Severidad**:   Nivel 2 – Problema menor
+
+**Heurística violada**:   Consistencia y estética del diseño (Design)
+
+**Explicación**:  
+Un usuario mencionó que las tarjetas (cards) se ven pegadas a un costado en su pantalla, afectando la experiencia visual y sensación de equilibrio en la interfaz.
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Problema_4.png" alt="UPC">
+ </p>
+
+**Recomendación**:
+Aplicar centrado horizontal y márgenes adaptativos en el diseño responsivo para asegurar que las cards estén siempre centradas en cualquier resolución.
+
+<div style="page-break-before: always;"></div>
+
+**PROBLEMA #5**:   Falta de privacidad en salas comunidad
+
+**Severidad**:   Nivel 2 – Problema menor
+
+**Heurística violada**:   Control y flexibilidad del usuario (Usability)
+
+**Explicación**:  
+Un usuario sugirió añadir una contraseña o control de acceso a las salas comunidad, ya que actualmente cualquiera podría ingresar si tiene el enlace o acceso general.
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Problema_5.png" alt="UPC">
+ </p>
+
+**Recomendación**:  
+Implementar la opción de proteger salas comunidad con contraseña opcional o lista de invitados. Esto daría mayor control al organizador y reforzaría la seguridad.
+
+<div style="page-break-before: always;"></div>
+
+**PROBLEMA #6**:   
+**Severidad**:   
+**Heurística violada**:   
+
+**Explicación**:  
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+ </p>
+
+**Recomendación**:  
+
+<div style="page-break-before: always;"></div>
+
+**PROBLEMA #7**:   
+**Severidad**:   
+**Heurística violada**:   
+
+**Explicación**:  
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+ </p>
+
+**Recomendación**:  
+
+<div style="page-break-before: always;"></div>
+
+**PROBLEMA #8**:   
+**Severidad**:   
+**Heurística violada**:   
+
+**Explicación**:  
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+ </p>
+
+**Recomendación**:  
+
+<div style="page-break-before: always;"></div>
+
+**PROBLEMA #9**:   
+**Severidad**:   
+**Heurística violada**:   
+
+**Explicación**:  
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+ </p>
+
+**Recomendación**:  
+
+<div style="page-break-before: always;"></div>
+
+**PROBLEMA #10**:   
 **Severidad**:   
 **Heurística violada**:   
 
