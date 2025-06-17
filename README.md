@@ -6416,18 +6416,30 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 
 - **Entrevista N° 1**:
 
-	- Entrevistador:
- 	- Entrevistado:
-	- Sexo:
-	- Edad:
- 	- Distrito:
-  	- Rol:
-  	- Duración de la entrevista:
-	- Link:
+	- Entrevistador: Willy David Valentin Ricaldi
+ 	- Entrevistado: Miguel Angel Ybañez Esquerre
+	- Sexo: Masculino
+	- Edad: 22
+ 	- Distrito: Rímac
+  	- Rol: Jugador de Fútbol 
+  	- Duración de la entrevista: 16:38
+	- Link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u20201c037_upc_edu_pe/EYCourtljLBAvhhXy1d9fE8B6ggWe4hkNHFfR2SehxNcog?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Rb0j5y 
 	- Hallazgos:
 		- Landing Page:
+  			• Le parece que los colores están bien, que no satura mucho la vista y que combinan con la estructura de la página.
+   			• Le parece muy intuitivo con la paleta de colores que elegimos.
+  			• Le parece muy bien el sistema de navegación, pero le gustaría que el menú le siguiera cuando esté en una sección de esta.
+    			• Entendió rápidamente lo que brindamos como servicio, y cree que responde muy bien a la pregunta de por qué elegirnos.
+    			• Todo le pareció intuitivo, pero recalca la idea que el menú lo siga para mejorar la mecánica. Sobre los botones, están bien posicionados, así como los desplegables.
+    			• No tiene otra observación, salvo por el menú, él considera que está bastante bien el landing page.
 		- Aplicación Web:
+    			• Los colores lo ven bien, no satura la vista. Algo que quisiera observar es sobre los espacios deportivos, en los horarios de apertura no es como que filtre como tal los horarios disponibles o que haya espacios, porque cuando no hay no le aparece nada. El limpiar filtro le parece bien, así como el filtrado de deportes para separar los espacios deportivos por fútbol y billar. Ahora sobre el campo de las reservas le parece genial porque puede ver todo lo que ha reservado y el estado de cada una.
+    			• Todo le pareció intuitivo, le surgió una duda sobre el qr que en una parte del flujo aparece.
+   			• El flujo de acciones considera que fue lógico, pues realizó de manera rápida una reserva. Le parece muy cómodo e intuitivo para ver la disponibilidad de horarios.
+    			• La funcionalidad que le ha gusta bastante es la del QR, pues le parece muy útil ya que la mayoría de las personas utilizan teléfonos móviles para realizar cualquier transacción, en este caso el QR verifica mi estadía en la reserva lo que le parece una función muy buena para poder verificar si hizo la reserva.
+    			• En caso de que se pueda añadir más personas para utilizar la aplicación, algo que le gustaría agregar es una contraseña para acceder a una sala sino cualquiera podría entrar en una sala privada.
 	- Resumen:
+   	Miguel Ángel Ybañez Esquerre, jugador de fútbol de 22 años del distrito del Rímac, brindó su opinión sobre una landing page y una aplicación web. Consideró que el diseño visual de la landing page es agradable y los colores están bien equilibrados, haciendo que la experiencia sea intuitiva. Destacó que comprendió rápidamente el servicio ofrecido, aunque recomendó que el menú de navegación se mantenga visible al hacer scroll para mejorar la usabilidad. En cuanto a la aplicación web, valoró positivamente la interfaz y el sistema de reservas, resaltando la claridad al mostrar sus reservas y sus estados. Señaló como área de mejora el sistema de filtrado de horarios disponibles en los espacios deportivos, ya que cuando no hay disponibilidad, simplemente no se muestra nada. Apreció funciones como el filtro por tipo de deporte y el botón para limpiar filtros. También elogió la integración del código QR como un medio práctico para validar su presencia. Finalmente, sugirió implementar contraseñas en salas privadas como medida de seguridad adicional. En general, encontró la experiencia intuitiva y funcional.
  <br> 
  <p align="center">
 	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
