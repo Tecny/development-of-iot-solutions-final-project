@@ -1,13 +1,35 @@
-<div class="details-page">
-  @if (!isLoading() && sportSpace()) {
-    <app-sport-space-info [sportSpace]="sportSpace()!" />
+@if (!isLoading() && sportSpace()) {
+  <div class="sport-space-container">
+    <div class="header">
+      <img src="{{ sportSpace()?.imageUrl }}" alt="Imagen del espacio deportivo" />
+      <h1 class="title">{{ sportSpace()?.name }}</h1>
+    </div>
 
-    @defer (when !isLoading()) {
-      <app-sport-space-availability [sportSpace]="sportSpace()!"/>
-    } @placeholder {
-      <p>Cargando disponibilidad...</p>
-    }
-  } @else {
-    <p>Cargando detalles del espacio deportivo...</p>
-  }
-</div>
+    <div class="details-page">
+
+        <div class="tab-buttons">
+          <button [class.active]="activeTab() === 'availability'" (click)="setTab('availability')">Reservar</button>
+          <button [class.active]="activeTab() === 'info'" (click)="setTab('info')">Información</button>
+        </div>
+
+        <div class="tab-content">
+          @if (activeTab() === 'info') {
+            <app-sport-space-info [sportSpace]="sportSpace()!" />
+          }
+          @if (activeTab() === 'availability') {
+            @defer (when !isLoading()) {
+              <app-sport-space-availability [sportSpace]="sportSpace()!" />
+            } @placeholder {
+              <div class="view-spinner">
+                <app-spinner/>
+              </div>
+            }
+          }
+        </div>
+    </div>
+  </div>
+} @else {
+  <div class="view-spinner">
+    <app-spinner/>
+  </div>
+}

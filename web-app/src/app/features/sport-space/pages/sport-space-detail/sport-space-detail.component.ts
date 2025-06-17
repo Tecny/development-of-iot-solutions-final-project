@@ -6,21 +6,24 @@ import {SportSpaceInfoComponent} from '../../components/sport-space-info/sport-s
 import {
   SportSpaceAvailabilityComponent
 } from '../../components/sport-space-availability/sport-space-availability.component';
+import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
 
 @Component({
   selector: 'app-sport-space-detail',
   imports: [
     SportSpaceInfoComponent,
-    SportSpaceAvailabilityComponent
+    SportSpaceAvailabilityComponent,
+    SpinnerComponent
   ],
   templateUrl: './sport-space-detail.component.html',
   styleUrl: './sport-space-detail.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SportSpaceDetailComponent implements OnInit{
+export class SportSpaceDetailComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private sportSpaceService = inject(SportSpaceService);
 
+  activeTab = signal<'availability' | 'info'>('availability');
   sportSpace = signal<SportSpace | null>(null);
   isLoading = signal(true);
 
@@ -36,5 +39,9 @@ export class SportSpaceDetailComponent implements OnInit{
         this.isLoading.set(false);
       }
     });
+  }
+
+  setTab(tab: 'availability' | 'info') {
+    this.activeTab.set(tab);
   }
 }

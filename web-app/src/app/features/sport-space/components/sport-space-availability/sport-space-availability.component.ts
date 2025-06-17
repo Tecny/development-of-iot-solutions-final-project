@@ -9,13 +9,16 @@ import {Router} from '@angular/router';
 import {TimeUtil} from '../../../../shared/utils/time.util';
 import {ReservationRequest} from '../../../reservation/models/reservation.interface';
 import {UserStoreService} from '../../../../core/services/user-store.service';
+import {ToastrService} from 'ngx-toastr';
+import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
 
 @Component({
   selector: 'app-sport-space-availability',
   imports: [
     NgClass,
     ModalComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SpinnerComponent
   ],
   templateUrl: './sport-space-availability.component.html',
   styleUrl: './sport-space-availability.component.scss',
@@ -31,6 +34,7 @@ export class SportSpaceAvailabilityComponent implements OnInit {
   private reservationService = inject(ReservationService);
   private router = inject(Router);
   private fb = inject(NonNullableFormBuilder);
+  private toastService = inject(ToastrService);
 
   availabilityMap: Record<string, string[]> = {};
   timeSlots: string[] = [];
@@ -38,7 +42,10 @@ export class SportSpaceAvailabilityComponent implements OnInit {
   selectedGameDay: string = '';
   selectedStartTime: string = '';
   selectedEndTime: string = '';
+  showError = false;
 
+  isLoadingAvailability = signal<boolean>(true);
+  isLoadingSubmitRequest = signal(false);
   currentUser = this.userStore.currentUser;
   reservationType = signal<string>('');
   selectedSlots = signal<{ gameDay: string; startTime: string; endTime: string }[]>([]);
@@ -93,9 +100,29 @@ export class SportSpaceAvailabilityComponent implements OnInit {
   }
 
   fetchAvailability() {
-    this.sportSpaceService.checkAvailability(this.sportSpace.id).subscribe((res: any) => {
-      this.availabilityMap = res.weeklyAvailability;
-      this.weekDays = Object.keys(res.weeklyAvailability).sort();
+    this.isLoadingAvailability.set(true);
+    this.sportSpaceService.checkAvailability(this.sportSpace.id).subscribe({
+      next: (res: any) => {
+        this.availabilityMap = res.weeklyAvailability;
+        const today = new Date();
+        const todayYMD = [today.getFullYear(), today.getMonth() + 1, today.getDate()];
+        this.weekDays = Object.keys(res.weeklyAvailability)
+          .filter(dateStr => {
+            const [year, month, day] = dateStr.split('-').map(Number);
+            const hasHours = (res.weeklyAvailability[dateStr] ?? []).length > 0;
+            if (!hasHours) return false;
+            if (year > todayYMD[0]) return true;
+            if (year < todayYMD[0]) return false;
+            if (month > todayYMD[1]) return true;
+            if (month < todayYMD[1]) return false;
+            return day >= todayYMD[2];
+          })
+          .sort();
+        this.isLoadingAvailability.set(false);
+      },
+      error: () => {
+        this.isLoadingAvailability.set(false);
+      }
     });
   }
 
@@ -103,10 +130,19 @@ export class SportSpaceAvailabilityComponent implements OnInit {
     return this.availabilityMap[date]?.includes(hour) ?? false;
   }
 
+  isPast(date: string, hour: string): boolean {
+    const now = new Date();
+    const [year, month, day] = date.split('-').map(Number);
+    const [h, m] = hour.split(':').map(Number);
+    const slotDate = new Date(year, month - 1, day, h, m);
+
+    return slotDate < now;
+  }
+
   onSlotClick(gameDay: string, time: string): void {
 
     if(this.currentUser()?.roleType === 'OWNER') {
-      console.warn('No puedes seleccionar horarios.');
+      this.toastService.warning('Los propietarios no pueden seleccionar horarios', 'Advertencia');
       return;
     }
 
@@ -115,7 +151,7 @@ export class SportSpaceAvailabilityComponent implements OnInit {
     const currentSlots = this.selectedSlots();
 
     if (currentSlots.length > 0 && currentSlots[0].gameDay !== gameDay) {
-      console.warn('Solo puedes seleccionar slots para el mismo día.');
+      this.toastService.warning('Solo puedes seleccionar horas para el mismo día', 'Advertencia');
       return;
     }
 
@@ -124,8 +160,8 @@ export class SportSpaceAvailabilityComponent implements OnInit {
     let newSlots = [...currentSlots];
 
     if (selectedIndex === -1) {
-      if (currentSlots.length >= 3) {
-        console.warn('Solo puedes seleccionar un máximo de 3 slots.');
+      if (currentSlots.length >= 2) {
+        this.toastService.warning('Solo puedes seleccionar un máximo de 2 horas', 'Advertencia');
         return;
       }
 
@@ -142,7 +178,7 @@ export class SportSpaceAvailabilityComponent implements OnInit {
           newSlots.push({ gameDay: gameDay, startTime: time, endTime: time });
           newSlots.sort((a, b) => this.timeSlots.indexOf(a.startTime) - this.timeSlots.indexOf(b.startTime));
         } else {
-          console.warn('Los bloques seleccionados deben ser consecutivos.');
+          this.toastService.warning('Las horas seleccionadas deben ser consecutivas', 'Advertencia');
           return;
         }
       }
@@ -154,13 +190,14 @@ export class SportSpaceAvailabilityComponent implements OnInit {
         const currentIndex = this.timeSlots.indexOf(newSlots[i].startTime);
 
         if (currentIndex !== prevIndex + 1) {
-          console.warn('Los bloques restantes deben ser consecutivos. Deselección no permitida.');
+          this.toastService.warning('Las horas restantes deben ser consecutivas', 'Advertencia');
           return;
         }
       }
     }
 
     this.selectedSlots.set(newSlots);
+    this.showError = false;
   }
 
   isSelected(date: string, time: string): boolean {
@@ -193,7 +230,7 @@ export class SportSpaceAvailabilityComponent implements OnInit {
 
       this.showReservationModal = true;
     } else {
-      console.warn('Debes seleccionar al menos un horario.');
+      this.toastService.warning('Selecciona al menos una hora para reservar', 'Advertencia');
     }
   }
 
@@ -204,21 +241,34 @@ export class SportSpaceAvailabilityComponent implements OnInit {
   }
 
   submitReservation() {
-    if (this.reservationForm.valid) {
-      const reservationData: ReservationRequest = this.reservationForm.getRawValue();
 
-      this.reservationService.createReservation(reservationData).subscribe({
-        next: () => {
-          this.selectedSlots.set([]);
-          this.closeReservationModal();
-          this.router.navigate(['/reservations']).then();
-        },
-        error: (err) => {
-          console.error('Error al crear la reserva:', err);
-        },
-      });
-    } else {
-      console.warn('Completa todos los campos del formulario.');
+    if (!this.reservationForm.valid) {
+      this.reservationForm.markAllAsTouched();
+      return;
     }
+
+    const reservationData: ReservationRequest = this.reservationForm.getRawValue();
+
+    this.isLoadingSubmitRequest.set(true);
+    this.reservationService.createReservation(reservationData).subscribe({
+      next: () => {
+        this.isLoadingSubmitRequest.set(false);
+        this.selectedSlots.set([]);
+        this.closeReservationModal();
+        this.router.navigate(['/reservations']).then();
+      },
+      error: (err) => {
+        this.isLoadingSubmitRequest.set(false);
+        if (
+          err.status === 400 &&
+          err.error?.message === 'User does not have enough credits to create a reservation'
+        ) {
+          this.toastService.error('No tienes créditos suficientes para crear la reserva', 'Error');
+        } else {
+          this.toastService.error('Error al crear la reserva', 'Error');
+        }
+        console.error('Error al crear la reserva:', err);
+      },
+    });
   }
 }
