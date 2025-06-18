@@ -139,7 +139,6 @@ export class ViewProfileComponent implements OnInit {
 
     if (!passwordControl?.valid || !passwordPattern.test(password)) {
       passwordControl?.markAsTouched();
-      console.error('Invalid or too short password. Must contain at least one uppercase letter, one number, and one special character.');
       return;
     }
 

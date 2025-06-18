@@ -64,7 +64,7 @@
 </div>
 
 @if (showRecoverModal) {
-  <app-modal [width]="'450px'" (closeModal)="closeRecoverModal()">
+  <app-modal [width]="'450px'" [variant]="'default'" (closeModal)="closeRecoverModal()">
     <ng-container modal-header>Recuperar contraseña</ng-container>
     <ng-container modal-body>
       <form [formGroup]="recoverPasswordForm"

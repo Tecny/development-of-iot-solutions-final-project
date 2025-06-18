@@ -35,7 +35,6 @@ export class SportSpaceDetailComponent implements OnInit {
         this.isLoading.set(false);
       },
       error: () => {
-        console.error('Error loading sport space');
         this.isLoading.set(false);
       }
     });

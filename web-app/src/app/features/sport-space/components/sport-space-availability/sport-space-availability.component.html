@@ -88,6 +88,9 @@
               @if (reservationForm.get('reservationName')?.errors?.['minlength']) {
                 <small class="reservation-form__error">Mínimo 5 caracteres</small>
               }
+              @if (reservationForm.get('reservationName')?.errors?.['maxlength']) {
+                <small class="reservation-form__error">Máximo 25 caracteres</small>
+              }
             }
           </div>
         </div>

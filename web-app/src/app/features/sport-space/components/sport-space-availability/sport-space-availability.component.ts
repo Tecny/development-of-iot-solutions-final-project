@@ -86,7 +86,7 @@ export class SportSpaceAvailabilityComponent implements OnInit {
       endTime: ['', Validators.required],
       sportSpacesId: [this.sportSpace.id, Validators.required],
       type: ['', Validators.required],
-      reservationName: ['', [Validators.required, Validators.minLength(5)]],
+      reservationName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(25)]],
     });
   }
 
@@ -267,7 +267,6 @@ export class SportSpaceAvailabilityComponent implements OnInit {
         } else {
           this.toastService.error('Error al crear la reserva', 'Error');
         }
-        console.error('Error al crear la reserva:', err);
       },
     });
   }

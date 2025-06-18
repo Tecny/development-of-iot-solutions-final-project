@@ -51,10 +51,10 @@ import {ToastrService} from 'ngx-toastr';
     @if (showModal) {
       <app-modal [width]="'400px'" [variant]="'danger'" (closeModal)="handleClose()">
         <div modal-header>Confirmar eliminación</div>
-        <div modal-body>¿Estás seguro de que deseas eliminar este espacio deportivo?</div>
+        <div modal-body>¿Estás seguro que deseas eliminar este espacio deportivo?</div>
         <div modal-footer>
           <button class="button-submit--danger" (click)="confirmDelete()">
-            @if (isLoadingDeleteRequest()) {
+            @if (isLoadingRequest()) {
               <span class="spinner-danger"></span>
             } @else {
               Eliminar
@@ -79,10 +79,9 @@ export class SportSpaceCardComponent {
     2: '🎱'
   };
 
-  imageUrl: string = '';
   showModal = false;
 
-  isLoadingDeleteRequest = signal(false);
+  isLoadingRequest = signal(false);
   currentUser = this.userStore.currentUser;
   isOwner = computed(() => {
     const currentUser = this.currentUser();
@@ -101,16 +100,16 @@ export class SportSpaceCardComponent {
 
   confirmDelete(): void {
     if (this.sportSpace) {
-      this.isLoadingDeleteRequest.set(true);
+      this.isLoadingRequest.set(true);
       this.sportSpaceService.deleteSportSpace(this.sportSpace.id).subscribe({
         next: () => {
-          this.isLoadingDeleteRequest.set(false);
+          this.isLoadingRequest.set(false);
           window.location.reload();
           this.toastService.success('Espacio deportivo eliminado correctamente','Éxito');
           this.handleClose();
         },
         error: () => {
-          this.isLoadingDeleteRequest.set(false);
+          this.isLoadingRequest.set(false);
           this.toastService.error('Error al eliminar el espacio deportivo', 'Error');
         }
       });

@@ -30,8 +30,7 @@ export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {
 
       return true;
     }),
-    catchError((err) => {
-      console.error('AuthGuard Error:', err);
+    catchError(() => {
       router.navigateByUrl('/login').then();
       return of(false);
     })

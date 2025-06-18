@@ -58,8 +58,8 @@ export class SportSpaceDashboardComponent implements OnInit {
           }))
           .filter(d => d.cantidad > 0);
 
-        const maxCantidad = Math.max(...datos.map(d => d.cantidad), 1); // evita división por 0
-        const alturaMax = 150; // altura máxima en px
+        const maxCantidad = Math.max(...datos.map(d => d.cantidad), 1);
+        const alturaMax = 150;
 
         this.datosMensuales.set(
           datos.map(d => ({

@@ -13,13 +13,6 @@
   }
 }
 
-.cards-grid {
-  flex: 2;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-}
-
 .map-container {
   min-width: 300px;
   position: sticky;
@@ -55,40 +48,11 @@
 }
 
 .cards-grid {
+  flex: 2;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
-  padding: 0 1rem;
-}
-
-.empty-state {
-  text-align: center;
-  padding: 2rem 1rem;
-  color: #777;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  i {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: rgba(var.$green-medium, 0.6);
-  }
-
-  p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    color: #555;
-  }
-
-  &.placeholder-icon {
-    color: #ccc;
-  }
-
-  &.empty-icon {
-    color: #bbb;
-  }
+  padding: 0 1rem 1.5rem 1rem;
 }
 
 .toggle-view-btn {

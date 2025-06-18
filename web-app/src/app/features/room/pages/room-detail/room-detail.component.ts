@@ -28,9 +28,6 @@ export class RoomDetailComponent implements OnInit, OnDestroy {
     this.roomService.getRoomById(id).subscribe({
       next: (room) => {
         this.room.set(room);
-      },
-      error: () => {
-        console.error('Error loading sport space');
       }
     });
   }

@@ -30,8 +30,7 @@ export class AuthService {
         this.isLoggedIn.next(true);
 
         this.http.get<UserProfile>(`${this.baseUrl}/users/me`).subscribe({
-          next: (user) => this.userStore.setUser(user),
-          error: (err) => console.error('Error al cargar el usuario después de login', err)
+          next: (user) => this.userStore.setUser(user)
         });
       })
     );
@@ -51,8 +50,7 @@ export class AuthService {
     if (isValid) {
       this.http.get<UserProfile>(`${this.baseUrl}/users/me`).subscribe({
         next: (user) => this.userStore.setUser(user),
-        error: (err) => {
-          console.error('Error al cargar usuario en checkAuth()', err);
+        error: () => {
           this.isLoggedIn.next(false);
         }
       });
@@ -73,9 +71,6 @@ export class AuthService {
         this.userStore.clearUser();
         this.isLoggedIn.next(false);
         this.router.navigate(['/login']).then();
-      },
-      error: () => {
-        console.error('Error during logout.');
       }
     });
   }

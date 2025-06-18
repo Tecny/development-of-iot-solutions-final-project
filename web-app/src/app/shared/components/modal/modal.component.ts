@@ -20,7 +20,7 @@ import {NgClass, NgStyle} from '@angular/common';
     <ng-template cdkPortal>
       <div class="modal-backdrop">
         <div class="modal" [ngClass]="variant" [ngStyle]="{ 'max-width': width }">
-        <div class="modal__header">
+          <div class="modal__header">
             <ng-content select="[modal-header]"></ng-content>
             <button class="modal__close" (click)="closeModal.emit()" aria-label="Cerrar">
               <i class="lni lni-xmark"></i>
@@ -43,7 +43,7 @@ import {NgClass, NgStyle} from '@angular/common';
 export class ModalComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(CdkPortal) portal: CdkPortal | undefined;
   @Input() width: string = '600px';
-  @Input() variant: 'default' | 'danger' | 'info' | 'success' = 'default';
+  @Input() variant: 'default' | 'danger' | 'warning' | 'info'  = 'default';
   @Output() closeModal = new EventEmitter<void>();
 
   overlay = inject(Overlay);

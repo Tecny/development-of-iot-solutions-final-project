@@ -40,7 +40,6 @@ export class ListReservationsComponent implements OnInit {
         if (err.status === 404) {
           this.reservations.set([]);
         }
-        console.error('Error loading user reservations', err);
       }
     });
   }
@@ -52,7 +51,6 @@ export class ListReservationsComponent implements OnInit {
         if (err.status === 404) {
           this.ownRooms.set([]);
         }
-        console.error('Error loading owned rooms', err);
       }
     });
   }
@@ -64,7 +62,6 @@ export class ListReservationsComponent implements OnInit {
         if (err.status === 404) {
           this.joinedRooms.set([]);
         }
-        console.error('Error loading joined rooms', err);
       }
     });
   }
