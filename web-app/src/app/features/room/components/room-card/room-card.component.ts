@@ -1,62 +1,128 @@
 import {ChangeDetectionStrategy, Component, inject, Input, OnInit, signal} from '@angular/core';
 import {Room} from '../../models/room.interface';
-import {TitleCasePipe} from '@angular/common';
+import {LowerCasePipe, TitleCasePipe} from '@angular/common';
 import {PriceUtil, TimeUtil} from '../../../../shared/utils/time.util';
 import {RoomService} from '../../services/room.service';
 import {Router, RouterLink} from '@angular/router';
 import {ReservationService} from '../../../reservation/services/reservation.service';
 import {QrViewerComponent} from '../../../../shared/components/qr-viewer/qr-viewer.component';
 import {UserStoreService} from '../../../../core/services/user-store.service';
+import {ModalComponent} from '../../../../shared/components/modal/modal.component';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-room-card',
   imports: [
     TitleCasePipe,
     RouterLink,
-    QrViewerComponent
+    QrViewerComponent,
+    LowerCasePipe,
+    ModalComponent
   ],
   template: `
     <div class="room-card">
       <div class="room-card__header">
-        <span class="room-card__header__title">{{ room.reservation.reservationName }}</span>
-        <span class="room-card__header__players">{{ room.playerCount }}</span>
+        <div class="room-card__header-top">
+          <span class="room-card__title">{{ room.reservation.reservationName }}</span>
+          <span class="room-card__players">{{ room.playerCount }}</span>
+        </div>
+        @if (showStatus) {
+          <span class="room-card__status badge badge--{{ room.reservation.status | lowercase }}">
+            {{ room.reservation.status | titlecase }}
+          </span>
+        }
       </div>
 
-      <small class="room-card__creator">Creado por: {{ room.reservation.userName | titlecase }}</small>
-
-      <div class="room-card__details">
-        <p>Modo de juego: {{ room.reservation.sportSpace.gamemode.replaceAll('_', ' ') | titlecase }}</p>
-        <p>Fecha: {{ TimeUtil.formatDate(room.reservation.gameDay) }}, {{ room.reservation.startTime }}
-          - {{ room.reservation.endTime }}</p>
-        <p>Lugar: {{ room.reservation.sportSpace.address }}</p>
-        Espacio deportivo: <a
-        [routerLink]="['/sport-spaces', room.reservation.sportSpace.id]"> {{ room.reservation.sportSpace.name }}</a>
+      <div class="room-card__body">
+        <div class="room-card__details">
+          <p><strong>Modo de juego:</strong> {{ room.reservation.sportSpace.gamemode.replaceAll('_', ' ') | titlecase }}
+          </p>
+          <p><strong>Fecha:</strong> {{ TimeUtil.formatDate(room.reservation.gameDay) }}
+            , {{ room.reservation.startTime }} - {{ room.reservation.endTime }}</p>
+          <p><strong>Adelanto:</strong> {{ getAmount() }} créditos</p>
+          <p><strong>Espacio deportivo: </strong>
+            <a
+              [routerLink]="['/sport-spaces', room.reservation.sportSpace.id]">{{ room.reservation.sportSpace.name }}</a>
+          </p>
+          <p><strong>Lugar:</strong> {{ room.reservation.sportSpace.address }}</p>
+        </div>
       </div>
 
       <div class="room-card__actions">
-        <div>
-          @defer (on timer(200ms)) {
-            @if (currentUser()?.roleType === 'PLAYER') {
-              @if (isMember()) {
-                <button class="room-card__view" (click)="viewRoom()">Ir a la sala</button>
-                @if (isRoomCreator()) {
-                  <button class="room-card__delete" (click)="deleteRoom()">Borrar sala</button>
-<!--                  <button (click)="showQr = true">Ver QR</button>-->
-                } @else {
-                  <button class="room-card__leave" (click)="leaveRoom()">Abandonar la sala</button>
-                }
+        @if (currentUser()?.roleType === 'PLAYER') {
+          @if (isMember() !== null) {
+            @if (isMember()) {
+              <button class="btn btn--primary" (click)="viewRoom()">
+                <i class="lni lni-location-arrow-right"></i> <span class="btn-text">Ir a la sala</span>
+              </button>
+              @if (isRoomCreator()) {
+                <button class="btn btn--danger" (click)="showDeleteModal = true">
+                  <i class="lni lni-trash-3"></i> <span class="btn-text">Borrar</span>
+                </button>
+                <button class="btn btn--secondary" (click)="showQRModal = true">
+                  <i class="fa-solid fa-qrcode"></i>
+                </button>
               } @else {
-                <button class="room-card__join" (click)="joinRoom()">Unirse</button>
-                <div class="room-card__credits">({{ getAmount() }} créditos)</div>
+                <button class="btn btn--warning" (click)="showLeaveModal = true">
+                  <i class="lni lni-exit"></i> <span class="btn-text">Salir</span>
+                </button>
               }
+            } @else {
+              <button class="btn btn--success" (click)="showJoinModal = true">
+                <i class="lni lni-enter"></i> <span class="btn-text">Unirse</span>
+              </button>
             }
           }
-        </div>
+        }
       </div>
     </div>
-
-    @if (showQr) {
-      <app-qr-viewer [reservationId]="room.reservation.id" (close)="showQr = false"/>
+    @if (showJoinModal) {
+      <app-modal [width]="'400px'" [variant]="'default'" (closeModal)="handleClose()">
+        <div modal-header>Unirte a la sala</div>
+        <div modal-body>¿Quieres unirte a esta sala comunidad por un costo de {{ getAmount() }} créditos?</div>
+        <div modal-footer>
+          <button class="button-submit" (click)="joinRoom()">
+            @if (isLoadingRequest()) {
+              <span class="spinner-default"></span>
+            } @else {
+              Unirse
+            }
+          </button>
+        </div>
+      </app-modal>
+    }
+    @if (showLeaveModal) {
+      <app-modal [width]="'400px'" [variant]="'warning'" (closeModal)="handleClose()">
+        <div modal-header>Confirmar salida</div>
+        <div modal-body>¿Estás seguro que deseas salir de esta sala comunidad? Se reembolsarán tus créditos.</div>
+        <div modal-footer>
+          <button class="button-submit--warning" (click)="leaveRoom()">
+            @if (isLoadingRequest()) {
+              <span class="spinner-warning"></span>
+            } @else {
+              Salir
+            }
+          </button>
+        </div>
+      </app-modal>
+    }
+    @if (showDeleteModal) {
+      <app-modal [width]="'400px'" [variant]="'danger'" (closeModal)="handleClose()">
+        <div modal-header>Confirmar eliminación</div>
+        <div modal-body>¿Estás seguro que deseas eliminar este sala comunidad? Se reembolsarán tus créditos.</div>
+        <div modal-footer>
+          <button class="button-submit--danger" (click)="deleteRoom()">
+            @if (isLoadingRequest()) {
+              <span class="spinner-danger"></span>
+            } @else {
+              Eliminar
+            }
+          </button>
+        </div>
+      </app-modal>
+    }
+    @if (showQRModal) {
+      <app-qr-viewer [reservationId]="room.reservation.id" (close)="showQRModal = false"/>
     }
   `,
   styleUrl: './room-card.component.scss',
@@ -64,6 +130,7 @@ import {UserStoreService} from '../../../../core/services/user-store.service';
 })
 export class RoomCardComponent implements OnInit {
   @Input() room!: Room;
+  @Input() showStatus: boolean = false;
 
   protected readonly TimeUtil = TimeUtil;
 
@@ -71,27 +138,20 @@ export class RoomCardComponent implements OnInit {
   private router = inject(Router);
   private roomService = inject(RoomService);
   private reservationService = inject(ReservationService);
+  private toastService = inject(ToastrService);
 
   currentUser = this.userStore.currentUser;
   isMember = signal<boolean | null>(null);
   isRoomCreator = signal<boolean | null>(null);
+  isLoadingRequest = signal<boolean>(false);
 
-  showQr = false;
+  showJoinModal = false;
+  showLeaveModal = false;
+  showDeleteModal = false;
+  showQRModal = false;
 
   ngOnInit(): void {
-    if (this.room?.id) {
-      this.roomService.userRoomStatus(this.room.id).subscribe({
-        next: (res) => {
-          this.isMember.set(res.isMember);
-          this.isRoomCreator.set(res.isRoomCreator);
-        },
-        error: (err) => {
-          console.error('Error checking user status in the room:', err);
-          this.isMember.set(false);
-          this.isRoomCreator.set(false);
-        }
-      });
-    }
+    this.checkRoomAccess();
   }
 
   getAmount(): number {
@@ -109,44 +169,75 @@ export class RoomCardComponent implements OnInit {
     this.router.navigate(['/rooms', this.room.id]).then();
   }
 
-  joinRoom() {
-    if(window.confirm('¿Estás seguro de que deseas unirte a esta sala?')) {
-      this.roomService.joinRoom(this.room.id).subscribe({
-        next: () => {
-          this.roomService.allowAccess(this.room.id);
-          this.router.navigate(['/rooms', this.room.id]).then();
+  checkRoomAccess() {
+    if (this.room?.id) {
+      this.roomService.userRoomStatus(this.room.id).subscribe({
+        next: (res) => {
+          this.isMember.set(res.isMember);
+          this.isRoomCreator.set(res.isRoomCreator);
         },
-        error: (error) => {
-          console.error('Error joining room:', error);
+        error: () => {
+          this.isMember.set(false);
+          this.isRoomCreator.set(false);
         }
       });
     }
+  }
+
+  joinRoom() {
+    this.isLoadingRequest.set(true);
+    this.roomService.joinRoom(this.room.id).subscribe({
+      next: () => {
+        this.isLoadingRequest.set(false);
+        this.handleClose();
+        this.roomService.allowAccess(this.room.id);
+        this.router.navigate(['/rooms', this.room.id]).then();
+        this.toastService.success('Te has unido a la sala comunidad exitosamente', 'Éxito');
+      },
+      error: () => {
+        this.isLoadingRequest.set(false);
+        this.toastService.error('No se pudo unir a la sala comunidad', 'Error');
+      }
+    });
   }
 
   leaveRoom() {
-    if (window.confirm('¿Estás seguro de que deseas abandonar esta sala?')) {
-      this.roomService.leaveRoom(this.room.id).subscribe({
-        next: () => {
-          this.roomService.clearAccess(this.room.id);
-          window.location.reload();
-        },
-        error: (error) => {
-          console.error('Error leaving room:', error);
-        }
-      });
-    }
+    this.isLoadingRequest.set(true);
+    this.roomService.leaveRoom(this.room.id).subscribe({
+      next: () => {
+        this.isLoadingRequest.set(false);
+        this.handleClose();
+        this.roomService.clearAccess(this.room.id);
+        this.toastService.success('Has salido de la sala comunidad exitosamente', 'Éxito');
+        this.checkRoomAccess();
+      },
+      error: () => {
+        this.isLoadingRequest.set(true);
+        this.toastService.error('No se pudo salir de la sala comunidad', 'Error');
+      }
+    });
   }
 
   deleteRoom() {
-    if (window.confirm('¿Estás seguro de que deseas borrar esta sala?')) {
-      this.reservationService.deleteReservation(this.room.reservation.id).subscribe({
-        next: () => {
-          window.location.reload();
-        },
-        error: (error) => {
-          console.error('Error deleting room:', error);
-        }
-      });
-    }
+    this.isLoadingRequest.set(true);
+    this.reservationService.deleteReservation(this.room.reservation.id).subscribe({
+      next: () => {
+        this.isLoadingRequest.set(false);
+        this.handleClose();
+        this.toastService.success('Sala comunidad eliminada exitosamente', 'Éxito');
+        this.checkRoomAccess();
+      },
+      error: () => {
+        this.isLoadingRequest.set(false);
+        this.toastService.error('No se pudo eliminar la sala comunidad', 'Error');
+      }
+    });
+  }
+
+  handleClose() {
+    this.showDeleteModal = false;
+    this.showJoinModal = false;
+    this.showLeaveModal = false;
+    this.showQRModal = false;
   }
 }

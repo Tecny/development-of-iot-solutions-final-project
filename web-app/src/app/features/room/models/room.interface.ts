@@ -17,6 +17,7 @@ interface Reservation {
   userName: string;
   reservationName: string;
   userId: number;
+  status: string;
   sportSpace: SportSpace;
 }
 
