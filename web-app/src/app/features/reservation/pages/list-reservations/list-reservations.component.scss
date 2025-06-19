@@ -1,32 +1,18 @@
+@use 'components/section-title';
+@use 'components/button';
+@use 'components/spinner';
+
 .cards-grid {
+  flex: 2;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1rem 1.5rem 1rem;
 }
 
-.view-toggle {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-
-  button {
-    padding: 0.5rem 1rem;
-    border: 1px solid #ccc;
-    background: white;
-    color: #333;
-    cursor: pointer;
-    border-radius: 0.5rem;
-    transition: all 0.2s ease-in-out;
-
-    &.active {
-      background: #007bff;
-      color: white;
-      border-color: #007bff;
-    }
-
-    &:hover {
-      background: #e0e0e0;
-    }
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
   }
 }
 

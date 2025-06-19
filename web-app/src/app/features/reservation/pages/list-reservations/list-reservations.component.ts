@@ -5,12 +5,15 @@ import {ReservationCardComponent} from '../../components/reservation-card/reserv
 import {RoomService} from '../../../room/services/room.service';
 import {Room} from '../../../room/models/room.interface';
 import {RoomCardComponent} from '../../../room/components/room-card/room-card.component';
+import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
+import {UserStoreService} from '../../../../core/services/user-store.service';
 
 @Component({
   selector: 'app-list-reservations',
   imports: [
     ReservationCardComponent,
-    RoomCardComponent
+    RoomCardComponent,
+    SpinnerComponent
   ],
   templateUrl: './list-reservations.component.html',
   styleUrl: './list-reservations.component.scss',
@@ -19,18 +22,26 @@ import {RoomCardComponent} from '../../../room/components/room-card/room-card.co
 export class ListReservationsComponent implements OnInit {
   private reservationService = inject(ReservationService);
   private roomService = inject(RoomService);
+  private userStore = inject(UserStoreService);
 
-  viewReservationSelected = signal<'PERSONAL' | 'COMMUNITY-OWN' | 'COMMUNITY-JOIN'>('PERSONAL');
-  communityViewSelected = signal<'OWN' | 'JOIN'>('OWN');
+  currentUser = this.userStore.currentUser;
+
+  activeTab = signal<'personal' | 'community'>('personal');
+  activeSubTab = signal<'own' | 'join'>('own');
 
   reservations = signal<Reservation[] | null>(null);
   ownRooms = signal<Room[] | null>(null);
   joinedRooms = signal<Room[] | null>(null);
+  ownerRooms = signal<Room[] | null>(null);
 
   ngOnInit() {
     this.loadReservations();
-    this.loadOwnRooms();
-    this.loadJoinedRooms();
+    if (this.currentUser()?.roleType === 'PLAYER') {
+      this.loadOwnRooms();
+      this.loadJoinedRooms();
+    } else {
+      this.loadOwnerRooms();
+    }
   }
 
   loadReservations() {
@@ -42,6 +53,17 @@ export class ListReservationsComponent implements OnInit {
         }
       }
     });
+  }
+
+  loadOwnerRooms() {
+    this.roomService.getRoomsBySportspaces().subscribe({
+      next: (rooms) => this.ownerRooms.set(rooms),
+      error: (err) => {
+        if (err.status === 404) {
+          this.ownerRooms.set([]);
+        }
+      }
+    })
   }
 
   loadOwnRooms() {
@@ -66,10 +88,11 @@ export class ListReservationsComponent implements OnInit {
     });
   }
 
-  selectCommunityView(type: 'OWN' | 'JOIN') {
-    this.communityViewSelected.set(type);
-    this.viewReservationSelected.set(
-      type === 'OWN' ? 'COMMUNITY-OWN' : 'COMMUNITY-JOIN'
-    );
+  setTab(tab: 'personal' | 'community') {
+    this.activeTab.set(tab);
+  }
+
+  setSubTab(subTab: 'own' | 'join') {
+    this.activeSubTab.set(subTab);
   }
 }

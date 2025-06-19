@@ -1,88 +1,99 @@
-@let selectedView = viewReservationSelected();
-
-<h1>Mis reservas</h1>
-
-<div class="view-toggle">
-  @switch (true) {
-    @case (selectedView === 'PERSONAL') {
-      <button class="active" (click)="viewReservationSelected.set('PERSONAL')">Personal</button>
-      <button (click)="selectCommunityView('OWN')">Comunitaria</button>
+<div class="title-wrapper">
+  <h2 class="section-title">
+    @if (currentUser()?.roleType === 'PLAYER') {
+      Mis reservas
+    } @else {
+      Reservas en tus espacios deportivos
     }
-
-    @case (selectedView === 'COMMUNITY-OWN' || selectedView === 'COMMUNITY-JOIN') {
-      <button (click)="viewReservationSelected.set('PERSONAL')">Personal</button>
-      <button class="active" (click)="selectCommunityView('OWN')">Comunitaria</button>
-    }
-  }
+  </h2>
 </div>
 
-@switch (selectedView) {
-  @case ('COMMUNITY-OWN') {
-    <div class="sub-toggle">
-      <button class="active" (click)="selectCommunityView('OWN')">Creadas por mí</button>
-      <button (click)="selectCommunityView('JOIN')">Salas unidas</button>
-    </div>
-  }
-  @case ('COMMUNITY-JOIN') {
-    <div class="sub-toggle">
-      <button (click)="selectCommunityView('OWN')">Creadas por mí</button>
-      <button class="active" (click)="selectCommunityView('JOIN')">Salas unidas</button>
-    </div>
-  }
+<div class="tab-buttons tab-buttons--reservation">
+  <button [class.active]="activeTab() === 'personal'" (click)="setTab('personal')">Personal</button>
+  <button [class.active]="activeTab() === 'community'" (click)="setTab('community')">Comunidad</button>
+</div>
+
+@if (activeTab() === 'community' && currentUser()?.roleType === 'PLAYER') {
+  <div class="sub-tab-buttons">
+    <button [class.active]="activeSubTab() === 'own'" (click)="setSubTab('own')">Creadas por mí</button>
+    <button [class.active]="activeSubTab() === 'join'" (click)="setSubTab('join')">Salas unidas</button>
+  </div>
 }
 
 @defer (prefetch on viewport) {
-  @switch (selectedView) {
-
-    @case ('PERSONAL') {
-      @if (reservations(); as reserv) {
-        <div class="cards-grid">
-          @for (res of reserv; track res.id) {
-            <app-reservation-card [reservation]="res" />
-          } @empty {
-            <p>No tienes reservas realizadas</p>
-          }
-        </div>
-      } @else {
-        <p>Cargando reservas...</p>
-      }
+  @if (activeTab() === 'personal') {
+    @if (reservations(); as reserv) {
+      <div class="cards-grid">
+        @for (res of reserv; track res.id) {
+          <app-reservation-card [reservation]="res" />
+        } @empty {
+          <div class="empty-state">
+            <i class="lni lni-megaphone-1 empty-icon"></i>
+            <p>No tienes reservas personales realizadas</p>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="view-spinner view-spinner--sm">
+        <app-spinner/>
+      </div>
     }
-
-    @case ('COMMUNITY-OWN') {
-      @if (ownRooms(); as rooms) {
-        <div class="cards-grid">
-          @for (room of rooms; track room.id) {
-            <app-room-card [room]="room" />
-          } @empty {
-            <p>No tienes salas creadas</p>
-          }
-        </div>
-      } @else {
-        <p>Cargando salas creadas...</p>
-      }
+  } @else if (activeTab() === 'community' && currentUser()?.roleType === 'OWNER') {
+    @if (ownerRooms(); as rooms) {
+      <div class="cards-grid">
+        @for (room of rooms; track room.id) {
+          <app-room-card [room]="room" [showStatus]="true"/>
+        } @empty {
+          <div class="empty-state">
+            <i class="lni lni-megaphone-1 empty-icon"></i>
+            <p>Aún no se han creado salas comunidad en tus espacios deportivos</p>
+          </div>
+        }
+      </div>
+    } @else {
     }
-
-    @case ('COMMUNITY-JOIN') {
-      @if (joinedRooms(); as rooms) {
-        <div class="cards-grid">
-          @for (room of rooms; track room.id) {
-            <app-room-card [room]="room" />
-          } @empty {
-            <p>No te has unido a ninguna sala externa</p>
-          }
-        </div>
-      } @else {
-        <p>Cargando salas unidas...</p>
-      }
+  } @else if (activeTab() === 'community' && activeSubTab() === 'own' && currentUser()?.roleType === 'PLAYER') {
+    @if (ownRooms(); as rooms) {
+      <div class="cards-grid">
+        @for (room of rooms; track room.id) {
+          <app-room-card [room]="room" [showStatus]="true"/>
+        } @empty {
+          <div class="empty-state">
+            <i class="lni lni-megaphone-1 empty-icon"></i>
+            <p>No tienes salas comunidad creadas</p>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="view-spinner view-spinner--sm">
+        <app-spinner/>
+      </div>
     }
-
-    @default {
-      <p>Selecciona una vista de reservas válida.</p>
+  } @else if (activeTab() === 'community' && activeSubTab() === 'join' && currentUser()?.roleType === 'PLAYER') {
+    @if (joinedRooms(); as rooms) {
+      <div class="cards-grid">
+        @for (room of rooms; track room.id) {
+          <app-room-card [room]="room" [showStatus]="true"/>
+        } @empty {
+          <div class="empty-state">
+            <i class="lni lni-megaphone-1 empty-icon"></i>
+            <p>No te has unido a ninguna sala comunidad</p>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="view-spinner view-spinner--sm">
+        <app-spinner/>
+      </div>
     }
-
   }
 } @placeholder {
-  <p>Preparando carga de reservas...</p>
+  <div class="empty-state">
+    <i class="lni lni-hourglass placeholder-icon"></i>
+    <p>Preparando carga de reservas...</p>
+  </div>
 } @loading {
-  <p>Cargando reservas...</p>
+  <div class="view-spinner view-spinner--sm">
+    <app-spinner/>
+  </div>
 }
