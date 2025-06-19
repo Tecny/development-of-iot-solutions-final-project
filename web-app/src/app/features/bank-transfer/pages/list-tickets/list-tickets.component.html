@@ -1,13 +1,11 @@
-<h1>Tickets de retiro de créditos</h1>
-
-@defer (on timer(200ms)) {
-  @if (userRole === UserRole.OWNER) {
-      <button (click)="openTicketModal()" [disabled]="!haveCredits()">Crear ticket</button>
-      @if (!haveCredits()) {
-          <small class="no-credits-message">No tienes créditos disponibles para realizar un retiro.</small>
-      }
+<div class="title-wrapper">
+  <div class="section-title">Retiro de créditos</div>
+  @if (this.currentUser()?.roleType === 'OWNER') {
+    <button class="add-sport-btn" (click)="openTicketModal()" title="Crear ticket de retiro">
+      <i class="lni lni-plus"></i>
+    </button>
   }
-}
+</div>
 
 @defer (prefetch on viewport) {
   @if (tickets(); as tcks) {
@@ -17,7 +15,7 @@
                          (ticketConfirmed)="loadTickets()"
                          (ticketDeferred)="loadTickets()"/>
       } @empty {
-        @if (userRole === UserRole.ADMIN) {
+        @if (this.currentUser()?.roleType === 'ADMIN') {
         <p>No tienes tickets de retiro solicitados</p>
       }
     }
@@ -33,8 +31,8 @@
 
 <!-- Modal -->
 @if (showTicketModal) {
-  <app-modal (closeModal)="closeTicketModal()">
-    <ng-container modal-header>Ticket de retiro de crédito</ng-container>
+  <app-modal [width]="'400px'" [variant]="'default'" (closeModal)="closeTicketModal()">
+    <ng-container modal-header>Crear ticket de retiro</ng-container>
 
     <ng-container modal-body>
       <div class="bank-type-toggle">
@@ -57,74 +55,79 @@
             [(ngModel)]="bankType"
             (change)="onBankTypeChange()"
           />
-          Otros Bancos
+          Otros
         </label>
       </div>
 
 
-      <form [formGroup]="ticketForm" class="ticket-form">
-        <label>
-          Nombre completo:
-          <input formControlName="fullName" type="text" />
-        </label>
-        @if (ticketForm.get('fullName')?.touched && ticketForm.get('fullName')?.invalid) {
-          @if (ticketForm.get('fullName')?.errors?.['required']) {
-            <small class="ticket-form__error">Es necesario el nombre completo</small>
+      <form [formGroup]="ticketForm" class="form-body">
+        <div class="form-field">
+          <div class="input-icon-wrapper">
+            <input formControlName="fullName" type="text" placeholder="Nombre completo" required/>
+          </div>
+          @if (ticketForm.get('fullName')?.touched && ticketForm.get('fullName')?.invalid) {
+            @if (ticketForm.get('fullName')?.errors?.['required']) {
+              <small class="reservation-form__error">Es necesario el nombre completo</small>
+            }
+            @if (ticketForm.get('fullName')?.errors?.['minlength']) {
+              <small class="reservation-form__error">El nombre completo debe tener al menos 5 caracteres</small>
+            }
           }
-          @if (ticketForm.get('fullName')?.errors?.['minlength']) {
-            <small class="ticket-form__error">El nombre completo debe tener al menos 5 caracteres</small>
-          }
-        }
+        </div>
 
-        @if (bankType === 'asociado') {
-          <label>
-            Banco:
-            <select formControlName="bankName">
-              <option value="BCP">BCP</option>
-              <option value="BBVA">BBVA</option>
-              <option value="Interbank">Interbank</option>
-            </select>
-          </label>
-        } @else {
-          <label>
-            Banco (escribe el nombre):
-            <input formControlName="bankName" type="text" />
-          </label>
-        }
-        @if (ticketForm.get('bankName')?.touched && ticketForm.get('bankName')?.invalid) {
-          @if (ticketForm.get('bankName')?.errors?.['required']) {
-            <small class="ticket-form__error">El banco es obligatorio</small>
+        <div class="form-field">
+          <div class="input-icon-wrapper">
+            @if (bankType === 'asociado') {
+              <select formControlName="bankName">
+                <option value="" disabled selected hidden>Banco asociado</option>
+                <option value="BCP">BCP</option>
+                <option value="BBVA">BBVA</option>
+                <option value="Interbank">Interbank</option>
+              </select>
+            } @else {
+              <input formControlName="bankName" type="text" placeholder="Nombre del banco"/>
+            }
+          </div>
+          @if (ticketForm.get('bankName')?.touched && ticketForm.get('bankName')?.invalid) {
+            @if (ticketForm.get('bankName')?.errors?.['required']) {
+              <small class="reservation-form__error">El banco es obligatorio</small>
+            }
           }
-          @if (!associatedBanks.includes(ticketForm.get('bankName')?.value)) {
-            <label>
-              Especificar banco:
-              <input type="text" formControlName="bankName" />
-            </label>
-          }
-        }
+        </div>
 
-        <label>
-          {{ bankType === 'asociado' ? 'Número de cuenta:' : 'Número de cuenta interbancario:' }}
-          <input formControlName="accountNumber" type="text" />
-        </label>
-        @if (ticketForm.get('accountNumber')?.touched && ticketForm.get('accountNumber')?.invalid) {
-          @if (ticketForm.get('accountNumber')?.errors?.['required']) {
-            <small class="ticket-form__error">El número de cuenta es obligatorio</small>
-          } @else if (ticketForm.get('accountNumber')?.errors?.['pattern']) {
-            <small class="ticket-form__error">El número de cuenta solo debe contener números</small>
-          } @else if (ticketForm.get('accountNumber')?.errors?.['invalidAccountNumberLength']) {
-            <small class="ticket-form__error">
-              La longitud del número de cuenta debe ser de
-              {{ ticketForm.get('accountNumber')?.errors?.['invalidAccountNumberLength'].expectedLength }} dígitos
-            </small>
+        <div class="form-field">
+          <div class="input-icon-wrapper">
+            <input
+              formControlName="accountNumber"
+              type="text"
+              [placeholder]="bankType === 'asociado' ? 'Número de cuenta' : 'Número de cuenta interbancario'"
+              required
+            />
+          </div>
+          @if (ticketForm.get('accountNumber')?.touched && ticketForm.get('accountNumber')?.invalid) {
+            @if (ticketForm.get('accountNumber')?.errors?.['required']) {
+              <small class="reservation-form__error">El número de cuenta es obligatorio</small>
+            } @else if (ticketForm.get('accountNumber')?.errors?.['pattern']) {
+              <small class="reservation-form__error">El número de cuenta solo debe contener números</small>
+            } @else if (ticketForm.get('accountNumber')?.errors?.['invalidAccountNumberLength']) {
+              <small class="reservation-form__error">
+                La longitud del número de cuenta debe ser de
+                {{ ticketForm.get('accountNumber')?.errors?.['invalidAccountNumberLength'].expectedLength }} dígitos
+              </small>
+            }
           }
-        }
+        </div>
       </form>
     </ng-container>
 
     <ng-container modal-footer>
-      <button (click)="submitTicketRequest()" [disabled]="ticketForm.invalid">Solicitar</button>
-      <button (click)="closeTicketModal()">Cancelar</button>
+      <button type="submit" class="button-submit" (click)="submitTicketRequest()">
+        @if (isLoadingSubmitRequest()) {
+          <span class="spinner-default"></span>
+        } @else {
+          Crear
+        }
+      </button>
     </ng-container>
   </app-modal>
 }

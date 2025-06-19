@@ -5,8 +5,8 @@ import {Ticket, TicketRequest} from '../../models/ticket.interface';
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 import {customAccountNumberLengthByBank} from '../../../../shared/validators/banks.validator';
 import {UserStoreService} from '../../../../core/services/user-store.service';
-import {UserRole} from '../../../../core/models/user.role.enum';
 import {TicketCardComponent} from '../../components/ticket-card/ticket-card.component';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-list-tickets',
@@ -24,10 +24,11 @@ export class ListTicketsComponent implements OnInit {
   private bankTransferService = inject(BankTransferService);
   private userStore = inject(UserStoreService);
   private fb = inject(NonNullableFormBuilder);
+  private toastService = inject(ToastrService);
 
   currentUser = this.userStore.currentUser;
   tickets = signal<Ticket[] | null>(null);
-  userRole = this.userStore.getRoleFromToken();
+  isLoadingSubmitRequest = signal(false);
 
   bankType: 'asociado' | 'otro' = 'asociado';
   associatedBanks = ['BCP', 'BBVA', 'Interbank'];
@@ -69,16 +70,15 @@ export class ListTicketsComponent implements OnInit {
   }
 
   loadTickets() {
-    if (this.userRole === UserRole.OWNER) {
+    if (this.currentUser()?.roleType === 'OWNER') {
       this.bankTransferService.getTicketsByOwner().subscribe({
         next: (tickets) => {
           this.tickets.set(tickets);
         },
         error: (err) => {
           if (err.status === 404) {
+
             this.tickets.set([]);
-          } else {
-            console.error('Error loading user\'s bank transfer requests');
           }
         }
       });
@@ -88,7 +88,7 @@ export class ListTicketsComponent implements OnInit {
           this.tickets.set(tickets);
         },
         error: () => {
-          console.error('Error loading all bank transfer requests');
+          this.toastService.info('No tienes solicitudes de transferencia bancaria pendientes', 'Info');
         }
       });
     }
@@ -108,19 +108,23 @@ export class ListTicketsComponent implements OnInit {
   }
 
   submitTicketRequest() {
-    if (this.ticketForm.valid) {
-      const bankTransferData: TicketRequest = this.ticketForm.getRawValue();
 
-      this.bankTransferService.createTicket(bankTransferData).subscribe({
-        next: () => {
-          this.closeTicketModal();
-          this.loadTickets();
-        },
-        error: (error) => {
-          console.error('Error creating bank transfer request:', error);
-        }
-      });
+    if (!this.ticketForm.valid) {
+      this.ticketForm.markAllAsTouched();
+      return;
     }
+    const bankTransferData: TicketRequest = this.ticketForm.getRawValue();
+    this.isLoadingSubmitRequest.set(true);
+    this.bankTransferService.createTicket(bankTransferData).subscribe({
+      next: () => {
+        this.isLoadingSubmitRequest.set(false);
+        this.closeTicketModal();
+        this.loadTickets();
+      },
+      error: () => {
+        this.isLoadingSubmitRequest.set(false);
+      }
+    });
   }
 
   onBankTypeChange() {
@@ -156,6 +160,4 @@ export class ListTicketsComponent implements OnInit {
       accountControl?.updateValueAndValidity();
     }
   }
-
-  protected readonly UserRole = UserRole;
 }

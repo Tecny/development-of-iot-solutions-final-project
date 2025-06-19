@@ -1,38 +1,131 @@
-.ticket-card {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 16px;
-  background-color: #f9f9f9;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  margin: 16px auto;
+@use 'components/button';
+@use 'components/spinner';
 
-  &__content {
+.ticket-card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  font-family: 'Poppins', sans-serif;
+  max-width: 420px;
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-left: 6px solid #ccc;
+
+  // 🎨 Colores por estado
+  &--pending {
+    border-left-color: #f1c40f;
+
+    .ticket-card__status {
+      color: #f1c40f;
+      background-color: rgba(241, 196, 15, 0.15);
+      border-radius: 4px;
+      padding: 2px 8px;
+      display: inline-block;
+      width: fit-content;
+    }
+  }
+
+  &--confirmed {
+    border-left-color: #4aaf51;
+
+    .ticket-card__status {
+      color: #4aaf51;
+      background-color: rgba(74, 175, 81, 0.15);
+      border-radius: 4px;
+      padding: 2px 8px;
+      display: inline-block;
+      width: fit-content;
+    }
+  }
+
+  &--deferred {
+    border-left-color: #e67e22;
+
+    .ticket-card__status {
+      color: #e67e22;
+      background-color: rgba(230, 126, 34, 0.15);
+      border-radius: 4px;
+      padding: 2px 8px;
+      display: inline-block;
+      width: fit-content;
+    }
+  }
+
+  &__header {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 0.3rem;
+
+    .ticket-card__status {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #2c3e50;
+      word-break: break-word;
+      margin: 0;
+    }
   }
 
-  &__title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #333;
+  &__content {
+    display: grid;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #444;
+
+    p {
+      margin: 0;
+
+      &:before {
+        content: "• ";
+        color: #4aaf51;
+      }
+    }
   }
 
-  &__name,
-  &__bank,
-  &__type,
-  &__account,
-  &__amount,
-  &__status,
-  &__ticket {
-    font-size: 1rem;
-    color: #555;
-  }
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    gap: 1rem;
+    margin-top: 0.5rem;
 
-  &__status {
-    font-weight: bold;
-    color: #007bff;
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background-color: #4aaf51;
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+
+      i {
+        font-size: 1rem;
+      }
+
+      &:hover {
+        background-color: #3c9444;
+      }
+
+      &:nth-child(2) {
+        background-color: #f59e42;
+
+        &:hover {
+          background-color: #de8232;
+        }
+      }
+    }
   }
 }
