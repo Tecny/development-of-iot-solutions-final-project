@@ -10,13 +10,11 @@ import {
 } from '@angular/core';
 import {ModalComponent} from '../modal/modal.component';
 import {QrService} from '../../services/qr.service';
-import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-qr-viewer',
   imports: [
-    ModalComponent,
-    NgOptimizedImage
+    ModalComponent
   ],
   template: `
     <app-modal [width]="'400px'" [variant]="'info'" (closeModal)="onClose()">
@@ -24,7 +22,7 @@ import {NgOptimizedImage} from '@angular/common';
       <div modal-body>
         @if (qrImageUrl) {
           <div style="display: flex; justify-content: center; align-items: center; height: 300px;">
-            <img [ngSrc]="qrImageUrl" alt="QR de la reserva" width="250" height="250"/>
+            <img [src]="qrImageUrl" alt="QR de la reserva" width="250" height="250"/>
           </div>
         } @else {
           <p>El código QR estará disponible una hora antes del inicio de tu reserva.</p>

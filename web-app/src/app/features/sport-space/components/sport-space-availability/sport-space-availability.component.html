@@ -134,7 +134,7 @@
     </ng-container>
 
     <ng-container modal-footer>
-      <button class="button-submit" (click)="submitReservation()" [disabled]="isLoadingSubmitRequest()">
+      <button type="submit" class="button-submit" (click)="submitReservation()" [disabled]="isLoadingSubmitRequest()">
         @if (isLoadingSubmitRequest()) {
           <span class="spinner-default"></span>
         } @else {

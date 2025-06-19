@@ -41,8 +41,8 @@
           }
         </div>
       </div>
-      <button type="submit" class="button-submit" [disabled]="isLoadingSubmitRequest()">
-        @if (isLoadingSubmitRequest()) {
+      <button type="submit" class="button-submit" [disabled]="isLoadingSignInRequest()">
+        @if (isLoadingSignInRequest()) {
           <span class="spinner-default"></span>
         } @else {
           Ingresar
@@ -89,11 +89,11 @@
       </form>
     </ng-container>
     <ng-container modal-footer>
-      <button class="button-submit"
-              type="submit"
-              [disabled]="isLoadingSubmitRequest()"
-              form="recoverForm">
-        @if (isLoadingSubmitRequest()) {
+      <button type="submit"
+              class="button-submit"
+              form="recoverForm"
+              [disabled]="isLoadingRecoverRequest()">
+        @if (isLoadingRecoverRequest()) {
           <span class="spinner-default"></span>
         } @else {
           Enviar

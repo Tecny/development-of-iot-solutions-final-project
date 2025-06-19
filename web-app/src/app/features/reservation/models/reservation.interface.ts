@@ -7,12 +7,14 @@ export interface ReservationRequest {
 }
 
 interface SportSpace {
+  id: number;
   name: string;
-  imageUrl: string;
+  image: string;
   price: number;
   amount: number;
   sport: string;
   gamemode: string;
+  address: string;
 }
 
 export interface Reservation {

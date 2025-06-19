@@ -27,7 +27,8 @@ export class LoginComponent {
 
   showRecoverModal = false;
 
-  isLoadingSubmitRequest = signal(false);
+  isLoadingSignInRequest = signal(false);
+  isLoadingRecoverRequest = signal(false);
   correctMessage = signal<boolean | null>(null);
   errorMessage = signal<boolean | null>(null);
 
@@ -41,21 +42,21 @@ export class LoginComponent {
   });
 
   login() {
-    if (this.loginForm.invalid || this.isLoadingSubmitRequest()) {
+    if (this.loginForm.invalid || this.isLoadingSignInRequest()) {
       this.loginForm.markAllAsTouched();
       return;
     }
-    this.isLoadingSubmitRequest.set(true);
+    this.isLoadingSignInRequest.set(true);
     const userData: LoginRequest = this.loginForm.getRawValue();
 
     this.authService.login(userData).subscribe({
       next: () => {
-        this.isLoadingSubmitRequest.set(false);
+        this.isLoadingSignInRequest.set(false);
         this.router.navigate(['/home']).then();
         this.toastService.success('Inicio de sesión correcto', 'Éxito');
       },
       error: () => {
-        this.isLoadingSubmitRequest.set(false);
+        this.isLoadingSignInRequest.set(false);
         this.errorMessage.set(true);
         this.toastService.error('Inicio de sesión fallido', 'Error');
       }
@@ -72,20 +73,20 @@ export class LoginComponent {
   }
 
   forgotPassword(email: string) {
-    if (this.recoverPasswordForm.invalid || this.isLoadingSubmitRequest()) {
+    if (this.recoverPasswordForm.invalid || this.isLoadingRecoverRequest()) {
       this.recoverPasswordForm.markAllAsTouched();
       return;
     }
-    this.isLoadingSubmitRequest.set(true);
+    this.isLoadingRecoverRequest.set(true);
     this.authService.forgotPassword(email).subscribe({
       next: () => {
         this.recoverPasswordForm.reset();
         this.showRecoverModal = false;
-        this.isLoadingSubmitRequest.set(false);
+        this.isLoadingRecoverRequest.set(false);
         this.toastService.success('Se envió un enlace de recuperación a tu correo', 'Éxito');
       },
       error: () => {
-        this.isLoadingSubmitRequest.set(false);
+        this.isLoadingRecoverRequest.set(false);
         this.errorMessage.set(true);
         this.toastService.error('Error al enviar el correo de recuperación', 'Error');
       }

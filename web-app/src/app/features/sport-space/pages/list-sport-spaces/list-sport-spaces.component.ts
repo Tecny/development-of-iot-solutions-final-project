@@ -36,17 +36,16 @@ import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.co
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListSportSpacesComponent implements OnInit {
-  private userStoreService = inject(UserStoreService);
+  private userStore = inject(UserStoreService);
   private sportSpaceService = inject(SportSpaceService);
 
-  userRole = this.userStoreService.getRoleFromToken();
-
-  map!: L.Map;
-  allSpaces: SportSpace[] = [];
+  currentUser = this.userStore.currentUser;
   sportSpaces = signal<SportSpace[] | null>(null);
   showAddSportSpaceButton = signal(false);
   isMapView = signal(false);
 
+  map!: L.Map;
+  allSpaces: SportSpace[] = [];
   filters = {
     sport: null,
     gamemode: null,
@@ -257,7 +256,7 @@ export class ListSportSpacesComponent implements OnInit {
   }
 
   loadSportSpaces() {
-    const request$ = this.userRole === UserRole.OWNER
+    const request$ = this.currentUser()?.roleType === 'OWNER'
       ? this.sportSpaceService.getMySportSpaces()
       : this.sportSpaceService.getSportSpaces();
 
@@ -266,7 +265,7 @@ export class ListSportSpacesComponent implements OnInit {
         this.allSpaces = spaces;
         this.applyFilters();
 
-        if (this.userRole === UserRole.OWNER) {
+        if (this.currentUser()?.roleType === 'OWNER') {
           this.canAddSportSpace();
         } else {
           this.showAddSportSpaceButton.set(false);
@@ -278,7 +277,7 @@ export class ListSportSpacesComponent implements OnInit {
           this.sportSpaces.set([]);
         }
 
-        if (this.userRole === UserRole.OWNER) {
+        if (this.currentUser()?.roleType === 'OWNER') {
           this.canAddSportSpace();
         } else {
           this.showAddSportSpaceButton.set(false);

@@ -24,7 +24,7 @@ export class AppComponent {
 
   private currentUrl = signal('');
 
-  private hiddenHeaderRoutes = ['correct-payment', 'error-payment'];
+  private hiddenHeaderRoutes = ['correct-payment', 'error-payment', 'login', 'register', 'reset-password'];
 
   showHeader = computed(() =>
     !this.hiddenHeaderRoutes.some(route =>

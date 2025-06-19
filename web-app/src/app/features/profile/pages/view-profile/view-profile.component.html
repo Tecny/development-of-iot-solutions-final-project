@@ -1,22 +1,29 @@
 @let user = userInfo();
-@if (user) {
-  <div class="profile-panel">
-    <div class="panel-header">
-      <div class="avatar-section">
-        <h2>Perfil</h2>
-        <span class="user-role">{{ user.roleType === 'PLAYER' ? 'Jugador' : 'Propietario' }}</span>
-        <img src="assets/images/avatar.png" alt="Avatar" class="avatar" />
-      </div>
-      <div class="tab-buttons tab-buttons--profile">
-        <button [class.active]="activeTab() === 'info'" (click)="setTab('info')">Información</button>
-        <button [class.active]="activeTab() === 'prefs'" (click)="setTab('prefs')">Preferencias</button>
-      </div>
-    </div>
 
-    <div class="panel-content" [formGroup]="profileForm">
-      <!-- Información del perfil -->
-      @if (activeTab() === 'info') {
-        <div class="profile-fields">
+<div class="profile-panel">
+  <div class="panel-header">
+    <div class="avatar-section">
+      <h2>Perfil</h2>
+      <span class="user-role">
+        @if (user) {
+          {{ user.roleType === 'PLAYER' ? 'Jugador' : 'Propietario' }}
+        } @else {
+          Usuario
+        }
+      </span>
+      <img src="assets/images/avatar.png" alt="Avatar" class="avatar" />
+    </div>
+    <div class="tab-buttons tab-buttons--profile">
+      <button [class.active]="activeTab() === 'info'" (click)="setTab('info')">Información</button>
+      <button [class.active]="activeTab() === 'prefs'" (click)="setTab('prefs')">Preferencias</button>
+    </div>
+  </div>
+
+  <div class="panel-content">
+    <!-- Información del perfil -->
+    @if (activeTab() === 'info') {
+      @if (user) {
+        <div class="profile-fields" [formGroup]="profileForm">
 
           <!-- Nombre -->
           <div class="profile-field">
@@ -132,67 +139,67 @@
             }
           </div>
         </div>
-      }
-
-      <!-- Preferencias -->
-      @if (activeTab() === 'prefs') {
-        <div class="preferences">
-          <div class="pref-item">
-            <label for="theme">Tema</label>
-            <select id="theme">
-              <option>Claro</option>
-              <option>Oscuro</option>
-            </select>
-          </div>
-          <div class="pref-item">
-            <label for="language">Idioma</label>
-            <select id="language">
-              <option>Español</option>
-              <option>Inglés</option>
-            </select>
-          </div>
-          <div class="prefs-footer">
-            <button (click)="logout()">Cerrar sesión</button>
-          </div>
+      } @else {
+        <div class="view-spinner view-spinner--sm">
+          <app-spinner/>
         </div>
       }
-    </div>
-  </div>
+    }
 
-  @if (showRechargeModal) {
-    <app-modal [width]="'400px'" (closeModal)="closeRechargeModal()">
-      <ng-container modal-header>Recargar créditos</ng-container>
-      <ng-container modal-body>
-        <form [formGroup]="profileForm">
-          <div class="form-field">
-            <div class="input-icon-wrapper">
-              <input type="number" formControlName="amount" placeholder="Monto a recargar">
-              <i class="lni lni-paypal icon"></i>
-              @if (profileForm.get('amount')?.touched && profileForm.get('amount')?.invalid) {
-                @if (profileForm.get('amount')?.errors?.['required']) {
-                  <small>El monto es obligatorio</small>
-                }
-                @if (profileForm.get('amount')?.errors?.['min']) {
-                  <small>El monto debe ser al menos 1</small>
-                }
-              }
-            </div>
-          </div>
-        </form>
-      </ng-container>
-      <ng-container modal-footer>
-        <button class="button-submit" (click)="recharge()" [disabled]="isLoadingSubmitRequest()">
-          @if (isLoadingSubmitRequest()) {
-          <span class="spinner-default"></span>
-          } @else {
-            Aceptar
-          }
-        </button>
-      </ng-container>
-    </app-modal>
-  }
-} @else {
-  <div class="view-spinner">
-    <app-spinner/>
+    <!-- Preferencias -->
+    @if (activeTab() === 'prefs') {
+      <div class="preferences">
+        <div class="pref-item">
+          <label for="theme">Tema</label>
+          <select id="theme">
+            <option>Claro</option>
+            <option>Oscuro</option>
+          </select>
+        </div>
+        <div class="pref-item">
+          <label for="language">Idioma</label>
+          <select id="language">
+            <option>Español</option>
+            <option>Inglés</option>
+          </select>
+        </div>
+        <div class="prefs-footer">
+          <button (click)="logout()">Cerrar sesión</button>
+        </div>
+      </div>
+    }
   </div>
+</div>
+
+@if (showRechargeModal) {
+  <app-modal [width]="'400px'" (closeModal)="closeRechargeModal()">
+    <ng-container modal-header>Recargar créditos</ng-container>
+    <ng-container modal-body>
+      <form [formGroup]="profileForm">
+        <div class="form-field">
+          <div class="input-icon-wrapper">
+            <input type="number" formControlName="amount" placeholder="Monto a recargar">
+            <i class="lni lni-paypal icon"></i>
+            @if (profileForm.get('amount')?.touched && profileForm.get('amount')?.invalid) {
+              @if (profileForm.get('amount')?.errors?.['required']) {
+                <small>El monto es obligatorio</small>
+              }
+              @if (profileForm.get('amount')?.errors?.['min']) {
+                <small>El monto debe ser al menos 1</small>
+              }
+            }
+          </div>
+        </div>
+      </form>
+    </ng-container>
+    <ng-container modal-footer>
+      <button type="submit" class="button-submit" (click)="recharge()" [disabled]="isLoadingSubmitRequest()">
+        @if (isLoadingSubmitRequest()) {
+          <span class="spinner-default"></span>
+        } @else {
+          Aceptar
+        }
+      </button>
+    </ng-container>
+  </app-modal>
 }

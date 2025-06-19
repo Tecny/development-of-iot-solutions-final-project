@@ -1,10 +1,6 @@
 <div class="title-wrapper">
   <h2 class="section-title">
-    @if (userRole === UserRole.OWNER) {
-      Salas comunidad creadas a partir de tus espacios deportivos
-    } @else {
-      Salas comunidad
-    }
+    Salas comunidad
   </h2>
 </div>
 
@@ -25,17 +21,10 @@
       @for (r of room; track r.id) {
         <app-room-card [room]="r" [showStatus]="false"/>
       } @empty {
-        @if (this.userRole === UserRole.OWNER) {
-          <div class="empty-state">
-            <i class="lni lni-megaphone-1 empty-icon"></i>
-            <p>Aún no hay salas comunidad creadas a partir de tus espacios deportivos</p>
-          </div>
-        } @else {
-          <div class="empty-state">
-            <i class="lni lni-eraser-1"></i>
-            <p>No hay salas comunidad disponibles en este momento :(</p>
-          </div>
-        }
+        <div class="empty-state">
+          <i class="lni lni-eraser-1"></i>
+          <p>No hay salas comunidad disponibles en este momento :(</p>
+        </div>
       }
     </div>
   } @else {

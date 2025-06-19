@@ -48,8 +48,8 @@ import {ToastrService} from 'ngx-toastr';
         </div>
       </div>
 
-      <div class="room-card__actions">
-        @if (currentUser()?.roleType === 'PLAYER') {
+      @if (currentUser()?.roleType === 'PLAYER') {
+        <div class="room-card__actions">
           @if (isMember() !== null) {
             @if (isMember()) {
               <button class="btn btn--primary" (click)="viewRoom()">
@@ -73,15 +73,15 @@ import {ToastrService} from 'ngx-toastr';
               </button>
             }
           }
-        }
-      </div>
+        </div>
+      }
     </div>
     @if (showJoinModal) {
       <app-modal [width]="'400px'" [variant]="'default'" (closeModal)="handleClose()">
         <div modal-header>Unirte a la sala</div>
         <div modal-body>¿Quieres unirte a esta sala comunidad por un costo de {{ getAmount() }} créditos?</div>
         <div modal-footer>
-          <button class="button-submit" (click)="joinRoom()">
+          <button type="submit" class="button-submit" (click)="joinRoom()" [disabled]="isLoadingRequest()" >
             @if (isLoadingRequest()) {
               <span class="spinner-default"></span>
             } @else {
@@ -96,7 +96,7 @@ import {ToastrService} from 'ngx-toastr';
         <div modal-header>Confirmar salida</div>
         <div modal-body>¿Estás seguro que deseas salir de esta sala comunidad? Se reembolsarán tus créditos.</div>
         <div modal-footer>
-          <button class="button-submit--warning" (click)="leaveRoom()">
+          <button type="submit" class="button-submit--warning" (click)="leaveRoom()" [disabled]="isLoadingRequest()">
             @if (isLoadingRequest()) {
               <span class="spinner-warning"></span>
             } @else {
@@ -111,7 +111,7 @@ import {ToastrService} from 'ngx-toastr';
         <div modal-header>Confirmar eliminación</div>
         <div modal-body>¿Estás seguro que deseas eliminar este sala comunidad? Se reembolsarán tus créditos.</div>
         <div modal-footer>
-          <button class="button-submit--danger" (click)="deleteRoom()">
+          <button type="submit" class="button-submit--danger" (click)="deleteRoom()" [disabled]="isLoadingRequest()">
             @if (isLoadingRequest()) {
               <span class="spinner-danger"></span>
             } @else {

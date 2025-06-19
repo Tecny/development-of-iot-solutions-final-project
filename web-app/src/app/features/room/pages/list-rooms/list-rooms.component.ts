@@ -2,8 +2,6 @@ import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angul
 import {RoomService} from '../../services/room.service';
 import {Room} from '../../models/room.interface';
 import {RoomCardComponent} from '../../components/room-card/room-card.component';
-import {UserStoreService} from '../../../../core/services/user-store.service';
-import {UserRole} from '../../../../core/models/user.role.enum';
 import {FiltersComponent} from '../../../../shared/components/filter/filter.component';
 import {GAMEMODE_OPTIONS, SPORTS} from '../../../../shared/models/sport-space.constants';
 import {PriceUtil, TimeUtil} from '../../../../shared/utils/time.util';
@@ -22,13 +20,10 @@ import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.co
 })
 export class ListRoomsComponent implements OnInit {
   private roomService = inject(RoomService);
-  private userStore = inject(UserStoreService);
 
-  userRole = this.userStore.getRoleFromToken();
-
-  allRooms: Room[] = [];
   rooms = signal<Room[] | null>(null);
 
+  allRooms: Room[] = [];
   filters = {
     sport: null,
     gamemode: null,
@@ -42,11 +37,7 @@ export class ListRoomsComponent implements OnInit {
   }
 
   loadRooms() {
-    const request$ = this.userRole === UserRole.OWNER
-      ? this.roomService.getRoomsBySportspaces()
-      : this.roomService.getAllRooms();
-
-    request$.subscribe({
+    this.roomService.getAllRooms().subscribe({
       next: (rooms) => {
         this.allRooms = rooms;
         this.applyFilters();
@@ -98,6 +89,5 @@ export class ListRoomsComponent implements OnInit {
     this.rooms.set(filtered);
   }
 
-  protected readonly UserRole = UserRole;
   protected readonly SPORTS = SPORTS;
 }

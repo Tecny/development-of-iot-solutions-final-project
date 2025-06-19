@@ -53,7 +53,7 @@ import {ToastrService} from 'ngx-toastr';
         <div modal-header>Confirmar eliminación</div>
         <div modal-body>¿Estás seguro que deseas eliminar este espacio deportivo?</div>
         <div modal-footer>
-          <button class="button-submit--danger" (click)="confirmDelete()">
+          <button class="button-submit--danger" (click)="confirmDelete()" [disabled]="isLoadingRequest()">
             @if (isLoadingRequest()) {
               <span class="spinner-danger"></span>
             } @else {

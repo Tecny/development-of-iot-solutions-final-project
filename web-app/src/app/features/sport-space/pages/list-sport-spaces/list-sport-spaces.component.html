@@ -1,5 +1,5 @@
 <div class="title-wrapper">
-  <h2 class="section-title">Espacios Deportivos</h2>
+  <h2 class="section-title">Espacios deportivos</h2>
   @if (showAddSportSpaceButton()) {
     <button class="add-sport-btn" routerLink="/sport-spaces/create" title="Añadir espacio">
       <i class="lni lni-plus"></i>
@@ -7,7 +7,7 @@
   }
 </div>
 
-@if (this.userRole === UserRole.PLAYER) {
+@if (this.currentUser()?.roleType === 'PLAYER') {
   <app-filter
     [config]="[
     { field: 'sport', type: 'select', label: 'Deporte', options: SPORTS },
@@ -31,7 +31,7 @@
           @for (space of spaces; track space.id) {
             <app-sport-space-card [sportSpace]="space" />
           } @empty {
-            @if (this.userRole === UserRole.OWNER) {
+            @if (currentUser()?.roleType === 'OWNER') {
               <div class="empty-state">
                 <i class="lni lni-megaphone-1 empty-icon"></i>
                 <p>No tienes espacios deportivos registrados, empieza agregando uno mejorando tu suscripción</p>
@@ -62,7 +62,7 @@
   }
 </div>
 
-@if (this.userRole === UserRole.PLAYER){
+@if (currentUser()?.roleType === 'PLAYER'){
   <button class="toggle-view-btn" (click)="toggleView()">
     <i class="lni" [ngClass]="{
     'lni-map-marker-1': !isMapView(),

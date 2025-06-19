@@ -7,25 +7,25 @@
 
     <div class="details-page">
 
-        <div class="tab-buttons">
-          <button [class.active]="activeTab() === 'availability'" (click)="setTab('availability')">Reservar</button>
-          <button [class.active]="activeTab() === 'info'" (click)="setTab('info')">Información</button>
-        </div>
+      <div class="tab-buttons">
+        <button [class.active]="activeTab() === 'availability'" (click)="setTab('availability')">Reservar</button>
+        <button [class.active]="activeTab() === 'info'" (click)="setTab('info')">Información</button>
+      </div>
 
-        <div class="tab-content">
-          @if (activeTab() === 'info') {
-            <app-sport-space-info [sportSpace]="sportSpace()!" />
+      <div class="tab-content">
+        @if (activeTab() === 'info') {
+          <app-sport-space-info [sportSpace]="sportSpace()!" />
+        }
+        @if (activeTab() === 'availability') {
+          @defer (when !isLoading()) {
+            <app-sport-space-availability [sportSpace]="sportSpace()!" />
+          } @placeholder {
+            <div class="view-spinner">
+              <app-spinner/>
+            </div>
           }
-          @if (activeTab() === 'availability') {
-            @defer (when !isLoading()) {
-              <app-sport-space-availability [sportSpace]="sportSpace()!" />
-            } @placeholder {
-              <div class="view-spinner">
-                <app-spinner/>
-              </div>
-            }
-          }
-        </div>
+        }
+      </div>
     </div>
   </div>
 } @else {

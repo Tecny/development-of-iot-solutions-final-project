@@ -84,14 +84,14 @@ export const routes: Routes = [
     loadComponent: () => import('./features/reservation/pages/list-reservations/list-reservations.component')
       .then(m => m.ListReservationsComponent),
     canActivate: [authGuard],
-    data: { roles: [UserRole.PLAYER] },
+    data: { roles: [UserRole.PLAYER, UserRole.OWNER] },
   },
   {
     path: 'rooms',
     loadComponent: () => import('./features/room/pages/list-rooms/list-rooms.component')
       .then(m => m.ListRoomsComponent),
     canActivate: [authGuard],
-    data: { roles: [UserRole.PLAYER, UserRole.OWNER] },
+    data: { roles: [UserRole.PLAYER] },
   },
   {
     path: 'rooms/:id',
