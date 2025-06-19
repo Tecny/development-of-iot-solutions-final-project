@@ -1,13 +1,10 @@
 import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
 import {Subscription} from '../../models/subscription.interface';
 import {SubscriptionService} from '../../services/subscription.service';
-import {TitleCasePipe} from '@angular/common';
 
 @Component({
   selector: 'app-view-subscription',
-  imports: [
-    TitleCasePipe
-  ],
+  imports: [],
   templateUrl: './view-subscription.component.html',
   styleUrl: './view-subscription.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -15,6 +12,7 @@ import {TitleCasePipe} from '@angular/common';
 export class ViewSubscriptionComponent implements OnInit {
   private subscriptionService = inject(SubscriptionService);
 
+  isLoadingRequest = signal(false);
   subscriptionInfo= signal<Subscription | null>(null);
 
   ngOnInit(){
@@ -31,6 +29,7 @@ export class ViewSubscriptionComponent implements OnInit {
   }
 
   upgradeSubscription(newPlanType: string) {
+    this.isLoadingRequest = signal(true);
     this.subscriptionService.upgradeSubscription(newPlanType).subscribe({
       next: (response) => {
         const approvalUrl = response.approval_url;
@@ -38,15 +37,15 @@ export class ViewSubscriptionComponent implements OnInit {
         if (paymentWindow) {
           const interval = setInterval(() => {
             if (paymentWindow.closed) {
+              this.isLoadingRequest.set(false);
               clearInterval(interval);
               this.loadSubscriptionInfo();
             }
           }, 1000);
         } else {
-          console.error('No se pudo abrir la ventana de pago.');
+          this.isLoadingRequest.set(false);
         }
-      },
-      error: () => console.error('Error during recharge.')
+      }
     });
   }
 }
