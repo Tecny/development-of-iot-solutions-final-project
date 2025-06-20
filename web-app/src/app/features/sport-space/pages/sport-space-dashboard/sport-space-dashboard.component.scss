@@ -1,16 +1,15 @@
 .dashboard-container {
-    background-color: #fff;
-    padding: 30px;
-    font-family: 'Poppins', sans-serif;
-    color: #333;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+  padding: 30px;
+  background-color: #fafafa;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   h2 {
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 0.1rem;
     font-size: 2em;
     font-weight: 600;
     text-align: center;
@@ -27,10 +26,11 @@
     display: flex;
     gap: 16px;
     align-items: flex-end;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
+    padding: 2.5rem 0;
+    //border-bottom: 1px solid #eee;
     width: 100%;
     justify-content: center;
+    height: 500px;
   }
 
   .bar-wrapper {
@@ -60,6 +60,7 @@
     width: 100%;
     transition: height 0.3s ease-in-out;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+    max-height: 450px;
 
     &:hover {
       opacity: 0.9;
@@ -91,3 +92,4 @@
       transform: translateY(0);
     }
   }
+}

@@ -7,6 +7,7 @@ import {Room} from '../../../room/models/room.interface';
 import {RoomCardComponent} from '../../../room/components/room-card/room-card.component';
 import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
 import {UserStoreService} from '../../../../core/services/user-store.service';
+import {UserRole} from '../../../../core/models/user.role.enum';
 
 @Component({
   selector: 'app-list-reservations',
@@ -24,7 +25,7 @@ export class ListReservationsComponent implements OnInit {
   private roomService = inject(RoomService);
   private userStore = inject(UserStoreService);
 
-  currentUser = this.userStore.currentUser;
+  userRole = this.userStore.getRoleFromToken();
 
   activeTab = signal<'personal' | 'community'>('personal');
   activeSubTab = signal<'own' | 'join'>('own');
@@ -36,10 +37,10 @@ export class ListReservationsComponent implements OnInit {
 
   ngOnInit() {
     this.loadReservations();
-    if (this.currentUser()?.roleType === 'PLAYER') {
+    if (this.userRole === UserRole.PLAYER) {
       this.loadOwnRooms();
       this.loadJoinedRooms();
-    } else {
+    } else if (this.userRole === UserRole.OWNER) {
       this.loadOwnerRooms();
     }
   }
@@ -95,4 +96,6 @@ export class ListReservationsComponent implements OnInit {
   setSubTab(subTab: 'own' | 'join') {
     this.activeSubTab.set(subTab);
   }
+
+  protected readonly UserRole = UserRole;
 }

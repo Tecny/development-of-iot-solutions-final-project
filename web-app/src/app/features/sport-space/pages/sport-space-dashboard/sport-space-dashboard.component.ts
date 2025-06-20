@@ -16,7 +16,7 @@ import {ActivatedRoute} from '@angular/router';
           @for (dato of datosMensuales(); track dato.mes) {
             <div class="bar-wrapper">
               <span class="bar-label">{{ dato.cantidad }}</span>
-              <div class="bar" [style.height.px]="dato.cantidad"></div>
+              <div class="bar" [style.height.px]="dato.altura"></div>
               <span class="label">{{ dato.mes }}</span>
             </div>
           }
@@ -34,7 +34,7 @@ export class SportSpaceDashboardComponent implements OnInit {
   private route = inject(ActivatedRoute);
   private sportSpaceService = inject(SportSpaceService);
 
-  datosMensuales = signal<{ mes: string, cantidad: number }[]>([]);
+  datosMensuales = signal<{ mes: string, cantidad: number, altura: number }[]>([]);
 
   private readonly meses = [
     'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio',
@@ -59,7 +59,7 @@ export class SportSpaceDashboardComponent implements OnInit {
           .filter(d => d.cantidad > 0);
 
         const maxCantidad = Math.max(...datos.map(d => d.cantidad), 1);
-        const alturaMax = 150;
+        const alturaMax = 450;
 
         this.datosMensuales.set(
           datos.map(d => ({

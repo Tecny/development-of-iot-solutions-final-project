@@ -1,6 +1,6 @@
 <div class="title-wrapper">
   <h2 class="section-title">
-    @if (currentUser()?.roleType === 'PLAYER') {
+    @if (userRole === UserRole.PLAYER) {
       Mis reservas
     } @else {
       Reservas en tus espacios deportivos
@@ -13,7 +13,7 @@
   <button [class.active]="activeTab() === 'community'" (click)="setTab('community')">Comunidad</button>
 </div>
 
-@if (activeTab() === 'community' && currentUser()?.roleType === 'PLAYER') {
+@if (activeTab() === 'community' && userRole === UserRole.PLAYER) {
   <div class="sub-tab-buttons">
     <button [class.active]="activeSubTab() === 'own'" (click)="setSubTab('own')">Creadas por mí</button>
     <button [class.active]="activeSubTab() === 'join'" (click)="setSubTab('join')">Salas unidas</button>
@@ -27,10 +27,17 @@
         @for (res of reserv; track res.id) {
           <app-reservation-card [reservation]="res" />
         } @empty {
-          <div class="empty-state">
-            <i class="lni lni-megaphone-1 empty-icon"></i>
-            <p>No tienes reservas personales realizadas</p>
-          </div>
+          @if (userRole === UserRole.PLAYER) {
+            <div class="empty-state">
+              <i class="lni lni-megaphone-1 empty-icon"></i>
+              <p>No tienes reservas personales realizadas</p>
+            </div>
+          } @else if (this.userRole === UserRole.OWNER) {
+            <div class="empty-state">
+              <i class="lni lni-megaphone-1 empty-icon"></i>
+              <p>Aún no se han realizado reservas personales en tus espacios deportivos</p>
+            </div>
+          }
         }
       </div>
     } @else {
@@ -38,7 +45,7 @@
         <app-spinner/>
       </div>
     }
-  } @else if (activeTab() === 'community' && currentUser()?.roleType === 'OWNER') {
+  } @else if (activeTab() === 'community' && userRole === UserRole.OWNER) {
     @if (ownerRooms(); as rooms) {
       <div class="cards-grid">
         @for (room of rooms; track room.id) {
@@ -51,8 +58,11 @@
         }
       </div>
     } @else {
+      <div class="view-spinner view-spinner--sm">
+        <app-spinner/>
+      </div>
     }
-  } @else if (activeTab() === 'community' && activeSubTab() === 'own' && currentUser()?.roleType === 'PLAYER') {
+  } @else if (activeTab() === 'community' && activeSubTab() === 'own' && userRole === UserRole.PLAYER) {
     @if (ownRooms(); as rooms) {
       <div class="cards-grid">
         @for (room of rooms; track room.id) {
@@ -69,7 +79,7 @@
         <app-spinner/>
       </div>
     }
-  } @else if (activeTab() === 'community' && activeSubTab() === 'join' && currentUser()?.roleType === 'PLAYER') {
+  } @else if (activeTab() === 'community' && activeSubTab() === 'join' && userRole === UserRole.PLAYER) {
     @if (joinedRooms(); as rooms) {
       <div class="cards-grid">
         @for (room of rooms; track room.id) {

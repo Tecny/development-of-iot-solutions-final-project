@@ -1,18 +1,54 @@
 <div class="home">
   <div class="home__welcome">
     <h1>Bienvenido a la plataforma</h1>
-    <p>Explora espacios deportivos, únete a salas comunitarias y gestiona tus reservas de forma sencilla.</p>
-    <a routerLink="/sport-spaces" class="home__cta">Ver espacios deportivos</a>
+    <p>¡Explora nuestra plataforma y descubre todo lo que tenemos para ofrecerte!</p>
   </div>
 
   <div class="home__features">
-    <div class="feature">
-      <h2>Reserva Personal</h2>
-      <p>Elige tu deporte favorito y reserva un espacio en segundos.</p>
-    </div>
-    <div class="feature">
-      <h2>Salas Comunitarias</h2>
-      <p>Únete a salas creadas por otros usuarios o arma tu propio equipo.</p>
-    </div>
+    @if (userRole === UserRole.PLAYER || userRole === UserRole.OWNER) {
+      <div class="feature">
+        <h2>Espacios deportivos</h2>
+        @if (userRole === UserRole.PLAYER) {
+          <p>Explora la amplia variedad de espacios deportivos y reserva al instante. ¡Tu próximo partido te espera!</p>
+        } @else {
+          <p>Administra y publica tus espacios deportivos para que los jugadores puedan reservarlos fácilmente.</p>
+        }
+        <a routerLink="/sport-spaces" class="home__cta">Ir a espacios deportivos</a>
+      </div>
+    }
+
+    @if (userRole === UserRole.PLAYER) {
+      <div class="feature">
+        <h2>Salas comunidad</h2>
+        <p>Únete a partidas y reservas de la comunidad, conoce nuevos compañeros y potencia tu vida deportiva.</p>
+        <a routerLink="/rooms" class="home__cta">Ir a salas comunidad</a>
+      </div>
+    }
+
+    @if (userRole === UserRole.PLAYER || userRole === UserRole.OWNER) {
+      <div class="feature">
+        @if (userRole === UserRole.PLAYER) {
+          <h2>Tus reservas</h2>
+          <p>Consulta tus horarios, modifica tus planes y prepárate para la acción. Tus próximos partidos te esperan.</p>
+        } @else {
+          <h2>Reservas en tus espacios</h2>
+          <p>Revisa y gestiona las reservas realizadas en tus espacios deportivos.</p>
+        }
+        <a routerLink="/reservations" class="home__cta">Ir a mis reservas</a>
+      </div>
+    }
+
+    @if (userRole === UserRole.OWNER || userRole === UserRole.ADMIN) {
+      <div class="feature">
+        @if (userRole === UserRole.OWNER) {
+          <h2>Tus tickets de retiro</h2>
+          <p>Crea y gestiona tus tickets de retiro de créditos para obtener tus ganancias.</p>
+        } @else {
+          <h2>Tickets de retiro</h2>
+          <p>Administra y aprueba los tickets de retiro de créditos pendientes de los propietarios.</p>
+        }
+        <a routerLink="/bank-transfer" class="home__cta">Ir a tickets de retiro</a>
+      </div>
+    }
   </div>
 </div>

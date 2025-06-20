@@ -30,6 +30,9 @@ import {ToastrService} from 'ngx-toastr';
         </div>
 
         @if (isOwner()) {
+          <button class="sportspace-card__dashboard-btn" [routerLink]="['/sport-spaces', sportSpace.id, 'dashboard']" (click)="$event.stopPropagation()">
+            <i class="lni lni-bar-chart-4"></i>
+          </button>
           <button class="sportspace-card__delete-btn" (click)="handleOpen(); $event.stopPropagation()">
             <i class="lni lni-trash-3"></i>
           </button>

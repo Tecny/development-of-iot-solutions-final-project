@@ -39,7 +39,7 @@ export class ListSportSpacesComponent implements OnInit {
   private userStore = inject(UserStoreService);
   private sportSpaceService = inject(SportSpaceService);
 
-  currentUser = this.userStore.currentUser;
+  userRole = this.userStore.getRoleFromToken();
   sportSpaces = signal<SportSpace[] | null>(null);
   showAddSportSpaceButton = signal(false);
   isMapView = signal(false);
@@ -256,7 +256,7 @@ export class ListSportSpacesComponent implements OnInit {
   }
 
   loadSportSpaces() {
-    const request$ = this.currentUser()?.roleType === 'OWNER'
+    const request$ = this.userRole === UserRole.OWNER
       ? this.sportSpaceService.getMySportSpaces()
       : this.sportSpaceService.getSportSpaces();
 
@@ -265,7 +265,7 @@ export class ListSportSpacesComponent implements OnInit {
         this.allSpaces = spaces;
         this.applyFilters();
 
-        if (this.currentUser()?.roleType === 'OWNER') {
+        if (this.userRole === UserRole.OWNER) {
           this.canAddSportSpace();
         } else {
           this.showAddSportSpaceButton.set(false);
@@ -277,7 +277,7 @@ export class ListSportSpacesComponent implements OnInit {
           this.sportSpaces.set([]);
         }
 
-        if (this.currentUser()?.roleType === 'OWNER') {
+        if (this.userRole === UserRole.OWNER) {
           this.canAddSportSpace();
         } else {
           this.showAddSportSpaceButton.set(false);
