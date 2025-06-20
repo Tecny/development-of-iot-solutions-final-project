@@ -59,9 +59,14 @@ import {ToastrService} from 'ngx-toastr';
                 <button class="btn btn--danger" (click)="showDeleteModal = true">
                   <i class="lni lni-trash-3"></i> <span class="btn-text">Borrar</span>
                 </button>
-                <button class="btn btn--secondary" (click)="showQRModal = true">
-                  <i class="fa-solid fa-qrcode"></i>
-                </button>
+                @if (room.reservation.status === 'CONFIRMED') {
+                  <button class="btn btn--blockchain" (click)="showBCModal = true">
+                    <i class="lni lni-ethereum-logo"></i>
+                  </button>
+                  <button class="btn btn--secondary" (click)="showQRModal = true">
+                    <i class="fa-solid fa-qrcode"></i>
+                  </button>
+                }
               } @else {
                 <button class="btn btn--warning" (click)="showLeaveModal = true">
                   <i class="lni lni-exit"></i> <span class="btn-text">Salir</span>
@@ -121,6 +126,23 @@ import {ToastrService} from 'ngx-toastr';
         </div>
       </app-modal>
     }
+    @if (showBCModal) {
+      <app-modal [width]="'400px'" [variant]="'info'" (closeModal)="handleClose()">
+        <div modal-header>Datos en la blockchain</div>
+        <div modal-body>
+          <div class="reservation-card__details">
+            <p><strong>Hash de transacción:</strong><br> <span class="tx-hash">{{ room.reservation.blockchain.txHash }}</span></p>
+            <p><strong>Input Hex:</strong><br> <span class="input-hex">{{ room.reservation.blockchain.inputHex }}</span></p>
+            <p><strong>ID Espacio:</strong> {{ room.reservation.blockchain.spaceId }}</p>
+            <p><strong>ID Usuario:</strong> {{ room.reservation.blockchain.userId }}</p>
+            <p><strong>Marca de tiempo:</strong> {{ room.reservation.blockchain.timestamp }}</p>
+          </div>
+        </div>
+        <div modal-footer>
+          <button class="button-submit--info" (click)="handleClose()">Aceptar</button>
+        </div>
+      </app-modal>
+    }
     @if (showQRModal) {
       <app-qr-viewer [reservationId]="room.reservation.id" (close)="showQRModal = false"/>
     }
@@ -149,6 +171,7 @@ export class RoomCardComponent implements OnInit {
   showLeaveModal = false;
   showDeleteModal = false;
   showQRModal = false;
+  showBCModal = false;
 
   ngOnInit(): void {
     this.checkRoomAccess();
@@ -239,5 +262,6 @@ export class RoomCardComponent implements OnInit {
     this.showJoinModal = false;
     this.showLeaveModal = false;
     this.showQRModal = false;
+    this.showBCModal = false;
   }
 }

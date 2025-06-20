@@ -71,13 +71,24 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
       }
     }
 
-    .btn--secondary {
+    .btn--qr {
       background-color: #ffffff;
       border: 1px solid #2196F3;
       color: #2196F3;
 
       &:hover {
         background-color: #BBDEFB;
+      }
+    }
+
+    .btn--blockchain {
+      background-color: #ffffff;
+      border: 1px solid #424242;
+      color: #424242;
+      //margin-right: 0.5rem;
+
+      &:hover {
+        background-color: #e0e0e0;
       }
     }
   }
@@ -128,6 +139,18 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
+    }
+
+    .tx-hash {
+      word-break: break-all;
+      white-space: normal;
+    }
+    .input-hex {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: block;
+      max-width: 100%;
     }
   }
 }

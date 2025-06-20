@@ -168,7 +168,9 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
 
     .btn--danger,
     .btn--warning,
-    .btn--secondary {
+    .btn--secondary,
+    .btn--blockchain,
+    {
       height: 35px;
       padding: 0;
       flex-grow: 0;
@@ -200,6 +202,16 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
 
       &:hover {
         background-color: #BBDEFB;
+      }
+    }
+
+    .btn--blockchain {
+      background-color: #ffffff;
+      border: 1px solid #424242;
+      color: #424242;
+
+      &:hover {
+        background-color: #e0e0e0;
       }
     }
 
@@ -235,13 +247,15 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
 @media (max-width: 400px) {
   .room-card__actions .btn--danger .btn-text,
   .room-card__actions .btn--warning .btn-text,
-  .room-card__actions .btn--secondary .btn-text {
+  .room-card__actions .btn--secondary .btn-text,
+  .room-card__actions .btn--blockchain .btn-text {
     display: none;
   }
 
   .room-card__actions .btn--danger,
   .room-card__actions .btn--warning,
-  .btn--secondary {
+  .btn--secondary,
+  .btn--blockchain {
     min-width: 48px;
     width: 35px;
     height: 35px;

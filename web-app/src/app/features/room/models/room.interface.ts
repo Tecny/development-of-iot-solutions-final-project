@@ -9,6 +9,14 @@ interface SportSpace {
   amount: number;
 }
 
+interface Blockchain {
+  inputHex: string;
+  txHash: string;
+  spaceId: number;
+  userId: number;
+  timestamp: string;
+}
+
 interface Reservation {
   id: number;
   startTime: string;
@@ -18,6 +26,7 @@ interface Reservation {
   reservationName: string;
   userId: number;
   status: string;
+  blockchain: Blockchain;
   sportSpace: SportSpace;
 }
 

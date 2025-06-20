@@ -17,11 +17,20 @@ interface SportSpace {
   address: string;
 }
 
+interface Blockchain {
+  inputHex: string;
+  txHash: string;
+  spaceId: number;
+  userId: number;
+  timestamp: string;
+}
+
 export interface Reservation {
   id: number;
   name: string;
   type: string;
   sportSpaces: SportSpace;
+  blockchain: Blockchain;
   gameDay: string;
   startTime: string;
   endTime: string;

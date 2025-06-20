@@ -5,6 +5,7 @@ import {PriceUtil, TimeUtil} from '../../../../shared/utils/time.util';
 import {QrViewerComponent} from "../../../../shared/components/qr-viewer/qr-viewer.component";
 import {RouterLink} from '@angular/router';
 import {UserStoreService} from '../../../../core/services/user-store.service';
+import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 
 @Component({
   selector: 'app-reservation-card',
@@ -12,17 +13,21 @@ import {UserStoreService} from '../../../../core/services/user-store.service';
     TitleCasePipe,
     QrViewerComponent,
     LowerCasePipe,
-    RouterLink
+    RouterLink,
+    ModalComponent
   ],
   template: `
     <div class="reservation-card">
       <div class="reservation-card__header">
         <div class="reservation-card__header-top">
           <span class="reservation-card__title">{{ reservation.name }}</span>
-          @if (currentUser()?.roleType === 'PLAYER') {
-            <button class="btn btn--secondary" (click)="showQRModal = true">
-              <i class="fa-solid fa-qrcode"></i>
+          @if (currentUser()?.roleType !== 'ADMIN') {
+            <button class="btn btn--blockchain" (click)="showBCModal = true">
+              <i class="lni lni-ethereum-logo"></i>
             </button>
+<!--            <button class="btn btn&#45;&#45;qr" (click)="showQRModal = true">-->
+<!--              <i class="fa-solid fa-qrcode"></i>-->
+<!--            </button>-->
           }
         </div>
         <span class="reservation-card__status badge badge--{{ reservation.status | lowercase }}">
@@ -46,6 +51,24 @@ import {UserStoreService} from '../../../../core/services/user-store.service';
       </div>
     </div>
 
+    @if (showBCModal) {
+      <app-modal [width]="'400px'" [variant]="'info'" (closeModal)="handleClose()">
+        <div modal-header>Datos en la blockchain</div>
+        <div modal-body>
+          <div class="reservation-card__details">
+            <p><strong>Hash de transacción:</strong><br> <span class="tx-hash">{{ reservation.blockchain.txHash }}</span></p>
+            <p><strong>Input Hex:</strong><br> <span class="input-hex">{{ reservation.blockchain.inputHex }}</span></p>
+            <p><strong>ID Espacio:</strong> {{ reservation.blockchain.spaceId }}</p>
+            <p><strong>ID Usuario:</strong> {{ reservation.blockchain.userId }}</p>
+            <p><strong>Marca de tiempo:</strong> {{ reservation.blockchain.timestamp }}</p>
+          </div>
+        </div>
+        <div modal-footer>
+          <button class="button-submit--info" (click)="handleClose()">Aceptar</button>
+        </div>
+      </app-modal>
+    }
+
     @if (showQRModal) {
       <app-qr-viewer [reservationId]="reservation.id" (close)="showQRModal = false"/>
     }
@@ -61,6 +84,7 @@ export class ReservationCardComponent {
   currentUser = this.userStore.currentUser;
 
   showQRModal = false;
+  showBCModal = false;
 
   getPrice(): number {
     const hours = TimeUtil.getHoursDifference(this.reservation.startTime, this.reservation.endTime);
@@ -70,6 +94,10 @@ export class ReservationCardComponent {
       this.reservation.sportSpaces.amount,
       hours
     );
+  }
+
+  handleClose() {
+    this.showBCModal = false;
   }
 
   protected readonly TimeUtil = TimeUtil;
