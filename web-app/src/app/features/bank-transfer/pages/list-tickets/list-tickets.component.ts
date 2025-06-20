@@ -7,6 +7,8 @@ import {customAccountNumberLengthByBank} from '../../../../shared/validators/ban
 import {UserStoreService} from '../../../../core/services/user-store.service';
 import {TicketCardComponent} from '../../components/ticket-card/ticket-card.component';
 import {ToastrService} from 'ngx-toastr';
+import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
+import {UserRole} from '../../../../core/models/user.role.enum';
 
 @Component({
   selector: 'app-list-tickets',
@@ -14,7 +16,8 @@ import {ToastrService} from 'ngx-toastr';
     FormsModule,
     ModalComponent,
     ReactiveFormsModule,
-    TicketCardComponent
+    TicketCardComponent,
+    SpinnerComponent
   ],
   templateUrl: './list-tickets.component.html',
   styleUrl: './list-tickets.component.scss',
@@ -26,7 +29,7 @@ export class ListTicketsComponent implements OnInit {
   private fb = inject(NonNullableFormBuilder);
   private toastService = inject(ToastrService);
 
-  currentUser = this.userStore.currentUser;
+  userRole = this.userStore.getRoleFromToken();
   tickets = signal<Ticket[] | null>(null);
   isLoadingSubmitRequest = signal(false);
 
@@ -70,14 +73,13 @@ export class ListTicketsComponent implements OnInit {
   }
 
   loadTickets() {
-    if (this.currentUser()?.roleType === 'OWNER') {
+    if (this.userRole === UserRole.OWNER) {
       this.bankTransferService.getTicketsByOwner().subscribe({
         next: (tickets) => {
           this.tickets.set(tickets);
         },
         error: (err) => {
           if (err.status === 404) {
-
             this.tickets.set([]);
           }
         }
@@ -87,15 +89,8 @@ export class ListTicketsComponent implements OnInit {
         next: (tickets) => {
           this.tickets.set(tickets);
         },
-        error: () => {
-          this.toastService.info('No tienes solicitudes de transferencia bancaria pendientes', 'Info');
-        }
       });
     }
-  }
-
-  haveCredits() {
-    return this.currentUser()?.credits !== 0;
   }
 
   openTicketModal() {
@@ -120,8 +115,10 @@ export class ListTicketsComponent implements OnInit {
         this.isLoadingSubmitRequest.set(false);
         this.closeTicketModal();
         this.loadTickets();
+        this.toastService.success('Solicitud de transferencia creada exitosamente.', 'Éxito');
       },
       error: () => {
+        this.toastService.error('Error al crear la solicitud de transferencia.', 'Error');
         this.isLoadingSubmitRequest.set(false);
       }
     });
@@ -160,4 +157,6 @@ export class ListTicketsComponent implements OnInit {
       accountControl?.updateValueAndValidity();
     }
   }
+
+  protected readonly UserRole = UserRole;
 }

@@ -1,6 +1,6 @@
 <div class="title-wrapper">
   <div class="section-title">Retiro de créditos</div>
-  @if (this.currentUser()?.roleType === 'OWNER') {
+  @if (this.userRole === UserRole.OWNER) {
     <button class="add-sport-btn" (click)="openTicketModal()" title="Crear ticket de retiro">
       <i class="lni lni-plus"></i>
     </button>
@@ -9,24 +9,40 @@
 
 @defer (prefetch on viewport) {
   @if (tickets(); as tcks) {
-    <div class="cards-grid">
-      @for (ticket of tcks; track ticket.id) {
+    @for (ticket of tcks; track ticket.id) {
+      <div class="cards-grid">
         <app-ticket-card [ticket]="ticket"
                          (ticketConfirmed)="loadTickets()"
                          (ticketDeferred)="loadTickets()"/>
-      } @empty {
-        @if (this.currentUser()?.roleType === 'ADMIN') {
-        <p>No tienes tickets de retiro solicitados</p>
+      </div>
+    } @empty {
+      @if (this.userRole === UserRole.OWNER) {
+        <div class="empty-state">
+          <i class="lni lni-megaphone-1 empty-icon"></i>
+          <p>No tienes tickets de retiro de créditos solicitados</p>
+        </div>
       }
+      @else if (this.userRole === UserRole.ADMIN) {
+        <div class="empty-state">
+          <i class="lni lni-megaphone-1 empty-icon"></i>
+          <p>No tienes tickets de retiro de créditos por atender</p>
+        </div>
     }
-    </div>
+    }
   } @else {
-    <p>Cargando tickets de retiro...</p>
+    <div class="view-spinner view-spinner--sm">
+      <app-spinner/>
+    </div>
   }
 } @placeholder {
-  <p>Preparando carga de tickets de retiro...</p>
+  <div class="empty-state">
+    <i class="lni lni-hourglass placeholder-icon"></i>
+    <p>Preparando carga de tickets de retiro...</p>
+  </div>
 } @loading {
-  <p>Cargando tickets de retiro...</p>
+  <div class="view-spinner view-spinner--sm">
+    <app-spinner/>
+  </div>
 }
 
 <!-- Modal -->

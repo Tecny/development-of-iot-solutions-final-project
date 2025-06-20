@@ -4,6 +4,7 @@ import {NgClass, TitleCasePipe} from '@angular/common';
 import {UserStoreService} from "../../../../core/services/user-store.service";
 import {BankTransferService} from "../../services/bank-transfer.service";
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-ticket-card',
@@ -91,6 +92,7 @@ export class TicketCardComponent {
 
   private userStore = inject(UserStoreService);
   private bankTransferService = inject(BankTransferService);
+  private toastService = inject(ToastrService);
 
   currentUser = this.userStore.currentUser;
   isAdmin = computed(() => {
@@ -117,9 +119,11 @@ export class TicketCardComponent {
         next: () => {
           this.isLoadingRequest.set(false);
           this.ticketConfirmed.emit();
+          this.toastService.success('Ticket confirmado exitosamente', 'Éxito');
         },
         error: () => {
           this.isLoadingRequest.set(false);
+          this.toastService.error('Error al confirmar el ticket', 'Error');
         }
       });
     } else {
@@ -134,9 +138,11 @@ export class TicketCardComponent {
         next: () => {
           this.isLoadingRequest.set(false);
           this.ticketDeferred.emit();
+          this.toastService.success('Ticket diferido exitosamente', 'Éxito');
         },
         error: () => {
           this.isLoadingRequest.set(false);
+          this.toastService.error('Error al diferir el ticket', 'Error');
         }
       });
     } else {
