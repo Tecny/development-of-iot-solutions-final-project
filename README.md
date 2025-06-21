@@ -6406,6 +6406,703 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bchart-sprint-4.png" alt="UPC">
 </p>
 
+### 6.2.5 Sprint 5
+
+#### 6.2.5.1 Sprint Planning 
+
+| Sprint                        | Sprint 5            |
+|-------------------------------|---------------------|
+|Date  | 26 de mayo del 2025 |
+|Time  | 09:00 horas (GMT-5) |
+|Location  |Modalidad remota por Discord  |
+|Prepared by  |Sebastian Mendez Lopez  |
+|Attendees  |Todos los integrantes del equipo |
+|Sprint 4 – Review Summary  | Durante el sprint 4 se completaron funcionalidades esenciales relacionadas con reservas, salas y solicitudes de retiro. Se logró una integración estable de todos los módulos. |
+|Sprint 4 – Retrospective Summary | El equipo sostuvo una comunicación efectiva y un buen ritmo de entregas. Se planteó fortalecer la documentación técnica y realizar validaciones más estrictas de los flujos completos. |
+|Sprint Goal | Nos enfocamos en desarrollar funciones esenciales en la app móvil, como el registro, autenticación, perfil, créditos, suscripciones, visualización de espacios y gestión de reservas. Consideramos que esto garantiza una accesibilidad adecuada y una experiencia funcional básica. Lo confirmaremos cuando los usuarios puedan ingresar, explorar y utilizar la mayoría de las funciones principales desde la interfaz móvil. |
+|Sprint 5 Velocity | 30 |
+|Sum of Story Points| 30 |
+
+#### 6.2.5.2 Sprint Backlog
+
+<table>
+  <tr>
+    <th colspan="8">Sprint 5 – Aplicación Móvil</th>
+  </tr>
+  <tr>
+    <th colspan="2">User Story</th>
+    <th colspan="6">Work-Item / Task</th>
+  </tr>
+  <tr>
+    <th>Id</th>
+    <th>Título</th>
+    <th>Id</th>
+    <th>Título</th>
+    <th>Descripción</th>
+    <th>Estimación (Horas)</th>
+    <th>Asignado a</th>
+    <th>Estado</th>
+  </tr>
+  <tr>
+    <td rowspan="2">US01</td>
+    <td rowspan="2">Registro de cuenta de usuario</td>
+    <td>TK01</td>
+    <td>Diseñar pantalla de registro</td>
+    <td>Crear una vista en la app móvil para ingresar datos del nuevo usuario.</td>
+    <td>4</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Conectar con backend de registro</td>
+    <td>Integrar la pantalla con el servicio para registrar al usuario.</td>
+    <td>4</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US02</td>
+    <td rowspan="2">Inicio de sesión</td>
+    <td>TK01</td>
+    <td>Diseñar interfaz de login</td>
+    <td>Crear la vista móvil para iniciar sesión con validaciones.</td>
+    <td>4</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Integrar autenticación con backend</td>
+    <td>Enviar datos del login al servicio de autenticación.</td>
+    <td>4</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US03</td>
+    <td rowspan="2">Visualizar perfil</td>
+    <td>TK01</td>
+    <td>Crear componente de perfil</td>
+    <td>Diseñar la vista móvil para mostrar la información del perfil.</td>
+    <td>5</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Obtener datos del perfil</td>
+    <td>Conectar con la API para cargar los datos del usuario.</td>
+    <td>4</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="3">US04</td>
+    <td rowspan="3">Editar perfil</td>
+    <td>TK01</td>
+    <td>Agregar botones de edición</td>
+    <td>Permitir modificar nombre, correo y demás datos desde la app.</td>
+    <td>4</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar antes de actualizar</td>
+    <td>Revisar que los datos ingresados sean válidos.</td>
+    <td>4</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Enviar cambios al backend</td>
+    <td>Conectar los datos modificados con el servidor para actualizarlos.</td>
+    <td>4</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="3">US05</td>
+    <td rowspan="3">Recarga de crédito</td>
+    <td>TK01</td>
+    <td>Diseñar vista de recarga</td>
+    <td>Interfaz para que el usuario indique el monto a recargar.</td>
+    <td>4</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Integrar recarga con backend</td>
+    <td>Enviar solicitud de recarga y mostrar respuesta en la app.</td>
+    <td>5</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Actualizar saldo mostrado</td>
+    <td>Reflejar el nuevo saldo del usuario en la interfaz.</td>
+    <td>4</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US06</td>
+    <td rowspan="2">Visualizar suscripción</td>
+    <td>TK01</td>
+    <td>Mostrar estado de suscripción</td>
+    <td>Diseñar una sección donde se visualice la suscripción activa.</td>
+    <td>4</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Obtener datos de suscripción</td>
+    <td>Cargar la información de la suscripción actual desde backend.</td>
+    <td>4</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US07</td>
+    <td rowspan="2">Actualizar suscripción</td>
+    <td>TK01</td>
+    <td>Implementar lógica de actualización</td>
+    <td>Permitir cambiar a otro plan según disponibilidad y reglas.</td>
+    <td>5</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar nuevo plan</td>
+    <td>Verificar requisitos del nuevo nivel antes de aplicar el cambio.</td>
+    <td>4</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US08</td>
+    <td rowspan="2">Ver espacios deportivos</td>
+    <td>TK01</td>
+    <td>Obtener lista de espacios</td>
+    <td>Conectar con la API que devuelve espacios deportivos disponibles.</td>
+    <td>4</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Filtrar por ubicación</td>
+    <td>Mostrar solo los espacios cercanos según ubicación del usuario.</td>
+    <td>4</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="3">US09</td>
+    <td rowspan="3">Añadir espacio deportivo</td>
+    <td>TK01</td>
+    <td>Diseñar formulario de espacio</td>
+    <td>Crear pantalla móvil para registrar nuevos espacios deportivos.</td>
+    <td>5</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Enviar datos al backend</td>
+    <td>Conectar el formulario con el servicio correspondiente.</td>
+    <td>4</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Validar campos del formulario</td>
+    <td>Asegurar que se completen los datos obligatorios correctamente.</td>
+    <td>4</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US12</td>
+    <td rowspan="2">Disponibilidad horaria</td>
+    <td>TK01</td>
+    <td>Diseñar vista de horarios</td>
+    <td>Mostrar de forma clara los horarios libres por espacio.</td>
+    <td>4</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Conectar con disponibilidad</td>
+    <td>Utilizar la API para consultar los horarios libres.</td>
+    <td>4</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="3">US13</td>
+    <td rowspan="3">Crear una reserva</td>
+    <td>TK01</td>
+    <td>Diseñar formulario de reserva</td>
+    <td>Pantalla para seleccionar espacio, hora y tipo de partido.</td>
+    <td>5</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Enviar reserva al backend</td>
+    <td>Conectar los datos con el endpoint de reservas.</td>
+    <td>4</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Validar crédito disponible</td>
+    <td>Verificar que el usuario tenga saldo antes de confirmar la reserva.</td>
+    <td>4</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US14</td>
+    <td rowspan="2">Ver reservas</td>
+    <td>TK01</td>
+    <td>Diseñar historial de reservas</td>
+    <td>Mostrar reservas pasadas en una lista ordenada.</td>
+    <td>4</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Consultar reservas del usuario</td>
+    <td>Recuperar desde la API las reservas realizadas y mostrarlas en la app.</td>
+    <td>4</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+</table>
+
+
+#### 6.2.5.3 Development Evidence for Sprint Review
+
+| Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| development-of-iot-solutions-final-project | feature/ |  | | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+
+#### 6.2.5.4 Testing Suite Evidence for Sprint Review 
+
+<div align="center" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center;">
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test1.png" alt="ac-test1" style="max-width: 150px; height: auto;" />
+<br><br><br>
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test2.png" alt="ac-test2" style="max-width: 150px; height: auto;" />
+<br><br><br>
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test3-4.png" alt="ac-test3-4" style="max-width: 150px; height: auto;" />
+<br><br><br>
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test5.png" alt="ac-test5" style="max-width: 150px; height: auto;" />
+<br><br><br>
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test6-7.png" alt="ac-test6-7" style="max-width: 150px; height: auto;" />
+<br><br><br>
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test8-12.png" alt="ac-test8-12" style="max-width: 150px; height: auto;" />
+<br><br><br>
+  <img src="https://raw.githubusercontent.com/Tecny/development-of-iot-solutions-final-project/develop/images/ac-test13-15.png" alt="ac-test13-15" style="max-width: 150px; height: auto;" />
+</div>
+<br><br><br>
+Link del repositorio donde se almacena los acceptant tests: https://github.com/Tecny/development-of-iot-solutions-final-project/tree/develop/testing
+
+#### 6.2.5.5 Execution Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//exec-s5.png" alt="UPC">
+
+#### 6.2.5.6 Software Deployment Evidence for Sprint Review 
+
+No se realizó despliegue, debido a que el desarrollo del frontend mobile aún no está terminado.
+
+#### 6.2.5.7 Team Collaboration Insights during Sprint 
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-1.png" alt="UPC">
+<br><br><br>
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-2.png" alt="UPC">
+</p>
+
+#### 6.2.5.8. Burndown Chart during Sprint 5
+
+- Sprint 5 (117 h, 8 días):
+Ajustamos la curva de trabajo comenzando con una carga moderada de 8 h dedicadas a las primeras integraciones de la app móvil. El esfuerzo alcanzó su punto máximo el día 6 con 24 h invertidas principalmente en funcionalidades como perfil y recarga de crédito. Luego, el ritmo descendió progresivamente para enfocarnos en pruebas de usabilidad y ajustes de experiencia de usuario (UX), destinando aproximadamente un 5 % del total de horas a los últimos retoques. Este gráfico representa el flujo de trabajo enfocado en la construcción inicial de la aplicación móvil.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bchart-sprint-5.png" alt="UPC">
+</p>
+
+### 6.2.6 Sprint 6
+#### 6.2.6.1 Sprint Planning 
+
+| Sprint                        | Sprint 6            |
+|-------------------------------|---------------------|
+|Date  | 09 de junio del 2025 |
+|Time  | 09:00 horas (GMT-5) |
+|Location  |Modalidad remota por Discord  |
+|Prepared by  |Sebastian Mendez Lopez  |
+|Attendees  |Todos los integrantes del equipo |
+|Sprint 5 – Review Summary  |Durante el Sprint 5 se implementaron correctamente las funcionalidades esenciales en la app móvil. Los usuarios pueden gestionar su perfil, suscripciones y reservas directamente desde la aplicación. |
+|Sprint 5 – Retrospective Summary | Se evidenció un buen desempeño en la construcción de la interfaz. Sin embargo, se identificó la necesidad de mejorar ciertos componentes y ajustar las reglas visuales para mayor consistencia. |
+|Sprint Goal | Nuestro enfoque es completar la experiencia del usuario en la app móvil incorporando funcionalidades sociales y administrativas, como salas comunidad, gestión de tickets y filtros informativos. Esto se validará cuando los usuarios interactúen desde la aplicación con las salas, apliquen filtros y utilicen opciones de transferencia y recuperación. |
+|Sprint 6 Velocity | 36 |
+|Sum of Story Points| 36 |
+
+#### 6.2.6.2 Sprint Backlog
+
+<table>
+  <tr>
+    <th colspan="8">Sprint 6 – Aplicación Móvil</th>
+  </tr>
+  <tr>
+    <th colspan="2">Historia de Usuario</th>
+    <th colspan="6">Tarea / Trabajo</th>
+  </tr>
+  <tr>
+    <th>Id</th>
+    <th>Título</th>
+    <th>Id</th>
+    <th>Título</th>
+    <th>Descripción</th>
+    <th>Estimación (Horas)</th>
+    <th>Asignado a</th>
+    <th>Estado</th>
+  </tr>
+  <tr>
+    <td rowspan="2">US16</td>
+    <td rowspan="2">Explorar salas comunidad</td>
+    <td>TK01</td>
+    <td>Mostrar lista de salas</td>
+    <td>Crear pantalla móvil para visualizar las salas comunidad disponibles</td>
+    <td>5</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Diseñar tarjetas para salas</td>
+    <td>Diseñar visualmente cada sala con nombre, cantidad de jugadores y botón para unirse</td>
+    <td>5</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="3">US17</td>
+    <td rowspan="3">Unirse a una sala comunidad</td>
+    <td>TK01</td>
+    <td>Botón para unirse</td>
+    <td>Incluir botón funcional en la tarjeta para que el usuario ingrese a la sala</td>
+    <td>4</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Verificar capacidad de la sala</td>
+    <td>Prevenir ingreso si la sala está completa</td>
+    <td>4</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Confirmar ingreso</td>
+    <td>Mostrar notificación al unirse correctamente</td>
+    <td>4</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US18</td>
+    <td rowspan="2">Eliminar sala comunidad</td>
+    <td>TK01</td>
+    <td>Agregar opción para eliminar</td>
+    <td>Diseñar e implementar botón para que el creador pueda borrar su sala</td>
+    <td>5</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Confirmar acción de eliminación</td>
+    <td>Mostrar ventana de confirmación antes de eliminar la sala</td>
+    <td>4</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US10</td>
+    <td rowspan="2">Eliminar espacio deportivo</td>
+    <td>TK01</td>
+    <td>Diseñar gestión de espacios</td>
+    <td>Mostrar lista con opción para eliminar espacios deportivos desde la app</td>
+    <td>5</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Confirmar eliminación</td>
+    <td>Confirmar y ejecutar eliminación de espacio en la interfaz móvil</td>
+    <td>4</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US22</td>
+    <td rowspan="2">Crear ticket de transferencia</td>
+    <td>TK01</td>
+    <td>Diseñar formulario de ticket</td>
+    <td>Permitir a usuarios ingresar monto y datos para el ticket desde la app</td>
+    <td>5</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar formulario</td>
+    <td>Verificar que todos los campos estén completos y correctos antes de enviar</td>
+    <td>4</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US21</td>
+    <td rowspan="2">Consultar tickets de transferencia</td>
+    <td>TK01</td>
+    <td>Diseñar vista de tickets</td>
+    <td>Crear pantalla para que el usuario visualice sus tickets generados</td>
+    <td>5</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Mostrar estado de tickets</td>
+    <td>Indicar en la app si cada ticket está pendiente o fue atendido</td>
+    <td>4</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US24</td>
+    <td rowspan="2">Gestionar tickets como administrador</td>
+    <td>TK01</td>
+    <td>Diseñar listado de tickets</td>
+    <td>Crear vista para que el admin gestione todos los tickets y sus estados</td>
+    <td>6</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Botón para marcar como atendido</td>
+    <td>Implementar botón para actualizar el estado de ticket a pagado</td>
+    <td>5</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US15</td>
+    <td rowspan="2">Generar código QR de acceso</td>
+    <td>TK01</td>
+    <td>Diseñar botón para generar QR</td>
+    <td>Crear botón que permita generar código QR desde la app móvil</td>
+    <td>5</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Mostrar código QR generado</td>
+    <td>Diseñar componente o modal para visualizar el QR generado</td>
+    <td>5</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US19</td>
+    <td rowspan="2">Ver salas vinculadas a mis espacios</td>
+    <td>TK01</td>
+    <td>Obtener salas desde backend</td>
+    <td>Consumir servicio para traer salas asociadas a los espacios del usuario</td>
+    <td>5</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Mostrar listado de salas</td>
+    <td>Diseñar pantalla móvil para listar las salas relacionadas a mis espacios</td>
+    <td>5</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US20</td>
+    <td rowspan="2">Aplicar filtros en salas comunidad</td>
+    <td>TK01</td>
+    <td>Diseñar controles de filtro</td>
+    <td>Crear opciones para filtrar salas por nivel, tipo de juego y ubicación en la app</td>
+    <td>5</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Implementar filtros activos</td>
+    <td>Programar lógica para que los filtros modifiquen la lista de salas</td>
+    <td>5</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US11</td>
+    <td rowspan="2">Filtrar espacios deportivos</td>
+    <td>TK01</td>
+    <td>Diseñar filtros en app</td>
+    <td>Agregar controles para filtrar espacios según ubicación y tipo</td>
+    <td>5</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Aplicar filtros dinámicos</td>
+    <td>Implementar lógica para filtrar la lista según opciones seleccionadas</td>
+    <td>5</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US23</td>
+    <td rowspan="2">Recuperar contraseña</td>
+    <td>TK01</td>
+    <td>Diseñar formulario de recuperación</td>
+    <td>Crear pantalla móvil para solicitar recuperación mediante email</td>
+    <td>4</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Mostrar confirmación</td>
+    <td>Notificar al usuario sobre el envío del correo de recuperación</td>
+    <td>4</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US25</td>
+    <td rowspan="2">Salir de una sala comunidad</td>
+    <td>TK01</td>
+    <td>Botón para salir</td>
+    <td>Incluir opción para que el usuario pueda abandonar una sala desde la app</td>
+    <td>4</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Actualizar estado del usuario</td>
+    <td>Reflejar en la app y backend que el jugador salió de la sala</td>
+    <td>4</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">US26</td>
+    <td rowspan="2">Información sobre la aplicación</td>
+    <td>TK01</td>
+    <td>Diseñar sección "Acerca de"</td>
+    <td>Crear sección en la app con información general sobre el servicio</td>
+    <td>4</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Incluir enlaces útiles</td>
+    <td>Agregar enlaces a términos, contacto y preguntas frecuentes dentro de la app</td>
+    <td>4</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+</table>
+
+
+#### 6.2.6.3 Development Evidence for Sprint Review
+
+| Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| development-of-iot-solutions-final-project | feature/ |  | | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+
+#### 6.2.6.4 Testing Suite Evidence for Sprint Review 
+
+<div align="center" style="display: flex; flex-wrap: wrap; gap: 25px; justify-content: center;">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ac-test16-20-25.png" alt="UPC">
+<br><br><br>
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ac-test21-24.png" alt="UPC">
+<br><br><br>
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//ac-test26.png" alt="UPC">
+<br><br><br>
+Link del repositorio donde se almacena los acceptant tests: https://github.com/Tecny/development-of-iot-solutions-final-project/tree/develop/testing
+</div>
+
+#### 6.2.6.5 Execution Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//exec-s6.png" alt="UPC">
+
+#### 6.2.6.6 Software Deployment Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dep-s6-1.png" alt="UPC">
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dep-s6-2.jpg" alt="UPC">
+
+#### 6.2.6.7 Team Collaboration Insights during Sprint 
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-1.png" alt="UPC">
+<br><br><br>
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//commits-2.png" alt="UPC">
+</p>
+
+#### 6.2.6.8. Burndown Chart during Sprint 6
+
+- Sprint 6 (133 h, 8 días):
+La distribución del trabajo fue más dinámica, comenzando con una carga sólida de 13 horas dedicada a las vistas de salas en la app móvil. Alcanzamos un pico inicial de 27 horas en tareas relacionadas con la gestión de tickets. Posteriormente, hubo una pausa planificada para integrar confirmaciones y validaciones, seguida de un aumento el día 6 enfocado en funcionalidades de códigos QR y filtros. Finalmente, se destinó un 5 % del tiempo total a la documentación y a la sección “Acerca de”.
+Este gráfico refleja el flujo de trabajo basado en el desarrollo de la aplicación móvil.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bchart-sprint-6.png" alt="UPC">
+</p>
+
 <div style="page-break-before: always;"></div>
 
 ## 6.3. Validation Interviews
