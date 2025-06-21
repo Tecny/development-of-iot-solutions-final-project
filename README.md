@@ -73,10 +73,12 @@
       John Atencio<br>
       TB1: Coordiné una de las sesiones internas, liderando la organización del contenido y distribuyendo los roles de presentación en conjunto con el equipo.<br><br>
       TP: Asumí un rol de liderazgo técnico al guiar el desarrollo de la primera versión de la web app, además de diseñar mockups y wireframes junto al equipo.
+      TB2, Organicé tareas clave para la implementación de la app móvil, promoviendo una distribución equitativa del trabajo.
     </td>
     <td rowspan="6" valign="top">
       El equipo asumió el liderazgo de manera compartida, rotando roles según las fortalezas de cada integrante. Esta dinámica fomentó una toma de decisiones efectiva, mayor autonomía, y un compromiso colectivo con el proyecto. Se promovió un liderazgo distribuido en las distintas fases, desde la investigación inicial hasta el desarrollo de la aplicación. (TB1)<br><br>
-      En esta etapa, el equipo sentó las bases del diseño de la solución IoT y llevó a cabo el primer Sprint de desarrollo. Como resultado, se entregó una Landing Page funcional y una primera versión operativa de la aplicación web, cumpliendo con los objetivos priorizados y validando de forma temprana los avances del producto. (TP)
+      En esta etapa, el equipo sentó las bases del diseño de la solución IoT y llevó a cabo el primer Sprint de desarrollo. Como resultado, se entregó una Landing Page funcional y una primera versión operativa de la aplicación web, cumpliendo con los objetivos priorizados y validando de forma temprana los avances del producto. (TP)<br><br>
+      Demostramos liderazgo compartido al asumir responsabilidades clave, coordinar actividades y tomar decisiones de forma conjunta. Nuestra colaboración activa permitió mantener una comunicación fluida, integrar soluciones como la app móvil y el sistema IoT, y alcanzar los objetivos del proyecto eficientemente. (TB2)
     </td>
   </tr>
   <tr>
@@ -84,6 +86,7 @@
       Henry Centurion<br>
       TB1: Guié al equipo en decisiones clave sobre el diseño estratégico del dominio, incentivando la participación equitativa y argumentando cada elección técnica.<br><br>
       TP: Participé activamente en la planificación del Sprint 1 y lideré la definición de mockups y wireframes.
+      TB2, Propuse mejoras visuales para la aplicación web y organicé su implementación.
     </td>
   </tr>
   <tr>
@@ -91,6 +94,7 @@
       Sebastián Frisancho<br>
       TB1: Coordiné al equipo en la definición de hipótesis del Lean UX, fomentando la alineación de ideas desde las primeras etapas.<br><br>
       TP: Lideré la elaboración de diagramas de user flows y wireflows, aportando además en la mejora continua de los artefactos previos del equipo.
+      TB2, Apoyé activamente en la programación y pruebas de la app móvil, manteniendo constante comunicación con mis compañeros.
     </td>
   </tr>
   <tr>
@@ -98,6 +102,7 @@
       Sebastián Mendez<br>
       TB1: Lideré el diseño de uno de los contextos dentro del enfoque táctico de DDD, promoviendo revisiones colectivas para garantizar la integración entre módulos.<br><br>
       TP: Implementamos Scrum como marco de trabajo, lo que permitió gestionar roles de liderazgo de forma iterativa y colaborativa.
+      TB2, Lideré la integración del sistema IoT, asegurando su funcionamiento correcto en conjunto con el resto del equipo.
     </td>
   </tr>
   <tr>
@@ -105,6 +110,7 @@
       Willy Valentin<br>
       TB1: Dirigí la construcción del modelo To-Be, integrando aportes del equipo para obtener una propuesta coherente.<br><br>
       TP: Me encargué del diseño colaborativo de los mockups y wireframes, asegurando la cohesión visual de la interfaz.
+      TB2, Guié la toma de decisiones durante las entrevistas, facilitando el diálogo con los participantes.
     </td>
   </tr>
   <tr>
@@ -112,6 +118,7 @@
       Angie Valverde<br>
       TB1: Asumí el rol de facilitadora durante entrevistas con usuarios, guiando al equipo para obtener información relevante dentro de un entorno respetuoso.<br><br>
       TP: Lideré la planificación y organización del Sprint 1, además de diseñar guías de estilo y mockups para la web app.
+      TB2, Coordiné entrevistas de validación junto a mi equipo para conocer a fondo las necesidades del usuario final.
     </td>
   </tr>
   <tr>
@@ -120,10 +127,12 @@
       John Atencio<br>
       TB1: Contribuí a establecer metas claras y realistas para la entrega, promoviendo el seguimiento colaborativo de los avances y apoyando a compañeros en sus tareas.<br><br>
       TP: Supervisé el cumplimiento de los objetivos clave del Sprint 1, asegurando la alineación con las User Stories priorizadas.
+      TB2, Repartimos el desarrollo de la app móvil en etapas, estableciendo metas semanales para asegurar el progreso.
     </td>
     <td rowspan="6" valign="top">
       Establecimos un entorno de trabajo colaborativo e inclusivo, donde se valoraron todas las perspectivas y se tomaron decisiones consensuadas. Gracias a una planificación conjunta, una comunicación fluida y una distribución clara de responsabilidades, alcanzamos los objetivos propuestos del Sprint dentro del plazo establecido. Este enfoque colectivo favoreció la productividad, cohesión y satisfacción del equipo. (TB1)<br><br>
-      En esta entrega, el equipo cumplió con la totalidad de las User Stories priorizadas para el Sprint, logrando avances significativos en el desarrollo de la solución web. Este progreso fue posible gracias a una planificación efectiva, una ejecución coordinada y un alto nivel de compromiso por parte de todos los integrantes. (TP)
+      En esta entrega, el equipo cumplió con la totalidad de las User Stories priorizadas para el Sprint, logrando avances significativos en el desarrollo de la solución web. Este progreso fue posible gracias a una planificación efectiva, una ejecución coordinada y un alto nivel de compromiso por parte de todos los integrantes. (TP)<br><br>
+      Demostramos nuestra capacidad para crear un entorno colaborativo e inclusivo, donde todas las voces fueron escuchadas. Establecimos metas claras, planificamos tareas de forma organizada y cumplimos con los objetivos planteados, respetando los aportes y fortalezas de cada integrante del equipo. (TB2)
     </td>
   </tr>
   <tr>
@@ -131,6 +140,7 @@
       Henry Centurion<br>
       TB1: Fomenté un entorno participativo al integrar ideas del equipo en la definición de User Stories, garantizando que todos se sintieran representados.<br><br>
       TP: Lideré la planificación del Sprint 1, definiendo el alcance, entregables y guías de estilo para mejorar la consistencia del diseño.
+      TB2, Establecimos objetivos visuales específicos para mejorar la interfaz y los cumplimos en los plazos previstos.
     </td>
   </tr>
   <tr>
@@ -138,6 +148,7 @@
       Sebastián Frisancho<br>
       TB1: Organicé sesiones de trabajo colaborativo donde se rotaron tareas, como toma de notas y análisis, para asegurar una distribución equitativa.<br><br>
       TP: Contribuí al cumplimiento de las User Stories del Sprint 1, trabajando en conjunto con el equipo para refinar los entregables.
+      TB2, Aseguramos un espacio inclusivo durante el desarrollo móvil, integrando propuestas diversas del equipo.
     </td>
   </tr>
   <tr>
@@ -145,6 +156,7 @@
       Sebastián Mendez<br>
       TB1: Cumplí puntualmente con las entregas del diseño táctico y apoyé la resolución de bloqueos, manteniendo la fluidez en el avance del proyecto.<br><br>
       TP: Participé en la construcción de mockups y wireframes para la aplicación móvil, alineando el trabajo con los objetivos planteados.
+      TB2, Coordinamos como grupo la implementación del sistema IoT, dividiendo tareas según fortalezas técnicas.
     </td>
   </tr>
   <tr>
@@ -152,6 +164,7 @@
       Willy Valentin<br>
       TB1: Promoví espacios de retroalimentación continua durante el diseño arquitectónico, incorporando sugerencias del equipo para mejorar la propuesta técnica.<br><br>
       TP: Fomenté el aprendizaje colectivo a través de investigaciones y capacitaciones en temas clave para el equipo.
+      TB2, Planificamos en conjunto las entrevistas de validación y asignamos responsabilidades de forma clara.
     </td>
   </tr>
   <tr>
@@ -159,6 +172,7 @@
       Angie Valverde<br>
       TB1: Propuse y organicé el uso de tableros colaborativos para la planificación inicial, mejorando la transparencia y seguimiento de tareas.<br><br>
       TP: Organicé tareas orientadas a la mejora continua y desarrollé diagramas de user flow y wire flow que facilitaron la construcción de la solución.
+      TB2, Fomenté la participación de todos los miembros en el análisis de las entrevistas, valorando cada opinión.
     </td>
   </tr>
 </table>
@@ -179,6 +193,8 @@
   | 0.3.1 | 14/05/25 | Grupo Tecny | Se corrigió el formato de los sprints |
   | 0.4 | 17/05/25 | Grupo Tecny | Se levantó las observaciones dadas en el feedback del TB1, brindada por el docente |
   | 0.5 | 18/05/25 | Grupo Tecny | Se levantó las observaciones dadas en el feedback del TP, brindada por el docente |
+  | 0.5.1 | 12/06/25 | Grupo Tecny | Se mejoró los wireframes y mockups web |
+  | 0.6 | 18/06/25 | Grupo Tecny | Se agregaron los sprint 5 y 6 |
 
 <div style="page-break-before: always;"></div>
 
@@ -4482,6 +4498,7 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesWeb-4.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesWeb-5.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesWeb-6.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireframesWeb-7.png" alt="UPC">
 </p>
 
 #### 5.4.1.2. Mobile
@@ -4505,6 +4522,8 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowWeb-5.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowWeb-6.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowWeb-7.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowWeb-8.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//wireflowWeb-9.png" alt="UPC">
 </p>
 
 #### 5.4.2.2. Mobile
@@ -4531,7 +4550,6 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockWeb-5.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockWeb-6.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockWeb-7.png" alt="UPC">
- <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//mockWeb-8.png" alt="UPC">
 </p>
 
 #### 5.4.3.2. Mobile
@@ -4547,7 +4565,6 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
 #### 5.4.4.1. Web
 
 <p align="center">
- <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-0.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-1.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-2.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-3.png" alt="UPC">
@@ -4555,6 +4572,8 @@ Los sistemas de navegación incluyen botones e interfaces que permiten moverse d
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-5.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-6.png" alt="UPC">
  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-7.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-8.png" alt="UPC">
+ <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//userFlowWeb-9.png" alt="UPC">
 </p>
 
 #### 5.4.4.2. Mobile
@@ -4663,6 +4682,11 @@ Mobile prototype link: https://www.figma.com/proto/9b5VMPb1CCHGYuWQkP2554/UX-Des
 - En la parte del GitFlow, estamos utilizando las ramas "main" y el "develop".
 - Las ramas externas creadas son hijas de la rama "develop", por lo que, al culminar con el trabajo en la etapa de desarrollo, estas se unirán mediante el Pull Request para así tener todo el informe en un solo documento.
 
+Flujo git: 
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//gitflow.png" alt="UPC">
+<br>
+
 Link del github: https://github.com/Tecny/development-of-iot-solutions-final-project/tree/develop 
 
 ### 6.1.3. Source Code Style Guide & Conventions
@@ -4738,11 +4762,11 @@ La implementación de un software abarca los pasos, procesos y actividades neces
 
 **Flujo de implementación (deploy) por tipo de producto digital**:
 
-**Landing Page (Angular) – Deploy con Netlify**
-La landing page, desarrollada con HTML, CSS y JS, se despliega mediante Netlify, que permite conectar directamente el repositorio de GitHub. Al detectar cambios, Netlify construye y publica automáticamente la página. Esto facilita actualizaciones rápidas para mostrar información de la aplicación, beneficios o formularios de contacto.
+**Landing Page (Angular) – Deploy con Azure**
+La landing page, desarrollada con HTML, CSS y JS, se despliega actualmente mediante Azure Static Web Apps. El despliegue se realiza de forma manual, lo que permite mantener control sobre las actualizaciones del contenido. Esta solución es ideal para publicar de forma eficiente información general de la aplicación, beneficios y formularios de contacto.
 
-**Frontend Web (Angular) – Deploy con Netlify**
-El frontend de la aplicación, desarrollado con Angular, se despliega utilizando Netlify, una plataforma que permite subir el proyecto directamente desde un repositorio en GitHub. Netlify detecta los cambios en el repositorio, construye el proyecto automáticamente y lo publica en línea. Esto facilita un despliegue rápido y continuo del sitio web.
+**Frontend Web (Angular) – Deploy con Azure**
+El frontend de la aplicación, desarrollado con Angular, se despliega actualmente utilizando Azure App Service. El proceso de publicación es manual, lo que permite revisar y validar cada cambio antes de subirlo al entorno de producción. Esta estrategia asegura un despliegue flexible, seguro y controlado del sitio web.
 
 **Aplicación Móvil (Kotlin) – Deploy con Firebase**
 La aplicación móvil, construida en Kotlin, se sube a Firebase App Distribution, una herramienta de Google que permite distribuir versiones de prueba (APK o AAB) a testers antes de publicarla en la Play Store. Se carga el archivo generado desde Android Studio a través de Firebase CLI o directamente desde la consola web.
@@ -6905,4 +6929,4 @@ Enlace a los Web Services:
 https://dtaquito-backend.azurewebsites.net/swagger-ui/index.html
 
 Enlace al Web App:
-https://dtaquito-web.netlify.app
+https://dtaquito.azurewebsites.net/login
