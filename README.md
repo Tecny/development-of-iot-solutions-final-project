@@ -72,7 +72,7 @@
     <td valign="top">
       John Atencio<br>
       TB1: Coordiné una de las sesiones internas, liderando la organización del contenido y distribuyendo los roles de presentación en conjunto con el equipo.<br><br>
-      TP: Asumí un rol de liderazgo técnico al guiar el desarrollo de la primera versión de la web app, además de diseñar mockups y wireframes junto al equipo.
+      TP: Asumí un rol de liderazgo técnico al guiar el desarrollo de la primera versión de la web app, además de diseñar mockups y wireframes junto al equipo.<br><br>
       TB2, Organicé tareas clave para la implementación de la app móvil, promoviendo una distribución equitativa del trabajo.
     </td>
     <td rowspan="6" valign="top">
@@ -85,7 +85,7 @@
     <td valign="top">
       Henry Centurion<br>
       TB1: Guié al equipo en decisiones clave sobre el diseño estratégico del dominio, incentivando la participación equitativa y argumentando cada elección técnica.<br><br>
-      TP: Participé activamente en la planificación del Sprint 1 y lideré la definición de mockups y wireframes.
+      TP: Participé activamente en la planificación del Sprint 1 y lideré la definición de mockups y wireframes.<br><br>
       TB2, Propuse mejoras visuales para la aplicación web y organicé su implementación.
     </td>
   </tr>
@@ -93,7 +93,7 @@
     <td valign="top">
       Sebastián Frisancho<br>
       TB1: Coordiné al equipo en la definición de hipótesis del Lean UX, fomentando la alineación de ideas desde las primeras etapas.<br><br>
-      TP: Lideré la elaboración de diagramas de user flows y wireflows, aportando además en la mejora continua de los artefactos previos del equipo.
+      TP: Lideré la elaboración de diagramas de user flows y wireflows, aportando además en la mejora continua de los artefactos previos del equipo.<br><br>
       TB2, Apoyé activamente en la programación y pruebas de la app móvil, manteniendo constante comunicación con mis compañeros.
     </td>
   </tr>
@@ -101,7 +101,7 @@
     <td valign="top">
       Sebastián Mendez<br>
       TB1: Lideré el diseño de uno de los contextos dentro del enfoque táctico de DDD, promoviendo revisiones colectivas para garantizar la integración entre módulos.<br><br>
-      TP: Implementamos Scrum como marco de trabajo, lo que permitió gestionar roles de liderazgo de forma iterativa y colaborativa.
+      TP: Implementamos Scrum como marco de trabajo, lo que permitió gestionar roles de liderazgo de forma iterativa y colaborativa.<br><br>
       TB2, Lideré la integración del sistema IoT, asegurando su funcionamiento correcto en conjunto con el resto del equipo.
     </td>
   </tr>
@@ -109,7 +109,7 @@
     <td valign="top">
       Willy Valentin<br>
       TB1: Dirigí la construcción del modelo To-Be, integrando aportes del equipo para obtener una propuesta coherente.<br><br>
-      TP: Me encargué del diseño colaborativo de los mockups y wireframes, asegurando la cohesión visual de la interfaz.
+      TP: Me encargué del diseño colaborativo de los mockups y wireframes, asegurando la cohesión visual de la interfaz.<br><br>
       TB2, Guié la toma de decisiones durante las entrevistas, facilitando el diálogo con los participantes.
     </td>
   </tr>
@@ -117,7 +117,7 @@
     <td valign="top">
       Angie Valverde<br>
       TB1: Asumí el rol de facilitadora durante entrevistas con usuarios, guiando al equipo para obtener información relevante dentro de un entorno respetuoso.<br><br>
-      TP: Lideré la planificación y organización del Sprint 1, además de diseñar guías de estilo y mockups para la web app.
+      TP: Lideré la planificación y organización del Sprint 1, además de diseñar guías de estilo y mockups para la web app.<br><br>
       TB2, Coordiné entrevistas de validación junto a mi equipo para conocer a fondo las necesidades del usuario final.
     </td>
   </tr>
@@ -126,7 +126,7 @@
     <td valign="top">
       John Atencio<br>
       TB1: Contribuí a establecer metas claras y realistas para la entrega, promoviendo el seguimiento colaborativo de los avances y apoyando a compañeros en sus tareas.<br><br>
-      TP: Supervisé el cumplimiento de los objetivos clave del Sprint 1, asegurando la alineación con las User Stories priorizadas.
+      TP: Supervisé el cumplimiento de los objetivos clave del Sprint 1, asegurando la alineación con las User Stories priorizadas.<br><br>
       TB2, Repartimos el desarrollo de la app móvil en etapas, estableciendo metas semanales para asegurar el progreso.
     </td>
     <td rowspan="6" valign="top">
@@ -139,7 +139,7 @@
     <td valign="top">
       Henry Centurion<br>
       TB1: Fomenté un entorno participativo al integrar ideas del equipo en la definición de User Stories, garantizando que todos se sintieran representados.<br><br>
-      TP: Lideré la planificación del Sprint 1, definiendo el alcance, entregables y guías de estilo para mejorar la consistencia del diseño.
+      TP: Lideré la planificación del Sprint 1, definiendo el alcance, entregables y guías de estilo para mejorar la consistencia del diseño.<br><br>
       TB2, Establecimos objetivos visuales específicos para mejorar la interfaz y los cumplimos en los plazos previstos.
     </td>
   </tr>
@@ -147,7 +147,7 @@
     <td valign="top">
       Sebastián Frisancho<br>
       TB1: Organicé sesiones de trabajo colaborativo donde se rotaron tareas, como toma de notas y análisis, para asegurar una distribución equitativa.<br><br>
-      TP: Contribuí al cumplimiento de las User Stories del Sprint 1, trabajando en conjunto con el equipo para refinar los entregables.
+      TP: Contribuí al cumplimiento de las User Stories del Sprint 1, trabajando en conjunto con el equipo para refinar los entregables.<br><br>
       TB2, Aseguramos un espacio inclusivo durante el desarrollo móvil, integrando propuestas diversas del equipo.
     </td>
   </tr>
@@ -155,7 +155,7 @@
     <td valign="top">
       Sebastián Mendez<br>
       TB1: Cumplí puntualmente con las entregas del diseño táctico y apoyé la resolución de bloqueos, manteniendo la fluidez en el avance del proyecto.<br><br>
-      TP: Participé en la construcción de mockups y wireframes para la aplicación móvil, alineando el trabajo con los objetivos planteados.
+      TP: Participé en la construcción de mockups y wireframes para la aplicación móvil, alineando el trabajo con los objetivos planteados.<br><br>
       TB2, Coordinamos como grupo la implementación del sistema IoT, dividiendo tareas según fortalezas técnicas.
     </td>
   </tr>
@@ -163,7 +163,7 @@
     <td valign="top">
       Willy Valentin<br>
       TB1: Promoví espacios de retroalimentación continua durante el diseño arquitectónico, incorporando sugerencias del equipo para mejorar la propuesta técnica.<br><br>
-      TP: Fomenté el aprendizaje colectivo a través de investigaciones y capacitaciones en temas clave para el equipo.
+      TP: Fomenté el aprendizaje colectivo a través de investigaciones y capacitaciones en temas clave para el equipo.<br><br>
       TB2, Planificamos en conjunto las entrevistas de validación y asignamos responsabilidades de forma clara.
     </td>
   </tr>
@@ -171,7 +171,7 @@
     <td valign="top">
       Angie Valverde<br>
       TB1: Propuse y organicé el uso de tableros colaborativos para la planificación inicial, mejorando la transparencia y seguimiento de tareas.<br><br>
-      TP: Organicé tareas orientadas a la mejora continua y desarrollé diagramas de user flow y wire flow que facilitaron la construcción de la solución.
+      TP: Organicé tareas orientadas a la mejora continua y desarrollé diagramas de user flow y wire flow que facilitaron la construcción de la solución.<br><br>
       TB2, Fomenté la participación de todos los miembros en el análisis de las entrevistas, valorando cada opinión.
     </td>
   </tr>
