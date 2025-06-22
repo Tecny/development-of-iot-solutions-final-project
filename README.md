@@ -6716,14 +6716,14 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 
 | Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
 |---|---|---|---|---|---|
-| development-of-iot-solutions-final-project | feature/ |  | | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-auth | 25d39f9 | feat: add auth funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-login | f00b632 | feat: add login funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-register | 733c847 |feat: add register funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-player | 33cde4a | feat: add player funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-profile | 88e1240 | feat: add profile funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-sportspace | a287304 | feat: add sportspace funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-sports | 939d735 | feat: add sports funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-splash | ac0d329 | feat: add splash funcionality | - | 21/06/2025 |
 
 #### 6.2.5.4 Testing Suite Evidence for Sprint Review 
 
@@ -6747,7 +6747,7 @@ Link del repositorio donde se almacena los acceptant tests: https://github.com/T
 
 #### 6.2.5.5 Execution Evidence for Sprint Review 
 
-<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//exec-s5.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//exc-s5.png" alt="UPC">
 
 #### 6.2.5.6 Software Deployment Evidence for Sprint Review 
 
@@ -7073,13 +7073,13 @@ Ajustamos la curva de trabajo comenzando con una carga moderada de 8 h dedicadas
 
 | Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
 |---|---|---|---|---|---|
-| development-of-iot-solutions-final-project | feature/ |  | | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
-| development-of-iot-solutions-final-project | feature/ |  |  | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-subscription | d72d670 | feat: add subscription funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-reservation | ec8ce4d | feat: add reservation funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-gameroom | 8bbad70 | feat: add gameroom funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-chat | f84cc2b | feat: add chat funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-qr | da039d1 | feat: add qr funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-tickets | eaf40e4 | feat: add tickets funcionality | - | 21/06/2025 |
+| development-of-iot-solutions-final-project | feature/mobile-forgotPassword | e129595 | feat: add forgotPassword funcionality | - | 21/06/2025 |
 
 #### 6.2.6.4 Testing Suite Evidence for Sprint Review 
 
@@ -7095,13 +7095,13 @@ Link del repositorio donde se almacena los acceptant tests: https://github.com/T
 
 #### 6.2.6.5 Execution Evidence for Sprint Review 
 
-<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//exec-s6.png" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//exc-s6.png" alt="UPC">
 
 #### 6.2.6.6 Software Deployment Evidence for Sprint Review 
 
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dep-s6-1.png" alt="UPC">
 
-<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dep-s6-2.jpg" alt="UPC">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//dep-s6-2.png" alt="UPC">
 
 #### 6.2.6.7 Team Collaboration Insights during Sprint 
 
