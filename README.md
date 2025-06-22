@@ -557,6 +557,24 @@
        - 6.2.4.6 [Software Deployment Evidence for Sprint Review](#6246-software-deployment-evidence-for-sprint-review)
        - 6.2.4.7 [Team Collaboration Insights during Sprint](#6247-team-collaboration-insights-during-sprint)
        - 6.2.4.8. [Burndown Chart during Sprint 4](#6248-burndown-chart-during-sprint-4)
+     - 6.2.5 [Sprint 5](#625-sprint-5)
+       - 6.2.5.1 [Sprint Planning](#6251-sprint-planning)
+       - 6.2.5.2 [Sprint Backlog](#6252-sprint-backlog)
+       - 6.2.5.3 [Development Evidence for Sprint Review](#6253-development-evidence-for-sprint-review)
+       - 6.2.5.4 [Testing Suite Evidence for Sprint Review](#6254-testing-suite-evidence-for-sprint-review)
+       - 6.2.5.5 [Execution Evidence for Sprint Review](#6255-execution-evidence-for-sprint-review)
+       - 6.2.5.6 [Software Deployment Evidence for Sprint Review](#6256-software-deployment-evidence-for-sprint-review)
+       - 6.2.5.7 [Team Collaboration Insights during Sprint](#6257-team-collaboration-insights-during-sprint)
+       - 6.2.5.8. [Burndown Chart during Sprint 5](#6258-burndown-chart-during-sprint-5)
+     - 6.2.6 [Sprint 6](#625-sprint-6)
+       - 6.2.6.1 [Sprint Planning](#6261-sprint-planning)
+       - 6.2.6.2 [Sprint Backlog](#6262-sprint-backlog)
+       - 6.2.6.3 [Development Evidence for Sprint Review](#6263-development-evidence-for-sprint-review)
+       - 6.2.6.4 [Testing Suite Evidence for Sprint Review](#6264-testing-suite-evidence-for-sprint-review)
+       - 6.2.6.5 [Execution Evidence for Sprint Review](#6265-execution-evidence-for-sprint-review)
+       - 6.2.6.6 [Software Deployment Evidence for Sprint Review](#6266-software-deployment-evidence-for-sprint-review)
+       - 6.2.6.7 [Team Collaboration Insights during Sprint](#6267-team-collaboration-insights-during-sprint)
+       - 6.2.6.8. [Burndown Chart during Sprint 6](#6268-burndown-chart-during-sprint-6)
   - 6.3. [Validation Interviews](#63-validation-interviews)
      - 6.3.1. [Diseño de Entrevistas](#631-diseño-de-entrevistas)
      - 6.3.2. [Registro de Entrevistas](#632-registro-de-entrevistas)
@@ -7578,6 +7596,16 @@ Ampliar el listado de bancos en el formulario de pagos para incluir una mayor va
 
 - El uso del modelo C4 ha sido clave para mejorar la claridad en la representación visual de la arquitectura de D’Taquito. La aplicación de este modelo ha facilitado la comunicación entre el equipo técnico y no técnico, proporcionando una visión comprensible y coherente de cómo los componentes del sistema se interrelacionan y cómo se cumplen los requisitos del negocio.
 
+- La elaboración del diseño estratégico, utilizando Domain-Driven Design (DDD), nos ha permitido definir los dominios clave del negocio y sus interrelaciones, estableciendo una dirección clara para el desarrollo de D’Taquito.
+
+- El diseño táctico, también basado en DDD, se ha enfocado en la organización interna de cada dominio, especificando las entidades, los objetos de valor y los servicios que darán forma a la implementación de D’Taquito.
+
+- El diseño de la solución utilizando Figma ha permitido crear representaciones visuales detalladas de la interfaz de usuario de D’Taquito, facilitando la comprensión y validación del aspecto y la interacción de la aplicación.
+
+- La implementación de sprints, un enfoque ágil para el desarrollo de productos se destaca por su eficacia en el diseño y optimización de landing pages. Este método implica un trabajo colaborativo centrado en objetivos, con iteraciones rápidas que facilitan la prueba y ajuste continuo. Al utilizar sprints para la creación de landing pages, los equipos pueden validar ideas, recopilar retroalimentación y realizar mejoras de manera eficiente. Esto acelera el tiempo de desarrollo y asegura que la página de destino cumpla con los requisitos y expectativas del usuario.
+
+- GitHub, junto con Angular (HTML y CSS), es esencial en el desarrollo web moderno y la gestión eficiente del código fuente. GitHub facilita la colaboración y seguimiento de cambios, mientras que HTML y CSS son fundamentales para la construcción y diseño de páginas web. La integración de estas tecnologías promueve la coherencia, mantenibilidad y escalabilidad de los proyectos, priorizando la experiencia del usuario y facilitando la colaboración efectiva entre desarrolladores y diseñadores en el desarrollo de productos digitales.
+
 ## 7.1. About the Team
 
 **Link del video**: 
@@ -7620,7 +7648,7 @@ Enlace al repositorio en Github:
 https://github.com/Tecny/development-of-iot-solutions-final-project
 
 Enlace al Landing Page:
-https://dtaquito-landing-page.netlify.app/
+https://dtaquito-site.azurewebsites.net/
 
 Enlace a los Web Services:
 https://dtaquito-backend.azurewebsites.net/swagger-ui/index.html
