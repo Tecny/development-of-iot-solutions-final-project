@@ -7839,6 +7839,24 @@ Ampliar el listado de bancos en el formulario de pagos para incluir una mayor va
 
 <div style="page-break-before: always;"></div>
 
+**PROBLEMA #10**: 
+
+**Severidad**:   Nivel 2 – Problema menor
+
+**Heurística violada**:   Estética y diseño minimalista (Usability)
+
+**Explicación**:  
+Durante la entrevista con un propietario, se identificó que el diseño visual de la aplicación móvil presenta un estilo algo desactualizado. Aunque la interfaz es funcional, la apariencia general no transmite modernidad ni atractivo visual, lo cual puede afectar negativamente la percepción de calidad del producto. Esta situación, si bien no impide el uso de la app, puede disminuir el nivel de satisfacción y el compromiso del usuario con la plataforma.
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Problema_11.png" alt="UPC">
+ </p>
+
+**Recomendación**:  
+Actualizar la interfaz de la aplicación móvil utilizando principios de diseño moderno: paletas de colores actualizadas, iconografía coherente, mejor uso del espacio en pantalla y elementos visuales más atractivos. Esto no solo mejorará la percepción estética, sino que también reforzará la confianza del usuario en la solución, haciéndola parecer más profesional y acorde a las expectativas actuales del mercado.
+
+<div style="page-break-before: always;"></div>
+
 ## 6.4. Video About the Product
 
  <p align="center">
