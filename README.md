@@ -589,15 +589,15 @@
 
 <div style="page-break-before: always;"></div>
 
-# I. Introduccion
+# I. Introducción
 
 ## 1.1. Startup Profile
 
-### 1.1.1. Descripcion de la Startup
+### 1.1.1. Descripción de la Startup
 
 <div style="text-align: justify;">
 
-Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera de Ingenieria de Software. Está dedicada a impulsar la transformación digital a través de soluciones tecnológicas creativas y eficientes. Desde desarrollo de software a medida hasta consultoría tecnológica. Nuestro enfoque se centra en satisfacer las necesidades de nuestros clientes con soluciones personalizadas y de vanguardia. En Tecny, estamos comprometidos con la excelencia tecnológica y la creación de un futuro digital más accesible y dinámico para todos.
+Tecny es una innovadora startup creada por estudiantes de la UPC de la carrera de Ingeniería de Software. Está dedicada a impulsar la transformación digital a través de soluciones tecnológicas creativas y eficientes. Desde desarrollo de software a medida hasta consultoría tecnológica. Nuestro enfoque se centra en satisfacer las necesidades de nuestros clientes con soluciones personalizadas y de vanguardia. En Tecny, estamos comprometidos con la excelencia tecnológica y la creación de un futuro digital más accesible y dinámico para todos.
 
 ### 1.1.2. Perfiles de integrantes del grupo
 
@@ -658,7 +658,7 @@ La experiencia comunitaria se enriquece con salas dedicadas donde los usuarios p
 Para los propietarios de espacios deportivos, D'Taquito se convierte en una poderosa herramienta de promoción y administración. Sus instalaciones se presentan con información detallada, permitiendo a los usuarios explorar, filtrar y reservar en tiempo real según sus preferencias.
 
 Además, la plataforma integra una solución IoT que optimiza la seguridad y la gestión operativa de los espacios:
-
+w
   - Validación de reservas mediante código QR: Cada reserva genera un código QR único que los usuarios deben escanear al llegar al espacio deportivo mediante un lector QR instalado en el lugar. Este dispositivo solo valida la reserva activa, sin abrir puertas ni controlar accesos físicos, lo cual sigue siendo responsabilidad del personal del establecimiento. Esta validación permite llevar un registro digital preciso de los accesos, fortaleciendo la seguridad.
 
   - Control de aforo en tiempo real: Gracias a sensores instalados en las puertas de cada estableciiento, se monitorea el ingreso y salida de personas, permitiendo llevar un conteo dinámico del aforo. Esta información es visible tanto de forma general como detallada dentro de la plataforma, brindando a los usuarios propietarios una vista clara de la ocupación del lugar antes de asistir o reservar.
