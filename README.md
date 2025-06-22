@@ -7518,6 +7518,70 @@ Ajustamos la curva de trabajo comenzando con una carga moderada de 8 h dedicadas
  <p align="center">
 	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Entrevista_Duenio_3.png" alt="UPC">
  </p>
+
+- **Entrevista N° 7**:
+
+	- Entrevistador: Sebastian Mendez Lopez
+ 	- Entrevistado: Patricio Gael Mere
+	- Sexo: Masculino
+	- Edad: 20
+ 	- Distrito: San Miguel
+  	- Rol: Propietario
+  	- Duración de la entrevista: 04:52
+	- Link: https://drive.google.com/file/d/10riHFE4DbMDiXDQM5Gb1ycWDtL_5KAp_/view?usp=drive_link
+	- Hallazgos:
+		- Escaner QR:
+  			- Durante la entrevista, Patricio mostró interés y conformidad con la propuesta, destacando que esta funcionalidad automatiza el proceso de validación, reduce errores humanos y evita suplantaciones de identidad. También indicó que esta medida le permitiría ahorrar tiempo, especialmente en horas pico, al no tener que verificar manualmente la información de los usuarios. Sin embargo, sugirió que sería útil que la interfaz visual (el panel de control) que indica si el código escaneado fue aceptado o rechazada, sea mas amigable y mas intuitiva.
+	- Resumen:
+ 		- La implementación del sistema de verificación por QR con cámaras IoT fue bien recibida por el propietario entrevistado, quien reconoció su valor en términos de eficiencia y seguridad. El feedback obtenido respalda la viabilidad de esta funcionalidad, pero también resalta la necesidad de complementar la experiencia con retroalimentación visual clara para los propietarios. En base a esto, se concluye que la solución propuesta es funcional y útil, pero su adopción y efectividad pueden mejorarse con pequeños ajustes en la interfaz y experiencia del usuario.
+     
+ <br>
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Entrevista_Duenio_4.png" alt="UPC">
+ </p>
+
+ - **Entrevista N° 8**:
+
+	- Entrevistador: Sebastian Mendez Lopez
+ 	- Entrevistado: Patricio Gael Mere
+	- Sexo: Masculino
+	- Edad: 20
+ 	- Distrito: San Miguel
+  	- Rol: Propietario
+  	- Duración de la entrevista: 04:19
+	- Link: https://drive.google.com/file/d/1f6u4KduRPE5WvuS5XlQq2NOehMaysKAE/view?usp=drive_link
+	- Hallazgos:
+		- Sensor de movimiento:
+  			- El uso del sensor de movimiento IoT fue percibido como una solución innovadora y práctica para llevar un control más preciso sobre el uso real de las canchas. El propietario considera que aporta transparencia y control operativo, lo que podría incluso influir en decisiones comerciales como horarios de atención o mantenimiento. No obstante, se identificó la oportunidad de mejorar la propuesta mediante una interfaz de análisis más intuitiva, que refuerce el valor del sistema y facilite su adopción a largo plazo.
+	- Resumen:
+ 		- En la entrevista con Patricio, se le presentó y permitió probar el nuevo sensor de movimiento IoT diseñado para registrar automáticamente cada ingreso de personas a la cancha deportiva. Tras la demostración, el propietario valoró positivamente la funcionalidad, resaltando su utilidad para monitorear la afluencia real de usuarios en comparación con las reservas registradas. Consideró que esta herramienta le permitiría detectar posibles usos indebidos del espacio y tener datos concretos sobre los horarios de mayor demanda. Sin embargo, mencionó como mejora potencial la posibilidad de acceder a reportes periódicos o históricos desde su panel, con métricas claras de ingreso por día y por hora.
+   - 
+ <br>
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Entrevista_Duenio_5.png" alt="UPC">
+ </p>
+
+  - **Entrevista N° 9**:
+
+	- Entrevistador: John Atencio Castillo
+ 	- Entrevistado: Patricio Gael Mere
+	- Sexo: Masculino
+	- Edad: 20
+ 	- Distrito: San Miguel
+  	- Rol: Propietario
+  	- Duración de la entrevista: 04:28
+	- Link: https://drive.google.com/file/d/1vtgcT1Bq2MTnJkouHxpb3gzg0F0TCQAC/view?usp=sharing 
+	- Hallazgos:
+		- App Mobile:
+  			- La prueba de la aplicación móvil por parte de Patricio confirmó que la solución ofrece una experiencia satisfactoria y funcional, adaptada a las necesidades operativas diarias de los dueños de espacios deportivos. La retroalimentación fue mayormente positiva, con énfasis en la usabilidad, rapidez y utilidad de las notificaciones. No obstante, se identificaron oportunidades de mejora en dos frentes: por un lado, optimizar el diseño visual para lograr una apariencia más profesional y atractiva, y por otro, incorporar un módulo de estadísticas básicas que permita al propietario tomar decisiones informadas desde la misma app.
+	- Resumen:
+ 		- Durante la entrevista, el propietario Patricio tuvo la oportunidad de probar directamente la aplicación móvil de D’taquito. Al explorar sus funcionalidades, destacó la interfaz intuitiva y el acceso rápido a herramientas clave como la gestión de reservas, la visualización del calendario, y la posibilidad de recibir notificaciones en tiempo real sobre ingresos, cancelaciones y confirmaciones de QR. Valoró positivamente la experiencia general de uso, mencionando que la app facilita el seguimiento diario de su espacio sin necesidad de estar frente a una computadora. No obstante, indicó que el diseño visual podría mejorarse para hacerlo más atractivo y moderno. Además, sugirió incluir una vista de estadísticas resumidas sobre afluencia, reservas completadas y horas disponibles directamente desde la app.
+   - 
+ <br>
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Entrevista_Duenio_6.png" alt="UPC">
+ </p>
+
  
 ### 6.3.3. Evaluaciones según heurísticas
 
