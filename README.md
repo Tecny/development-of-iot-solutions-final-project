@@ -566,7 +566,7 @@
        - 6.2.5.6 [Software Deployment Evidence for Sprint Review](#6256-software-deployment-evidence-for-sprint-review)
        - 6.2.5.7 [Team Collaboration Insights during Sprint](#6257-team-collaboration-insights-during-sprint)
        - 6.2.5.8. [Burndown Chart during Sprint 5](#6258-burndown-chart-during-sprint-5)
-     - 6.2.6 [Sprint 6](#625-sprint-6)
+     - 6.2.6 [Sprint 6](#626-sprint-6)
        - 6.2.6.1 [Sprint Planning](#6261-sprint-planning)
        - 6.2.6.2 [Sprint Backlog](#6262-sprint-backlog)
        - 6.2.6.3 [Development Evidence for Sprint Review](#6263-development-evidence-for-sprint-review)
