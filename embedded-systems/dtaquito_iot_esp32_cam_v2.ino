@@ -12,8 +12,8 @@
 #include <mbedtls/md.h>
 #include <mbedtls/base64.h>
 
-#define WIFI_SSID "SCOTT"
-#define WIFI_PASS "08696037"
+#define WIFI_SSID "YOUR-CREDENTIALS"
+#define WIFI_PASS "YOUR-PASSWORD"
 #define FLASH_LED_PIN 41
 #define LOG_USED_TOKENS "/used_tokens.txt"
 #define LOG_INVALID_TOKENS "/invalid_tokens.txt"
