@@ -5259,6 +5259,13 @@ El backend, implementado en Java con Spring Boot, se despliega en Azure App Serv
   </tr>
 </table>
 
+
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Pivotal_Sprint_1.png" alt="UPC">
+ </p>
+
+ 
 #### 6.2.1.3 Development Evidence for Sprint Review
 
 Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date)
@@ -5671,6 +5678,13 @@ Este chart representa el flujo en base a la elaboración de la primera parte de 
   </tr>
 </table>
 
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Pivotal_Sprint_2.png" alt="UPC">
+ </p>
+
+ 
+
 #### 6.2.2.3 Development Evidence for Sprint Review
 
 Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date)
@@ -6005,6 +6019,11 @@ Este chart representa el flujo en base a la elaboración de la última parte de 
     <td>Done</td>
   </tr>
 </table>
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Pivotal_Sprint_3.png" alt="UPC">
+ </p>
+
 
 #### 6.2.3.3 Development Evidence for Sprint Review
 
@@ -6377,6 +6396,13 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
   </tr>
 </table>
 
+
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Pivotal_Sprint_4.png" alt="UPC">
+ </p>
+
+
 #### 6.2.4.3 Development Evidence for Sprint Review
 
 | Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
@@ -6722,6 +6748,11 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
     <td>Done</td>
   </tr>
 </table>
+
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Pivotal_Sprint_5.png" alt="UPC">
+ </p>
 
 
 #### 6.2.5.3 Development Evidence for Sprint Review
@@ -7079,6 +7110,12 @@ Ajustamos la curva de trabajo comenzando con una carga moderada de 8 h dedicadas
     <td>Done</td>
   </tr>
 </table>
+
+
+ <p align="center">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Pivotal_Sprint_6.png" alt="UPC">
+ </p>
+
 
 #### 6.2.6.3 Development Evidence for Sprint Review
 
@@ -7839,7 +7876,7 @@ Ampliar el listado de bancos en el formulario de pagos para incluir una mayor va
 
 <div style="page-break-before: always;"></div>
 
-**PROBLEMA #10**: 
+**PROBLEMA #11**: 
 
 **Severidad**:   Nivel 2 – Problema menor
 
