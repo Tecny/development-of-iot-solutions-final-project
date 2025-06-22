@@ -7812,7 +7812,7 @@ Ampliar el listado de bancos en el formulario de pagos para incluir una mayor va
 
 ## 7.1. About the Team
 
-**Link del video**: 
+**Link del video**: https://drive.google.com/drive/folders/1THQru0wKaeR1ou71QBlORDneD7B04WUM?usp=sharing
 
 <div style="page-break-before: always;"></div>
 
