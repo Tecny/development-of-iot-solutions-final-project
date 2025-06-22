@@ -7575,10 +7575,10 @@ Ampliar el listado de bancos en el formulario de pagos para incluir una mayor va
 ## 6.4. Video About the Product
 
  <p align="center">
-	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//.png" alt="UPC">
+	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//video-abtp.png" alt="UPC">
  </p>
 
- **Link del video**: 
+ **Link del video**: https://1drv.ms/v/c/7c28f22b31116b1f/EXPuHY3VvWFEl-xN77_ZoFQBkb91DDmm0026_1Z15jCMPQ?e=3STRGF
 
 <div style="page-break-before: always;"></div>
 
