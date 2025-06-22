@@ -575,6 +575,15 @@
        - 6.2.6.6 [Software Deployment Evidence for Sprint Review](#6266-software-deployment-evidence-for-sprint-review)
        - 6.2.6.7 [Team Collaboration Insights during Sprint](#6267-team-collaboration-insights-during-sprint)
        - 6.2.6.8. [Burndown Chart during Sprint 6](#6268-burndown-chart-during-sprint-6)
+     - 6.2.7 [Sprint 7](#626-sprint-7)
+       - 6.2.7.1 [Sprint Planning](#6271-sprint-planning)
+       - 6.2.7.2 [Sprint Backlog](#6272-sprint-backlog)
+       - 6.2.7.3 [Development Evidence for Sprint Review](#6273-development-evidence-for-sprint-review)
+       - 6.2.7.4 [Testing Suite Evidence for Sprint Review](#6274-testing-suite-evidence-for-sprint-review)
+       - 6.2.7.5 [Execution Evidence for Sprint Review](#6275-execution-evidence-for-sprint-review)
+       - 6.2.7.6 [Software Deployment Evidence for Sprint Review](#6276-software-deployment-evidence-for-sprint-review)
+       - 6.2.7.7 [Team Collaboration Insights during Sprint](#6277-team-collaboration-insights-during-sprint)
+       - 6.2.7.8. [Burndown Chart during Sprint 7](#6278-burndown-chart-during-sprint-7)
   - 6.3. [Validation Interviews](#63-validation-interviews)
      - 6.3.1. [Diseño de Entrevistas](#631-diseño-de-entrevistas)
      - 6.3.2. [Registro de Entrevistas](#632-registro-de-entrevistas)
@@ -6437,8 +6446,8 @@ Este chart representa el flujo en base a la elaboración de la primera parte del
 |Location  |Modalidad remota por Discord  |
 |Prepared by  |Sebastian Mendez Lopez  |
 |Attendees  |Todos los integrantes del equipo |
-|Sprint 4 – Review Summary  | Durante el sprint 4 se completaron funcionalidades esenciales relacionadas con reservas, salas y solicitudes de retiro. Se logró una integración estable de todos los módulos. |
-|Sprint 4 – Retrospective Summary | El equipo sostuvo una comunicación efectiva y un buen ritmo de entregas. Se planteó fortalecer la documentación técnica y realizar validaciones más estrictas de los flujos completos. |
+|Sprint 5 – Review Summary  | Durante el sprint 4 se completaron funcionalidades esenciales relacionadas con reservas, salas y solicitudes de retiro. Se logró una integración estable de todos los módulos. |
+|Sprint 5 – Retrospective Summary | El equipo sostuvo una comunicación efectiva y un buen ritmo de entregas. Se planteó fortalecer la documentación técnica y realizar validaciones más estrictas de los flujos completos. |
 |Sprint Goal | Nos enfocamos en desarrollar funciones esenciales en la app móvil, como el registro, autenticación, perfil, créditos, suscripciones, visualización de espacios y gestión de reservas. Consideramos que esto garantiza una accesibilidad adecuada y una experiencia funcional básica. Lo confirmaremos cuando los usuarios puedan ingresar, explorar y utilizar la mayoría de las funciones principales desde la interfaz móvil. |
 |Sprint 5 Velocity | 30 |
 |Sum of Story Points| 30 |
@@ -6782,8 +6791,8 @@ Ajustamos la curva de trabajo comenzando con una carga moderada de 8 h dedicadas
 |Location  |Modalidad remota por Discord  |
 |Prepared by  |Sebastian Mendez Lopez  |
 |Attendees  |Todos los integrantes del equipo |
-|Sprint 5 – Review Summary  |Durante el Sprint 5 se implementaron correctamente las funcionalidades esenciales en la app móvil. Los usuarios pueden gestionar su perfil, suscripciones y reservas directamente desde la aplicación. |
-|Sprint 5 – Retrospective Summary | Se evidenció un buen desempeño en la construcción de la interfaz. Sin embargo, se identificó la necesidad de mejorar ciertos componentes y ajustar las reglas visuales para mayor consistencia. |
+|Sprint 6 – Review Summary  |Durante el Sprint 5 se implementaron correctamente las funcionalidades esenciales en la app móvil. Los usuarios pueden gestionar su perfil, suscripciones y reservas directamente desde la aplicación. |
+|Sprint 6 – Retrospective Summary | Se evidenció un buen desempeño en la construcción de la interfaz. Sin embargo, se identificó la necesidad de mejorar ciertos componentes y ajustar las reglas visuales para mayor consistencia. |
 |Sprint Goal | Nuestro enfoque es completar la experiencia del usuario en la app móvil incorporando funcionalidades sociales y administrativas, como salas comunidad, gestión de tickets y filtros informativos. Esto se validará cuando los usuarios interactúen desde la aplicación con las salas, apliquen filtros y utilicen opciones de transferencia y recuperación. |
 |Sprint 6 Velocity | 36 |
 |Sum of Story Points| 36 |
@@ -7070,7 +7079,6 @@ Ajustamos la curva de trabajo comenzando con una carga moderada de 8 h dedicadas
   </tr>
 </table>
 
-
 #### 6.2.6.3 Development Evidence for Sprint Review
 
 | Repository | Branch | CommitId | Commit Message | Commit Message Body | Commited on (Date) |
@@ -7121,6 +7129,191 @@ Este gráfico refleja el flujo de trabajo basado en el desarrollo de la aplicaci
 
 <p align="center">
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//bchart-sprint-6.png" alt="UPC">
+</p>
+
+### 6.2.7 Sprint 7
+#### 6.2.7.1 Sprint Planning 
+
+| Sprint                        | Sprint 7            |
+|-------------------------------|---------------------|
+|Date  | 17 de junio del 2025 |
+|Time  | 09:00 horas (GMT-5) |
+|Location  |Modalidad remota por Discord  |
+|Prepared by  |Sebastian Mendez Lopez  |
+|Attendees  |Todos los integrantes del equipo |
+|Sprint 7 – Review Summary  |Durante el Sprint 7 se implementaron correctamente las funcionalidades esenciales en las soluciones IoT. |
+|Sprint 7 – Retrospective Summary | Se evidenció un buen desempeño en la construcción de la solución. Sin embargo, se identificó la necesidad de mejorar ciertos componentes y ajustar las reglas visuales para mayor consistencia. |
+|Sprint Goal | Nuestro enfoque es completar la experiencia del usuario propietario en la solucion IoT incorporando funcionalidades  administrativas, para validar acceso de seguridad y generación de insights en base a la afluencia de personas. Esto se validará cuando el propietario, visualice, valide y utilice todas las funcionalidades. |
+|Sprint 7 Velocity | 30 |
+|Sum of Story Points| 30 |
+
+#### 6.2.7.2 Sprint Backlog
+
+<table>
+  <tr>
+    <th colspan="8">Sprint 7</th>
+  </tr>
+  <tr>
+    <th colspan="2">Historia de Usuario</th>
+    <th colspan="6">Tarea / Trabajo</th>
+  </tr>
+  <tr>
+    <th>Id</th>
+    <th>Título</th>
+    <th>Id</th>
+    <th>Título</th>
+    <th>Descripción</th>
+    <th>Estimación (Horas)</th>
+    <th>Asignado a</th>
+    <th>Estado</th>
+  </tr>
+  <tr>
+    <td rowspan="2">US15</td>
+    <td rowspan="2">Generar código QR de acceso</td>
+    <td>TK01</td>
+    <td>Diseñar logica para generar QR</td>
+    <td>Crear botón que permita generar código QR desde la app web para validarlo con el dispositivo IoT</td>
+    <td>5</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Diseñar tarjetas para salas</td>
+    <td>Diseñar visualmente cada implementación de diseño del QR. Espacios, fotogramas, etc.</td>
+    <td>5</td>
+    <td>Angie V.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">TS20</td>
+    <td rowspan="2">Obtener y verificar un QR</td>
+    <td>TK01</td>
+    <td>Generar imagen QR</td>
+    <td>Programar generación de imagen QR con información de acceso</td>
+    <td>4</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Validar datos del QR</td>
+    <td>Verificar que el QR represente una reserva válida</td>
+    <td>4</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+<tr>
+    <td rowspan="2">TS21</td>
+    <td rowspan="2">Usar QR</td>
+    <td>TK01</td>
+    <td>Escanear y validar QR</td>
+    <td>Leer el QR y validar su autenticidad y vigencia con el dispositivo IoT</td>
+    <td>5</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Registrar acceso</td>
+    <td>Actualizar la base de datos para registrar la entrada</td>
+    <td>4</td>
+    <td>Willy V.</td>
+    <td>Done</td>
+  </tr>
+<tr>
+    <td rowspan="3">TS37</td>
+    <td rowspan="3">Recuperar datos del dispositivo IoT al servidor</td>
+    <td>TK01</td>
+    <td>Definir estructura de datos IoT</td>
+    <td>Modelar los datos recibidos por el dispositivo a los web services y en caso de caida, de manera edge.</td>
+    <td>4</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Crear endpoint PATCH</td>
+    <td>Recibir y almacenar cantidad de personas en base al dispositivo IoT</td>
+    <td>5</td>
+    <td>Henry C.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK03</td>
+    <td>Guardar datos por rango horario</td>
+    <td>Asociar número de personas a una franja horaria</td>
+    <td>4</td>
+    <td>Sebastian F.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td rowspan="2">TS38</td>
+    <td rowspan="2">Visualizar datos del dispositivo IoT al servidor</td>
+    <td>TK01</td>
+    <td>Crear endpoint de consulta en base a la disponibilidad</td>
+    <td>Permitir obtener número de personas en cierto horario</td>
+    <td>4</td>
+    <td>John A.</td>
+    <td>Done</td>
+  </tr>
+  <tr>
+    <td>TK02</td>
+    <td>Filtrar por espacio y rango horario</td>
+    <td>Agregar filtros en la consulta del dispositivo</td>
+    <td>4</td>
+    <td>Sebastian M.</td>
+    <td>Done</td>
+  </tr> 
+</table>
+
+### 6.2.7.3 Development Evidence for Sprint Review
+
+Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date)
+--- | --- | --- | --- | --- | ---
+development-of-iot-solutions-final-project | feature/embedded-system-US15-TS20-TS21-1st-iot | 132cf9d | feat(embedded-system): add first solution iot | - | 22/06/2025
+development-of-iot-solutions-final-project| feature/embedded-system-TS37-TS38-2nd-iot | 1185f61 | feat(embedded-system): add second solution iot | - | 22/06/2025
+
+#### 6.2.7.4 Testing Suite Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//testing-iot-1.png" alt="UPC">
+
+Link del video de prueba del dispositivo físico: https://drive.google.com/drive/folders/1OkUkmBxcGongxiHjnZtbm-pHLB66i-vN?usp=sharing
+
+#### 6.2.7.5 Execution Evidence for Sprint Review 
+
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//evidence-iot-1.png" alt="UPC">
+
+#### 6.2.7.6 Software Deployment Evidence for Sprint Review 
+
+- Primera solución - Lector QR:
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//iot-3.jpg" alt="UPC">
+</p>
+
+- Segunda solución - Sensor PIR:
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//iot-1.jpg" alt="UPC">
+</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//iot-2.jpg" alt="UPC">
+</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//iot-4.jpg" alt="UPC">
+</p>
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//iot-5.jpg" alt="UPC">
+</p>
+
+#### 6.2.7.7 Team Collaboration Insights during Sprint
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//sprint-7-commits.png" alt="UPC">
 </p>
 
 <div style="page-break-before: always;"></div>
