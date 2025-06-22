@@ -4480,6 +4480,8 @@ Los sistemas de búsqueda de información son cruciales para que el usuario pued
 
 ### 5.2.4. SEO Tags and Meta Tags
 
+Para mejorar la visibilidad del servicio en los motores de busqueda, se añadiran etiquetas SEO y meta etiquetas en nuestra landing page. Los títulos y funciones core de nuestra appp están optimizados para atraer a los usuarios y a los motores de búsqueda.
+
 ### 5.2.5. Navigation Systems
 
 Los sistemas de navegación incluyen botones e interfaces que permiten moverse de una sección a otra dentro de la aplicación, como los botones en la parte superior de la página web que llevan a diferentes funciones. Estos botones tienen texto que indica la acción que se realizará al presionarlos, además de ofrecer opciones de navegación rápida a través de atajos. 
