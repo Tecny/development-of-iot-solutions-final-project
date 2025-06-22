@@ -7316,6 +7316,15 @@ Link del video de prueba del dispositivo físico: https://drive.google.com/drive
 <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//sprint-7-commits.png" alt="UPC">
 </p>
 
+#### 6.2.7.8. Burndown Chart during Sprint 7
+
+- Sprint 7 (117 h, 8 días):
+Ajustamos la curva de trabajo comenzando con una carga moderada de 8 h dedicadas a las primeras integraciones de las soluciones IoT El esfuerzo alcanzó su punto máximo el día 6 con 24 h invertidas en funcionalidades y validaciones del dispositivo IoT. Luego, el ritmo descendió progresivamente para enfocarnos en pruebas de usabilidad y ajustes de experiencia de usuario. Este gráfico representa el flujo de trabajo enfocado en la construcción inicial de las dos soluciones IoT.
+
+<p align="center">
+<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//sprint-7-image.png" alt="UPC">
+</p>
+
 <div style="page-break-before: always;"></div>
 
 ## 6.3. Validation Interviews
