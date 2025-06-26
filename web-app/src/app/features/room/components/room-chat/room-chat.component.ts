@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject, Input, OnDestroy, OnInit, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, Input, OnDestroy, OnInit, signal, effect} from '@angular/core';
 import {Room} from '../../models/room.interface';
 import {ChatService} from '../../services/chat.service';
 import {Message} from '../../models/message.interface';
@@ -26,6 +26,13 @@ export class RoomChatComponent implements OnInit, OnDestroy {
 
   newMessageContent = signal('');
   messages = signal<any[]>([]);
+
+  constructor() {
+    effect(() => {
+      this.messages();
+      this.scrollToBottom();
+    });
+  }
 
   ngOnInit() {
     this.getRoomChat();
@@ -69,6 +76,7 @@ export class RoomChatComponent implements OnInit, OnDestroy {
     this.chatService.sendMessage(this.room.id, content).subscribe({
       next: () => {
         this.newMessageContent.set('');
+        this.scrollToBottom();
       },
       error: err => {
         console.error('Error al enviar mensaje:', err);

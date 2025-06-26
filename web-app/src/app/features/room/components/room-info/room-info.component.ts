@@ -11,21 +11,18 @@ import {RouterLink} from '@angular/router';
     RouterLink
   ],
   template: `
+    <h1><span>Detalles</span></h1>
     <div class="room-info">
-      <h1>Detalles de la sala</h1>
-
-      <h2 class="room-info__title">{{ room.reservation.reservationName }}</h2>
 
       <div class="room-info__header">
         <img src="{{ room.reservation.sportSpace.imageUrl }}" [alt]="'Imagen de ' + room.reservation.sportSpace.name" class="room-info__image" />
-        Espacio deportivo: <a [routerLink]="['/sport-spaces', room.reservation.sportSpace.id]"> {{ room.reservation.sportSpace.name }}</a>
+        <a [routerLink]="['/sport-spaces', room.reservation.sportSpace.id]"> {{ room.reservation.sportSpace.name }}</a>
       </div>
 
       <div class="room-info__content">
-        <p> Creado por: {{ room.reservation.userName}}</p>
-        <p> Modo de juego: {{ room.reservation.sportSpace.gamemode.replaceAll('_', ' ') | titlecase}}</p>
-        <p> Fecha: {{ TimeUtil.formatDate(room.reservation.gameDay) }}, {{ room.reservation.startTime }}-{{ room.reservation.endTime }}</p>
-        <p> Lugar: {{ room.reservation.sportSpace.address }}</p>
+        <p><strong>Modo de juego: </strong>{{ room.reservation.sportSpace.gamemode.replaceAll('_', ' ') | titlecase}}</p>
+        <p><strong>Fecha: </strong> {{ TimeUtil.formatDate(room.reservation.gameDay) }}, {{ room.reservation.startTime }}-{{ room.reservation.endTime }}</p>
+        <p class="room-info__address"> <strong>Lugar: </strong> {{ room.reservation.sportSpace.address }}</p>
       </div>
     </div>
   `,

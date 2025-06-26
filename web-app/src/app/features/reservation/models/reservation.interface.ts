@@ -30,7 +30,7 @@ export interface Reservation {
   name: string;
   type: string;
   sportSpaces: SportSpace;
-  blockchain: Blockchain;
+  blockchain: Blockchain | 'Not available';
   gameDay: string;
   startTime: string;
   endTime: string;

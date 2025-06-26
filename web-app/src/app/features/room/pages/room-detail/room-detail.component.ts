@@ -5,13 +5,16 @@ import {Room} from '../../models/room.interface';
 import {RoomInfoComponent} from '../../components/room-info/room-info.component';
 import {RoomChatComponent} from '../../components/room-chat/room-chat.component';
 import {RoomPlayerListComponent} from '../../components/room-player-list/room-player-list.component';
+import {Location} from '@angular/common';
+import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
 
 @Component({
   selector: 'app-room-detail',
   imports: [
     RoomInfoComponent,
     RoomChatComponent,
-    RoomPlayerListComponent
+    RoomPlayerListComponent,
+    SpinnerComponent
   ],
   templateUrl: './room-detail.component.html',
   styleUrl: './room-detail.component.scss',
@@ -19,9 +22,18 @@ import {RoomPlayerListComponent} from '../../components/room-player-list/room-pl
 })
 export class RoomDetailComponent implements OnInit, OnDestroy {
   private route = inject(ActivatedRoute);
+  private location = inject(Location);
   private roomService = inject(RoomService);
 
   room = signal<Room | null>(null);
+  activeTab = signal<'chat' | 'info'>('chat');
+  windowWidth = signal(window.innerWidth);
+
+  constructor() {
+    window.addEventListener('resize', () => {
+      this.windowWidth.set(window.innerWidth);
+    });
+  }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -33,8 +45,19 @@ export class RoomDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    window.removeEventListener('resize', () => {
+      this.windowWidth.set(window.innerWidth);
+    });
     if (this.room()) {
       this.roomService.clearAccess(this.room()!.id);
     }
+  }
+
+  setTab(tab: 'chat' | 'info') {
+    this.activeTab.set(tab);
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }

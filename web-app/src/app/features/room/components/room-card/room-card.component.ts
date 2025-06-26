@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject, Input, OnInit, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, inject, Input, OnInit, Output, signal} from '@angular/core';
 import {Room} from '../../models/room.interface';
 import {LowerCasePipe, TitleCasePipe} from '@angular/common';
 import {PriceUtil, TimeUtil} from '../../../../shared/utils/time.util';
@@ -135,7 +135,6 @@ import {ToastrService} from 'ngx-toastr';
             <p><strong>Input Hex:</strong><br> <span class="input-hex">{{ room.reservation.blockchain.inputHex }}</span></p>
             <p><strong>ID Espacio:</strong> {{ room.reservation.blockchain.spaceId }}</p>
             <p><strong>ID Usuario:</strong> {{ room.reservation.blockchain.userId }}</p>
-            <p><strong>Marca de tiempo:</strong> {{ room.reservation.blockchain.timestamp }}</p>
           </div>
         </div>
         <div modal-footer>
@@ -153,6 +152,7 @@ import {ToastrService} from 'ngx-toastr';
 export class RoomCardComponent implements OnInit {
   @Input() room!: Room;
   @Input() showStatus: boolean = false;
+  @Output() roomDeleted = new EventEmitter<void>();
 
   protected readonly TimeUtil = TimeUtil;
 
@@ -247,8 +247,9 @@ export class RoomCardComponent implements OnInit {
       next: () => {
         this.isLoadingRequest.set(false);
         this.handleClose();
-        this.toastService.success('Sala comunidad eliminada exitosamente', 'Éxito');
         this.checkRoomAccess();
+        this.roomDeleted.emit();
+        this.toastService.success('Sala comunidad eliminada exitosamente', 'Éxito');
       },
       error: () => {
         this.isLoadingRequest.set(false);

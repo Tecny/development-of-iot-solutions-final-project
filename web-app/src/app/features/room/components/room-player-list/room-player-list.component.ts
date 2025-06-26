@@ -6,7 +6,31 @@ import {Room} from '../../models/room.interface';
 @Component({
   selector: 'app-room-player-list',
   imports: [],
-  templateUrl: './room-player-list.component.html',
+  template: `
+    <h1><span>Jugadores {{ room.playerCount }}</span></h1>
+    @if (players()) {
+      <div class="player-list">
+        @for (player of players(); track player.id; let i = $index) {
+          <div class="player-list__row">
+            <div class="player-list__info">
+              <div class="player-list__avatar">
+                {{ player.name.charAt(0).toUpperCase() }}
+              </div>
+              <div class="player-list__name">
+                {{ player.name }}
+              </div>
+            </div>
+            @if (i === 0) {
+              <span class="player-list__creator" title="Creador">
+                <i class="lni lni-crown-3"></i>
+                <span class="creator-text">Creador</span>
+              </span>
+            }
+          </div>
+        }
+      </div>
+    }
+  `,
   styleUrl: './room-player-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })

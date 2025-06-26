@@ -55,12 +55,18 @@ import {ModalComponent} from '../../../../shared/components/modal/modal.componen
       <app-modal [width]="'400px'" [variant]="'info'" (closeModal)="handleClose()">
         <div modal-header>Datos en la blockchain</div>
         <div modal-body>
-          <div class="reservation-card__details">
-            <p><strong>Hash de transacción:</strong><br> <span class="tx-hash">{{ reservation.blockchain.txHash }}</span></p>
-            <p><strong>Input Hex:</strong><br> <span class="input-hex">{{ reservation.blockchain.inputHex }}</span></p>
-            <p><strong>ID Espacio:</strong> {{ reservation.blockchain.spaceId }}</p>
-            <p><strong>ID Usuario:</strong> {{ reservation.blockchain.userId }}</p>
-          </div>
+          @if (reservation.blockchain === 'Not available') {
+            <div class="reservation-card__details">
+              <p>Cargando datos, por favor espere...</p>
+            </div>
+          } @else {
+            <div class="reservation-card__details">
+              <p><strong>Hash de transacción:</strong><br> <span class="tx-hash">{{ reservation.blockchain.txHash }}</span></p>
+              <p><strong>Input Hex:</strong><br> <span class="input-hex">{{ reservation.blockchain.inputHex }}</span></p>
+              <p><strong>ID Espacio:</strong> {{ reservation.blockchain.spaceId }}</p>
+              <p><strong>ID Usuario:</strong> {{ reservation.blockchain.userId }}</p>
+            </div>
+          }
         </div>
         <div modal-footer>
           <button class="button-submit--info" (click)="handleClose()">Aceptar</button>

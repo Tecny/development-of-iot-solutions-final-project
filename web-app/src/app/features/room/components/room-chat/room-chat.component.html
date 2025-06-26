@@ -9,7 +9,7 @@
       <div class="timestamp">{{ message.createdAt | date:'shortTime' }}</div>
     </div>
   } @empty {
-    <small>No hay mensajes</small>
+    <small>Aún no hay mensajes en el chat</small>
   }
 </div>
 
@@ -21,5 +21,8 @@
     (keydown.enter)="sendMessage(newMessageContent())"
     placeholder="Escribe un mensaje..."
   />
-  <button (click)="sendMessage(newMessageContent())">Enviar</button>
+  <button (click)="sendMessage(newMessageContent())">
+    <span>Enviar</span>
+    <i class="lni lni-location-arrow-right"></i>
+  </button>
 </div>
