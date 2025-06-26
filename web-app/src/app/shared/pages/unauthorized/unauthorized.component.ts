@@ -27,7 +27,6 @@ import { RouterModule } from '@angular/router';
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Poppins', sans-serif;
     }
 
     .unauthorized-card {

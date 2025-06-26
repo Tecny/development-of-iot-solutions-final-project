@@ -1,4 +1,8 @@
 <div class="title-wrapper">
+  <button class="button-back" (click)="goBack()">
+    <i class="lni lni-arrow-left-circle"></i>
+    <p>Regresar</p>
+  </button>
   <h2 class="section-title">Crear Espacio Deportivo</h2>
 </div>
 <form class="form-body" [formGroup]="createSportSpaceForm" (ngSubmit)="createSportSpace()">
@@ -28,7 +32,7 @@
             Debes ingresar un precio
           }
           @if (createSportSpaceForm.get('price')?.errors?.['min']) {
-            El precio debe ser mayor o igual a 40
+            El precio debe ser mayor o igual a 25
           }
         }
       </small>

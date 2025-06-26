@@ -29,7 +29,6 @@ export class ChatService {
             roomId: data.roomId
           } as Message;
         } catch (e) {
-          console.error('Error parsing message', e, 'Data:', event.data);
           throw e;
         }
       })

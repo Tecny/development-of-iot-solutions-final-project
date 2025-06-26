@@ -37,7 +37,6 @@ import {NgOptimizedImage} from '@angular/common';
       font-size: clamp(0.8rem, 3vw, 1.6rem);
       color: #2c2b2b;
       font-weight: 500;
-      font-family: 'Poppins', sans-serif;
     }
 
     @media (max-width: 600px) {

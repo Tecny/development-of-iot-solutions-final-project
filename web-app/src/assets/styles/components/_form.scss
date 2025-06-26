@@ -45,7 +45,6 @@
   background-color: white;
   border-radius: 1rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
   margin: 1rem;
   color: var.$neutral-dark;
 
@@ -118,7 +117,6 @@
     border: 1px solid #ccc;
     border-radius: 0.5rem;
     font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
     width: 100%;
     box-sizing: border-box;
   }
@@ -128,7 +126,6 @@
     border: 1px solid #ccc;
     border-radius: 0.5rem;
     font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
     width: 100%;
     box-sizing: border-box;
     background: #fff;
@@ -140,6 +137,7 @@
   input, select {
     flex: 1 1 auto;
     border-color: #ccc;
+    font-family: 'Poppins', sans-serif;
 
     &.ng-invalid.ng-touched,
     &.ng-invalid.ng-dirty {

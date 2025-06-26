@@ -83,13 +83,13 @@
             <i class="lni lni-message-3-text icon"></i>
             @if (reservationForm.get('reservationName')?.touched && reservationForm.get('reservationName')?.invalid) {
               @if (reservationForm.get('reservationName')?.errors?.['required']) {
-                <small class="reservation-form__error">El nombre de la reserva es obligatorio</small>
+                <small>El nombre de la reserva es obligatorio</small>
               }
               @if (reservationForm.get('reservationName')?.errors?.['minlength']) {
-                <small class="reservation-form__error">Mínimo 5 caracteres</small>
+                <small>Mínimo 5 caracteres</small>
               }
               @if (reservationForm.get('reservationName')?.errors?.['maxlength']) {
-                <small class="reservation-form__error">Máximo 25 caracteres</small>
+                <small>Máximo 25 caracteres</small>
               }
             }
           </div>
@@ -105,7 +105,7 @@
             <i class="lni lni-gear-1 icon"></i>
             @if (reservationForm.get('type')?.touched && reservationForm.get('type')?.invalid) {
               @if (reservationForm.get('type')?.errors?.['required']) {
-                <small class="reservation-form__error">El tipo de reserva es obligatorio</small>
+                <small>El tipo de reserva es obligatorio</small>
               }
             }
           </div>

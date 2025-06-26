@@ -11,15 +11,18 @@ import {RedirectComponent} from './core/components/redirect/redirect.component';
 import {HomeComponent} from './shared/pages/home/home.component';
 import {CorrectPaymentComponent} from './shared/pages/correct-payment/correct-payment.component';
 import {ErrorPaymentComponent} from './shared/pages/error-payment/error-payment.component';
+import {guestGuard} from './core/guards/guest.guard';
 
 export const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [guestGuard]
   },
   {
     path: 'register',
-    component: RegisterComponent
+    component: RegisterComponent,
+    canActivate: [guestGuard]
   },
   {
     path: 'reset-password',

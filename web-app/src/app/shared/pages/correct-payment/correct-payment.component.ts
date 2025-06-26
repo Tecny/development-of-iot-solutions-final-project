@@ -25,7 +25,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: 'Poppins', sans-serif;
     }
 
     .correct-payment-card {

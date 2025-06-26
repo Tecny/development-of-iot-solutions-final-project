@@ -7,6 +7,7 @@ import {
   SportSpaceAvailabilityComponent
 } from '../../components/sport-space-availability/sport-space-availability.component';
 import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-sport-space-detail',
@@ -21,6 +22,7 @@ import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.co
 })
 export class SportSpaceDetailComponent implements OnInit {
   private route = inject(ActivatedRoute);
+  private location = inject(Location);
   private sportSpaceService = inject(SportSpaceService);
 
   activeTab = signal<'availability' | 'info'>('availability');
@@ -42,5 +44,9 @@ export class SportSpaceDetailComponent implements OnInit {
 
   setTab(tab: 'availability' | 'info') {
     this.activeTab.set(tab);
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

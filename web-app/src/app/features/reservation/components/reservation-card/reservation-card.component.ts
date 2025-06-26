@@ -25,9 +25,9 @@ import {ModalComponent} from '../../../../shared/components/modal/modal.componen
             <button class="btn btn--blockchain" (click)="showBCModal = true">
               <i class="lni lni-ethereum-logo"></i>
             </button>
-<!--            <button class="btn btn&#45;&#45;qr" (click)="showQRModal = true">-->
-<!--              <i class="fa-solid fa-qrcode"></i>-->
-<!--            </button>-->
+            <button class="btn btn--qr" (click)="showQRModal = true">
+              <i class="fa-solid fa-qrcode"></i>
+            </button>
           }
         </div>
         <span class="reservation-card__status badge badge--{{ reservation.status | lowercase }}">
@@ -60,7 +60,6 @@ import {ModalComponent} from '../../../../shared/components/modal/modal.componen
             <p><strong>Input Hex:</strong><br> <span class="input-hex">{{ reservation.blockchain.inputHex }}</span></p>
             <p><strong>ID Espacio:</strong> {{ reservation.blockchain.spaceId }}</p>
             <p><strong>ID Usuario:</strong> {{ reservation.blockchain.userId }}</p>
-            <p><strong>Marca de tiempo:</strong> {{ reservation.blockchain.timestamp }}</p>
           </div>
         </div>
         <div modal-footer>

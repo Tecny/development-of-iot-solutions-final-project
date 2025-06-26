@@ -19,7 +19,6 @@
   margin: 6rem auto;
   max-width: 31.25rem;
   width: 100%;
-  font-family: 'Poppins', sans-serif;
   color: var.$neutral-dark;
   overflow-y: auto;
 
@@ -213,6 +212,10 @@
           i {
             color: #ffffff !important;
           }
+        }
+        @media (max-width: 650px) {
+          background-color: #fafafa !important;
+          margin-left: 0.25rem;
         }
       }
 

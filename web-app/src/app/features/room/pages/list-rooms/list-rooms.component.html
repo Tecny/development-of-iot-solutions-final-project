@@ -19,7 +19,7 @@
   @if (rooms(); as room) {
     <div class="cards-grid">
       @for (r of room; track r.id) {
-        <app-room-card [room]="r" [showStatus]="false"/>
+        <app-room-card [room]="r" [showStatus]="false" (roomDeleted)="loadRooms()"/>
       } @empty {
         <div class="empty-state">
           <i class="lni lni-eraser-1"></i>

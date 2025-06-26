@@ -5,40 +5,64 @@
 @use 'components/spinner';
 
 .cards-grid {
+  flex: 2;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
-  padding: 1rem;
+  padding: 0 1rem 1.5rem 1rem;
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .bank-type-toggle {
   display: flex;
+  flex-direction: column;
+  align-items: stretch;
   justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  font-family: 'Poppins', sans-serif;
+  gap: 0.2rem;
+  margin-bottom: 1rem;
 
   label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var.$neutral-dark;
-    cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    transition: background 0.2s;
-
+    flex: 1;
+    text-align: center;
     input[type="radio"] {
       accent-color: var.$green-medium;
-      width: 1.1rem;
-      height: 1.1rem;
-      margin-right: 0.4rem;
     }
+  }
+}
 
-    &:hover {
-      background: rgba(var.$green-medium, 0.08);
-    }
+.ticket-summary {
+  background: #eef1f4;
+  border-radius: 1.2rem;
+  padding: 0.7rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: var.$neutral-dark;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  border: 1px solid #e3e6ea;
+  box-shadow: 0 2px 12px rgba(60, 60, 60, 0.07);
+
+  strong {
+    color: var.$neutral-dark;
+    font-weight: 600;
+    letter-spacing: 0.1px;
+  }
+
+  div {
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem 0.7rem;
+    font-size: 0.97rem;
+    border-radius: 0.7rem;
+    gap: 1rem;
   }
 }

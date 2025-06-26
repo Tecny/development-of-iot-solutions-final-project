@@ -1,14 +1,20 @@
 import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
 import {SportSpaceService} from '../../services/sport-space.service';
 import {ActivatedRoute} from '@angular/router';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-sport-space-dashboard',
   imports: [],
   template: `
+    <div class="title-wrapper">
+      <button class="button-back" (click)="goBack()">
+        <i class="lni lni-arrow-left-circle"></i>
+        <p>Regresar</p>
+      </button>
+      <h2 class="section-title">Métricas del espacio deportivo</h2>
+    </div>
     <div class="dashboard-container">
-      <h2>Métricas del espacio deportivo</h2>
-
       <p>Cantidad de visitantes por mes en el año 2025</p>
 
       @if (datosMensuales().length > 0) {
@@ -32,6 +38,7 @@ import {ActivatedRoute} from '@angular/router';
 export class SportSpaceDashboardComponent implements OnInit {
 
   private route = inject(ActivatedRoute);
+  private location = inject(Location);
   private sportSpaceService = inject(SportSpaceService);
 
   datosMensuales = signal<{ mes: string, cantidad: number, altura: number }[]>([]);
@@ -72,5 +79,9 @@ export class SportSpaceDashboardComponent implements OnInit {
         console.error('Error al obtener métricas:', error);
       }
     });
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

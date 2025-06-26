@@ -1,9 +1,9 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  computed,
+  computed, EventEmitter,
   inject,
-  Input,
+  Input, Output,
   signal
 } from '@angular/core';
 import {SportSpace} from '../../models/sport-space.interface';
@@ -30,9 +30,9 @@ import {ToastrService} from 'ngx-toastr';
         </div>
 
         @if (isOwner()) {
-<!--          <button class="sportspace-card__dashboard-btn" [routerLink]="['/sport-spaces', sportSpace.id, 'dashboard']" (click)="$event.stopPropagation()">-->
-<!--            <i class="lni lni-bar-chart-4"></i>-->
-<!--          </button>-->
+          <button class="sportspace-card__dashboard-btn" [routerLink]="['/sport-spaces', sportSpace.id, 'dashboard']" (click)="$event.stopPropagation()">
+            <i class="lni lni-bar-chart-4"></i>
+          </button>
           <button class="sportspace-card__delete-btn" (click)="handleOpen(); $event.stopPropagation()">
             <i class="lni lni-trash-3"></i>
           </button>
@@ -72,6 +72,7 @@ import {ToastrService} from 'ngx-toastr';
 })
 export class SportSpaceCardComponent {
   @Input() sportSpace!: SportSpace;
+  @Output() spaceDeleted = new EventEmitter<void>();
 
   private sportSpaceService = inject(SportSpaceService);
   private userStore = inject(UserStoreService);
@@ -107,9 +108,9 @@ export class SportSpaceCardComponent {
       this.sportSpaceService.deleteSportSpace(this.sportSpace.id).subscribe({
         next: () => {
           this.isLoadingRequest.set(false);
-          window.location.reload();
-          this.toastService.success('Espacio deportivo eliminado correctamente','Éxito');
           this.handleClose();
+          this.spaceDeleted.emit();
+          this.toastService.success('Espacio deportivo eliminado correctamente','Éxito');
         },
         error: () => {
           this.isLoadingRequest.set(false);

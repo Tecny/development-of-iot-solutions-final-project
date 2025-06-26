@@ -29,7 +29,7 @@
       @if (sportSpaces(); as spaces) {
         <div class="cards-grid">
           @for (space of spaces; track space.id) {
-            <app-sport-space-card [sportSpace]="space" />
+            <app-sport-space-card [sportSpace]="space" (spaceDeleted)="loadSportSpaces()" />
           } @empty {
             @if (userRole === UserRole.OWNER) {
               <div class="empty-state">

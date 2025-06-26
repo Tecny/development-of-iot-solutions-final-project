@@ -15,7 +15,7 @@ import {Router} from '@angular/router';
 import {GeolocationService} from '../../../../shared/services/geolocation.service';
 import * as L from 'leaflet';
 import {environment} from '../../../../../environment/environment';
-import {NgClass} from '@angular/common';
+import {Location, NgClass} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({
@@ -29,6 +29,7 @@ import {ToastrService} from 'ngx-toastr';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CreateSportSpaceComponent implements AfterViewInit {
+  private location = inject(Location);
   private sportSpaceService = inject(SportSpaceService);
   private geolocationService = inject(GeolocationService);
   private fb = inject(NonNullableFormBuilder)
@@ -55,7 +56,7 @@ export class CreateSportSpaceComponent implements AfterViewInit {
         name: ['', [Validators.required, Validators.minLength(7)]],
         sportId: ['', [Validators.required, Validators.min(1), Validators.max(2)]],
         gamemodeId: ['', [Validators.required]],
-        price: ['', [Validators.required, Validators.min(40)]],
+        price: ['', [Validators.required, Validators.min(25)]],
         description: ['', [Validators.required, Validators.minLength(10)]],
         openTime: ['', [Validators.required]],
         closeTime: ['', [Validators.required]],
@@ -187,6 +188,10 @@ export class CreateSportSpaceComponent implements AfterViewInit {
   private getGamemodesBySport(sportId: number): { id: number, label: string, value: string, sportId: number }[] {
     const values = gamemodesMap[sportId] ?? [];
     return GAMEMODE_OPTIONS.filter(g => values.includes(g.value));
+  }
+
+  goBack() {
+    this.location.back();
   }
 
   protected readonly SPORTS = SPORTS;

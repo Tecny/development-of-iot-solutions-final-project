@@ -7,28 +7,32 @@
   }
 </div>
 
+<div class="tab-buttons tab-buttons--reservation">
+  <button [class.active]="activeTab() === 'pending'" (click)="setTab('pending')">Pendiente</button>
+  <button [class.active]="activeTab() === 'confirmed'" (click)="setTab('confirmed')">Confirmado</button>
+</div>
+
 @defer (prefetch on viewport) {
-  @if (tickets(); as tcks) {
-    @for (ticket of tcks; track ticket.id) {
-      <div class="cards-grid">
+  @if (filteredTickets(); as tcks) {
+    <div class="cards-grid">
+      @for (ticket of tcks; track ticket.id) {
         <app-ticket-card [ticket]="ticket"
                          (ticketConfirmed)="loadTickets()"
                          (ticketDeferred)="loadTickets()"/>
-      </div>
-    } @empty {
-      @if (this.userRole === UserRole.OWNER) {
-        <div class="empty-state">
-          <i class="lni lni-megaphone-1 empty-icon"></i>
-          <p>No tienes tickets de retiro de créditos solicitados</p>
-        </div>
+      } @empty {
+        @if (userRole === UserRole.OWNER) {
+          <div class="empty-state">
+            <i class="lni lni-megaphone-1 empty-icon"></i>
+            <p>No tienes tickets de retiro de créditos solicitados</p>
+          </div>
+        } @else if (userRole === UserRole.ADMIN) {
+          <div class="empty-state">
+            <i class="lni lni-megaphone-1 empty-icon"></i>
+            <p>No tienes tickets de retiro de créditos por atender</p>
+          </div>
+        }
       }
-      @else if (this.userRole === UserRole.ADMIN) {
-        <div class="empty-state">
-          <i class="lni lni-megaphone-1 empty-icon"></i>
-          <p>No tienes tickets de retiro de créditos por atender</p>
-        </div>
-    }
-    }
+    </div>
   } @else {
     <div class="view-spinner view-spinner--sm">
       <app-spinner/>
@@ -60,7 +64,7 @@
             [(ngModel)]="bankType"
             (change)="onBankTypeChange()"
           />
-          Bancos Asociados
+          Bancos asociados
         </label>
 
         <label>
@@ -71,7 +75,7 @@
             [(ngModel)]="bankType"
             (change)="onBankTypeChange()"
           />
-          Otros
+          Otros bancos
         </label>
       </div>
 
@@ -83,10 +87,10 @@
           </div>
           @if (ticketForm.get('fullName')?.touched && ticketForm.get('fullName')?.invalid) {
             @if (ticketForm.get('fullName')?.errors?.['required']) {
-              <small class="reservation-form__error">Es necesario el nombre completo</small>
+              <small>Es nombre completo es obligatorio</small>
             }
             @if (ticketForm.get('fullName')?.errors?.['minlength']) {
-              <small class="reservation-form__error">El nombre completo debe tener al menos 5 caracteres</small>
+              <small>El nombre completo debe tener al menos 5 caracteres</small>
             }
           }
         </div>
@@ -106,7 +110,7 @@
           </div>
           @if (ticketForm.get('bankName')?.touched && ticketForm.get('bankName')?.invalid) {
             @if (ticketForm.get('bankName')?.errors?.['required']) {
-              <small class="reservation-form__error">El banco es obligatorio</small>
+              <small>El banco es obligatorio</small>
             }
           }
         </div>
@@ -122,11 +126,11 @@
           </div>
           @if (ticketForm.get('accountNumber')?.touched && ticketForm.get('accountNumber')?.invalid) {
             @if (ticketForm.get('accountNumber')?.errors?.['required']) {
-              <small class="reservation-form__error">El número de cuenta es obligatorio</small>
+              <small>El número de cuenta es obligatorio</small>
             } @else if (ticketForm.get('accountNumber')?.errors?.['pattern']) {
-              <small class="reservation-form__error">El número de cuenta solo debe contener números</small>
+              <small>El número de cuenta solo debe contener números</small>
             } @else if (ticketForm.get('accountNumber')?.errors?.['invalidAccountNumberLength']) {
-              <small class="reservation-form__error">
+              <small>
                 La longitud del número de cuenta debe ser de
                 {{ ticketForm.get('accountNumber')?.errors?.['invalidAccountNumberLength'].expectedLength }} dígitos
               </small>
@@ -134,6 +138,12 @@
           }
         </div>
       </form>
+
+      <section class="ticket-summary">
+        <div>
+          <strong>Monto a retirar:</strong> {{ userCredits }} créditos
+        </div>
+      </section>
     </ng-container>
 
     <ng-container modal-footer>

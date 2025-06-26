@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, inject, OnInit, signal} from '@angular/core';
 import {BankTransferService} from '../../services/bank-transfer.service';
 import {FormGroup, FormsModule, NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {Ticket, TicketRequest} from '../../models/ticket.interface';
@@ -9,6 +9,8 @@ import {TicketCardComponent} from '../../components/ticket-card/ticket-card.comp
 import {ToastrService} from 'ngx-toastr';
 import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
 import {UserRole} from '../../../../core/models/user.role.enum';
+import {TimeUtil} from '../../../../shared/utils/time.util';
+import {ProfileService} from '../../../profile/services/profile.service';
 
 @Component({
   selector: 'app-list-tickets',
@@ -26,11 +28,22 @@ import {UserRole} from '../../../../core/models/user.role.enum';
 export class ListTicketsComponent implements OnInit {
   private bankTransferService = inject(BankTransferService);
   private userStore = inject(UserStoreService);
+  private profileService = inject(ProfileService);
   private fb = inject(NonNullableFormBuilder);
   private toastService = inject(ToastrService);
 
   userRole = this.userStore.getRoleFromToken();
+  userCredits = 0;
+
+  activeTab = signal<'pending' | 'confirmed'>('pending');
   tickets = signal<Ticket[] | null>(null);
+  filteredTickets = computed(() => {
+    const currentTab = this.activeTab();
+    const allTickets = this.tickets() || [];
+    return allTickets.filter(ticket =>
+      ticket.status === (currentTab === 'pending' ? 'PENDING' : 'CONFIRMED')
+    );
+  });
   isLoadingSubmitRequest = signal(false);
 
   bankType: 'asociado' | 'otro' = 'asociado';
@@ -41,6 +54,7 @@ export class ListTicketsComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
+    this.loadUserCredits();
     this.loadTickets();
   }
 
@@ -69,6 +83,14 @@ export class ListTicketsComponent implements OnInit {
 
       accountControl?.setValidators(validators);
       accountControl?.updateValueAndValidity();
+    });
+  }
+
+  loadUserCredits() {
+    this.profileService.getUserInfo().subscribe({
+      next: (user) => {
+        this.userCredits = user.credits;
+      }
     });
   }
 
@@ -158,5 +180,10 @@ export class ListTicketsComponent implements OnInit {
     }
   }
 
+  setTab(tab: 'pending' | 'confirmed') {
+    this.activeTab.set(tab);
+  }
+
   protected readonly UserRole = UserRole;
+  protected readonly TimeUtil = TimeUtil;
 }
