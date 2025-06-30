@@ -11,5 +11,5 @@
 }
 
 :host::before {
-  background-color: var.$neutral;
+  background-color: var(--login-bg-color);
 }

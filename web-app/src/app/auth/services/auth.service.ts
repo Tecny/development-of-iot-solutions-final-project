@@ -55,9 +55,8 @@ export class AuthService {
         }
       });
     } else {
-      //this.isLoggedIn.next(false);
-      //this.userStore.clearUser();
-      this.logout();
+      this.isLoggedIn.next(false);
+      this.userStore.clearUser();
     }
   }
 

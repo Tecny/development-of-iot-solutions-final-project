@@ -2,6 +2,7 @@ import {Component, computed, HostListener, inject, signal} from '@angular/core';
 import {UserStoreService} from '../../services/user-store.service';
 import {AuthService} from '../../../auth/services/auth.service';
 import {RouterLink, RouterLinkActive} from '@angular/router';
+import {ThemeService} from '../../../shared/services/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -23,6 +24,7 @@ export class HeaderComponent {
 
   private userStore = inject(UserStoreService);
   private authService = inject(AuthService);
+  private themeService = inject(ThemeService);
 
   currentUser = this.userStore.currentUser;
 
@@ -48,5 +50,9 @@ export class HeaderComponent {
 
   closeMenuOnNavigate() {
     this.isMenuOpen = false;
+  }
+
+  get isDarkTheme() {
+    return this.themeService.isDarkTheme;
   }
 }

@@ -20,7 +20,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   `,
   styles: [`
     .correct-payment-container {
-      background-color: #fff;
+      background-color: var(--bg-color);
       height: 100vh;
       display: flex;
       align-items: center;
@@ -28,14 +28,17 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     }
 
     .correct-payment-card {
-      background-color: #fff;
+      background-color: var(--bg-color);
       padding: 1.5rem;
       margin-left: auto;
       margin-right: auto;
     }
 
     .correct-payment-icon {
+      background-color: var(--text-color);
+      border-color: var(--bg-color);
       color: #16a34a;
+      border-radius: 50%;
       width: 4rem;
       height: 4rem;
       display: block;
@@ -44,7 +47,7 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 
     .correct-payment-title {
       font-size: 2rem;
-      color: #111827;
+      color: var(--external-pages-color);
       font-weight: 600;
       text-align: center;
     }

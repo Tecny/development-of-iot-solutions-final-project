@@ -6,6 +6,7 @@ import {LoginRequest} from '../../models/login.interface';
 import {customEmailValidator} from '../../../shared/validators/forms.validator';
 import {ModalComponent} from '../../../shared/components/modal/modal.component';
 import {ToastrService} from 'ngx-toastr';
+import {ThemeService} from '../../../shared/services/theme.service';
 
 @Component({
   selector: 'app-login',
@@ -24,6 +25,7 @@ export class LoginComponent {
   private router = inject(Router);
   private fb = inject(NonNullableFormBuilder);
   private toastService = inject(ToastrService);
+  private themeService = inject(ThemeService);
 
   showRecoverModal = false;
 
@@ -91,5 +93,9 @@ export class LoginComponent {
         this.toastService.error('Error al enviar el correo de recuperación', 'Error');
       }
     })
+  }
+
+  get isDarkTheme() {
+    return this.themeService.isDarkTheme;
   }
 }

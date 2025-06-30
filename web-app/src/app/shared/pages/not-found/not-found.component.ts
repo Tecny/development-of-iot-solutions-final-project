@@ -22,15 +22,15 @@ import { RouterModule } from '@angular/router';
   `,
   styles: [`
     .not-found-container {
-      background-color: #fff;
-      height: 100vh;
+      background-color: var(--bg-color);
+      margin-top: 3rem;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     .not-found-card {
-      background-color: #fff;
+      background-color: var(--bg-color);
       padding: 1.5rem;
       margin-left: auto;
       margin-right: auto;
@@ -46,7 +46,7 @@ import { RouterModule } from '@angular/router';
 
     .not-found-title {
       font-size: 2rem;
-      color: #111827;
+      color: var(--external-pages-color);
       font-weight: 600;
       text-align: center;
       margin-top: 0.2rem;

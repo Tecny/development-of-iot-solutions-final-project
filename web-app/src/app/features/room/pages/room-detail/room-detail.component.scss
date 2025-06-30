@@ -27,11 +27,11 @@
   flex-direction: column;
   gap: 1.5rem;
   border-radius: 1rem;
-  box-shadow: 0 2px 8px rgba(197, 196, 196, 0.15), 0 1.5px 4px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--room-panel-shadow);
 }
 
 .details-page__left {
-  background-color: #fff;
+  background-color: var(--room-card-bg);
   padding: 1rem;
   min-width: 0;
   max-height: 100dvh;

@@ -6,21 +6,23 @@
 :host {
   display: flex;
   flex-direction: column;
-  min-height: calc(100dvh - 4rem);
+  //min-height: calc(100dvh - 4rem);
   justify-content: center;
   align-items: center;
+  background-color: var(--bg-color);
 }
 
 .profile-panel {
-  background-color: var.$background;
+  background-color: var(--profile-bg-color);
   border-radius: 0.75rem;
   box-shadow: 0 0.375rem 1.25rem rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  margin: 6rem auto;
+  margin: 5rem auto;
   max-width: 31.25rem;
   width: 100%;
-  color: var.$neutral-dark;
+  color: var(--profile-text-color);
   overflow-y: auto;
+  box-sizing: border-box;
 
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -88,7 +90,8 @@
 
   .panel-content {
     padding: 3rem 1.5rem 1.5rem;
-    background-color: var.$background;
+    background-color: var(--profile-bg-color);
+    color: var(--profile-text-color);
 
     .input-group {
       display: flex;
@@ -148,14 +151,14 @@
         min-width: 6.8rem;
         max-width: 6.8rem;
         font-weight: 600;
-        color: var.$green-dark;
+        color: var(--profile-text-color) !important;
         flex-shrink: 0;
         margin-right: 0;
       }
 
       span {
         flex-grow: 1;
-        color: var.$neutral-dark;
+        color: var(--profile-text-color);
         font-size: 1rem;
         max-width: 100%;
         overflow: hidden;
@@ -187,7 +190,7 @@
 
         i {
           font-size: 1.5rem;
-          color: var.$green-dark;
+          color: var(--profile-icon-color);
           transition: color 0.2s;
         }
 
@@ -203,7 +206,7 @@
       }
 
       .cancel-btn {
-        background: #ffffff !important;
+        //background: #ffffff !important;
         i {
           color: var.$error !important;
         }
@@ -214,7 +217,7 @@
           }
         }
         @media (max-width: 650px) {
-          background-color: #fafafa !important;
+          //background-color: #fafafa !important;
           margin-left: 0.25rem;
         }
       }
@@ -333,7 +336,7 @@ input[type="number"] {
     width: 100vw;
 
     .panel-content {
-      background-color: #fafafa;
+      background-color: var(--bg-color);
     }
   }
 

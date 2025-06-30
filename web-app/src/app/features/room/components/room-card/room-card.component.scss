@@ -8,7 +8,7 @@ $font-size-details: clamp(0.8rem, 1vw + 0.7rem, 1rem);
 $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
 
 .room-card {
-  background-color: #ffffff;
+  background-color: var(--room-card-bg);
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   padding: 16px;
@@ -17,7 +17,7 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--room-card-border);
 
   &__header {
     display: flex;
@@ -33,11 +33,17 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
       border-radius: 6px;
       font-size: 0.75rem;
       vertical-align: middle;
-      background-color: #e0e0e0;
-      color: #333;
+      background-color: var(--room-card-badge-bg);
+      color: var(--room-card-badge-color);
 
-      &--confirmed { background: #A5D6A7; color: #1B3C1B; }
-      &--pending { background: #FFE082; color: #7C4A00; }
+      &--confirmed {
+        background: var(--room-card-badge-confirmed-bg);
+        color: var(--room-card-badge-confirmed-color);
+      }
+      &--pending {
+        background: var(--room-card-badge-pending-bg);
+        color: var(--room-card-badge-pending-color);
+      }
     }
   }
 
@@ -51,14 +57,14 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
   &__title {
     font-size: $font-size-title;
     font-weight: 600;
-    color: #333;
+    color: var(--room-card-title);
     flex-grow: 1;
   }
 
   &__players {
     font-size: $font-size-players;
     font-weight: 500;
-    color: #333;
+    color: var(--room-card-title);
     padding: 4px 8px;
     border-radius: 8px;
     margin-left: 12px;
@@ -66,7 +72,7 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
 
   &__creator {
     font-size: $font-size-creator;
-    color: #6c757d;
+    color: var(--room-card-creator);
     font-style: italic;
   }
 
@@ -85,20 +91,20 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
     p {
       margin: 0;
       font-size: 0.95rem;
-      color: #333;
+      color: var(--room-card-text);
 
       strong {
         font-weight: 500;
       }
 
       a {
-        color: #224466;
+        color: var(--room-card-link);
         text-decoration: underline;
         font-weight: 500;
         transition: color 0.2s ease;
 
         &:hover {
-          color: #163354;
+          color: var(--room-card-link-hover);
         }
       }
     }
@@ -117,7 +123,7 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
     flex-wrap: wrap;
     gap: 12px;
     padding-top: 16px;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--room-card-border);
     justify-content: flex-end;
 
     .btn {
@@ -157,11 +163,11 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
     }
 
     .btn--primary {
-      background-color: #4CAF50;
-      color: #fff;
+      background-color: var(--room-card-btn-primary-bg);
+      color: var(--room-card-btn-primary-color);
 
       &:hover {
-        background-color: #439A46;
+        background-color: var(--room-card-btn-primary-hover);
       }
     }
 
@@ -184,54 +190,54 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
     }
 
     .btn--danger {
-      background-color: transparent;
-      border: 1px solid #F44336;
-      color: #F44336;
+      background-color: var(--room-card-btn-danger-bg);
+      border: 1px solid var(--room-card-btn-danger-border);
+      color: var(--room-card-btn-danger-color);
       width: 100px;
 
       &:hover {
-        background-color: #FFCDD2;
+        background-color: var(--room-card-btn-danger-hover);
       }
     }
 
     .btn--secondary {
-      background-color: #ffffff;
-      border: 1px solid #2196F3;
-      color: #2196F3;
+      background-color: var(--room-card-btn-secondary-bg);
+      border: 1px solid var(--room-card-btn-secondary-border);
+      color: var(--room-card-btn-secondary-color);
 
       &:hover {
-        background-color: #BBDEFB;
+        background-color: var(--room-card-btn-secondary-hover);
       }
     }
 
     .btn--blockchain {
-      background-color: #ffffff;
-      border: 1px solid #424242;
-      color: #424242;
+      background-color: var(--room-card-btn-blockchain-bg);
+      border: 1px solid var(--room-card-btn-blockchain-border);
+      color: var(--room-card-btn-blockchain-color);
 
       &:hover {
-        background-color: #e0e0e0;
+        background-color: var(--room-card-btn-blockchain-hover);
       }
     }
 
     .btn--warning {
-      background-color: transparent;
-      border: 1px solid #FF9800;
-      color: #FF9800;
+      background-color: var(--room-card-btn-warning-bg);
+      border: 1px solid var(--room-card-btn-warning-border);
+      color: var(--room-card-btn-warning-color);
       width: 100px;
 
       &:hover {
-        background-color: #FFECB3;
+        background-color: var(--room-card-btn-warning-hover);
       }
     }
 
     .btn--success {
-      background-color: #8BC34A;
-      color: #fff;
+      background-color: var(--room-card-btn-success-bg);
+      color: var(--room-card-btn-success-color);
       height: 35px;
 
       &:hover {
-        background-color: #7CB342;
+        background-color: var(--room-card-btn-success-hover);
       }
     }
   }

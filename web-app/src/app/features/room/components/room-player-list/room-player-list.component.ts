@@ -49,9 +49,6 @@ export class RoomPlayerListComponent implements OnInit {
     this.roomService.getPlayerList(this.room.id).subscribe({
       next: (res) => {
         this.players.set(res);
-      },
-      error: (err) => {
-        console.error('Error fetching players:', err);
       }
     });
   }

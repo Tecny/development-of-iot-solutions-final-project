@@ -7,7 +7,8 @@
   margin-top: 2rem;
   padding: 0.5rem 0;
   max-width: 100%;
-  background-color: #fafafa;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 
   @media (max-width: 900px) {
     padding: 0.5rem 0;
@@ -62,7 +63,7 @@
   }
 
   &__table-scroll {
-    background-color: #fff;
+    background-color: var(--space-availability-table-scroll-bg-color);
     border-radius: 1rem;
     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.10);
     margin-bottom: 1.2rem;
@@ -98,11 +99,11 @@
 
     th {
       padding: 0.75rem 1.2rem;
-      background: #f0f0f0;
-      color: var.$neutral-dark;
       font-weight: 600;
       letter-spacing: 0.5px;
-      border-bottom: 2px solid var.$neutral;
+      background: var(--space-availability-th-bg);
+      color: var(--space-availability-th-color);
+      border-bottom: 2px solid var(--space-availability-th-border);
     }
 
     td {
@@ -119,13 +120,13 @@
       position: sticky;
       left: 0;
       z-index: 2;
-      background-color: #fff;
+      background: var(--space-availability-td-bg);
     }
   }
 
   &__time-label {
     font-weight: 500;
-    color: var.$neutral-dark;
+    color: var(--space-availability-time-label);
   }
 
   &__slot-box {
@@ -214,20 +215,20 @@
 }
 
 .reservation-summary {
-  background: #eef1f4;
+  background: var(--modal-summary-bg);
   border-radius: 1.2rem;
   padding: 1.2rem 1.5rem;
   margin-top: 2rem;
   font-size: 1.05rem;
-  color: var.$neutral-dark;
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  border: 1px solid #e3e6ea;
+  border: 1px solid var(--modal-summary-bg);
   box-shadow: 0 2px 12px rgba(60, 60, 60, 0.07);
 
   strong {
-    color: var.$neutral-dark;
+    color: var(--text-color);
     font-weight: 600;
     letter-spacing: 0.2px;
   }

@@ -17,14 +17,14 @@
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 0;
-    color: #2c3e50;
+    color: var(--subscription-header-title);
   }
 
   p {
     text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 2rem;
-    color: #555;
+    color: var(--subscription-header-text);
   }
 }
 
@@ -35,30 +35,30 @@
   padding: 1rem 0 2rem 0;
 
   .plan {
-    background-color: #ffffff;
+    background-color: var(--subscription-plan-bg);
+    border: 1px solid var(--subscription-plan-border);
     padding: 2.5rem;
     margin: 12px;
     border-radius: 10px;
     text-align: center;
     transition: 0.3s;
     width: 300px;
-    border: 1px solid #eaeaea;
 
     .already-subscribed {
       margin-top: 2rem;
-      color: #444;
+      color: var(--subscription-plan-feature);
     }
 
     h2 {
       font-size: 22px;
       margin-bottom: 12px;
-      color: #222;
+      color:  var(--subscription-plan-title);
     }
 
     .price {
       margin-bottom: 1rem;
       font-size: 28px;
-      color: #27ae60;
+      color: var(--subscription-plan-price);
     }
 
     ul.features {
@@ -69,14 +69,14 @@
       li {
         margin: 10px 0;
         font-size: 15px;
-        color: #444;
+        color: var(--subscription-plan-feature);
 
         .lni {
           margin-right: 8px;
         }
 
         .lni-check-circle-1 {
-          color: #4caf50;
+          color: var(--subscription-plan-feature-check);
         }
       }
     }
@@ -86,20 +86,20 @@
       width: 100%;
       padding: 12px;
       margin-top: 1rem;
-      background-color: #4aaf51;
-      color: white;
+      background-color: var(--subscription-plan-btn-bg);
+      color: var(--subscription-plan-btn-color);
       border-radius: 6px;
       cursor: pointer;
       font-size: 16px;
       transition: background 0.3s;
 
       &:hover {
-        background-color: #3c9444;
+        background-color: var(--subscription-plan-btn-hover-bg);
       }
     }
 
     &.popular {
-      border: 2px solid #4aaf51;
+      border: 2px solid var(--subscription-plan-popular-border);
       transform: scale(1.05);
       position: relative;
 
@@ -113,8 +113,8 @@
         top: -18px;
         left: 50%;
         transform: translateX(-50%);
-        background-color: #4aaf51;
-        color: white;
+        background-color: var(--subscription-plan-popular-badge-bg);
+        color: var(--subscription-plan-popular-badge-color);
         padding: 4px 16px;
         font-size: 15px;
         border-radius: 20px;
@@ -123,7 +123,7 @@
 
       .already-subscribed {
         margin-top: 2rem;
-        color: #444;
+        color: var(--subscription-plan-feature);
       }
     }
 

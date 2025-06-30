@@ -1,7 +1,7 @@
-<header class="header-container">
+<header class="header-container" [class.dark-theme]="isDarkTheme">
 
-  <div class="logo">
-    <span class="logo__text">Dtaquito</span>
+  <div class="logo" [class.dark-theme]="isDarkTheme">
+    <img src="assets/images/dtaquito-logo2.png" alt="Logo" class="logo-image"/>
   </div>
 
   <a class="menu__item menu-toggle" (click)="toggleMenu()">

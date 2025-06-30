@@ -44,7 +44,7 @@
 .empty-state {
   text-align: center;
   padding: 2rem 1rem;
-  color: #777;
+  color: var(--empty-state-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -53,19 +53,19 @@
   i {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: rgba(var.$green-medium, 0.6);
+    color: var(--empty-state-icon-color);
   }
 
   p {
     font-size: 1rem;
-    color: #555;
+    color: var(--empty-state-text-color);
   }
 
   &.placeholder-icon {
-    color: #ccc;
+    color: var(--empty-state-placeholder-icon);
   }
 
   &.empty-icon {
-    color: #bbb;
+    color: var(--empty-state-empty-icon);
   }
 }

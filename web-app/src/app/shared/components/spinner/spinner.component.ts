@@ -1,10 +1,11 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
+import {ThemeService} from '../../services/theme.service';
 
 @Component({
   selector: 'app-spinner',
   template: `
-    <div class="spinner-container">
+    <div class="spinner-container" [class.dark-theme]="isDarkTheme">
       <img ngSrc="assets/images/soccer-ball.png" alt="" class="soccer-ball" width="50" height="50" priority/>
       <p class="loading-text">Cargando...</p>
     </div>
@@ -30,13 +31,18 @@ import {NgOptimizedImage} from '@angular/common';
       height: auto;
       animation: spin 1s linear infinite;
       opacity: 0.9;
+      transition: filter 0.3s;
+    }
+
+    .dark-theme .soccer-ball {
+      filter: brightness(2) invert(1);
     }
 
     .loading-text {
       margin-top: 10px;
       font-size: clamp(0.8rem, 3vw, 1.6rem);
-      color: #2c2b2b;
       font-weight: 500;
+      color: var(--text-color);
     }
 
     @media (max-width: 600px) {
@@ -58,4 +64,10 @@ import {NgOptimizedImage} from '@angular/common';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SpinnerComponent {}
+export class SpinnerComponent {
+  private themeService = inject(ThemeService);
+
+  get isDarkTheme() {
+    return this.themeService.isDarkTheme;
+  }
+}

@@ -5,6 +5,7 @@ import {Router, RouterLink} from '@angular/router';
 import {RegisterRequest} from '../../models/register.interface';
 import {customEmailValidator} from '../../../shared/validators/forms.validator';
 import {ToastrService} from 'ngx-toastr';
+import {ThemeService} from '../../../shared/services/theme.service';
 
 @Component({
   selector: 'app-register',
@@ -21,6 +22,7 @@ export class RegisterComponent {
   private router = inject(Router);
   private fb = inject(NonNullableFormBuilder);
   private toastService = inject(ToastrService);
+  private themeService = inject(ThemeService);
 
   isLoadingSubmitRequest = signal(false);
   errorMessage = signal<string | null>(null);
@@ -66,5 +68,9 @@ export class RegisterComponent {
         this.toastService.error(mensaje, 'Error');
       },
     });
+  }
+
+  get isDarkTheme() {
+    return this.themeService.isDarkTheme;
   }
 }

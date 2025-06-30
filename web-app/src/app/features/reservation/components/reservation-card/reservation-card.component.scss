@@ -7,7 +7,8 @@ $font-size-details: clamp(0.8rem, 1vw + 0.7rem, 1rem);
 $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
 
 .reservation-card {
-  background-color: #ffffff;
+  background-color: var(--room-card-bg);
+  border: 1px solid var(--room-card-border);
   border-radius: 12px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   padding: 16px;
@@ -16,14 +17,13 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
   display: flex;
   flex-direction: column;
   gap: 16px;
-  border: 1px solid #e0e0e0;
 
   &__header {
     display: flex;
     flex-direction: column;
     gap: 4px;
     padding-bottom: 8px;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--room-card-border);
     align-items: flex-start;
 
     .badge {
@@ -32,11 +32,11 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
       border-radius: 6px;
       font-size: 0.75rem;
       vertical-align: middle;
-      background-color: #e0e0e0;
-      color: #333;
+      background-color: var(--room-card-badge-bg);
+      color: var(--room-card-badge-color);
 
-      &--confirmed { background: #A5D6A7; color: #1B3C1B; }
-      &--pending { background: #FFE082; color: #7C4A00; }
+      &--confirmed { background: var(--room-card-badge-confirmed-bg); color: var(--room-card-badge-confirmed-color); }
+      &--pending { background: var(--room-card-badge-pending-bg); color: var(--room-card-badge-pending-color); }
     }
   }
 
@@ -95,7 +95,7 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
   &__title {
     font-size: $font-size-title;
     font-weight: 600;
-    color: #333;
+    color: var(--room-card-title);
     flex-grow: 1;
   }
 
@@ -114,20 +114,20 @@ $font-size-btn: clamp(0.9rem, 1vw + 0.8rem, 1.1rem);
     p {
       margin: 0;
       font-size: 0.95rem;
-      color: #333;
+      color: var(--room-card-text);
 
       strong {
         font-weight: 500;
       }
 
       a {
-        color: #224466;
+        color: var(--room-card-link);
         text-decoration: underline;
         font-weight: 500;
         transition: color 0.2s ease;
 
         &:hover {
-          color: #163354;
+          color: var(--room-card-link-hover);
         }
       }
     }

@@ -25,18 +25,6 @@ export const routes: Routes = [
     canActivate: [guestGuard]
   },
   {
-    path: 'reset-password',
-    component: ResetPasswordComponent
-  },
-  {
-    path: 'correct-payment',
-    component: CorrectPaymentComponent
-  },
-  {
-    path: 'error-payment',
-    component: ErrorPaymentComponent
-  },
-  {
     path: 'home',
     component: HomeComponent,
     canActivate: [authGuard],
@@ -111,13 +99,25 @@ export const routes: Routes = [
     data: { roles: [UserRole.OWNER, UserRole.ADMIN] },
   },
   {
-    path: 'notfound',
-    component: NotFoundComponent,
-    canActivate: [authGuard]
+    path: 'reset-password',
+    component: ResetPasswordComponent
+  },
+  {
+    path: 'correct-payment',
+    component: CorrectPaymentComponent
+  },
+  {
+    path: 'error-payment',
+    component: ErrorPaymentComponent
   },
   {
     path: 'unauthorized',
     component: UnauthorizedComponent
+  },
+  {
+    path: 'notfound',
+    component: NotFoundComponent,
+    canActivate: [authGuard]
   },
   {
     path: '',

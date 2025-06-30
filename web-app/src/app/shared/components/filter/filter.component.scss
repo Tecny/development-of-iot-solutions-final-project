@@ -11,7 +11,8 @@
   top: 0.01px;
   z-index: 90;
   margin: 1.5rem auto;
-  background-color: #fafafa;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   align-items: end;
   backdrop-filter: blur(5px);
 
@@ -180,3 +181,4 @@
     width: 100%;
   }
 }
+

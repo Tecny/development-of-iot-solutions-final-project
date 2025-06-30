@@ -2,7 +2,7 @@
 @use 'components/spinner';
 
 .ticket-card {
-  background-color: #fff;
+  background-color: var(--ticket-card-bg);
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
   padding: 1rem;
@@ -11,14 +11,14 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  border-left: 6px solid #ccc;
+  border-left: 6px solid var(--ticket-card-border);
 
   &--pending {
-    border-left-color: #f1c40f;
+    border-left-color: var(--ticket-card-status-pending);
 
     .ticket-card__status {
-      color: #f1c40f;
-      background-color: rgba(241, 196, 15, 0.15);
+      color: var(--ticket-card-status-pending);
+      background-color: var(--ticket-card-status-pending-bg);
       border-radius: 4px;
       padding: 2px 8px;
       display: inline-block;
@@ -27,11 +27,11 @@
   }
 
   &--confirmed {
-    border-left-color: #4aaf51;
+    border-left-color: var(--ticket-card-status-confirmed);
 
     .ticket-card__status {
-      color: #4aaf51;
-      background-color: rgba(74, 175, 81, 0.15);
+      color: var(--ticket-card-status-confirmed);
+      background-color: var(--ticket-card-status-confirmed-bg);
       border-radius: 4px;
       padding: 2px 8px;
       display: inline-block;
@@ -40,11 +40,11 @@
   }
 
   &--deferred {
-    border-left-color: #e67e22;
+    border-left-color: var(--ticket-card-status-deferred);
 
     .ticket-card__status {
-      color: #e67e22;
-      background-color: rgba(230, 126, 34, 0.15);
+      color: var(--ticket-card-status-deferred);
+      background-color: var(--ticket-card-status-deferred-bg);
       border-radius: 4px;
       padding: 2px 8px;
       display: inline-block;
@@ -66,7 +66,7 @@
     h2 {
       font-size: 1rem;
       font-weight: 600;
-      color: #2c3e50;
+      color: var(--ticket-card-title);
       word-break: break-word;
       margin: 0;
     }
@@ -76,7 +76,7 @@
     display: grid;
     gap: 0.5rem;
     font-size: 0.95rem;
-    color: #444;
+    color: var(--ticket-card-content);
 
     p {
       margin: 0;
@@ -99,8 +99,8 @@
       align-items: center;
       justify-content: center;
       gap: 0.5rem;
-      background-color: #4aaf51;
-      color: #fff;
+      background-color: var(--ticket-card-action-btn-bg);
+      color: var(--ticket-card-action-btn-color);
       border: none;
       padding: 10px 18px;
       font-size: 0.95rem;
@@ -113,14 +113,14 @@
       }
 
       &:hover {
-        background-color: #3c9444;
+        background-color: var(--ticket-card-action-btn-hover-bg);
       }
 
       &:nth-child(2) {
-        background-color: #f59e42;
+        background-color: var(--ticket-card-action-btn-alt-bg);
 
         &:hover {
-          background-color: #de8232;
+          background-color: var(--ticket-card-action-btn-alt-hover-bg);
         }
       }
     }

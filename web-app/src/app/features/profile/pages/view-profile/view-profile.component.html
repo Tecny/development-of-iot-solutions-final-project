@@ -151,9 +151,9 @@
       <div class="preferences">
         <div class="pref-item">
           <label for="theme">Tema</label>
-          <select id="theme">
-            <option>Claro</option>
-            <option>Oscuro</option>
+          <select id="theme" (change)="onThemeChange($event)">
+            <option [selected]="!isDarkTheme">Claro</option>
+            <option [selected]="isDarkTheme">Oscuro</option>
           </select>
         </div>
         <div class="pref-item">

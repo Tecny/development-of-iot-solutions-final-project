@@ -6,6 +6,7 @@
   gap: 2rem;
   padding: 0.5rem 0;
   margin: 2rem 0;
+  background-color: var(--bg-color);
 
   @media (min-width: 1024px) {
     flex-direction: row;
@@ -21,7 +22,7 @@
 }
 
 .info-panel {
-  background-color: var.$background;
+  background-color: var(--space-info-panel-bg);
   border-radius: 1rem;
   //border: 1px solid var.$neutral;
   padding: 1.5rem;
@@ -31,7 +32,7 @@
     margin-top: 0.5rem;
     font-size: 1.15rem;
     font-weight: 600;
-    color: var.$green-dark;
+    color: var(--space-info-panel-title);
   }
 
   .info-row {
@@ -42,20 +43,20 @@
 
     i {
       font-size: 1.3rem;
-      color: var.$green-medium;
+      color: var(--space-info-panel-icon);
       margin-top: 0.1rem;
     }
 
     span,
     p {
-      color: var.$neutral-dark;
+      color: var(--space-info-panel-text);
       font-size: 1rem;
       line-height: 1.4;
     }
 
     strong {
       font-weight: 500;
-      color: var.$green-black;
+      color: var(--space-info-panel-strong);
     }
 
     p {

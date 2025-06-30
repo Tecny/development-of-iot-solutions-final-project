@@ -18,6 +18,8 @@
   max-width: 1400px;
   width: 100%;
   box-sizing: border-box;
+  background-color: var(--space-creation-bg);
+  border-radius: 1rem;
 }
 
 .form-grid {
@@ -54,7 +56,7 @@
     }
 
     &:invalid.ng-touched {
-      border-color: var.$error;
+      border-color: var(--form-error-color);
     }
   }
 
@@ -93,13 +95,8 @@
     left: 0.6rem;
     font-size: 0.75rem;
     color: var.$green-dark;
-    background: linear-gradient(
-        to bottom,
-        #fafafa 0%,
-        #fafafa 50%,
-        var.$background 50%,
-        var.$background 100%
-    );
+    background: var(--form-label-bg);
+    border-radius: 0.5rem;
   }
 
   input:focus + label,
@@ -111,21 +108,16 @@
     top: -0.6rem;
     left: 0.6rem;
     font-size: 0.75rem;
-    color: var.$green-dark;
-    background: linear-gradient(
-        to bottom,
-        #fafafa 0%,
-        #fafafa 50%,
-        var.$background 50%,
-        var.$background 100%
-    );
+    color: var(--form-float-label-color);
+    background: var(--form-label-bg);
+    border-radius: 0.5rem;
   }
 
   small.error-text {
     min-height: 0.5em;
     display: block;
     margin-top: 0.1rem;
-    color: var.$error;
+    color: var(--form-error-color);
     font-size: 0.75rem;
     visibility: hidden;
   }
@@ -149,7 +141,6 @@
 
 .image-upload-area {
   position: relative;
-  width: 100%;
   aspect-ratio: 1 / 1;
   border: 2.5px dashed var.$neutral;
   border-radius: 0.5rem;
@@ -176,7 +167,7 @@
 }
 
 .image-placeholder {
-  color: var.$neutral-dark;
+  color: var(--text-color);
   font-size: 1rem;
   text-align: center;
   width: 100%;

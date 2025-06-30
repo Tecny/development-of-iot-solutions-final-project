@@ -7,6 +7,7 @@ import {customEmailValidator} from '../../../../shared/validators/forms.validato
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 import {ToastrService} from 'ngx-toastr';
 import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
+import {ThemeService} from '../../../../shared/services/theme.service';
 
 @Component({
   selector: 'app-view-profile',
@@ -22,11 +23,11 @@ import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.co
 })
 
 export class ViewProfileComponent implements OnInit {
-
   private profileService = inject(ProfileService);
   private authService = inject(AuthService);
   private fb = inject(FormBuilder);
   private toastService = inject(ToastrService);
+  private themeService = inject(ThemeService);
 
   userInfo = signal<UserProfile | null>(null);
   isLoadingSubmitRequest = signal(false);
@@ -209,6 +210,19 @@ export class ViewProfileComponent implements OnInit {
   logout() {
     this.authService.logout();
     this.toastService.success('Has cerrado sesión correctamente', 'Éxito');
+  }
+
+  toggleTheme(isDark: boolean) {
+    this.themeService.toggleTheme(isDark);
+  }
+
+  get isDarkTheme() {
+    return this.themeService.isDarkTheme;
+  }
+
+  onThemeChange(event: Event) {
+    const value = (event.target as HTMLSelectElement).value;
+    this.toggleTheme(value === 'Oscuro');
   }
 }
 

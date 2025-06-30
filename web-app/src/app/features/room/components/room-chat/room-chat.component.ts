@@ -77,9 +77,6 @@ export class RoomChatComponent implements OnInit, OnDestroy {
       next: () => {
         this.newMessageContent.set('');
         this.scrollToBottom();
-      },
-      error: err => {
-        console.error('Error al enviar mensaje:', err);
       }
     });
   }

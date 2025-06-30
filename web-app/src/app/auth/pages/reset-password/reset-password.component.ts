@@ -10,28 +10,28 @@ import {AuthService} from '../../services/auth.service';
   ],
   template: `
     <div class="recover-password">
-      <h1>Reset Password</h1>
-      <p>Please enter your new password</p>
+      <h1>Cambio de contraseña</h1>
+      <p>Por favor, ingresa tu nueva contraseña</p>
       <form [formGroup]="recoverPasswordForm" (ngSubmit)="onSubmit()">
-        <input type="password" formControlName="password" placeholder="Password" required />
-        <input type="password" formControlName="confirmPassword" placeholder="Confirm Password" required />
-        <button type="submit" [disabled]="recoverPasswordForm.invalid">Update new password</button>
-      </form>
-      @if (recoverPasswordForm.get('password')?.invalid && (recoverPasswordForm.get('password')?.dirty || recoverPasswordForm.get('password')?.touched)) {
-        @if (recoverPasswordForm.get('password')?.errors?.['required']) {
-          <small>La contraseña es obligatoria</small>
-        } @else {
-          @if (recoverPasswordForm.get('password')?.errors?.['minlength']) {
-            <small>La contraseña debe tener al menos 16 caracteres</small>
-          }
-          @else  {
-            <small>La contraseña debe incluir una mayúscula, un número y un carácter especial</small>
+        <input type="password" formControlName="password" placeholder="Contraseña" required />
+        <input type="password" formControlName="confirmPassword" placeholder="Confirmar contraseña" required />
+        @if (recoverPasswordForm.get('password')?.invalid && (recoverPasswordForm.get('password')?.dirty || recoverPasswordForm.get('password')?.touched)) {
+          @if (recoverPasswordForm.get('password')?.errors?.['required']) {
+            <small>La contraseña es obligatoria</small>
+          } @else {
+            @if (recoverPasswordForm.get('password')?.errors?.['minlength']) {
+              <small>La contraseña debe tener al menos 16 caracteres</small>
+            }
+            @else  {
+              <small>Debe incluir mayúscula, número y caracter especial</small>
+            }
           }
         }
-      }
-      @if (passwordsDoNotMatch) {
-        <p class="error">Passwords do not match</p>
-      }
+        @if (passwordsDoNotMatch) {
+          <small>Las contraseñas no coinciden</small>
+        }
+        <button type="submit">Actualizar</button>
+      </form>
     </div>
   `,
   styleUrl: './reset-password.component.scss',
@@ -66,20 +66,20 @@ export class ResetPasswordComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.recoverPasswordForm.invalid) {
+      this.recoverPasswordForm.markAllAsTouched();
+      return;
+    }
     if (this.recoverPasswordForm.valid && !this.passwordsDoNotMatch) {
       const { password } = this.recoverPasswordForm.getRawValue();
 
       if (!this.token) {
-        console.error('Token no disponible');
         return;
       }
 
       this.authService.resetPassword(this.token, password).subscribe({
         next: () => {
           this.router.navigate(['/login']).then();
-        },
-        error: (err) => {
-          console.error('Error updating password:', err);
         }
       });
     }

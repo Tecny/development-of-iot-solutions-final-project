@@ -74,9 +74,6 @@ export class SportSpaceDashboardComponent implements OnInit {
             altura: (d.cantidad / maxCantidad) * alturaMax
           }))
         );
-      },
-      error: (error) => {
-        console.error('Error al obtener métricas:', error);
       }
     });
   }

@@ -59,10 +59,10 @@
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-  background-color: rgba(#333, 0.9);
+  background-color: var(--list-space-icon-view-bg-color);
   border: none;
   border-radius: 50%;
-  color: white;
+  color: var(--list-space-icon-view-color);
   width: 3.5rem;
   height: 3.5rem;
   font-size: 1.4rem;
@@ -74,7 +74,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(#111, 0.9);
+    background-color: var(--list-space-icon-view-bg-hover-color);
   }
 }
 
