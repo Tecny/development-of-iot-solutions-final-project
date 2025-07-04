@@ -7,21 +7,21 @@
   <div class="form-section">
 
     <div class="form-header">
-      <h2>¡Crea tu cuenta!</h2>
+      <h2>{{ 'register.title' | translate }}</h2>
     </div>
 
     <form class="form-body" [formGroup]="registerForm" (ngSubmit)="register()">
 
       <div class="form-field">
         <div class="input-icon-wrapper">
-          <input type="text" formControlName="name" required placeholder="Nombre">
+          <input type="text" formControlName="name" required [placeholder]="'register.placeholders.name' | translate">
           <i class="lni lni-user-4 icon"></i>
           @if (registerForm.get('name')?.invalid && (registerForm.get('name')?.dirty ||registerForm.get('name')?.touched)) {
             @if (registerForm.get('name')?.errors?.["required"]) {
-              <small>El nombre es obligatorio</small>
+              <small>{{ 'register.validation.nameRequired' | translate }}</small>
             }
             @if (registerForm.get('name')?.errors?.["minlength"]) {
-              <small>Debe tener mínimo 3 letras</small>
+              <small>{{ 'register.validation.nameMin' | translate }}</small>
             }
           }
         </div>
@@ -29,13 +29,13 @@
 
       <div class="form-field">
         <div class="input-icon-wrapper">
-          <input type="email" formControlName="email" required placeholder="Correo electrónico">
+          <input type="email" formControlName="email" required [placeholder]="'register.placeholders.email' | translate">
           <i class="lni lni-envelope-1 icon"></i>
           @if (registerForm.get('email')?.invalid && (registerForm.get('email')?.dirty || registerForm.get('email')?.touched)) {
             @if (registerForm.get('email')?.errors?.['required']) {
-              <small>El correo electrónico es obligatorio</small>
+              <small>{{ 'register.validation.emailRequired' | translate }}</small>
             } @else if (registerForm.get('email')?.errors?.['invalidEmail']) {
-              <small>Formato no válido</small>
+              <small>{{ 'register.validation.emailInvalid' | translate }}</small>
             }
           }
         </div>
@@ -43,17 +43,17 @@
 
       <div class="form-field" >
         <div class="input-icon-wrapper">
-          <input type="password" formControlName="password" required placeholder="Contraseña">
+          <input type="password" formControlName="password" required [placeholder]="'register.placeholders.password' | translate">
           <i class="lni lni-locked-2 icon"></i>
           @if (registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)) {
             @if (registerForm.get('password')?.errors?.['required']) {
-              <small>La contraseña es obligatoria</small>
+              <small>{{ 'register.validation.passwordRequired' | translate }}</small>
             } @else {
               @if (registerForm.get('password')?.errors?.['minlength']) {
-                <small class="long-error-message-one">Mínimo 16 caracteres</small>
+                <small class="long-error-message-one">{{ 'register.validation.passwordMin' | translate }}</small>
               }
               @else  {
-                <small class="long-error-message-second">Debe incluir mayúscula, número y caracter especial</small>
+                <small class="long-error-message-second">{{ 'register.validation.passwordPattern' | translate }}</small>
               }
             }
           }
@@ -63,14 +63,14 @@
       <div class="form-field">
         <div class="input-icon-wrapper">
           <select formControlName="role" required>
-            <option value="" disabled selected hidden>Rol</option>
-            <option value="PLAYER">Jugador</option>
-            <option value="OWNER">Propietario</option>
+            <option value="" disabled selected hidden>{{ 'register.placeholders.role' | translate }}</option>
+            <option value="PLAYER">{{ 'register.roles.PLAYER' | translate }}</option>
+            <option value="OWNER">{{ 'register.roles.OWNER' | translate }}</option>
           </select>
           <i class="lni lni-hierarchy-1 icon"></i>
           @if (registerForm.get('role')?.invalid && (registerForm.get('role')?.dirty || registerForm.get('role')?.touched)) {
             @if (registerForm.get('role')?.errors?.['required']) {
-              <small>El rol es obligatorio</small>
+              <small>{{ 'register.validation.roleRequired' | translate }}</small>
             }
           }
         </div>
@@ -80,7 +80,7 @@
         @if (isLoadingSubmitRequest()) {
           <span class="spinner-default"></span>
         } @else {
-          Registrarse
+          {{ 'register.buttons.register' | translate }}
         }
       </button>
     </form>
@@ -90,8 +90,8 @@
     }
 
     <p>
-      ¿Ya tienes cuenta?&nbsp;
-      <a routerLink="/login">Inicia sesión</a>
+      {{ 'register.alreadyAccount' | translate }}&nbsp;
+      <a routerLink="/login">{{ 'register.login' | translate }}</a>
     </p>
   </div>
 

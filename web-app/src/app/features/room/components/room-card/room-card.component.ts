@@ -1,6 +1,6 @@
 import {ChangeDetectionStrategy, Component, EventEmitter, inject, Input, OnInit, Output, signal} from '@angular/core';
 import {Room} from '../../models/room.interface';
-import {LowerCasePipe, TitleCasePipe} from '@angular/common';
+import {LowerCasePipe} from '@angular/common';
 import {PriceUtil, TimeUtil} from '../../../../shared/utils/time.util';
 import {RoomService} from '../../services/room.service';
 import {Router, RouterLink} from '@angular/router';
@@ -9,15 +9,16 @@ import {QrViewerComponent} from '../../../../shared/components/qr-viewer/qr-view
 import {UserStoreService} from '../../../../core/services/user-store.service';
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 import {ToastrService} from 'ngx-toastr';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-room-card',
   imports: [
-    TitleCasePipe,
     RouterLink,
     QrViewerComponent,
     LowerCasePipe,
-    ModalComponent
+    ModalComponent,
+    TranslatePipe
   ],
   template: `
     <div class="room-card">
@@ -28,23 +29,23 @@ import {ToastrService} from 'ngx-toastr';
         </div>
         @if (showStatus) {
           <span class="room-card__status badge badge--{{ room.reservation.status | lowercase }}">
-            {{ room.reservation.status | titlecase }}
+            {{ 'rooms.card.status.' + room.reservation.status | translate }}
           </span>
         }
       </div>
 
       <div class="room-card__body">
         <div class="room-card__details">
-          <p><strong>Modo de juego:</strong> {{ room.reservation.sportSpace.gamemode.replaceAll('_', ' ') | titlecase }}
+          <p><strong>{{ 'rooms.card.fields.mode' | translate }}:</strong> {{ ('gamemodes.' + room.reservation.sportSpace.gamemode.replace('_', '').toLowerCase()) | translate }}
           </p>
-          <p><strong>Fecha:</strong> {{ TimeUtil.formatDate(room.reservation.gameDay) }}
+          <p><strong>{{ 'rooms.card.fields.date' | translate }}:</strong> {{ TimeUtil.formatDate(room.reservation.gameDay) }}
             , {{ room.reservation.startTime }} - {{ room.reservation.endTime }}</p>
-          <p><strong>Adelanto:</strong> {{ getAmount() }} créditos</p>
-          <p><strong>Espacio deportivo: </strong>
+          <p><strong>{{ 'rooms.card.fields.advance' | translate }}:</strong> {{ getAmount() }} {{ 'spaces.card.priceUnit' | translate }}</p>
+          <p><strong>{{ 'rooms.card.fields.sportSpace' | translate }}: </strong>
             <a
               [routerLink]="['/sport-spaces', room.reservation.sportSpace.id]">{{ room.reservation.sportSpace.name }}</a>
           </p>
-          <p><strong>Lugar:</strong> {{ room.reservation.sportSpace.address }}</p>
+          <p><strong>{{ 'rooms.card.fields.place' | translate }}:</strong> {{ room.reservation.sportSpace.address }}</p>
         </div>
       </div>
 
@@ -53,11 +54,11 @@ import {ToastrService} from 'ngx-toastr';
           @if (isMember() !== null) {
             @if (isMember()) {
               <button class="btn btn--primary" (click)="viewRoom()">
-                <i class="lni lni-location-arrow-right"></i> <span class="btn-text">Ir a la sala</span>
+                <i class="lni lni-location-arrow-right"></i> <span class="btn-text">{{ 'rooms.card.actions.goToRoom' | translate }}</span>
               </button>
               @if (isRoomCreator()) {
                 <button class="btn btn--danger" (click)="showDeleteModal = true">
-                  <i class="lni lni-trash-3"></i> <span class="btn-text">Borrar</span>
+                  <i class="lni lni-trash-3"></i> <span class="btn-text">{{ 'rooms.card.actions.delete' | translate }}</span>
                 </button>
                 @if (room.reservation.status === 'CONFIRMED') {
                   <button class="btn btn--blockchain" (click)="showBCModal = true">
@@ -69,12 +70,12 @@ import {ToastrService} from 'ngx-toastr';
                 }
               } @else {
                 <button class="btn btn--warning" (click)="showLeaveModal = true">
-                  <i class="lni lni-exit"></i> <span class="btn-text">Salir</span>
+                  <i class="lni lni-exit"></i> <span class="btn-text">{{ 'rooms.card.actions.leave' | translate }}</span>
                 </button>
               }
             } @else {
               <button class="btn btn--success" (click)="showJoinModal = true">
-                <i class="lni lni-enter"></i> <span class="btn-text">Unirse</span>
+                <i class="lni lni-enter"></i> <span class="btn-text">{{ 'rooms.card.actions.join' | translate }}</span>
               </button>
             }
           }
@@ -83,14 +84,14 @@ import {ToastrService} from 'ngx-toastr';
     </div>
     @if (showJoinModal) {
       <app-modal [width]="'400px'" [variant]="'default'" (closeModal)="handleClose()">
-        <div modal-header>Unirte a la sala</div>
-        <div modal-body>¿Quieres unirte a esta sala comunidad por un costo de {{ getAmount() }} créditos?</div>
+        <div modal-header>{{ 'rooms.card.modals.joinTitle' | translate }}</div>
+        <div modal-body>{{ 'rooms.card.modals.joinMsg' | translate:{ amount: getAmount() } }}</div>
         <div modal-footer>
           <button type="submit" class="button-submit" (click)="joinRoom()" [disabled]="isLoadingRequest()" >
             @if (isLoadingRequest()) {
               <span class="spinner-default"></span>
             } @else {
-              Unirse
+              {{ 'rooms.card.actions.join' | translate }}
             }
           </button>
         </div>
@@ -98,14 +99,14 @@ import {ToastrService} from 'ngx-toastr';
     }
     @if (showLeaveModal) {
       <app-modal [width]="'400px'" [variant]="'warning'" (closeModal)="handleClose()">
-        <div modal-header>Confirmar salida</div>
-        <div modal-body>¿Estás seguro que deseas salir de esta sala comunidad? Se reembolsarán tus créditos.</div>
+        <div modal-header>{{ 'rooms.card.modals.leaveTitle' | translate }}</div>
+        <div modal-body>{{ 'rooms.card.modals.leaveMsg' | translate }}</div>
         <div modal-footer>
           <button type="submit" class="button-submit--warning" (click)="leaveRoom()" [disabled]="isLoadingRequest()">
             @if (isLoadingRequest()) {
               <span class="spinner-warning"></span>
             } @else {
-              Salir
+              {{ 'rooms.card.actions.leave' | translate }}
             }
           </button>
         </div>
@@ -113,14 +114,14 @@ import {ToastrService} from 'ngx-toastr';
     }
     @if (showDeleteModal) {
       <app-modal [width]="'400px'" [variant]="'danger'" (closeModal)="handleClose()">
-        <div modal-header>Confirmar eliminación</div>
-        <div modal-body>¿Estás seguro que deseas eliminar este sala comunidad? Se reembolsarán tus créditos.</div>
+        <div modal-header>{{ 'rooms.card.modals.deleteTitle' | translate }}</div>
+        <div modal-body>{{ 'rooms.card.modals.deleteMsg' | translate }}</div>
         <div modal-footer>
           <button type="submit" class="button-submit--danger" (click)="deleteRoom()" [disabled]="isLoadingRequest()">
             @if (isLoadingRequest()) {
               <span class="spinner-danger"></span>
             } @else {
-              Eliminar
+              {{ 'rooms.card.actions.delete' | translate }}
             }
           </button>
         </div>
@@ -128,17 +129,23 @@ import {ToastrService} from 'ngx-toastr';
     }
     @if (showBCModal) {
       <app-modal [width]="'400px'" [variant]="'info'" (closeModal)="handleClose()">
-        <div modal-header>Datos en la blockchain</div>
+        <div modal-header>{{ 'blockchain.data' | translate }}</div>
         <div modal-body>
-          <div class="reservation-card__details">
-            <p><strong>Hash de transacción:</strong><br> <span class="tx-hash">{{ room.reservation.blockchain.txHash }}</span></p>
-            <p><strong>Input Hex:</strong><br> <span class="input-hex">{{ room.reservation.blockchain.inputHex }}</span></p>
-            <p><strong>ID Espacio:</strong> {{ room.reservation.blockchain.spaceId }}</p>
-            <p><strong>ID Usuario:</strong> {{ room.reservation.blockchain.userId }}</p>
-          </div>
+          @if (room.reservation.blockchain === 'Not available') {
+            <div class="reservation-card__details">
+              <p>{{ 'blockchain.loading' | translate }}</p>
+            </div>
+          } @else {
+            <div class="reservation-card__details">
+              <p><strong>{{ 'blockchain.txHash' | translate }}:</strong><br> <span class="tx-hash">{{ room.reservation.blockchain.txHash }}</span></p>
+              <p><strong>{{ 'blockchain.inputHex' | translate }}:</strong><br> <span class="input-hex">{{ room.reservation.blockchain.inputHex }}</span></p>
+              <p><strong>{{ 'blockchain.spaceId' | translate }}:</strong> {{ room.reservation.blockchain.spaceId }}</p>
+              <p><strong>{{ 'blockchain.userId' | translate }}:</strong> {{ room.reservation.blockchain.userId }}</p>
+            </div>
+          }
         </div>
         <div modal-footer>
-          <button class="button-submit--info" (click)="handleClose()">Aceptar</button>
+          <button class="button-submit--info" (click)="handleClose()">{{ 'blockchain.accept' | translate }}</button>
         </div>
       </app-modal>
     }
@@ -152,7 +159,7 @@ import {ToastrService} from 'ngx-toastr';
 export class RoomCardComponent implements OnInit {
   @Input() room!: Room;
   @Input() showStatus: boolean = false;
-  @Output() roomDeleted = new EventEmitter<void>();
+  @Output() roomEvent = new EventEmitter<void>();
 
   protected readonly TimeUtil = TimeUtil;
 
@@ -161,6 +168,7 @@ export class RoomCardComponent implements OnInit {
   private roomService = inject(RoomService);
   private reservationService = inject(ReservationService);
   private toastService = inject(ToastrService);
+  private translate = inject(TranslateService);
 
   currentUser = this.userStore.currentUser;
   isMember = signal<boolean | null>(null);
@@ -215,11 +223,17 @@ export class RoomCardComponent implements OnInit {
         this.handleClose();
         this.roomService.allowAccess(this.room.id);
         this.router.navigate(['/rooms', this.room.id]).then();
-        this.toastService.success('Te has unido a la sala comunidad exitosamente', 'Éxito');
+        this.toastService.success(
+          this.translate.instant('rooms.card.toast.successJoin'),
+          this.translate.instant('toastStatus.success')
+        );
       },
       error: () => {
         this.isLoadingRequest.set(false);
-        this.toastService.error('No se pudo unir a la sala comunidad', 'Error');
+        this.toastService.error(
+          this.translate.instant('rooms.card.toast.errorJoin'),
+          this.translate.instant('toastStatus.error')
+        );
       }
     });
   }
@@ -231,12 +245,19 @@ export class RoomCardComponent implements OnInit {
         this.isLoadingRequest.set(false);
         this.handleClose();
         this.roomService.clearAccess(this.room.id);
-        this.toastService.success('Has salido de la sala comunidad exitosamente', 'Éxito');
+        this.roomEvent.emit();
+        this.toastService.success(
+          this.translate.instant('rooms.card.toast.successLeave'),
+          this.translate.instant('toastStatus.success')
+        );
         this.checkRoomAccess();
       },
       error: () => {
         this.isLoadingRequest.set(true);
-        this.toastService.error('No se pudo salir de la sala comunidad', 'Error');
+        this.toastService.error(
+          this.translate.instant('rooms.card.toast.errorLeave'),
+          this.translate.instant('toastStatus.error')
+        );
       }
     });
   }
@@ -248,12 +269,18 @@ export class RoomCardComponent implements OnInit {
         this.isLoadingRequest.set(false);
         this.handleClose();
         this.checkRoomAccess();
-        this.roomDeleted.emit();
-        this.toastService.success('Sala comunidad eliminada exitosamente', 'Éxito');
+        this.roomEvent.emit();
+        this.toastService.success(
+          this.translate.instant('rooms.card.toast.successDelete'),
+          this.translate.instant('toastStatus.success')
+        );
       },
       error: () => {
         this.isLoadingRequest.set(false);
-        this.toastService.error('No se pudo eliminar la sala comunidad', 'Error');
+        this.toastService.error(
+          this.translate.instant('rooms.card.toast.errorDelete'),
+          this.translate.instant('toastStatus.error')
+        );
       }
     });
   }

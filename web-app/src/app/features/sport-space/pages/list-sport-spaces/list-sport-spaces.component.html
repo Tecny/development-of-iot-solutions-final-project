@@ -1,7 +1,7 @@
 <div class="title-wrapper">
-  <h2 class="section-title">Espacios deportivos</h2>
+  <h2 class="section-title">{{ 'spaces.title' | translate }}</h2>
   @if (showAddSportSpaceButton()) {
-    <button class="add-sport-btn" routerLink="/sport-spaces/create" title="Añadir espacio">
+    <button class="add-sport-btn" routerLink="/sport-spaces/create" title="{{ 'spaces.add' | translate }}">
       <i class="lni lni-plus"></i>
     </button>
   }
@@ -10,11 +10,11 @@
 @if (this.userRole === UserRole.PLAYER) {
   <app-filter
     [config]="[
-    { field: 'sport', type: 'select', label: 'Deporte', options: SPORTS },
-    { field: 'gamemode', type: 'select', label: 'Modo de juego', options: [] },
-    { field: 'price', type: 'number', label: 'Precio máximo' },
-    { field: 'openTime', type: 'time', label: 'Hora de apertura'}
-  ]"
+      { field: 'sport', type: 'select', label: ('spaces.filter.sport' | translate), options: SPORTS },
+      { field: 'gamemode', type: 'select', label: ('spaces.filter.gamemode' | translate), options: [] },
+      { field: 'price', type: 'number', label: ('spaces.filter.price' | translate) },
+      { field: 'openTime', type: 'time', label: ('spaces.filter.openTime' | translate)}
+    ]"
     (filtersChanged)="onFiltersChanged($event)"
   />
 }
@@ -34,12 +34,12 @@
             @if (userRole === UserRole.OWNER) {
               <div class="empty-state">
                 <i class="lni lni-megaphone-1 empty-icon"></i>
-                <p>No tienes espacios deportivos registrados, empieza agregando uno mejorando tu suscripción</p>
+                <p>{{ 'spaces.emptyOwner' | translate }}</p>
               </div>
             } @else {
               <div class="empty-state">
                 <i class="lni lni-eraser-1"></i>
-                <p>No se encontaron espacios deportivos :(</p>
+                <p>{{ 'spaces.emptyPlayer' | translate }}</p>
               </div>
             }
           }
@@ -56,7 +56,7 @@
     } @placeholder {
       <div class="empty-state">
         <i class="lni lni-hourglass placeholder-icon"></i>
-        <p>Preparando carga de espacios deportivos...</p>
+        <p>{{ 'spaces.loading' | translate }}</p>
       </div>
     }
   }

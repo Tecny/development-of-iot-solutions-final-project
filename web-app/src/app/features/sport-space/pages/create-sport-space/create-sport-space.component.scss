@@ -50,6 +50,7 @@
     outline: none;
     transition: border-color 0.2s;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 
     &:focus {
       border-color: var.$green-medium;

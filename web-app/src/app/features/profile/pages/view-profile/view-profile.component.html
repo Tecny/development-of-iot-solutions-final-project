@@ -3,19 +3,19 @@
 <div class="profile-panel">
   <div class="panel-header">
     <div class="avatar-section">
-      <h2>Perfil</h2>
+      <h2>{{ 'profile.title' | translate }}</h2>
       <span class="user-role">
         @if (user) {
-          {{ user.roleType === 'PLAYER' ? 'Jugador' : 'Propietario' }}
+          {{ user.roleType === 'PLAYER' ? ('profile.role.player' | translate) : ('profile.role.owner' | translate) }}
         } @else {
-          Usuario
+          {{ 'profile.role.user' | translate }}
         }
       </span>
       <img src="assets/images/avatar.png" alt="Avatar" class="avatar" />
     </div>
     <div class="tab-buttons tab-buttons--profile">
-      <button [class.active]="activeTab() === 'info'" (click)="setTab('info')">Información</button>
-      <button [class.active]="activeTab() === 'prefs'" (click)="setTab('prefs')">Preferencias</button>
+      <button [class.active]="activeTab() === 'info'" (click)="setTab('info')">{{ 'profile.tabs.info' | translate }}</button>
+      <button [class.active]="activeTab() === 'prefs'" (click)="setTab('prefs')">{{ 'profile.tabs.prefs' | translate }}</button>
     </div>
   </div>
 
@@ -28,20 +28,20 @@
           <!-- Nombre -->
           <div class="profile-field">
             @if (!editingName) {
-              <label>Nombre</label>
+              <label>{{ 'profile.fields.name' | translate }}</label>
               <span>{{ user.name }}</span>
               <button type="button" (click)="editingName = !editingName">
                 <i class="lni lni-pencil-1"></i>
               </button>
             } @else {
               <div class="input-group">
-                <input type="text" formControlName="name" placeholder="Nuevo nombre" />
+                <input type="text" formControlName="name" placeholder="{{ 'profile.placeholders.newName' | translate }}" />
                 @if (profileForm.get('name')?.touched && profileForm.get('name')?.invalid) {
                   <small>
                     @if (profileForm.get('name')?.errors?.['required']) {
-                      El nombre es obligatorio
+                      {{ 'profile.validation.nameRequired' | translate }}
                     } @else if (profileForm.get('name')?.errors?.['minlength']) {
-                      Debe tener mínimo 3 letras
+                      {{ 'profile.validation.nameMin' | translate }}
                     }
                   </small>
                 }
@@ -62,20 +62,20 @@
           <!-- Email -->
           <div class="profile-field">
             @if (!editingEmail) {
-              <label>Email</label>
+              <label>{{ 'profile.fields.email' | translate }}</label>
               <span>{{ user.email }}</span>
               <button type="button" (click)="editingEmail = !editingEmail">
                 <i class="lni lni-pencil-1"></i>
               </button>
             } @else {
               <div class="input-group">
-                <input type="email" formControlName="email" placeholder="Nuevo email" />
+                <input type="email" formControlName="email" placeholder="{{ 'profile.placeholders.newEmail' | translate }}" />
                 @if (profileForm.get('email')?.touched && profileForm.get('email')?.invalid) {
                   <small>
                     @if (profileForm.get('email')?.errors?.['required']) {
-                      El correo electrónico es obligatorio
+                      {{ 'profile.validation.emailRequired' | translate }}
                     } @else if (profileForm.get('email')?.errors?.['invalidEmail']) {
-                      Formato inválido
+                      {{ 'profile.validation.emailInvalid' | translate }}
                     }
                   </small>
                 }
@@ -96,22 +96,22 @@
           <!-- Contraseña -->
           <div class="profile-field">
             @if (!editingPassword) {
-              <label>Contraseña</label>
+              <label>{{ 'profile.fields.password' | translate }}</label>
               <span>********</span>
               <button type="button" (click)="editingPassword = !editingPassword">
                 <i class="lni lni-pencil-1"></i>
               </button>
             } @else {
               <div class="input-group">
-                <input type="password" formControlName="password" placeholder="Nueva contraseña" />
+                <input type="password" formControlName="password" placeholder="{{ 'profile.placeholders.newPassword' | translate }}" />
                 @if (profileForm.get('password')?.touched && profileForm.get('password')?.invalid) {
                   <small>
                     @if (profileForm.get('password')?.errors?.['required']) {
-                      La contraseña es obligatoria
+                      {{ 'profile.validation.passwordRequired' | translate }}
                     } @else if (profileForm.get('password')?.errors?.['minlength']) {
-                      Mínimo 16 caracteres
+                      {{ 'profile.validation.passwordMin' | translate }}
                     } @else {
-                      Debe incluir mayúscula, número y caracter especial
+                      {{ 'profile.validation.passwordPattern' | translate }}
                     }
                   </small>
                 }
@@ -130,7 +130,7 @@
           </div>
 
           <div class="profile-field">
-            <label>Créditos</label>
+            <label>{{ 'profile.fields.credits' | translate }}</label>
             <span>{{ user.credits }}</span>
             @if (user.roleType === 'PLAYER') {
               <button (click)="openRechargeModal()">
@@ -150,21 +150,21 @@
     @if (activeTab() === 'prefs') {
       <div class="preferences">
         <div class="pref-item">
-          <label for="theme">Tema</label>
+          <label for="theme">{{ 'profile.theme.label' | translate }}</label>
           <select id="theme" (change)="onThemeChange($event)">
-            <option [selected]="!isDarkTheme">Claro</option>
-            <option [selected]="isDarkTheme">Oscuro</option>
+            <option [selected]="!isDarkTheme">{{ 'profile.theme.light' | translate }}</option>
+            <option [selected]="isDarkTheme">{{ 'profile.theme.dark' | translate }}</option>
           </select>
         </div>
         <div class="pref-item">
-          <label for="language">Idioma</label>
-          <select id="language">
-            <option>Español</option>
-            <option>Inglés</option>
+          <label for="language">{{ 'profile.language.label' | translate }}</label>
+          <select id="language" [ngModel]="selectedLanguage" (ngModelChange)="onLanguageChange($event)">
+            <option value="es">Español</option>
+            <option value="en">English</option>
           </select>
         </div>
         <div class="prefs-footer">
-          <button (click)="logout()">Cerrar sesión</button>
+          <button (click)="logout()">{{ 'profile.actions.logout' | translate }}</button>
         </div>
       </div>
     }
@@ -173,19 +173,19 @@
 
 @if (showRechargeModal) {
   <app-modal [width]="'400px'" (closeModal)="closeRechargeModal()">
-    <ng-container modal-header>Recargar créditos</ng-container>
+    <ng-container modal-header>{{ 'profile.actions.recharge' | translate }}</ng-container>
     <ng-container modal-body>
       <form [formGroup]="profileForm">
         <div class="form-field">
           <div class="input-icon-wrapper">
-            <input type="number" formControlName="amount" placeholder="Monto a recargar">
+            <input type="number" formControlName="amount" placeholder="{{ 'profile.placeholders.amount' | translate }}">
             <i class="lni lni-paypal icon"></i>
             @if (profileForm.get('amount')?.touched && profileForm.get('amount')?.invalid) {
               @if (profileForm.get('amount')?.errors?.['required']) {
-                <small>El monto es obligatorio</small>
+                <small>{{ 'profile.validation.amountRequired' | translate }}</small>
               }
               @if (profileForm.get('amount')?.errors?.['min']) {
-                <small>El monto debe ser al menos 1</small>
+                <small>{{ 'profile.validation.amountMin' | translate }}</small>
               }
             }
           </div>
@@ -197,7 +197,7 @@
         @if (isLoadingSubmitRequest()) {
           <span class="spinner-default"></span>
         } @else {
-          Aceptar
+          {{ 'profile.actions.accept' | translate }}
         }
       </button>
     </ng-container>

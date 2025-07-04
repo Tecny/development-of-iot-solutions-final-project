@@ -1,10 +1,11 @@
 import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
 import {Subscription} from '../../models/subscription.interface';
 import {SubscriptionService} from '../../services/subscription.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-view-subscription',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './view-subscription.component.html',
   styleUrl: './view-subscription.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush

@@ -13,11 +13,13 @@ import {UserStoreService} from '../../../../core/services/user-store.service';
 import {gamemodeIdToLabelMap} from '../../../../shared/models/sport-space.constants';
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 import {ToastrService} from 'ngx-toastr';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 @Component({
   selector: 'app-sport-space-card',
   imports: [
     RouterLink,
-    ModalComponent
+    ModalComponent,
+    TranslatePipe
   ],
   template: `
     <div class="sportspace-card" [routerLink]="['/sport-spaces', sportSpace.id]">
@@ -26,11 +28,12 @@ import {ToastrService} from 'ngx-toastr';
 
         <div class="sportspace-card__type-badge">
           {{ sportIdToEmojiMap[sportSpace.sportId] }}
-          {{ gamemodeIdToLabelMap[sportSpace.gamemodeId] }}
+          {{ String(gamemodeIdToLabelMap[sportSpace.gamemodeId]) | translate }}
         </div>
 
         @if (isOwner()) {
-          <button class="sportspace-card__dashboard-btn" [routerLink]="['/sport-spaces', sportSpace.id, 'dashboard']" (click)="$event.stopPropagation()">
+          <button class="sportspace-card__dashboard-btn" [routerLink]="['/sport-spaces', sportSpace.id, 'dashboard']"
+                  (click)="$event.stopPropagation()">
             <i class="lni lni-bar-chart-4"></i>
           </button>
           <button class="sportspace-card__delete-btn" (click)="handleOpen(); $event.stopPropagation()">
@@ -39,7 +42,7 @@ import {ToastrService} from 'ngx-toastr';
         }
 
         <div class="sportspace-card__price-tag">
-          {{ sportSpace.price }} créditos
+          {{ sportSpace.price }} {{ 'spaces.card.priceUnit' | translate }}
         </div>
       </div>
 
@@ -53,14 +56,14 @@ import {ToastrService} from 'ngx-toastr';
     </div>
     @if (showModal) {
       <app-modal [width]="'400px'" [variant]="'danger'" (closeModal)="handleClose()">
-        <div modal-header>Confirmar eliminación</div>
-        <div modal-body>¿Estás seguro que deseas eliminar este espacio deportivo?</div>
+        <div modal-header>{{ 'spaces.card.deleteTitle' | translate }}</div>
+        <div modal-body>{{ 'spaces.card.deleteMsg' | translate }}</div>
         <div modal-footer>
           <button class="button-submit--danger" (click)="confirmDelete()" [disabled]="isLoadingRequest()">
             @if (isLoadingRequest()) {
               <span class="spinner-danger"></span>
             } @else {
-              Eliminar
+              {{ 'spaces.card.delete' | translate }}
             }
           </button>
         </div>
@@ -77,6 +80,7 @@ export class SportSpaceCardComponent {
   private sportSpaceService = inject(SportSpaceService);
   private userStore = inject(UserStoreService);
   private toastService = inject(ToastrService);
+  private translate = inject(TranslateService);
 
   sportIdToEmojiMap: { [key: number]: string } = {
     1: '⚽',
@@ -110,15 +114,22 @@ export class SportSpaceCardComponent {
           this.isLoadingRequest.set(false);
           this.handleClose();
           this.spaceDeleted.emit();
-          this.toastService.success('Espacio deportivo eliminado correctamente','Éxito');
+          this.toastService.success(
+            this.translate.instant('spaces.card.deleteSuccess'),
+            this.translate.instant('toastStatus.success')
+          );
         },
         error: () => {
           this.isLoadingRequest.set(false);
-          this.toastService.error('Error al eliminar el espacio deportivo', 'Error');
+          this.toastService.error(
+            this.translate.instant('spaces.card.deleteError'),
+            this.translate.instant('toastStatus.error')
+          );
         }
       });
     }
   }
 
   protected readonly gamemodeIdToLabelMap = gamemodeIdToLabelMap;
+  protected readonly String = String;
 }

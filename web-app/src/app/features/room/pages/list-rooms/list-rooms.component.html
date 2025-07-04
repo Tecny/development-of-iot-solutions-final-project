@@ -1,16 +1,16 @@
 <div class="title-wrapper">
   <h2 class="section-title">
-    Salas comunidad
+    {{ 'rooms.title' | translate }}
   </h2>
 </div>
 
 <app-filter
   [config]="[
-    { field: 'sport', type: 'select', label: 'Deporte', options: SPORTS },
-    { field: 'gamemode', type: 'select', label: 'Modo de juego', options: [] },
-    { field: 'gameday', type: 'date', label: 'Fecha de juego' },
-    { field: 'startTime', type: 'time', label: 'Hora inicio' },
-    { field: 'maxAmount', type: 'number', label: 'Adelanto máximo' }
+    { field: 'sport', type: 'select', label: ('rooms.filter.sport' | translate), options: SPORTS },
+    { field: 'gamemode', type: 'select', label: ('rooms.filter.gamemode' | translate), options: [] },
+    { field: 'gameday', type: 'date', label: ('rooms.filter.gameday' | translate) },
+    { field: 'startTime', type: 'time', label: ('rooms.filter.startTime' | translate) },
+    { field: 'maxAmount', type: 'number', label: ('rooms.filter.maxAmount' | translate) }
   ]"
   (filtersChanged)="onFiltersChanged($event)"
 />
@@ -19,11 +19,11 @@
   @if (rooms(); as room) {
     <div class="cards-grid">
       @for (r of room; track r.id) {
-        <app-room-card [room]="r" [showStatus]="false" (roomDeleted)="loadRooms()"/>
+        <app-room-card [room]="r" [showStatus]="false" (roomEvent)="loadRooms()"/>
       } @empty {
         <div class="empty-state">
           <i class="lni lni-eraser-1"></i>
-          <p>No hay salas comunidad disponibles en este momento :(</p>
+          <p>{{ 'rooms.empty' | translate }}</p>
         </div>
       }
     </div>
@@ -35,7 +35,7 @@
 } @placeholder {
   <div class="empty-state">
     <i class="lni lni-hourglass placeholder-icon"></i>
-    <p>Preparando carga de salas comunidad...</p>
+    <p>{{ 'rooms.loading' | translate }}</p>
   </div>
 } @loading {
   <div class="view-spinner view-spinner--sm">

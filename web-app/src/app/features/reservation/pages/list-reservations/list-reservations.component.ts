@@ -8,13 +8,15 @@ import {RoomCardComponent} from '../../../room/components/room-card/room-card.co
 import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
 import {UserStoreService} from '../../../../core/services/user-store.service';
 import {UserRole} from '../../../../core/models/user.role.enum';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-reservations',
   imports: [
     ReservationCardComponent,
     RoomCardComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    TranslatePipe
   ],
   templateUrl: './list-reservations.component.html',
   styleUrl: './list-reservations.component.scss',

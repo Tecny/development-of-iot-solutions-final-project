@@ -6,12 +6,14 @@ import {RegisterRequest} from '../../models/register.interface';
 import {customEmailValidator} from '../../../shared/validators/forms.validator';
 import {ToastrService} from 'ngx-toastr';
 import {ThemeService} from '../../../shared/services/theme.service';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
   imports: [
     ReactiveFormsModule,
-    RouterLink
+    RouterLink,
+    TranslatePipe
   ],
   templateUrl: './register.component.html',
   styleUrl: './register.component.scss',
@@ -23,6 +25,7 @@ export class RegisterComponent {
   private fb = inject(NonNullableFormBuilder);
   private toastService = inject(ToastrService);
   private themeService = inject(ThemeService);
+  private translate = inject(TranslateService);
 
   isLoadingSubmitRequest = signal(false);
   errorMessage = signal<string | null>(null);
@@ -50,22 +53,28 @@ export class RegisterComponent {
       next: () => {
         this.isLoadingSubmitRequest.set(false);
         this.router.navigate(['/login']).then();
-        this.toastService.success('Registro exitoso', 'Éxito');
+        this.toastService.success(
+          this.translate.instant('register.toast.success'),
+          this.translate.instant('toastStatus.success')
+        );
       },
       error: (error) => {
         this.isLoadingSubmitRequest.set(false);
-        let mensaje = 'Registro fallido';
+        let mensaje = this.translate.instant('register.toast.error');
         if (error.status === 400 && error.error?.message) {
           switch (error.error.message) {
             case 'User with this email already exists':
-              mensaje = 'Ya existe un usuario con este correo electrónico';
+              mensaje = this.translate.instant('register.toast.emailExists');
               break;
             default:
               mensaje = error.error.message;
           }
         }
         this.errorMessage.set(mensaje);
-        this.toastService.error(mensaje, 'Error');
+        this.toastService.error(
+          mensaje,
+          this.translate.instant('toastStatus.error')
+        );
       },
     });
   }

@@ -11,6 +11,7 @@ import {ReservationRequest} from '../../../reservation/models/reservation.interf
 import {UserStoreService} from '../../../../core/services/user-store.service';
 import {ToastrService} from 'ngx-toastr';
 import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
+import {TranslateService, TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sport-space-availability',
@@ -18,7 +19,8 @@ import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.co
     NgClass,
     ModalComponent,
     ReactiveFormsModule,
-    SpinnerComponent
+    SpinnerComponent,
+    TranslatePipe
   ],
   templateUrl: './sport-space-availability.component.html',
   styleUrl: './sport-space-availability.component.scss',
@@ -35,6 +37,7 @@ export class SportSpaceAvailabilityComponent implements OnInit {
   private router = inject(Router);
   private fb = inject(NonNullableFormBuilder);
   private toastService = inject(ToastrService);
+  private translate = inject(TranslateService);
 
   availabilityMap: Record<string, string[]> = {};
   timeSlots: string[] = [];
@@ -142,7 +145,10 @@ export class SportSpaceAvailabilityComponent implements OnInit {
   onSlotClick(gameDay: string, time: string): void {
 
     if(this.currentUser()?.roleType === 'OWNER') {
-      this.toastService.warning('Los propietarios no pueden seleccionar horarios', 'Advertencia');
+      this.toastService.warning(
+        this.translate.instant('spaces.detail.availability.toast.ownerNotAllowed'),
+        this.translate.instant('toastStatus.warning')
+      );
       return;
     }
 
@@ -151,7 +157,10 @@ export class SportSpaceAvailabilityComponent implements OnInit {
     const currentSlots = this.selectedSlots();
 
     if (currentSlots.length > 0 && currentSlots[0].gameDay !== gameDay) {
-      this.toastService.warning('Solo puedes seleccionar horas para el mismo día', 'Advertencia');
+      this.toastService.warning(
+        this.translate.instant('spaces.detail.availability.toast.sameDayOnly'),
+        this.translate.instant('toastStatus.warning')
+      );
       return;
     }
 
@@ -161,7 +170,10 @@ export class SportSpaceAvailabilityComponent implements OnInit {
 
     if (selectedIndex === -1) {
       if (currentSlots.length >= 2) {
-        this.toastService.warning('Solo puedes seleccionar un máximo de 2 horas', 'Advertencia');
+        this.toastService.warning(
+          this.translate.instant('spaces.detail.availability.toast.maxTwoHours'),
+          this.translate.instant('toastStatus.warning')
+        );
         return;
       }
 
@@ -178,7 +190,10 @@ export class SportSpaceAvailabilityComponent implements OnInit {
           newSlots.push({ gameDay: gameDay, startTime: time, endTime: time });
           newSlots.sort((a, b) => this.timeSlots.indexOf(a.startTime) - this.timeSlots.indexOf(b.startTime));
         } else {
-          this.toastService.warning('Las horas seleccionadas deben ser consecutivas', 'Advertencia');
+          this.toastService.warning(
+            this.translate.instant('spaces.detail.availability.toast.consecutiveHours'),
+            this.translate.instant('toastStatus.warning')
+          );
           return;
         }
       }
@@ -190,7 +205,10 @@ export class SportSpaceAvailabilityComponent implements OnInit {
         const currentIndex = this.timeSlots.indexOf(newSlots[i].startTime);
 
         if (currentIndex !== prevIndex + 1) {
-          this.toastService.warning('Las horas restantes deben ser consecutivas', 'Advertencia');
+          this.toastService.warning(
+            this.translate.instant('spaces.detail.availability.toast.remainingConsecutive'),
+            this.translate.instant('toastStatus.warning')
+          );
           return;
         }
       }
@@ -230,7 +248,10 @@ export class SportSpaceAvailabilityComponent implements OnInit {
 
       this.showReservationModal = true;
     } else {
-      this.toastService.warning('Selecciona al menos una hora para reservar', 'Advertencia');
+      this.toastService.warning(
+        this.translate.instant('spaces.detail.availability.toast.selectAtLeastOne'),
+        this.translate.instant('toastStatus.warning')
+      );
     }
   }
 
@@ -256,6 +277,10 @@ export class SportSpaceAvailabilityComponent implements OnInit {
         this.selectedSlots.set([]);
         this.closeReservationModal();
         this.router.navigate(['/reservations']).then();
+        this.toastService.success(
+          this.translate.instant('spaces.detail.availability.toast.reservationCreated'),
+          this.translate.instant('toastStatus.success')
+        );
       },
       error: (err) => {
         this.isLoadingSubmitRequest.set(false);
@@ -263,9 +288,15 @@ export class SportSpaceAvailabilityComponent implements OnInit {
           err.status === 400 &&
           err.error?.message === 'User does not have enough credits to create a reservation'
         ) {
-          this.toastService.error('No tienes créditos suficientes para crear la reserva', 'Error');
+          this.toastService.error(
+            this.translate.instant('spaces.detail.availability.toast.notEnoughCredits'),
+            this.translate.instant('toastStatus.error')
+          );
         } else {
-          this.toastService.error('Error al crear la reserva', 'Error');
+          this.toastService.error(
+            this.translate.instant('spaces.detail.availability.toast.reservationError'),
+            this.translate.instant('toastStatus.error')
+          );
         }
       },
     });

@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-error-payment',
-  imports: [],
+  imports: [TranslatePipe],
   template: `
     <div class="error-payment-container">
       <div class="error-payment-card">
@@ -12,8 +13,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           </path>
         </svg>
         <div class="error-payment-center">
-          <h3 class="error-payment-title">¡Pago fallido!</h3>
-          <p class="error-payment-message">Desafortunadamente, tu pago no pudo ser procesado. Por favor, intenta nuevamente</p>
+          <h3 class="error-payment-title">{{ 'externalPages.errorPayment.title' | translate }}</h3>
+          <p class="error-payment-message">{{ 'externalPages.errorPayment.message' | translate }}</p>
         </div>
       </div>
     </div>

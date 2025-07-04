@@ -8,6 +8,7 @@ import {ModalComponent} from '../../../../shared/components/modal/modal.componen
 import {ToastrService} from 'ngx-toastr';
 import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
 import {ThemeService} from '../../../../shared/services/theme.service';
+import {TranslateModule, TranslateService, TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-view-profile',
@@ -15,7 +16,9 @@ import {ThemeService} from '../../../../shared/services/theme.service';
     ReactiveFormsModule,
     ModalComponent,
     FormsModule,
-    SpinnerComponent
+    SpinnerComponent,
+    TranslateModule,
+    TranslatePipe
   ],
   templateUrl: './view-profile.component.html',
   styleUrl: './view-profile.component.scss',
@@ -28,6 +31,7 @@ export class ViewProfileComponent implements OnInit {
   private fb = inject(FormBuilder);
   private toastService = inject(ToastrService);
   private themeService = inject(ThemeService);
+  private translate = inject(TranslateService);
 
   userInfo = signal<UserProfile | null>(null);
   isLoadingSubmitRequest = signal(false);
@@ -37,10 +41,13 @@ export class ViewProfileComponent implements OnInit {
   editingName = false;
   editingEmail = false;
   editingPassword = false;
-
   showRechargeModal = false;
+  selectedLanguage = 'es';
 
   ngOnInit(): void {
+    const savedLang = localStorage.getItem('language');
+    this.selectedLanguage = savedLang || this.translate.currentLang || 'es';
+    this.translate.use(this.selectedLanguage);
     this.loadUserInfo();
   }
 
@@ -81,7 +88,9 @@ export class ViewProfileComponent implements OnInit {
     }
 
     if (name === currentName) {
-      this.toastService.error('No se puede repetir el nombre ya existente', 'Error');
+      this.translate.get('profile.toast.nameRepeat').subscribe((msg) => {
+        this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+      });
       return;
     }
 
@@ -92,11 +101,15 @@ export class ViewProfileComponent implements OnInit {
         this.editingName = false;
         this.loadUserInfo();
         nameControl.reset();
-        this.toastService.success('Nombre actualizado correctamente', 'Éxito');
+        this.translate.get('profile.toast.nameUpdated').subscribe((msg) => {
+          this.toastService.success(msg, this.translate.instant('toastStatus.success'));
+        });
       },
       error: () => {
         this.isLoadingSubmitRequest.set(false);
-        this.toastService.error('Hubo un error al actualizar el nombre', 'Error');
+        this.translate.get('profile.toast.nameUpdateError').subscribe((msg) => {
+          this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+        });
       }
     });
   }
@@ -112,7 +125,9 @@ export class ViewProfileComponent implements OnInit {
     }
 
     if (email === currentEmail) {
-      this.toastService.error('No se puede repetir el email ya existente', 'Error');
+      this.translate.get('profile.toast.emailRepeat').subscribe((msg) => {
+        this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+      });
       return;
     }
 
@@ -123,11 +138,15 @@ export class ViewProfileComponent implements OnInit {
         this.editingEmail = false;
         this.loadUserInfo();
         emailControl.reset();
-        this.toastService.success('Correo electrónico actualizado correctamente', 'Éxito');
+        this.translate.get('profile.toast.emailUpdated').subscribe((msg) => {
+          this.toastService.success(msg, this.translate.instant('toastStatus.success'));
+        });
       },
       error: () => {
         this.isLoadingSubmitRequest.set(false);
-        this.toastService.error('Hubo un error al actualizar el correo electrónico', 'Error');
+        this.translate.get('profile.toast.emailUpdateError').subscribe((msg) => {
+          this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+        });
       }
     });
   }
@@ -149,11 +168,15 @@ export class ViewProfileComponent implements OnInit {
         this.isLoadingSubmitRequest.set(false);
         this.editingPassword = false;
         passwordControl.reset();
-        this.toastService.success('Contraseña actualizada correctamente', 'Éxito');
+        this.translate.get('profile.toast.passwordUpdated').subscribe((msg) => {
+          this.toastService.success(msg, this.translate.instant('toastStatus.success'));
+        });
       },
       error: () => {
         this.isLoadingSubmitRequest.set(false);
-        this.toastService.error('Hubo un error al actualizar la contraseña', 'Error');
+        this.translate.get('profile.toast.passwordUpdateError').subscribe((msg) => {
+          this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+        });
       }
     });
   }
@@ -198,18 +221,24 @@ export class ViewProfileComponent implements OnInit {
             }
           }, 1000);
         } else {
-          this.toastService.error('Hubo un error al abrir la ventana de pago', 'Error');
+          this.translate.get('profile.toast.paymentOpenError').subscribe((msg) => {
+            this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+          });
         }
       },
       error: () => {
-        this.toastService.error('Hubo un error al abrir la ventana de pago', 'Error');
+        this.translate.get('profile.toast.paymentOpenError').subscribe((msg) => {
+          this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+        });
       }
     });
   }
 
   logout() {
     this.authService.logout();
-    this.toastService.success('Has cerrado sesión correctamente', 'Éxito');
+    this.translate.get('profile.toast.sessionClosed').subscribe((msg) => {
+      this.toastService.success(msg, this.translate.instant('toastStatus.success'));
+    });
   }
 
   toggleTheme(isDark: boolean) {
@@ -222,7 +251,13 @@ export class ViewProfileComponent implements OnInit {
 
   onThemeChange(event: Event) {
     const value = (event.target as HTMLSelectElement).value;
-    this.toggleTheme(value === 'Oscuro');
+    this.toggleTheme(value === 'Oscuro' || value === 'Dark');
+  }
+
+  onLanguageChange(language: string) {
+    this.selectedLanguage = language;
+    localStorage.setItem('language', language);
+    this.translate.use(language);
   }
 }
 

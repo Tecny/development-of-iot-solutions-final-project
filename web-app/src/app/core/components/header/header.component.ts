@@ -3,12 +3,15 @@ import {UserStoreService} from '../../services/user-store.service';
 import {AuthService} from '../../../auth/services/auth.service';
 import {RouterLink, RouterLinkActive} from '@angular/router';
 import {ThemeService} from '../../../shared/services/theme.service';
+import {TranslateModule, TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
   imports: [
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    TranslateModule,
+    TranslatePipe
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'

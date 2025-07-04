@@ -28,6 +28,20 @@
   padding: 1.5rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 
+  .info-panel__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .credit-rate {
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--space-info-panel-strong);
+      margin-left: 1rem;
+      white-space: nowrap;
+    }
+  }
+
   h3 {
     margin-top: 0.5rem;
     font-size: 1.15rem;

@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-correct-payment',
-  imports: [],
+  imports: [TranslatePipe],
   template: `
     <div class="correct-payment-container">
       <div class="correct-payment-card">
@@ -12,8 +13,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
           </path>
         </svg>
         <div class="correct-payment-center">
-          <h3 class="correct-payment-title">¡Pago correcto!</h3>
-          <p class="correct-payment-message">¡Gracias por completar tu pago seguro! Puedes cerrar esta ventana y volver a la aplicación.</p>
+          <h3 class="correct-payment-title">{{ 'externalPages.correctPayment.title' | translate }}</h3>
+          <p class="correct-payment-message">{{ 'externalPages.correctPayment.message' | translate }}</p>
         </div>
       </div>
     </div>

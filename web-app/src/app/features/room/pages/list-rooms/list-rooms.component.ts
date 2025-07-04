@@ -6,13 +6,15 @@ import {FiltersComponent} from '../../../../shared/components/filter/filter.comp
 import {GAMEMODE_OPTIONS, SPORTS} from '../../../../shared/models/sport-space.constants';
 import {PriceUtil, TimeUtil} from '../../../../shared/utils/time.util';
 import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-rooms',
   imports: [
     RoomCardComponent,
     FiltersComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    TranslatePipe
   ],
   templateUrl: './list-rooms.component.html',
   styleUrl: './list-rooms.component.scss',

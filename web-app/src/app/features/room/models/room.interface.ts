@@ -26,7 +26,7 @@ interface Reservation {
   reservationName: string;
   userId: number;
   status: string;
-  blockchain: Blockchain;
+  blockchain: Blockchain | 'Not available';
   sportSpace: SportSpace;
 }
 

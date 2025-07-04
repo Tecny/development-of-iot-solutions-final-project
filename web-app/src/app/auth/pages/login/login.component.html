@@ -11,20 +11,20 @@
   <div class="form-section">
 
     <div class="form-header">
-      <h2>¡Bienvenido!</h2>
+      <h2>{{ 'login.title' | translate }}</h2>
     </div>
 
     <form class="form-body" [formGroup]="loginForm" (ngSubmit)="login()">
       <div class="form-field">
         <div class="input-icon-wrapper">
-          <input type="email" formControlName="email" placeholder="Correo electrónico">
+          <input type="email" formControlName="email" [placeholder]="'login.placeholders.email' | translate">
           <i class="lni lni-envelope-1 icon"></i>
           @if (loginForm.get('email')?.invalid && (loginForm.get('email')?.dirty || loginForm.get('email')?.touched)) {
-            @if (loginForm.get('email')?.errors?.["required"]) {
-              <small>El correo electrónico es obligatorio</small>
+            @if (loginForm.get('email')?.errors?.['required']) {
+              <small>{{ 'login.validation.emailRequired' | translate }}</small>
             }
-            @if (loginForm.get('email')?.errors?.["invalidEmail"]) {
-              <small>Formato de correo electrónico no válido</small>
+            @if (loginForm.get('email')?.errors?.['invalidEmail']) {
+              <small>{{ 'login.validation.emailInvalid' | translate }}</small>
             }
           }
         </div>
@@ -32,58 +32,59 @@
 
       <div class="form-field">
         <div class="input-icon-wrapper">
-          <input type="password" formControlName="password" required placeholder="Contraseña">
+          <input type="password" formControlName="password" required [placeholder]="'login.placeholders.password' | translate">
           <i class="lni lni-locked-2 icon"></i>
           @if (loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty ||loginForm.get('password')?.touched)) {
-            @if (loginForm.get('password')?.errors?.["required"]) {
-              <small>La contraseña es obligatoria</small>
+            @if (loginForm.get('password')?.errors?.['required']) {
+              <small>{{ 'login.validation.passwordRequired' | translate }}</small>
             }
           }
         </div>
       </div>
+
       <button type="submit" class="button-submit" [disabled]="isLoadingSignInRequest()">
         @if (isLoadingSignInRequest()) {
           <span class="spinner-default"></span>
         } @else {
-          Ingresar
+          {{ 'login.buttons.login' | translate }}
         }
       </button>
     </form>
 
     @if (errorMessage()) {
-      <p class="error-message">Credenciales incorrectas</p>
+      <p class="error-message">{{ 'login.error.invalidCredentials' | translate }}</p>
     }
 
     <p>
-      ¿No tienes una cuenta?&nbsp;
-      <a routerLink="/register">Regístrate</a>
+      {{ 'login.noAccount' | translate }}&nbsp;
+      <a routerLink="/register">{{ 'login.buttons.register' | translate }}</a>
     </p>
 
-    <button class="button-link" (click)="openRecoverModal()">¿Olvidaste tu contraseña?</button>
+    <button class="button-link" (click)="openRecoverModal()">{{ 'login.buttons.forgot' | translate }}</button>
   </div>
 </div>
 
 @if (showRecoverModal) {
   <app-modal [width]="'450px'" [variant]="'default'" (closeModal)="closeRecoverModal()">
-    <ng-container modal-header>Recuperar contraseña</ng-container>
+    <ng-container modal-header>{{ 'login.recover.title' | translate }}</ng-container>
     <ng-container modal-body>
       <form [formGroup]="recoverPasswordForm"
             (ngSubmit)="forgotPassword(recoverPasswordForm.get('email')?.getRawValue())"
             id="recoverForm">
         <div class="form-field">
           <div class="input-icon-wrapper">
-            <input id="emailRecover" type="email" formControlName="email" required placeholder="Ingresa tu correo electrónico" />
+            <input id="emailRecover" type="email" formControlName="email" required [placeholder]="'login.placeholders.emailRecover' | translate" />
             <i class="lni lni-envelope-1 icon"></i>
           </div>
           @if (recoverPasswordForm.get('email')?.invalid && (recoverPasswordForm.get('email')?.dirty || recoverPasswordForm.get('email')?.touched)) {
             @if (recoverPasswordForm.get('email')?.errors?.['required']) {
-              <small>El correo electrónico es obligatorio</small>
+              <small>{{ 'login.validation.emailRequired' | translate }}</small>
             } @else if (recoverPasswordForm.get('email')?.errors?.['invalidEmail']) {
-              <small>Formato de correo electrónico no válido</small>
+              <small>{{ 'login.validation.emailInvalid' | translate }}</small>
             }
           }
           @if (correctMessage()) {
-            <p class="correct-message">Se envió una enlace de recuperación al correo</p>
+            <p class="correct-message">{{ 'login.recover.success' | translate }}</p>
           }
         </div>
       </form>
@@ -96,7 +97,7 @@
         @if (isLoadingRecoverRequest()) {
           <span class="spinner-default"></span>
         } @else {
-          Enviar
+          {{ 'login.buttons.send' | translate }}
         }
       </button>
     </ng-container>

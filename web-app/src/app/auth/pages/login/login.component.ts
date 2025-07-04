@@ -7,13 +7,15 @@ import {customEmailValidator} from '../../../shared/validators/forms.validator';
 import {ModalComponent} from '../../../shared/components/modal/modal.component';
 import {ToastrService} from 'ngx-toastr';
 import {ThemeService} from '../../../shared/services/theme.service';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
   imports: [
     ReactiveFormsModule,
     RouterLink,
-    ModalComponent
+    ModalComponent,
+    TranslatePipe
   ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
@@ -26,6 +28,7 @@ export class LoginComponent {
   private fb = inject(NonNullableFormBuilder);
   private toastService = inject(ToastrService);
   private themeService = inject(ThemeService);
+  private translate = inject(TranslateService);
 
   showRecoverModal = false;
 
@@ -55,12 +58,18 @@ export class LoginComponent {
       next: () => {
         this.isLoadingSignInRequest.set(false);
         this.router.navigate(['/home']).then();
-        this.toastService.success('Inicio de sesión correcto', 'Éxito');
+        this.toastService.success(
+          this.translate.instant('login.toast.successLogin'),
+          this.translate.instant('toastStatus.success')
+        );
       },
       error: () => {
         this.isLoadingSignInRequest.set(false);
         this.errorMessage.set(true);
-        this.toastService.error('Inicio de sesión fallido', 'Error');
+        this.toastService.error(
+          this.translate.instant('login.toast.errorLogin'),
+          this.translate.instant('toastStatus.error')
+        );
       }
     });
   }
@@ -85,12 +94,18 @@ export class LoginComponent {
         this.recoverPasswordForm.reset();
         this.showRecoverModal = false;
         this.isLoadingRecoverRequest.set(false);
-        this.toastService.success('Se envió un enlace de recuperación a tu correo', 'Éxito');
+        this.toastService.success(
+          this.translate.instant('login.toast.successRecover'),
+          this.translate.instant('toastStatus.success')
+        );
       },
       error: () => {
         this.isLoadingRecoverRequest.set(false);
         this.errorMessage.set(true);
-        this.toastService.error('Error al enviar el correo de recuperación', 'Error');
+        this.toastService.error(
+          this.translate.instant('login.toast.errorRecover'),
+          this.translate.instant('toastStatus.error')
+        );
       }
     })
   }

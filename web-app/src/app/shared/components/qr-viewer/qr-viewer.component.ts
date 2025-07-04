@@ -10,26 +10,28 @@ import {
 } from '@angular/core';
 import {ModalComponent} from '../modal/modal.component';
 import {QrService} from '../../services/qr.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-qr-viewer',
   imports: [
-    ModalComponent
+    ModalComponent,
+    TranslatePipe
   ],
   template: `
     <app-modal [width]="'400px'" [variant]="'info'" (closeModal)="onClose()">
-      <div modal-header>QR de la reserva</div>
+      <div modal-header>{{ 'qr.title' | translate }}</div>
       <div modal-body>
         @if (qrImageUrl) {
           <div style="display: flex; justify-content: center; align-items: center; height: 300px;">
             <img [src]="qrImageUrl" alt="QR de la reserva" width="250" height="250"/>
           </div>
         } @else {
-          <p>El código QR estará disponible una hora antes del inicio de tu reserva.</p>
+          <p>{{ 'qr.notAvailable' | translate }}</p>
         }
       </div>
       <div modal-footer>
-        <button class="button-submit--info" (click)="onClose()">Aceptar</button>
+        <button class="button-submit--info" (click)="onClose()">{{ 'qr.accept' | translate }}</button>
       </div>
     </app-modal>
   `,

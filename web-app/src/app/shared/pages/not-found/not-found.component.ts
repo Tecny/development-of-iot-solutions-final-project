@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-not-found',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, TranslatePipe],
   template: `
     <div class="not-found-container">
       <div class="not-found-card">
@@ -13,9 +14,9 @@ import { RouterModule } from '@angular/router';
                 d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
         </svg>
         <div class="not-found-center">
-          <h3 class="not-found-title">Página no encontrada</h3>
-          <p class="not-found-message">La página que buscas no existe o fue movida.</p>
-          <a routerLink="/home" class="not-found-btn">Volver al inicio</a>
+          <h3 class="not-found-title">{{ 'externalPages.notFound.title' | translate }}</h3>
+          <p class="not-found-message">{{ 'externalPages.notFound.message' | translate }}</p>
+          <a routerLink="/home" class="not-found-btn">{{ 'externalPages.notFound.button' | translate }}</a>
         </div>
       </div>
     </div>

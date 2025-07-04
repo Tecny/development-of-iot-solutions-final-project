@@ -17,12 +17,14 @@ import * as L from 'leaflet';
 import {environment} from '../../../../../environment/environment';
 import {Location, NgClass} from '@angular/common';
 import {ToastrService} from 'ngx-toastr';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-create-sport-space',
   imports: [
     ReactiveFormsModule,
-    NgClass
+    NgClass,
+    TranslatePipe
   ],
   templateUrl: './create-sport-space.component.html',
   styleUrl: './create-sport-space.component.scss',
@@ -36,6 +38,7 @@ export class CreateSportSpaceComponent implements AfterViewInit {
   private router = inject(Router);
   private cdr = inject(ChangeDetectorRef);
   private toastService = inject(ToastrService);
+  private translate = inject(TranslateService);
 
   private _sportId = signal<number>(1);
   gamemodes = computed(() => this.getGamemodesBySport(this._sportId()));
@@ -148,11 +151,17 @@ export class CreateSportSpaceComponent implements AfterViewInit {
         this.selectedImageFile = null;
         this._sportId.set(1);
         this.router.navigate(['/sport-spaces']).then();
-        this.toastService.success('Espacio deportivo creado correctamente', 'Éxito');
+        this.toastService.success(
+          this.translate.instant('spaces.create.toasts.success'),
+          this.translate.instant('toastStatus.success')
+        );
       },
       error: () => {
         this.isLoadingSubmitRequest.set(false);
-        this.toastService.error('Error al crear el espacio deportivo:', 'Error');
+        this.toastService.error(
+          this.translate.instant('spaces.create.toasts.error'),
+          this.translate.instant('toastStatus.error')
+        );
       }
     });
   }

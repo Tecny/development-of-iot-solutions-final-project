@@ -11,6 +11,7 @@ import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.co
 import {UserRole} from '../../../../core/models/user.role.enum';
 import {TimeUtil} from '../../../../shared/utils/time.util';
 import {ProfileService} from '../../../profile/services/profile.service';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-tickets',
@@ -19,7 +20,8 @@ import {ProfileService} from '../../../profile/services/profile.service';
     ModalComponent,
     ReactiveFormsModule,
     TicketCardComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    TranslatePipe
   ],
   templateUrl: './list-tickets.component.html',
   styleUrl: './list-tickets.component.scss',
@@ -31,6 +33,7 @@ export class ListTicketsComponent implements OnInit {
   private profileService = inject(ProfileService);
   private fb = inject(NonNullableFormBuilder);
   private toastService = inject(ToastrService);
+  private translate = inject(TranslateService);
 
   userRole = this.userStore.getRoleFromToken();
   userCredits = 0;
@@ -137,11 +140,17 @@ export class ListTicketsComponent implements OnInit {
         this.isLoadingSubmitRequest.set(false);
         this.closeTicketModal();
         this.loadTickets();
-        this.toastService.success('Solicitud de transferencia creada exitosamente.', 'Éxito');
+        this.toastService.success(
+          this.translate.instant('tickets.toast.successCreate'),
+          this.translate.instant('toastStatus.success')
+        );
       },
       error: () => {
-        this.toastService.error('Error al crear la solicitud de transferencia.', 'Error');
         this.isLoadingSubmitRequest.set(false);
+        this.toastService.error(
+          this.translate.instant('tickets.toast.errorCreate'),
+          this.translate.instant('toastStatus.error')
+        );
       }
     });
   }

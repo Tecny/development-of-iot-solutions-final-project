@@ -1,28 +1,28 @@
 @let sub = subscriptionInfo();
 
 <div class="title-wrapper">
-  <div class="section-title">Suscripción</div>
+  <div class="section-title">{{ 'subscription.title' | translate }}</div>
 </div>
 
 <div class="pricing-container">
   <div class="pricing-header">
     <p>
-      Mejora la visibilidad y gestión de tus espacios deportivos con los siguientes planes.
+      {{ 'subscription.description' | translate }}
     </p>
     @if (sub?.planType === 'FREE') {
-      <p>Actualmente tienes la suscripción gratuita, que te da un mes de prueba sin costo</p>
+      <p>{{ 'subscription.currentFree' | translate }}</p>
     }
   </div>
 
   <div class="pricing">
     <div class="plan">
-      <h2>BRONCE</h2>
-      <div class="price">S/20.00 al mes</div>
+      <h2>{{ 'subscription.plans.bronze' | translate }}</h2>
+      <div class="price">{{ 'subscription.price.bronze' | translate }}</div>
       <ul class="features">
-        <li><i class="lni lni-check-circle-1"></i> Solo 1 espacio deportivo</li>
-        <li><i class="lni lni-check-circle-1"></i> Personaliza tus espacios deportivos</li>
-        <li><i class="lni lni-check-circle-1"></i> Visibilidad reducida</li>
-        <li><i class="lni lni-check-circle-1"></i> Servicio al cliente 24 horas</li>
+        <li><i class="lni lni-check-circle-1"></i> {{ 'subscription.features.bronze1' | translate }}</li>
+        <li><i class="lni lni-check-circle-1"></i> {{ 'subscription.features.bronze2' | translate }}</li>
+        <li><i class="lni lni-check-circle-1"></i> {{ 'subscription.features.bronze3' | translate }}</li>
+        <li><i class="lni lni-check-circle-1"></i> {{ 'subscription.features.bronze4' | translate }}</li>
       </ul>
       @if (sub) {
         @if (sub.planType === 'FREE') {
@@ -30,26 +30,26 @@
             @if (isLoadingRequest()) {
               <span class="spinner-default"></span>
             } @else {
-              Mejorar a bronce
+              {{ 'subscription.upgrade.bronze' | translate }}
             }
           </button>
         } @else if (sub?.planType === 'BRONZE') {
           <div class="already-subscribed">
-            Ya tienes este plan
+            {{ 'subscription.alreadyBronze' | translate }}
           </div>
         }
       }
     </div>
 
     <div class="plan popular">
-      <span class="popular-badge">Más Popular</span>
-      <h2>ORO</h2>
-      <div class="price">S/55.00 al mes</div>
+      <span class="popular-badge">{{ 'subscription.popular' | translate }}</span>
+      <h2>{{ 'subscription.plans.gold' | translate }}</h2>
+      <div class="price">{{ 'subscription.price.gold' | translate }}</div>
       <ul class="features">
-        <li><i class="lni lni-check-circle-1"></i> Hasta 3 espacios deportivos</li>
-        <li><i class="lni lni-check-circle-1"></i> Personaliza tus espacios deportivos</li>
-        <li><i class="lni lni-check-circle-1"></i> Visibilidad destacada</li>
-        <li><i class="lni lni-check-circle-1"></i> Servicio al cliente 24 horas</li>
+        <li><i class="lni lni-check-circle-1"></i> {{ 'subscription.features.gold1' | translate }}</li>
+        <li><i class="lni lni-check-circle-1"></i> {{ 'subscription.features.gold2' | translate }}</li>
+        <li><i class="lni lni-check-circle-1"></i> {{ 'subscription.features.gold3' | translate }}</li>
+        <li><i class="lni lni-check-circle-1"></i> {{ 'subscription.features.gold4' | translate }}</li>
       </ul>
       @if (sub) {
         @if (sub.planType !== 'GOLD') {
@@ -57,25 +57,25 @@
             @if (isLoadingRequest()) {
               <span class="spinner-default"></span>
             } @else {
-              Mejorar a oro
+              {{ 'subscription.upgrade.gold' | translate }}
             }
           </button>
         } @else {
           <div class="already-subscribed">
-            Ya tienes el mejor plan, ¡disfrútalo! 🎉
+            {{ 'subscription.alreadyGold' | translate }}
           </div>
         }
       }
     </div>
 
     <div class="plan">
-      <h2>PLATA</h2>
-      <div class="price">S/36.00 al mes</div>
+      <h2>{{ 'subscription.plans.silver' | translate }}</h2>
+      <div class="price">{{ 'subscription.price.silver' | translate }}</div>
       <ul class="features">
-        <li><i class="lni lni-check-circle-1"></i> Hasta 2 espacios deportivos</li>
-        <li><i class="lni lni-check-circle-1"></i> Personaliza tus espacios deportivos</li>
-        <li><i class="lni lni-check-circle-1"></i> Visibilidad media</li>
-        <li><i class="lni lni-check-circle-1"></i> Servicio al cliente 24 horas</li>
+        <li><i class="lni lni-check-circle-1"></i> {{ 'subscription.features.silver1' | translate }}</li>
+        <li><i class="lni lni-check-circle-1"></i> {{ 'subscription.features.silver2' | translate }}</li>
+        <li><i class="lni lni-check-circle-1"></i> {{ 'subscription.features.silver3' | translate }}</li>
+        <li><i class="lni lni-check-circle-1"></i> {{ 'subscription.features.silver4' | translate }}</li>
       </ul>
       @if (sub) {
         @if (sub.planType === 'FREE' || sub?.planType === 'BRONZE') {
@@ -83,12 +83,12 @@
             @if (isLoadingRequest()) {
               <span class="spinner-default"></span>
             } @else {
-              Mejorar a bronce
+              {{ 'subscription.upgrade.silver' | translate }}
             }
           </button>
         } @else if (sub?.planType === 'SILVER') {
           <div class="already-subscribed">
-            Ya tienes este plan
+            {{ 'subscription.alreadySilver' | translate }}
           </div>
         }
       }

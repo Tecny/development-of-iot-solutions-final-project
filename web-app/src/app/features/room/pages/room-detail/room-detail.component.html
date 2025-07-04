@@ -2,7 +2,7 @@
   <div class="title-wrapper">
     <button class="button-back" (click)="goBack()">
       <i class="lni lni-arrow-left-circle"></i>
-      <p>Regresar</p>
+      <p>{{ 'common.back' | translate }}</p>
     </button>
     <h2 class="section-title">{{ room()?.reservation?.reservationName }}</h2>
   </div>
@@ -12,13 +12,13 @@
       @if (activeTab() === 'chat') {
         <button (click)="setTab('info')" type="button">
           <i class="lni lni-star-fat"></i>
-          Ir a los detalles
+          {{ 'rooms.detail.tabs.info' | translate }}
         </button>
       }
       @else {
         <button (click)="setTab('chat')" type="button">
           <i class="lni lni-comment-1-text"></i>
-          Ir al chat
+          {{ 'rooms.detail.tabs.chat' | translate }}
         </button>
       }
     </div>

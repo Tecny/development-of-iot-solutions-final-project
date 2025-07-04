@@ -7,7 +7,7 @@
             <table class="availability__table">
               <thead>
               <tr>
-                <th>Fecha</th>
+                <th>{{ 'spaces.detail.availability.date' | translate }}</th>
                 @for (time of timeSlots; track time) {
                   <th>{{ time }}</th>
                 }
@@ -42,10 +42,10 @@
 
         <aside class="availability__legend" aria-label="Leyenda de disponibilidad">
           <div class="availability__legend-item">
-            <span class="availability__legend-box availability__legend-box--available"></span> Disponible
+            <span class="availability__legend-box availability__legend-box--available"></span> {{ 'spaces.detail.availability.legend.available' | translate }}
           </div>
           <div class="availability__legend-item">
-            <span class="availability__legend-box availability__legend-box--unavailable"></span> Ocupado
+            <span class="availability__legend-box availability__legend-box--unavailable"></span> {{ 'spaces.detail.availability.legend.reserved' | translate }}
           </div>
         </aside>
       </div>
@@ -53,17 +53,16 @@
       @if (currentUser()?.roleType === 'PLAYER') {
         <footer class="availability__footer">
           <button (click)="confirmHours()">
-            Confirmar horas
+            {{ 'spaces.detail.availability.actions.confirm' | translate }}
           </button>
           @if (showError) {
-            <small class="availability__error-message">Debes seleccionar al menos un horario antes de confirmar.</small>
+            <small class="availability__error-message">{{ 'spaces.detail.availability.validation.hoursRequired' | translate }}</small>
           }
         </footer>
       }
     } @else {
       <div class="availability__info-message">
-        La disponibilidad semanal de este espacio deportivo ha finalizado.<br>
-        Podrás consultarla nuevamente a partir del lunes a las 07:00 horas.
+        {{ 'spaces.detail.availability.validation.weekRange' | translate }}
       </div>
     }
   } @placeholder {
@@ -74,22 +73,22 @@
 <!-- Modal -->
 @if (showReservationModal) {
   <app-modal [width]="'450px'" (closeModal)="closeReservationModal()">
-    <ng-container modal-header>Confirmar reserva</ng-container>
+    <ng-container modal-header>{{ 'spaces.detail.availability.reservation.title' | translate }}</ng-container>
     <ng-container modal-body>
       <form class="form-body" [formGroup]="reservationForm">
         <div class="form-field">
           <div class="input-icon-wrapper">
-            <input type="text" formControlName="reservationName" placeholder="Nombre de la reserva" required>
+            <input type="text" formControlName="reservationName" placeholder="{{ 'spaces.detail.availability.reservation.placeholders.name' | translate }}" required>
             <i class="lni lni-message-3-text icon"></i>
             @if (reservationForm.get('reservationName')?.touched && reservationForm.get('reservationName')?.invalid) {
               @if (reservationForm.get('reservationName')?.errors?.['required']) {
-                <small>El nombre de la reserva es obligatorio</small>
+                <small>{{ 'spaces.detail.availability.validaiton.nameRequired' | translate }}</small>
               }
               @if (reservationForm.get('reservationName')?.errors?.['minlength']) {
-                <small>Mínimo 5 caracteres</small>
+                <small>M{{ 'spaces.detail.availability.validation.nameMin' | translate }}</small>
               }
               @if (reservationForm.get('reservationName')?.errors?.['maxlength']) {
-                <small>Máximo 25 caracteres</small>
+                <small>{{ 'spaces.detail.availability.validation.nameMax' | translate }}</small>
               }
             }
           </div>
@@ -98,14 +97,14 @@
         <div class="form-field">
           <div class="input-icon-wrapper">
             <select formControlName="type" required>
-              <option value="" disabled selected hidden>Tipo de reserva</option>
-              <option value="PERSONAL">Personal</option>
-              <option value="COMMUNITY">Comunidad</option>
+              <option value="" disabled selected hidden>{{ 'spaces.detail.availability.reservation.placeholders.type' | translate }}</option>
+              <option value="PERSONAL">{{ 'spaces.detail.availability.reservation.types.personal' | translate }}</option>
+              <option value="COMMUNITY">{{ 'spaces.detail.availability.reservation.types.community' | translate }}</option>
             </select>
             <i class="lni lni-gear-1 icon"></i>
             @if (reservationForm.get('type')?.touched && reservationForm.get('type')?.invalid) {
               @if (reservationForm.get('type')?.errors?.['required']) {
-                <small>El tipo de reserva es obligatorio</small>
+                <small>{{ 'spaces.detail.availability.validation.typeRequired' | translate }}</small>
               }
             }
           </div>
@@ -114,19 +113,19 @@
 
       <section class="reservation-summary">
         <div>
-          <strong>Día de juego:</strong><br> {{ TimeUtil.formatDate(selectedGameDay) }}
+          <strong>{{ 'spaces.detail.availability.reservation.summary.playDay' | translate }}:</strong><br> {{ TimeUtil.formatDate(selectedGameDay) }}
         </div>
         <div>
-          <strong>Horario seleccionado:</strong><br> {{ selectedStartTime }} - {{ selectedEndTime }}
+          <strong>{{ 'spaces.detail.availability.reservation.summary.schedule' | translate }}:</strong><br> {{ selectedStartTime }} - {{ selectedEndTime }}
         </div>
         <div>
-          <strong>Costo de la reserva:</strong><br> {{ totalCost() }} créditos
+          <strong>{{ 'spaces.detail.availability.reservation.summary.cost' | translate }}:</strong><br> {{ totalCost() }} {{ 'spaces.detail.availability.reservation.summary.credits' | translate }}
           @switch (reservationType()) {
             @case ('PERSONAL'){
-              <small>(Adelanto del 50%)</small>
+              <small>{{ 'spaces.detail.availability.reservation.summary.indication.personal' | translate }}</small>
             }
             @case ('COMMUNITY') {
-              <small>(Adelanto por persona)</small>
+              <small>{{ 'spaces.detail.availability.reservation.summary.indication.community' | translate }}</small>
             }
           }
         </div>
@@ -138,7 +137,7 @@
         @if (isLoadingSubmitRequest()) {
           <span class="spinner-default"></span>
         } @else {
-          Reservar
+          {{ 'spaces.detail.availability.actions.reserve' | translate }}
         }
       </button>
     </ng-container>

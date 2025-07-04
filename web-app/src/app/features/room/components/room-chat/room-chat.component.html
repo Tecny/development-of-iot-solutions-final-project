@@ -9,7 +9,7 @@
       <div class="timestamp">{{ message.createdAt | date:'shortTime' }}</div>
     </div>
   } @empty {
-    <small>Aún no hay mensajes en el chat</small>
+    <small>{{ 'rooms.detail.chat.empty' | translate }}</small>
   }
 </div>
 
@@ -19,10 +19,10 @@
     [value]="newMessageContent()"
     (input)="newMessageContent.set($any($event.target).value)"
     (keydown.enter)="sendMessage(newMessageContent())"
-    placeholder="Escribe un mensaje..."
+    placeholder="{{ 'rooms.detail.chat.placeholder' | translate }}"
   />
   <button (click)="sendMessage(newMessageContent())">
-    <span>Enviar</span>
+    <span>{{ 'rooms.detail.chat.send' | translate }}</span>
     <i class="lni lni-location-arrow-right"></i>
   </button>
 </div>

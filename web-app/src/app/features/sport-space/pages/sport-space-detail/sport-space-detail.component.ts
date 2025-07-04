@@ -8,13 +8,15 @@ import {
 } from '../../components/sport-space-availability/sport-space-availability.component';
 import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
 import {Location} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sport-space-detail',
   imports: [
     SportSpaceInfoComponent,
     SportSpaceAvailabilityComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    TranslatePipe
   ],
   templateUrl: './sport-space-detail.component.html',
   styleUrl: './sport-space-detail.component.scss',

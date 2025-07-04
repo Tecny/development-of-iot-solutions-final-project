@@ -1,22 +1,22 @@
 <div class="title-wrapper">
   <h2 class="section-title">
     @if (userRole === UserRole.PLAYER) {
-      Mis reservas
+      {{ 'reservations.titles.player' | translate }}
     } @else {
-      Reservas en tus espacios deportivos
+      {{ 'reservations.titles.owner' | translate }}
     }
   </h2>
 </div>
 
 <div class="tab-buttons tab-buttons--reservation">
-  <button [class.active]="activeTab() === 'personal'" (click)="setTab('personal')">Personal</button>
-  <button [class.active]="activeTab() === 'community'" (click)="setTab('community')">Comunidad</button>
+  <button [class.active]="activeTab() === 'personal'" (click)="setTab('personal')">{{ 'reservations.tabs.personal' | translate }}</button>
+  <button [class.active]="activeTab() === 'community'" (click)="setTab('community')">{{ 'reservations.tabs.community' | translate }}</button>
 </div>
 
 @if (activeTab() === 'community' && userRole === UserRole.PLAYER) {
   <div class="sub-tab-buttons">
-    <button [class.active]="activeSubTab() === 'own'" (click)="setSubTab('own')">Creadas por mí</button>
-    <button [class.active]="activeSubTab() === 'join'" (click)="setSubTab('join')">Salas unidas</button>
+    <button [class.active]="activeSubTab() === 'own'" (click)="setSubTab('own')">{{ 'reservations.subTabs.own' | translate }}</button>
+    <button [class.active]="activeSubTab() === 'join'" (click)="setSubTab('join')">{{ 'reservations.subTabs.join' | translate }}</button>
   </div>
 }
 
@@ -30,12 +30,12 @@
           @if (userRole === UserRole.PLAYER) {
             <div class="empty-state">
               <i class="lni lni-megaphone-1 empty-icon"></i>
-              <p>No tienes reservas personales realizadas</p>
+              <p>{{ 'reservations.empty.personalPlayer' | translate }}</p>
             </div>
           } @else if (userRole === UserRole.OWNER) {
             <div class="empty-state">
               <i class="lni lni-megaphone-1 empty-icon"></i>
-              <p>Aún no se han realizado reservas personales en tus espacios deportivos</p>
+              <p>{{ 'reservations.empty.personalOwner' | translate }}</p>
             </div>
           }
         }
@@ -53,7 +53,7 @@
         } @empty {
           <div class="empty-state">
             <i class="lni lni-megaphone-1 empty-icon"></i>
-            <p>Aún no se han creado salas comunidad en tus espacios deportivos</p>
+            <p>{{ 'reservations.empty.communityOwner' | translate }}</p>
           </div>
         }
       </div>
@@ -66,11 +66,11 @@
     @if (ownRooms(); as rooms) {
       <div class="cards-grid">
         @for (room of rooms; track room.id) {
-          <app-room-card [room]="room" [showStatus]="true"/>
+          <app-room-card [room]="room" [showStatus]="true" (roomEvent)="loadOwnRooms()"/>
         } @empty {
           <div class="empty-state">
             <i class="lni lni-megaphone-1 empty-icon"></i>
-            <p>No tienes salas comunidad creadas</p>
+            <p>{{ 'reservations.empty.communityOwn' | translate }}</p>
           </div>
         }
       </div>
@@ -83,11 +83,11 @@
     @if (joinedRooms(); as rooms) {
       <div class="cards-grid">
         @for (room of rooms; track room.id) {
-          <app-room-card [room]="room" [showStatus]="true"/>
+          <app-room-card [room]="room" [showStatus]="true" (roomEvent)="loadJoinedRooms()"/>
         } @empty {
           <div class="empty-state">
             <i class="lni lni-megaphone-1 empty-icon"></i>
-            <p>No te has unido a ninguna sala comunidad</p>
+            <p>{{ 'reservations.empty.communityJoin' | translate }}</p>
           </div>
         }
       </div>
@@ -100,7 +100,7 @@
 } @placeholder {
   <div class="empty-state">
     <i class="lni lni-hourglass placeholder-icon"></i>
-    <p>Preparando carga de reservas...</p>
+    <p>{{ 'reservations.loading' | translate }}</p>
   </div>
 } @loading {
   <div class="view-spinner view-spinner--sm">

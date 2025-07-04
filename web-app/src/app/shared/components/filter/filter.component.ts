@@ -12,11 +12,13 @@ import {
 import {FilterConfig} from '../../models/filter-config.interface';
 import {FormsModule} from '@angular/forms';
 import {GAMEMODE_OPTIONS, getSportIdByValue} from '../../models/sport-space.constants';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-filter',
   imports: [
-    FormsModule
+    FormsModule,
+    TranslatePipe
   ],
   templateUrl: './filter.component.html',
   styleUrl: './filter.component.scss',

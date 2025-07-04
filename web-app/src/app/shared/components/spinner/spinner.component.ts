@@ -1,13 +1,14 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
 import {ThemeService} from '../../services/theme.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-spinner',
   template: `
     <div class="spinner-container" [class.dark-theme]="isDarkTheme">
       <img ngSrc="assets/images/soccer-ball.png" alt="" class="soccer-ball" width="50" height="50" priority/>
-      <p class="loading-text">Cargando...</p>
+      <p class="loading-text">{{ 'common.spinner.loading' | translate}}</p>
     </div>
   `,
   styles: [`
@@ -60,7 +61,8 @@ import {ThemeService} from '../../services/theme.service';
     }
   `],
   imports: [
-    NgOptimizedImage
+    NgOptimizedImage,
+    TranslatePipe
   ],
   changeDetection: ChangeDetectionStrategy.OnPush
 })

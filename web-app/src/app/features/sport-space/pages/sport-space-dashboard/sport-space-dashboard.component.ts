@@ -2,20 +2,21 @@ import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angul
 import {SportSpaceService} from '../../services/sport-space.service';
 import {ActivatedRoute} from '@angular/router';
 import {Location} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sport-space-dashboard',
-  imports: [],
+  imports: [TranslatePipe],
   template: `
     <div class="title-wrapper">
       <button class="button-back" (click)="goBack()">
         <i class="lni lni-arrow-left-circle"></i>
-        <p>Regresar</p>
+        <p>{{ 'common.back' | translate }}</p>
       </button>
-      <h2 class="section-title">Métricas del espacio deportivo</h2>
+      <h2 class="section-title">{{ 'spaces.dashboard.title' | translate }}</h2>
     </div>
     <div class="dashboard-container">
-      <p>Cantidad de visitantes por mes en el año 2025</p>
+      <p>{{ 'spaces.dashboard.visitorsByMonth' | translate:{ year: 2025 } }}</p>
 
       @if (datosMensuales().length > 0) {
         <div class="bar-chart">
@@ -23,12 +24,12 @@ import {Location} from '@angular/common';
             <div class="bar-wrapper">
               <span class="bar-label">{{ dato.cantidad }}</span>
               <div class="bar" [style.height.px]="dato.altura"></div>
-              <span class="label">{{ dato.mes }}</span>
+              <span class="label">{{ 'months.' + dato.mes | translate }}</span>
             </div>
           }
         </div>
       } @else {
-        <p class="no-data">No hay métricas generadas aún.</p>
+        <p class="no-data">{{ 'spaces.dashboard.noData' | translate }}</p>
       }
     </div>
   `,

@@ -1,66 +1,64 @@
 import {ChangeDetectionStrategy, Component, computed, EventEmitter, inject, Input, Output, signal} from '@angular/core';
 import {Ticket} from '../../models/ticket.interface';
-import {NgClass, TitleCasePipe} from '@angular/common';
+import {NgClass} from '@angular/common';
 import {UserStoreService} from "../../../../core/services/user-store.service";
 import {BankTransferService} from "../../services/bank-transfer.service";
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 import {ToastrService} from 'ngx-toastr';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ticket-card',
   imports: [
-    TitleCasePipe,
+    TranslatePipe,
     NgClass,
     ModalComponent
   ],
   template: `
     <div class="ticket-card"
          [ngClass]="{
-            'ticket-card--pending': ticket.status === 'PENDING',
-            'ticket-card--confirmed': ticket.status === 'CONFIRMED',
-            'ticket-card--deferred': ticket.status === 'DEFERRED'
-          }">
+        'ticket-card--pending': ticket.status === 'PENDING',
+        'ticket-card--confirmed': ticket.status === 'CONFIRMED',
+        'ticket-card--deferred': ticket.status === 'DEFERRED'
+      }">
       <div class="ticket-card__header">
-        <p class="ticket-card__status">{{ ticket.status | titlecase }}</p>
-        <h2>Ticket: {{ ticket.ticketNumber }}</h2>
+        <p class="ticket-card__status">{{ 'tickets.card.status.' + ticket.status | translate }}</p>
+        <h2>{{ 'tickets.card.fields.ticketNumber' | translate }}: {{ ticket.ticketNumber }}</h2>
       </div>
       <div class="ticket-card__content">
-        <p>Nombre: {{ ticket.fullName }}</p>
-        <p>Banco: {{ ticket.bankName }}</p>
-        <p>Tipo de transferencia: {{ ticket.transferType }}</p>
-        <p>Número de cuenta: {{ ticket.accountNumber }}</p>
-        <p>Monto: {{ ticket.amount }} créditos</p>
+        <p>{{ 'tickets.card.fields.fullName' | translate }}: {{ ticket.fullName }}</p>
+        <p>{{ 'tickets.card.fields.bankName' | translate }}: {{ ticket.bankName }}</p>
+        <p>{{ 'tickets.card.fields.transferType' | translate }}: {{ ticket.transferType }}</p>
+        <p>{{ 'tickets.card.fields.accountNumber' | translate }}: {{ ticket.accountNumber }}</p>
+        <p>{{ 'tickets.card.fields.amount' | translate }}: {{ ticket.amount }} {{ 'tickets.card.fields.credits' | translate }}</p>
       </div>
       @if (this.currentUser()?.roleType === 'ADMIN') {
         <div class="ticket-card__actions">
-          <div class="ticket-card__actions">
-            @if (canConfirmTicket()) {
-              <button (click)="showConfirmModal = true">
-                <i class="lni lni-check-circle-1"></i>
-                Confirmar
-              </button>
-            }
-            @if (canDeferTicket()) {
-              <button (click)="showDeferModal = true">
-                <i class="lni lni-alarm-1"></i>
-                Diferir
-              </button>
-            }
-          </div>
-
+          @if (canConfirmTicket()) {
+            <button (click)="showConfirmModal = true">
+              <i class="lni lni-check-circle-1"></i>
+              {{ 'tickets.card.actions.confirm' | translate }}
+            </button>
+          }
+          @if (canDeferTicket()) {
+            <button (click)="showDeferModal = true">
+              <i class="lni lni-alarm-1"></i>
+              {{ 'tickets.card.actions.defer' | translate }}
+            </button>
+          }
         </div>
       }
     </div>
     @if (showConfirmModal) {
       <app-modal [width]="'400px'" [variant]="'default'" (closeModal)="handleClose()">
-        <div modal-header>Confirmar ticket</div>
-        <div modal-body>¿Estás seguro de que deseas confirmar este ticket de retiro de créditos?</div>
+        <div modal-header>{{ 'tickets.card.modals.confirmTitle' | translate }}</div>
+        <div modal-body>{{ 'tickets.card.modals.confirmMsg' | translate }}</div>
         <div modal-footer>
           <button type="submit" class="button-submit" (click)="confirmTicket()" [disabled]="isLoadingRequest()" >
             @if (isLoadingRequest()) {
               <span class="spinner-default"></span>
             } @else {
-              Confirmar
+              {{ 'tickets.card.actions.confirm' | translate }}
             }
           </button>
         </div>
@@ -68,14 +66,14 @@ import {ToastrService} from 'ngx-toastr';
     }
     @if (showDeferModal) {
       <app-modal [width]="'400px'" [variant]="'warning'" (closeModal)="handleClose()">
-        <div modal-header>Diferir ticket</div>
-        <div modal-body>¿Estás seguro de que deseas diferir este ticket de retiro de créditos?</div>
+        <div modal-header>{{ 'tickets.card.modals.deferTitle' | translate }}</div>
+        <div modal-body>{{ 'tickets.card.modals.deferMsg' | translate }}</div>
         <div modal-footer>
           <button type="submit" class="button-submit--warning" (click)="deferTicket()" [disabled]="isLoadingRequest()" >
             @if (isLoadingRequest()) {
               <span class="spinner-warning"></span>
             } @else {
-              Confirmar
+              {{ 'tickets.card.actions.confirm' | translate }}
             }
           </button>
         </div>
@@ -93,6 +91,7 @@ export class TicketCardComponent {
   private userStore = inject(UserStoreService);
   private bankTransferService = inject(BankTransferService);
   private toastService = inject(ToastrService);
+  private translate = inject(TranslateService);
 
   currentUser = this.userStore.currentUser;
   isAdmin = computed(() => {
@@ -119,11 +118,17 @@ export class TicketCardComponent {
         next: () => {
           this.isLoadingRequest.set(false);
           this.ticketConfirmed.emit();
-          this.toastService.success('Ticket confirmado exitosamente', 'Éxito');
+          this.toastService.success(
+            this.translate.instant('tickets.card.toast.successConfirm'),
+            this.translate.instant('toastStatus.success')
+          );
         },
         error: () => {
           this.isLoadingRequest.set(false);
-          this.toastService.error('Error al confirmar el ticket', 'Error');
+          this.toastService.error(
+            this.translate.instant('tickets.card.toast.errorConfirm'),
+            this.translate.instant('toastStatus.error')
+          );
         }
       });
     } else {
@@ -138,11 +143,17 @@ export class TicketCardComponent {
         next: () => {
           this.isLoadingRequest.set(false);
           this.ticketDeferred.emit();
-          this.toastService.success('Ticket diferido exitosamente', 'Éxito');
+          this.toastService.success(
+            this.translate.instant('tickets.card.toast.successDefer'),
+            this.translate.instant('toastStatus.success')
+          );
         },
         error: () => {
           this.isLoadingRequest.set(false);
-          this.toastService.error('Error al diferir el ticket', 'Error');
+          this.toastService.error(
+            this.translate.instant('tickets.card.toast.errorDefer'),
+            this.translate.instant('toastStatus.error')
+          );
         }
       });
     } else {

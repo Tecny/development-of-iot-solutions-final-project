@@ -1,55 +1,55 @@
 <div class="home">
   <div class="title-wrapper">
-    <h2 class="section-title">Bienvenido a la plataforma</h2>
+    <h2 class="section-title">{{ 'home.welcomeTitle' | translate }}</h2>
   </div>
   <div class="home__welcome">
-    <p>¡Explora nuestra plataforma y descubre todo lo que tenemos para ofrecerte!</p>
+    <p>{{ 'home.welcomeMsg' | translate }}</p>
   </div>
 
   <div class="home__features">
     @if (userRole === UserRole.PLAYER || userRole === UserRole.OWNER) {
       <div class="feature">
-        <h2>Espacios deportivos</h2>
+        <h2>{{ 'home.features.spacesTitle' | translate }}</h2>
         @if (userRole === UserRole.PLAYER) {
-          <p>Explora la amplia variedad de espacios deportivos y reserva al instante. ¡Tu próximo partido te espera!</p>
+          <p>{{ 'home.features.spacesPlayer' | translate }}</p>
         } @else {
-          <p>Administra y publica tus espacios deportivos para que los jugadores puedan reservarlos fácilmente.</p>
+          <p>{{ 'home.features.spacesOwner' | translate }}</p>
         }
-        <a routerLink="/sport-spaces" class="home__cta">Ir a espacios deportivos</a>
+        <a routerLink="/sport-spaces" class="home__cta">{{ 'home.features.spacesCta' | translate }}</a>
       </div>
     }
 
     @if (userRole === UserRole.PLAYER) {
       <div class="feature">
-        <h2>Salas comunidad</h2>
-        <p>Únete a partidas y reservas de la comunidad, conoce nuevos compañeros y potencia tu vida deportiva.</p>
-        <a routerLink="/rooms" class="home__cta">Ir a salas comunidad</a>
+        <h2>{{ 'home.features.roomsTitle' | translate }}</h2>
+        <p>{{ 'home.features.roomsMsg' | translate }}</p>
+        <a routerLink="/rooms" class="home__cta">{{ 'home.features.roomsCta' | translate }}</a>
       </div>
     }
 
     @if (userRole === UserRole.PLAYER || userRole === UserRole.OWNER) {
       <div class="feature">
         @if (userRole === UserRole.PLAYER) {
-          <h2>Tus reservas</h2>
-          <p>Consulta tus horarios, modifica tus planes y prepárate para la acción. Tus próximos partidos te esperan.</p>
+          <h2>{{ 'home.features.reservationsPlayerTitle' | translate }}</h2>
+          <p>{{ 'home.features.reservationsPlayerMsg' | translate }}</p>
         } @else {
-          <h2>Reservas en tus espacios</h2>
-          <p>Revisa y gestiona las reservas realizadas en tus espacios deportivos.</p>
+          <h2>{{ 'home.features.reservationsOwnerTitle' | translate }}</h2>
+          <p>{{ 'home.features.reservationsOwnerMsg' | translate }}</p>
         }
-        <a routerLink="/reservations" class="home__cta">Ir a mis reservas</a>
+        <a routerLink="/reservations" class="home__cta">{{ 'home.features.reservationsCta' | translate }}</a>
       </div>
     }
 
     @if (userRole === UserRole.OWNER || userRole === UserRole.ADMIN) {
       <div class="feature">
         @if (userRole === UserRole.OWNER) {
-          <h2>Tus tickets de retiro</h2>
-          <p>Crea y gestiona tus tickets de retiro de créditos para obtener tus ganancias.</p>
+          <h2>{{ 'home.features.withdrawOwnerTitle' | translate }}</h2>
+          <p>{{ 'home.features.withdrawOwnerMsg' | translate }}</p>
         } @else {
-          <h2>Tickets de retiro</h2>
-          <p>Administra y aprueba los tickets de retiro de créditos pendientes de los propietarios.</p>
+          <h2>{{ 'home.features.withdrawAdminTitle' | translate }}</h2>
+          <p>{{ 'home.features.withdrawAdminMsg' | translate }}</p>
         }
-        <a routerLink="/bank-transfer" class="home__cta">Ir a tickets de retiro</a>
+        <a routerLink="/bank-transfer" class="home__cta">{{ 'home.features.withdrawCta' | translate }}</a>
       </div>
     }
   </div>

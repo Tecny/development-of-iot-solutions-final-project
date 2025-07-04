@@ -1,6 +1,6 @@
 <button class="button-back" (click)="goBack()">
   <i class="lni lni-arrow-left-circle"></i>
-  Regresar
+  {{ 'common.back' | translate }}
 </button>
 @if (!isLoading() && sportSpace()) {
   <div class="sport-space-container">
@@ -12,8 +12,8 @@
     <div class="details-page">
 
       <div class="tab-buttons">
-        <button [class.active]="activeTab() === 'availability'" (click)="setTab('availability')">Reservar</button>
-        <button [class.active]="activeTab() === 'info'" (click)="setTab('info')">Información</button>
+        <button [class.active]="activeTab() === 'availability'" (click)="setTab('availability')">{{ 'spaces.detail.tabs.reservation' | translate }}</button>
+        <button [class.active]="activeTab() === 'info'" (click)="setTab('info')">{{ 'spaces.detail.tabs.info' | translate }}</button>
       </div>
 
       <div class="tab-content">

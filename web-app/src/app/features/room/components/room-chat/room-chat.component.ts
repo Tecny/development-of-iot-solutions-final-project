@@ -5,11 +5,13 @@ import {Message} from '../../models/message.interface';
 import {Subscription} from 'rxjs';
 import {UserStoreService} from '../../../../core/services/user-store.service';
 import {DatePipe} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-room-chat',
   imports: [
-    DatePipe
+    DatePipe,
+    TranslatePipe
   ],
   templateUrl: './room-chat.component.html',
   styleUrl: './room-chat.component.scss',

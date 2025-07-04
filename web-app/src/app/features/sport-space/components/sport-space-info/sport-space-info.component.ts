@@ -5,10 +5,11 @@ import {
   gamemodeIdToLabelMap
 } from '../../../../shared/models/sport-space.constants';
 import {environment} from '../../../../../environment/environment';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-sport-space-info',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './sport-space-info.component.html',
   styleUrl: './sport-space-info.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -48,4 +49,5 @@ export class SportSpaceInfoComponent implements OnInit {
   }
 
   protected readonly gamemodeIdToLabelMap = gamemodeIdToLabelMap;
+  protected readonly String = String;
 }

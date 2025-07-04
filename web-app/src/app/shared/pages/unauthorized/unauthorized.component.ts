@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-unauthorized',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, TranslatePipe],
   template: `
     <div class="unauthorized-container">
       <div class="unauthorized-card">
@@ -13,9 +14,9 @@ import { RouterModule } from '@angular/router';
                 d="M12 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm6-7V8a6 6 0 1 0-12 0v2a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7a2 2 0 0 0-2-2zm-8-2a4 4 0 1 1 8 0v2H6V8zm10 11H6v-7h12v7z"/>
         </svg>
         <div class="unauthorized-center">
-          <h3 class="unauthorized-title">Acceso no autorizado</h3>
-          <p class="unauthorized-message">No tienes permisos para ver esta página.</p>
-          <a routerLink="/home" class="unauthorized-btn">Volver al inicio</a>
+          <h3 class="unauthorized-title">{{ 'externalPages.unauthorized.title' | translate }}</h3>
+          <p class="unauthorized-message">{{ 'externalPages.unauthorized.message' | translate }}</p>
+          <a routerLink="/home" class="unauthorized-btn">{{ 'externalPages.unauthorized.button' | translate }}</a>
         </div>
       </div>
     </div>

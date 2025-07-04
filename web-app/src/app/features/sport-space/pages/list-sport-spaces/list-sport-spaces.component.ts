@@ -21,6 +21,7 @@ import {environment} from '../../../../../environment/environment';
 import * as L from 'leaflet';
 import {NgClass} from '@angular/common';
 import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-sport-spaces',
@@ -29,7 +30,8 @@ import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.co
     RouterLink,
     FiltersComponent,
     NgClass,
-    SpinnerComponent
+    SpinnerComponent,
+    TranslatePipe
   ],
   templateUrl: './list-sport-spaces.component.html',
   styleUrl: './list-sport-spaces.component.scss',
