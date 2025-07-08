@@ -199,11 +199,11 @@
 
 <div style="page-break-before: always;"></div>
 
-### Capitulos 
+### Capítulos 
 
   [Capitulo I - Introduction](#i-introduccion) 
   - 1.1. [Startup Profile](#11-startup-profile) 
-    - 1.1.1. [Descripcion de la Startup](#111-descripcion-de-la-startup) 
+    - 1.1.1. [Descripción de la Startup](#111-descripcion-de-la-startup) 
     - 1.1.2. [Perfiles de integrantes del grupo](#112-perfiles-de-integrantes-del-grupo)
   - 1.2. [Solution Profile](#12-solution-profile)
     - 1.2.1. [Antecedentes y problemática](#121-antecedentes-y-problematica)
@@ -671,7 +671,7 @@ Además, la plataforma integra una solución IoT que optimiza la seguridad y la 
 w
   - Validación de reservas mediante código QR: Cada reserva genera un código QR único que los usuarios deben escanear al llegar al espacio deportivo mediante un lector QR instalado en el lugar. Este dispositivo solo valida la reserva activa, sin abrir puertas ni controlar accesos físicos, lo cual sigue siendo responsabilidad del personal del establecimiento. Esta validación permite llevar un registro digital preciso de los accesos, fortaleciendo la seguridad.
 
-  - Control de aforo en tiempo real: Gracias a sensores instalados en las puertas de cada estableciiento, se monitorea el ingreso y salida de personas, permitiendo llevar un conteo dinámico del aforo. Esta información es visible tanto de forma general como detallada dentro de la plataforma, brindando a los usuarios propietarios una vista clara de la ocupación del lugar antes de asistir o reservar.
+  - Control de aforo en tiempo real: Gracias a sensores instalados en las puertas de cada establecimiento, se monitorea el ingreso y salida de personas, permitiendo llevar un conteo dinámico del aforo. Esta información es visible tanto de forma general como detallada dentro de la plataforma, brindando a los usuarios propietarios una vista clara de la ocupación del lugar antes de asistir o reservar.
 
 Con su interfaz intuitiva y la incorporación de estas soluciones tecnológicas, D'Taquito simplifica la organización de actividades deportivas, elimina las tediosas coordinaciones externas, ahorra tiempo valioso y, lo más importante, ofrece una experiencia segura y fluida para todos los usuarios, permitiéndoles enfocarse en la pasión por el deporte y la comunidad que lo comparte.
 
@@ -804,12 +804,12 @@ Lo sabremos cuando dispongamos de datos precisos sobre la cantidad total de visi
 
 ## 2.1. Competidores
 
-### 2.1.1. Analisis competitivo
+### 2.1.1. Análisis competitivo
 
-| Competidores             | D'Taquito              | MiCancha              | ¿Donde juego?              | AlquilaTuCancha          |
+| Competidores             | D'Taquito              | MiCancha              | ¿Dónde juego?              | AlquilaTuCancha          |
 |-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|-------------------------------------|
 | Logos | <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//logo.jpg" alt="UPC">    | <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//logo2.jpg" alt="UPC">    | <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//logo3.png" alt="UPC">    | <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//logo4.png" alt="UPC">    |
-| Overview | D'Taquito es una plataforma diseñada para facilitar la reserva de canchas de fútbol y mesas de billar en la región de Lima Metropolitana. Permite a los usuarios encontrar y reservar, ofreciendo una amplia selección de opciones en diferentes ubicaciones. La aplicación proporciona información detallada sobre cada cancha y mesa, incluyendo fotos e instalaciones, y garantiza transacciones seguras | MiCancha es una aplicación que facilita la reserva de canchas deportivas. Con MiCancha, puedes hacer tu reserva en cualquier momento y en cualquier lugar. Esta plataforma digital elimina la necesidad de llamar para reservar tu cancha, ofreciendo una forma más fácil y rápida de reservar. | ¿Donde juego?, es una aplicacion que facilita al usuario a poder reservar espacios deportivos de manera efectiva y rapida, quitando toda la parte tediosa de recurrir al local antes del evento, esto facilita que la reserva se realize de manera remota.| AlquilaTuCancha ofrece una plataforma de gestión para centros deportivos en América Latina, con el propósito de digitalizar y optimizar los procesos burocráticos relacionados con la renta de estos establecimientos. Permite a los usuarios explorar y reservar canchas disponibles en tiempo real en su ciudad. Además, genera ingresos mediante el cobro de una tarifa mensual.|
+| Overview | D'Taquito es una plataforma diseñada para facilitar la reserva de canchas de fútbol y mesas de billar en la región de Lima Metropolitana. Permite a los usuarios encontrar y reservar, ofreciendo una amplia selección de opciones en diferentes ubicaciones. La aplicación proporciona información detallada sobre cada cancha y mesa, incluyendo fotos e instalaciones, y garantiza transacciones seguras | MiCancha es una aplicación que facilita la reserva de canchas deportivas. Con MiCancha, puedes hacer tu reserva en cualquier momento y en cualquier lugar. Esta plataforma digital elimina la necesidad de llamar para reservar tu cancha, ofreciendo una forma más fácil y rápida de reservar. | ¿Dónde juego?, es una aplicacion que facilita al usuario a poder reservar espacios deportivos de manera efectiva y rapida, quitando toda la parte tediosa de recurrir al local antes del evento, esto facilita que la reserva se realize de manera remota.| AlquilaTuCancha ofrece una plataforma de gestión para centros deportivos en América Latina, con el propósito de digitalizar y optimizar los procesos burocráticos relacionados con la renta de estos establecimientos. Permite a los usuarios explorar y reservar canchas disponibles en tiempo real en su ciudad. Además, genera ingresos mediante el cobro de una tarifa mensual.|
 | Ventaja competitiva | D'Taquito ofrece una ventaja competitiva al simplificar la reserva de canchas deportivas y mesas de billar. D'Taquito destaca por su plataforma integral y conveniente, permitiendo a los usuarios encontrar y reservar canchas y mesas con facilidad y seguridad desde cualquier lugar con conexión a internet. |Mientras tanto, MiCancha ofrece una solución rápida y sencilla al eliminar la necesidad de llamar para reservar, lo que ahorra tiempo y esfuerzo a los usuarios.| ¿Dónde Juego? te ofrece un sistema innovador para estar más actualizado que nunca. A través de nuestra plataforma, puedes navegar por las canchas, ver sus galería de imágenes, turnos disponibles y reservar rápidamente, sin pérdidas de tiempo.| La plataforma permite a los usuarios verificar y reservar canchas en tiempo real, con un proceso automatizado que asegura respuestas inmediatas las 24 horas del día. Esto no solo beneficia a los usuarios, sino que también incrementa los ingresos de los clubes al maximizar la ocupación de sus instalaciones.|
 | Mercado objetivo | El mercado objetivo son personas que juegan futbol y billar. Se compone principalmente de hombres con edades comprendidas entre los 15 y 45 años, pertenecientes a niveles socioeconómicos medios y medio-altos. Residen en Lima, Perú, específicamente en el área metropolitana de la ciudad. Estos individuos tienen un fuerte interés en el fútbol y en el billar, tanto como jugadores activos como espectadores entusiastas del deporte. | Esta aplicación está dirigida a personas que buscan una forma fácil y rápida de reservar canchas deportivas. Su mercado objetivo puede incluir a deportistas aficionados, equipos deportivos y organizadores de eventos deportivos que necesitan una forma conveniente de reservar canchas. La aplicación puede ser especialmente útil para personas que viven en áreas urbanas donde la demanda de canchas deportivas puede ser alta. | Al igual que MiCancha, Se dirige a individuos y grupos que buscan una forma fácil de encontrar y reservar canchas deportivas. Esto podría incluir a jugadores individuales, equipos deportivos, entrenadores y organizadores de eventos deportivos.| Alquila tu Cancha brinda una solución integral para dos grupos clave: en primer lugar, ayuda a los propietarios de instalaciones deportivas a simplificar y modernizar sus operaciones, eliminando la burocracia asociada con la gestión de alquileres. Por otro lado, ofrece a los deportistas aficionados la comodidad de encontrar y reservar fácilmente canchas para una variedad de deportes, desde fútbol y pádel hasta tenis y básquetbol, de manera rápida y conveniente.|
 | Estrategias de marketing |La estrategia de marketing se enfoca en redes sociales, influencers, programas de referidos y SEO para impulsar la aplicación. Utiliza contenido relevante y anuncios dirigidos en plataformas como Facebook, Instagram y Twitter, colabora con influencers locales para aumentar la visibilidad, implementa programas de referidos para fomentar el crecimiento orgánico y se centra en la optimización para motores de búsqueda para mejorar la visibilidad en línea.| Suele utilizar estrategias como el marketing en redes sociales, el marketing de contenidos, la optimización para motores de búsqueda (SEO), y las asociaciones con influencers o micro-influencers. | Esta aplicación Muestra que su estrategia de marketing podría incluir la promoción de su facilidad de uso, la disponibilidad 24/7, y la capacidad de gestionar todo desde un dispositivo móvil. También parece que se enfocan en proporcionar una variedad de funcionalidades útiles para los propietarios de complejos deportivos, como la gestión de cajas, el registro de operaciones, y la promoción del complejo.| La estrategia de marketing se enfoca en digitalizar y optimizar los procesos de alquiler de establecimientos deportivos, con presencia en varios países de América Latina. Ofrecen características útiles para propietarios, como gestión de agendas, disponibilidad en tiempo real y estadísticas para decisiones informadas.|
@@ -903,7 +903,7 @@ Entrevista N°1:
 - **Sexo:** Masculino
 - **Edad:** 23 años
 - **Distrito:** Santiago de Surco
-- **Duracion de la entrevista:** 6:00 minutos
+- **Duración de la entrevista:** 6:00 minutos
 - **Link:** https://www.youtube.com/watch?v=kszWqAHkT_g 
 - **Resumen:** Rafael es un estudiante universitario de Ingeniería de Software. Actualmente trabaja de lunes a viernes, y durante los fines de semana suele dedicar tiempo a jugar billar, una de sus actividades recreativas favoritas.
 	Comenta que organizar partidas le resulta complicado, ya que utiliza WhatsApp para coordinar con otras personas, pero no siempre encuentra jugadores disponibles. Rafael reserva mesas de billar aproximadamente cinco veces al mes, y valora especialmente la calidad y la disponibilidad del espacio, aspectos que considera fundamentales para garantizar la comodidad tanto para él como para sus amigos.	Durante la entrevista, manifestó interés en contar con una aplicación que le facilite la búsqueda de personas disponibles para jugar. Le gustaría que esta app permitiera realizar reservas de manera sencilla y que incluyera funciones como chat en tiempo real y notificaciones automáticas, que le recuerden sus partidas programadas. Por motivos de conveniencia, Rafael prefiere una versión móvil de la aplicación, ya que le resulta más accesible y práctica para su estilo de vida.
@@ -1746,7 +1746,7 @@ Este diagrama muestra el panorama general del sistema, destacando las principale
 
 #### 4.1.6.2. Software Architecture Context Level Diagrams
 
-Este diagrama desglosa el contexto a un nivel más detallado, mostrando las interacciones entre los usuarios y el sistema en términos de roles y permisos. Aquí, tanto los Usuarios como los Administradores tienen acceso al Sistema de Gestión Empresarial, pero interactúan de manera diferente, con los usuarios accediendo a características específicas como pagos a través de la API de PayPal y recuperación de contraseña a tráves de la API de Gmail. 
+Este diagrama desglosa el contexto a un nivel más detallado, mostrando las interacciones entre los usuarios y el sistema en términos de roles y permisos. Aquí, tanto los Usuarios como los Administradores tienen acceso al Sistema de Gestión Empresarial, pero interactúan de manera diferente, con los usuarios accediendo a características específicas como pagos a través de la API de PayPal y recuperación de contraseña a través de la API de Gmail. 
 
 <p align="center">
   <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//context-diagram.jpg" alt="UPC">
@@ -1754,7 +1754,7 @@ Este diagrama desglosa el contexto a un nivel más detallado, mostrando las inte
 
 #### 4.1.6.3. Software Architecture Container Level Diagrams
 
-Aqui especificamos los contenedores de software que soportan la arquitectura, como la Aplicación Web (Web App), la Aplicación Móvil (Mobile App), el lado del servidor (Backend) y los Dispositivos IoT Gestionados (Managed IoT Devices). Aquí también se destacan las conexiones los sistemas externos, con lo que proporciona un mapa claro de cómo los distintos módulos del sistema se comunican entre sí y con componentes externos.
+Aquí especificamos los contenedores de software que soportan la arquitectura, como la Aplicación Web (Web App), la Aplicación Móvil (Mobile App), el lado del servidor (Backend) y los Dispositivos IoT Gestionados (Managed IoT Devices). Aquí también se destacan las conexiones los sistemas externos, con lo que proporciona un mapa claro de cómo los distintos módulos del sistema se comunican entre sí y con componentes externos.
 
 <p align="center">
   <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//container-diagram1.png" alt="UPC">
@@ -2448,7 +2448,7 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 
 ###### 4.2.3.1.1.1. Aggregates
 
-- Subscription: La clase Subscription representa una entidad agregada (aggregate) del dominio de suscripcion en el backend del sistema D'Taquito. Actúa como el punto central para gestionar toda la información relacionada a una suscripcion.
+- Subscription: La clase Subscription representa una entidad agregada (aggregate) del dominio de suscripción en el backend del sistema D'Taquito. Actúa como el punto central para gestionar toda la información relacionada a una suscripción.
 
   Contiene los siguientes elementos principales:
 
@@ -2577,19 +2577,19 @@ Aquí se detalla la arquitectura del software a nivel de código, presentando la
 
 - GetSubscriptionsByIdQuery
 
-  - Propósito: Este record es una consulta (query) que se utiliza para obtener una suscripción específica a partir de su ID. Es una estructura de datos inmutable que contiene los detalles necesarios para realizar una búsqueda en la base de datos.
+  - Propósito: Este récord es una consulta (query) que se utiliza para obtener una suscripción específica a partir de su ID. Es una estructura de datos inmutable que contiene los detalles necesarios para realizar una búsqueda en la base de datos.
 
   - Atributos:
 
     - Long id: El ID de la suscripción que se quiere obtener.
 
-  - Constructor: El constructor del record es implícito, pero incluye una validación:
+  - Constructor: El constructor del récord es implícito, pero incluye una validación:
 
     - Si el id es null, se lanza una excepción IllegalArgumentException con el mensaje "Id is required". Esto garantiza que siempre se proporciona un ID válido para la consulta.
 
   - Métodos:
 
-    - El record no necesita métodos adicionales para acceder al id, ya que el record de Java proporciona automáticamente un getter para los atributos.
+    - El récord no necesita métodos adicionales para acceder al id, ya que el récord de Java proporciona automáticamente un getter para los atributos.
 
 ###### 4.2.3.1.1.6. Value Objects
 
@@ -2828,7 +2828,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - SportSpace: Representa un espacio deportivo, gestionando información como el nombre, deporte, imagen, precio, dirección, horarios, y el número de jugadores permitidos según el modo de juego. Además, valida que los datos de precios y jugadores sean correctos conforme al deporte y modo de juego seleccionados
 
-  - Metodos:
+  - Métodos:
 
     - SportSpaces(CreateSportSpacesCommand command, User user, Sport sport): Constructor que inicializa un nuevo espacio deportivo con los datos del comando, el usuario propietario y el deporte asociado.
 
@@ -2840,13 +2840,13 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - CreateSportSpacesCommand: Esta clase representa un comando para crear un nuevo espacio deportivo. Se asegura de que todos los campos necesarios (nombre, deporte, imagen, precio, distrito, dirección, descripción, horarios, y modo de juego) estén presentes y correctamente definidos. Si algún campo requerido está vacío o nulo, lanza una excepción IllegalArgumentException.
 
-  - Metodo: 
+  - Método: 
     
     - CreateSportSpacesCommand: Inicializa el comando con los parámetros necesarios para crear un nuevo espacio deportivo. Verifica que todos los campos obligatorios (nombre, deporte, imagen, etc.) no estén vacíos ni nulos. Si alguna propiedad está incorrecta, lanza una excepción de tipo IllegalArgumentException.
 
 - SeedSportTypeCommand: Clase vacía que se usa para la inicialización o "semilla" de los tipos de deporte en el sistema. Es un comando sin lógica propia, usado para agregar datos iniciales de tipos de deporte.
 
-  - Metodo: 
+  - Método: 
     
     - SeedSportTypeCommand: Es un comando sin campos ni lógica, utilizado para algún proceso de inicialización o carga de datos para tipos de deportes en el sistema.
 
@@ -2854,9 +2854,9 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - Sport: Representa un deporte específico dentro del sistema. Está asociada con el tipo de deporte (por ejemplo, fútbol, billar) a través de un valor enumerado SportTypes. Esta clase está diseñada para ser persistida en la base de datos y usa JPA para la gestión de su estado.
 
-  - Metodos: 
+  - Métodos: 
 
-    - Sport(): Constructor vacio utilizado por JPA para la creacion de instancias de la entidad.
+    - Sport(): Constructor vacío utilizado por JPA para la creación de instancias de la entidad.
 
     - Sport(SportTypes sportType): Inicializa un nuevo objeto Sport con un tipo de deporte específico, que se pasa como parámetro en el constructor.
 
@@ -2864,7 +2864,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - SportSpacesCreatedEvent: Representa un evento que ocurre cuando se crea un nuevo espacio deportivo (SportSpace). Este evento es utilizado en el sistema para notificar a otros componentes o servicios sobre la creación de un nuevo espacio deportivo, y contiene el identificador del espacio creado.
 
-  - Metodos: 
+  - Métodos: 
 
     - SportSpacesCreatedEvent(Object source, Long id): Inicializa un evento SportSpacesCreatedEvent con el origen del evento (por ejemplo, el objeto que originó el evento) y el identificador (id) del espacio deportivo recién creado.
 
@@ -2872,7 +2872,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - GetSportSpacesByUserIdQuery: es una consulta utilizada para obtener los espacios deportivos asociados a un usuario, identificados por su userId. Esta consulta lanza una excepción si el userId no se proporciona.
 
-  - Metodos:
+  - Métodos:
 
     - GetSportSpacesByUserIdQuery(Long userId): Inicializa la consulta con el userId y valida que no sea nulo. Si userId es nulo, lanza una excepción de tipo IllegalArgumentException.
 
@@ -2898,7 +2898,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - SportSpacesCommandService: Define operaciones de comando relacionadas con la creación, actualización y gestión de espacios deportivos.
 
-  - Metodos:
+  - Métodos:
 
     - Optional<SportSpaces> handle(Long id, CreateSportSpacesCommand command): Crea un nuevo espacio deportivo.
 
@@ -2910,7 +2910,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - SportSpacesQueryService: Define operaciones de consulta relacionadas con los espacios deportivos.
 
-  - Metodos: 
+  - Métodos: 
 
     - Optional<SportSpaces> handle(GetSportSpacesByIdQuery query): Obtiene un espacio deportivo por su ID.
     
@@ -3129,7 +3129,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
     - La consulta también verifica que la reserva esté dentro del horario de apertura y cierre del espacio deportivo.
 
-- SportRepository: Capa de conexion a la base de datos.
+- SportRepository: Capa de conexión a la base de datos.
 
   - existsBySportType(SportTypes sportType):
 
@@ -3171,7 +3171,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - Reservations: es una entidad que representa una reserva de un espacio deportivo realizada por un usuario. Esta clase extiende de AuditableAbstractAggregateRoot, lo que le permite tener funcionalidades de auditoría como la creación y actualización de registros. Cada reserva está asociada a un usuario (user) y a un espacio deportivo (sportSpaces), con información sobre el día del juego (gameDay), hora de inicio (startTime), hora de finalización (endTime), estado de la reserva (status), tipo de reserva (type), y un nombre de la reserva (reservationName).
 
-  - Metodos:
+  - Métodos:
 
     - Constructor Reservations(CreateReservationsCommand command, User user, SportSpaces sportSpaces): Este constructor se utiliza para crear una nueva instancia de Reservations.
 
@@ -3181,7 +3181,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 ##### 4.2.5.1.1.2. Commands
 
-- CreateReservationsCommand: es un record en Java, lo que significa que es una clase inmutable que contiene los parámetros necesarios para crear una nueva reserva. Este comando encapsula información sobre la reserva, incluyendo el día del juego (gameDay), la hora de inicio (startTime), la hora de finalización (endTime), el ID del espacio deportivo (sportSpacesId), el tipo de reserva (type) y el nombre de la reserva (reservationName).
+- CreateReservationsCommand: es un récord en Java, lo que significa que es una clase inmutable que contiene los parámetros necesarios para crear una nueva reserva. Este comando encapsula información sobre la reserva, incluyendo el día del juego (gameDay), la hora de inicio (startTime), la hora de finalización (endTime), el ID del espacio deportivo (sportSpacesId), el tipo de reserva (type) y el nombre de la reserva (reservationName).
 
   - Metodo: 
     
@@ -3191,7 +3191,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - QRCodeGenerator: Se encarga de generar y validar tokens JWT (JSON Web Tokens) que se utilizan para autenticar y validar las reservas de espacios deportivos a través de códigos QR. El token incluye información relevante sobre la reserva, como el reservationId, el userId, las horas de inicio y fin de la reserva, y el día del juego. Además, la clase permite verificar si un token ya ha sido utilizado.
 
-  - Metodos: 
+  - Métodos: 
 
     - QRCodeGenerator(): Constructor de la clase que carga una clave secreta de un archivo .env (utilizando la librería Dotenv), que se usa para firmar los tokens JWT con el algoritmo HMAC SHA.
 
@@ -3207,7 +3207,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - ReservationCreatedEvent: es un evento de dominio que se utiliza para notificar cuando una nueva reserva ha sido creada en el sistema. Esta clase extiende ApplicationEvent, que es una clase de Spring Framework, y se utiliza para la implementación de eventos que pueden ser escuchados y procesados por otros componentes del sistema.
 
-  - Metodos: 
+  - Métodos: 
 
     - ReservationCreatedEvent(Object source, Long reservationId): Constructor que inicializa el evento con el objeto que lo originó (source) y el ID de la reserva (reservationId).
 
@@ -3219,7 +3219,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - GetReservationsByUserIdQuery: es un objeto de consulta utilizado para obtener las reservas asociadas a un usuario específico. Esta clase implementa el patrón Query Object, que se usa para representar una solicitud de datos o información. El objeto es inmutable y contiene el userId como parámetro para realizar la consulta.
 
-  - Metodos:
+  - Métodos:
 
     - GetReservationsByUserIdQuery(Long userId)(Long userId): Constructor que inicializa el objeto con el ID del usuario.
 
@@ -3245,7 +3245,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - ReservationsCommandService: Esta interfaz define los servicios relacionados con la gestión de comandos de reservas, como la creación de nuevas reservas y la eliminación de reservas que cumplen ciertas condiciones.
 
-  - Metodos:
+  - Métodos:
 
     - handle(Long id, CreateReservationsCommand command): Maneja la creación de una reserva basada en el comando CreateReservationsCommand. Devuelve una Optional<Reservations> con la reserva creada si es exitosa.
 
@@ -3257,7 +3257,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - ReservationsQueryService: Esta interfaz define los servicios relacionados con las consultas de reservas. 
 
-  - Metodos: 
+  - Métodos: 
 
     - handle(GetReservationsByUserIdQuery query): Maneja la consulta para obtener las reservas asociadas a un usuario específico mediante GetReservationsByUserIdQuery.
 
@@ -3422,7 +3422,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - Rooms: Representa una entidad de sala, probablemente en el contexto de un sistema de reservas de espacios deportivos, y está mapeada a una tabla en la base de datos utilizando JPA.
 
-  - Metodos:
+  - Métodos:
 
     - @OneToMany(mappedBy = "room"):
       
@@ -3442,7 +3442,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - GetRoomByUserIdQuery: es un record en Java que representa una consulta para obtener información sobre una sala basada en el userId.
 
-  - Metodos:
+  - Métodos:
 
     - GetRoomByUserIdQuery: El constructor incluye una validación para asegurarse de que el userId no sea null. Si el userId es null, se lanza una excepción IllegalArgumentException con el mensaje "UserId is required". Esta validación garantiza que siempre se proporcione un userId válido al crear una instancia de este record.
 
@@ -3450,7 +3450,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - RoomsCommandService: Define las operaciones que alteran el estado de las salas.
 
-  - Metodos:
+  - Métodos:
 
     - deleteRoomByEndTimeConcluded:
       
@@ -3474,7 +3474,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - RoomsQueryService: Define los métodos para consultar la información de las salas sin modificar su estado.
 
-  - Metodos:
+  - Métodos:
 
     - getAllRooms:
       
@@ -3676,7 +3676,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - RoomsRepository: es un repositorio de acceso a datos en Spring Data JPA, diseñada para manejar operaciones de persistencia relacionadas con la entidad Rooms
 
-  - Metodos:
+  - Métodos:
 
     - findByReservationsId(Long reservationId): Este método usa una consulta personalizada (@Query) para recuperar todas las salas (Rooms) cuyo reservation.id coincida con el ID proporcionado. Se utiliza para obtener las salas basadas en una reserva específica.
 
@@ -3773,7 +3773,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - PlayerListRepository: Es una interfaz de repositorio de Spring Data JPA para gestionar las entidades PlayerList relacionadas con las salas y los usuarios en el sistema. Esta interfaz permite realizar operaciones CRUD en la base de datos de PlayerList, así como consultas personalizadas para obtener información de los jugadores en salas específicas.
 
-  - Metodos:
+  - Métodos:
 
     - deleteByRoomId(Long roomId)
 
@@ -3868,7 +3868,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - ChatWebSocketHandler:
 
-  - Metodos:
+  - Métodos:
 
     - afterConnectionEstablished(WebSocketSession session): Añade una nueva sesión de WebSocket a la lista de sesiones activas cuando se establece la conexión.
 
@@ -3886,7 +3886,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - WebSocketConfig
 
-  - Metodos:
+  - Métodos:
     
     - registerWebSocketHandlers(WebSocketHandlerRegistry registry): Registra el ChatWebSocketHandler para manejar conexiones WebSocket en la ruta /ws/chat.
 
@@ -3924,7 +3924,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - ChatRoomCommandServiceImpl implementa la lógica de negocio para las operaciones relacionadas con las salas de chat. Estas operaciones incluyen la creación de salas de chat, el envío de mensajes y la obtención de mensajes.
 
-  - Metodos:
+  - Métodos:
 
     - createChatRoom(Rooms room)
 
@@ -3954,7 +3954,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - ChatRoomRepository: Esta interfaz extiende JpaRepository y proporciona métodos para acceder a las salas de chat (ChatRoom).
 
-  - Metodos:
+  - Métodos:
 
     - findByRoomId(Long roomId): Busca una sala de chat usando el ID de la sala (de la entidad Rooms). Devuelve un Optional<ChatRoom>.
 
@@ -3962,7 +3962,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - MessageRepository: Esta interfaz extiende JpaRepository y proporciona métodos para acceder a los mensajes de las salas de chat (Message).
 
-  - Metodos:
+  - Métodos:
 
     - findByChatRoom(ChatRoom chatRoom): Obtiene todos los mensajes asociados a una sala de chat específica (ChatRoom). Devuelve una lista de mensajes.
 
@@ -4013,7 +4013,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - DepositCommandService: Esta interfaz define los métodos relacionados con las acciones que modifican el estado del sistema, como crear un depósito o guardar un depósito.
 
-  - Metodos:
+  - Métodos:
 
     - Optional<Deposit> handle(CreateDepositCommand command): Este método recibe un comando (CreateDepositCommand) para manejar la creación de un depósito. Retorna un Optional<Deposit>, lo que significa que podría no encontrar un depósito si algo falla.
 
@@ -4055,7 +4055,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - DepositCommandServiceImpl: maneja la lógica de negocio relacionada con la creación y almacenamiento de depósitos. Utiliza los repositorios DepositRepository y UserRepository para interactuar con la base de datos.
 
-  - Metodos:
+  - Métodos:
     
       - Optional<Deposit> handle(CreateDepositCommand command):
 
@@ -4079,7 +4079,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - DepositQueryServiceImpl: se encarga de manejar la consulta de depósitos. Utiliza el DepositRepository para interactuar con la base de datos y recuperar la información de los depósitos.
 
-  - Metodos:
+  - Métodos:
 
     - Optional<Deposit> handle(GetDepositByIdQuery query):
 
@@ -4093,7 +4093,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - DepositRepository: proporciona la funcionalidad básica de CRUD para la entidad Deposit sin necesidad de implementar métodos adicionales. Aquí se define una interfaz sencilla para acceder a los datos de la tabla deposits en la base de datos.
 
-  - Metodos: 
+  - Métodos: 
   
     - save(Deposit deposit): Guarda un depósito en la base de datos.
 
@@ -4165,7 +4165,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - CreateBankTransferCommandFromResourceAssembler: Este ensamblador convierte el recurso de entrada (CreateBankTransferResource) en un comando (CreateBankTransferCommand) que se puede usar en la lógica de negocio, generalmente en el servicio de comandos.
 
-  - Metodo:
+  - Método:
     
     - toCommandFromResource:
 
@@ -4177,7 +4177,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - BankTransferResourceFromEntityAssembler: Este ensamblador convierte una entidad de dominio (BankTransfer) en un recurso (BankTransferResource) que será devuelto al cliente en la respuesta de la API.
 
-  - Metodo:
+  - Método:
 
     - toResourceFromEntity:
 
@@ -4245,7 +4245,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 -  BankTransferCommandServicesImpl: es una implementación del servicio que maneja las operaciones relacionadas con las transferencias bancarias.
 
-  - Metodos:
+  - Métodos:
 
     - handle():
 
@@ -4263,7 +4263,7 @@ Este diagrama representa el diseño de la base de datos dentro de un Bounded Con
 
 - BankTransferRepository: es un repositorio que maneja las operaciones de acceso a la base de datos para la entidad BankTransfer.
 
-  - Metodos:
+  - Métodos:
 
     - findByUserId(Long userId):
 
@@ -4490,7 +4490,7 @@ Los sistemas de búsqueda de información son cruciales para que el usuario pued
 
 ### 5.2.4. SEO Tags and Meta Tags
 
-Para mejorar la visibilidad del servicio en los motores de busqueda, se añadiran etiquetas SEO y meta etiquetas en nuestra landing page. Los títulos y funciones core de nuestra appp están optimizados para atraer a los usuarios y a los motores de búsqueda.
+Para mejorar la visibilidad del servicio en los motores de búsqueda, se añadirán etiquetas SEO y meta etiquetas en nuestra landing page. Los títulos y funciones core de nuestra app están optimizados para atraer a los usuarios y a los motores de búsqueda.
 
 ### 5.2.5. Navigation Systems
 
@@ -7181,7 +7181,7 @@ Este gráfico refleja el flujo de trabajo basado en el desarrollo de la aplicaci
 |Attendees  |Todos los integrantes del equipo |
 |Sprint 7 – Review Summary  |Durante el Sprint 7 se implementaron correctamente las funcionalidades esenciales en las soluciones IoT. |
 |Sprint 7 – Retrospective Summary | Se evidenció un buen desempeño en la construcción de la solución. Sin embargo, se identificó la necesidad de mejorar ciertos componentes y ajustar las reglas visuales para mayor consistencia. |
-|Sprint Goal | Nuestro enfoque es completar la experiencia del usuario propietario en la solucion IoT incorporando funcionalidades  administrativas, para validar acceso de seguridad y generación de insights en base a la afluencia de personas. Esto se validará cuando el propietario, visualice, valide y utilice todas las funcionalidades. |
+|Sprint Goal | Nuestro enfoque es completar la experiencia del usuario propietario en la solucion IoT incorporando funcionalidades administrativas, para validar acceso de seguridad y generación de insights en base a la afluencia de personas. Esto se validará cuando el propietario, visualice, valide y utilice todas las funcionalidades. |
 |Sprint 7 Velocity | 30 |
 |Sum of Story Points| 30 |
 
@@ -7209,7 +7209,7 @@ Este gráfico refleja el flujo de trabajo basado en el desarrollo de la aplicaci
     <td rowspan="2">US15</td>
     <td rowspan="2">Generar código QR de acceso</td>
     <td>TK01</td>
-    <td>Diseñar logica para generar QR</td>
+    <td>Diseñar lógica para generar QR</td>
     <td>Crear botón que permita generar código QR desde la app web para validarlo con el dispositivo IoT</td>
     <td>5</td>
     <td>Sebastian F.</td>
@@ -7381,7 +7381,7 @@ Ajustamos la curva de trabajo comenzando con una carga moderada de 8 h dedicadas
 	- ¿Qué te parecen los colores y el estilo de diseño general de la landing page? ¿Crees que son atractivos y transmiten la esencia de D'Taquito?
 	- ¿Consideras que la distribución de los elementos y secciones es lógica y fácil de seguir? ¿Hay algo que te parezca desordenado o difícil de encontrar?
 	- ¿La información sobre D'Taquito se presenta de forma clara y concisa? ¿Entendiste rápidamente los beneficios de la aplicación?
-	- ¿La navegación por la página fue fluida e intuitiva? ¿Encontraste algún elemento que te generará confusión o que no funcionara como esperabas?
+	- ¿La navegación por la página fue fluida e intuitiva? ¿Encontraste algún elemento que te generará confusión o que no funcionará como esperabas?
 	- ¿Qué opinas sobre los elementos interactivos? ¿Te resultaron útiles y bien ubicados?
 	- Más allá del diseño, ¿hay alguna característica, sección o tipo de contenido adicional que crees que podríamos incorporar para mejorar la presentación y hacerla aún más completa?
 
@@ -7480,7 +7480,7 @@ Ajustamos la curva de trabajo comenzando con una carga moderada de 8 h dedicadas
 		- Aplicación Web:
   			- Los colores de la aplicación web considera que están bien pero en algunas secciones como sala comunidad parecen algo “vacíos” como el fondo por ejemplo.
      		- No le pareció nada confuso alguna funcionalidad pues cada botón es muy claro, así como la disponibilidad de horas es muy intuitivo, considera que está bien estructurado.
-        	- Sobre el flujo de las acciones, le pareció algo lento con la carga de información pero no representa un problema grande.
+        	- Sobre el flujo de las acciones, le pareció algo lento con la carga de información, pero no representa un problema grande.
           	- Le gustó la sección de sala comunidad, porque esta funcionalidad lo ve bastante útil para poder entrar y hablar con las personas, esto ayuda bastante al aspecto social.
           - Cree que se podría mejorar las posiciones de las cards, por ejemplo, en su pantalla se ven muy al costado y le gustaría verlas centradas.  
 	- Resumen:
@@ -7518,7 +7518,7 @@ Ajustamos la curva de trabajo comenzando con una carga moderada de 8 h dedicadas
  	- Entrevistado: Julio Cesar Matos
 	- Sexo: Masculino
 	- Edad: 27
- 	- Distrito: Jesus Maria
+ 	- Distrito: Jesús María
   	- Rol: Propietario
   	- Duración de la entrevista: 20:11
 	- Link: https://drive.google.com/file/d/1B1NBxCBnevKvV7VwMGKpCF5XiOF7GRBQ/view?usp=sharing 
@@ -7528,7 +7528,7 @@ Ajustamos la curva de trabajo comenzando con una carga moderada de 8 h dedicadas
 		- Aplicación Web:
   			- Este usuario valoró el diseño minimalista de la aplicación web, ya que evita la saturación visual y permite una navegación limpia. Afirmó que toda la experiencia le pareció intuitiva y libre de confusiones. Mencionó que la estructura de las secciones seguía una lógica clara, lo que le permitió comprender fácilmente el funcionamiento de cada parte. Destacó positivamente la funcionalidad de los créditos, considerándola sorprendente, y también encontró innovador el uso del mapa en el formulario para agregar espacios deportivos. Como sugerencia, indicó que sería conveniente unificar la sección de suscripción con la del perfil en una sola vista. 
 	- Resumen:
- 		- El usuario destacó el uso de colores pastel en la landing page, describiéndolos como suaves y agradables a la vista. Apreció la buena organización de las secciones y la navegación fluida, lo que facilitó su comprensión del servicio. Como sugerencia, propuso mejorar el pie de página incorporando un formulario de registro para ofrecer beneficios a usuarios interesados.Respecto a la aplicación web, valoró su diseño minimalista por evitar la sobrecarga visual, lo que contribuyó a una experiencia intuitiva y ordenada. Comprendió fácilmente la lógica de navegación y resaltó funciones como el sistema de créditos y el uso del mapa para agregar espacios deportivos. Recomendó integrar las secciones de suscripción y perfil en una sola vista para optimizar la interfaz. 
+ 		- El usuario destacó el uso de colores pastel en la landing page, describiéndolos como suaves y agradables a la vista. Apreció la buena organización de las secciones y la navegación fluida, lo que facilitó su comprensión del servicio. Como sugerencia, propuso mejorar el pie de página incorporando un formulario de registro para ofrecer beneficios a usuarios interesados. Respecto a la aplicación web, valoró su diseño minimalista por evitar la sobrecarga visual, lo que contribuyó a una experiencia intuitiva y ordenada. Comprendió fácilmente la lógica de navegación y resaltó funciones como el sistema de créditos y el uso del mapa para agregar espacios deportivos. Recomendó integrar las secciones de suscripción y perfil en una sola vista para optimizar la interfaz. 
  <br> 
  <p align="center">
 	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//Entrevista_Duenio_2.png" alt="UPC">
@@ -7567,8 +7567,8 @@ Ajustamos la curva de trabajo comenzando con una carga moderada de 8 h dedicadas
   	- Duración de la entrevista: 04:52
 	- Link: https://drive.google.com/file/d/10riHFE4DbMDiXDQM5Gb1ycWDtL_5KAp_/view?usp=drive_link
 	- Hallazgos:
-		- Escaner QR:
-  			- Durante la entrevista, Patricio mostró interés y conformidad con la propuesta, destacando que esta funcionalidad automatiza el proceso de validación, reduce errores humanos y evita suplantaciones de identidad. También indicó que esta medida le permitiría ahorrar tiempo, especialmente en horas pico, al no tener que verificar manualmente la información de los usuarios. Sin embargo, sugirió que sería útil que la interfaz visual (el panel de control) que indica si el código escaneado fue aceptado o rechazada, sea mas amigable y mas intuitiva.
+		- Scanner QR:
+  			- Durante la entrevista, Patricio mostró interés y conformidad con la propuesta, destacando que esta funcionalidad automatiza el proceso de validación, reduce errores humanos y evita suplantaciones de identidad. También indicó que esta medida le permitiría ahorrar tiempo, especialmente en horas pico, al no tener que verificar manualmente la información de los usuarios. Sin embargo, sugirió que sería útil que la interfaz visual (el panel de control) que indica si el código escaneado fue aceptado o rechazada, sea más amigable y más intuitiva.
 	- Resumen:
  		- La implementación del sistema de verificación por QR con cámaras IoT fue bien recibida por el propietario entrevistado, quien reconoció su valor en términos de eficiencia y seguridad. El feedback obtenido respalda la viabilidad de esta funcionalidad, pero también resalta la necesidad de complementar la experiencia con retroalimentación visual clara para los propietarios. En base a esto, se concluye que la solución propuesta es funcional y útil, pero su adopción y efectividad pueden mejorarse con pequeños ajustes en la interfaz y experiencia del usuario.
      
@@ -7934,7 +7934,7 @@ Actualizar la interfaz de la aplicación móvil utilizando principios de diseño
 
 <div style="page-break-before: always;"></div>
 
-# VIII. Bibliografia
+# VIII. Bibliografía
 
 Atlassian. (s/f). *Configuration management*. Atlassian. Recuperado el 14 de abril de 2024, de https://www.atlassian.com/microservices/microservices-architecture/configuration-management
 
@@ -7966,7 +7966,7 @@ https://miro.com/app/board/uXjVIAV685w=/?share_link_id=948119735363
 Enlace a Figma:
 https://www.figma.com/file/9b5VMPb1CCHGYuWQkP2554/UX-Design?type=design&node-id=0%3A1&mode=design&t=K3kzNMJ1UGVbxDsc-1
 
-Enlace al repositorio en Github: 
+Enlace al repositorio en GitHub: 
 https://github.com/Tecny/development-of-iot-solutions-final-project
 
 Enlace al Landing Page:
