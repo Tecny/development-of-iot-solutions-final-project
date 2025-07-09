@@ -1,0 +1,60 @@
+.room-card {
+  border: 2px solid black;
+  padding: 1rem;
+  width: fit-content;
+  max-width: 300px;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__title {
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    &__players {
+      font-size: 0.85rem;
+      background-color: #eee;
+      padding: 0.2rem 0.5rem;
+      border-radius: 8px;
+    }
+  }
+
+  &__creator {
+    font-size: 0.75rem;
+    color: #555;
+  }
+
+  &__details {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.3rem;
+
+    & > div {
+      text-align: right;
+    }
+
+    .room-card__join {
+      font-weight: bold;
+      text-decoration: none;
+      color: black;
+    }
+
+    .room-card__credits {
+      font-size: 0.8rem;
+    }
+  }
+}

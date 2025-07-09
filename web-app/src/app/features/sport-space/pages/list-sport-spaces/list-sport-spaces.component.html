@@ -1,0 +1,35 @@
+<h1>Espacios deportivos</h1>
+
+@defer (on timer(300ms)) {
+  @if (showAddSportSpaceButton) {
+    <button routerLink="/sport-spaces/create">Añadir un espacio deportivo</button>
+  }
+}
+
+<app-filter
+  [config]="[
+    { field: 'sport', type: 'select', label: 'Deporte', options: SPORTS },
+    { field: 'price', type: 'number', label: 'Precio máximo' },
+    { field: 'openTime', type: 'time', label: 'Hora de apertura'},
+    { field: 'closeTime', type: 'time', label: 'Hora de cierre'}
+  ]"
+  (filtersChanged)="onFiltersChanged($event)"
+/>
+
+@defer (prefetch on viewport) {
+  @if (sportSpaces(); as spaces) {
+    <div class="cards-grid">
+      @for (space of spaces; track space.id) {
+        <app-sport-space-card [sportSpace]="space" />
+      } @empty {
+        <p>No tienes espacios deportivos registrados</p>
+      }
+    </div>
+  } @else {
+    <p>Cargando espacios deportivos...</p>
+  }
+} @placeholder {
+  <p>Preparando carga de espacios deportivos...</p>
+} @loading {
+  <p>Cargando espacios deportivos...</p>
+}

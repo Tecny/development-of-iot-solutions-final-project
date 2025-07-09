@@ -1,0 +1,126 @@
+<section class="availability" aria-labelledby="availability__heading">
+  <h3 id="availability__heading" class="availability__title">Horario de disponibilidad</h3>
+
+  <div class="availability__container">
+    @defer (on timer(500ms)) {
+      <table class="availability__table">
+        <thead>
+        <tr>
+          <th>Hora</th>
+          @for (day of weekDays; track day) {
+            <th>{{ TimeUtil.formatDate(day) }}</th>
+          }
+        </tr>
+        </thead>
+        <tbody>
+          @for (time of timeSlots; track time) {
+            <tr>
+              <td class="availability__time-label">{{ time }}</td>
+              @for (day of weekDays; track day) {
+                <td>
+                  <button
+                    type="button"
+                    class="availability__slot-box"
+                    [ngClass]="{
+                      'availability__slot-box--available': isAvailable(day, time),
+                      'availability__slot-box--unavailable': !isAvailable(day, time),
+                      'availability__slot-box--selected': isSelected(day, time) && currentUser()?.roleType !== 'OWNER'
+                    }"
+                    [title]="day + ' - ' + time"
+                    (click)="onSlotClick(day, time)"
+                    [disabled]="currentUser()?.roleType === 'OWNER'">
+                  </button>
+                </td>
+              }
+            </tr>
+          }
+        </tbody>
+      </table>
+    }
+
+    <aside class="availability__legend" aria-label="Leyenda de disponibilidad">
+      <div class="availability__legend-item">
+        <span class="availability__legend-box availability__legend-box--available"></span> Disponible
+      </div>
+      <div class="availability__legend-item">
+        <span class="availability__legend-box availability__legend-box--unavailable"></span> Ocupado
+      </div>
+    </aside>
+  </div>
+
+
+  @if (currentUser()?.roleType === 'PLAYER') {
+    <footer class="availability__footer">
+      <button (click)="confirmHours()" [disabled]="selectedSlots().length === 0">
+        Confirmar horas
+      </button>
+
+      @if (selectedSlots().length === 0) {
+        <small class="availability__error-message">Debes seleccionar al menos un horario antes de confirmar.</small>
+      }
+    </footer>
+  }
+</section>
+
+<!-- Modal -->
+@if (showReservationModal) {
+  <app-modal (closeModal)="closeReservationModal()">
+    <ng-container modal-header>Confirmar Reserva</ng-container>
+
+    <ng-container modal-body>
+      <form [formGroup]="reservationForm" class="reservation-form">
+        <label>
+          Nombre de la Reserva:
+          <input formControlName="reservationName" type="text" />
+        </label>
+        @if (reservationForm.get('reservationName')?.touched && reservationForm.get('reservationName')?.invalid) {
+          @if (reservationForm.get('reservationName')?.errors?.['required']) {
+            <small class="reservation-form__error">El nombre de la reserva es obligatorio</small>
+          }
+          @if (reservationForm.get('reservationName')?.errors?.['minlength']) {
+            <small class="reservation-form__error">El nombre debe tener al menos 5 caracteres</small>
+          }
+        }
+
+        <label>
+          Tipo de Reserva:
+          <select formControlName="type">
+            <option value="PERSONAL">Personal</option>
+            <option value="COMMUNITY">Comunidad</option>
+          </select>
+        </label>
+        @if (reservationForm.get('type')?.touched && reservationForm.get('type')?.invalid) {
+          @if (reservationForm.get('type')?.errors?.['required']) {
+            <small class="reservation-form__error">El tipo de reserva es obligatorio</small>
+          }
+        }
+      </form>
+
+      <section class="reservation-summary">
+        <div>Día de juego: {{ TimeUtil.formatDate(selectedGameDay) }}</div>
+        <div>
+          Horario seleccionado:
+          <ul>
+            <li>{{ selectedStartTime }} - {{ selectedEndTime }}</li>
+          </ul>
+        </div>
+        <div>
+          Costo de la reserva: {{ totalCost() }} créditos
+          @switch (reservationType()) {
+            @case ('PERSONAL'){
+              <small>(Adelanto del 50%)</small>
+            }
+            @case ('COMMUNITY') {
+              <small>(Adelanto por persona)</small>
+            }
+          }
+        </div>
+      </section>
+    </ng-container>
+
+    <ng-container modal-footer>
+      <button (click)="submitReservation()" [disabled]="reservationForm.invalid">Reservar</button>
+      <button (click)="closeReservationModal()">Cancelar</button>
+    </ng-container>
+  </app-modal>
+}

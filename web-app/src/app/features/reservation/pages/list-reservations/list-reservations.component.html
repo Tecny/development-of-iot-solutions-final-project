@@ -1,0 +1,88 @@
+@let selectedView = viewReservationSelected();
+
+<h1>Mis reservas</h1>
+
+<div class="view-toggle">
+  @switch (true) {
+    @case (selectedView === 'PERSONAL') {
+      <button class="active" (click)="viewReservationSelected.set('PERSONAL')">Personal</button>
+      <button (click)="selectCommunityView('OWN')">Comunitaria</button>
+    }
+
+    @case (selectedView === 'COMMUNITY-OWN' || selectedView === 'COMMUNITY-JOIN') {
+      <button (click)="viewReservationSelected.set('PERSONAL')">Personal</button>
+      <button class="active" (click)="selectCommunityView('OWN')">Comunitaria</button>
+    }
+  }
+</div>
+
+@switch (selectedView) {
+  @case ('COMMUNITY-OWN') {
+    <div class="sub-toggle">
+      <button class="active" (click)="selectCommunityView('OWN')">Creadas por mí</button>
+      <button (click)="selectCommunityView('JOIN')">Salas unidas</button>
+    </div>
+  }
+  @case ('COMMUNITY-JOIN') {
+    <div class="sub-toggle">
+      <button (click)="selectCommunityView('OWN')">Creadas por mí</button>
+      <button class="active" (click)="selectCommunityView('JOIN')">Salas unidas</button>
+    </div>
+  }
+}
+
+@defer (prefetch on viewport) {
+  @switch (selectedView) {
+
+    @case ('PERSONAL') {
+      @if (reservations(); as reserv) {
+        <div class="cards-grid">
+          @for (res of reserv; track res.id) {
+            <app-reservation-card [reservation]="res" />
+          } @empty {
+            <p>No tienes reservas realizadas</p>
+          }
+        </div>
+      } @else {
+        <p>Cargando reservas...</p>
+      }
+    }
+
+    @case ('COMMUNITY-OWN') {
+      @if (ownRooms(); as rooms) {
+        <div class="cards-grid">
+          @for (room of rooms; track room.id) {
+            <app-room-card [room]="room" />
+          } @empty {
+            <p>No tienes salas creadas</p>
+          }
+        </div>
+      } @else {
+        <p>Cargando salas creadas...</p>
+      }
+    }
+
+    @case ('COMMUNITY-JOIN') {
+      @if (joinedRooms(); as rooms) {
+        <div class="cards-grid">
+          @for (room of rooms; track room.id) {
+            <app-room-card [room]="room" />
+          } @empty {
+            <p>No te has unido a ninguna sala externa</p>
+          }
+        </div>
+      } @else {
+        <p>Cargando salas unidas...</p>
+      }
+    }
+
+    @default {
+      <p>Selecciona una vista de reservas válida.</p>
+    }
+
+  }
+} @placeholder {
+  <p>Preparando carga de reservas...</p>
+} @loading {
+  <p>Cargando reservas...</p>
+}

@@ -1,0 +1,11 @@
+<div class="details-page">
+  @if (room()) {
+    <app-room-info [room]="room()!" />
+
+    <app-room-player-list [room]="room()!"/>
+
+    <app-room-chat [room]="room()!"/>
+  } @else {
+    <p>Cargando detalles de la sala...</p>
+  }
+</div>
