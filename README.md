@@ -1757,7 +1757,7 @@ Este diagrama desglosa el contexto a un nivel más detallado, mostrando las inte
 Aquí especificamos los contenedores de software que soportan la arquitectura, como la Aplicación Web (Web App), la Aplicación Móvil (Mobile App), el lado del servidor (Backend) y los Dispositivos IoT Gestionados (Managed IoT Devices). Aquí también se destacan las conexiones los sistemas externos, con lo que proporciona un mapa claro de cómo los distintos módulos del sistema se comunican entre sí y con componentes externos.
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//container-diagram1.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//container-diagram-v4.png" alt="UPC">
 </p>
 
 #### 4.1.6.4. Software Architecture Deployment Level Diagrams
@@ -7930,7 +7930,7 @@ Actualizar la interfaz de la aplicación móvil utilizando principios de diseño
 
 ## 7.1. About the Team
 
-**Link del video**: https://drive.google.com/drive/folders/1THQru0wKaeR1ou71QBlORDneD7B04WUM?usp=sharing
+**Link del video**: https://drive.google.com/file/d/1bfIRaf8B6uZX-aTGe_0tWWTISFoHFxR_/view?usp=sharing
 
 <div style="page-break-before: always;"></div>
 
