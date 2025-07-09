@@ -196,6 +196,7 @@
   | 0.5.1 | 12/06/25 | Grupo Tecny | Se mejoró los wireframes y mockups web |
   | 0.6 | 18/06/25 | Grupo Tecny | Se agregaron los sprint 5 y 6 |
   | 0.7 | 22/06/25 | Grupo Tecny | Se agregó el sprint 7, y se agregó más entrevistas de validación. |
+  | 0.8 | 09/07/25 | Grupo Tecny | Se levantó las observaciones dadas en el feedback del TB2, brindada por el docente. |
 
 <div style="page-break-before: always;"></div>
 
