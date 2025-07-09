@@ -7916,7 +7916,7 @@ Actualizar la interfaz de la aplicación móvil utilizando principios de diseño
 	<img src="https://raw.githubusercontent.com//Tecny/development-of-iot-solutions-final-project/develop//images//video-abtp.png" alt="UPC">
  </p>
 
- **Link del video**: https://1drv.ms/v/c/7c28f22b31116b1f/EXPuHY3VvWFEl-xN77_ZoFQBkb91DDmm0026_1Z15jCMPQ?e=3STRGF
+ **Link del video**: https://drive.google.com/drive/folders/1JGKvQ4JNlkXRSpiV8sKgF_hlyzvwu9Sd?usp=sharing
 
 <div style="page-break-before: always;"></div>
 
