@@ -73,12 +73,14 @@
       John Atencio<br>
       TB1: Coordiné una de las sesiones internas, liderando la organización del contenido y distribuyendo los roles de presentación en conjunto con el equipo.<br><br>
       TP: Asumí un rol de liderazgo técnico al guiar el desarrollo de la primera versión de la web app, además de diseñar mockups y wireframes junto al equipo.<br><br>
-      TB2, Organicé tareas clave para la implementación de la app móvil, promoviendo una distribución equitativa del trabajo.
+      TB2: Organicé tareas clave para la implementación de la app móvil, promoviendo una distribución equitativa del trabajo.<br><br>
+      TF: Elaboré presentaciones que sintetizaban los hallazgos clave para compartir con mis compañeros.
     </td>
     <td rowspan="6" valign="top">
       El equipo asumió el liderazgo de manera compartida, rotando roles según las fortalezas de cada integrante. Esta dinámica fomentó una toma de decisiones efectiva, mayor autonomía, y un compromiso colectivo con el proyecto. Se promovió un liderazgo distribuido en las distintas fases, desde la investigación inicial hasta el desarrollo de la aplicación. (TB1)<br><br>
       En esta etapa, el equipo sentó las bases del diseño de la solución IoT y llevó a cabo el primer Sprint de desarrollo. Como resultado, se entregó una Landing Page funcional y una primera versión operativa de la aplicación web, cumpliendo con los objetivos priorizados y validando de forma temprana los avances del producto. (TP)<br><br>
-      Demostramos liderazgo compartido al asumir responsabilidades clave, coordinar actividades y tomar decisiones de forma conjunta. Nuestra colaboración activa permitió mantener una comunicación fluida, integrar soluciones como la app móvil y el sistema IoT, y alcanzar los objetivos del proyecto eficientemente. (TB2)
+      Demostramos liderazgo compartido al asumir responsabilidades clave, coordinar actividades y tomar decisiones de forma conjunta. Nuestra colaboración activa permitió mantener una comunicación fluida, integrar soluciones como la app móvil y el sistema IoT, y alcanzar los objetivos del proyecto eficientemente. (TB2)<br><br>
+	Como equipo, comunicamos oralmente nuestras ideas y resultados con objetividad, adaptando nuestro lenguaje a las diferentes especialidades. Presentamos avances y argumentamos decisiones para asegurar la comprensión y alineación de todos los compañeros en el proyecto de ingeniería. (TF)
     </td>
   </tr>
   <tr>
@@ -86,7 +88,8 @@
       Henry Centurion<br>
       TB1: Guié al equipo en decisiones clave sobre el diseño estratégico del dominio, incentivando la participación equitativa y argumentando cada elección técnica.<br><br>
       TP: Participé activamente en la planificación del Sprint 1 y lideré la definición de mockups y wireframes.<br><br>
-      TB2, Propuse mejoras visuales para la aplicación web y organicé su implementación.
+      TB2: Propuse mejoras visuales para la aplicación web y organicé su implementación.<br><br>
+      TF: Documenté los entregables de cada sprint en informes técnicos claros y concisos para mis compañeros de equipo.
     </td>
   </tr>
   <tr>
@@ -94,7 +97,8 @@
       Sebastián Frisancho<br>
       TB1: Coordiné al equipo en la definición de hipótesis del Lean UX, fomentando la alineación de ideas desde las primeras etapas.<br><br>
       TP: Lideré la elaboración de diagramas de user flows y wireflows, aportando además en la mejora continua de los artefactos previos del equipo.<br><br>
-      TB2, Apoyé activamente en la programación y pruebas de la app móvil, manteniendo constante comunicación con mis compañeros.
+      TB2: Apoyé activamente en la programación y pruebas de la app móvil, manteniendo constante comunicación con mis compañeros.<br><br>
+      TF: Expliqué las decisiones de diseño a miembros del equipo, garantizando que todos estuvieran alineados con el enfoque.
     </td>
   </tr>
   <tr>
@@ -102,7 +106,8 @@
       Sebastián Mendez<br>
       TB1: Lideré el diseño de uno de los contextos dentro del enfoque táctico de DDD, promoviendo revisiones colectivas para garantizar la integración entre módulos.<br><br>
       TP: Implementamos Scrum como marco de trabajo, lo que permitió gestionar roles de liderazgo de forma iterativa y colaborativa.<br><br>
-      TB2, Lideré la integración del sistema IoT, asegurando su funcionamiento correcto en conjunto con el resto del equipo.
+      TB2: Lideré la integración del sistema IoT, asegurando su funcionamiento correcto en conjunto con el resto del equipo.<br><br>
+      TF: Expliqué las decisiones de diseño a miembros del equipo, garantizando que todos estuvieran alineados con el enfoque.
     </td>
   </tr>
   <tr>
@@ -110,7 +115,8 @@
       Willy Valentin<br>
       TB1: Dirigí la construcción del modelo To-Be, integrando aportes del equipo para obtener una propuesta coherente.<br><br>
       TP: Me encargué del diseño colaborativo de los mockups y wireframes, asegurando la cohesión visual de la interfaz.<br><br>
-      TB2, Guié la toma de decisiones durante las entrevistas, facilitando el diálogo con los participantes.
+      TB2: Guié la toma de decisiones durante las entrevistas, facilitando el diálogo con los participantes.<br><br>
+      TF: Respondí a las preguntas de compañeros de diferentes especialidades, simplificando conceptos complejos para el entendimiento mutuo.
     </td>
   </tr>
   <tr>
@@ -118,7 +124,8 @@
       Angie Valverde<br>
       TB1: Asumí el rol de facilitadora durante entrevistas con usuarios, guiando al equipo para obtener información relevante dentro de un entorno respetuoso.<br><br>
       TP: Lideré la planificación y organización del Sprint 1, además de diseñar guías de estilo y mockups para la web app.<br><br>
-      TB2, Coordiné entrevistas de validación junto a mi equipo para conocer a fondo las necesidades del usuario final.
+      TB2: Coordiné entrevistas de validación junto a mi equipo para conocer a fondo las necesidades del usuario final.<br><br>
+      TF: Expliqué conceptos complejos de forma sencilla para facilitar la comprensión de compañeros de distintas especialidades.
     </td>
   </tr>
   <tr>
@@ -127,12 +134,14 @@
       John Atencio<br>
       TB1: Contribuí a establecer metas claras y realistas para la entrega, promoviendo el seguimiento colaborativo de los avances y apoyando a compañeros en sus tareas.<br><br>
       TP: Supervisé el cumplimiento de los objetivos clave del Sprint 1, asegurando la alineación con las User Stories priorizadas.<br><br>
-      TB2, Repartimos el desarrollo de la app móvil en etapas, estableciendo metas semanales para asegurar el progreso.
+      TB2: Repartimos el desarrollo de la app móvil en etapas, estableciendo metas semanales para asegurar el progreso.<br><br>
+      TF: Elaboré presentaciones que sintetizaban los hallazgos clave para compartir con mis compañeros.
     </td>
     <td rowspan="6" valign="top">
       Establecimos un entorno de trabajo colaborativo e inclusivo, donde se valoraron todas las perspectivas y se tomaron decisiones consensuadas. Gracias a una planificación conjunta, una comunicación fluida y una distribución clara de responsabilidades, alcanzamos los objetivos propuestos del Sprint dentro del plazo establecido. Este enfoque colectivo favoreció la productividad, cohesión y satisfacción del equipo. (TB1)<br><br>
       En esta entrega, el equipo cumplió con la totalidad de las User Stories priorizadas para el Sprint, logrando avances significativos en el desarrollo de la solución web. Este progreso fue posible gracias a una planificación efectiva, una ejecución coordinada y un alto nivel de compromiso por parte de todos los integrantes. (TP)<br><br>
-      Demostramos nuestra capacidad para crear un entorno colaborativo e inclusivo, donde todas las voces fueron escuchadas. Establecimos metas claras, planificamos tareas de forma organizada y cumplimos con los objetivos planteados, respetando los aportes y fortalezas de cada integrante del equipo. (TB2)
+      Demostramos nuestra capacidad para crear un entorno colaborativo e inclusivo, donde todas las voces fueron escuchadas. Establecimos metas claras, planificamos tareas de forma organizada y cumplimos con los objetivos planteados, respetando los aportes y fortalezas de cada integrante del equipo. (TB2)<br><br>
+      En conjunto, comunicamos en forma escrita ideas y resultados con objetividad a nuestros compañeros. Documentamos entregables e informes, garantizando que la información fuera clara y concisa para todos, lo que contribuyó a la transparencia y eficiencia en el desarrollo de nuestro proyecto de ingeniería. (TF)
     </td>
   </tr>
   <tr>
@@ -140,7 +149,8 @@
       Henry Centurion<br>
       TB1: Fomenté un entorno participativo al integrar ideas del equipo en la definición de User Stories, garantizando que todos se sintieran representados.<br><br>
       TP: Lideré la planificación del Sprint 1, definiendo el alcance, entregables y guías de estilo para mejorar la consistencia del diseño.<br><br>
-      TB2, Establecimos objetivos visuales específicos para mejorar la interfaz y los cumplimos en los plazos previstos.
+      TB2: Establecimos objetivos visuales específicos para mejorar la interfaz y los cumplimos en los plazos previstos.<br><br>
+      TF: Documenté los entregables de cada sprint en informes técnicos claros y concisos para mis compañeros de equipo.
     </td>
   </tr>
   <tr>
@@ -148,7 +158,8 @@
       Sebastián Frisancho<br>
       TB1: Organicé sesiones de trabajo colaborativo donde se rotaron tareas, como toma de notas y análisis, para asegurar una distribución equitativa.<br><br>
       TP: Contribuí al cumplimiento de las User Stories del Sprint 1, trabajando en conjunto con el equipo para refinar los entregables.<br><br>
-      TB2, Aseguramos un espacio inclusivo durante el desarrollo móvil, integrando propuestas diversas del equipo.
+      TB2: Aseguramos un espacio inclusivo durante el desarrollo móvil, integrando propuestas diversas del equipo.<br><br>
+      TF: Preparé informes de progreso semanales, destacando los logros y los próximos pasos para mis compañeros.
     </td>
   </tr>
   <tr>
@@ -156,7 +167,8 @@
       Sebastián Mendez<br>
       TB1: Cumplí puntualmente con las entregas del diseño táctico y apoyé la resolución de bloqueos, manteniendo la fluidez en el avance del proyecto.<br><br>
       TP: Participé en la construcción de mockups y wireframes para la aplicación móvil, alineando el trabajo con los objetivos planteados.<br><br>
-      TB2, Coordinamos como grupo la implementación del sistema IoT, dividiendo tareas según fortalezas técnicas.
+      TB2: Coordinamos como grupo la implementación del sistema IoT, dividiendo tareas según fortalezas técnicas.<br><br>
+      TF: Redacté correos electrónicos y comunicados sobre los resultados del proyecto, ajustando el nivel de detalle para mis colegas.
     </td>
   </tr>
   <tr>
@@ -164,7 +176,8 @@
       Willy Valentin<br>
       TB1: Promoví espacios de retroalimentación continua durante el diseño arquitectónico, incorporando sugerencias del equipo para mejorar la propuesta técnica.<br><br>
       TP: Fomenté el aprendizaje colectivo a través de investigaciones y capacitaciones en temas clave para el equipo.<br><br>
-      TB2, Planificamos en conjunto las entrevistas de validación y asignamos responsabilidades de forma clara.
+      TB2: Planificamos en conjunto las entrevistas de validación y asignamos responsabilidades de forma clara.<br><br>
+      TF: Registré las especificaciones de diseño, asegurando que fueran comprensibles para todos los ingenieros del equipo.
     </td>
   </tr>
   <tr>
@@ -172,7 +185,8 @@
       Angie Valverde<br>
       TB1: Propuse y organicé el uso de tableros colaborativos para la planificación inicial, mejorando la transparencia y seguimiento de tareas.<br><br>
       TP: Organicé tareas orientadas a la mejora continua y desarrollé diagramas de user flow y wire flow que facilitaron la construcción de la solución.<br><br>
-      TB2, Fomenté la participación de todos los miembros en el análisis de las entrevistas, valorando cada opinión.
+      TB2: Fomenté la participación de todos los miembros en el análisis de las entrevistas, valorando cada opinión.<br><br>
+      TF: Documenté las especificaciones de diseño de manera clara, garantizando que fueran entendibles para todos los ingenieros del equipo.
     </td>
   </tr>
 </table>
@@ -202,12 +216,12 @@
 
 ### Capítulos 
 
-  [Capitulo I - Introduction](#i-introduccion) 
+  [Capitulo I - Introduction](#i-introducción) 
   - 1.1. [Startup Profile](#11-startup-profile) 
-    - 1.1.1. [Descripción de la Startup](#111-descripcion-de-la-startup) 
+    - 1.1.1. [Descripción de la Startup](#111-descripción-de-la-startup) 
     - 1.1.2. [Perfiles de integrantes del grupo](#112-perfiles-de-integrantes-del-grupo)
   - 1.2. [Solution Profile](#12-solution-profile)
-    - 1.2.1. [Antecedentes y problemática](#121-antecedentes-y-problematica)
+    - 1.2.1. [Antecedentes y problemática](#121-antecedentes-y-problemática)
     - 1.2.2. [Lean UX process](#122-lean-ux-process)
         - 1.2.2.1. [Lean UX Problem Statements](#1221-lean-ux-problem-statements)
         - 1.2.2.2. [Lean UX Assumptions](#1222-lean-ux-assumptions)
@@ -218,12 +232,12 @@
   [Capitulo II - Requirements Elicitation & Analysis](#ii-requirements-analysis)
 
   - 2.1. [Competidores](#21-competidores) 
-    - 2.1.1. [Análisis competitivo](#211-analisis-competitivo) 
+    - 2.1.1. [Análisis competitivo](#211-análisis-competitivo) 
     - 2.1.2. [Estrategias y tácticas frente a competidores](#212-estrategias-y-tacticas-frente-a-competidores)
   - 2.2. [Entrevistas](#22-entrevistas)
     - 2.2.1. [Diseño de entrevistas](#221-diseño-de-entrevistas)
     - 2.2.2. [Registro de entrevistas](#222-registro-de-entrevistas)
-    - 2.2.3. [Análisis de entrevistas](#223-analisis-de-entrevistas)
+    - 2.2.3. [Análisis de entrevistas](#223-análisis-de-entrevistas)
   - 2.3. [Needfinding](#23-needfinding)
     - 2.3.1. [User Personas](#231-user-personas)
     - 2.3.2. [User Task Matrix](#232-user-task-matrix)
@@ -595,7 +609,7 @@
  [Conclusiones y Recomendaciones](#vii-conclusiones-y-recomendaciones)
   - 7.1. [About the Team](#71-about-the-team)<br>
   
- [Bibliografía](#viii-bibliografia)<br>
+ [Bibliografía](#viii-bibliografía)<br>
  [Anexos](#ix-anexos)
 
 <div style="page-break-before: always;"></div>
@@ -1247,6 +1261,7 @@ Además, la versión móvil es vista como el canal más conveniente por todos lo
 | RF17 | Generación de código QR | Solo los usuarios con rol jugador que hayan creado una reserva deben poder generar el código QR de la reserva, 1 hora antes del inicio de la misma. Una vez finalizada la reserva, ya no será posible generar nuevamente el código QR asociado a dicha reserva. |
 | RF18 | Activación de reserva con QR e IoT | Los usuarios con rol jugador que hayan creado una reserva deben poder activarla al llegar al espacio deportivo acercando el código QR generado a un dispositivo IoT con lector QR (ESP32-CAM). El dispositivo debe validar el token del QR con el servidor. Si el servidor está caído, el dispositivo IoT deberá validar los QR localmente desde una memoria microSD donde estén almacenados previamente los tokens. Cada 5 minutos intentará contactar al servidor para validar el QR. Una vez activado un QR, no podrá volver a utilizarse. La activación de la reserva no está vinculada a la apertura de la puerta del espacio deportivo, de eso se encarga el personal. |
 | RF19 | Conteo de personas mediante IoT | Un dispositivo IoT (ESP32 DevKit con sensor PIR) deberá contar la cantidad de personas que ingresan al establecimiento donde se encuentra el espacio deportivo. Cada 5 minutos, el dispositivo enviará el total contado al servidor y luego reiniciará el contador. Si el servidor está inactivo, el contador se guardará en una memoria microSD hasta que pueda enviarse. El dispositivo intentará contactar al servidor cada 5 minutos para enviar los datos pendientes. De igual forma, el sistema debe mostrar un dashboard al usuario con rol propietario indicando la cantidad de personas que visitan el establecimiento|
+| RF20 | Política de servicio, términos y protección de privacidad | La aplicación DTaquito deberá tener una sección con los Términos y Condiciones de uso, así como la Política de Privacidad y Protección de Datos. Esta política deberá estar en cumplimiento con la legislación local (como la Ley de Protección de Datos Personales correspondiente), e incluirá información sobre: qué datos recopila la aplicación; cómo y con qué fin se utilizan los datos; a quién se le podrían transferir los datos; cuáles son los derechos del usuario sobre sus datos; y el contacto para ejercer sus derechos o presentar reclamaciones. El usuario deberá aceptar los términos antes de poder continuar con el uso de la app. Si el usuario no acepta, no podrá usar los servicios de DTaquito. Esta información deberá estar siempre disponible para consulta en la aplicación, y cualquier cambio en la política deberá ser notificado al usuario para su nueva aceptación. |
 | RNF01 | Seguridad: Cookie HttpOnly | El sistema deberá enviar una cookie HttpOnly al cliente para ser utilizada en las solicitudes en el 100% de las veces. Esta cookie asegura que la información de autenticación solo pueda ser accedida por el servidor y no por scripts en el navegador, garantizando así una mayor seguridad en la plataforma. |
 | RNF02 | Disponibilidad: consulta de horarios de espacios deportivos | El servidor deberá estar disponible para responder a las solicitudes de disponibilidad semanal de los horarios de los espacios deportivos realizadas por los jugadores, las 24 horas del día, los 7 días de la semana, garantizando acceso continuo. |
 | RNF03 | Desempeño: Visualización de espacios deportivos | El jugador podrá consultar la visualización de los espacios deportivos y esta deberá mostrarse en un tiempo menor a 3 segundos, garantizando una experiencia fluida y rápida para Los usuarios. |
