@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//upc.png" alt="UPC">
+  <img src="https://raw.githubusercontent.com//HenryCenturion//open-source-final-project/develop//informe//images//upc.png" alt="UPC" width="250" height="250">
 </p>
 
 
@@ -33,23 +33,13 @@
 
 <p align="center"><strong>Méndez López, Sebastián Alonso – U202211561</strong></p>
 
-
-
 <p align="center"><strong>Centurión Quintana, Henry Manuel – U20221A339</strong></p>
-
-
 
 <p align="center"><strong>Atencio Castillo, John Alexis - U202218229</strong></p>
 
-
-
 <p align="center"><strong>Frisancho Levano, Sebastian Mathias Salomon - U202224392</strong></p>
 
-
-
 <p align="center"><strong>Valentin Ricaldi, Willy David - U20201C037</strong></p>
-
-
 
 <p align="center"><strong>Valverde Salazar, Clara Angie - U20201B940</strong></p>
 
@@ -210,7 +200,8 @@
   | 0.5.1 | 12/06/25 | Grupo Tecny | Se mejoró los wireframes y mockups web |
   | 0.6 | 18/06/25 | Grupo Tecny | Se agregaron los sprint 5 y 6 |
   | 0.7 | 22/06/25 | Grupo Tecny | Se agregó el sprint 7, y se agregó más entrevistas de validación. |
-  | 0.8 | 09/07/25 | Grupo Tecny | Se levantó las observaciones dadas en el feedback del TB2, brindada por el docente. |
+  | 0.7.1 | 09/07/25 | Grupo Tecny | Se levantó las observaciones dadas en el feedback del TB2, brindada por el docente. |
+  | 1.0 | 11/07/25 | Grupo Tecny | Se detallaron las reflexiones finales del proyecto y lanzamiento de la primera versión de todos los artefactos. |
 
 <div style="page-break-before: always;"></div>
 
@@ -606,8 +597,10 @@
      - 6.3.3. [Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
   - 6.4. [Video About the Product](#64-video-about-the-product)
 
- [Conclusiones y Recomendaciones](#vii-conclusiones-y-recomendaciones)
-  - 7.1. [About the Team](#71-about-the-team)<br>
+ [Reflexiones Finales](#vii-reflexiones-finales)
+  - 7.1. [Conclusiones y Recomendaciones](#71-conclusiones-y-recomendaciones)
+  - 7.2. [Lecciones Aprendidas](#72-lecciones-aprendidas)
+  - 7.3. [Video About the Team](#73-video-about-the-team)<br>
   
  [Bibliografía](#viii-bibliografía)<br>
  [Anexos](#ix-anexos)
@@ -7920,7 +7913,9 @@ Actualizar la interfaz de la aplicación móvil utilizando principios de diseño
 
 <div style="page-break-before: always;"></div>
 
-# VII. Conclusiones y Recomendaciones
+# VII. Reflexiones Finales
+
+## 7.1. Conclusiones y Recomendaciones
 
 - El proceso de entrevistas y la creación de user personas nos ha permitido obtener una comprensión profunda de nuestro segmento objetivo. Esta información compartida es fundamental para asegurarnos de que D’Taquito se adapte a las necesidades y expectativas de nuestros usuarios.
 
@@ -7944,7 +7939,37 @@ Actualizar la interfaz de la aplicación móvil utilizando principios de diseño
 
 - GitHub, junto con Angular (HTML y CSS), es esencial en el desarrollo web moderno y la gestión eficiente del código fuente. GitHub facilita la colaboración y seguimiento de cambios, mientras que HTML y CSS son fundamentales para la construcción y diseño de páginas web. La integración de estas tecnologías promueve la coherencia, mantenibilidad y escalabilidad de los proyectos, priorizando la experiencia del usuario y facilitando la colaboración efectiva entre desarrolladores y diseñadores en el desarrollo de productos digitales.
 
-## 7.1. About the Team
+- Estableceremos mecanismos robustos para recolectar comentarios directos de los usuarios, tanto a través de encuestas como de canales de comunicación abiertos. Paralelamente, implementaremos herramientas de monitoreo para analizar patrones de uso, identificar posibles errores o cuellos de botella en el rendimiento, y comprender mejor cómo los usuarios interactúan con la aplicación. Esta información será crucial para priorizar futuras mejoras.
+
+- El entorno tecnológico está en constante evolución. Nos comprometemos a realizar actualizaciones regulares que no solo incluyan la adición de nuevas funcionalidades basadas en las necesidades identificadas, sino también la optimización de los algoritmos existentes para mejorar el rendimiento general y la escalabilidad del software. Esto asegurará que nuestra solución se mantenga competitiva y eficiente a lo largo del tiempo.
+
+- La seguridad de los datos de nuestros usuarios y la fiabilidad del sistema son aspectos no negociables. Implementaremos mejoras continuas en nuestras medidas de seguridad, realizando auditorías periódicas y manteniéndonos al día con las últimas vulnerabilidades y mejores prácticas de la industria. Nuestro objetivo es garantizar la integridad de la información y la disponibilidad constante del servicio.
+
+- La integración de componentes de IoT, utilizando Arduino y programación en C++, demostró ser un área de gran potencial para la interacción del software con el mundo físico. Esta capacidad de conectar dispositivos y sensores abre nuevas vías para la recopilación de datos en tiempo real y la automatización, lo que puede enriquecer significativamente la funcionalidad de nuestro sistema en futuras versiones, permitiendo una interacción más dinámica y contextualizada.
+
+- Un software potente debe ser también intuitivo y agradable de usar. A través de pruebas de usabilidad con usuarios reales y la aplicación de principios de diseño centrados en el usuario, buscaremos constantemente optimizar la interfaz y la interacción, haciendo que la experiencia sea cada vez más fluida, eficiente y satisfactoria para todos.
+
+- Para asegurar la longevidad y facilidad de mantenimiento de nuestro software, nos enfocaremos en mantener una documentación técnica exhaustiva y actualizada. Esto incluye comentarios claros en el código, diagramas de arquitectura y guías detalladas, facilitando así que cualquier miembro del equipo actual o futuro pueda comprender, mantener y expandir el sistema de manera eficiente.
+
+## 7.2. Lecciones Aprendidas
+
+- La implementación de la metodología Scrum fue fundamental para la organización y gestión del proyecto. Nos permitió dividir el trabajo en sprints iterativos, lo que facilitó la adaptación a los cambios y la entrega incremental de valor. A pesar de los desafíos iniciales para adaptarnos completamente a la flexibilidad y las ceremonias que exige, como las reuniones diarias (Daily Scrums) y las revisiones de sprint, su aplicación nos ayudó a mantener un ritmo constante y a identificar y resolver problemas de manera más ágil.
+
+- El trabajo en equipo se consolidó como un pilar clave para el éxito del proyecto. La comunicación constante y efectiva entre los miembros, junto con la asignación clara de roles y responsabilidades, fue esencial para superar los obstáculos técnicos y de coordinación que surgieron. Aprendimos la importancia de la colaboración activa, el apoyo mutuo y la resolución conjunta de problemas para mantener la motivación y la productividad del grupo.
+
+- El uso de tecnologías modernas como Java Spring Boot para el backend y Angular para el frontend nos proporcionó una base robusta y escalable para el desarrollo de la aplicación. Si bien la curva de aprendizaje inicial para dominar estas herramientas fue considerable, especialmente en la integración y comunicación entre ambos entornos, el conocimiento adquirido nos ha preparado mejor para futuros proyectos con arquitecturas similares.
+
+- La integración de Kotlin junto con XML para el desarrollo móvil nos ofreció una perspectiva valiosa sobre las ventajas de este lenguaje para crear aplicaciones nativas de Android. Aprendimos sobre su concisión, seguridad y la eficiencia en el desarrollo de interfaces de usuario mediante XML, lo que nos abre la puerta a considerar Kotlin como una opción potente y preferente para proyectos móviles futuros.
+
+- La implementación de GitFlow con GitHub fue crucial para el control de versiones del código fuente y la colaboración eficiente entre los desarrolladores. Aunque la gestión de las ramas (main, develop, feature, etc) y la resolución de conflictos de fusión requirieron disciplina y un entendimiento profundo del flujo de trabajo, esta metodología nos permitió mantener un historial de cambios limpio y facilitar la integración del trabajo de cada miembro del equipo de manera ordenada.
+
+- La consideración de arquitecturas de Cloud Computing y Edge Computing nos brindó una visión estratégica para el despliegue y procesamiento de datos. Entendimos que el Cloud Computing ofrece escalabilidad y potencia de procesamiento para grandes volúmenes de datos, mientras que el Edge Computing es crucial para aplicaciones que requieren baja latencia y procesamiento de datos en tiempo real cerca de la fuente, como en escenarios de IoT. Su combinación depende críticamente de los requisitos de rendimiento y latencia del sistema.
+
+- Comprender a fondo a nuestro segmento objetivo fue vital y una de las lecciones más importantes. Las iteraciones iniciales del proyecto nos demostraron que nuestras suposiciones iniciales sobre las necesidades y preferencias de los usuarios no siempre se alineaban con la realidad. Esto resaltó la importancia crítica de la investigación de usuarios, la creación de personas y la realización de pruebas tempranas con usuarios reales para validar ideas y asegurar que el producto final satisfaga sus expectativas.
+
+- Finalmente, la experiencia nos ha reafirmado que la documentación clara y consistente no es un simple requisito burocrático, sino una herramienta fundamental para el éxito a largo plazo del proyecto. Mantener una documentación técnica exhaustiva del código, la arquitectura, las decisiones de diseño y los procesos facilita la incorporación de nuevos miembros al equipo, el mantenimiento futuro del software y la transferencia de conocimiento, asegurando la continuidad del proyecto más allá de los desarrolladores iniciales.
+
+## 7.3 Video About the Team
 
 **Link del video**: https://drive.google.com/file/d/1bfIRaf8B6uZX-aTGe_0tWWTISFoHFxR_/view?usp=sharing
 
