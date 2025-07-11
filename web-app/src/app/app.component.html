@@ -1,7 +1,9 @@
 @if (isLoading()) {
   <div class="loading-bar"></div>
 }
-@if (isAuthenticated()) {
+@if (showHeader()) {
   <app-header />
 }
-<router-outlet />
+<div class="content">
+  <router-outlet />
+</div>

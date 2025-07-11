@@ -9,25 +9,26 @@ import {roomGuard} from './core/guards/room.guard';
 import {ResetPasswordComponent} from './auth/pages/reset-password/reset-password.component';
 import {RedirectComponent} from './core/components/redirect/redirect.component';
 import {HomeComponent} from './shared/pages/home/home.component';
+import {CorrectPaymentComponent} from './shared/pages/correct-payment/correct-payment.component';
+import {ErrorPaymentComponent} from './shared/pages/error-payment/error-payment.component';
+import {guestGuard} from './core/guards/guest.guard';
 
 export const routes: Routes = [
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    canActivate: [guestGuard]
   },
   {
     path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'reset-password',
-    component: ResetPasswordComponent
+    component: RegisterComponent,
+    canActivate: [guestGuard]
   },
   {
     path: 'home',
     component: HomeComponent,
     canActivate: [authGuard],
-    data: { roles: [UserRole.PLAYER, UserRole.OWNER] },
+    data: { roles: [UserRole.PLAYER, UserRole.OWNER, UserRole.ADMIN] },
   },
   {
     path: 'profile',
@@ -63,18 +64,25 @@ export const routes: Routes = [
       .then(m => m.SportSpaceDetailComponent),
   },
   {
+    path: 'sport-spaces/:id/dashboard',
+    loadComponent: () => import('./features/sport-space/pages/sport-space-dashboard/sport-space-dashboard.component')
+      .then(m => m.SportSpaceDashboardComponent),
+    canActivate: [authGuard],
+    data: { roles: [UserRole.OWNER] },
+  },
+  {
     path: 'reservations',
     loadComponent: () => import('./features/reservation/pages/list-reservations/list-reservations.component')
       .then(m => m.ListReservationsComponent),
     canActivate: [authGuard],
-    data: { roles: [UserRole.PLAYER] },
+    data: { roles: [UserRole.PLAYER, UserRole.OWNER] },
   },
   {
     path: 'rooms',
     loadComponent: () => import('./features/room/pages/list-rooms/list-rooms.component')
       .then(m => m.ListRoomsComponent),
     canActivate: [authGuard],
-    data: { roles: [UserRole.PLAYER, UserRole.OWNER] },
+    data: { roles: [UserRole.PLAYER] },
   },
   {
     path: 'rooms/:id',
@@ -91,13 +99,25 @@ export const routes: Routes = [
     data: { roles: [UserRole.OWNER, UserRole.ADMIN] },
   },
   {
-    path: 'notfound',
-    component: NotFoundComponent,
-    canActivate: [authGuard]
+    path: 'reset-password',
+    component: ResetPasswordComponent
+  },
+  {
+    path: 'correct-payment',
+    component: CorrectPaymentComponent
+  },
+  {
+    path: 'error-payment',
+    component: ErrorPaymentComponent
   },
   {
     path: 'unauthorized',
     component: UnauthorizedComponent
+  },
+  {
+    path: 'notfound',
+    component: NotFoundComponent,
+    canActivate: [authGuard]
   },
   {
     path: '',

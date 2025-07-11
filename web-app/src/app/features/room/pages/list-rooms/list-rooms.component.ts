@@ -2,17 +2,19 @@ import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angul
 import {RoomService} from '../../services/room.service';
 import {Room} from '../../models/room.interface';
 import {RoomCardComponent} from '../../components/room-card/room-card.component';
-import {UserStoreService} from '../../../../core/services/user-store.service';
-import {UserRole} from '../../../../core/models/user.role.enum';
 import {FiltersComponent} from '../../../../shared/components/filter/filter.component';
-import {SPORTS} from '../../../../shared/models/sport-space.constants';
+import {GAMEMODE_OPTIONS, SPORTS} from '../../../../shared/models/sport-space.constants';
 import {PriceUtil, TimeUtil} from '../../../../shared/utils/time.util';
+import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-rooms',
   imports: [
     RoomCardComponent,
-    FiltersComponent
+    FiltersComponent,
+    SpinnerComponent,
+    TranslatePipe
   ],
   templateUrl: './list-rooms.component.html',
   styleUrl: './list-rooms.component.scss',
@@ -20,18 +22,15 @@ import {PriceUtil, TimeUtil} from '../../../../shared/utils/time.util';
 })
 export class ListRoomsComponent implements OnInit {
   private roomService = inject(RoomService);
-  private userStore = inject(UserStoreService);
 
-  userRole = this.userStore.getRoleFromToken();
-
-  allRooms: Room[] = [];
   rooms = signal<Room[] | null>(null);
 
+  allRooms: Room[] = [];
   filters = {
     sport: null,
+    gamemode: null,
     gameday: null,
     startTime: null,
-    endTime: null,
     maxAmount: null,
   };
 
@@ -40,11 +39,7 @@ export class ListRoomsComponent implements OnInit {
   }
 
   loadRooms() {
-    const request$ = this.userRole === UserRole.OWNER
-      ? this.roomService.getRoomsBySportspaces()
-      : this.roomService.getAllRooms();
-
-    request$.subscribe({
+    this.roomService.getAllRooms().subscribe({
       next: (rooms) => {
         this.allRooms = rooms;
         this.applyFilters();
@@ -53,8 +48,6 @@ export class ListRoomsComponent implements OnInit {
         if (err.status === 404) {
           this.allRooms = [];
           this.rooms.set([]);
-        } else {
-          console.error('Error loading rooms');
         }
       }
     });
@@ -67,7 +60,7 @@ export class ListRoomsComponent implements OnInit {
 
   applyFilters() {
     const filtered = this.allRooms.filter(room => {
-      const { sport, gameday, startTime, endTime, maxAmount } = this.filters;
+      const { sport, gamemode, gameday, startTime, maxAmount } = this.filters;
 
       let hours = 0;
       let roomAmount = 0;
@@ -82,11 +75,15 @@ export class ListRoomsComponent implements OnInit {
         );
       }
 
+      const gamemodeId = gamemode
+        ? GAMEMODE_OPTIONS.find(g => g.value === gamemode)?.id
+        : undefined;
+
       return (
         (!sport || room.reservation.sportSpace.sportType === sport) &&
+        (!gamemodeId || room.reservation.sportSpace.gamemode === gamemode) &&
         (!gameday || room.reservation.gameDay === gameday) &&
-        (!startTime || String(room.reservation.startTime) >= String(startTime)) &&
-        (!endTime || String(room.reservation.endTime) <= String(endTime)) &&
+        (!startTime || String(room.reservation.startTime) === String(startTime)) &&
         (!maxAmount || roomAmount <= maxAmount)
       );
     });
@@ -94,6 +91,5 @@ export class ListRoomsComponent implements OnInit {
     this.rooms.set(filtered);
   }
 
-  protected readonly UserRole = UserRole;
   protected readonly SPORTS = SPORTS;
 }

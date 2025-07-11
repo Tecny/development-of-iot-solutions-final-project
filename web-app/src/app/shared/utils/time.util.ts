@@ -8,8 +8,8 @@ export class TimeUtil {
 
   static formatDate(dateStr: string): string {
     const date = new Date(dateStr + 'T00:00:00');
-    const formatter = new Intl.DateTimeFormat('es-PE', {
-      weekday: 'long',
+    const formatter = new Intl.DateTimeFormat(this.getLocale(), {
+      weekday: 'short',
       day: '2-digit',
       month: '2-digit',
       timeZone: 'America/Lima'
@@ -25,6 +25,12 @@ export class TimeUtil {
 
   static capitalize(text: string): string {
     return text.charAt(0).toUpperCase() + text.slice(1);
+  }
+
+  static getLocale(): string {
+    const lang = localStorage.getItem('language');
+    if (lang === 'en') return 'en-US';
+    return 'es-PE';
   }
 }
 

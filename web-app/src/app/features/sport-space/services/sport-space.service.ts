@@ -2,6 +2,7 @@ import {inject, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../environment/environment';
 import {SportSpace} from '../models/sport-space.interface';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,9 @@ export class SportSpaceService {
 
   deleteSportSpace(id: number) {
     return this.http.delete<void>(`${this.baseUrl}/sport-spaces/${id}`);
+  }
+
+  getMetrics(id: number, year: string): Observable<Record<string, number>> {
+    return this.http.get<Record<string, number>>(`${this.baseUrl}/sport-spaces/get-number/${id}/amount-people?currentYear=${year}`);
   }
 }

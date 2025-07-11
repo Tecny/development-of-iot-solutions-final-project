@@ -1,15 +1,17 @@
-import {ChangeDetectionStrategy, Component, inject, Input, OnDestroy, OnInit, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, Input, OnDestroy, OnInit, signal, effect} from '@angular/core';
 import {Room} from '../../models/room.interface';
 import {ChatService} from '../../services/chat.service';
 import {Message} from '../../models/message.interface';
 import {Subscription} from 'rxjs';
 import {UserStoreService} from '../../../../core/services/user-store.service';
 import {DatePipe} from '@angular/common';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-room-chat',
   imports: [
-    DatePipe
+    DatePipe,
+    TranslatePipe
   ],
   templateUrl: './room-chat.component.html',
   styleUrl: './room-chat.component.scss',
@@ -26,6 +28,13 @@ export class RoomChatComponent implements OnInit, OnDestroy {
 
   newMessageContent = signal('');
   messages = signal<any[]>([]);
+
+  constructor() {
+    effect(() => {
+      this.messages();
+      this.scrollToBottom();
+    });
+  }
 
   ngOnInit() {
     this.getRoomChat();
@@ -69,9 +78,7 @@ export class RoomChatComponent implements OnInit, OnDestroy {
     this.chatService.sendMessage(this.room.id, content).subscribe({
       next: () => {
         this.newMessageContent.set('');
-      },
-      error: err => {
-        console.error('Error al enviar mensaje:', err);
+        this.scrollToBottom();
       }
     });
   }

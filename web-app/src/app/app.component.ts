@@ -1,13 +1,17 @@
-import {Component, effect, inject, signal} from '@angular/core';
+import {Component, computed, effect, inject, signal} from '@angular/core';
 import {NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router, RouterOutlet} from '@angular/router';
 import {HeaderComponent} from './core/components/header/header.component';
 import {AuthService} from './auth/services/auth.service';
 import {LoadingService} from './core/services/loading.service';
-
+import {TranslateModule, TranslateService} from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    TranslateModule
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -22,7 +26,17 @@ export class AppComponent {
   private isNavigating = signal(false);
   isLoading = signal(false);
 
-  constructor() {
+  private currentUrl = signal('');
+
+  private hiddenHeaderRoutes = ['correct-payment', 'error-payment', 'login', 'register', 'reset-password'];
+
+  showHeader = computed(() =>
+    !this.hiddenHeaderRoutes.some(route =>
+      this.currentUrl().includes(route)
+    )
+  );
+
+  constructor(private translate: TranslateService) {
     this.authService.isAuthenticated().subscribe((auth) => {
       this.isAuthenticated.set(auth);
     });
@@ -38,6 +52,7 @@ export class AppComponent {
         event instanceof NavigationError
       ) {
         this.isNavigating.set(false);
+        this.currentUrl.set(this.router.url);
       }
     });
 
@@ -46,5 +61,10 @@ export class AppComponent {
         this.isNavigating() || this.loadingService.isLoading()
       );
     });
+
+    const savedLang = localStorage.getItem('language');
+    if (savedLang) {
+      this.translate.use(savedLang);
+    }
   }
 }

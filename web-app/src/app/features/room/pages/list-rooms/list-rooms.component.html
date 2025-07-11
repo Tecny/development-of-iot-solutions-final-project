@@ -1,18 +1,16 @@
-<h1>
-  @if (userRole === UserRole.OWNER) {
-    Salas comunidad creadas a partir de tus espacios deportivos
-  } @else {
-    Salas comunidad
-  }
-</h1>
+<div class="title-wrapper">
+  <h2 class="section-title">
+    {{ 'rooms.title' | translate }}
+  </h2>
+</div>
 
 <app-filter
   [config]="[
-    { field: 'sport', type: 'select', label: 'Deporte', options: SPORTS },
-    { field: 'gameday', type: 'date', label: 'Fecha de juego' },
-    { field: 'startTime', type: 'time', label: 'Hora inicio' },
-    { field: 'endTime', type: 'time', label: 'Hora fin' },
-    { field: 'maxAmount', type: 'number', label: 'Adelanto máximo' }
+    { field: 'sport', type: 'select', label: ('rooms.filter.sport' | translate), options: SPORTS },
+    { field: 'gamemode', type: 'select', label: ('rooms.filter.gamemode' | translate), options: [] },
+    { field: 'gameday', type: 'date', label: ('rooms.filter.gameday' | translate) },
+    { field: 'startTime', type: 'time', label: ('rooms.filter.startTime' | translate) },
+    { field: 'maxAmount', type: 'number', label: ('rooms.filter.maxAmount' | translate) }
   ]"
   (filtersChanged)="onFiltersChanged($event)"
 />
@@ -21,16 +19,26 @@
   @if (rooms(); as room) {
     <div class="cards-grid">
       @for (r of room; track r.id) {
-        <app-room-card [room]="r" />
+        <app-room-card [room]="r" [showStatus]="false" (roomEvent)="loadRooms()"/>
       } @empty {
-        <p>No hay salas disponibles</p>
+        <div class="empty-state">
+          <i class="lni lni-eraser-1"></i>
+          <p>{{ 'rooms.empty' | translate }}</p>
+        </div>
       }
     </div>
   } @else {
-    <p>Cargando salas...</p>
+    <div class="view-spinner view-spinner--sm">
+      <app-spinner/>
+    </div>
   }
 } @placeholder {
-  <p>Preparando carga de salas...</p>
+  <div class="empty-state">
+    <i class="lni lni-hourglass placeholder-icon"></i>
+    <p>{{ 'rooms.loading' | translate }}</p>
+  </div>
 } @loading {
-  <p>Cargando salas...</p>
+  <div class="view-spinner view-spinner--sm">
+    <app-spinner/>
+  </div>
 }

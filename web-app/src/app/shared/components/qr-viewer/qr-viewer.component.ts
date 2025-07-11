@@ -10,23 +10,28 @@ import {
 } from '@angular/core';
 import {ModalComponent} from '../modal/modal.component';
 import {QrService} from '../../services/qr.service';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-qr-viewer',
   imports: [
-    ModalComponent
+    ModalComponent,
+    TranslatePipe
   ],
   template: `
-    <app-modal (closeModal)="onClose()">
-      <div modal-header>
-        <h2>QR de la Reserva</h2>
-      </div>
+    <app-modal [width]="'400px'" [variant]="'info'" (closeModal)="onClose()">
+      <div modal-header>{{ 'qr.title' | translate }}</div>
       <div modal-body>
         @if (qrImageUrl) {
-          <img [src]="qrImageUrl" alt="QR de la reserva" style="width: 250px; height: 250px;" />
+          <div style="display: flex; justify-content: center; align-items: center; height: 300px;">
+            <img [src]="qrImageUrl" alt="QR de la reserva" width="250" height="250"/>
+          </div>
         } @else {
-          <p>Cargando QR...</p>
+          <p>{{ 'qr.notAvailable' | translate }}</p>
         }
+      </div>
+      <div modal-footer>
+        <button class="button-submit--info" (click)="onClose()">{{ 'qr.accept' | translate }}</button>
       </div>
     </app-modal>
   `,
@@ -50,15 +55,13 @@ export class QrViewerComponent implements OnChanges {
               this.qrImageUrl = url;
               this.cdr.markForCheck();
             },
-            error: (err) => {
-              console.error('Error al generar la imagen QR:', err);
+            error: () => {
               this.qrImageUrl = null;
               this.cdr.markForCheck();
             },
           });
         },
-        error: (err) => {
-          console.error('Error al generar el token QR:', err);
+        error: () => {
           this.qrImageUrl = null;
           this.cdr.markForCheck();
         },
@@ -70,4 +73,6 @@ export class QrViewerComponent implements OnChanges {
     this.qrImageUrl = null;
     this.close.emit();
   }
+
+  protected readonly onclose = onclose;
 }

@@ -1,12 +1,17 @@
-import {ChangeDetectionStrategy, Component, inject, OnInit, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, inject, OnInit, signal} from '@angular/core';
 import {BankTransferService} from '../../services/bank-transfer.service';
 import {FormGroup, FormsModule, NonNullableFormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {Ticket, TicketRequest} from '../../models/ticket.interface';
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
 import {customAccountNumberLengthByBank} from '../../../../shared/validators/banks.validator';
 import {UserStoreService} from '../../../../core/services/user-store.service';
-import {UserRole} from '../../../../core/models/user.role.enum';
 import {TicketCardComponent} from '../../components/ticket-card/ticket-card.component';
+import {ToastrService} from 'ngx-toastr';
+import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
+import {UserRole} from '../../../../core/models/user.role.enum';
+import {TimeUtil} from '../../../../shared/utils/time.util';
+import {ProfileService} from '../../../profile/services/profile.service';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-tickets',
@@ -14,7 +19,9 @@ import {TicketCardComponent} from '../../components/ticket-card/ticket-card.comp
     FormsModule,
     ModalComponent,
     ReactiveFormsModule,
-    TicketCardComponent
+    TicketCardComponent,
+    SpinnerComponent,
+    TranslatePipe
   ],
   templateUrl: './list-tickets.component.html',
   styleUrl: './list-tickets.component.scss',
@@ -23,11 +30,24 @@ import {TicketCardComponent} from '../../components/ticket-card/ticket-card.comp
 export class ListTicketsComponent implements OnInit {
   private bankTransferService = inject(BankTransferService);
   private userStore = inject(UserStoreService);
+  private profileService = inject(ProfileService);
   private fb = inject(NonNullableFormBuilder);
+  private toastService = inject(ToastrService);
+  private translate = inject(TranslateService);
 
-  currentUser = this.userStore.currentUser;
-  tickets = signal<Ticket[] | null>(null);
   userRole = this.userStore.getRoleFromToken();
+  userCredits = 0;
+
+  activeTab = signal<'pending' | 'confirmed'>('pending');
+  tickets = signal<Ticket[] | null>(null);
+  filteredTickets = computed(() => {
+    const currentTab = this.activeTab();
+    const allTickets = this.tickets() || [];
+    return allTickets.filter(ticket =>
+      ticket.status === (currentTab === 'pending' ? 'PENDING' : 'CONFIRMED')
+    );
+  });
+  isLoadingSubmitRequest = signal(false);
 
   bankType: 'asociado' | 'otro' = 'asociado';
   associatedBanks = ['BCP', 'BBVA', 'Interbank'];
@@ -37,6 +57,7 @@ export class ListTicketsComponent implements OnInit {
 
   ngOnInit() {
     this.initForm();
+    this.loadUserCredits();
     this.loadTickets();
   }
 
@@ -68,36 +89,33 @@ export class ListTicketsComponent implements OnInit {
     });
   }
 
+  loadUserCredits() {
+    this.profileService.getUserInfo().subscribe({
+      next: (user) => {
+        this.userCredits = user.credits;
+      }
+    });
+  }
+
   loadTickets() {
     if (this.userRole === UserRole.OWNER) {
       this.bankTransferService.getTicketsByOwner().subscribe({
         next: (tickets) => {
-          console.log(tickets);
           this.tickets.set(tickets);
         },
         error: (err) => {
           if (err.status === 404) {
             this.tickets.set([]);
-          } else {
-            console.error('Error loading user\'s bank transfer requests');
           }
         }
       });
     } else {
       this.bankTransferService.getAllTickets().subscribe({
         next: (tickets) => {
-          console.log(tickets);
           this.tickets.set(tickets);
         },
-        error: () => {
-          console.error('Error loading all bank transfer requests');
-        }
       });
     }
-  }
-
-  haveCredits() {
-    return this.currentUser()?.credits !== 0;
   }
 
   openTicketModal() {
@@ -110,22 +128,31 @@ export class ListTicketsComponent implements OnInit {
   }
 
   submitTicketRequest() {
-    if (this.ticketForm.valid) {
-      const bankTransferData: TicketRequest = this.ticketForm.getRawValue();
 
-      console.log(bankTransferData);
-
-      this.bankTransferService.createTicket(bankTransferData).subscribe({
-        next: () => {
-          console.log('Bank transfer request created successfully');
-          this.closeTicketModal();
-          this.loadTickets();
-        },
-        error: (error) => {
-          console.error('Error creating bank transfer request:', error);
-        }
-      });
+    if (!this.ticketForm.valid) {
+      this.ticketForm.markAllAsTouched();
+      return;
     }
+    const bankTransferData: TicketRequest = this.ticketForm.getRawValue();
+    this.isLoadingSubmitRequest.set(true);
+    this.bankTransferService.createTicket(bankTransferData).subscribe({
+      next: () => {
+        this.isLoadingSubmitRequest.set(false);
+        this.closeTicketModal();
+        this.loadTickets();
+        this.toastService.success(
+          this.translate.instant('tickets.toast.successCreate'),
+          this.translate.instant('toastStatus.success')
+        );
+      },
+      error: () => {
+        this.isLoadingSubmitRequest.set(false);
+        this.toastService.error(
+          this.translate.instant('tickets.toast.errorCreate'),
+          this.translate.instant('toastStatus.error')
+        );
+      }
+    });
   }
 
   onBankTypeChange() {
@@ -162,5 +189,10 @@ export class ListTicketsComponent implements OnInit {
     }
   }
 
+  setTab(tab: 'pending' | 'confirmed') {
+    this.activeTab.set(tab);
+  }
+
   protected readonly UserRole = UserRole;
+  protected readonly TimeUtil = TimeUtil;
 }

@@ -7,12 +7,22 @@ export interface ReservationRequest {
 }
 
 interface SportSpace {
+  id: number;
   name: string;
   image: string;
   price: number;
   amount: number;
   sport: string;
   gamemode: string;
+  address: string;
+}
+
+interface Blockchain {
+  inputHex: string;
+  txHash: string;
+  spaceId: number;
+  userId: number;
+  timestamp: string;
 }
 
 export interface Reservation {
@@ -20,6 +30,7 @@ export interface Reservation {
   name: string;
   type: string;
   sportSpaces: SportSpace;
+  blockchain: Blockchain | 'Not available';
   gameDay: string;
   startTime: string;
   endTime: string;

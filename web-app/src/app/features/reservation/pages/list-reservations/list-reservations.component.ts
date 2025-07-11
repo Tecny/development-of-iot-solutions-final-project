@@ -5,12 +5,18 @@ import {ReservationCardComponent} from '../../components/reservation-card/reserv
 import {RoomService} from '../../../room/services/room.service';
 import {Room} from '../../../room/models/room.interface';
 import {RoomCardComponent} from '../../../room/components/room-card/room-card.component';
+import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
+import {UserStoreService} from '../../../../core/services/user-store.service';
+import {UserRole} from '../../../../core/models/user.role.enum';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-reservations',
   imports: [
     ReservationCardComponent,
-    RoomCardComponent
+    RoomCardComponent,
+    SpinnerComponent,
+    TranslatePipe
   ],
   templateUrl: './list-reservations.component.html',
   styleUrl: './list-reservations.component.scss',
@@ -19,18 +25,26 @@ import {RoomCardComponent} from '../../../room/components/room-card/room-card.co
 export class ListReservationsComponent implements OnInit {
   private reservationService = inject(ReservationService);
   private roomService = inject(RoomService);
+  private userStore = inject(UserStoreService);
 
-  viewReservationSelected = signal<'PERSONAL' | 'COMMUNITY-OWN' | 'COMMUNITY-JOIN'>('PERSONAL');
-  communityViewSelected = signal<'OWN' | 'JOIN'>('OWN');
+  userRole = this.userStore.getRoleFromToken();
+
+  activeTab = signal<'personal' | 'community'>('personal');
+  activeSubTab = signal<'own' | 'join'>('own');
 
   reservations = signal<Reservation[] | null>(null);
   ownRooms = signal<Room[] | null>(null);
   joinedRooms = signal<Room[] | null>(null);
+  ownerRooms = signal<Room[] | null>(null);
 
   ngOnInit() {
     this.loadReservations();
-    this.loadOwnRooms();
-    this.loadJoinedRooms();
+    if (this.userRole === UserRole.PLAYER) {
+      this.loadOwnRooms();
+      this.loadJoinedRooms();
+    } else if (this.userRole === UserRole.OWNER) {
+      this.loadOwnerRooms();
+    }
   }
 
   loadReservations() {
@@ -40,9 +54,19 @@ export class ListReservationsComponent implements OnInit {
         if (err.status === 404) {
           this.reservations.set([]);
         }
-        console.error('Error loading user reservations', err);
       }
     });
+  }
+
+  loadOwnerRooms() {
+    this.roomService.getRoomsBySportspaces().subscribe({
+      next: (rooms) => this.ownerRooms.set(rooms),
+      error: (err) => {
+        if (err.status === 404) {
+          this.ownerRooms.set([]);
+        }
+      }
+    })
   }
 
   loadOwnRooms() {
@@ -52,7 +76,6 @@ export class ListReservationsComponent implements OnInit {
         if (err.status === 404) {
           this.ownRooms.set([]);
         }
-        console.error('Error loading owned rooms', err);
       }
     });
   }
@@ -64,15 +87,17 @@ export class ListReservationsComponent implements OnInit {
         if (err.status === 404) {
           this.joinedRooms.set([]);
         }
-        console.error('Error loading joined rooms', err);
       }
     });
   }
 
-  selectCommunityView(type: 'OWN' | 'JOIN') {
-    this.communityViewSelected.set(type);
-    this.viewReservationSelected.set(
-      type === 'OWN' ? 'COMMUNITY-OWN' : 'COMMUNITY-JOIN'
-    );
+  setTab(tab: 'personal' | 'community') {
+    this.activeTab.set(tab);
   }
+
+  setSubTab(subTab: 'own' | 'join') {
+    this.activeSubTab.set(subTab);
+  }
+
+  protected readonly UserRole = UserRole;
 }
