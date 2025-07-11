@@ -1,40 +1,62 @@
-<h1>Tickets de retiro de créditos</h1>
-
-@defer (on timer(200ms)) {
-  @if (userRole === UserRole.OWNER) {
-      <button (click)="openTicketModal()" [disabled]="!haveCredits()">Crear ticket</button>
-      @if (!haveCredits()) {
-          <small class="no-credits-message">No tienes créditos disponibles para realizar un retiro.</small>
-      }
+<div class="title-wrapper">
+  <div class="section-title">{{ 'tickets.title' | translate }}</div>
+  @if (this.userRole === UserRole.OWNER) {
+    <button class="add-sport-btn" (click)="openTicketModal()" [title]="'tickets.modal.title' | translate">
+      <i class="lni lni-plus"></i>
+    </button>
   }
-}
+</div>
+
+<div class="tab-buttons tab-buttons--reservation">
+  <button [class.active]="activeTab() === 'pending'" (click)="setTab('pending')">
+    {{ 'tickets.tabs.pending' | translate }}
+  </button>
+  <button [class.active]="activeTab() === 'confirmed'" (click)="setTab('confirmed')">
+    {{ 'tickets.tabs.confirmed' | translate }}
+  </button>
+</div>
 
 @defer (prefetch on viewport) {
-  @if (tickets(); as tcks) {
+  @if (filteredTickets(); as tcks) {
     <div class="cards-grid">
       @for (ticket of tcks; track ticket.id) {
         <app-ticket-card [ticket]="ticket"
                          (ticketConfirmed)="loadTickets()"
                          (ticketDeferred)="loadTickets()"/>
       } @empty {
-        @if (userRole === UserRole.ADMIN) {
-        <p>No tienes tickets de retiro solicitados</p>
+        @if (userRole === UserRole.OWNER) {
+          <div class="empty-state">
+            <i class="lni lni-megaphone-1 empty-icon"></i>
+            <p>{{ 'tickets.empty.owner' | translate }}</p>
+          </div>
+        } @else if (userRole === UserRole.ADMIN) {
+          <div class="empty-state">
+            <i class="lni lni-megaphone-1 empty-icon"></i>
+            <p>{{ 'tickets.empty.admin' | translate }}</p>
+          </div>
+        }
       }
-    }
     </div>
   } @else {
-    <p>Cargando tickets de retiro...</p>
+    <div class="view-spinner view-spinner--sm">
+      <app-spinner/>
+    </div>
   }
 } @placeholder {
-  <p>Preparando carga de tickets de retiro...</p>
+  <div class="empty-state">
+    <i class="lni lni-hourglass placeholder-icon"></i>
+    <p>{{ 'tickets.loading' | translate }}</p>
+  </div>
 } @loading {
-  <p>Cargando tickets de retiro...</p>
+  <div class="view-spinner view-spinner--sm">
+    <app-spinner/>
+  </div>
 }
 
 <!-- Modal -->
 @if (showTicketModal) {
-  <app-modal (closeModal)="closeTicketModal()">
-    <ng-container modal-header>Ticket de retiro de crédito</ng-container>
+  <app-modal [width]="'400px'" [variant]="'default'" (closeModal)="closeTicketModal()">
+    <ng-container modal-header>{{ 'tickets.modal.title' | translate }}</ng-container>
 
     <ng-container modal-body>
       <div class="bank-type-toggle">
@@ -46,7 +68,7 @@
             [(ngModel)]="bankType"
             (change)="onBankTypeChange()"
           />
-          Bancos Asociados
+          {{ 'tickets.modal.bankType.associated' | translate }}
         </label>
 
         <label>
@@ -57,74 +79,83 @@
             [(ngModel)]="bankType"
             (change)="onBankTypeChange()"
           />
-          Otros Bancos
+          {{ 'tickets.modal.bankType.other' | translate }}
         </label>
       </div>
 
+      <form [formGroup]="ticketForm" class="form-body">
+        <div class="form-field">
+          <div class="input-icon-wrapper">
+            <input formControlName="fullName" type="text" [placeholder]="'tickets.modal.fields.fullName' | translate" required/>
+          </div>
+          @if (ticketForm.get('fullName')?.touched && ticketForm.get('fullName')?.invalid) {
+            @if (ticketForm.get('fullName')?.errors?.['required']) {
+              <small>{{ 'tickets.modal.validation.fullNameRequired' | translate }}</small>
+            }
+            @if (ticketForm.get('fullName')?.errors?.['minlength']) {
+              <small>{{ 'tickets.modal.validation.fullNameMin' | translate }}</small>
+            }
+          }
+        </div>
 
-      <form [formGroup]="ticketForm" class="ticket-form">
-        <label>
-          Nombre completo:
-          <input formControlName="fullName" type="text" />
-        </label>
-        @if (ticketForm.get('fullName')?.touched && ticketForm.get('fullName')?.invalid) {
-          @if (ticketForm.get('fullName')?.errors?.['required']) {
-            <small class="ticket-form__error">Es necesario el nombre completo</small>
+        <div class="form-field">
+          <div class="input-icon-wrapper">
+            @if (bankType === 'asociado') {
+              <select formControlName="bankName">
+                <option value="" disabled selected hidden>{{ 'tickets.modal.fields.bankName' | translate }}</option>
+                <option value="BCP">BCP</option>
+                <option value="BBVA">BBVA</option>
+                <option value="Interbank">Interbank</option>
+              </select>
+            } @else {
+              <input formControlName="bankName" type="text" [placeholder]="'tickets.modal.fields.bankName' | translate"/>
+            }
+          </div>
+          @if (ticketForm.get('bankName')?.touched && ticketForm.get('bankName')?.invalid) {
+            @if (ticketForm.get('bankName')?.errors?.['required']) {
+              <small>{{ 'tickets.modal.validation.bankNameRequired' | translate }}</small>
+            }
           }
-          @if (ticketForm.get('fullName')?.errors?.['minlength']) {
-            <small class="ticket-form__error">El nombre completo debe tener al menos 5 caracteres</small>
-          }
-        }
+        </div>
 
-        @if (bankType === 'asociado') {
-          <label>
-            Banco:
-            <select formControlName="bankName">
-              <option value="BCP">BCP</option>
-              <option value="BBVA">BBVA</option>
-              <option value="Interbank">Interbank</option>
-            </select>
-          </label>
-        } @else {
-          <label>
-            Banco (escribe el nombre):
-            <input formControlName="bankName" type="text" />
-          </label>
-        }
-        @if (ticketForm.get('bankName')?.touched && ticketForm.get('bankName')?.invalid) {
-          @if (ticketForm.get('bankName')?.errors?.['required']) {
-            <small class="ticket-form__error">El banco es obligatorio</small>
+        <div class="form-field">
+          <div class="input-icon-wrapper">
+            <input
+              formControlName="accountNumber"
+              type="text"
+              [placeholder]="bankType === 'asociado' ? ('tickets.modal.fields.accountNumber' | translate) : ('tickets.modal.fields.accountNumberOther' | translate)"
+              required
+            />
+          </div>
+          @if (ticketForm.get('accountNumber')?.touched && ticketForm.get('accountNumber')?.invalid) {
+            @if (ticketForm.get('accountNumber')?.errors?.['required']) {
+              <small>{{ 'tickets.modal.validation.accountNumberRequired' | translate }}</small>
+            } @else if (ticketForm.get('accountNumber')?.errors?.['pattern']) {
+              <small>{{ 'tickets.modal.validation.accountNumberPattern' | translate }}</small>
+            } @else if (ticketForm.get('accountNumber')?.errors?.['invalidAccountNumberLength']) {
+              <small>
+                {{ 'tickets.modal.validation.accountNumberLength' | translate:{ expectedLength: ticketForm.get('accountNumber')?.errors?.['invalidAccountNumberLength'].expectedLength } }}
+              </small>
+            }
           }
-          @if (!associatedBanks.includes(ticketForm.get('bankName')?.value)) {
-            <label>
-              Especificar banco:
-              <input type="text" formControlName="bankName" />
-            </label>
-          }
-        }
-
-        <label>
-          {{ bankType === 'asociado' ? 'Número de cuenta:' : 'Número de cuenta interbancario:' }}
-          <input formControlName="accountNumber" type="text" />
-        </label>
-        @if (ticketForm.get('accountNumber')?.touched && ticketForm.get('accountNumber')?.invalid) {
-          @if (ticketForm.get('accountNumber')?.errors?.['required']) {
-            <small class="ticket-form__error">El número de cuenta es obligatorio</small>
-          } @else if (ticketForm.get('accountNumber')?.errors?.['pattern']) {
-            <small class="ticket-form__error">El número de cuenta solo debe contener números</small>
-          } @else if (ticketForm.get('accountNumber')?.errors?.['invalidAccountNumberLength']) {
-            <small class="ticket-form__error">
-              La longitud del número de cuenta debe ser de
-              {{ ticketForm.get('accountNumber')?.errors?.['invalidAccountNumberLength'].expectedLength }} dígitos
-            </small>
-          }
-        }
+        </div>
       </form>
+
+      <section class="ticket-summary">
+        <div>
+          <strong>{{ 'tickets.modal.summary.amount' | translate }}:</strong> {{ userCredits }} {{ 'tickets.modal.summary.credits' | translate }}
+        </div>
+      </section>
     </ng-container>
 
     <ng-container modal-footer>
-      <button (click)="submitTicketRequest()" [disabled]="ticketForm.invalid">Solicitar</button>
-      <button (click)="closeTicketModal()">Cancelar</button>
+      <button type="submit" class="button-submit" (click)="submitTicketRequest()">
+        @if (isLoadingSubmitRequest()) {
+          <span class="spinner-default"></span>
+        } @else {
+          {{ 'tickets.modal.actions.create' | translate }}
+        }
+      </button>
     </ng-container>
   </app-modal>
 }

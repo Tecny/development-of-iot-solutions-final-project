@@ -31,7 +31,6 @@ export class UserStoreService {
       const decoded: any = jwtDecode(token);
       return decoded.exp ? decoded.exp * 1000 : null;
     } catch (error) {
-      console.error('Error decoding token:', error);
       return null;
     }
   }

@@ -1,7 +1,7 @@
 export interface SportSpace {
   id: number;
   name: string;
-  image: string;
+  imageUrl: string;
   sportId: number;
   gamemodeId: number;
   price: number;
@@ -10,6 +10,8 @@ export interface SportSpace {
   description: string;
   openTime: string;
   closeTime: string;
+  latitude: number;
+  longitude: number;
   user: User;
 }
 

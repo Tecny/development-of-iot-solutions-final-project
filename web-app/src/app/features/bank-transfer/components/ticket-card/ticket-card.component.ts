@@ -1,33 +1,84 @@
-import {ChangeDetectionStrategy, Component, computed, EventEmitter, inject, Input, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, computed, EventEmitter, inject, Input, Output, signal} from '@angular/core';
 import {Ticket} from '../../models/ticket.interface';
-import {TitleCasePipe} from '@angular/common';
+import {NgClass} from '@angular/common';
 import {UserStoreService} from "../../../../core/services/user-store.service";
 import {BankTransferService} from "../../services/bank-transfer.service";
+import {ModalComponent} from '../../../../shared/components/modal/modal.component';
+import {ToastrService} from 'ngx-toastr';
+import {TranslatePipe, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-ticket-card',
   imports: [
-    TitleCasePipe
+    TranslatePipe,
+    NgClass,
+    ModalComponent
   ],
   template: `
-    <div class="ticket-card">
-      <div class="ticket-card__content">
-        <h2 class="ticket-card__ticket">Número de ticket: {{ ticket.ticketNumber }}</h2>
-        <p class="ticket-card__name">Nombre: {{ ticket.fullName }}</p>
-        <p class="ticket-card__bank">Banco: {{ ticket.bankName }}</p>
-        <p class="ticket-card__type">Tipo de transferencia: {{ ticket.transferType }}</p>
-        <p class="ticket-card__account">Número de cuenta: {{ ticket.accountNumber }}</p>
-        <p class="ticket-card__amount">Monto: {{ ticket.amount }} créditos</p>
-        <p class="ticket-card__status">Estado: {{ ticket.status | titlecase }}</p>
+    <div class="ticket-card"
+         [ngClass]="{
+        'ticket-card--pending': ticket.status === 'PENDING',
+        'ticket-card--confirmed': ticket.status === 'CONFIRMED',
+        'ticket-card--deferred': ticket.status === 'DEFERRED'
+      }">
+      <div class="ticket-card__header">
+        <p class="ticket-card__status">{{ 'tickets.card.status.' + ticket.status | translate }}</p>
+        <h2>{{ 'tickets.card.fields.ticketNumber' | translate }}: {{ ticket.ticketNumber }}</h2>
       </div>
-
-      @if (canConfirmTicket()) {
-        <button (click)="confirmTicket()">Confirmar</button>
-      }
-      @if (canDeferTicket()) {
-        <button (click)="deferTicket()">Diferir</button>
+      <div class="ticket-card__content">
+        <p>{{ 'tickets.card.fields.fullName' | translate }}: {{ ticket.fullName }}</p>
+        <p>{{ 'tickets.card.fields.bankName' | translate }}: {{ ticket.bankName }}</p>
+        <p>{{ 'tickets.card.fields.transferType' | translate }}: {{ ticket.transferType }}</p>
+        <p>{{ 'tickets.card.fields.accountNumber' | translate }}: {{ ticket.accountNumber }}</p>
+        <p>{{ 'tickets.card.fields.amount' | translate }}: {{ ticket.amount }} {{ 'tickets.card.fields.credits' | translate }}</p>
+      </div>
+      @if (this.currentUser()?.roleType === 'ADMIN') {
+        <div class="ticket-card__actions">
+          @if (canConfirmTicket()) {
+            <button (click)="showConfirmModal = true">
+              <i class="lni lni-check-circle-1"></i>
+              {{ 'tickets.card.actions.confirm' | translate }}
+            </button>
+          }
+          @if (canDeferTicket()) {
+            <button (click)="showDeferModal = true">
+              <i class="lni lni-alarm-1"></i>
+              {{ 'tickets.card.actions.defer' | translate }}
+            </button>
+          }
+        </div>
       }
     </div>
+    @if (showConfirmModal) {
+      <app-modal [width]="'400px'" [variant]="'default'" (closeModal)="handleClose()">
+        <div modal-header>{{ 'tickets.card.modals.confirmTitle' | translate }}</div>
+        <div modal-body>{{ 'tickets.card.modals.confirmMsg' | translate }}</div>
+        <div modal-footer>
+          <button type="submit" class="button-submit" (click)="confirmTicket()" [disabled]="isLoadingRequest()" >
+            @if (isLoadingRequest()) {
+              <span class="spinner-default"></span>
+            } @else {
+              {{ 'tickets.card.actions.confirm' | translate }}
+            }
+          </button>
+        </div>
+      </app-modal>
+    }
+    @if (showDeferModal) {
+      <app-modal [width]="'400px'" [variant]="'warning'" (closeModal)="handleClose()">
+        <div modal-header>{{ 'tickets.card.modals.deferTitle' | translate }}</div>
+        <div modal-body>{{ 'tickets.card.modals.deferMsg' | translate }}</div>
+        <div modal-footer>
+          <button type="submit" class="button-submit--warning" (click)="deferTicket()" [disabled]="isLoadingRequest()" >
+            @if (isLoadingRequest()) {
+              <span class="spinner-warning"></span>
+            } @else {
+              {{ 'tickets.card.actions.confirm' | translate }}
+            }
+          </button>
+        </div>
+      </app-modal>
+    }
   `,
   styleUrl: './ticket-card.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -39,12 +90,18 @@ export class TicketCardComponent {
 
   private userStore = inject(UserStoreService);
   private bankTransferService = inject(BankTransferService);
+  private toastService = inject(ToastrService);
+  private translate = inject(TranslateService);
 
   currentUser = this.userStore.currentUser;
   isAdmin = computed(() => {
     const currentUser = this.currentUser();
     return currentUser && currentUser.roleType === 'ADMIN';
   });
+  isLoadingRequest = signal(false);
+
+  showConfirmModal = false;
+  showDeferModal = false;
 
   canConfirmTicket(){
     return (this.ticket.status === 'PENDING' || this.ticket.status === 'DEFERRED') && this.isAdmin();
@@ -55,38 +112,57 @@ export class TicketCardComponent {
   }
 
   confirmTicket() {
-    if(window.confirm('¿Está seguro de que desea confirmar este ticket?')) {
-      if (this.isAdmin()) {
-        this.bankTransferService.confirmTicket(this.ticket.id).subscribe({
-          next: () => {
-            console.log('Ticket confirmed and approved successfully');
-            this.ticketConfirmed.emit();
-          },
-          error: (error) => {
-            console.error('Error confirming ticket:', error);
-          }
-        });
-      } else {
-        console.warn('Only admins can confirm tickets');
-      }
+    this.isLoadingRequest.set(true);
+    if (this.isAdmin()) {
+      this.bankTransferService.confirmTicket(this.ticket.id).subscribe({
+        next: () => {
+          this.isLoadingRequest.set(false);
+          this.ticketConfirmed.emit();
+          this.toastService.success(
+            this.translate.instant('tickets.card.toast.successConfirm'),
+            this.translate.instant('toastStatus.success')
+          );
+        },
+        error: () => {
+          this.isLoadingRequest.set(false);
+          this.toastService.error(
+            this.translate.instant('tickets.card.toast.errorConfirm'),
+            this.translate.instant('toastStatus.error')
+          );
+        }
+      });
+    } else {
+      this.isLoadingRequest.set(false);
     }
   }
 
   deferTicket() {
-    if(window.confirm('¿Está seguro de que desea diferir este ticket?')) {
-      if (this.isAdmin()) {
-        this.bankTransferService.deferTicket(this.ticket.id).subscribe({
-          next: () => {
-            console.log('Ticket deferred successfully');
-            this.ticketDeferred.emit();
-          },
-          error: (error) => {
-            console.error('Error deferring ticket:', error);
-          }
-        });
-      } else {
-        console.warn('Only admins can defer tickets');
-      }
+    this.isLoadingRequest.set(true);
+    if (this.isAdmin()) {
+      this.bankTransferService.deferTicket(this.ticket.id).subscribe({
+        next: () => {
+          this.isLoadingRequest.set(false);
+          this.ticketDeferred.emit();
+          this.toastService.success(
+            this.translate.instant('tickets.card.toast.successDefer'),
+            this.translate.instant('toastStatus.success')
+          );
+        },
+        error: () => {
+          this.isLoadingRequest.set(false);
+          this.toastService.error(
+            this.translate.instant('tickets.card.toast.errorDefer'),
+            this.translate.instant('toastStatus.error')
+          );
+        }
+      });
+    } else {
+      this.isLoadingRequest.set(false);
     }
+  }
+
+  handleClose() {
+    this.showConfirmModal = false;
+    this.showDeferModal = false;
   }
 }

@@ -5,7 +5,10 @@ import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {AuthService} from '../../../../auth/services/auth.service';
 import {customEmailValidator} from '../../../../shared/validators/forms.validator';
 import {ModalComponent} from '../../../../shared/components/modal/modal.component';
-import {TitleCasePipe} from '@angular/common';
+import {ToastrService} from 'ngx-toastr';
+import {SpinnerComponent} from '../../../../shared/components/spinner/spinner.component';
+import {ThemeService} from '../../../../shared/services/theme.service';
+import {TranslateModule, TranslateService, TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-view-profile',
@@ -13,7 +16,9 @@ import {TitleCasePipe} from '@angular/common';
     ReactiveFormsModule,
     ModalComponent,
     FormsModule,
-    TitleCasePipe
+    SpinnerComponent,
+    TranslateModule,
+    TranslatePipe
   ],
   templateUrl: './view-profile.component.html',
   styleUrl: './view-profile.component.scss',
@@ -24,19 +29,30 @@ export class ViewProfileComponent implements OnInit {
   private profileService = inject(ProfileService);
   private authService = inject(AuthService);
   private fb = inject(FormBuilder);
+  private toastService = inject(ToastrService);
+  private themeService = inject(ThemeService);
+  private translate = inject(TranslateService);
 
   userInfo = signal<UserProfile | null>(null);
+  isLoadingSubmitRequest = signal(false);
+  activeTab = signal<'info' | 'prefs'>('info');
 
   profileForm!: FormGroup;
-
   editingName = false;
   editingEmail = false;
   editingPassword = false;
-
   showRechargeModal = false;
+  selectedLanguage = 'es';
 
   ngOnInit(): void {
+    const savedLang = localStorage.getItem('language');
+    this.selectedLanguage = savedLang || this.translate.currentLang || 'es';
+    this.translate.use(this.selectedLanguage);
     this.loadUserInfo();
+  }
+
+  setTab(tab: 'info' | 'prefs') {
+    this.activeTab.set(tab);
   }
 
   loadUserInfo() {
@@ -56,7 +72,7 @@ export class ViewProfileComponent implements OnInit {
       password: ['', [
         Validators.required,
         Validators.minLength(16),
-        Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{16,}$/)
+        Validators.pattern(/^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{16,}$/)
       ]],
       amount: ['', [Validators.required, Validators.min(1)]],
     });
@@ -66,26 +82,35 @@ export class ViewProfileComponent implements OnInit {
     const nameControl = this.profileForm.get('name');
     const name = nameControl?.value.trim();
     const currentName = this.userInfo()?.name;
-
     if (!nameControl?.valid) {
       nameControl?.markAsTouched();
-      console.error('Invalid or empty name.');
       return;
     }
 
     if (name === currentName) {
-      console.error('New name must be different.');
+      this.translate.get('profile.toast.nameRepeat').subscribe((msg) => {
+        this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+      });
       return;
     }
 
+    this.isLoadingSubmitRequest.set(true);
     this.profileService.changeName(name).subscribe({
       next: () => {
-        console.log('Name updated successfully.');
+        this.isLoadingSubmitRequest.set(false);
         this.editingName = false;
         this.loadUserInfo();
         nameControl.reset();
+        this.translate.get('profile.toast.nameUpdated').subscribe((msg) => {
+          this.toastService.success(msg, this.translate.instant('toastStatus.success'));
+        });
       },
-      error: () => console.error('Error updating name.')
+      error: () => {
+        this.isLoadingSubmitRequest.set(false);
+        this.translate.get('profile.toast.nameUpdateError').subscribe((msg) => {
+          this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+        });
+      }
     });
   }
 
@@ -96,23 +121,33 @@ export class ViewProfileComponent implements OnInit {
 
     if (!emailControl?.valid) {
       emailControl?.markAsTouched();
-      console.error('Invalid or empty email.');
       return;
     }
 
     if (email === currentEmail) {
-      console.error('New email must be different.');
+      this.translate.get('profile.toast.emailRepeat').subscribe((msg) => {
+        this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+      });
       return;
     }
 
+    this.isLoadingSubmitRequest.set(true);
     this.profileService.changeEmail(email).subscribe({
       next: () => {
-        console.log('Email updated successfully.');
+        this.isLoadingSubmitRequest.set(false);
         this.editingEmail = false;
         this.loadUserInfo();
         emailControl.reset();
+        this.translate.get('profile.toast.emailUpdated').subscribe((msg) => {
+          this.toastService.success(msg, this.translate.instant('toastStatus.success'));
+        });
       },
-      error: () => console.error('Error updating email.')
+      error: () => {
+        this.isLoadingSubmitRequest.set(false);
+        this.translate.get('profile.toast.emailUpdateError').subscribe((msg) => {
+          this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+        });
+      }
     });
   }
 
@@ -124,17 +159,25 @@ export class ViewProfileComponent implements OnInit {
 
     if (!passwordControl?.valid || !passwordPattern.test(password)) {
       passwordControl?.markAsTouched();
-      console.error('Invalid or too short password. Must contain at least one uppercase letter, one number, and one special character.');
       return;
     }
 
+    this.isLoadingSubmitRequest.set(true);
     this.profileService.changePassword(password).subscribe({
       next: () => {
-        console.log('Password updated successfully.');
+        this.isLoadingSubmitRequest.set(false);
         this.editingPassword = false;
         passwordControl.reset();
+        this.translate.get('profile.toast.passwordUpdated').subscribe((msg) => {
+          this.toastService.success(msg, this.translate.instant('toastStatus.success'));
+        });
       },
-      error: () => console.error('Error updating password.')
+      error: () => {
+        this.isLoadingSubmitRequest.set(false);
+        this.translate.get('profile.toast.passwordUpdateError').subscribe((msg) => {
+          this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+        });
+      }
     });
   }
 
@@ -148,31 +191,73 @@ export class ViewProfileComponent implements OnInit {
   }
 
   recharge() {
+    if (!this.profileForm.get('amount')?.valid) {
+      this.profileForm.get('amount')?.markAsTouched();
+      return;
+    }
+
+    const width = Math.min(800, Math.floor(window.innerWidth * 0.9));
+    const height = Math.min(600, Math.floor(window.innerHeight * 0.85));
+    const left = Math.floor((window.innerWidth - width) / 2);
+    const top = Math.floor((window.innerHeight - height) / 2);
+
+    const features = `width=${width},height=${height},left=${left},top=${top},resizable=yes,scrollbars=yes`;
+
     const amountControl = this.profileForm.get('amount');
     const amount = amountControl?.value;
-    this.closeRechargeModal();
 
+    this.isLoadingSubmitRequest.set(true);
     this.profileService.rechargeCredits(amount).subscribe({
       next: (response) => {
         const approvalUrl = response.approval_url;
-        const paymentWindow = window.open(approvalUrl, 'PayPal Payment', 'width=800, height=600');
+        const paymentWindow = window.open(approvalUrl, 'PayPal Payment', features);
         if (paymentWindow) {
           const interval = setInterval(() => {
             if (paymentWindow.closed) {
+              this.isLoadingSubmitRequest.set(false);
+              this.closeRechargeModal();
               clearInterval(interval);
               this.loadUserInfo();
             }
           }, 1000);
         } else {
-          console.error('No se pudo abrir la ventana de pago.');
+          this.translate.get('profile.toast.paymentOpenError').subscribe((msg) => {
+            this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+          });
         }
       },
-      error: () => console.error('Error during recharge.')
+      error: () => {
+        this.translate.get('profile.toast.paymentOpenError').subscribe((msg) => {
+          this.toastService.error(msg, this.translate.instant('toastStatus.error'));
+        });
+      }
     });
   }
 
   logout() {
     this.authService.logout();
+    this.translate.get('profile.toast.sessionClosed').subscribe((msg) => {
+      this.toastService.success(msg, this.translate.instant('toastStatus.success'));
+    });
+  }
+
+  toggleTheme(isDark: boolean) {
+    this.themeService.toggleTheme(isDark);
+  }
+
+  get isDarkTheme() {
+    return this.themeService.isDarkTheme;
+  }
+
+  onThemeChange(event: Event) {
+    const value = (event.target as HTMLSelectElement).value;
+    this.toggleTheme(value === 'Oscuro' || value === 'Dark');
+  }
+
+  onLanguageChange(language: string) {
+    this.selectedLanguage = language;
+    localStorage.setItem('language', language);
+    this.translate.use(language);
   }
 }
 

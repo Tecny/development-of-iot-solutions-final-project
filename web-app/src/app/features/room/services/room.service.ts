@@ -30,7 +30,7 @@ export class RoomService {
   }
 
   getRoomById(id: number) {
-      return this.http.get<Room>(`${this.baseUrl}/rooms/${id}`);
+    return this.http.get<Room>(`${this.baseUrl}/rooms/${id}`);
   }
 
   joinRoom(id: number) {

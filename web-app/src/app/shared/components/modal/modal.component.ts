@@ -1,33 +1,49 @@
-import {ChangeDetectionStrategy, Component, EventEmitter, inject, OnInit, Output, ViewChild} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  inject,
+  Input, OnDestroy,
+  OnInit,
+  Output,
+  ViewChild
+} from '@angular/core';
 import {CdkPortal, PortalModule} from '@angular/cdk/portal';
 import {Overlay, OverlayConfig} from '@angular/cdk/overlay';
+import {NgClass, NgStyle} from '@angular/common';
 
 @Component({
   selector: 'app-modal',
-  imports: [PortalModule],
+  imports: [PortalModule, NgStyle, NgClass],
   template: `
     <ng-template cdkPortal>
-      <div class="modal">
-        <div class="modal__header">
-          <ng-content select="[modal-header]"></ng-content>
-          <button (click)="closeModal.emit()">×</button>
-        </div>
-        <div class="modal__body">
-          <ng-content select="[modal-body]"></ng-content>
-        </div>
-        <div class="modal__footer">
-          <ng-content select="[modal-footer]"></ng-content>
+      <div class="modal-backdrop">
+        <div class="modal" [ngClass]="variant" [ngStyle]="{ 'max-width': width }">
+          <div class="modal__header">
+            <ng-content select="[modal-header]"></ng-content>
+            <button class="modal__close" (click)="closeModal.emit()" aria-label="Cerrar">
+              <i class="lni lni-xmark"></i>
+            </button>
+          </div>
+          <div class="modal__body">
+            <ng-content select="[modal-body]"></ng-content>
+          </div>
+          <div class="modal__footer">
+            <ng-content select="[modal-footer]"></ng-content>
+          </div>
         </div>
       </div>
     </ng-template>
-
   `,
   styleUrl: './modal.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class ModalComponent implements OnInit {
+export class ModalComponent implements OnInit, AfterViewInit, OnDestroy {
   @ViewChild(CdkPortal) portal: CdkPortal | undefined;
+  @Input() width: string = '600px';
+  @Input() variant: 'default' | 'danger' | 'warning' | 'info'  = 'default';
   @Output() closeModal = new EventEmitter<void>();
 
   overlay = inject(Overlay);

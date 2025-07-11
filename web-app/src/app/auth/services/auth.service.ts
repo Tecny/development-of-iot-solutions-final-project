@@ -25,17 +25,16 @@ export class AuthService {
   login(loginRequest: LoginRequest) {
     return this.http.post<{ token: string }>(`${this.baseUrl}/authentication/sign-in`, loginRequest).pipe(
       tap((response) => {
-        document.cookie = `tokenCookie=${response.token}; path=/`;
+        const expires = new Date((JSON.parse(atob(response.token.split('.')[1])).exp * 1000) - (5 * 60 * 60 * 1000)).toUTCString();
+        document.cookie = `tokenCookie=${response.token}; path=/; expires=${expires};`;
         this.isLoggedIn.next(true);
 
         this.http.get<UserProfile>(`${this.baseUrl}/users/me`).subscribe({
-          next: (user) => this.userStore.setUser(user),
-          error: (err) => console.error('Error al cargar el usuario después de login', err)
+          next: (user) => this.userStore.setUser(user)
         });
       })
     );
   }
-
 
   register(registerRequest: RegisterRequest) {
     return this.http.post(`${this.baseUrl}/users/sign-up`, registerRequest);
@@ -51,9 +50,8 @@ export class AuthService {
     if (isValid) {
       this.http.get<UserProfile>(`${this.baseUrl}/users/me`).subscribe({
         next: (user) => this.userStore.setUser(user),
-        error: (err) => {
-          console.error('Error al cargar usuario en checkAuth()', err);
-          this.isLoggedIn.next(false); // fallback
+        error: () => {
+          this.isLoggedIn.next(false);
         }
       });
     } else {
@@ -61,7 +59,6 @@ export class AuthService {
       this.userStore.clearUser();
     }
   }
-
 
   isAuthenticated(): Observable<boolean> {
     return this.isLoggedIn.asObservable();
@@ -74,9 +71,6 @@ export class AuthService {
         this.userStore.clearUser();
         this.isLoggedIn.next(false);
         this.router.navigate(['/login']).then();
-      },
-      error: () => {
-        console.error('Error during logout.');
       }
     });
   }
